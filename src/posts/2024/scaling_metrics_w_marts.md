@@ -19,7 +19,7 @@ Over time, data warehouses began to fade from prominence. This decline was drive
 
 But data warehousing played a critical role in organizations by supporting unified and standardized metrics. Today, this function is largely neglected, leaving businesses to grapple with its absence. As a result, leaders are increasingly witnessing the impact on performance, compliance, and control, compounded by challenges in effective monitoring.
 
-![Reference Data Platform Architecture](/src/assets/images/the productized data platform program.png "Typical Modern Data Platform Architecture")
+![Reference Data Platform Architecture](/src/assets/images/reference_data_platform_architecture-1.png "Typical Modern Data Platform Architecture")
 
 ### Data Warehousing Challenges: A Double-Edged Sword  
 
@@ -63,7 +63,7 @@ Technically, a data mart is simply a **flat table** within a SQL database. This 
 
 In a modern data platform, the data mart is developed using SQL code within the modeling layer. This code is typically hosted in a code repository, such as GitHub or Bitbucket. By storing the code in a repository, the data mart becomes transparent, easy to contribute to, and aligns with the three principles outlined earlier.
 
-![data marts architecture](/src/assets/images/the unified insights program.png "From Data Sources, Marts and Insights & Metrics")
+![data marts architecture](/src/assets/images/the_unified_insights_program.png "From Data Sources, Marts and Insights & Metrics")
 
 ## Data Marts: How They Resolve Data Warehouse Challenges
 
