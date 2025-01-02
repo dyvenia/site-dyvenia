@@ -9,7 +9,7 @@ internal_notes: test
 ---
 The growing number of tools and solutions in the data ecosystem can be overwhelming for business leaders. Some data solutions are so advanced that they resemble full-scale "digital transformation" initiatives—a term often used by IT professionals.
 
-However, one area of data analytics has remained largely unchanged for the past 30 years: business intelligence. Companies once relied on robust data warehouses with well-defined structures, paired with straightforward reporting tools that efficiently extracted insights.
+However, one area of data analytics has remained largely unchanged for the past 30 years: business intelligence. Companies once relied on robust data warehouses with well-defined structures paired with straightforward reporting tools that efficiently extracted insights.
 
 Over time, data warehouses began to fade from prominence. This decline was driven by:
 
@@ -63,7 +63,7 @@ Technically, a data mart is simply a **flat table** within a SQL database. This 
 
 In a modern data platform, the data mart is developed using SQL code within the modeling layer. This code is typically hosted in a code repository, such as GitHub or Bitbucket. By storing the code in a repository, the data mart becomes transparent, easy to contribute to, and aligns with the three principles outlined earlier.
 
-![](/src/assets/images/the unified insights program (1).png)
+![data marts architecture](/src/assets/images/data_marts_insights_architecture-4.png "From Data Sources, Marts and Insights & Metrics")
 
 ## Data Marts: How They Resolve Data Warehouse Challenges
 
