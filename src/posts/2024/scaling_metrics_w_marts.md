@@ -59,7 +59,7 @@ The challenge today is that these principles are not universally adopted across 
 
 Technically, a data mart is simply a **flat table** within a SQL database. This table is usually accessed through reporting tools like Power BI, Tableau, or Cognos. Analysts can connect to the table and create typical BI reports, and as the data is updated, the connected reporting tools automatically reflect these changes.
 
-![Reference Data Platform with Modelling Highlight](/src/assets/images/reference_data_platform_architecture_modelling_highlight.png "Models Inside a Data Platform")
+![Reference Data Platform with Modelling Highlight](/src/assets/images/productized_data_platform_program_2.png "Models Inside a Data Platform")
 
 In a modern data platform, the data mart is developed using SQL code within the modeling layer. This code is typically hosted in a code repository, such as GitHub or Bitbucket. By storing the code in a repository, the data mart becomes transparent, easy to contribute to, and aligns with the three principles outlined earlier.
 
