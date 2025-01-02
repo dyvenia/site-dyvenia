@@ -1,0 +1,236 @@
+---
+hero:
+  title: Driving Better Decisions and Business Performance with Unified Metrics 
+  subtitle: '**dyvenia** is a professional services agency combining business expertise with data analytics to build unified metrics that drive performance, foster alignment, ensure compliance, and optimize costs'
+  button_text: Let's talk
+  button_target: https://meetings-eu1.hubspot.com/alessio-civitillo/the-scalable-way
+intro:
+  title: Are your metrics designed to drive business performance?
+  content: |-
+    Many business leaders struggle to establish a performance-driven culture due to a lack of unified metrics. Fragmented dashboards, inconsistent definitions, and lack of granular insights force reliance on a patchwork of reports, presentations, and ad hoc communication to assess performance and determine actions.
+
+    In contrast, performance-driven enterprises prioritize unified, trusted metrics—granular, auditable, and consistent across time, exchange currencies, and organizational changes. These metrics align the organization, enabling clarity, confidence, and decisive action.
+highlight_one:
+  title: We help business leaders drive a performance-driven culture with data
+  subtitle: by helping with developing the narrative, data initiative, and adoption; leveraging an established technology, data marts, that can be adjusted to your IT ecosystem; training your teams on the usage of unified metrics
+highlight_two:
+  title1: The ultimate goal?
+  title2: Unified, Clear, Metrics = Performance
+  content: Unfortunately, many analytics initiatives don’t deliver what it was promised. Analysts don't understand the business and because of that they build models that are too complex and not in tune with what business needs, which is simple and clear metrics.
+foundations_titles:
+  title1: The 5 unified metrics
+  title2: attributes
+foundations_elements:
+  - title: In-Depth
+    content: Granular drill-downs across key dimensions
+  - title: Trust & Compliance
+    content: Auditable metrics and models, no "black boxes"
+  - title: Aligned
+    content: Decision makers across the company agree on definitions
+  - title: Comparable
+    content: Metrics can be compared after reinstatements and org changes
+  - title: Usability
+    content: Clean, consistent, and enriched data and metrics for analysis
+about:
+  title: About us
+  content: |-
+    We believe data-driven should be defined with concrete steps and connected with measuring and driving business performance.
+
+    With a combined 30+ years of experience in data analytics, finance, and sales analytics, we are on a mission to help business leaders establish a performance-driven culture measured with objective data and metrics.
+whyus_intro:
+  title: Why do clients come to us?
+  content: Business leaders lacking unified metrics suffer from one or more of these **11 challenges**
+whyus_elements:
+  - title: Slow Insights.
+    content: Waiting a very long time to receive critical business insights.
+  - title: Lack of Alignment
+    content: Spending time and resources to review numbers that do not match.
+  - title: Lack of Trust.
+    content: Managers across the organization not trusting the data and metrics.
+  - title: Misusing Talent.
+    content: Having many analysts and professionals wasting time on manually creating and managing reports.
+  - title: Increasing tech debt.
+    content: Creating custom logic across reports and dashboards that is understood only by a few.
+  - title: Lack of integrated planning.
+    content: Planning is not integrated across departments, generating obsolete inventory and other issues.
+  - title: Impossible comparisons.
+    content: Comparisons become impossible due to org changes, and reinstatements of standard costs, currencies, etc.
+  - title: Poor Usability.
+    content: Metrics are hard to access, data is hard to use, very hard to build ad-hoc analysis quickly
+  - title: Struggling with best practices.
+    content: Lacking guidance in what it takes to build good and unified metrics, data initiatives become expensive mistakes
+  - title: Difficulty in retaining key talent.
+    content: Experiencing challenges in keeping team members motivated
+  - title: Difficulty in onboarding talent.
+    content: Experiencing challenges when onboarding new analysts to the complex web of reports and data assets in use
+our_services:
+  title: Our Solutions
+our_services_items:
+  - title: The Plan & MVP
+    prefix: Developing
+    description: We begin by analyzing your business strategy to identify gaps in your current metrics, leveraging workshops and interviews with key business leaders. From there, we craft a compelling narrative to articulate the purpose and value of the metrics initiative. Finally, we develop a comprehensive roadmap, including a detailed resource plan, to ensure successful execution and we deliver a Minimum Viable Product to show feasibility.
+  - title: The Execution
+    prefix: Optional
+    description: We implement the roadmap by assembling a dedicated team of data analysts, solution architects, and a project manager. This team ensures seamless communication across all levels while maintaining direct engagement with business leaders to align on goals and priorities.
+description: Eleventy starter using modern CSS, fluid type, fluid spacing, flexible layout and progressive enhancement.
+bodyClass: home
+blog:
+  title: Our Insights
+  intro: Selected Articles. Check our blog for more.
+layout: base
+permalink: /index.html
+title: The Scalable Way
+---
+<div class="wrapper">
+  <div class="hero | wrapper">
+    <header class="flow">
+      <h1>{{ hero.title }}</h1>
+      {{ hero.subtitle | markdownFormat | safe }}
+      <a href="{{ hero.button_target }}" class="button"> {{ hero.button_text }} {% svg "misc/arrow" %}</a>
+    </header>
+    {% svg "brand/simple" %}
+    {% svg "brand/staggered" %}
+  </div>
+</div>
+
+<div class="intro | wrapper">
+  <article class="region flow prose">
+    <h2 class="text-step-2">{{ intro.title }}</h2>
+    {{ intro.content | markdownFormat | safe }}
+  </article>
+</div>
+
+<div class="highlight-one | wrapper">
+  <div class="full wrapper section" style="--spot-color: var(--color-blue-accent)">
+    <article class="full  intro | section__inner wrapper  region">
+      <div class="feature flow prose">
+        <h2 class="text-step-3">{{ highlight_one.title }} <span>*</span></h2>
+        <p class="text-step-min-1"><span>*</span> {{ highlight_one.subtitle }}</p>
+      </div>
+      {% svg "brand/rings" %}
+    </article>
+  </div>
+</div>
+
+<div class="highlight-two | wrapper">
+  <div class="full wrapper section" style="--spot-color: var(--color-dove-gray-700)">
+    <article class="full  intro | section__inner wrapper region flow prose text-center text-dove-gray-50">
+      <h2 class="text-step-2">
+        {{ highlight_two.title1 }}
+        <span class="block text-step-3 text-pink">{{ highlight_two.title2 }} </span>
+      </h2>
+      <p>{{ highlight_two.content }}</p>
+    </article>
+  </div>
+</div>
+
+<div class="foundations | wrapper">
+  <article class="full region flow">
+    <h2 class="text-step-3 text-center">
+      {{ foundations_titles.title1 }}
+      <span class="block uppercase text-royal-blue-500">{{ foundations_titles.title2 }} </span>
+    </h2>
+    <div class="split region">
+      {% svg "brand/brick" %}
+      <ol class="timeline">
+        {% for key in foundations_elements %}
+          <li>
+            <span>{{ loop.index }}</span>
+            <div class="flow flow-space-3xs">
+              <h3 class="text-step-1">{{ key.title }}</h3>
+              <p>{{ key.content }}</p>
+            </div>
+          </li>
+        {% endfor %}
+      </ol>
+    </div>
+  </article>
+</div>
+
+<div class="about | wrapper">
+  <article class="feature | region">
+    <header class="grid" data-layout="thirds">
+      <h2>{{ about.title }}</h2>
+      <div class="flow">{{ about.content | markdownFormat | safe }}</div>
+    </header>
+    <div class="grid region" data-layout="thirds">
+      {% for member in team.admin %}
+        <div class="about__content flow">
+          {% image "." + member.image, "" %}
+
+          <h3>{{ member.name }}</h3>
+          {{ member.description_short | markdownFormat | safe }}
+        </div>
+      {% endfor %}
+    </div>
+  </article>
+</div>
+
+<div class="why | wrapper">
+  <article class="feature | region flow">
+    <header class="flow">
+    <h2>{{ whyus_intro.title }}</h2>
+      {{ whyus_intro.content | markdownFormat | safe }}
+      </header>
+
+      <dl class="flow region column" role="list">
+        {% for key in whyus_elements %}
+          <div class="flow">
+            <dt class="font-bold text-pink">{{ key.title }}</dt>
+            <dd>{{ key.content }}</dd>
+          </div>
+        {% endfor %}
+      </dl>
+  </article>
+</div>
+
+<div class="services | wrapper">
+  <div class="full wrapper section" style="--spot-color: var(--color-blue-accent)">
+    <article class="full intro | section__inner wrapper region flow">
+      {% svg "brand/arrows" %}
+        <h2 class="text-center">{{ our_services.title }}</h2>
+        <div class="mt-m">
+          {% for item in our_services_items %}
+
+            <div class="grid" data-layout="thirds">
+              <h3>{{ item.prefix }} <span>{{ item.title }}</span></h3>
+              <div>
+              {{ item.description | markdownFormat | safe }}
+            </div>
+            </div>
+
+          {% endfor %}
+    </article>
+  </div>
+</div>
+
+<div class="wrapper">
+  <section class="full | region">
+    <div class="wrapper flow prose">
+      <h2>{{ blog.title }}</h2>
+
+      {% if blog.intro %}
+        <p>{{ blog.intro }}</p>
+      {% endif %}
+
+      <div class="feature |  region">
+        <custom-masonry layout="50-50">
+
+                   <!-- loop posts -->
+         {% set itemList = collections.allPosts %}
+         {% asyncEach item in itemList.slice(0, 4) %}
+           {% set definedDate = item.date %}
+           {% include "partials/card-blog.njk" %}
+         {% endeach %}
+
+        </custom-masonry>
+      </div>
+    </div>
+  </section>
+</div>
+
+{%- css "inline" -%}
+  {%- include 'css/home.css' -%}
+  {%- include 'css/column.css' -%}
+  {%- include "css/custom-card.css" -%}
+{%- endcss -%}
