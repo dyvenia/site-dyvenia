@@ -6,17 +6,11 @@ admin:
       Alessio Civitillo has spent over a decade blending financial analysis with software engineering. His work focuses on helping clients discover valuable insights hidden in complex datasets.
 
       By merging data science with strategic thinking, Alessio consistently delivers solutions that drive measurable business success.
-  - name: Karol
-    image: /src/assets/images/team/karol.jpg
-    description_short: A dedicated data strategist focused on actionable insights and innovative data-driven solutions.
-    description_long: |-
-      Karol specializes in developing data-driven strategies tailored to client goals. His keen analytical skills turn raw data into powerful insights.
-
-      With a background in finance and tech, Karol bridges the gap between complex data sets and meaningful business decisions.
-  - name: Mateusz
-    image: /src/assets/images/team/mateusz.jpg
-    description_short: Passionate about turning complex data into clear, actionable intelligence for better decision-making.
-    description_long: |-
-      Mateusz brings expertise in data analytics and process optimization. His focus is on making complex data easy to understand and act upon.
-
-      He thrives on designing solutions that transform insights into competitive advantages, driving client success through precision and clarity.
+  - name: Marcin Socha
+    image: /src/assets/images/team/T021M8Q8893-U021QHDD0JX-cdfc59940855-512.jpg
+    description_short: A dedicated data strategist focused on actionable metrics and business oriented data-driven solutions.
+    description_long: Over a decade of experience in data and analytics, with proven track record in integrating complex ERP systems and successful implementation of hundreds of metrics. The experience covers essential areas such as sales data, sales incentive plans, inventory management, and other operational functions.
+  - name: Kamil
+    image: /src/assets/images/team/T021M8Q8893-U023YLXPD7W-b275a97b1c4c-512.jpg
+    description_short: TBD
+    description_long: TBD
