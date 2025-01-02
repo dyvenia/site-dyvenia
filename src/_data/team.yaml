@@ -1,7 +1,7 @@
 admin:
   - name: Alessio Civitillo
-    image: /src/assets/images/team/alessio_civitillo.jpg
-    description_short: An experienced financial analyst and software engineer, Alessio brings a unique blend of expertise and vision to the world of data, ensuring that our clients unlock the hidden connections in their data and deliver value to their stakeholders.
+    image: /src/assets/images/team/alessio-870w.avif
+    description_short: An experienced finance manager and software engineer, Alessio brings a unique blend of expertise and vision to the world of data, ensuring that our clients unlock the hidden connections in their data and deliver value to their stakeholders.
     description_long: |-
       Alessio Civitillo has spent over a decade blending financial analysis with software engineering. His work focuses on helping clients discover valuable insights hidden in complex datasets.
 
@@ -11,6 +11,6 @@ admin:
     description_short: A dedicated data strategist focused on actionable metrics and business oriented data-driven solutions.
     description_long: Over a decade of experience in data and analytics, with proven track record in integrating complex ERP systems and successful implementation of hundreds of metrics. The experience covers essential areas such as sales data, sales incentive plans, inventory management, and other operational functions.
   - name: Kamil
-    image: /src/assets/images/team/kamil_krzyzanowski.jpg
-    description_short: TBD
-    description_long: TBD
+    image: /src/assets/images/team/T021M8Q8893-U023YLXPD7W-b275a97b1c4c-512.jpg
+    description_short: A dedicated data professional focused on coordinating requirements and delivering metrics at scale.
+    description_long: Kamil is an experienced data analytics professional with a proven track record of working closely with executives to achieve measurable business outcomes through advanced data initiatives. He is highly skilled at building strong partnerships, driving tangible value, and applying technology to address complex challenges effectively.s.
