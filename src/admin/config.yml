@@ -10,7 +10,7 @@ local_backend: true
 # Enter your GitHub repo path and branch (defaults to master)
 backend:
   name: github
-  repo: dyvenia/site-thescalableway
+  repo: dyvenia/dyvenia-site-new
   branch: dev
 
 # The folder used to store uploaded images
