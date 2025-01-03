@@ -7,8 +7,6 @@ tags:
   - analytics
   - BI
 internal_notes: |-
-  ![](/src/assets/images/What are data marts.svg)
-
   **Outline**
 
   - Introduction
@@ -21,3 +19,5 @@ internal_notes: |-
 TBD
 
 ![](/src/assets/images/candelete.svg)
+
+![](/src/assets/images/What are data marts-1.svg)
