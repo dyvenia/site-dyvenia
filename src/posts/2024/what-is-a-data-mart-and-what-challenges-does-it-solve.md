@@ -17,3 +17,5 @@ internal_notes: |-
       - Compliance, Understanding Auditability
 ---
 TBD
+
+![](/src/assets/images/candelete.svg)
