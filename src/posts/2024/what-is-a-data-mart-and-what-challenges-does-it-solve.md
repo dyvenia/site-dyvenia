@@ -18,6 +18,6 @@ internal_notes: |-
 ---
 TBD
 
-![](/src/assets/images/candelete.svg)
+![](/src/assets/images/What_are_data_marts.svg)
 
 ![](/src/assets/images/What are data marts-1.svg)
