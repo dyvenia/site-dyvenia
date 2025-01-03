@@ -19,3 +19,5 @@ internal_notes: |-
 TBD
 
 ![](/src/assets/images/What_are_data_marts.svg)
+
+![](/src/assets/images/candelete.svg)
