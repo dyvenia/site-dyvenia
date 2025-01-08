@@ -1,4 +1,4 @@
-# Dyvenia
+# dyvenia
 
 The website for dyvenia.
 

@@ -1,12 +1,13 @@
 export const url = process.env.URL || 'http://localhost:8080';
-export const siteName = 'The Scalable Way';
-export const siteDescription = 'Empowering Data Platforms with Precision and Scale';
+export const siteName = 'dyvenia';
+export const siteDescription =
+  'Data Done Right. Crafting data solutions that fit your business needs, not just your tech stack.';
 export const siteType = 'Organization'; // schema
 export const locale = 'en_EN';
 export const lang = 'en';
 export const skipContent = 'Skip to content';
 export const author = {
-  name: 'The Scalable Way', // i.e. Lene Saile - page / blog author's name. Must be set.
+  name: 'dyvenia', // i.e. Lene Saile - page / blog author's name. Must be set.
   avatar: '/icon-512x512.png', // path to the author's avatar. In this case just using a favicon.
   email: '', // i.e. hola@lenesaile.com - email of the author
   website: '', // i.e. https.://www.lenesaile.com - the personal site of the author
