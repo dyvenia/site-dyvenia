@@ -1,12 +1,9 @@
 import Image from '@11ty/eleventy-img';
 import path from 'node:path';
 import htmlmin from 'html-minifier-terser';
+import {optimize} from 'svgo';
+import {readFileSync} from 'node:fs';
 
-/**
- * Converts an attribute map object to a string of HTML attributes.
- * @param {Object} attributeMap - The attribute map object.
- * @returns {string} - The string of HTML attributes.
- */
 const stringifyAttributes = attributeMap => {
   return Object.entries(attributeMap)
     .map(([attribute, value]) => {
@@ -25,6 +22,37 @@ export const imageShortcode = async (
   widths = [650, 960, 1200],
   formats = ['webp', 'jpeg']
 ) => {
+  // check if source is SVG
+  if (path.extname(src).toLowerCase() === '.svg') {
+    const svgData = readFileSync(src, 'utf8');
+    const {data: optimizedSvg} = await optimize(svgData, {
+      plugins: [
+        {
+          name: 'removeDimensions',
+          params: {
+            enableViewBox: true
+          }
+        }
+      ]
+    });
+
+    const svgAttributes = stringifyAttributes({
+      'class': `svg-image ${className || ''}`.trim(),
+      'role': alt ? 'img' : 'presentation',
+      'aria-label': alt || undefined,
+      'aria-hidden': alt ? 'false' : 'true'
+    });
+
+    const svgElement = caption
+      ? `<figure class="flow ${className || ''}">
+            ${optimizedSvg.replace('<svg', `<svg ${svgAttributes}`)}
+            <figcaption>${caption}</figcaption>
+          </figure>`
+      : optimizedSvg.replace('<svg', `<svg ${svgAttributes}`);
+
+    return htmlmin.minify(svgElement, {collapseWhitespace: true});
+  }
+
   const metadata = await Image(src, {
     widths: [...widths, null],
     formats: [...formats, null],
