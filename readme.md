@@ -1,6 +1,6 @@
-# The Scalable Way
+# Dyvenia
 
-The website of thescalable way dyvenia division.
+The website for dyvenia.
 
 ### Blog Contribution Guidelines
 
@@ -17,7 +17,7 @@ This site is using a static page generator called `eleventy`, you can read its d
 If you have `npm` installed, you should be able to run a local version running the commands below. Typically the local site will run on `http://127.0.0.1:8080/`.
 
 ```bash
-cd site-thescalableway
+cd site-dyvenia
 
 npm run start
 ```
