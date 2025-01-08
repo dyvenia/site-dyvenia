@@ -22,7 +22,7 @@ export const imageShortcode = async (
   loading = 'lazy',
   className,
   sizes = '100vw',
-  widths = [440, 650, 960, 1200],
+  widths = [650, 960, 1200],
   formats = ['webp', 'jpeg']
 ) => {
   const metadata = await Image(src, {
