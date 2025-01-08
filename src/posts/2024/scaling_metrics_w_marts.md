@@ -9,7 +9,7 @@ internal_notes: test
 ---
 The growing number of tools and solutions in the data ecosystem can be overwhelming for business leaders. Some data solutions are so advanced that they resemble full-scale "digital transformation" initiatives—a term often used by IT professionals.
 
-However, one area of data analytics has remained largely unchanged for the past 30 years: business intelligence. Companies once relied on robust data warehouses with well-defined structures, paired with straightforward reporting tools that efficiently extracted insights.
+However, one area of data analytics has remained largely unchanged for the past 30 years: business intelligence. Companies once relied on robust data warehouses with well-defined structures paired with straightforward reporting tools that efficiently extracted insights.
 
 Over time, data warehouses began to fade from prominence. This decline was driven by:
 
@@ -19,7 +19,7 @@ Over time, data warehouses began to fade from prominence. This decline was drive
 
 But data warehousing played a critical role in organizations by supporting unified and standardized metrics. Today, this function is largely neglected, leaving businesses to grapple with its absence. As a result, leaders are increasingly witnessing the impact on performance, compliance, and control, compounded by challenges in effective monitoring.
 
-![Reference Data Platform Architecture](/src/assets/images/reference_data_platform_architecture-1.png "Typical Modern Data Platform Architecture")
+![Reference Data Platform Architecture](/src/assets/images/productized_data_platform_program_1.png "Typical Modern Data Platform Architecture")
 
 ### Data Warehousing Challenges: A Double-Edged Sword  
 
@@ -59,11 +59,11 @@ The challenge today is that these principles are not universally adopted across 
 
 Technically, a data mart is simply a **flat table** within a SQL database. This table is usually accessed through reporting tools like Power BI, Tableau, or Cognos. Analysts can connect to the table and create typical BI reports, and as the data is updated, the connected reporting tools automatically reflect these changes.
 
-![Reference Data Platform with Modelling Highlight](/src/assets/images/reference_data_platform_architecture_modelling_highlight.png "Models Inside a Data Platform")
+![Reference Data Platform with Modelling Highlight](/src/assets/images/productized_data_platform_program_2.png "Models Inside a Data Platform")
 
 In a modern data platform, the data mart is developed using SQL code within the modeling layer. This code is typically hosted in a code repository, such as GitHub or Bitbucket. By storing the code in a repository, the data mart becomes transparent, easy to contribute to, and aligns with the three principles outlined earlier.
 
-![](/src/assets/images/data_marts_insights_architecture-5.png)
+![data marts architecture](/src/assets/images/the_unified_insights_program.png "From Data Sources, Marts and Insights & Metrics")
 
 ## Data Marts: How They Resolve Data Warehouse Challenges
 
