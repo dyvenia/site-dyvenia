@@ -1,5 +1,5 @@
 ---
-title: What is a data mart? And what challenges does it solve?
+title: What As a Data Mart? And What Challenges Does It Solve?
 date: 2025-01-02T21:39:00
 author: Alessio Civitillo
 description: Data marts simplify access to meaningful business metrics, helping leaders drive performance improvements with clarity and precision. This article breaks down what a data mart is, how it functions, and what makes a metric truly effective. Explore how data marts consolidate information from multiple sources to provide actionable insights, avoid common data pitfalls, and enable smarter decision-making.
