@@ -32,7 +32,7 @@ Key characteristics of a data mart include:
 
 By organizing data into easily digestible segments, data marts bridge the gap between raw data and actionable metrics, enabling business leaders to make informed decisions faster.
 
-![what is a data mart](/src/assets/images/what_is_a_data_mart.svg)
+![what is a data mart](/src/assets/images/what_is_a_data mart.svg)
 
 ### This makes it challenging to benchmark typical business-as-usual travel costs and determine how much can be cut without negatively impacting operations.
 
@@ -64,7 +64,7 @@ Manufacturing companies operate in complex environments where good metrics are c
 4. **Integration of Data Sources**: Data marts consolidate data from multiple sources, both legacy and modern, into single, auditable metrics.
 5. **Monitored Ingestions and Transformations**: Data pipelines powering data marts are fully monitored to ensure that the metrics business leaders rely on are always available. When issues arise, effective communication is promptly initiated, and resolutions are implemented quickly to minimize disruptions.
 
-![unified metrics](/src/assets/images/unified_metrics.svg)
+![unified metrics](/src/assets/images/unified_metrics-1.svg)
 
 These capabilities make data marts indispensable for driving performance improvements and informed decision-making in manufacturing operations.
 
