@@ -8,7 +8,7 @@
   --button-icon-size: 1.8ch;
   overflow: hidden;
   grid-row: 1;
-  background: var(--color-bg-accent);
+  background: var(--color-bg-accent-2);
   display: grid;
   block-size: clamp(35rem, 70vh, 45rem);
   grid-column: full;
@@ -23,32 +23,20 @@
   grid-column: full;
   inline-size: 100%;
   block-size: auto;
-  color: var(--color-bg-accent-2);
-  mix-blend-mode: plus-lighter;
+  color: var(--color-blue);
+  mix-blend-mode: color-dodge;
 }
 
 @media screen(max) {
   .home .hero > svg {
-    color: var(--color-text);
     mix-blend-mode: normal;
   }
 }
 
 .home .hero > svg:first-of-type {
   grid-column: full-start / content-end;
-  transform: rotate(30deg);
   inline-size: clamp(30ch, 30vw, 35rem);
-  margin-inline-start: -15ch;
-}
-
-.home .hero > svg:nth-of-type(2) {
-  grid-column: content-start / full-end;
-  justify-self: end;
-  align-self: center;
-  inline-size: clamp(50ch, 40vw, 60rem);
-  transform: rotate(210deg);
-  margin-inline-end: -20%;
-  margin-block-end: -10ch;
+  margin-inline-start: -10ch;
 }
 
 .home .hero > header {
