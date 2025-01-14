@@ -64,7 +64,6 @@
     "postcss-import-ext-glob": "^2.0.1",
     "postcss-js": "^4.0.0",
     "prettier-plugin-jinja-template": "^2.0.0",
-    "rgb-hex": "^4.1.0",
     "rimraf": "^6.0.1",
     "sanitize-html": "^2.7.2",
     "sharp": "^0.33.4",
