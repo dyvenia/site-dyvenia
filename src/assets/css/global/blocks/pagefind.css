@@ -23,6 +23,7 @@
 
 .search-toggle svg {
   block-size: auto;
+  stroke-width: 2.5px;
 }
 
 pagefind-search {
