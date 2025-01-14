@@ -1,6 +1,6 @@
 .button {
   --button-bg: var(--color-text);
-  --button-color: color-mix(in oklab, var(--button-bg) 10%, var(--color-bg));
+  --button-color: var(--color-gray-100);
   --button-hover-bg: color-mix(in oklab, var(--button-bg) 90%, var(--color-bg));
   --button-hover-color: color-mix(in oklab, var(--button-bg) 5%, var(--color-bg));
   --button-border-width: var(--border-thickness);
@@ -9,7 +9,7 @@
   --button-radius: var(--border-radius-small);
   --button-font-weight: var(--font-bold);
   --button-gap: var(--space-2xs);
-  --button-padding: var(--space-3xs) var(--space-xs);
+  --button-padding: var(--space-3xs) var(--space-xs) var(--space-2xs) var(--space-xs);
   --button-font-size: var(--size-step-0);
   --button-text-transform: none;
 
@@ -36,6 +36,7 @@
 .button svg {
   block-size: var(--button-icon-size, 1.2cap);
   flex: none;
+  translate: 0 0.1cap;
 }
 
 /* Hover/focus/active */
@@ -57,17 +58,17 @@
 
 /* Variants */
 .button[data-button-variant='blue'] {
-  --button-bg: var(--color-blue);
+  --button-bg: var(--color-blue-600);
   --button-color: var(--color-blue-100);
 }
 
 .button[data-button-variant='purple'] {
-  --button-bg: var(--color-purple);
-  --button-color: var(--color-dark);
+  --button-bg: var(--color-purple-400);
+  --button-color: var(--color-purple-900);
 }
 
 .button[data-button-variant='navy'] {
-  --button-bg: var(--color-nav);
+  --button-bg: var(--color-navy);
   --button-color: var(--color-light);
 }
 
@@ -88,7 +89,7 @@
   --button-border-width: 2px;
   --button-radius: var(--border-radius-small);
   --button-font-size: var(--size-step-min-2);
-  --button-padding: var(--space-3xs) var(--space-xs);
+  --button-padding: var(--space-4xs) var(--space-2xs) var(--space-3xs) var(--space-2xs);
   --button-text-transform: uppercase;
 }
 /* Radius variants */
