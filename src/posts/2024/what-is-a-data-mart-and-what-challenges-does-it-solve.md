@@ -32,7 +32,7 @@ Key characteristics of a data mart include:
 
 By organizing data into easily digestible segments, data marts bridge the gap between raw data and actionable metrics, enabling business leaders to make informed decisions faster.
 
-![what is a data mart](/src/assets/images/what_is_a_data_mart-1.png)
+![what is a data mart](/src/assets/images/what_is_a_data_mart-2.png)
 
 ### This makes it challenging to benchmark typical business-as-usual travel costs and determine how much can be cut without negatively impacting operations.
 
