@@ -2,10 +2,9 @@
   <a href="#main" class="skip-link">{{ meta.skipContent }}</a>
 
   <div class="popout | relative repel ontop gutter-3xs">
-    <a href="/" class="logo | cluster gutter-2xs" {% if page.url == "/" %}aria-current="page"{% endif %}>
+    <a href="/" class="logo | cluster gutter-3xs" {% if page.url == "/" %}aria-current="page"{% endif %}>
       {% svg "brand/logo" %}
-
-      {{ meta.siteName }}
+      {% svg "brand/logo-type", meta.siteName %}
     </a>
 
     <!-- Search Wrapper for Both Views -->

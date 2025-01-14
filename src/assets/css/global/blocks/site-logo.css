@@ -6,6 +6,11 @@
   font-weight: var(--font-medium);
 }
 .logo svg {
-  color: var(--color-royal-blue-500);
-  block-size: auto;
+  color: var(--color-blue);
+  block-size: calc(var(--size-step-0) * 1.4);
+}
+
+.logo svg:last-of-type {
+  color: var(--color-blue);
+  block-size: var(--size-step-0);
 }
