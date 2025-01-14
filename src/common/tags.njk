@@ -5,12 +5,13 @@ eleventyComputed:
   title: '{{ meta.blog.tagPlural }}'
 ---
 
-<div class="taglist | mt-s-m cluster">
+<div class="taglist | mt-s-m cluster gutter-xs">
   {% for tag in collections.tagList %}
     <a href="/tags/{{ tag }}" class="button"> {{ tag }} </a>
   {% endfor %}
 </div>
 
+<div class="flow-space-l">
 <custom-masonry layout="50-50">
   {% set itemlist = collections.posts %}
   {% for item in itemlist %}
@@ -18,3 +19,4 @@ eleventyComputed:
 		{% include "partials/card-tag.njk" %}
   {% endfor %}
 </custom-masonry>
+</div>

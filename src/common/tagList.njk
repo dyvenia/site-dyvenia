@@ -9,6 +9,7 @@ eleventyComputed:
   title: '{{ meta.blog.tagSingle }}: {{ tag }}'
 ---
 
+<div class="flow-space-l">
 <custom-masonry layout="50-50">
   {% set itemList = collections[tag] | reverse %}
   {% for item in itemList %}
@@ -16,10 +17,11 @@ eleventyComputed:
 		{% include "partials/card-tag.njk" %}
   {% endfor %}
 </custom-masonry>
+</div>
 
 <h2>{{ meta.blog.tagMore }}</h2>
 
-<ul class="taglist | my-s-m cluster" role="list">
+<ul class="taglist | my-s-m cluster gutter-xs" role="list">
   {% for tag in collections.tagList %}
     <li>
       <a
