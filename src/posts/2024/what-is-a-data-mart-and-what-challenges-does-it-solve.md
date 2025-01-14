@@ -2,7 +2,7 @@
 title: What is a data mart? And what challenges does it solve?
 date: 2025-01-02T21:39:00
 author: Alessio Civitillo
-description: TBD
+description: We explain what data marts are and how they help business leaders manage performance with faster, more reliable metrics. Starting with a clear definition, we explore the key features of good metrics and show how data marts enable visibility, control, and predictability in complex environments. Learn to avoid common pitfalls and unlock better decision-making with data marts.
 tags:
   - analytics
   - BI
