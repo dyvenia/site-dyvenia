@@ -5,12 +5,12 @@
     {
       "name": "Display",
       "description": "Display font stack for headings and large text. ",
-      "value": ["Clear Sans", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif"]
+      "value": ["IBM Plex Sans", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif"]
     },
     {
       "name": "Base",
-      "description": "Base font stack for body text. Clear Sans is a modern, versatile sans-serif typeface designed for optimal readability across user interfaces, print, and digital screens. Its clean, open letterforms and balanced proportions ensure clarity even at smaller sizes, making it ideal for UI design and body text. Originally created by Intel for enhanced legibility.",
-      "value": ["Clear Sans", "system-ui", "sans-serif"]
+      "description": "Base font stack for body text.",
+      "value": ["IBM Plex Sans", "system-ui", "sans-serif"]
     },
     {
       "name": "Mono",

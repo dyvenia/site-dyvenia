@@ -1,9 +1,4 @@
-## Licenses
-
-Eleventy Excellent is licensed under the ISC License.
-This starter includes components that are licensed under the MIT and Apache License.
-
-### ISC License
+## ISC License
 
 The **Eleventy Excellent** starter is licensed under the ISC License.
 Copyright (c) 2024 Lene Saile
@@ -12,7 +7,7 @@ Permission to use, copy, modify, and/or distribute this software for any purpose
 
 THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-### MIT License
+## MIT License
 
 The **Cube Boilerplate** is licensed under the MIT License.
 Copyright (c) 2024 Set Studio
@@ -35,14 +30,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-### APACHE LICENSE 2.0
+## SIL Open Font License
 
-The Font **Clear Sans** is licensed under the Apache License, Version 2.0.
-Copyright (c) 2021 Intel
-
-This license allows:
-
-- Commercial use
-- Modification
-- Redistribution with attribution
-- Full license: https://www.apache.org/licenses/LICENSE-2.0
+The Font **IBM Plex Sans** is licensed under the SIL Open Font License, Version 1.1.
+Copyright (c) IBM
+http://scripts.sil.org/OFL
