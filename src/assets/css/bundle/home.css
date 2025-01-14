@@ -64,7 +64,7 @@
 }
 
 .home .highlight-one span {
-  color: var(--color-blue);
+  color: var(--color-purple);
 }
 
 .home .highlight-one svg {
@@ -73,14 +73,13 @@
   inset-inline-end: 0;
   inline-size: clamp(30ch, 40vw, 35rem);
   block-size: auto;
-  color: var(--color-blue-accent-2);
+  color: var(--color-purple-accent-2);
   mix-blend-mode: overlay;
   translate: var(--space-2xl) calc(var(--space-3xl) * -1);
 }
 
 @media screen(md) {
   .home .highlight-one svg {
-    color: var(--color-blue-accent-2);
     mix-blend-mode: normal;
   }
 }
@@ -240,7 +239,7 @@
 }
 
 .home .why header strong {
-  color: var(--color-blue);
+  color: var(--color-purple);
 }
 
 .home .why .column {
@@ -267,7 +266,7 @@
 
 .home .services h3 span {
   display: block;
-  background: var(--color-blue-accent-4);
+  background: var(--color-blue);
   color: var(--color-bg);
   inline-size: fit-content;
   border-radius: var(--border-radius-small);

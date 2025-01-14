@@ -7,13 +7,13 @@
     if
     item.data.tags.length > 1
   %}
-    <div slot="tag" webc:nokeep>
+    <span slot="tag" class="cluster gutter-2xs">
       {% for tag in item.data.tags %}
         {% if tag != "posts" %}
           <span class="button" data-small-button>{{ tag }}</span>
         {% endif %}
       {% endfor %}
-    </div>
+    </span>
   {% endif %}
   <div slot="content" webc:nokeep>{{ item.data.description | markdownFormat | safe }}</div>
 </custom-card>
