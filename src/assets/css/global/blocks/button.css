@@ -1,6 +1,6 @@
 .button {
   --button-bg: var(--color-text);
-  --button-color: var(--color-gray-100);
+  --button-color: color-mix(in oklab, var(--button-bg) 5%, var(--color-bg));
   --button-hover-bg: color-mix(in oklab, var(--button-bg) 90%, var(--color-bg));
   --button-hover-color: color-mix(in oklab, var(--button-bg) 5%, var(--color-bg));
   --button-border-width: var(--border-thickness);
