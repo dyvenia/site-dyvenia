@@ -30,11 +30,11 @@
   "standalone": [
     {
       "name": "Navy",
-      "value": "#DFBA56"
+      "value": "#1F1254"
     },
     {
       "name": "Navy Dark",
-      "value": "#C23797"
+      "value": "#090632"
     }
   ]
 }
