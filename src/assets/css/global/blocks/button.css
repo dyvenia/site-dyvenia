@@ -58,17 +58,17 @@
 /* Variants */
 .button[data-button-variant='blue'] {
   --button-bg: var(--color-blue);
-  --button-color: var(--color-royal-blue-50);
+  --button-color: var(--color-blue-100);
 }
 
-.button[data-button-variant='pink'] {
-  --button-bg: var(--color-pink);
-  --button-color: var(--color-medium-red-violet-50);
-}
-
-.button[data-button-variant='gold'] {
-  --button-bg: var(--color-gold);
+.button[data-button-variant='purple'] {
+  --button-bg: var(--color-purple);
   --button-color: var(--color-dark);
+}
+
+.button[data-button-variant='navy'] {
+  --button-bg: var(--color-nav);
+  --button-color: var(--color-light);
 }
 
 .button[data-ghost-button] {

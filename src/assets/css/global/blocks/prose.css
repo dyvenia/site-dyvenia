@@ -33,7 +33,7 @@
 }
 
 .prose mark {
-  background-color: var(--color-gold);
+  background-color: var(--color-blue-400);
   color: var(--color-base-dark);
 }
 

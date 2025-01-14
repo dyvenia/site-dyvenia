@@ -76,7 +76,7 @@
 }
 
 .home .highlight-one span {
-  color: var(--color-pink);
+  color: var(--color-blue);
 }
 
 .home .highlight-one svg {
@@ -201,7 +201,7 @@
   block-size: calc(var(--space-s) * 2);
   inline-size: calc(var(--space-s) * 2);
   background: var(--color-blue);
-  color: var(--color-royal-blue-50);
+  color: var(--color-blue-100);
   font-size: var(--size-step-2);
   font-weight: var(--font-medium);
   display: flex;
@@ -252,7 +252,7 @@
 }
 
 .home .why header strong {
-  color: var(--color-pink);
+  color: var(--color-blue);
 }
 
 .home .why .column {
