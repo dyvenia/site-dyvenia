@@ -64,7 +64,7 @@ Manufacturing companies operate in complex environments where good metrics are c
 4. **Integration of Data Sources**: Data marts consolidate data from multiple sources, both legacy and modern, into single, auditable metrics.
 5. **Monitored Ingestions and Transformations**: Data pipelines powering data marts are fully monitored to ensure that the metrics business leaders rely on are always available. When issues arise, effective communication is promptly initiated, and resolutions are implemented quickly to minimize disruptions.
 
-![unified metrics](/src/assets/images/unified_metrics-2.svg)
+![unified metrics](/src/assets/images/unified_metrics.png)
 
 These capabilities make data marts indispensable for driving performance improvements and informed decision-making in manufacturing operations.
 
