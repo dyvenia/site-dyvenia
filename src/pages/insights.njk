@@ -3,6 +3,7 @@ layout: base
 title: Blog
 description: 'All blog posts can be found here'
 bodyClass: insights
+image: ./src/assets/images/backgrounds/sfondi-dyvenia10.jpg
 footerSpace: mt-2xl
 pagination:
   data: collections.allPosts
@@ -12,18 +13,26 @@ intro: >
   Welcome to The Scalable Way Blog — your source for insights, strategies, and best practices in data platform engineering, analytics, and data science.
 ---
 
-<article class="wrapper">
-  <header class="full | section">
-    <div class="section__inner flow region region-space-xl">
-      <h1 class="text-center text-base-light">{{ title }}</h1>
+
+
+<div class="wrapper">
+  <header class="full | section page-header ">
+    {% svg "divider/soft-top", null, "seperator" %}
+
+    {% if image %}
+    {% image image, alt or title, null, "eager" %}
+    {% endif %}
+
+    <div class="section__inner region region-space-xl-2xl">
+      <div class="wrapper flow text-center">
+      <h1 class="text-base-light">{{ title }}</h1>
+      {{ intro | markdownFormat | safe }}
+     </div>
     </div>
   </header>
 
-  <div class="region flow prose region-space-2xl">
-    {{ intro | markdownFormat | safe }}
-  </div>
 
-<section class="feature" aria-describedby="blog-section">
+<section class="feature mt-2xl" aria-describedby="blog-section">
   <h2 id="blog-section" class="visually-hidden">Blog posts</h2>
 
   <custom-masonry layout="50-50">
@@ -44,4 +53,9 @@ intro: >
     <!-- include pagination -->
     {% include 'partials/pagination.njk' %}
   {% endif %}
-</article>
+</div>
+
+
+{%- css "inline" -%}
+  {%- include "css/page-header.css" -%}
+{%- endcss -%}

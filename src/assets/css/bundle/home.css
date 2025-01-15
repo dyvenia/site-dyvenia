@@ -4,52 +4,29 @@
   color: var(--color-text);
 }
 
-/* ------------------- hero */
+/* ------------------- hero / page-header */
 
-.home .hero {
-  --button-icon-size: 1.8ch;
-  overflow: hidden;
-  grid-row: 1;
-  background: var(--color-bg-accent-2);
-  display: grid;
-  block-size: clamp(35rem, 70vh, 45rem);
-  grid-column: full;
+.page-header .wrapper > * {
+  justify-self: start;
 }
 
-.home .hero > :is(svg, header) {
-  grid-row: 1;
+.home .page-header h1 {
+  font-weight: var(--font-light);
+  text-wrap: pretty;
 }
 
-/* first blue pixel */
-.home .hero > svg {
-  grid-column: full;
-  inline-size: 100%;
-  block-size: auto;
-  color: var(--color-blue);
-  mix-blend-mode: color-dodge;
+.home .page-header .wrapper > p {
+  max-inline-size: 60ch;
 }
 
-@media screen(max) {
-  .home .hero > svg {
-    mix-blend-mode: normal;
+.home .page-header picture {
+  max-block-size: 45rem;
+}
+
+@media screen(md) {
+  .home .page-header picture {
+    max-block-size: 50rem;
   }
-}
-
-.home .hero > svg:first-of-type {
-  grid-column: full-start / content-end;
-  inline-size: clamp(30ch, 30vw, 35rem);
-  margin-inline-start: -10ch;
-}
-
-.home .hero > header {
-  grid-column: content-start / popout-end;
-  background: transparent;
-  z-index: 1;
-  align-self: center;
-}
-
-.home .hero > header p {
-  max-inline-size: 45ch;
 }
 
 /* ------------------- sections */

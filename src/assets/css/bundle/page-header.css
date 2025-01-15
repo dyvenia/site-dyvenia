@@ -19,7 +19,7 @@
   --flow-space: 0;
   background: var(--color-blue-accent-5);
   mix-blend-mode: darken;
-  max-block-size: 45rem;
+  max-block-size: 25rem;
   overflow: hidden;
 }
 
@@ -41,21 +41,13 @@
 
 .page-header .wrapper > * {
   grid-column: content-start / feature-end;
-  justify-self: start;
+  justify-self: center;
   z-index: 1;
-}
-
-.page-header .wrapper > :is(p, h1) {
-  color: var(--color-light);
-}
-
-.page-header .wrapper > p {
-  max-inline-size: 60ch;
 }
 
 @media screen(md) {
   .page-header picture {
-    max-block-size: 50rem;
+    max-block-size: 30rem;
   }
 
   .page-header img {
@@ -68,7 +60,6 @@
   z-index: 1;
 }
 
-.page-header h1 {
-  font-weight: var(--font-light);
-  text-wrap: pretty;
+.page-header .wrapper > :is(p, h1) {
+  color: var(--color-light);
 }

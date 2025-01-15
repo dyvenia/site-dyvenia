@@ -88,13 +88,13 @@ permalink: /index.html
 title: dyvenia
 ---
 <header class="section page-header">
-  {% svg "divider/waves", null, "seperator" %}
+  {% svg "divider/soft-top", null, "seperator" %}
 
   {% if hero.image %}
     {% image hero.image, "", null, "eager" %}
   {% endif %}
 
-  <div class="section__inner flow region region-space-xl-2xl ">
+  <div class="section__inner region region-space-xl-2xl ">
     <div class="wrapper flow">
     <h1>{{ hero.title }}</h1>
       {{ hero.subtitle | markdownFormat | safe }}
@@ -245,8 +245,7 @@ title: dyvenia
 </div>
 
 {%- css "inline" -%}
+  {%- include "css/page-header.css" -%}
   {%- include 'css/home.css' -%}
   {%- include 'css/column.css' -%}
-  {%- include "css/custom-card.css" -%}
-  {%- include "css/page-header.css" -%}
 {%- endcss -%}
