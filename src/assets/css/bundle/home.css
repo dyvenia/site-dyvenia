@@ -1,5 +1,6 @@
 .home h1 {
   font-weight: var(--font-light);
+  text-wrap: pretty;
 }
 
 /* ------------------- hero */
@@ -40,7 +41,7 @@
 }
 
 .home .hero > header {
-  grid-column: content;
+  grid-column: content-start / popout-end;
   background: transparent;
   z-index: 1;
   align-self: center;
