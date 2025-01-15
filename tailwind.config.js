@@ -127,7 +127,8 @@ export default {
       const customUtilities = [
         {key: 'spacing', prefix: 'flow-space', property: '--flow-space'},
         {key: 'spacing', prefix: 'region-space', property: '--region-space'},
-        {key: 'spacing', prefix: 'gutter', property: '--gutter'}
+        {key: 'spacing', prefix: 'gutter', property: '--gutter'},
+        {key: 'colors', prefix: 'spot-color', property: '--spot-color'}
       ];
 
       customUtilities.forEach(({key, prefix, property}) => {
