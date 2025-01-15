@@ -110,7 +110,7 @@ a {
 }
 
 mark {
-  background: var(--color-gold);
+  background: var(--color-purple-300);
 }
 
 a:hover {
