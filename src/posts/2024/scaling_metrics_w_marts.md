@@ -63,7 +63,7 @@ Technically, a data mart is simply a **flat table** within a SQL database. This 
 
 In a modern data platform, the data mart is developed using SQL code within the modeling layer. This code is typically hosted in a code repository, such as GitHub or Bitbucket. By storing the code in a repository, the data mart becomes transparent, easy to contribute to, and aligns with the three principles outlined earlier.
 
-![data marts architecture](/src/assets/images/the_unified_insights_program.png "From Data Sources, Marts and Insights & Metrics")
+![data marts architecture](/src/assets/images/unified_metrics-1.png "From Data Sources, Marts and Insights & Metrics")
 
 ## Data Marts: How They Resolve Data Warehouse Challenges
 
