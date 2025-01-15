@@ -1,10 +1,10 @@
 ---
-headerStyle: "background-color: var(--color-bg-accent-2);"
 hero:
   title: Driving Better Decisions and Business Performance with Unified Metrics
   subtitle: '**dyvenia** is a professional service company dedicated to turning fragmented data into trusted and aligned metrics. We help business leaders drive performance, foster alignment, ensure compliance, and optimize costs by identifying gaps and integrating data sources.'
   button_text: Let's connect
   button_target: https://meetings-eu1.hubspot.com/alessio-civitillo/book-a-call
+  image: ./src/assets/images/backgrounds/sfondi-dyvenia08.jpg
 intro:
   title: Are your metrics designed to drive business performance?
   content: |-
@@ -70,6 +70,7 @@ whyus_elements:
     content: New analysts struggle to understand complex, fragmented data systems, delaying their productivity.
 our_services:
   title: Our Solutions
+  image: ./src/assets/images/backgrounds/sfondi-dyvenia26.jpg
 our_services_items:
   - title: The Plan & MVP
     prefix: Developing
@@ -86,17 +87,21 @@ layout: base
 permalink: /index.html
 title: dyvenia
 ---
-<div class="wrapper">
-  <div class="hero | wrapper">
-    <header class="flow">
-      <h1>{{ hero.title }}</h1>
-      {{ hero.subtitle | markdownFormat | safe }}
-      <a href="{{ hero.button_target }}" class="button"> {{ hero.button_text }} {% svg "misc/arrow" %}</a>
-    </header>
-    {% svg "brand/medusa-organic" %}
+<header class="section page-header">
+  {% svg "divider/waves", null, "seperator" %}
 
+  {% if hero.image %}
+    {% image hero.image, "", null, "eager" %}
+  {% endif %}
+
+  <div class="section__inner flow region region-space-xl-2xl ">
+    <div class="wrapper flow">
+    <h1>{{ hero.title }}</h1>
+      {{ hero.subtitle | markdownFormat | safe }}
+      <a href="{{ hero.button_target }}" class="button flow-space-xl"> {{ hero.button_text }} {% svg "misc/arrow" %}</a>
+    </div>
   </div>
-</div>
+</header>
 
 <div class="intro | wrapper">
   <article class="region flow prose">
@@ -106,7 +111,7 @@ title: dyvenia
 </div>
 
 <div class="highlight-one | wrapper">
-  <div class="full wrapper section" style="--spot-color: var(--color-purple-accent)">
+  <div class="full wrapper section" style="--spot-color: var(--color-blue-accent)">
     <article class="full  intro | section__inner wrapper  region">
       <div class="feature flow prose">
         <h2 class="text-step-3">{{ highlight_one.title }} <span>*</span></h2>
@@ -118,13 +123,13 @@ title: dyvenia
 </div>
 
 <div class="highlight-two | wrapper">
-  <div class="full wrapper section" style="--spot-color: var(--color-dove-gray-700)">
-    <article class="full  intro | section__inner wrapper region flow prose text-center text-dove-gray-50">
-      <h2 class="text-step-2">
+  <div class="full wrapper section" style="--spot-color: var(--color-blue-accent-6)">
+    <article class="full  intro | section__inner wrapper region flow prose text-center text-blue-100">
+      <h2 class="text-step-1">
         {{ highlight_two.title1 }}
-        <span class="block text-step-3 text-blue">{{ highlight_two.title2 }} </span>
+        <span class="block text-step-3 text-blue-400 mt-2xs">{{ highlight_two.title2 }} </span>
       </h2>
-      <p>{{ highlight_two.content }}</p>
+      <p class="flow-space-l">{{ highlight_two.content }}</p>
     </article>
   </div>
 </div>
@@ -136,7 +141,7 @@ title: dyvenia
       <span class="block uppercase text-blue-500">{{ foundations_titles.title2 }} </span>
     </h2>
     <div class="split region">
-      {% svg "brand/brick" %}
+      {% svg "brand/medusa-organic" %}
       <ol class="timeline">
         {% for key in foundations_elements %}
           <li>
@@ -190,11 +195,15 @@ title: dyvenia
 </div>
 
 <div class="services | wrapper">
-  <div class="full wrapper section" style="--spot-color: var(--color-blue-accent)">
-    <article class="full intro | section__inner wrapper region flow">
-      {% svg "brand/arrows" %}
+
+  {% if our_services.image %}
+  {% image our_services.image, "" %}
+  {% endif %}
+
+
+    <article class="wrapper region flow">
         <h2 class="text-center">{{ our_services.title }}</h2>
-        <div class="mt-m">
+
           {% for item in our_services_items %}
 
             <div class="grid" data-layout="thirds">
@@ -206,11 +215,12 @@ title: dyvenia
 
           {% endfor %}
     </article>
-  </div>
+
 </div>
 
 <div class="wrapper">
   <section class="full | region">
+
     <div class="wrapper flow prose">
       <h2>{{ blog.title }}</h2>
 
@@ -238,4 +248,5 @@ title: dyvenia
   {%- include 'css/home.css' -%}
   {%- include 'css/column.css' -%}
   {%- include "css/custom-card.css" -%}
+  {%- include "css/page-header.css" -%}
 {%- endcss -%}
