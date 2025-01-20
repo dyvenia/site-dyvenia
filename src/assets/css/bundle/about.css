@@ -8,4 +8,5 @@
 
 .about .about__content div {
   padding-block-start: var(--space-2xs);
+  grid-column: span 2;
 }

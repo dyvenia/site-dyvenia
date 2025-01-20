@@ -11,6 +11,12 @@ intro: |
   Our mission is to empower businesses by building resilient data platforms, streamlining analytics pipelines, and optimizing data science workflows — all with an "as a code" approach that ensures reliability, agility, and long-term value.
 
   With a team of experts passionate about data infrastructure and cloud-native technologies, we transform complex data challenges into scalable, actionable solutions tailored to our clients' unique needs.
+team:
+  title: Team
+  content: |
+    Meet the team behind Dyvenia – a diverse group of dedicated professionals driven to deliver excellence and innovation in everything we do.
+  image: ./src/assets/images/team/team.jpg
+  image_alt: 'Group photo of the Dyvenia team, featuring 25 individuals standing together in a modern office setting. The team members are dressed in business casual attire, with a mix of smiles and relaxed expressions. The background features light-colored walls, abstract artwork, and a polished interior design.'
 ---
 
 <div class="wrapper">
@@ -20,7 +26,7 @@ intro: |
   </header>
   <article class="feature flow flow-space-l">
     {% for member in team.admin %}
-      <div class="about__content flow grid gutter-m" data-layout="50-50">
+      <div class="about__content flow grid gutter-m" data-layout="thirds">
         {% image "." + member.image, "" %}
         <div class="flow prose">
           <h3>{{ member.name }}</h3>
@@ -28,6 +34,12 @@ intro: |
         </div>
       </div>
     {% endfor %}
+  </article>
+  <article class="mt-xl-2xl flow">
+    <h2>Team</h2>
+
+    {{ team.content | markdownFormat | safe }}
+    {% image team.image, team.image_alt %}
   </article>
 </div>
 
