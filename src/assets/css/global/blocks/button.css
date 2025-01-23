@@ -9,7 +9,7 @@
   --button-radius: var(--border-radius-small);
   --button-font-weight: var(--font-bold);
   --button-gap: var(--space-2xs);
-  --button-padding: var(--space-3xs) var(--space-xs) var(--space-2xs) var(--space-xs);
+  --button-padding: var(--space-3xs) var(--space-xs);
   --button-font-size: var(--size-step-0);
   --button-text-transform: none;
 
@@ -89,7 +89,7 @@
   --button-border-width: 2px;
   --button-radius: var(--border-radius-small);
   --button-font-size: var(--size-step-min-2);
-  --button-padding: var(--space-4xs) var(--space-2xs) var(--space-3xs) var(--space-2xs);
+  --button-padding: var(--space-4xs) var(--space-2xs);
   --button-text-transform: uppercase;
 }
 /* Radius variants */
