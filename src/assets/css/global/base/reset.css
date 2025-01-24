@@ -51,6 +51,7 @@ dd {
 }
 
 /* List styles */
+ul[role='tablist'],
 ul[role='list'],
 ol[role='list'] {
   list-style: none;

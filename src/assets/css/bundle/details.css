@@ -25,11 +25,11 @@ is-land:not(:defined) .details .control {
 .details summary {
   display: flex;
   align-items: baseline;
-  line-height: 1.2;
+  line-height: var(--leading-fine);
   gap: 0 1ch;
   cursor: pointer;
   list-style: none;
-  font-weight: var(--font-bold);
+  font-weight: var(--font-medium);
   font-size: var(--size-step-1);
 }
 
@@ -83,4 +83,8 @@ is-land:not(:defined) .details .control {
 
 .details details > * + * {
   margin-inline-start: 2.4ch;
+}
+
+.details details[open] + * {
+  --flow-space: var(--space-xl);
 }
