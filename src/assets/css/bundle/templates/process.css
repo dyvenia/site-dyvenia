@@ -172,6 +172,10 @@
     transform var(--transition-duration) var(--transition-timing);
 }
 
+.process .steps button[data-tab-target]:focus-visible {
+  clip-path: none;
+}
+
 .process .arrows li:first-of-type li:first-of-type :where(button[data-tab-target], .step-number) {
   --button-bg: var(--color-scale-1);
   --step-number-color: var(--color-scale-1);
