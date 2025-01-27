@@ -140,6 +140,10 @@
   max-inline-size: 12ch;
 }
 
+.steps article h4 + * {
+  --flow-space: var(--space-xs);
+}
+
 /* why */
 
 .process .why {
