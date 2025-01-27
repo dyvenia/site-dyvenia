@@ -99,8 +99,11 @@
 
 .button[data-label] {
   --button-radius: var(--border-radius-small);
-  --button-font-size: var(--size-step-0);
+  --button-font-size: var(--size-step-min-1);
   --button-padding: 0 var(--space-3xs);
   --button-text-transform: uppercase;
+  --button-bg: var(--color-bg-accent-2);
+  --button-border-color: var(--color-bg-accent-2);
+  --button-color: var(--color-text-accent);
   letter-spacing: var(--tracking-wide);
 }

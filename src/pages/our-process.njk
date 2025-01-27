@@ -196,7 +196,7 @@ blog:
 
     <div class="tabs mt-2xl">
       <nav aria-label="Process Stages">
-        <ul class="repel" role="list">
+        <ul class="arrows | repel" role="list">
           {% for stageKey, stage in steps_elements %}
             <li>
               <h3><span>{{ stage.label }}</span> {{ stage.name }}</h3>
@@ -231,7 +231,7 @@ blog:
             data-tab-panel="panel-{{ stepKey }}"
             aria-labelledby="tab-{{ stepKey }}"
           >
-            <div class="sidebar mt-2xl">
+            <div class="sidebar mt-xl-2xl">
               <header class="flow">
                 <p class="button" data-label>{{ stage.label }} {{ stage.name }}</p>
                 <h3 class="flow-space-2xs">{{ step.title }}</h3>
