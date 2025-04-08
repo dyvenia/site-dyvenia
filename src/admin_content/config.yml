@@ -130,6 +130,35 @@ collections:
             }
           - {label: 'Address', name: 'address', widget: 'text', hint: 'Your company legal address'}
 
+  - name: 'about'
+    label: 'About Page'
+    icon: 'emoji_people'
+    create: false
+    extension: 'njk'
+    format: 'frontmatter'
+    media_folder: '/src/assets/images/team/'
+    files:
+      - file: 'src/pages/about.njk'
+        label: 'About'
+        name: 'about'
+        fields:
+          - {name: 'title', label: 'Title', widget: 'string'}
+          - {name: 'permalink', label: 'Permalink', widget: 'hidden'}
+          - {name: 'description', label: 'Meta Description', widget: 'text'}
+          - {name: 'layout', label: 'Layout', widget: 'hidden'}
+          - {name: 'bodyClass', label: 'Body Class', widget: 'hidden', required: false}
+          - {name: 'footerSpace', label: 'Footer Space Class', widget: 'hidden', required: false}
+          - {name: 'intro', label: 'Intro Text', widget: 'markdown'}
+          - {name: 'experts', label: 'Experts Label', widget: 'string'}
+          - label: 'Team Section'
+            name: 'team'
+            widget: 'object'
+            fields:
+              - {name: 'title', label: 'Team Title', widget: 'string'}
+              - {name: 'content', label: 'Team Content', widget: 'markdown'}
+              - {name: 'image', label: 'Team Image', widget: 'image'}
+              - {name: 'image_alt', label: 'Image Alt Text', widget: 'text'}
+
   - name: 'team'
     label: 'Team Members'
     icon: 'group'

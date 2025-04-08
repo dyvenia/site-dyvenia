@@ -6,11 +6,12 @@ layout: base
 bodyClass: about
 footerSpace: mt-2xl
 intro: |
-  At The Scalable Way, we believe that data-driven success comes from precise execution and scalable solutions.
+  At dyvenia, we believe that businesses succeed when they have unified, high-quality data that truly supports decision-making and innovation. Our mission is to help organizations overcome fragmented, unreliable data by building strong, well-integrated data foundations that drive performance.
 
-  Our mission is to empower businesses by building resilient data platforms, streamlining analytics pipelines, and optimizing data science workflows — all with an "as a code" approach that ensures reliability, agility, and long-term value.
+  We bridge the gap between technology and business, ensuring that your data is structured, consistent, and ready to support analytics, AI, and digital transformation. Our team of experienced data leaders has firsthand knowledge of the challenges organizations face, and we work as an extension of your team to turn complex data environments into clear, actionable assets.
 
-  With a team of experts passionate about data infrastructure and cloud-native technologies, we transform complex data challenges into scalable, actionable solutions tailored to our clients' unique needs.
+  Beyond our leadership, dyvenia is powered by a diverse group of dedicated professionals, including data engineers, analysts, DevOps specialists, and BI experts. We are driven by a commitment to excellence and innovation, ensuring that every solution we deliver not only meets technical requirements but aligns with your strategy and enables long-term success.
+experts: Meet our experts
 team:
   title: Team
   content: |
@@ -25,6 +26,7 @@ team:
     <div class="flow">{{ intro | markdownFormat | safe }}</div>
   </header>
   <article class="feature flow flow-space-l">
+    <h2>{{ experts }}</h2>
     {% for member in collections.team_members %}
       {% if member.data.show_on_about %}
         <div class="about__content flow grid gutter-m" data-layout="thirds">
