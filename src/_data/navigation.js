@@ -5,17 +5,8 @@ export default {
       url: '/about/'
     },
     {
-      text: 'Our process',
-      url: '/our-process/'
-    },
-    {
-      text: 'Learn',
-      url: '/learn/',
-      submenu: [
-        {text: 'Blog', url: '/blog/'},
-        {text: 'Case Studies', url: '/case-studies/'},
-        {text: 'Lessons', url: 'https://github.com/thescalableway/edp-learning'}
-      ]
+      text: 'Insights',
+      url: '/insights/'
     }
   ],
   bottom: [
