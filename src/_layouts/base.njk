@@ -44,7 +44,14 @@
   <body class="{{ layout }} {{ bodyClass }}">
     {% include "partials/header.njk" %}
 
-    <main id="main" class="{{ mainClass }}" data-pagefind-body>{{ content | safe }}</main>
+    <main id="main" class="{{ mainClass }}" data-pagefind-body>
+      {%- if draft -%}
+        <div class="uppercase text-center bg-purple-500 text-blue-100 font-regular">
+          [draft - not published in production]
+        </div>
+      {%- endif %}
+      {{ content | safe }}
+    </main>
 
     {% include "partials/footer.njk" %}
   </body>
