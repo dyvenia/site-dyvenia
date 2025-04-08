@@ -154,6 +154,7 @@ collections:
             name: 'team'
             widget: 'object'
             fields:
+              - {name: 'activate', label: 'Activate', widget: 'boolean', required: false}
               - {name: 'title', label: 'Team Title', widget: 'string'}
               - {name: 'content', label: 'Team Content', widget: 'markdown'}
               - {name: 'image', label: 'Team Image', widget: 'image'}

@@ -154,10 +154,11 @@ collections:
             name: 'team'
             widget: 'object'
             fields:
-              - {name: 'title', label: 'Team Title', widget: 'string'}
-              - {name: 'content', label: 'Team Content', widget: 'markdown'}
-              - {name: 'image', label: 'Team Image', widget: 'image'}
-              - {name: 'image_alt', label: 'Image Alt Text', widget: 'text'}
+              - {name: 'activate', label: 'Activate', widget: 'boolean', required: false}
+              - {name: 'title', label: 'Team Title', widget: 'string', required: false}
+              - {name: 'content', label: 'Team Content', widget: 'markdown', required: false}
+              - {name: 'image', label: 'Team Image', widget: 'image', required: false}
+              - {name: 'image_alt', label: 'Image Alt Text', widget: 'text', required: false}
 
   - name: 'team'
     label: 'Team Members'

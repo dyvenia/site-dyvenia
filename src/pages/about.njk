@@ -13,6 +13,7 @@ intro: |
   Beyond our leadership, dyvenia is powered by a diverse group of dedicated professionals, including data engineers, analysts, DevOps specialists, and BI experts. We are driven by a commitment to excellence and innovation, ensuring that every solution we deliver not only meets technical requirements but aligns with your strategy and enables long-term success.
 experts: Meet our experts
 team:
+  activate: false
   title: Team
   content: |
     Meet the team behind Dyvenia – a diverse group of dedicated professionals driven to deliver excellence and innovation in everything we do.
@@ -39,12 +40,15 @@ team:
       {% endif %}
     {% endfor %}
   </article>
-  <article class="mt-xl-2xl flow">
-    <h2>Team</h2>
 
-    {{ team.content | markdownFormat | safe }}
-    {% image team.image, team.image_alt %}
-  </article>
+  {% if team.activate %}
+    <article class="mt-xl-2xl flow">
+      <h2>Team</h2>
+
+      {{ team.content | markdownFormat | safe }}
+      {% image team.image, team.image_alt %}
+    </article>
+  {% endif %}
 </div>
 
 {%- css "local" -%}
