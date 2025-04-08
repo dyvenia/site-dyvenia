@@ -34,8 +34,8 @@
   }
 
   .prose mark {
-    background-color: var(--color-gold);
-    color: var(--color-base-dark);
+    background-color: var(--color-purple);
+    color: var(--color-dark);
   }
 
   /* block space only for "regular lists" */

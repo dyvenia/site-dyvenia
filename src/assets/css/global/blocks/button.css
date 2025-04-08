@@ -61,14 +61,14 @@
   --button-color: var(--color-blue-100);
 }
 
-.button[data-button-variant='pink'] {
-  --button-bg: var(--color-pink);
-  --button-color: var(--color-light);
+.button[data-button-variant='purple'] {
+  --button-bg: var(--color-purple);
+  --button-color: var(--color-purple-900);
 }
 
-.button[data-button-variant='gold'] {
-  --button-bg: var(--color-gold);
-  --button-color: var(--color-dark);
+.button[data-button-variant='navy'] {
+  --button-bg: var(--color-navy);
+  --button-color: var(--color-light);
 }
 
 .button[data-ghost-button] {

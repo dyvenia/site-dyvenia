@@ -1,5 +1,5 @@
 {
-  "name": "the-scalable-way",
+  "name": "dyvenia",
   "version": "3.7.3",
   "description": "Based on Eleventy Excellent.",
   "author": "Lene Saile",
@@ -20,10 +20,6 @@
     "build": "npm run clean && npm run build:11ty && npm run build:search"
   },
   "keywords": [],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/madrilene/eleventy-excellent.git"
-  },
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",
     "@11ty/eleventy-fetch": "^5.0.2",

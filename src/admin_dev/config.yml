@@ -10,7 +10,7 @@ local_backend: true
 # Enter your GitHub repo path and branch (defaults to master)
 backend:
   name: github
-  repo: dyvenia/site-thescalableway
+  repo: dyvenia/site-dyvenia
   branch: dev
 
 # The folder used to store uploaded images
@@ -75,6 +75,7 @@ collections:
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     media_folder: '/src/assets/images/blog/'
+    public_folder: '/assets/images/blog/'
     fields:
       - {label: 'Title', name: 'title', widget: 'string'}
       - {label: 'Publish Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DD HH:mm:ss'}

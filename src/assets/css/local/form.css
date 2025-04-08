@@ -116,6 +116,5 @@ button + .newsletter > * {
 
 .full .newsletter {
   background: var(--color-bg);
-  border-block-end: 1px solid var(--color-bg-accent-2);
   padding: 0;
 }

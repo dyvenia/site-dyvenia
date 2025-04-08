@@ -1,12 +1,13 @@
 export const url = process.env.URL || 'http://localhost:8080';
-export const siteName = 'The Scalable Way';
-export const siteDescription = 'Empowering Data Platforms with Precision and Scale';
+export const siteName = 'dyvenia';
+export const siteDescription =
+  'Data Done Right. Crafting data solutions that fit your business needs, not just your tech stack.';
 export const siteType = 'Organization'; // schema
 export const locale = 'en_EN';
 export const lang = 'en';
 export const skipContent = 'Skip to content';
 export const author = {
-  name: 'The Scalable Way', // i.e. Lene Saile - page / blog author's name. Must be set.
+  name: 'dyvenia', // i.e. Lene Saile - page / blog author's name. Must be set.
   avatar: '/icon-512x512.png', // path to the author's avatar. In this case just using a favicon.
   email: '', // i.e. hola@lenesaile.com - email of the author
   website: '', // i.e. https.://www.lenesaile.com - the personal site of the author
@@ -19,11 +20,12 @@ export const creator = {
   social: 'https://front-end.social/@lene'
 };
 export const pathToSvgLogo = 'src/assets/svg/brand/logo-spaced.svg'; // used for favicon generation
-export const themeColor = '#070846'; //  Manifest: defines the default theme color for the application
-export const themeLight = '#f5f5f6'; // used for meta tag theme-color, if light colors are prefered. best use value set for light bg
-export const themeDark = '#262627'; // used for meta tag theme-color, if dark colors are prefered. best use value set for dark bg
+export const themeColor = '#0E909D'; //  Manifest: defines the default theme color for the application
+export const themeLight = '#f8f8f9'; // used for meta tag theme-color, if light colors are prefered. best use value set for light bg
+export const themeDark = '#212222'; // used for meta tag theme-color, if dark colors are prefered. best use value set for dark bg
 export const opengraph_default = '/assets/images/template/opengraph-default.jpg'; // fallback/default meta image
-export const opengraph_default_alt = 'Visible content: The Scalable Way'; // alt text for default meta image"
+export const opengraph_default_alt =
+  'Visible content: dyvenia. Driving Better Decisions and Business Performance with Unified Metrics'; // alt text for default meta image"
 export const blog = {
   // RSS feed
   name: 'Blog',

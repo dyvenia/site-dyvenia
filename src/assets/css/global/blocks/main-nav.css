@@ -254,7 +254,7 @@ body:has(.nav-drawer-toggle[aria-expanded='true']) {
 
   .mainnav .nav-sublist {
     --nav-sublist-position: absolute;
-    --nav-sublist-background: var(--color-bg-accent-2);
+    --nav-sublist-background: var(--color-bg-accent);
     --nav-sublist-border: transparent;
     --nav-sublist-width: 10em;
     inset-block-start: calc(var(--space-xl) - var(--space-2xs) + 1px);

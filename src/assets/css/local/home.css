@@ -1,71 +1,32 @@
 .home h1 {
   font-weight: var(--font-light);
+  text-wrap: pretty;
+  color: var(--color-text);
 }
 
-/* ------------------- hero */
+/* ------------------- hero / page-header */
 
-.home .hero {
-  --button-icon-size: 1.8ch;
-  overflow: hidden;
-  grid-row: 1;
-  background: var(--color-bg-accent);
-  display: grid;
-  block-size: clamp(35rem, 70vh, 45rem);
-  grid-column: full;
+.home .page-header .wrapper > * {
+  justify-self: start;
 }
 
-.home .hero > :is(svg, header) {
-  grid-row: 1;
+.home .page-header h1 {
+  font-weight: var(--font-light);
+  text-wrap: pretty;
 }
 
-/* first blue pixel */
-.home .hero > svg {
-  grid-column: full;
-  inline-size: 100%;
-  block-size: auto;
-  color: var(--color-bg-accent-2);
-  mix-blend-mode: plus-lighter;
+.home .page-header .wrapper > p {
+  max-inline-size: 60ch;
 }
 
-[data-theme='dark'] .home .hero > svg {
-  mix-blend-mode: plus-lighter;
-  opacity: 0.1;
+.home .page-header picture {
+  max-block-size: 45rem;
 }
 
-@media screen(max) {
-  .home .hero > svg {
-    color: var(--color-text);
-    mix-blend-mode: normal;
-    opacity: 1;
+@media screen(md) {
+  .home .page-header picture {
+    max-block-size: 50rem;
   }
-}
-
-.home .hero > svg:first-of-type {
-  grid-column: full-start / content-end;
-  transform: rotate(30deg);
-  inline-size: clamp(30ch, 30vw, 35rem);
-  margin-inline-start: -15ch;
-}
-
-.home .hero > svg:nth-of-type(2) {
-  grid-column: content-start / full-end;
-  justify-self: end;
-  align-self: center;
-  inline-size: clamp(50ch, 40vw, 60rem);
-  transform: rotate(210deg);
-  margin-inline-end: -20%;
-  margin-block-end: -10ch;
-}
-
-.home .hero > header {
-  grid-column: content;
-  background: transparent;
-  z-index: 1;
-  align-self: center;
-}
-
-.home .hero > header p {
-  max-inline-size: 45ch;
 }
 
 /* ------------------- sections */
@@ -82,7 +43,7 @@
 }
 
 .home .highlight-one span {
-  color: var(--color-pink);
+  color: var(--color-blue);
 }
 
 .home .highlight-one svg {
@@ -98,7 +59,6 @@
 
 @media screen(md) {
   .home .highlight-one svg {
-    color: var(--color-blue-accent-2);
     mix-blend-mode: normal;
   }
 }
@@ -111,7 +71,12 @@
 }
 
 .home .highlight-two article > * {
-  max-inline-size: 55ch;
+  max-inline-size: 60ch;
+  margin-inline: auto;
+}
+
+.home .highlight-two article > h2 {
+  max-inline-size: 50ch;
   margin-inline: auto;
 }
 
@@ -133,6 +98,7 @@
   grid-row: 1;
   grid-column: 1/ -1;
   color: var(--color-bg-accent-2);
+  opacity: 0.5;
 }
 
 .home .foundations .timeline {
@@ -153,7 +119,8 @@
 @media screen(md) {
   .home .foundations svg {
     grid-column: 1/ 4;
-    color: var(--color-text);
+    color: var(--color-blue);
+    opacity: 1;
   }
 
   .home .foundations .timeline {
@@ -183,7 +150,7 @@
 .home .foundations .timeline li::after {
   content: '';
   position: absolute;
-  width: 0.15ch;
+  width: 0.25ch;
   background: var(--color-blue);
   inset-inline-start: var(--space-s);
   inset-block-start: calc(var(--space-s) * 2);
@@ -258,7 +225,7 @@
 }
 
 .home .why header strong {
-  color: var(--color-pink);
+  color: var(--color-purple);
 }
 
 .home .why .column {
@@ -277,6 +244,81 @@
 
 .home .services {
   position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.home .services::after {
+  content: '';
+  position: absolute;
+  inset-inline: 0; /* Stretches the gradient across the container width */
+  inset-block-end: 0; /* Anchors the gradient to the bottom */
+  block-size: 50%; /* Covers 50% of the container height */
+  background: linear-gradient(to bottom, transparent, var(--color-blue-accent-5));
+  pointer-events: none; /* Ensures it doesn’t block user interactions */
+  z-index: 0; /* Places the gradient below the content */
+}
+
+.home .services > * {
+  position: relative; /* Ensures content stays above the gradient */
+  z-index: 1;
+}
+
+.home .services > * {
+  grid-column: full;
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+
+.home .services picture {
+  --flow-space: 0;
+  background: var(--color-blue-accent-5);
+  mix-blend-mode: darken;
+  max-block-size: 100%;
+  overflow: hidden;
+  z-index: 0; /* Places the image below the content */
+}
+
+.home .services picture::after {
+  content: '';
+  position: absolute;
+  inset: 0; /* Covers the entire image */
+  background: linear-gradient(to bottom, transparent, var(--color-blue-accent-5));
+  pointer-events: none; /* Ensures no interference with user interactions */
+  z-index: 1; /* Places the gradient above the image */
+}
+
+.home .services img {
+  inline-size: 100%;
+  object-fit: cover;
+  aspect-ratio: 1 / 2;
+  filter: grayscale(100%) brightness(0.5) opacity(0.3) contrast(200%);
+  mix-blend-mode: multiply;
+}
+
+[data-theme='light'] .home .services img {
+  filter: grayscale(100%) brightness(0.5) opacity(0.3) contrast(200%);
+}
+
+[data-theme='dark'] .home .services img {
+  filter: grayscale(100%) brightness(0.7) opacity(0.5) contrast(200%);
+}
+
+@media screen(sm) {
+  .home .services picture {
+    max-block-size: 70rem;
+  }
+}
+
+@media screen(md) {
+  .home .services img {
+    aspect-ratio: 3/2;
+  }
+}
+
+.home .services h2 {
+  color: var(--color-light);
+  align-self: end;
 }
 
 .home .services h3 {
@@ -285,7 +327,7 @@
 
 .home .services h3 span {
   display: block;
-  background: var(--color-blue-accent-4);
+  background: var(--color-blue);
   color: var(--color-bg);
   inline-size: fit-content;
   border-radius: var(--border-radius-small);
@@ -302,19 +344,9 @@
   padding: var(--space-xs);
   margin-block-start: var(--space-l);
   position: relative;
+  opacity: 0.8;
 }
 
 .home .services .grid div {
   grid-column: span 2;
-}
-
-.home .services svg {
-  grid-column: content-start / full-end;
-  position: absolute;
-  inset-inline-end: var(--space-m);
-  inset-block-start: var(--space-s);
-  inline-size: clamp(10ch, 40vw, 30rem);
-  block-size: auto;
-  color: var(--color-blue-accent-3);
-  rotate: 90deg;
 }

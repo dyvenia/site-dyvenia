@@ -7,5 +7,6 @@
 }
 
 .about .about__content div {
+  grid-column: span 2;
   padding-block-start: var(--space-2xs);
 }

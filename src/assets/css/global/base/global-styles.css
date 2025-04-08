@@ -122,7 +122,7 @@ button.underline {
 }
 
 mark {
-  background: var(--color-gold);
+  background: var(--color-purple);
 }
 
 a:hover {

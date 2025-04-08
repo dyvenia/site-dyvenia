@@ -8,17 +8,10 @@
 }
 .logo svg {
   color: var(--color-blue-500);
-  block-size: auto;
+  block-size: calc(var(--size-step-0) * 1.4);
 }
 
-.logo .dyvenia {
-  position: absolute;
-  inset-inline-end: -1em;
-  inset-block-end: 0.2em;
-  /* z-index: 1; */
-}
-
-.logo .dyvenia svg {
-  block-size: 1lh;
-  margin-block-start: 0.1em;
+.logo svg:last-of-type {
+  color: var(--color-blue);
+  block-size: var(--size-step-0);
 }
