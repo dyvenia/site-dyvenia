@@ -87,6 +87,6 @@ That said, I’m a fan of a hybrid approach. Combining both methodologies could 
 - **Facts and essential KPIs** should be calculated in SQL at the database level, ensuring a single source of truth.
 - **Master data (dimensions)** can remain separate and be joined in the BI tool, optimizing storage and performance.
 - **Hybrid storage strategy** for large datasets, storing historical or less frequently used data in a flat table while keeping active data in a semantic model for real-time reporting needs.
-- **Metadata & governance layer&#32;**ensuring business logic consistency, whether KPIs are defined in SQL or the BI tool.
+- **Metadata & governance layer** ensuring business logic consistency, whether KPIs are defined in SQL or the BI tool. 
 
 This approach leverages the best of both worlds - ensuring data consistency while maintaining flexibility and efficiency. It also allows businesses to scale efficiently while minimizing technical debt.
