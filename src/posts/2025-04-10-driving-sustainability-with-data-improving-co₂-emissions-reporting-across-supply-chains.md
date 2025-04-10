@@ -77,7 +77,7 @@ Solid data foundations aren’t just about collecting the right inputs - they al
 
 A common approach in logistics is estimating emissions using a simple emissions factor model based on CO₂ emitted per kilometer traveled for different transport modes. However, **material-related** emissions are far more complex. This requires gathering and applying carbon factors from multiple sources, such as:
 
-- **EPD (Environmental Product Declarations):&#32;**product-specific, 3rd party-verified environmental data per product category
+- **EPD (Environmental Product Declarations):** product-specific, 3rd party-verified environmental data per product category
 - **CDP (Carbon Disclosure Project):** vendor-specific CO₂ footprints
 - **EPA (Environmental Protection Agency):** standardized US-based emission factors for industries (e.g., transport, energy, waste)
 - **Industry average data:** generic emission benchmarks based on sector-wide studies for certain materials that lack specific CO₂ data
@@ -99,7 +99,7 @@ When it comes to structuring such a mart, there are two common approaches:
 1. **Flat Table Approach:** This method consolidates all necessary data into a single, denormalized table. It ensures consistency, simplifies development, and is tool-agnostic - making it a favorite among data teams. However, it can become harder to manage at scale, with potential performance and storage challenges depending on dataset size and architecture.
 2. **Snowflake Schema Approach in BI Tools** (e.g., Power BI): In this approach, data is organized into fact and dimension tables, which are related through keys. While it’s more efficient for large datasets and complex queries, it introduces tool dependency and leads to inconsistent KPIs if governance isn't tightly controlled.
 
-Personally, I would opt for a flat table approach rather than creating a semantic model inside a BI tool. I’ve explained this choice further in another article, but with sustainability data, the choice between these two approaches is even clearer. Master data plays a crucial role in metric calculations, which makes it almost impossible to keep it outside the mart. A sustainability mart integrates critical data sources into one system, enabling accurate calculations and reporting of ESG metrics. Such a mart can include a variety of relevant components, for example:
+Personally, I would opt for a flat table approach rather than creating a semantic model inside a BI tool. I’ve explained this choice further in [another article](https://site-dyvenia.netlify.app/insights/flat-tables-vs-snowflake-semantic-models-the-ultimate-bi-data-debate/), but with sustainability data, the choice between these two approaches is even clearer. Master data plays a crucial role in metric calculations, which makes it almost impossible to keep it outside the mart. A sustainability mart integrates critical data sources into one system, enabling accurate calculations and reporting of ESG metrics. Such a mart can include a variety of relevant components, for example:
 
 ![](/assets/images/blog/sustainability_mart.png)
 
