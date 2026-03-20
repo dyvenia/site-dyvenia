@@ -1,6 +1,6 @@
 ---
 name: Mateusz Paździor
-image: /src/assets/images/team/Mateusz.png
+image: /src/assets/images/team/Mateusz Pazdzior.png
 linkedin: https://www.linkedin.com/in/mateusz-pa%C5%BAdzior-67684494/
 show_on_about: true
 description_short: Mateusz designs modular, future-proof data infrastructures with strong observability and operational excellence, ensuring they stay reliable, scalable, and aligned with evolving business needs.
