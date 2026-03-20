@@ -1,6 +1,6 @@
 ---
 name: Karol Wolski
-image: /src/assets/images/team/Karol.png
+image: /src/assets/images/team/Karol Wolski.png
 linkedin: https://www.linkedin.com/in/wolski-karol/
 show_on_about: true
 description_short: Karol builds secure, cloud-agnostic data platforms at scale. With deep DevOps expertise, he unifies data sources, automates infrastructure, and streamlines hybrid operations.
