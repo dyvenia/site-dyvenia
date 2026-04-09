@@ -1,4 +1,4 @@
 .site-header {
-  background: var(--color-bg-accent);
+  background: transparent;
   z-index: 2;
 }

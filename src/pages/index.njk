@@ -4,7 +4,8 @@ hero:
   subtitle: '**dyvenia helps enterprises align and validate their metrics so leaders can trust their numbers, scale analytics, and deploy AI with confidence**.'
   button_text: Schedule a discovery call
   button_target: https://meetings-eu1.hubspot.com/alessio-civitillo/book-a-call
-  image: ./src/assets/images/backgrounds/sfondi-dyvenia08.jpg
+  video: ./src/assets/videos/jellyfish-1.mp4
+  image: ./src/assets/images/backgrounds/jellyfish-hr.jpg
 intro:
   title: Most companies don’t actually struggle with data. They struggle with the context behind it.
   content: |-
@@ -92,8 +93,23 @@ permalink: /index.html
 title: dyvenia
 ---
 
-<header class="section page-header">
+<header class="section page-header{% if hero.video %} has-video{% endif %}">
   {% svg "divider/soft-top", null, "seperator" %}
+
+  {% if hero.video %}
+  <div class="page-header__video-container">
+      <video
+        class="page-header__video"
+        autoplay
+        muted
+        loop
+        playsinline
+        {% if hero.image %}poster="{{ hero.image | replace('./src', '') }}"{% endif %}
+      >
+        <source src="{{ hero.video | replace('./src', '') }}" type="video/mp4" />
+      </video>
+    </div>
+  {% endif %}
 
   {% if hero.image %}
     {% image hero.image, "", null, "eager" %}
