@@ -1,5 +1,4 @@
 .home h1 {
-  font-weight: var(--font-light);
   text-wrap: pretty;
   color: var(--color-text);
 }
@@ -11,12 +10,15 @@
 }
 
 .home .page-header h1 {
-  font-weight: var(--font-light);
+  max-inline-size: 20ch;
+  font-weight: var(--font-regular);
   text-wrap: pretty;
+  line-height: var(--leading-flat);
 }
 
-.home .page-header .wrapper > p {
-  max-inline-size: 60ch;
+.home .page-header em {
+  color: color-mix(in oklab, var(--color-blue) 50%, var(--color-light));
+  font-style: normal;
 }
 
 .home .page-header :is(picture, .page-header__video-container) {
@@ -24,7 +26,7 @@
 }
 
 .home .page-header :is(picture, .page-header__video) {
-  max-block-size: max(45rem, 95vh);
+  block-size: max(45rem, 95vh);
 }
 
 @media screen(md) {
@@ -36,6 +38,14 @@
 .home .page-header :is(img, .page-header__video) {
   filter: grayscale(100%) brightness(1) opacity(0.6) contrast(150%);
   object-position: top right;
+}
+
+.home .page-header__content > * {
+  margin-block-start: var(--space-2xl);
+}
+
+.home .page-header__content p {
+  max-inline-size: 55ch;
 }
 
 /* ------------------- sections */

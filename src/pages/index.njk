@@ -1,7 +1,7 @@
 ---
 hero:
-  title: Clear metrics. Reliable data. Decisions you can trust.
-  subtitle: '**dyvenia helps enterprises align and validate their metrics so leaders can trust their numbers, scale analytics, and deploy AI with confidence**.'
+  title: '_Clear_ metrics. _Reliable_ data. Decisions you can _trust_.'
+  subtitle: 'dyvenia helps enterprises align and validate their metrics so leaders can trust their numbers, scale analytics, and deploy AI with confidence.'
   button_text: Schedule a discovery call
   button_target: https://meetings-eu1.hubspot.com/alessio-civitillo/book-a-call
   video: ./src/assets/videos/jellyfish-1.mp4
@@ -93,7 +93,7 @@ permalink: /index.html
 title: dyvenia
 ---
 
-<header class="section page-header{% if hero.video %} has-video{% endif %}">
+<header class="section page-header{% if hero.video %} has-video{% endif %}" data-section-theme='dark'>
   {% svg "divider/soft-top", null, "seperator" %}
 
   {% if hero.video %}
@@ -115,18 +115,18 @@ title: dyvenia
     {% image hero.image, "", null, "eager" %}
   {% endif %}
 
-  <div class="section__inner region region-space-xl-2xl ">
+  <div class="page-header__content | section__inner region region-space-xl-2xl ">
     <div class="wrapper flow">
-    <h1>{{ hero.title }}</h1>
-      {{ hero.subtitle | markdownFormat | safe }}
-      <a href="{{ hero.button_target }}" class="button flow-space-xl"> {{ hero.button_text }} {% svg "misc/arrow" %}</a>
+    <h1 class="fade-in-bottom">{{ hero.title | markdownInline | safe }}</h1>
+    <div class="fade-in delay-3"> {{ hero.subtitle | markdownFormat | safe }}</div>
+      <a href="{{ hero.button_target }}" class="button flow-space-xl fade-in delay-7" data-button-variant='blue'> {{ hero.button_text }} {% svg "misc/arrow" %}</a>
     </div>
   </div>
 </header>
 
 <div class="intro | wrapper">
   <article class="region flow prose">
-    <h2 class="text-step-2">{{ intro.title }}</h2>
+    <h2 class="text-step-2">{{ intro.title | markdownInline | safe }}</h2>
     {{ intro.content | markdownFormat | safe }}
   </article>
 </div>
