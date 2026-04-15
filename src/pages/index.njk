@@ -93,36 +93,14 @@ permalink: /index.html
 title: dyvenia
 ---
 
-<header class="section page-header{% if hero.video %} has-video{% endif %}" data-section-theme='dark'>
-  {% svg "divider/soft-top", null, "seperator" %}
-
-  {% if hero.video %}
-  <div class="page-header__video-container">
-      <video
-        class="page-header__video"
-        autoplay
-        muted
-        loop
-        playsinline
-        {% if hero.image %}poster="{{ hero.image | replace('./src', '') }}"{% endif %}
-      >
-        <source src="{{ hero.video | replace('./src', '') }}" type="video/mp4" />
-      </video>
-    </div>
-  {% endif %}
-
-  {% if hero.image %}
-    {% image hero.image, "", null, "eager" %}
-  {% endif %}
-
-  <div class="page-header__content | section__inner region region-space-xl-2xl ">
-    <div class="wrapper flow">
-    <h1 class="fade-in-bottom">{{ hero.title | markdownInline | safe }}</h1>
-    <div class="fade-in delay-3"> {{ hero.subtitle | markdownFormat | safe }}</div>
-      <a href="{{ hero.button_target }}" class="button flow-space-xl fade-in delay-7" data-button-variant='blue'> {{ hero.button_text }} {% svg "misc/arrow" %}</a>
-    </div>
-  </div>
-</header>
+{% set customHero = {
+  hero: hero,
+  height: "cover",
+  content_inline: "left",
+  region_space: "xl-2xl",
+  button_variant: "blue"
+} %}
+{% include "partials/custom-hero.njk" %}
 
 <div class="intro | wrapper">
   <article class="region flow prose">
@@ -268,7 +246,7 @@ title: dyvenia
 </div>
 
 {%- css "local" -%}
-  {%- include "css/page-header.css" -%}
+  {%- include "css/custom-hero.css" -%}
   {%- include 'css/home.css' -%}
   {%- include 'css/column.css' -%}
 {%- endcss -%}

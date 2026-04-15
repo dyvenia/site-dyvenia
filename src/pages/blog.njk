@@ -13,23 +13,19 @@ intro: >
   Gain expert strategies, real-world perspectives, and best practices in data engineering, analytics, and AI. Explore our latest insights to stay ahead in the ever-evolving data landscape.
 ---
 
+  {% set blogHero = {
+    title: title,
+    subtitle: intro,
+    image: image,
+    image_alt: alt or title
+  } %}
+  {% set customHero = {
+    hero: blogHero,
+    region_space: "xl-2xl"
+  } %}
+  {% include "partials/custom-hero.njk" %}
+
 <div class="wrapper flow">
-  <header class="full | section page-header" data-section-theme='dark'>
-    {% svg "divider/soft-top", null, "seperator" %}
-
-    {% if image %}
-    {% image image, alt or title, null, "eager" %}
-    {% endif %}
-
-    <div class="section__inner region region-space-xl-2xl">
-      <div class="wrapper flow text-center">
-      <h1 class="text-base-light">{{ title }}</h1>
-      {{ intro | markdownFormat | safe }}
-     </div>
-    </div>
-  </header>
-
-
   <aside class="full | section" style="--spot-color: var(--color-bg); --flow-space: 0;">
     <div class="section__inner flow wrapper pt-l-xl full">
     {% include "partials/hubspot-form.njk" %}
@@ -59,5 +55,5 @@ intro: >
 </div>
 
 {%- css "local" -%}
-  {%- include "css/page-header.css" -%}
+  {%- include "css/custom-hero.css" -%}
 {%- endcss -%}
