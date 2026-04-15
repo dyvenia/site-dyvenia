@@ -3,12 +3,13 @@
 {% set subMenu = meta.navigation.subMenu %}
 
 <nav id="mainnav" class="mainnav" aria-label="{{ meta.navigation.ariaTop }}">
-  <ul class="cluster" role="list" no-flash>
+  <ul class="cluster" role="list" data-no-flash>
     {% for item in navigation.top %}
       {% if item.submenu %}
         <li class="relative">
           <button
-            class="nav-sublist-toggle"
+            class="button nav-sublist-toggle"
+            data-button-text
             aria-expanded="false"
             aria-labelledby="mainnav-{{ loop.index }}"
             aria-controls="mainnav-{{ loop.index }}-sub"
@@ -20,6 +21,8 @@
             {% for subitem in item.submenu %}
               <li>
                 <a
+                  class="button"
+                  data-button-text
                   href="{{ subitem.url }}"
                   {{
                     helpers.getLinkActiveState(subitem.url, page.url)
@@ -34,6 +37,8 @@
       {% else %}
         <li>
           <a
+            class="button"
+            data-button-text
             href="{{ item.url }}"
             {{
               helpers.getLinkActiveState(item.url,
@@ -47,7 +52,14 @@
       {% endif %}
     {% endfor %}
     <li>
-      <a class="no-indicator" href="{{ meta.book_call_link }}" target="blank"> {{ meta.book_call }} </a>
+      <a
+        class="button no-indicator"
+        href="{{ meta.book_call_link }}"
+        target="blank"
+        data-button-variant="blue"
+      >
+        {{ meta.book_call }}
+      </a>
     </li>
   </ul>
 </nav>
