@@ -1,7 +1,9 @@
 .custom-hero {
+  --custom-hero-bg: var(--color-blue-800);
   display: grid;
   grid-template-columns: 1fr;
   place-content: center;
+  background: var(--custom-hero-bg);
 }
 
 .custom-hero > * {
@@ -12,13 +14,21 @@
 
 .custom-hero :is(picture, .custom-hero__video-container) {
   --flow-space: 0;
-  background: var(--color-blue-800);
+  background: var(--custom-hero-bg);
   mix-blend-mode: darken;
   overflow: hidden;
 }
 
-.custom-hero[data-hero-background='purple-accent-5'] :is(picture, .custom-hero__video-container) {
-  background: var(--color-purple-accent-5);
+:root[data-theme='dark'] .custom-hero :is(picture, .custom-hero__video-container) {
+  mix-blend-mode: lighten;
+}
+
+.custom-hero[data-hero-background='purple-accent-5'] {
+  --custom-hero-bg: var(--color-purple-accent-5);
+}
+
+.custom-hero[data-hero-background='bg-accent'] {
+  --custom-hero-bg: var(--color-bg-accent);
 }
 
 .custom-hero :is(img, .custom-hero__video) {
@@ -146,4 +156,8 @@
 
 .custom-hero .wrapper > :is(p, h1) {
   color: var(--color-light);
+}
+
+.custom-hero[data-hero-background='bg-accent'] .wrapper > :is(p, h1) {
+  color: var(--color-text);
 }

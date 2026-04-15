@@ -202,7 +202,7 @@ body:has(.nav-drawer-toggle[aria-expanded='true']) {
 .mainnav > ul:first-of-type > li:last-child a {
   --nav-item-background: var(--color-blue);
   --nav-item-text-color: var(--color-light);
-  --nav-item-padding: 0.15em var(--space-2xs) 0.2em var(--space-2xs);
+  --nav-item-padding: 0.2em var(--space-2xs);
 }
 
 .mainnav > ul:first-of-type > li:last-child a:is(:hover, :focus),

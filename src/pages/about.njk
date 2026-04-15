@@ -21,12 +21,26 @@ team:
   image_alt: 'Group photo of the Dyvenia team, featuring 25 individuals standing together in a modern office setting. The team members are dressed in business casual attire, with a mix of smiles and relaxed expressions. The background features light-colored walls, abstract artwork, and a polished interior design.'
 ---
 
+{%
+  set aboutHero = {
+    title: title,
+    subtitle: intro
+  }
+%}
+{%
+  set customHero = {
+    hero: aboutHero,
+    theme: "light",
+    divider: null,
+    background: "bg-accent",
+    content_inline: "left",
+    region_space: "xl"
+  }
+%}
+{% include "partials/custom-hero.njk" %}
+
 <div class="wrapper">
-  <header class="region flow">
-    <h1>{{ title }}</h1>
-    <div class="flow">{{ intro | markdownFormat | safe }}</div>
-  </header>
-  <article class="feature flow flow-space-l">
+  <article class="feature | region region-space-m flow flow-space-l">
     <h2>{{ experts }}</h2>
     {% for member in collections.team_members %}
       {% if member.data.show_on_about %}
@@ -52,5 +66,6 @@ team:
 </div>
 
 {%- css "local" -%}
+  {%- include "css/custom-hero.css" -%}
   {%- include 'css/about.css' -%}
 {%- endcss -%}

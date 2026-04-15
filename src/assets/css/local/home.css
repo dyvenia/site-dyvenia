@@ -264,6 +264,7 @@
 
 .home .services img {
   inline-size: 100%;
+  block-size: 100%;
   object-fit: cover;
   aspect-ratio: 1 / 2;
   filter: grayscale(100%) brightness(0.5) opacity(0.3) contrast(200%);
@@ -278,11 +279,11 @@
   filter: grayscale(100%) brightness(0.7) opacity(0.5) contrast(200%);
 }
 
-@media screen(sm) {
+/* @media screen(sm) {
   .home .services picture {
     max-block-size: 70rem;
   }
-}
+} */
 
 @media screen(md) {
   .home .services img {
