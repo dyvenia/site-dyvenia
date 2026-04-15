@@ -1,7 +1,7 @@
+import esbuild from 'esbuild';
+import fg from 'fast-glob';
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import fg from 'fast-glob';
-import esbuild from 'esbuild';
 
 export const buildJs = async (inputPath, outputPath) => {
   const result = await esbuild.build({
@@ -33,7 +33,7 @@ export const buildAllJs = async () => {
   const componentFiles = await fg(['src/assets/scripts/components/**/*.js']);
   for (const inputPath of componentFiles) {
     const baseName = path.basename(inputPath);
-    const outputPath = `dist/assets/scripts/components/${baseName}`;
+    const outputPath = `_site/assets/scripts/components/${baseName}`;
     tasks.push(buildJs(inputPath, outputPath));
   }
 
