@@ -1,0 +1,55 @@
+@media (prefers-reduced-motion: no-preference) {
+  .delay-1 {
+    --animation-delay: 0.1s;
+  }
+
+  .delay-3 {
+    --animation-delay: 0.3s;
+  }
+
+  .delay-5 {
+    --animation-delay: 0.5s;
+  }
+
+  .delay-7 {
+    --animation-delay: 0.7s;
+  }
+
+  .fade-in-bottom {
+    opacity: 0;
+    animation-delay: var(--animation-delay, 0s);
+    transform: translateY(1rem);
+    animation-name: fadeInBottom;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.4, 0.05, 0.22, 1.2);
+  }
+
+  @keyframes fadeInBottom {
+    0% {
+      opacity: 0;
+      transform: translateY(2rem);
+    }
+    100% {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  .fade-in {
+    animation-delay: var(--animation-delay, 0s);
+    animation-duration: 0.9s;
+    animation-fill-mode: both;
+    animation-name: fadeIn;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+}

@@ -105,3 +105,24 @@
     filter: brightness(0.9);
   }
 }
+
+[data-section-theme='dark'] {
+  --color-text: var(--color-gray-100);
+  --color-text-accent: var(--color-gray-200);
+
+  img {
+    filter: brightness(0.9);
+  }
+}
+
+@media screen(navigation) {
+  .site-header:has(+ main > [data-section-theme='dark']:first-child),
+  .site-header:has(+ main > .wrapper > [data-section-theme='dark']:first-child) {
+    --color-text: var(--color-gray-100);
+    --color-text-accent: var(--color-gray-200);
+  }
+}
+
+.site-header:has(+ main > [data-section-theme='dark']:first-child) .search-toggle svg {
+  --color-text: var(--color-gray-100);
+}
