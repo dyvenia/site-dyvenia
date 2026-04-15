@@ -86,6 +86,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addFilter('toIsoString', filters.toISOString);
   eleventyConfig.addFilter('formatDate', filters.formatDate);
   eleventyConfig.addFilter('markdownFormat', filters.markdownFormat);
+  eleventyConfig.addFilter('markdownInline', filters.markdownInline);
   eleventyConfig.addFilter('splitlines', filters.splitlines);
   eleventyConfig.addFilter('striptags', filters.striptags);
   eleventyConfig.addFilter('shuffle', filters.shuffleArray);

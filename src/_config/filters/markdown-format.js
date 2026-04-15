@@ -7,3 +7,7 @@ const markdown = markdownParser();
 export const markdownFormat = string => {
   return markdown.render(string);
 };
+
+export const markdownInline = string => {
+  return markdown.renderInline(string);
+};
