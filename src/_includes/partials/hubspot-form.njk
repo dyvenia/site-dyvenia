@@ -1,25 +1,56 @@
-<aside class="newsletter | flow">
-  <h3>{{ meta.newsletter_title }}</h3>
-  <form data-hubspot class="flow">
-    <label class="form-control gutter-xs text-step-min-1">
-      <input type="checkbox" name="consent" required />
-      {{ meta.newsletter_consent_message | markdownFormat | safe }}
-    </label>
+{% set formWidth = formWidth | default("content") %}
 
-    <div class="sidebar" data-direction="rtl">
-      <div>
-        <label class="visually-hidden"> Subscribe to Newsletter</label>
-        <input type="email" name="email" autocomplete="email" placeholder="Type your email..." required />
+<aside class="newsletter |  {{ formWidth }} wrapper">
+  <div class="flow">
+    <h3>{{ meta.newsletter_title }}</h3>
+    <form data-hubspot class="flow">
+      <label class="form-control gutter-xs text-step-min-1">
+        <input type="checkbox" name="consent" required />
+        {{ meta.newsletter_consent_message | markdownFormat | safe }}
+      </label>
+
+      <div class="flow gutter-xs">
+        <div class="sidebar">
+          <label for="firstname">First Name</label>
+          <input type="text" name="firstname" id="firstname" autocomplete="given-name" placeholder="" />
+        </div>
+        <div class="sidebar">
+          <label for="lastname">Last Name</label>
+          <input type="text" name="lastname" id="lastname" autocomplete="family-name" placeholder="" />
+        </div>
+        <div class="sidebar">
+          <label for="company">Company Name</label>
+          <input type="text" name="company" id="company" autocomplete="organization" placeholder="" />
+        </div>
+
+        <div class="sidebar email" data-direction="rtl">
+          <div class="flow">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              autocomplete="email"
+              placeholder=""
+              required
+              class="no-right-line"
+            />
+          </div>
+
+          <button class="button" type="submit" data-button-variant="blue">Submit</button>
+        </div>
       </div>
+    </form>
 
-      <button class="button" type="submit" data-button-variant="blue">Submit</button>
+    <div data-hubspot-message>
+      <div data-hubspot-success class="hidden">{{ meta.newsletter_success_message }}</div>
+      <div data-hubspot-error class="hidden">{{ meta.newsletter_error_message }}</div>
+      <div data-hubspot-consent-error class="hidden">{{ meta.newsletter_consent_required }}</div>
     </div>
-  </form>
 
-  <div data-hubspot-message>
-    <div data-hubspot-success class="hidden">{{ meta.newsletter_success_message }}</div>
-    <div data-hubspot-error class="hidden">{{ meta.newsletter_error_message }}</div>
-    <div data-hubspot-consent-error class="hidden">{{ meta.newsletter_consent_required }}</div>
+    <p class="text-step-min-1 text-gray">
+      Asterisk (<span class="text-pink">*</span>) indicates required fields.
+    </p>
   </div>
 </aside>
 

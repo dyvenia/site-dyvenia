@@ -5,8 +5,3 @@
 .about .grid {
   --grid-min-item-size: clamp(16rem, 50vw, 16rem);
 }
-
-.about .about__content div {
-  grid-column: span 2;
-  padding-block-start: var(--space-2xs);
-}

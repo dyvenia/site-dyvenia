@@ -3,7 +3,7 @@
 {% set showTags = showTags | default(true) %}
 
 <custom-card clickable>
-  <{{ headingLevel }} class="text-step-2" slot="headline">
+  <{{ headingLevel }} class="text-step-1" slot="headline">
     <a href="{{ item.url | url }}">{{ item.data.title }}</a>
   </{{ headingLevel }}>
   <span class="text-pink uppercase font-medium" slot="date"> {% include "partials/date.njk" %} </span>

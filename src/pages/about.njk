@@ -42,17 +42,25 @@ team:
 <div class="wrapper">
   <article class="feature | region region-space-m flow flow-space-l">
     <h2>{{ experts }}</h2>
-    {% for member in collections.team_members %}
-      {% if member.data.show_on_about %}
-        <div class="about__content flow grid gutter-m" data-layout="thirds">
-          {% image "." + member.data.image, "" %}
-          <div class="flow prose">
-            <h3>{{ member.data.name }}</h3>
-            {{ member.data.description_long | markdownFormat | safe }}
-          </div>
-        </div>
-      {% endif %}
-    {% endfor %}
+    {% set orderedTeamMembers = collections.team_members | sortByOrderIndex %}
+    <div class="grid mt-xl-2xl" data-layout="thirds">
+      {% for member in orderedTeamMembers %}
+        {% if member.data.show_on_about %}
+          <custom-card clickable small-padding img-3-2 slight-border>
+            {% image "." + member.data.image, "" %}
+            <h3 class="text-step-1" slot="headline">
+              <a href="{{ member.url }}"
+                >{{ member.data.name }}
+                {% if member.data.role %}
+                  <span class="text-step-min-1 font-bold">{{ member.data.role }}</span>
+                {% endif %}</a
+              >
+            </h3>
+            <div slot="content" webc:nokeep>{{ member.data.description_short | markdownFormat | safe }}</div>
+          </custom-card>
+        {% endif %}
+      {% endfor %}
+    </div>
   </article>
 
   {% if team.activate %}
@@ -68,4 +76,5 @@ team:
 {%- css "local" -%}
   {%- include "css/custom-hero.css" -%}
   {%- include 'css/about.css' -%}
+  {%- include "css/custom-card.css" -%}
 {%- endcss -%}

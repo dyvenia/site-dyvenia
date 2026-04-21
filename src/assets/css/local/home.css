@@ -177,8 +177,12 @@
 /* about */
 
 .home .about .grid {
-  --gutter: var(--space-xl);
+  --gutter: var(--space-s);
   --grid-min-item-size: clamp(16rem, 28%, 25rem);
+}
+
+.home .about .grid.intro {
+  --gutter: var(--space-l);
 }
 
 .home .about header div {
@@ -188,6 +192,13 @@
 
 .home .about .about__content p {
   font-size: var(--size-step-min-1);
+}
+
+.home .about custom-card img {
+  inline-size: 100%;
+  block-size: auto;
+  object-fit: cover;
+  object-position: center;
 }
 
 /*  why */
@@ -238,7 +249,7 @@
   inset-inline: 0; /* Stretches the gradient across the container width */
   inset-block-end: 0; /* Anchors the gradient to the bottom */
   block-size: 50%; /* Covers 50% of the container height */
-  background: linear-gradient(to bottom, transparent, var(--color-blue-accent-5));
+  background: linear-gradient(to bottom, transparent, var(--color-blue-accent-6));
   pointer-events: none; /* Ensures it doesn’t block user interactions */
   z-index: 0; /* Places the gradient below the content */
 }
@@ -334,4 +345,8 @@
 
 .home .services .grid div {
   grid-column: span 2;
+}
+
+.home .blog custom-card {
+  --flow-space: var(--space-3xs);
 }

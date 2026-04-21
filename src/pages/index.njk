@@ -165,19 +165,23 @@ title: dyvenia
 
 <div class="about | wrapper">
   <article class="feature | region">
-    <header class="grid" data-layout="thirds">
+    <header class="grid intro" data-layout="thirds">
       <h2>{{ about.title }}</h2>
       <div class="flow">{{ about.content | markdownFormat | safe }}</div>
     </header>
-    <div class="grid mt-xl-2xl" data-layout="thirds">
-      {% for member in collections.team_members %}
+    {% set orderedTeamMembers = collections.team_members | sortByOrderIndex %}
+    <div class="grid team mt-xl-2xl" data-layout="thirds">
+      {% for member in orderedTeamMembers %}
       {% if member.data.show_on_about %}
-        <div class="about__content flow">
+        <custom-card clickable small-padding img-3-2>
           {% image "." + member.data.image, "" %}
-
-          <h3>{{ member.data.name }}</h3>
-          {{ member.data.description_short | markdownFormat | safe }}
-        </div>
+          <h3 class="text-step-1" slot="headline"><a href="{{ member.url }}">{{ member.data.name }}</a>  {% if member.data.role %}
+              <span class="text-step-min-1 font-bold">{{ member.data.role }}</span>
+            {% endif %}</h3>
+          <div slot="content" webc:nokeep>
+            {{ member.data.description_short | markdownFormat | safe }}
+          </div>
+        </custom-card>
       {% endif %}
       {% endfor %}
     </div>
@@ -187,7 +191,7 @@ title: dyvenia
 <div class="why | wrapper">
   <article class="feature | region flow">
     <header class="flow">
-    <h2>{{ whyus_intro.title }}</h2>
+    <h2 class="heading-line">{{ whyus_intro.title }}</h2>
       {{ whyus_intro.content | markdownFormat | safe }}
       </header>
 
@@ -208,7 +212,6 @@ title: dyvenia
   {% image our_services.image, "" %}
   {% endif %}
 
-
     <article class="wrapper region flow">
         <h2 class="text-center">{{ our_services.title }}</h2>
 
@@ -226,9 +229,8 @@ title: dyvenia
 
 </div>
 
-<div class="wrapper">
+<div class="blog | wrapper">
   <section class="full | region">
-
     <div class="wrapper flow prose">
       <h2><a class="no-underline hover:underline" href="/insights/">{{ blog.title }}</a></h2>
 
@@ -237,16 +239,16 @@ title: dyvenia
       {% endif %}
 
       <div class="feature">
-        <custom-masonry layout="50-50">
+        <div class="grid gutter-s" data-layout='thirds'>
 
-                   <!-- loop posts -->
          {% set itemList = collections.allPosts %}
-         {% asyncEach item in itemList.slice(0, 4) %}
-           {% set definedDate = item.date %}
+         {% asyncEach item in itemList.slice(0, 3) %}
+         {% set showTags = false %}
+         {% set headingLevel = "h3" %}
            {% include "partials/card-blog.njk" %}
          {% endeach %}
 
-        </custom-masonry>
+        </div>
       </div>
     </div>
   </section>
@@ -256,4 +258,5 @@ title: dyvenia
   {%- include "css/custom-hero.css" -%}
   {%- include 'css/home.css' -%}
   {%- include 'css/column.css' -%}
+  {%- include "css/custom-card.css" -%}
 {%- endcss -%}
