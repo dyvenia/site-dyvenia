@@ -5,6 +5,16 @@
 
 /* ------------------- sections */
 
+/* intro */
+
+.home .intro strong {
+  color: var(--color-blue);
+}
+
+.home .intro div > ul:first-child {
+  margin-block-start: 0;
+}
+
 /* highlight-1 */
 
 .home .highlight-one {
@@ -50,7 +60,7 @@
 }
 
 .home .highlight-two article > h2 {
-  max-inline-size: 50ch;
+  max-inline-size: 70ch;
   margin-inline: auto;
 }
 

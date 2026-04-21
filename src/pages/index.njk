@@ -7,10 +7,12 @@ hero:
   video: ./src/assets/videos/jellyfish-1.mp4
   image: ./src/assets/images/backgrounds/jellyfish-hr.jpg
 intro:
-  title: Most companies don’t actually struggle with data. They struggle with the context behind it.
-  content: |-
+  title:
+    Most companies don’t actually struggle with data.
+    **They struggle with the context behind it.**
+  content_left: |-
     Data exists across multiple systems, teams, and processes, but it is rarely structured in a way that preserves its business meaning, breaking trust.
-
+  content_right: |-
     - Data lives across ERPs, CRMs, and operational systems
     - Metrics defined differently across functions
     - Business context gets lost when data is combined across sources
@@ -103,10 +105,14 @@ title: dyvenia
 } %}
 {% include "partials/custom-hero.njk" %}
 
+
 <div class="intro | wrapper">
-  <article class="region flow prose">
-    <h2 class="text-step-2">{{ intro.title | markdownInline | safe }}</h2>
-    {{ intro.content | markdownFormat | safe }}
+  <article class="prose region flow feature">
+    <h2>{{ intro.title | markdownInline | safe }}</h2>
+      <div class="grid" data-layout="50-50">
+          <div class="text-step-1">{{ intro.content_left | markdownFormat | safe }}</div>
+          <div>{{ intro.content_right | markdownFormat | safe }}</div>
+      </div>
   </article>
 </div>
 
@@ -124,10 +130,10 @@ title: dyvenia
 
 <div class="highlight-two | wrapper">
   <div class="full wrapper section" style="--spot-color: var(--color-blue-accent-6)">
-    <article class="full  intro | section__inner wrapper region flow prose text-center text-blue-100">
-      <h2 class="text-step-1">
+    <article class="full intro | section__inner wrapper region flow prose text-center text-blue-100">
+      <h2 class="text-step-1 feature">
         {{ highlight_two.title1 }}
-        <span class="block text-step-3 text-blue-400 mt-2xs">{{ highlight_two.title2 }} </span>
+        <span class="block text-step-4 text-blue-400 mt-2xs">{{ highlight_two.title2 }} </span>
       </h2>
       <p class="flow-space-l">{{ highlight_two.content }}</p>
     </article>
