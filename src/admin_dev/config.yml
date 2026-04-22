@@ -38,7 +38,7 @@ collections:
               - {label: 'Subtitle', name: 'subtitle', widget: 'markdown'}
               - {label: 'Button Text', name: 'button_text', widget: 'string'}
               - {label: 'Button Target', name: 'button_target', widget: 'string'}
-              - {label: 'Image', name: 'image', widget: 'image', required: false}
+              - {label: 'Image', name: 'image', widget: 'hidden', required: false}
               - {label: 'Video', name: 'video', widget: 'file', required: false}
           - label: 'Introduction'
             name: 'intro'
@@ -384,6 +384,63 @@ collections:
                 fields:
                   - {label: 'Title', name: 'title', widget: 'string'}
                   - {label: 'Content', name: 'content', widget: 'markdown'}
+
+  - name: 'careers'
+    label: 'Careers'
+    icon: 'work'
+    create: false
+    extension: 'njk'
+    format: 'frontmatter'
+    files:
+      - file: 'src/pages/careers.njk'
+        label: 'Careers'
+        name: 'careers'
+        fields:
+          - {label: 'Title', name: 'title', widget: 'string'}
+          - {label: 'Description', name: 'description', widget: 'string'}
+          - {label: 'Layout', name: 'layout', widget: 'hidden'}
+          - {label: 'Permalink', name: 'permalink', widget: 'hidden'}
+          - {label: 'Body Class', name: 'bodyClass', widget: 'hidden'}
+          - label: 'Hero'
+            name: 'hero'
+            widget: 'object'
+            fields:
+              - {label: 'Title', name: 'title', widget: 'markdown'}
+              - {label: 'Subtitle', name: 'subtitle', widget: 'markdown'}
+              - {label: 'Image', name: 'image', widget: 'hidden', required: false}
+              - {label: 'Button Text', name: 'button_text', widget: 'string'}
+              - {label: 'Button Target', name: 'button_target', widget: 'string'}
+          - label: 'Values Section'
+            name: 'values'
+            widget: 'object'
+            fields:
+              - {label: 'Title', name: 'title', widget: 'string'}
+              - {label: 'Content', name: 'content', widget: 'markdown'}
+          - label: 'What We Offer Section'
+            name: 'offers'
+            widget: 'object'
+            fields:
+              - {label: 'Title', name: 'title', widget: 'string'}
+              - {label: 'Intro', name: 'intro', widget: 'markdown'}
+              - label: 'Offer Items'
+                name: 'items'
+                widget: 'list'
+                fields:
+                  - {label: 'Title', name: 'title', widget: 'string'}
+                  - {label: 'Content', name: 'content', widget: 'markdown'}
+              - {label: 'Button Text', name: 'button_text', widget: 'string'}
+              - {label: 'Button Target', name: 'button_target', widget: 'string'}
+          - label: 'Application CTA Section'
+            name: 'cta'
+            widget: 'object'
+            fields:
+              - {label: 'Title', name: 'title', widget: 'string'}
+              - {label: 'Subtitle', name: 'subtitle', widget: 'markdown'}
+              - {label: 'Pre Button Text', name: 'pre', widget: 'markdown', required: false}
+              - {label: 'Button Text', name: 'button_text', widget: 'string'}
+              - {label: 'Button Target', name: 'button_target', widget: 'string'}
+              - {label: 'Image', name: 'image', widget: 'hidden', required: false}
+              - {label: 'Footer', name: 'footer', widget: 'markdown', required: false}
 
   - name: 'meta'
     label: 'Meta Fields'

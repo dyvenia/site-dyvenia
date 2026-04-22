@@ -1,0 +1,38 @@
+.careers .custom-hero .wrapper {
+  max-inline-size: 75ch;
+}
+
+.careers .feature > * {
+  margin-inline: auto;
+}
+
+.careers .feature > h2,
+.careers .feature > p {
+  text-align: center;
+}
+
+.careers .feature > h2 {
+  max-inline-size: 24ch;
+}
+
+.careers .feature > p {
+  max-inline-size: 65ch;
+}
+
+.careers .careers-offers {
+  background: var(--color-bg-accent);
+}
+
+.careers .careers-offers .offer-list {
+  max-inline-size: 70ch;
+}
+
+.careers .careers-offers .button {
+  width: fit-content;
+}
+
+.careers .cta {
+  --color-page-header-accent: var(--color-purple-300);
+  --color-page-header-text: var(--color-purple-800);
+  background: var(--color-bg-accent);
+}
