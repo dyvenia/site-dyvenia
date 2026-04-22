@@ -38,12 +38,15 @@ collections:
               - {label: 'Subtitle', name: 'subtitle', widget: 'markdown'}
               - {label: 'Button Text', name: 'button_text', widget: 'string'}
               - {label: 'Button Target', name: 'button_target', widget: 'string'}
+              - {label: 'Image', name: 'image', widget: 'image', required: false}
+              - {label: 'Video', name: 'video', widget: 'file', required: false}
           - label: 'Introduction'
             name: 'intro'
             widget: 'object'
             fields:
-              - {label: 'Title', name: 'title', widget: 'string'}
-              - {label: 'Content', name: 'content', widget: 'markdown'}
+              - {label: 'Title', name: 'title', widget: 'markdown'}
+              - {label: 'Content Left', name: 'content_left', widget: 'markdown'}
+              - {label: 'Content Right', name: 'content_right', widget: 'markdown'}
           - label: 'Highlight One'
             name: 'highlight_one'
             widget: 'object'
@@ -128,6 +131,27 @@ collections:
         }
       - {label: 'Internal Notes', name: 'internal_notes', widget: 'markdown'}
       - {label: 'Body', name: 'body', widget: 'markdown', modes: [raw, rich_text]}
+
+  - name: 'insights'
+    label: 'Insights Page'
+    icon: 'article'
+    create: false
+    extension: 'njk'
+    format: 'frontmatter'
+    media_folder: '/src/assets/images/backgrounds/'
+    files:
+      - file: 'src/pages/blog.njk'
+        label: 'Insights'
+        name: 'insights'
+        fields:
+          - {name: 'title', label: 'Title', widget: 'string'}
+          - {name: 'permalink', label: 'Permalink', widget: 'hidden'}
+          - {name: 'description', label: 'Meta Description', widget: 'text'}
+          - {name: 'layout', label: 'Layout', widget: 'hidden'}
+          - {name: 'bodyClass', label: 'Body Class', widget: 'hidden', required: false}
+          - {name: 'footerSpace', label: 'Footer Space Class', widget: 'hidden', required: false}
+          - {name: 'intro', label: 'Intro Text', widget: 'markdown'}
+          - {name: 'image', label: 'Hero Image', widget: 'hidden'}
 
   - name: 'case_studies'
     label: 'Case Studies'
@@ -263,6 +287,8 @@ collections:
               - {label: 'Subtitle', name: 'subtitle', widget: 'markdown'}
               - {label: 'Button Text', name: 'button_text', widget: 'string'}
               - {label: 'Button Target', name: 'button_target', widget: 'string'}
+              - {label: 'Image', name: 'image', widget: 'hidden', required: false}
+              - {label: 'Image Alt', name: 'image_alt', widget: 'hidden', required: false}
           - label: 'Introduction'
             name: 'intro'
             widget: 'object'
