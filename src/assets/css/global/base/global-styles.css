@@ -11,8 +11,8 @@ html {
 }
 
 body {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 1fr auto;
   font-family: var(--font-base);
   font-size: var(--size-step-0);
   font-weight: var(--font-regular);
@@ -23,8 +23,17 @@ body {
   accent-color: var(--color-blue);
 }
 
+body > * {
+  grid-column: 1 / -1;
+}
+
+header,
 main {
-  flex: auto;
+  grid-row: 1;
+}
+
+header {
+  block-size: fit-content;
 }
 
 /* Typography */

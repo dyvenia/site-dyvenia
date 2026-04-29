@@ -17,9 +17,9 @@
 
 .page-header picture {
   --flow-space: 0;
-  background: var(--color-blue-accent-5);
+  background: var(--color-page-header-accent, var(--color-blue-accent-5));
   mix-blend-mode: darken;
-  max-block-size: 25rem;
+  block-size: max(25rem, 50vh);
   overflow: hidden;
 }
 
@@ -41,18 +41,11 @@
 
 .page-header .wrapper > * {
   grid-column: content-start / feature-end;
-  justify-self: center;
   z-index: 1;
 }
 
-@media screen(md) {
-  .page-header picture {
-    max-block-size: 30rem;
-  }
-
-  .page-header img {
-    aspect-ratio: 3/2;
-  }
+.page-header .wrapper > *:not(.left) {
+  justify-self: center;
 }
 
 .section.page-header > .seperator {
@@ -60,6 +53,12 @@
   z-index: 1;
 }
 
-.page-header .wrapper > :is(p, h1) {
-  color: var(--color-light);
+.page-header .wrapper > :is(p, h1, h2, h3) {
+  color: var(--color-page-header-text, var(--color-light));
+}
+
+@media (min-width: 1000px) {
+  .page-header :is(img, .custom-hero__video) {
+    aspect-ratio: 3/2;
+  }
 }

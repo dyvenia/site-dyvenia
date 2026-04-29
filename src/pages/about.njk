@@ -21,24 +21,46 @@ team:
   image_alt: 'Group photo of the Dyvenia team, featuring 25 individuals standing together in a modern office setting. The team members are dressed in business casual attire, with a mix of smiles and relaxed expressions. The background features light-colored walls, abstract artwork, and a polished interior design.'
 ---
 
+{%
+  set aboutHero = {
+    title: title,
+    subtitle: intro
+  }
+%}
+{%
+  set customHero = {
+    hero: aboutHero,
+    theme: "light",
+    divider: null,
+    background: "bg-accent",
+    content_inline: "left",
+    region_space: "xl"
+  }
+%}
+{% include "partials/custom-hero.njk" %}
+
 <div class="wrapper">
-  <header class="region flow">
-    <h1>{{ title }}</h1>
-    <div class="flow">{{ intro | markdownFormat | safe }}</div>
-  </header>
-  <article class="feature flow flow-space-l">
+  <article class="feature | region region-space-m flow flow-space-l">
     <h2>{{ experts }}</h2>
-    {% for member in collections.team_members %}
-      {% if member.data.show_on_about %}
-        <div class="about__content flow grid gutter-m" data-layout="thirds">
-          {% image "." + member.data.image, "" %}
-          <div class="flow prose">
-            <h3>{{ member.data.name }}</h3>
-            {{ member.data.description_long | markdownFormat | safe }}
-          </div>
-        </div>
-      {% endif %}
-    {% endfor %}
+    {% set orderedTeamMembers = collections.team_members | sortByOrderIndex %}
+    <div class="grid mt-xl-2xl" data-layout="thirds">
+      {% for member in orderedTeamMembers %}
+        {% if member.data.show_on_about %}
+          <custom-card clickable small-padding img-3-2 slight-border>
+            {% image "." + member.data.image, "" %}
+            <h3 class="text-step-1" slot="headline">
+              <a href="{{ member.url }}"
+                >{{ member.data.name }}
+                {% if member.data.role %}
+                  <span class="text-step-min-1 font-bold">{{ member.data.role }}</span>
+                {% endif %}</a
+              >
+            </h3>
+            <div slot="content" webc:nokeep>{{ member.data.description_short | markdownFormat | safe }}</div>
+          </custom-card>
+        {% endif %}
+      {% endfor %}
+    </div>
   </article>
 
   {% if team.activate %}
@@ -52,5 +74,7 @@ team:
 </div>
 
 {%- css "local" -%}
+  {%- include "css/custom-hero.css" -%}
   {%- include 'css/about.css' -%}
+  {%- include "css/custom-card.css" -%}
 {%- endcss -%}

@@ -18,7 +18,7 @@ dotenv.config();
 import yaml from 'js-yaml';
 
 //  config import
-import { getAllCaseStudies, getAllPosts, onlyMarkdown, tagList } from './src/_config/collections.js';
+import {getAllCaseStudies, getAllPosts, onlyMarkdown, tagList} from './src/_config/collections.js';
 import events from './src/_config/events.js';
 import filters from './src/_config/filters.js';
 import plugins from './src/_config/plugins.js';
@@ -86,11 +86,13 @@ export default async function (eleventyConfig) {
   eleventyConfig.addFilter('toIsoString', filters.toISOString);
   eleventyConfig.addFilter('formatDate', filters.formatDate);
   eleventyConfig.addFilter('markdownFormat', filters.markdownFormat);
+  eleventyConfig.addFilter('markdownInline', filters.markdownInline);
   eleventyConfig.addFilter('splitlines', filters.splitlines);
   eleventyConfig.addFilter('striptags', filters.striptags);
   eleventyConfig.addFilter('shuffle', filters.shuffleArray);
   eleventyConfig.addFilter('alphabetic', filters.sortAlphabetically);
   eleventyConfig.addFilter('slugify', filters.slugifyString);
+  eleventyConfig.addFilter('sortByOrderIndex', filters.sortByOrderIndex);
 
   // --------------------- Shortcodes
   eleventyConfig.addShortcode('svg', shortcodes.svgShortcode);
@@ -115,8 +117,8 @@ export default async function (eleventyConfig) {
   });
 
   // -- same path
-  ['src/assets/fonts/', 'src/assets/images/template', 'src/assets/og-images'].forEach(path =>
-    eleventyConfig.addPassthroughCopy(path)
+  ['src/assets/fonts/', 'src/assets/images/template', 'src/assets/og-images', 'src/assets/videos'].forEach(
+    path => eleventyConfig.addPassthroughCopy(path)
   );
 
   eleventyConfig.addPassthroughCopy({

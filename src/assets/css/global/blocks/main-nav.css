@@ -49,7 +49,7 @@
   block-size: var(--nav-list-height);
 }
 
-.mainnav ul[no-flash] {
+.mainnav ul[data-no-flash] {
   transition: none;
 }
 
@@ -118,18 +118,13 @@ body:has(.nav-drawer-toggle[aria-expanded='true']) {
   /* configuration */
   --nav-item-background: transparent;
   --nav-item-text-color: var(--color-text);
-  --nav-item-padding: var(--space-3xs) var(--space-4xs);
+  --nav-item-padding: var(--space-3xs);
   --nav-item-decoration-color: transparent;
 
   background: var(--nav-item-background);
   color: var(--nav-item-text-color);
   padding: var(--nav-item-padding);
   display: block;
-  border-radius: var(--border-radius-small);
-  text-decoration-line: underline;
-  text-decoration-color: var(--nav-item-decoration-color);
-  text-decoration-thickness: 3px;
-  text-underline-offset: 0.2em;
   line-height: var(--leading-flat);
   font-weight: var(--font-medium);
   text-box-trim: trim-both;
@@ -207,12 +202,12 @@ body:has(.nav-drawer-toggle[aria-expanded='true']) {
 .mainnav > ul:first-of-type > li:last-child a {
   --nav-item-background: var(--color-blue);
   --nav-item-text-color: var(--color-light);
-  --nav-item-padding: var(--space-2xs);
+  --nav-item-padding: 0.2em var(--space-2xs);
 }
 
 .mainnav > ul:first-of-type > li:last-child a:is(:hover, :focus),
 .mainnav > ul:first-of-type > li:last-child [aria-current='page'] {
-  --nav-item-background: var(--color-text);
+  --nav-item-background: var(--color-blue-600);
   --nav-item-decoration-color: transparent;
   --nav-item-text-color: var(--color-bg);
 }
@@ -230,6 +225,7 @@ body:has(.nav-drawer-toggle[aria-expanded='true']) {
   .mainnav ul {
     --gutter: var(--space-2xs);
     --cluster-horizontal-alignment: flex-start;
+    --nav-list-background: transparent;
     --nav-list-layout: row;
     --nav-list-position: static;
     --nav-list-padding: 0;

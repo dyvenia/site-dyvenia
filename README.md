@@ -3,6 +3,8 @@
 Deployed websites:
 
 - Dev is deployed from `dev` branch and is available here: https://site-dyvenia.netlify.app/
+- Content is deployed from `content` branch and is available here: https://content--site-dyvenia.netlify.app/
+- Main is deployed from `main` branch and is available here: https://site-dyvenia.netlify.app/
 
 ---
 

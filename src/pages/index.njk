@@ -1,15 +1,18 @@
 ---
 hero:
-  title: Clear metrics. Reliable data. Decisions you can trust.
-  subtitle: '**dyvenia helps enterprises align and validate their metrics so leaders can trust their numbers, scale analytics, and deploy AI with confidence**.'
+  title: '_Clear_ metrics. _Reliable_ data. Decisions you can _trust_.'
+  subtitle: 'dyvenia helps enterprises align and validate their metrics so leaders can trust their numbers, scale analytics, and deploy AI with confidence.'
   button_text: Schedule a discovery call
   button_target: https://meetings-eu1.hubspot.com/alessio-civitillo/book-a-call
-  image: ./src/assets/images/backgrounds/sfondi-dyvenia08.jpg
+  video: ./src/assets/videos/jellyfish-1.mp4
+  image: ./src/assets/images/backgrounds/jellyfish-hr.jpg
 intro:
-  title: Most companies don’t actually struggle with data. They struggle with the context behind it.
-  content: |-
+  title:
+    Most companies don’t actually struggle with data.
+    **They struggle with the context behind it.**
+  content_left: |-
     Data exists across multiple systems, teams, and processes, but it is rarely structured in a way that preserves its business meaning, breaking trust.
-
+  content_right: |-
     - Data lives across ERPs, CRMs, and operational systems
     - Metrics defined differently across functions
     - Business context gets lost when data is combined across sources
@@ -84,6 +87,7 @@ our_services_items:
       - Shared definitions across teams for **consistent KPIs**.
 description: Driving Better Decisions and Business Performance with Unified Metrics
 bodyClass: home
+mainClass: "scroll-fade-up-h2s"
 blog:
   title: Our Insights
   intro: Selected Articles. Check our blog for more.
@@ -92,26 +96,23 @@ permalink: /index.html
 title: dyvenia
 ---
 
-<header class="section page-header">
-  {% svg "divider/soft-top", null, "seperator" %}
+{% set customHero = {
+  hero: hero,
+  height: "cover",
+  content_inline: "left",
+  region_space: "xl-2xl",
+  button_variant: "blue"
+} %}
+{% include "partials/custom-hero.njk" %}
 
-  {% if hero.image %}
-    {% image hero.image, "", null, "eager" %}
-  {% endif %}
-
-  <div class="section__inner region region-space-xl-2xl ">
-    <div class="wrapper flow">
-    <h1>{{ hero.title }}</h1>
-      {{ hero.subtitle | markdownFormat | safe }}
-      <a href="{{ hero.button_target }}" class="button flow-space-xl"> {{ hero.button_text }} {% svg "misc/arrow" %}</a>
-    </div>
-  </div>
-</header>
 
 <div class="intro | wrapper">
-  <article class="region flow prose">
-    <h2 class="text-step-2">{{ intro.title }}</h2>
-    {{ intro.content | markdownFormat | safe }}
+  <article class="prose region flow feature">
+    <h2>{{ intro.title | markdownInline | safe }}</h2>
+      <div class="grid" data-layout="50-50">
+          <div class="text-step-1">{{ intro.content_left | markdownFormat | safe }}</div>
+          <div>{{ intro.content_right | markdownFormat | safe }}</div>
+      </div>
   </article>
 </div>
 
@@ -129,10 +130,10 @@ title: dyvenia
 
 <div class="highlight-two | wrapper">
   <div class="full wrapper section" style="--spot-color: var(--color-blue-accent-6)">
-    <article class="full  intro | section__inner wrapper region flow prose text-center text-blue-100">
-      <h2 class="text-step-1">
+    <article class="full intro | section__inner wrapper region flow prose text-center text-blue-100">
+      <h2 class="text-step-1 feature">
         {{ highlight_two.title1 }}
-        <span class="block text-step-3 text-blue-400 mt-2xs">{{ highlight_two.title2 }} </span>
+        <span class="block text-step-4 text-blue-400 mt-2xs">{{ highlight_two.title2 }} </span>
       </h2>
       <p class="flow-space-l">{{ highlight_two.content }}</p>
     </article>
@@ -164,19 +165,23 @@ title: dyvenia
 
 <div class="about | wrapper">
   <article class="feature | region">
-    <header class="grid" data-layout="thirds">
+    <header class="grid intro" data-layout="thirds">
       <h2>{{ about.title }}</h2>
       <div class="flow">{{ about.content | markdownFormat | safe }}</div>
     </header>
-    <div class="grid mt-xl-2xl" data-layout="thirds">
-      {% for member in collections.team_members %}
+    {% set orderedTeamMembers = collections.team_members | sortByOrderIndex %}
+    <div class="grid team mt-xl-2xl" data-layout="thirds">
+      {% for member in orderedTeamMembers %}
       {% if member.data.show_on_about %}
-        <div class="about__content flow">
+        <custom-card clickable small-padding img-3-2>
           {% image "." + member.data.image, "" %}
-
-          <h3>{{ member.data.name }}</h3>
-          {{ member.data.description_short | markdownFormat | safe }}
-        </div>
+          <h3 class="text-step-1" slot="headline"><a href="{{ member.url }}">{{ member.data.name }}</a>  {% if member.data.role %}
+              <span class="text-step-min-1 font-bold">{{ member.data.role }}</span>
+            {% endif %}</h3>
+          <div slot="content" webc:nokeep>
+            {{ member.data.description_short | markdownFormat | safe }}
+          </div>
+        </custom-card>
       {% endif %}
       {% endfor %}
     </div>
@@ -186,7 +191,7 @@ title: dyvenia
 <div class="why | wrapper">
   <article class="feature | region flow">
     <header class="flow">
-    <h2>{{ whyus_intro.title }}</h2>
+    <h2 class="heading-line">{{ whyus_intro.title }}</h2>
       {{ whyus_intro.content | markdownFormat | safe }}
       </header>
 
@@ -207,7 +212,6 @@ title: dyvenia
   {% image our_services.image, "" %}
   {% endif %}
 
-
     <article class="wrapper region flow">
         <h2 class="text-center">{{ our_services.title }}</h2>
 
@@ -225,9 +229,8 @@ title: dyvenia
 
 </div>
 
-<div class="wrapper">
+<div class="blog | wrapper">
   <section class="full | region">
-
     <div class="wrapper flow prose">
       <h2><a class="no-underline hover:underline" href="/insights/">{{ blog.title }}</a></h2>
 
@@ -236,23 +239,24 @@ title: dyvenia
       {% endif %}
 
       <div class="feature">
-        <custom-masonry layout="50-50">
+        <div class="grid gutter-s" data-layout='thirds'>
 
-                   <!-- loop posts -->
          {% set itemList = collections.allPosts %}
-         {% asyncEach item in itemList.slice(0, 4) %}
-           {% set definedDate = item.date %}
+         {% asyncEach item in itemList.slice(0, 3) %}
+         {% set showTags = false %}
+         {% set headingLevel = "h3" %}
            {% include "partials/card-blog.njk" %}
          {% endeach %}
 
-        </custom-masonry>
+        </div>
       </div>
     </div>
   </section>
 </div>
 
 {%- css "local" -%}
-  {%- include "css/page-header.css" -%}
+  {%- include "css/custom-hero.css" -%}
   {%- include 'css/home.css' -%}
   {%- include 'css/column.css' -%}
+  {%- include "css/custom-card.css" -%}
 {%- endcss -%}

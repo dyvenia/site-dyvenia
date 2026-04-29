@@ -1,12 +1,12 @@
+import autoprefixer from 'autoprefixer';
+import cssnano from 'cssnano';
+import fg from 'fast-glob';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import postcss from 'postcss';
 import postcssImport from 'postcss-import';
 import postcssImportExtGlob from 'postcss-import-ext-glob';
 import tailwindcss from 'tailwindcss';
-import autoprefixer from 'autoprefixer';
-import cssnano from 'cssnano';
-import fg from 'fast-glob';
 
 const buildCss = async (inputPath, outputPaths) => {
   const inputContent = await fs.readFile(inputPath, 'utf-8');
@@ -41,7 +41,7 @@ export const buildAllCss = async () => {
   const componentCssFiles = await fg(['src/assets/css/components/**/*.css']);
   for (const inputPath of componentCssFiles) {
     const baseName = path.basename(inputPath);
-    tasks.push(buildCss(inputPath, [`dist/assets/css/components/${baseName}`]));
+    tasks.push(buildCss(inputPath, [`_site/assets/css/components/${baseName}`]));
   }
 
   await Promise.all(tasks);

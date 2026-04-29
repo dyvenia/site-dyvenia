@@ -15,6 +15,7 @@
   block-size: auto;
   stroke-width: 2.5px;
   font-size: var(--size-step-0);
+  color: var(--color-text);
 }
 
 @media screen(navigation) {

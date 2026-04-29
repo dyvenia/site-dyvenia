@@ -1,0 +1,168 @@
+.custom-hero {
+  --custom-hero-bg: var(--color-blue-800);
+  display: grid;
+  grid-template-columns: 1fr;
+  place-content: center;
+  background: var(--custom-hero-bg);
+}
+
+.custom-hero > * {
+  grid-column: full;
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+
+.custom-hero :is(picture, .custom-hero__video-container) {
+  --flow-space: 0;
+  background: var(--custom-hero-bg);
+  mix-blend-mode: darken;
+  overflow: hidden;
+}
+
+:root[data-theme='dark'] .custom-hero :is(picture, .custom-hero__video-container) {
+  mix-blend-mode: lighten;
+}
+
+.custom-hero[data-hero-background='purple-dark'] {
+  --custom-hero-bg: var(--color-purple-800);
+  --color-text: var(--color-purple-100);
+}
+
+.custom-hero[data-hero-background='navy-dark'] {
+  --custom-hero-bg: var(--color-navy-dark);
+}
+
+.custom-hero[data-hero-background='bg-accent'] {
+  --custom-hero-bg: var(--color-bg-accent);
+}
+
+.custom-hero :is(img, .custom-hero__video) {
+  inline-size: 100%;
+  object-fit: cover;
+  aspect-ratio: 1 / 2;
+  filter: grayscale(100%) brightness(0.5) opacity(0.3) contrast(200%);
+  mix-blend-mode: multiply;
+}
+
+.custom-hero__content {
+  display: grid;
+  place-content: center;
+}
+
+[data-theme='light'] .custom-hero img {
+  filter: grayscale(100%) brightness(0.7) opacity(0.3) contrast(200%);
+}
+
+[data-theme='dark'] .custom-hero img {
+  filter: grayscale(100%) brightness(0.7) opacity(0.5) contrast(200%);
+}
+
+.custom-hero[data-hero-media='video'] picture {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .custom-hero[data-hero-media='video'] .custom-hero__video {
+    display: none;
+  }
+
+  .custom-hero[data-hero-media='video'] picture {
+    display: block;
+  }
+}
+
+.custom-hero .wrapper > * {
+  grid-column: content-start / feature-end;
+  z-index: 1;
+}
+
+.custom-hero[data-hero-content-inline='left'] .wrapper > * {
+  justify-self: start;
+  text-align: start;
+}
+
+.custom-hero[data-hero-content-inline='center'] .wrapper > * {
+  justify-self: center;
+  text-align: center;
+}
+
+.custom-hero[data-hero-content-inline='right'] .wrapper > * {
+  justify-self: end;
+  text-align: end;
+}
+
+.custom-hero[data-hero-content-block='top'] .custom-hero__content {
+  align-content: start;
+}
+
+.custom-hero[data-hero-content-block='center'] .custom-hero__content {
+  align-content: center;
+}
+
+.custom-hero[data-hero-content-block='bottom'] .custom-hero__content {
+  align-content: end;
+}
+
+.custom-hero[data-hero-height='default'] :is(picture, .custom-hero__video) {
+  block-size: max(35rem, 50vh);
+}
+
+.custom-hero[data-hero-height='tall'] :is(picture, .custom-hero__video) {
+  block-size: max(40rem, 65vh);
+}
+
+.custom-hero[data-hero-height='cover'] :is(picture, .custom-hero__video) {
+  block-size: max(45rem, 95vh);
+}
+
+.custom-hero[data-hero-height='cover'] :is(img, .custom-hero__video) {
+  filter: grayscale(100%) brightness(1) opacity(0.6) contrast(150%);
+  object-position: top right;
+}
+
+.custom-hero[data-hero-height='cover'] h1 {
+  max-inline-size: 20ch;
+  font-weight: var(--font-regular);
+  text-wrap: pretty;
+  line-height: var(--leading-flat);
+}
+
+.custom-hero[data-hero-height='cover'] em {
+  color: color-mix(in oklab, var(--color-blue) 50%, var(--color-light));
+  font-style: normal;
+}
+
+.custom-hero[data-hero-height='cover'] .custom-hero__content p {
+  max-inline-size: 55ch;
+}
+
+@media screen(md) {
+  .custom-hero[data-hero-height='default'] :is(picture, .custom-hero__video) {
+    max-block-size: 50vh;
+  }
+
+  .custom-hero[data-hero-height='tall'] :is(picture, .custom-hero__video) {
+    max-block-size: 40rem;
+  }
+
+  .custom-hero[data-hero-height='cover'] :is(picture, .custom-hero__video) {
+    max-block-size: 95vh;
+  }
+
+  .custom-hero :is(img, .custom-hero__video) {
+    aspect-ratio: 3 / 2;
+  }
+}
+
+.section.custom-hero > .seperator {
+  align-self: end;
+  z-index: 1;
+}
+
+.custom-hero .wrapper > :is(p, h1) {
+  color: var(--color-light);
+}
+
+.custom-hero[data-hero-background='bg-accent'] .wrapper > :is(p, h1) {
+  color: var(--color-text);
+}

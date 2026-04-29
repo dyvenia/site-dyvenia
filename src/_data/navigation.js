@@ -7,6 +7,10 @@ export default {
     {
       text: 'Insights',
       url: '/insights/'
+    },
+    {
+      text: 'Careers',
+      url: '/careers/'
     }
   ],
   bottom: [

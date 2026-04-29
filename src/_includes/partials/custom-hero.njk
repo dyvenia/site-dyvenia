@@ -1,0 +1,66 @@
+{% set heroData = customHero.hero or hero %}
+
+{% set heroTheme = customHero.theme or "dark" %}
+{% set heroDivider = customHero.divider if customHero.divider is defined else "divider/soft-top" %}
+{% set heroDividerClass = customHero.divider_class or "seperator" %}
+{% set heroHeight = customHero.height or heroData.height or "default" %}
+{% set heroBackground = customHero.background or heroData.background or "blue-800" %}
+{% set heroInline = customHero.content_inline or "center" %}
+{% set heroBlock = customHero.content_block or "center" %}
+{% set heroRegionSpace = customHero.region_space or "xl" %}
+{% set heroButtonVariant = customHero.button_variant %}
+
+<header
+  class="section custom-hero"
+  data-section-theme="{{ heroTheme }}"
+  data-hero-media="{% if heroData.video %}video{% else %}image{% endif %}"
+  data-hero-height="{{ heroHeight }}"
+  data-hero-background="{{ heroBackground }}"
+  data-hero-content-inline="{{ heroInline }}"
+  data-hero-content-block="{{ heroBlock }}"
+>
+  {% if heroDivider %}
+    {% svg heroDivider, null, "seperator " + heroDividerClass if heroDividerClass else "" %}
+  {% endif %}
+
+  {% if heroData.video %}
+    <div class="custom-hero__video-container">
+      <video
+        class="custom-hero__video"
+        autoplay
+        muted
+        loop
+        playsinline
+        {% if heroData.image %}poster="{{ heroData.image | replace('./src', '') }}"{% endif %}
+      >
+        <source src="{{ heroData.video | replace('./src', '') }}" type="video/mp4" />
+      </video>
+    </div>
+  {% endif %}
+
+  {% if heroData.image %}
+    {% image heroData.image, heroData.image_alt or heroData.alt or "", null, "eager" %}
+  {% endif %}
+
+  <div class="custom-hero__content | section__inner region region-space-{{ heroRegionSpace }}">
+    <div class="wrapper flow">
+      <h1 class="fade-in-bottom{% if heroTheme == "dark" %}text-base-light{% endif %}">
+        {{ heroData.title | markdownInline | safe }}
+      </h1>
+
+      {% if heroData.subtitle %}
+        <div class="fade-in delay-3 flow">{{ heroData.subtitle | markdownFormat | safe }}</div>
+      {% endif %}
+
+      {% if heroData.button_text and heroData.button_target %}
+        <a
+          href="{{ heroData.button_target }}"
+          class="button flow-space-l fade-in delay-7"
+          {% if heroButtonVariant %}data-button-variant="{{ heroButtonVariant }}"{% endif %}
+        >
+          {{ heroData.button_text }} {% svg "misc/arrow" %}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</header>

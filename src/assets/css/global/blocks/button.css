@@ -1,17 +1,18 @@
 .button {
   --button-bg: var(--color-text);
   --button-color: color-mix(in oklab, var(--button-bg) 10%, var(--color-bg));
-  --button-hover-bg: color-mix(in oklab, var(--button-bg) 90%, var(--color-bg));
+  --button-hover-bg: color-mix(in oklab, var(--button-bg) 90%, var(--color-text));
   --button-hover-color: color-mix(in oklab, var(--button-bg) 5%, var(--color-bg));
   --button-border-width: var(--border-thickness);
   --button-border-style: solid;
-  --button-border-color: color-mix(in oklab, var(--button-bg) 95%, var(--color-text));
-  --button-radius: var(--border-radius-small);
-  --button-font-weight: var(--font-bold);
+  --button-border-color: var(--button-bg);
+  --button-hover-border-color: var(--button-hover-bg);
+  --button-font-weight: var(--font-regular);
   --button-gap: var(--space-2xs);
-  --button-padding: var(--space-3xs) var(--space-xs);
+  --button-padding: var(--space-3xs) var(--space-s) 0.4em var(--space-s);
   --button-font-size: var(--size-step-0);
   --button-text-transform: none;
+  --button-radius: var(--border-radius-small);
 
   display: inline-flex;
   align-items: center;
@@ -31,9 +32,18 @@
   /* trim the space at the cap height - in  Safari Technology Preview */
   text-box-trim: trim-both;
   text-box-edge: cap alphabetic;
+  transition:
+    text-decoration var(--transition-duration) var(--transition-timing),
+    background-color var(--transition-duration) var(--transition-timing),
+    border-color var(--transition-duration) var(--transition-timing);
+}
+
+.button:has(svg) {
+  --button-padding: var(--space-3xs) var(--space-xs) 0.4em var(--space-s);
 }
 
 .button svg {
+  margin-block-start: 0.2em;
   block-size: var(--button-icon-size, 1.2cap);
   flex: none;
 }
@@ -45,6 +55,7 @@
 .button[data-state='active'] {
   background: var(--button-hover-bg);
   color: var(--button-color);
+  border-color: var(--button-hover-border-color);
 }
 
 .button:focus {
@@ -58,6 +69,7 @@
 /* Variants */
 .button[data-button-variant='blue'] {
   --button-bg: var(--color-blue);
+  --button-hover-bg: var(--color-blue-600);
   --button-color: var(--color-blue-100);
 }
 
@@ -94,4 +106,27 @@
 /* Radius variants */
 .button[data-button-radius='hard'] {
   --button-radius: 0;
+}
+
+.button[data-button-text] {
+  --button-bg: transparent;
+  --button-color: var(--color-text);
+  --button-hover-color: var(--color-text);
+  --button-hover-bg: transparent;
+  --button-hover-border-color: transparent;
+
+  --button-text-decoration-color: transparent;
+  --button-text-decoration-thickness: 3px;
+  --button-text-decoration-offset: 0.2em;
+
+  text-decoration-line: underline;
+  text-decoration-color: var(--button-text-decoration-color);
+  text-decoration-thickness: var(--button-text-decoration-thickness);
+  text-underline-offset: var(--button-text-decoration-offset);
+}
+
+.button[data-button-text]:hover {
+  --button-text-decoration-color: var(--color-text);
+  --button-text-decoration-thickness: 3px;
+  --button-text-decoration-offset: 0.2em;
 }
