@@ -23,8 +23,13 @@
   mix-blend-mode: lighten;
 }
 
-.custom-hero[data-hero-background='purple-accent-5'] {
-  --custom-hero-bg: var(--color-purple-accent-5);
+.custom-hero[data-hero-background='purple-dark'] {
+  --custom-hero-bg: var(--color-purple-800);
+  --color-text: var(--color-purple-100);
+}
+
+.custom-hero[data-hero-background='navy-dark'] {
+  --custom-hero-bg: var(--color-navy-dark);
 }
 
 .custom-hero[data-hero-background='bg-accent'] {
