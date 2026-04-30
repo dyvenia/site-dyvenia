@@ -145,7 +145,7 @@ title: dyvenia
   <article class="prose region flow feature">
     <h2>{{ intro.title | markdownInline | safe }}</h2>
       <div class="grid" data-layout="50-50">
-          <div class="text-step-1">{{ intro.content_left | markdownFormat | safe }}</div>
+          <div>{{ intro.content_left | markdownFormat | safe }}</div>
           <div>{{ intro.content_right | markdownFormat | safe }}</div>
       </div>
   </article>
@@ -153,10 +153,10 @@ title: dyvenia
 
 <div class="highlight-one | wrapper">
   <div class="full wrapper section" style="--spot-color: var(--color-blue-accent)">
-    <article class="full  intro | section__inner wrapper  region">
+    <article class="full | section__inner wrapper region">
       <div class="feature flow prose">
         <h2 class="text-step-3">{{ highlight_one.title }} <span>*</span></h2>
-        <p class="text-step-min-1"><span>*</span> {{ highlight_one.subtitle }}</p>
+        <p class="reduced-opacity | text-step-min-1"><span>*</span> {{ highlight_one.subtitle }}</p>
       </div>
       {% svg "brand/waves" %}
     </article>
@@ -165,10 +165,10 @@ title: dyvenia
 
 <div class="highlight-two | wrapper">
   <div class="full wrapper section" style="--spot-color: var(--color-blue-accent-6)">
-    <article class="full intro | section__inner wrapper region flow prose text-center text-blue-100">
+    <article class="full | section__inner wrapper region flow prose text-center text-blue-100">
       <h2 class="text-step-1 feature">
-        {{ highlight_two.title1 }}
-        <span class="block text-step-4 text-blue-400 mt-2xs">{{ highlight_two.title2 }} </span>
+        <span class="reduced-opacity">{{ highlight_two.title1 }}</span>
+        <span class="block text-step-3 text-blue-400 mt-2xs">{{ highlight_two.title2 }} </span>
       </h2>
       <p class="flow-space-l">{{ highlight_two.content }}</p>
     </article>
@@ -253,7 +253,7 @@ title: dyvenia
           {% for item in our_services_items %}
 
             <div class="grid" data-layout="thirds">
-              <h3>{{ item.prefix }} <span>{{ item.title }}</span></h3>
+              <h3><span>{{ item.prefix }}</span> {{ item.title }}</h3>
               <div>
               {{ item.description | markdownFormat | safe }}
             </div>

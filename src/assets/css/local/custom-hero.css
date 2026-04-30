@@ -69,11 +69,11 @@
   }
 }
 
-[data-theme='light'] :is(img, .custom-hero__video) {
+[data-theme='light'] .custom-hero :is(img, .custom-hero__video) {
   filter: grayscale(100%) brightness(0.7) opacity(0.3) contrast(200%);
 }
 
-[data-theme='dark'] :is(img, .custom-hero__video) {
+[data-theme='dark'] .custom-hero :is(img, .custom-hero__video) {
   filter: grayscale(100%) brightness(0.7) opacity(0.5) contrast(200%);
 }
 
