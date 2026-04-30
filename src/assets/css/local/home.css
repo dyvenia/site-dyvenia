@@ -3,9 +3,19 @@
   color: var(--color-text);
 }
 
+.home .reduced-opacity {
+  opacity: 0.8;
+}
+
 /* ------------------- sections */
 
 /* intro */
+
+.home .intro h2 {
+  font-size: var(--size-step-2);
+  line-height: 1.4;
+  max-inline-size: 50ch;
+}
 
 .home .intro strong {
   color: var(--color-blue);

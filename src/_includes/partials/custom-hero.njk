@@ -9,11 +9,12 @@
 {% set heroBlock = customHero.content_block or "center" %}
 {% set heroRegionSpace = customHero.region_space or "xl" %}
 {% set heroButtonVariant = customHero.button_variant %}
+{% set heroVideo = heroData.video %}
 
 <header
   class="section custom-hero"
   data-section-theme="{{ heroTheme }}"
-  data-hero-media="{% if heroData.video %}video{% else %}image{% endif %}"
+  data-hero-media="{% if heroVideo %}video{% else %}image{% endif %}"
   data-hero-height="{{ heroHeight }}"
   data-hero-background="{{ heroBackground }}"
   data-hero-content-inline="{{ heroInline }}"
@@ -23,22 +24,30 @@
     {% svg heroDivider, null, "seperator " + heroDividerClass if heroDividerClass else "" %}
   {% endif %}
 
-  {% if heroData.video %}
-    <div class="custom-hero__video-container">
+  {% if heroVideo %}
+    <div class="custom-hero__video-container" aria-hidden="true">
       <video
         class="custom-hero__video"
         autoplay
         muted
         loop
         playsinline
-        {% if heroData.image %}poster="{{ heroData.image | replace('./src', '') }}"{% endif %}
+        preload="metadata"
+        aria-hidden="true"
+        tabindex="-1"
+        {% if heroData.image %}poster="{% imagePosterUrl heroData.image %}"{% endif %}
       >
-        <source src="{{ heroData.video | replace('./src', '') }}" type="video/mp4" />
+        {% if heroVideo.webm %}
+          <source src="{{ heroVideo.webm | replace('./src', '') }}" type="video/webm" />
+        {% endif %}
+        {% if heroVideo.mp4 %}
+          <source src="{{ heroVideo.mp4 | replace('./src', '') }}" type="video/mp4" />
+        {% endif %}
       </video>
     </div>
   {% endif %}
 
-  {% if heroData.image %}
+  {% if heroData.image and not heroData.video %}
     {% image heroData.image, heroData.image_alt or heroData.alt or "", null, "eager" %}
   {% endif %}
 

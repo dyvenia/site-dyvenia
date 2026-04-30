@@ -98,3 +98,25 @@ export const imageShortcode = async (
     ? `<figure slot="image"${containerClass ? ` class="${containerClass}"` : ''}>${pictureElement}<figcaption>${caption}</figcaption></figure>`
     : `<picture slot="image"${containerClass ? ` class="${containerClass}"` : ''}>${imageSources}<img ${imageAttributes}></picture>`;
 };
+
+export const imagePosterUrlShortcode = async (src, width = 1200) => {
+  if (!src) return '';
+
+  if (!src.startsWith('./src')) {
+    src = `./src${src}`;
+  }
+
+  const metadata = await Image(src, {
+    widths: [width],
+    formats: ['jpeg'],
+    urlPath: '/assets/images/',
+    outputDir: './_site/assets/images/',
+    filenameFormat: (id, source, outputWidth, format) => {
+      const extension = path.extname(source);
+      const name = path.basename(source, extension);
+      return `${name}-${outputWidth}w.${format}`;
+    }
+  });
+
+  return metadata.jpeg?.[0]?.url || '';
+};
