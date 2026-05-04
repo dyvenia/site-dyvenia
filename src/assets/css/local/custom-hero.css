@@ -158,3 +158,8 @@
     max-block-size: 95vh;
   }
 }
+
+/* no media */
+.custom-hero[data-hero-media='none'] .wrapper > :is(p, h1) {
+  color: var(--color-text);
+}
