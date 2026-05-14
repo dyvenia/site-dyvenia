@@ -123,6 +123,9 @@ export default async function (eleventyConfig) {
   );
 
   eleventyConfig.addPassthroughCopy({
+    // legacy URLs (e.g. WordPress paths): mirror tree at site root
+    'src/assets/_old-site': '/',
+
     // -- to root
     'src/assets/images/favicon/*': '/',
 

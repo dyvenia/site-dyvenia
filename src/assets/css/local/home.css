@@ -204,13 +204,6 @@
   font-size: var(--size-step-min-1);
 }
 
-.home .about custom-card img {
-  inline-size: 100%;
-  block-size: auto;
-  object-fit: cover;
-  object-position: center;
-}
-
 /*  why */
 
 .home .why {

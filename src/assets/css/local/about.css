@@ -3,5 +3,6 @@
 }
 
 .about .grid {
-  --grid-min-item-size: clamp(16rem, 50vw, 16rem);
+  --gutter: var(--space-s);
+  --grid-min-item-size: clamp(16rem, 28%, 25rem);
 }
