@@ -40,13 +40,13 @@ team:
 {% include "partials/custom-hero.njk" %}
 
 <div class="wrapper">
-  <article class="feature | region region-space-m flow flow-space-l">
+  <article class="feature | region flow flow-space-l">
     <h2>{{ experts }}</h2>
     {% set orderedTeamMembers = collections.team_members | sortByOrderIndex %}
-    <div class="grid mt-xl-2xl" data-layout="thirds">
+    <div class="grid mt-m-l" data-layout="thirds">
       {% for member in orderedTeamMembers %}
         {% if member.data.show_on_about %}
-          <custom-card clickable small-padding img-3-2 slight-border>
+          <custom-card clickable small-padding img-3-2>
             {% image "." + member.data.image, "" %}
             <h3 class="text-step-1" slot="headline">
               <a href="{{ member.url }}"

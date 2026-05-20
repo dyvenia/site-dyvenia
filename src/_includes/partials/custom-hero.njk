@@ -14,7 +14,7 @@
 <header
   class="section custom-hero"
   data-section-theme="{{ heroTheme }}"
-  data-hero-media="{% if heroVideo %}video{% else %}image{% endif %}"
+  data-hero-media="{% if heroVideo %}video{% elif heroData.image %}image{% else %}none{% endif %}"
   data-hero-height="{{ heroHeight }}"
   data-hero-background="{{ heroBackground }}"
   data-hero-content-inline="{{ heroInline }}"
