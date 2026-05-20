@@ -209,7 +209,7 @@ body:has(.nav-drawer-toggle[aria-expanded='true']) {
 .mainnav > ul:first-of-type > li:last-child [aria-current='page'] {
   --nav-item-background: var(--color-blue-600);
   --nav-item-decoration-color: transparent;
-  --nav-item-text-color: var(--color-bg);
+  --nav-item-text-color: var(--color-text);
 }
 
 /* Search Toggle Visibility */
