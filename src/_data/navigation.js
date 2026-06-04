@@ -6,7 +6,10 @@ export default {
     },
     {
       text: 'Insights',
-      url: '/insights/'
+      submenu: [
+        {text: 'Business Blog', url: '/insights/'},
+        {text: 'Best Practices', url: 'https://dimensional-modelling.dyvenia.com/'}
+      ]
     },
     {
       text: 'Careers',

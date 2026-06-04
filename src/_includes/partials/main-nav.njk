@@ -21,14 +21,14 @@
             {% for subitem in item.submenu %}
               <li>
                 <a
-                  class="button"
+                  class="nav-sublist__button | button"
                   data-button-text
                   href="{{ subitem.url }}"
                   {{
                     helpers.getLinkActiveState(subitem.url, page.url)
                     | safe
                   }}
-                  >{{ subitem.text }}</a
+                  ><span>{{ subitem.text }}</span></a
                 >
               </li>
             {% endfor %}
