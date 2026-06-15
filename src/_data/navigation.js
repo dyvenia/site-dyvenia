@@ -8,7 +8,7 @@ export default {
       text: 'Insights',
       submenu: [
         {text: 'Business Blog', url: '/insights/'},
-        {text: 'Best Practices', url: 'https://dimensional-modelling.dyvenia.com/'}
+        {text: 'Dimensional Modeling Docs', url: 'https://dimensional-modelling.dyvenia.com/'}
       ]
     },
     {

@@ -257,7 +257,7 @@ body:has(.nav-drawer-toggle[aria-expanded='true']) {
   .mainnav .nav-sublist {
     --nav-sublist-position: absolute;
     --nav-sublist-border: transparent;
-    --nav-sublist-width: 10em;
+    --nav-sublist-width: 14em;
     inset-block-start: calc(var(--space-xl) - var(--space-2xs) + 1px);
     inset-inline-start: calc(var(--space-2xs) / -1);
     align-items: stretch;
