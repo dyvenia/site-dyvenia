@@ -120,6 +120,7 @@
   .site-header:has(+ main > .wrapper > [data-section-theme='dark']:first-child) {
     --color-text: var(--color-gray-100);
     --color-text-accent: var(--color-gray-200);
+    --color-bg: var(--color-dark);
   }
 }
 
