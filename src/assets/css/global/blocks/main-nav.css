@@ -116,6 +116,7 @@ body:has(.nav-drawer-toggle[aria-expanded='true']) {
 
 .mainnav :is(a, .nav-sublist-toggle) {
   /* configuration */
+  --button-gap: var(--space-3xs);
   --nav-item-background: transparent;
   --nav-item-text-color: var(--color-text);
   --nav-item-padding: var(--space-3xs);
@@ -124,7 +125,7 @@ body:has(.nav-drawer-toggle[aria-expanded='true']) {
   background: var(--nav-item-background);
   color: var(--nav-item-text-color);
   padding: var(--nav-item-padding);
-  display: block;
+  /* display: block; */
   line-height: var(--leading-flat);
   font-weight: var(--font-medium);
   text-box-trim: trim-both;
@@ -140,6 +141,11 @@ body:has(.nav-drawer-toggle[aria-expanded='true']) {
   .mainnav .nav-sublist a {
     font-size: var(--size-step-0);
   }
+}
+
+/* opt out of button class active state */
+.mainnav .button:active {
+  transform: none;
 }
 
 .mainnav :is(a, .nav-sublist-toggle):hover {
@@ -250,9 +256,8 @@ body:has(.nav-drawer-toggle[aria-expanded='true']) {
 
   .mainnav .nav-sublist {
     --nav-sublist-position: absolute;
-    --nav-sublist-background: var(--color-bg-accent);
     --nav-sublist-border: transparent;
-    --nav-sublist-width: 10em;
+    --nav-sublist-width: 14em;
     inset-block-start: calc(var(--space-xl) - var(--space-2xs) + 1px);
     inset-inline-start: calc(var(--space-2xs) / -1);
     align-items: stretch;

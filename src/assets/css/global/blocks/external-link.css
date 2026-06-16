@@ -1,10 +1,9 @@
-a[href^='http']:not([href*='localhost:8080']):not([href*='eleventy-excellent.netlify.app']):not(.button) {
+a[href^='http']:not([href*='localhost:8080']):not(.button) {
   padding-inline-end: 0.8em;
 }
 
-a[href^='http']:not([href*='localhost:8080']):not([href*='eleventy-excellent.netlify.app']):not(.button):not(
-    .no-indicator
-  )::after {
+a[href^='http']:not([href*='localhost:8080']):not(.button):not(.no-indicator)::after,
+a[href^='http'].button span::after {
   position: absolute;
   display: inline-block;
   inline-size: 1em;
@@ -18,4 +17,9 @@ a[href^='http']:not([href*='localhost:8080']):not([href*='eleventy-excellent.net
   overflow: hidden;
   white-space: nowrap;
   text-indent: 1em; /* the width of the icon */
+}
+
+a[href^='http'].button span::after {
+  background-position: 100%;
+  background-size: 70% auto;
 }
