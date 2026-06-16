@@ -1,7 +1,8 @@
 top:
   - text: About
     url: /about/
-  - text: Insights
+  - text: Resources
+    url: ''
     submenu:
       - text: Business Blog
         url: /insights/
