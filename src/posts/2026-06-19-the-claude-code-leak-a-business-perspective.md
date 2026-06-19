@@ -16,7 +16,9 @@ The recent [leak of the Claude Code source code](https://www.axios.com/2026/03/3
 
 While technical circles have focused on the code itself, there has been limited discussion regarding its business implications. Specifically, there is a need to address ROI, direct P&L impact, and how AI initiatives should be structured to provide measurable value on a balance sheet.
 
-While many companies are rushing to build sophisticated agents, a significant portion of the value still comes from writing solid, deterministic code. **The challenge is not pushing every task to an AI but breaking down complex business processes into smaller, manageable steps**. In most cases, these steps can be executed as deterministic functions: the equivalent of an Excel formula. In this paradigm, the Large Language Model (LLM) acts as a specialized orchestrator that delegates tasks to deterministic functions, rather than performing every step itself. [![Claude Code structure](/assets/images/blog/Claude_Code_Structure.png "Source: Dive into Claude Code: The Design Space of Today’s and Future AI Agent Systems; Liu, J., Zhao, X., Shang, X., & Shen, Z. (2026).")](https://arxiv.org/pdf/2604.14228)
+While many companies are rushing to build sophisticated agents, a significant portion of the value still comes from writing solid, deterministic code. **The challenge is not pushing every task to an AI but breaking down complex business processes into smaller, manageable steps**. In most cases, these steps can be executed as deterministic functions: the equivalent of an Excel formula. In this paradigm, the Large Language Model (LLM) acts as a specialized orchestrator that delegates tasks to deterministic functions, rather than performing every step itself. 
+
+[![Claude Code structure](/assets/images/blog/Claude_Code_Structure.png "Source: Dive into Claude Code: The Design Space of Today’s and Future AI Agent Systems; Liu, J., Zhao, X., Shang, X., & Shen, Z. (2026).")](https://arxiv.org/pdf/2604.14228)
 
 ## Governance and Cost Control
 
