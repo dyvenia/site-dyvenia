@@ -1,5 +1,5 @@
 ---
-title: 'Distributing Facts and Dimensions: Governance, Access, Ownership and Support'
+title: 'Distributing Facts and Dimensions: Governance, Access & Ownership'
 date: 2026-06-24 10:00:00
 author: Alessio Civitillo
 description: Building facts and dimensions is only part of the challenge. This article explores how certified data should be distributed across the organization through controlled access paths, ownership models, governance processes, and support structures.
@@ -32,7 +32,7 @@ A practical distribution model can be organized through five layers:
 
 Each layer has a different responsibility.
 
-![five facts and dimensions access layers ](/assets/images/blog/5%20layers.png)
+![five facts and dimensions access layers](/assets/images/blog/5%20layers.png)
 
 ### **Layer 1: Certified Facts and Dimensions**
 
@@ -53,8 +53,6 @@ The role of Layer 1 is to provide the trusted foundation. It is not necessarily 
 A good rule is:
 
 > Certified facts and dimensions should be built once in the hub but exposed through controlled-access layers.
-
-***
 
 ### **Layer 2: Secured Tables**
 
@@ -92,8 +90,6 @@ For example:
 
 This keeps the global fact centralized while still allowing different audiences to consume safe, approved versions of it.
 
-***
-
 ### **Layer 3: Secured Schemas**
 
 The third layer is the secured schema.
@@ -118,8 +114,6 @@ The secured schema controls **which collection of data products** a consumer can
 For example, the `hub_facts_nam` schema may contain the approved North America facts. The `hub_dimensions_customer_sales` schema may contain the customer attributes approved for sales reporting. The `hub_dimensions_shared` schema may contain broadly reusable dimensions such as calendar, currency, and material.
 
 This gives the hub a clean access boundary. Instead of granting permissions table by table across the entire platform, the hub can package approved data products into schemas and grant access to those schemas.
-
-***
 
 ### **Layer 4: Identity Groups**
 
@@ -156,8 +150,6 @@ This creates a simple model:
 Access should normally be granted to groups, not directly to individuals. Individual access becomes difficult to maintain and audit over time. People change roles, move teams, leave the company, or join temporary projects. If access is managed on a person-by-person basis, it quickly becomes difficult to control.
 
 A group-based model is easier to govern, review, and explain.
-
-***
 
 ### **Layer 5: Consumption Applications**
 
