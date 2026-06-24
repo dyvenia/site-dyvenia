@@ -12,7 +12,7 @@ tags:
 internal_notes: Alessio's article on distributing facts and dimensions
 ---
 
-Modern data platforms often focus on ingestion, modeling, orchestration, and reporting. However, once facts and dimensions have been built, a different challenge emerges: how should those assets be distributed across the organization? 
+Modern data platforms often focus on ingestion, modeling, orchestration, and reporting. However, once [facts and dimensions](https://dimensional-modelling.dyvenia.com/) have been built, a different challenge emerges: how should those assets be distributed across the organization? 
 
 This is not only a security question. It is also a question of governance, ownership, and operating models.
 
@@ -89,6 +89,8 @@ For example:
 - Executive reporting may receive aggregated facts instead of transaction-level data.
 
 This keeps the global fact centralized while still allowing different audiences to consume safe, approved versions of it.
+
+![secure table view](/assets/images/blog/secure%20table%20view.png)
 
 ### **Layer 3: Secured Schemas**
 
