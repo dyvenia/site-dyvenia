@@ -135,11 +135,11 @@ Access is granted by mapping identity groups to secured schemas.
 For example:
 
 | **Identity Group** | **Secured Schema** |
-| `north_america_sales` | `hub_facts_nam` |
-| `europe_sales` | `hub_facts_europe` |
-| `global_finance` | `hub_facts_finance` |
-| `commercial_leadership` | `hub_facts_sales` |
-| `powerbi_sales_analysts` | `hub_facts_sales, hub_dimensions_customer_sales, hub_dimensions_shared` |
+| north_america_sales | hub_facts_nam |
+| europe_sales | hub_facts_europe |
+| global_finance | hub_facts_finance |
+| commercial_leadership | hub_facts_sales |
+| powerbi_sales_analysts | hub_facts_sales, hub_dimensions_customer_sales, hub_dimensions_shared |
 
 This creates a simple model:
 
