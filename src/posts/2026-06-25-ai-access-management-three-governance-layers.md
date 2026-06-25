@@ -339,8 +339,6 @@ This is the right behavior.
 
 The agent is useful, but it respects the existing access model.
 
-***
-
 ## **Example: Finance User Asking About Margin**
 
 Now consider a Finance user asking the same question.
