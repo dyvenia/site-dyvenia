@@ -1,12 +1,12 @@
 ---
-fontDisplay: "'IBM Plex Sans', Ubuntu" # needed created in local development, font must be installed on your system.
-fontBody: "'IBM Plex Sans', Ubuntu" # needed created in local development, font must be installed on your system.
+fontDisplay: "'IBM Plex Sans', 'Clear Sans', Ubuntu" # needed created in local development, font must be installed on your system.
+fontBody: "'IBM Plex Sans', 'Clear Sans', Ubuntu" # needed created in local development, font must be installed on your system.
 background: '#f5f5f6'
 text: '#262627'
 subdued: '#808081'
 accent: '#0E909D'
 horizontalStartingPoint: 250
-siteUrl: 'eleventy-excellent.netlify.app'
+siteUrl: 'dyvenia.com'
 pagination:
   data: collections.posts
   size: 1
@@ -94,12 +94,13 @@ eleventyExcludeFromCollections: true
   <!-- sitename / url -->
   <text
     font-family="{{ fontBody }}, sans-serif"
-    font-size="20"
+    font-size="24"
     font-weight="500"
     fill="{{ subdued }}"
     letter-spacing="-0.5"
   >
     <!-- <tspan x="160" y="580">{{ meta.siteName }} · {{ meta.url | replace("https://", "") | replace("http://", "") }}</tspan> -->
-    <tspan x="{{ horizontalStartingPoint }}" y="580">{{ meta.siteName }} — {{ siteUrl }}</tspan>
+    <tspan x="{{ horizontalStartingPoint }}" y="580">{{ siteUrl }}</tspan>
   </text>
 </svg>
+

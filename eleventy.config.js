@@ -18,7 +18,7 @@ dotenv.config();
 import yaml from 'js-yaml';
 
 //  config import
-import {getAllCaseStudies, getAllPosts, onlyMarkdown, tagList} from './src/_config/collections.js';
+import {getAllCaseStudies, getAllPosts, sitemapPages, tagList, tagPages} from './src/_config/collections.js';
 import events from './src/_config/events.js';
 import filters from './src/_config/filters.js';
 import plugins from './src/_config/plugins.js';
@@ -45,8 +45,9 @@ export default async function (eleventyConfig) {
   //	---------------------  Collections
   eleventyConfig.addCollection('allPosts', getAllPosts);
   eleventyConfig.addCollection('allCaseStudies', getAllCaseStudies);
-  eleventyConfig.addCollection('onlyMarkdown', onlyMarkdown);
   eleventyConfig.addCollection('tagList', tagList);
+  eleventyConfig.addCollection('tagPages', tagPages);
+  eleventyConfig.addCollection('sitemapPages', sitemapPages);
 
   // ---------------------  Plugins
   eleventyConfig.addPlugin(plugins.htmlConfig);

@@ -4,14 +4,16 @@ dialog {
 }
 
 /* the image that serves as button */
-dialog + button {
+dialog + button,
+dialog + figure > button {
   /* all: unset; */
   --flow-space: 0;
   cursor: zoom-in;
 }
 
 /* Don't indicate interactivity without JS */
-is-land:not(:defined) dialog + button {
+is-land:not(:defined) dialog + button,
+is-land:not(:defined) dialog + figure > button {
   cursor: default;
 }
 
