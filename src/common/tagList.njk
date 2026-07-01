@@ -1,16 +1,16 @@
 ---
 layout: tags
 pagination:
-  data: collections.tagList
+  data: collections.tagPages
   size: 1
-  alias: tag
-permalink: /tags/{{ tag }}/
+  alias: tagPage
+permalink: /tags/{{ tagPage.tag | slugify }}/
 eleventyComputed:
-  title: '{{ meta.blog.tagSingle }}: {{ tag }}'
+  title: '{{ meta.blog.tagSingle }}: {{ tagPage.tag }}'
 ---
 
-<custom-masonry layout="50-50">
-  {% set itemList = collections[tag] | reverse %}
+<custom-masonry layout="thirds" >
+  {% set itemList = tagPage.posts %}
   {% for item in itemList %}
 
 		{% include "partials/card-tag.njk" %}
@@ -23,10 +23,10 @@ eleventyComputed:
   {% for tag in collections.tagList %}
     <li>
       <a
-        href="/tags/{{ tag }}"
+        href="/tags/{{ tag | slugify }}/"
         class="button"
         {{
-          helpers.getLinkActiveState('/tags/' + tag,
+          helpers.getLinkActiveState('/tags/' + tag | slugify + '/',
           page.url)
           |
           safe
