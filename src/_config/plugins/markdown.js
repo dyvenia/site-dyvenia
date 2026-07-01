@@ -1,20 +1,76 @@
-import markdownIt from 'markdown-it';
-import markdownItAttrs from 'markdown-it-attrs';
-import markdownItPrism from 'markdown-it-prism';
-import markdownItAnchor from 'markdown-it-anchor';
 import markdownItClass from '@toycode/markdown-it-class';
-import markdownItLinkAttributes from 'markdown-it-link-attributes';
+import markdownIt from 'markdown-it';
+import markdownitAbbr from 'markdown-it-abbr';
+import markdownItAnchor from 'markdown-it-anchor';
+import markdownItAttrs from 'markdown-it-attrs';
 import {full as markdownItEmoji} from 'markdown-it-emoji';
 import markdownItFootnote from 'markdown-it-footnote';
+import markdownItLinkAttributes from 'markdown-it-link-attributes';
 import markdownitMark from 'markdown-it-mark';
-import markdownitAbbr from 'markdown-it-abbr';
+import markdownItPrism from 'markdown-it-prism';
 import markdownItTocDoneRight from 'markdown-it-toc-done-right';
-import {slugifyString} from '../filters/slugify.js';
-import {optimize} from 'svgo';
 import {readFileSync} from 'node:fs';
 import path from 'node:path';
+import {optimize} from 'svgo';
+import {slugifyString} from '../filters/slugify.js';
 
 let imageIndex = 0;
+
+const isInsideLink = (tokens, idx) => {
+  let depth = 0;
+  for (let i = idx - 1; i >= 0; i--) {
+    if (tokens[i].type === 'link_close') depth++;
+    if (tokens[i].type === 'link_open') {
+      if (depth === 0) return true;
+      depth--;
+    }
+  }
+  return false;
+};
+
+const isLinkedImage = (tokens, linkOpenIdx) => {
+  const imageToken = tokens[linkOpenIdx + 1];
+  const closeToken = tokens[linkOpenIdx + 2];
+  return imageToken?.type === 'image' && closeToken?.type === 'link_close';
+};
+
+const buildImgTag = (src, alt, attributes) => {
+  const attributesString = attributes
+    .filter(([key]) => key !== 'src' && key !== 'alt')
+    .map(([key, value]) => `${key}="${value}"`)
+    .join(' ');
+  return `<img src="${src}" alt="${alt}"${attributesString ? ` ${attributesString}` : ''}>`;
+};
+
+const buildCaption = (text, href) => {
+  if (!text) return '';
+  if (href) {
+    const rel = /^https?:\/\//.test(href) ? ' rel="noopener"' : '';
+    return `<figcaption><a href="${href}"${rel}>${text}</a></figcaption>`;
+  }
+  return `<figcaption>${text}</figcaption>`;
+};
+
+const buildFigure = (imgTag, caption, href) =>
+  caption ? `<figure>${imgTag}${buildCaption(caption, href)}</figure>` : imgTag;
+
+const buildLightbox = (imgTag, caption, captionHref = null) => {
+  imageIndex++;
+
+  return `
+          <is-land on:idle>
+            <dialog class="flow modal${imageIndex}">
+              <button class="button" autofocus>Close</button>
+              ${caption ? `<figure>${imgTag}</figure>` : imgTag}
+            </dialog>
+            ${
+              captionHref
+                ? `<figure><button data-index="${imageIndex}">${imgTag}</button>${buildCaption(caption, captionHref)}</figure>`
+                : `<button data-index="${imageIndex}">${buildFigure(imgTag, caption)}</button>`
+            }
+          </is-land>
+        `;
+};
 
 export const markdownLib = markdownIt({
   html: true,
@@ -54,13 +110,28 @@ export const markdownLib = markdownIt({
   .use(markdownitMark)
   .use(markdownitAbbr)
   .use(md => {
+    md.renderer.rules.link_open = (tokens, idx, options, env, self) => {
+      if (isLinkedImage(tokens, idx)) {
+        env.suppressLinkedImageAnchor = true;
+        return '';
+      }
+      return self.renderToken(tokens, idx, options);
+    };
+
+    md.renderer.rules.link_close = (tokens, idx, options, env, self) => {
+      if (env.suppressLinkedImageAnchor) {
+        env.suppressLinkedImageAnchor = undefined;
+        return '';
+      }
+      return self.renderToken(tokens, idx, options);
+    };
+
     md.renderer.rules.image = (tokens, idx) => {
       const token = tokens[idx];
       let src = token.attrGet('src');
       const alt = token.content || '';
       const caption = token.attrGet('title');
-
-      imageIndex++;
+      const linked = isInsideLink(tokens, idx);
 
       // CMS image paths
       if (src.startsWith('/src/')) {
@@ -78,8 +149,8 @@ export const markdownLib = markdownIt({
           ? optimizedSvg.replace('<svg', `<svg class="svg-image" aria-label="${alt}"`)
           : optimizedSvg.replace('<svg', '<svg class="svg-image" role="presentation" aria-hidden="true"');
 
-        return title
-          ? `<figure class="flow">${svgWithAttrs}<figcaption>${title}</figcaption></figure>`
+        return caption
+          ? `<figure class="flow">${svgWithAttrs}<figcaption>${caption}</figcaption></figure>`
           : svgWithAttrs;
       }
 
@@ -90,21 +161,10 @@ export const markdownLib = markdownIt({
         attributes.push(['eleventy:widths', '960,1600']);
       }
 
-      const attributesString = attributes.map(([key, value]) => `${key}="${value}"`).join(' ');
+      const imgTag = buildImgTag(src, alt, attributes);
+      const captionHref = linked ? tokens[idx - 1].attrGet('href') : null;
 
-      const imgTag = `<img src="${src}" alt="${alt}" ${attributesString}>`;
-
-      return `
-          <is-land on:idle>
-            <dialog class="flow modal${imageIndex}">
-              <button class="button" autofocus>Close</button>
-              ${caption ? `<figure>${imgTag}<figcaption>${caption}</figcaption></figure>` : imgTag}
-            </dialog>
-            <button data-index="${imageIndex}">
-              ${caption ? `<figure>${imgTag}<figcaption>${caption}</figcaption></figure>` : imgTag}
-            </button>
-          </is-land>
-        `;
+      return buildLightbox(imgTag, caption, captionHref);
     };
   })
 
