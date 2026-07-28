@@ -10,7 +10,7 @@ tags:
 internal_notes: part 2 of a dbt rescue pipeline series by Andrii Kachan
 ---
 
-In a [previous blog post](https://thescalableway.com/blog/the-rescue-dbt_rerun-deployment-rebuilding-changed-and-broken-models-without-disrupting-production/), we introduced **`dbt_rerun`**, a dedicated Prefect deployment we use as a rescue mechanism for production dbt pipelines. We discussed the problem it solves, why standard recovery options fall short, how the deployment is wired, and where it fits into our day-to-day development workflow.
+In a [previous blog post](https://dyvenia.com/insights/the-rescue-dbt_rerun-deployment-rebuilding-changed-and-broken-models-without-disrupting-production/), we introduced **`dbt_rerun`**, a dedicated Prefect deployment we use as a rescue mechanism for production dbt pipelines. We discussed the problem it solves, why standard recovery options fall short, how the deployment is wired, and where it fits into our day-to-day development workflow.
 
 Now, let’s focus on what happens after you click “run”. We’ll walk through how we actually use `dbt_rerun` in production: choosing the right dependency scope, managing queue and warehouse contention, recovering from outages, handling incremental models safely, and validating that the rescue truly fixed the issue. These are the patterns and guardrails we rely on during real incidents, where speed matters but correctness matters more.
 
@@ -79,7 +79,7 @@ Incremental models are where most rescue mistakes happen, because the wrong refr
 
 Incremental models represent the most complex rescue scenario, because the decision of whether to use `--full-refresh` has lasting consequences for both data correctness and warehouse load. Our incremental models typically use a `unique_key` for deduplication and an `is_incremental()` filter to restrict which data is loaded on each run, often tied to a date cursor or a calendar condition, such as a monthly refresh window. Understanding both of those constraints is a prerequisite for choosing the right rescue approach.
 
-**When to use ``--full-refresh``**
+**When to use `--full-refresh`**
 
 Use `--full-refresh` when the change invalidates the historical state of the table:
 
@@ -88,7 +88,7 @@ Use `--full-refresh` when the change invalidates the historical state of the tab
 - A bug produced an incorrect history that must be corrected.
 - A new column is being backfilled from source data that already exists in staging.
 
-**When not to use ``--full-refresh``**
+**When not to use `--full-refresh`**
 
 - Only future data will differ (for example, adding a new column with NULL values for historical rows is acceptable).
 - The model runs on a monthly cadence, and a normal incremental run will naturally pick up the change on its next scheduled execution.

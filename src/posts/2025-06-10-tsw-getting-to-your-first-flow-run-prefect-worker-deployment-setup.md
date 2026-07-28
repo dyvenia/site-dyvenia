@@ -16,12 +16,13 @@ internal_notes: |-
 
   How-to document that explains all necessary steps to prepare the basic configuration for Prefect worker to run the first deployment
 ---
+
 You’ve laid the groundwork: the infrastructure is in place. The next logical step is turning that foundation into something functional, running your first data ingestion workflow. That moment when everything connects for the first time can feel like crossing an invisible line: from setup to real-world execution.
 This article picks up where we left off. It’s the third part in a series designed to guide data engineers through the complete journey of building a modern data platform. 
 
-In [Part 1](https://thescalableway.com/blog/deploying-prefect-on-any-cloud-using-a-single-virtual-machine/), I explored architectural approaches and proposed a lightweight Kubernetes setup running on a single VM. While it doesn’t offer full high availability, this setup has proven to be a practical starting point, especially for teams with limited cloud-native experience. It allows organizations to grow along the data maturity curve without the overhead of more complex solutions.
+In [Part 1](https://dyvenia.com/insights/deploying-prefect-on-any-cloud-using-a-single-virtual-machine/), I explored architectural approaches and proposed a lightweight Kubernetes setup running on a single VM. While it doesn’t offer full high availability, this setup has proven to be a practical starting point, especially for teams with limited cloud-native experience. It allows organizations to grow along the data maturity curve without the overhead of more complex solutions.
 
-[Part 2](https://thescalableway.com/blog/how-to-setup-data-platform-infrastructure-on-google-cloud-platform-with-terraform/) focused on provisioning the infrastructure using Terraform on Google Cloud Platform (GCP). We used GCP as an example, but the underlying architectural principles are cloud-agnostic and applicable across providers.
+[Part 2](https://dyvenia.com/insights/how-to-setup-data-platform-infrastructure-on-google-cloud-platform-with-terraform/) focused on provisioning the infrastructure using Terraform on Google Cloud Platform (GCP). We used GCP as an example, but the underlying architectural principles are cloud-agnostic and applicable across providers.
 
 Now that the infrastructure is ready, this article walks through the next milestone: configuring all the components required to execute your first data ingestion workflow.
 
@@ -138,7 +139,7 @@ worker:
       key: PREFECT_API_KEY
 ```
 
-**Each of the three key sections plays a vital role:&#32;&#32;**
+**Each of the three key sections plays a vital role:**  
 
 - **Image:** Specifies the Prefect image used to run the worker. This is not the flow's image that runs your business logic; that will be defined in the `baseJobTemplate`.
 - **Config:** Defines work pool, queues, worker name, and most importantly, the `baseJobTemplate`. An example of a working base job template is shown in the next section.
