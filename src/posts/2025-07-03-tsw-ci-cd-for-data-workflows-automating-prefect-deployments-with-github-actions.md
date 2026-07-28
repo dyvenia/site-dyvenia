@@ -18,7 +18,7 @@ internal_notes: |-
 
   How-to document that explains all necessary steps to prepare basic CI/CD workflow for deploying prefect worker and deployments.
 
-  **Outline:&#160;**
+  **Outline:** 
 
   1. **Introduction & series recap**
 
@@ -40,6 +40,7 @@ internal_notes: |-
 
   **6. Conclusion & series summary**
 ---
+
 You’ve built a Prefect flow that runs, but wondering what’s next? 
 
 If deploying it means copying files, running CLI commands, or manually registering deployments, you’re doing too much. In this guide, we’ll walk through how to automate Prefect deployments using GitHub Actions and Docker, so your flows move from dev to prod with zero manual steps. Cleaner workflows, fewer errors, and no more “did I forget to deploy that?" moments. 
@@ -48,11 +49,11 @@ Welcome to Part 4 of our data platform series, where we bring automation and res
 
 ## Let’s recap…
 
-In **Part 1** ([Deploying Prefect on any Cloud Using a Single Virtual Machine](https://thescalableway.com/blog/deploying-prefect-on-any-cloud-using-a-single-virtual-machine/)), we explored the architectural foundations of a modern data platform. We discussed why simplicity, flexibility, and scalability matter, and how a lightweight Kubernetes setup on a single VM can deliver immediate value while laying the groundwork for future growth. 
+In **Part 1** ([Deploying Prefect on any Cloud Using a Single Virtual Machine](https://dyvenia.com/insights/deploying-prefect-on-any-cloud-using-a-single-virtual-machine/)), we explored the architectural foundations of a modern data platform. We discussed why simplicity, flexibility, and scalability matter, and how a lightweight Kubernetes setup on a single VM can deliver immediate value while laying the groundwork for future growth. 
 
-**Part 2** ([How to Setup Data Platform Infrastructure on Google Cloud Platform with Terraform](https://thescalableway.com/blog/how-to-setup-data-platform-infrastructure-on-google-cloud-platform-with-terraform/)) moved us from theory to practice, automating cloud infrastructure using Terraform. It emphasized cloud-agnostic design while preserving the architectural principles from the first article. 
+**Part 2** ([How to Setup Data Platform Infrastructure on Google Cloud Platform with Terraform](https://dyvenia.com/insights/how-to-setup-data-platform-infrastructure-on-google-cloud-platform-with-terraform/)) moved us from theory to practice, automating cloud infrastructure using Terraform. It emphasized cloud-agnostic design while preserving the architectural principles from the first article. 
 
-We operationalized the platform in **Part 3** ([Getting to Your First Flow Run: Prefect Worker and Deployment Setup](https://thescalableway.com/blog/getting-to-your-first-flow-run-prefect-worker-and-deployment-setup/)). You learned how to build a containerized execution environment, configure Prefect workers, and organize deployment code, culminating in your first successful data ingestion flow.
+We operationalized the platform in **Part 3** ([Getting to Your First Flow Run: Prefect Worker and Deployment Setup](https://dyvenia.com/insights/getting-to-your-first-flow-run-prefect-worker-and-deployment-setup/)). You learned how to build a containerized execution environment, configure Prefect workers, and organize deployment code, culminating in your first successful data ingestion flow.
 
 Now, in **Part 4**, we turn our attention to automation. You’ll learn how to implement a robust CI/CD pipeline using GitHub Actions, tailored for data platforms. We'll break down three essential types of workflows (covering container management, infrastructure updates, and workflow orchestration) that form a scalable, resilient, and low-maintenance deployment system together.
 
@@ -152,7 +153,7 @@ This workflow is triggered by changes to any of the following files:
 
 `${VERSION}-pr-${{ '{{' }} github.event.number {{ '}}' }}-run-${{ '{{' }} github.run_number {{ '}}' }}`
 
-The image is then pushed to the GitHub Container Registry. In the [previous blog post](https://thescalableway.com/blog/getting-to-your-first-flow-run-prefect-worker-and-deployment-setup/), we prepared an example Dockerfile. Here's what a GitHub workflow to handle it might look like:
+The image is then pushed to the GitHub Container Registry. In the [previous blog post](https://dyvenia.com/insights/getting-to-your-first-flow-run-prefect-worker-and-deployment-setup/), we prepared an example Dockerfile. Here's what a GitHub workflow to handle it might look like:
 
 ```yaml
 jobs:
@@ -313,7 +314,7 @@ This workflow is triggered by changes to any of the following files:
 2. **Update DEV Prefect work pool:** Updates the Prefect worker's base job template on DEV environment to apply any required configuration changes.
 3. **Update PROD Prefect work pool:** Updates the Prefect worker's base job template on PROD environment to apply any required configuration changes.
 
-**_Note:_**_&#32;These first two workflows affect infrastructure only; they don’t touch actual Prefect deployments. The next workflow handles that._
+**_Note:_** _These first two workflows affect infrastructure only; they don’t touch actual Prefect deployments. The next workflow handles that._
 
 #### Workflow 3: Prefect Deployment Orchestration
 
@@ -351,7 +352,7 @@ As a target solution, we want a script that detects changes to deployments in th
 **2. Apply to DEV:** Applies the modified deployments to the DEV Prefect workspace, referencing the pull request branch. Assuming that we have only modified deployments provided in `DEPLOYMENT_NAMES`, the registration script can look like this:
 
 ```yaml
-      - name: Set branch '${GITHUB_HEAD_REF}' in prefect.yaml
+     - name: Set branch '${GITHUB_HEAD_REF}' in prefect.yaml
         run: |
           yq -i '.pull[] |= (select(has("prefect.deployments.steps.git_clone")) 
             | .["prefect.deployments.steps.git_clone"].branch = "${GITHUB_HEAD_REF}" | .) // .' prefect.yaml
@@ -411,14 +412,14 @@ This article wraps up our four-part journey to building a modern, automated data
 
 Let’s quickly recap:
 
-[**Part 1**](https://thescalableway.com/blog/deploying-prefect-on-any-cloud-using-a-single-virtual-machine/) focused on architectural decisions, demonstrating how a lightweight Kubernetes setup on a single VM can enable rapid adoption and growth, even for teams just starting with cloud-native data platforms.
+[**Part 1**](https://dyvenia.com/insights/deploying-prefect-on-any-cloud-using-a-single-virtual-machine/) focused on architectural decisions, demonstrating how a lightweight Kubernetes setup on a single VM can enable rapid adoption and growth, even for teams just starting with cloud-native data platforms.
 
-[**Part 2**](https://thescalableway.com/blog/how-to-setup-data-platform-infrastructure-on-google-cloud-platform-with-terraform/) moved from design to implementation, automating cloud infrastructure provisioning with Terraform to ensure consistency, reproducibility, and cloud-agnostic flexibility.
+[**Part 2**](https://dyvenia.com/insights/how-to-setup-data-platform-infrastructure-on-google-cloud-platform-with-terraform/) moved from design to implementation, automating cloud infrastructure provisioning with Terraform to ensure consistency, reproducibility, and cloud-agnostic flexibility.
 
-[**Part 3**](https://thescalableway.com/blog/getting-to-your-first-flow-run-prefect-worker-and-deployment-setup/) took us deeper into operations, guiding you through containerized flow execution, Prefect worker configuration, and deployment management—helping you run your first data ingestion flows confidently.
+[**Part 3**](https://dyvenia.com/insights/getting-to-your-first-flow-run-prefect-worker-and-deployment-setup/) took us deeper into operations, guiding you through containerized flow execution, Prefect worker configuration, and deployment management—helping you run your first data ingestion flows confidently.
 
 And here in **Part 4**, we brought everything together by introducing CI/CD automation. We showed how three specialized workflows for Docker images, Prefect workers, and deployment orchestration help reduce manual errors, maintain a single source of truth, and scale both your platform and your team. This kind of automation makes development smoother, testing more reliable, and production releases faster and safer.
 
 The main takeaway is that adopting CI/CD for data platforms is not just about tools but about changing how your team works. Automation connects development and production, reduces risk, and frees your engineers to focus on data rather than infrastructure.
 
-Thanks so much for following along. For more tips and updates, check out my [**other articles**](https://thescalableway.com/author/karol-wolski/), subscribe to our **newsletter**, and connect with me on [**LinkedIn**](https://www.linkedin.com/in/wolski-karol/). Let’s keep the conversation about smarter data platforms going.
+Thanks so much for following along. For more tips and updates, check out my [**other articles**](https://dyvenia.com/author/karol-wolski/), subscribe to our **newsletter**, and connect with me on [**LinkedIn**](https://www.linkedin.com/in/wolski-karol/). Let’s keep the conversation about smarter data platforms going.

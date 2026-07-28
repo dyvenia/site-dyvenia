@@ -48,11 +48,11 @@ Version control (Git) underpins all of this. Every change should leave a trail, 
 
 A shift like this doesn’t happen overnight, and it shouldn’t. Most teams succeed by taking it step by step:
 
-1. **Set up separate infrastructure** ‒ provision isolated development resources using infrastructure-as-code so environments stay consistent and secure. Check our [blog post ](https://thescalableway.com/blog/how-to-setup-data-platform-infrastructure-on-google-cloud-platform-with-terraform/)on how to do it using Terraform, a great starting point for provisioning dev infrastructure.
-2. **Get usable data into dev**  – establish pipelines to copy and mask subsets of production data. You can see some best practices in our piece on [building ingestion pipelines with dlt and Prefect](https://thescalableway.com/blog/dlt-and-prefect-a-great-combo-for-streamlined-data-ingestion-pipelines/).
+1. **Set up separate infrastructure** ‒ provision isolated development resources using infrastructure-as-code so environments stay consistent and secure. Check our [blog post ](https://dyvenia.com/insights/how-to-setup-data-platform-infrastructure-on-google-cloud-platform-with-terraform/)on how to do it using Terraform, a great starting point for provisioning dev infrastructure.
+2. **Get usable data into dev**  – establish pipelines to copy and mask subsets of production data. You can see some best practices in our piece on [building ingestion pipelines with dlt and Prefect](https://dyvenia.com/insights/dlt-and-prefect-a-great-combo-for-streamlined-data-ingestion-pipelines/).
 3. **Define workflows and train the team** – document how changes flow, how reviews are conducted, and the promotion criteria.
 4. **Automate deployments** – CI/CD pipelines handle testing, validation, and approval gates before changes reach production.
-5. **Add monitoring** – make sure each environment has the right level of alerting so issues are caught quickly. Head to our [Prefect deployment guide](https://thescalableway.com/blog/deploying-prefect-on-any-cloud-using-a-single-virtual-machine/) for a practical approach to monitoring and automation, which also covers the previous step on deployment.
+5. **Add monitoring** – make sure each environment has the right level of alerting so issues are caught quickly. Head to our [Prefect deployment guide](https://dyvenia.com/insights/deploying-prefect-on-any-cloud-using-a-single-virtual-machine/) for a practical approach to monitoring and automation, which also covers the previous step on deployment.
 
 ## The Payoff: Stability, Speed, and Trust
 
@@ -64,15 +64,15 @@ Inside the team, the shift is just as important. Instead of late-night firefight
 
 Yes, yes, I know. “It’s too expensive, too complicated, or not suitable for the amount of data we handle.” But here’s the reality:
 
-- **"We can't afford separate environments.”&#160;**
+- **"We can't afford separate environments.”** 
 
 Cloud platforms make it manageable. You don't need full-scale production replicas; lightweight development instances are enough. For example, on **Azure Synapse Analytics**, small teams with 1TB of data and 5–10 users typically **spend $1,500–4,000 per month** per environment using serverless SQL pools with pause/resume capabilities. On **AWS Redshift Serverless**, similar workloads run [**$1,000–3,000 per month**](https://aws.amazon.com/redshift/pricing/) since you only pay for actual query time—no idle clusters burning money overnight. For even lighter workloads, **Amazon Athena** can drop costs to **$200–800 per month** when you're querying well-partitioned data in S3 ([at $5 per TB scanned](https://aws.amazon.com/athena/pricing/)). Compare that cost to your last outage.
 
-- **“We’re too small for such complexity.”&#160;**
+- **“We’re too small for such complexity.”** 
 
 Small teams need it most. If three people spend about 40% their time fixing broken production jobs, that effectively means more than one full team member’s capacity is devoted to patching problems instead of innovating or building new solutions. That’s a huge hit to both productivity and morale.
 
-- **“Our data is too big to duplicate.”&#160;**
+- **“Our data is too big to duplicate.”** 
 
 You don’t need to. [Subsets](https://www.datprof.com/solutions/data-subsetting-2/), samples, or synthetic data usually give you what you need to test logic and performance.
 
