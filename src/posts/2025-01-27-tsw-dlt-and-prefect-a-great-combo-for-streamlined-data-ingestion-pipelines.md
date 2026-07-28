@@ -44,6 +44,7 @@ internal_notes: |-
           - Features
           - Readiness for AI era
 ---
+
 **Doing data ingestion right is hard…**
 
 Despite advances in data engineering, data ingestion, which includes the Extract and Load (EL) steps of the ELT process, remains a persistent challenge for many data teams.
@@ -292,7 +293,7 @@ dlt and Prefect (with the help of [dbt](https://www.getdbt.com/)) are just as go
 
 ### Ready to Dive Deeper?
 
-If you’re ready to build a cutting-edge data platform with dlt and Prefect, [get in touch](/contact/). We offer expert guidance to help you set up every component and provide a fully equipped template Git repository with production-grade code. No fluff—just practical, scalable solutions designed to handle real-world challenges and set your data workflows up for long-term success.
+If you’re ready to build a cutting-edge data platform with dlt and Prefect, [get in touch](https://meetings-eu1.hubspot.com/alessio-civitillo/book-a-call). We offer expert guidance to help you set up every component and provide a fully equipped template Git repository with production-grade code. No fluff—just practical, scalable solutions designed to handle real-world challenges and set your data workflows up for long-term success.
 
 ## Footnotes
 
