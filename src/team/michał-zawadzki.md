@@ -4,7 +4,7 @@ image: /src/assets/images/team/Zawadzki.png
 linkedin: https://www.linkedin.com/in/trymzet/
 show_on_about: false
 show_on_about_order: 99
-role: ''
+role: Senior Data Platform Engineer
 description_short: Michał builds reliable, scalable data platforms that help teams move faster and with fewer errors. He focuses on orchestration, automation, and modular design to simplify infrastructure.
 description_long: Michał builds production-grade data platforms that are reliable, scalable, easy to maintain, and designed to help teams move faster and with fewer failures. He focuses on orchestration, automation, and modular architecture, enabling data teams to move faster, reduce errors, and abstract away infrastructure complexity.
 expertise:
