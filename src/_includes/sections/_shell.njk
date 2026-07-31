@@ -1,0 +1,26 @@
+{# Shared appearance helpers for composable page sections.
+   Options on `section`: theme, accent, align, width
+   Theme paints via data-section-theme → themes.css onto `.section` (full-bleed).
+   Accent default = theme-fitting CTA (CSS); set accent to override. #}
+
+{% macro sectionWidthClass(width) -%}
+{%- if width == "full" -%}full
+{%- elif width == "feature" -%}feature
+{%- else -%}{%- endif -%}
+{%- endmacro %}
+
+{% macro sectionThemeAttr(theme) -%}
+data-section-theme="{{ theme or "white" }}"
+{%- endmacro %}
+
+{% macro sectionAlignClass(align) -%}
+{%- if align == "center" -%}text-center
+{%- elif align == "right" -%}text-right
+{%- else -%}{%- endif -%}
+{%- endmacro %}
+
+{# Omit attribute when default so themes.css section CTA tokens apply.
+   Explicit accent: neutral | blue | purple | navy #}
+{% macro sectionButtonAttr(accent) -%}
+{%- if accent and accent != "default" %}data-button-variant="{{ accent }}"{% endif -%}
+{%- endmacro %}

@@ -1,0 +1,54 @@
+{# section.type: list — expects `section` in scope
+   Shell: .section-{type}.wrapper[data-section-theme] > .full.wrapper.section > .section__inner #}
+{% from "sections/_shell.njk" import sectionWidthClass, sectionAlignClass, sectionThemeAttr %}
+
+{% set s = section %}
+{% set theme = s.theme or "white" %}
+{% set variant = s.variant or "definition" %}
+{% set widthClass = sectionWidthClass(s.width or "feature") or "feature" %}
+{% set alignClass = sectionAlignClass(s.align) %}
+
+<div class="section-list | wrapper" {{ sectionThemeAttr(theme) }}{% if s.id %} id="{{ s.id }}"{% endif %}>
+  <div class="full wrapper section">
+    <div class="{{ widthClass }} | section__inner region">
+      <header class="flow prose {{ alignClass }}">
+        {% if s.title %}<h2>{{ s.title | markdownInline | safe }}</h2>{% endif %}
+        {% if s.content or s.intro %}
+          <div>{{ (s.content or s.intro) | markdownFormat | safe }}</div>
+        {% endif %}
+      </header>
+
+      {% if variant == "checklist" %}
+        <ul class="section-list__checklist | grid mt-l" data-layout="50-50" role="list">
+          {% for item in s.items %}
+            <li class="flow">
+              {% if item.title %}<strong>{{ item.title }}</strong>{% endif %}
+              {% if item.content %}<span>{{ item.content | markdownFormat | safe }}</span>
+              {% elif item is string %}<span>{{ item }}</span>{% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      {% elif variant == "stack" %}
+        <div class="section-list__stack | prose flow mt-l {{ alignClass }}">
+          {% if s.body %}{{ s.body | markdownFormat | safe }}{% endif %}
+          {% if s.items %}
+            <ul role="list">
+              {% for item in s.items %}
+                <li>{% if item.title %}{{ item.title }}{% else %}{{ item }}{% endif %}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </div>
+      {% else %}
+        <dl class="section-list__definition | column mt-l">
+          {% for item in s.items %}
+            <div class="flow flow-space-2xs">
+              <dt class="text-step-1">{{ item.title }}</dt>
+              <dd>{{ item.content | markdownFormat | safe }}</dd>
+            </div>
+          {% endfor %}
+        </dl>
+      {% endif %}
+    </div>
+  </div>
+</div>

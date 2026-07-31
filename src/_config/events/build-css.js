@@ -44,5 +44,11 @@ export const buildAllCss = async () => {
     tasks.push(buildCss(inputPath, [`_site/assets/css/components/${baseName}`]));
   }
 
+  const sectionCssFiles = await fg(['src/_includes/sections/**/*.css']);
+  for (const inputPath of sectionCssFiles) {
+    const baseName = path.basename(inputPath);
+    tasks.push(buildCss(inputPath, [`src/_includes/css/sections/${baseName}`]));
+  }
+
   await Promise.all(tasks);
 };

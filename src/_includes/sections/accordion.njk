@@ -1,0 +1,43 @@
+{# section.type: accordion — expects `section` in scope
+   Shell: .section-{type}.wrapper[data-section-theme] > .full.wrapper.section > .section__inner #}
+{% from "sections/_shell.njk" import sectionWidthClass, sectionThemeAttr, sectionButtonAttr %}
+
+{% set s = section %}
+{% set theme = s.theme or "white" %}
+{% set widthClass = sectionWidthClass(s.width or "feature") or "feature" %}
+
+<div class="section-accordion faq | wrapper" {{ sectionThemeAttr(theme) }}{% if s.id %} id="{{ s.id }}"{% endif %}>
+  <div class="full wrapper section">
+    <div class="{{ widthClass }} | section__inner region">
+      <div class="sidebar">
+        <div class="flow">
+          {% if s.title %}<h2>{{ s.title | markdownInline | safe }}</h2>{% endif %}
+          {% if s.intro or s.content %}
+            <div>{{ (s.intro or s.content) | markdownFormat | safe }}</div>
+          {% endif %}
+          {% if s.button_text and s.button_target %}
+            <a
+              href="{{ s.button_target }}"
+              class="button flow-space-l no-indicator"
+              {{ sectionButtonAttr(s.accent) }}
+            >
+              {{ s.button_text }} {% svg "misc/arrow" %}
+            </a>
+          {% endif %}
+        </div>
+        <div class="details flow">
+          <div class="control | cluster" aria-label="{{ meta.details.aria }}">
+            <button type="button" id="expandAll" class="button" data-small-button>{{ meta.details.expand }}</button>
+            <button type="button" id="collapseAll" class="button" data-small-button>{{ meta.details.collapse }}</button>
+          </div>
+          {% for item in s.items %}
+            <details id="{{ item.title | slugify }}" class="prose">
+              <summary>{{ item.title }}</summary>
+              {{ item.content | markdownFormat | safe }}
+            </details>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

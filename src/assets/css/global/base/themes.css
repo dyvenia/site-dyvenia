@@ -1,0 +1,175 @@
+/* Section theme recipes + contrast contract.
+   Named by surface color (not light/dark mode).
+   Site mode (root data-theme / prefers-color-scheme) remaps soft bands;
+   gray-dark + navy stay dark with light text. */
+
+/* -------------------- recipe tokens (site mode) -------------------- */
+
+:root,
+:root[data-theme='light'] {
+  --theme-white-bg: white;
+  --theme-white-text: var(--color-gray-900);
+  --theme-white-text-muted: var(--color-gray-800);
+
+  --theme-gray-light-bg: var(--color-gray-100);
+  --theme-gray-light-text: var(--color-gray-900);
+  --theme-gray-light-text-muted: var(--color-gray-800);
+
+  --theme-gray-dark-bg: var(--color-gray-900);
+  --theme-gray-dark-text: var(--color-gray-100);
+  --theme-gray-dark-text-muted: var(--color-gray-200);
+
+  --theme-teal-bg: var(--color-teal-100);
+  --theme-teal-text: var(--color-gray-900);
+  --theme-teal-text-muted: var(--color-gray-800);
+
+  --theme-purple-bg: var(--color-purple-100);
+  --theme-purple-text: var(--color-gray-900);
+  --theme-purple-text-muted: var(--color-gray-800);
+
+  --theme-navy-bg: var(--color-navy);
+  --theme-navy-text: var(--color-gray-100);
+  --theme-navy-text-muted: var(--color-gray-200);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Soft bands collapse toward two dark greys in site dark mode */
+    --theme-white-bg: var(--color-gray-800);
+    --theme-white-text: var(--color-gray-100);
+    --theme-white-text-muted: var(--color-gray-200);
+
+    --theme-gray-light-bg: var(--color-gray-900);
+    --theme-gray-light-text: var(--color-gray-100);
+    --theme-gray-light-text-muted: var(--color-gray-200);
+
+    --theme-gray-dark-bg: var(--color-gray-900);
+    --theme-gray-dark-text: var(--color-gray-100);
+    --theme-gray-dark-text-muted: var(--color-gray-200);
+
+    --theme-teal-bg: var(--color-gray-900);
+    --theme-teal-text: var(--color-gray-100);
+    --theme-teal-text-muted: var(--color-gray-200);
+
+    --theme-purple-bg: var(--color-gray-900);
+    --theme-purple-text: var(--color-gray-100);
+    --theme-purple-text-muted: var(--color-gray-200);
+
+    --theme-navy-bg: var(--color-navy-dark);
+    --theme-navy-text: var(--color-gray-100);
+    --theme-navy-text-muted: var(--color-gray-200);
+  }
+}
+
+:root[data-theme='dark'] {
+  --theme-white-bg: var(--color-gray-800);
+  --theme-white-text: var(--color-gray-100);
+  --theme-white-text-muted: var(--color-gray-200);
+
+  --theme-gray-light-bg: var(--color-gray-900);
+  --theme-gray-light-text: var(--color-gray-100);
+  --theme-gray-light-text-muted: var(--color-gray-200);
+
+  --theme-gray-dark-bg: var(--color-gray-900);
+  --theme-gray-dark-text: var(--color-gray-100);
+  --theme-gray-dark-text-muted: var(--color-gray-200);
+
+  --theme-teal-bg: var(--color-gray-900);
+  --theme-teal-text: var(--color-gray-100);
+  --theme-teal-text-muted: var(--color-gray-200);
+
+  --theme-purple-bg: var(--color-gray-900);
+  --theme-purple-text: var(--color-gray-100);
+  --theme-purple-text-muted: var(--color-gray-200);
+
+  --theme-navy-bg: var(--color-navy-dark);
+  --theme-navy-text: var(--color-gray-100);
+  --theme-navy-text-muted: var(--color-gray-200);
+}
+
+/* -------------------- section contract -------------------- */
+
+[data-section-theme] {
+  --spot-color: var(--section-bg);
+  --color-text: var(--section-text);
+  --color-text-accent: var(--section-text-muted);
+  color: var(--section-text);
+}
+
+[data-section-theme='white'] {
+  --section-bg: var(--theme-white-bg);
+  --section-text: var(--theme-white-text);
+  --section-text-muted: var(--theme-white-text-muted);
+  --section-cta-bg: var(--color-gray-900);
+  --section-cta-color: var(--color-gray-100);
+  --section-cta-hover-bg: var(--color-gray-800);
+}
+
+[data-section-theme='gray-light'] {
+  --section-bg: var(--theme-gray-light-bg);
+  --section-text: var(--theme-gray-light-text);
+  --section-text-muted: var(--theme-gray-light-text-muted);
+  --section-cta-bg: var(--color-gray-900);
+  --section-cta-color: var(--color-gray-100);
+  --section-cta-hover-bg: var(--color-gray-800);
+}
+
+[data-section-theme='gray-dark'] {
+  --section-bg: var(--theme-gray-dark-bg);
+  --section-text: var(--theme-gray-dark-text);
+  --section-text-muted: var(--theme-gray-dark-text-muted);
+  --section-cta-bg: var(--color-gray-100);
+  --section-cta-color: var(--color-gray-900);
+  --section-cta-hover-bg: var(--color-gray-200);
+}
+
+[data-section-theme='teal'] {
+  --section-bg: var(--theme-teal-bg);
+  --section-text: var(--theme-teal-text);
+  --section-text-muted: var(--theme-teal-text-muted);
+  --section-cta-bg: var(--color-teal);
+  --section-cta-color: var(--color-teal-100);
+  --section-cta-hover-bg: var(--color-teal-600);
+}
+
+[data-section-theme='purple'] {
+  --section-bg: var(--theme-purple-bg);
+  --section-text: var(--theme-purple-text);
+  --section-text-muted: var(--theme-purple-text-muted);
+  /* Brand teal CTA on purple band (same default as teal theme) */
+  --section-cta-bg: var(--color-teal);
+  --section-cta-color: var(--color-teal-100);
+  --section-cta-hover-bg: var(--color-teal-600);
+}
+
+[data-section-theme='navy'] {
+  --section-bg: var(--theme-navy-bg);
+  --section-text: var(--theme-navy-text);
+  --section-text-muted: var(--theme-navy-text-muted);
+  --section-cta-bg: var(--color-navy);
+  --section-cta-color: var(--color-light);
+  --section-cta-hover-bg: color-mix(in oklab, var(--color-navy) 85%, white);
+}
+
+[data-section-theme='gray-dark'] img,
+[data-section-theme='navy'] img {
+  filter: brightness(0.9);
+}
+
+/* -------------------- site header over first dark-surface section -------------------- */
+
+@media screen(navigation) {
+  .site-header:has(+ main > [data-section-theme='gray-dark']:first-child),
+  .site-header:has(+ main > [data-section-theme='navy']:first-child),
+  .site-header:has(+ main > .wrapper > [data-section-theme='gray-dark']:first-child),
+  .site-header:has(+ main > .wrapper > [data-section-theme='navy']:first-child) {
+    --color-text: var(--color-gray-100);
+    --color-text-accent: var(--color-gray-200);
+    --color-bg: var(--color-dark);
+  }
+}
+
+.site-header:has(+ main > [data-section-theme='gray-dark']:first-child) .search-toggle svg,
+.site-header:has(+ main > [data-section-theme='navy']:first-child) .search-toggle svg {
+  --color-text: var(--color-gray-100);
+}

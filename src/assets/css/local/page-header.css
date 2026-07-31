@@ -3,7 +3,8 @@
   grid-template-columns: 1fr;
 }
 
-.page-header > * {
+/* Only intentional layers stack — not every accidental descendant */
+.page-header > :is(picture, .seperator, div) {
   grid-column: full;
   grid-column-start: 1;
   grid-row-start: 1;
@@ -17,7 +18,7 @@
 
 .page-header picture {
   --flow-space: 0;
-  background: var(--color-page-header-accent, var(--color-blue-accent-5));
+  background: var(--color-page-header-accent, var(--color-teal-accent-5));
   mix-blend-mode: darken;
   block-size: max(25rem, 50vh);
   overflow: hidden;
@@ -54,7 +55,7 @@
 }
 
 .page-header .wrapper > :is(p, h1, h2, h3) {
-  color: var(--color-page-header-text, var(--color-light));
+  color: var(--color-page-header-text, var(--color-text));
 }
 
 @media (min-width: 1000px) {

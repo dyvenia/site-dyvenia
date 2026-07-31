@@ -1,0 +1,25 @@
+{# section.type: text — expects `section` in scope
+   Shell: .section-{type}.wrapper[data-section-theme] > .full.wrapper.section > .section__inner #}
+{% from "sections/_shell.njk" import sectionWidthClass, sectionAlignClass, sectionThemeAttr %}
+
+{% set s = section %}
+{% set theme = s.theme or "white" %}
+{% set widthClass = sectionWidthClass(s.width or "feature") or "feature" %}
+{% set alignClass = sectionAlignClass(s.align) %}
+{% set isSplit = s.content_left or s.content_right %}
+
+<div class="section-text | wrapper" {{ sectionThemeAttr(theme) }}{% if s.id %} id="{{ s.id }}"{% endif %}>
+  <div class="full wrapper section">
+    <article class="{{ widthClass }} | section__inner region flow prose {{ alignClass }}">
+      {% if s.title %}<h2>{{ s.title | markdownInline | safe }}</h2>{% endif %}
+      {% if isSplit %}
+        <div class="grid" data-layout="50-50">
+          <div>{{ s.content_left | markdownFormat | safe }}</div>
+          <div>{{ s.content_right | markdownFormat | safe }}</div>
+        </div>
+      {% elif s.content %}
+        {{ s.content | markdownFormat | safe }}
+      {% endif %}
+    </article>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+{# section.type: highlight — expects `section` in scope
+   Shell: .section-{type}.wrapper[data-section-theme] > .full.wrapper.section > .section__inner #}
+{% from "sections/_shell.njk" import sectionAlignClass, sectionThemeAttr %}
+
+{% set s = section %}
+{% set theme = s.theme or "teal" %}
+{% set alignClass = sectionAlignClass(s.align or "left") %}
+
+<div class="section-highlight | wrapper" {{ sectionThemeAttr(theme) }}{% if s.id %} id="{{ s.id }}"{% endif %}>
+  <div class="full wrapper section">
+    <article class="full | section__inner region flow prose {{ alignClass }}">
+      {% if s.title1 or s.title2 %}
+        <h2 class="text-step-1 feature">
+          {% if s.title1 %}<span class="reduced-opacity">{{ s.title1 }}</span>{% endif %}
+          {% if s.title2 %}
+            <span class="block text-step-3 mt-2xs">{{ s.title2 }}</span>
+          {% endif %}
+        </h2>
+      {% elif s.title %}
+        <h2 class="text-step-3 feature">{{ s.title | markdownInline | safe }}</h2>
+      {% endif %}
+
+      {% if s.subtitle %}
+        <div class="reduced-opacity | text-step-min-1">{{ s.subtitle | markdownFormat | safe }}</div>
+      {% endif %}
+
+      {% if s.content %}
+        <div class="flow-space-l">{{ s.content | markdownFormat | safe }}</div>
+      {% endif %}
+
+      {% if s.decoration %}
+        {% svg s.decoration %}
+      {% endif %}
+    </article>
+  </div>
+</div>

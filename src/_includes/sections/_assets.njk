@@ -1,0 +1,13 @@
+{# CSS/JS needed by composable sections (include once per page). #}
+{% css "local" %}
+  {% include "css/custom-hero.css" %}
+  {% include "css/sections/list.css" %}
+  {% include "css/sections/process.css" %}
+  {% include "css/faq.css" %}
+  {% include "css/details.css" %}
+  {% include "css/page-header.css" %}
+{% endcss %}
+
+{% js "defer" %}
+  {% include "scripts/details.js" %}
+{% endjs %}

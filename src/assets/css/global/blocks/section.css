@@ -2,9 +2,19 @@
   transform: rotate(180deg) translateY(-1px);
 }
 
-.section__inner {
-  background-color: var(--spot-color, var(--color-bg-accent));
+/*
+  Full-bleed theme paint lives on `.section` (the `.full` band),
+  not on `.section__inner` (content width). Hero / page-header keep
+  their own media backgrounds. Every named theme paints (including white).
+*/
+[data-section-theme] > .section:not(.custom-hero):not(.page-header),
+.section[data-section-theme]:not(.custom-hero):not(.page-header) {
+  background-color: var(--spot-color);
   color: var(--color-text);
+}
+
+.section__inner {
+  color: inherit;
 }
 
 .section blockquote {

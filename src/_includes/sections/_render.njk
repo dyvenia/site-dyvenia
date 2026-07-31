@@ -1,0 +1,28 @@
+{# Renders `sections` array by type. Expects `sections` in scope.
+   Use asyncEach + ifAsync + includes (not macros) so async svg/image shortcodes await. #}
+{% asyncEach section in sections %}
+  {% ifAsync section.type == "hero" %}
+    {% include "sections/hero.njk" %}
+  {% endif %}
+  {% ifAsync section.type == "text" %}
+    {% include "sections/text.njk" %}
+  {% endif %}
+  {% ifAsync section.type == "highlight" %}
+    {% include "sections/highlight.njk" %}
+  {% endif %}
+  {% ifAsync section.type == "list" %}
+    {% include "sections/list.njk" %}
+  {% endif %}
+  {% ifAsync section.type == "process" %}
+    {% include "sections/process.njk" %}
+  {% endif %}
+  {% ifAsync section.type == "feature" %}
+    {% include "sections/feature.njk" %}
+  {% endif %}
+  {% ifAsync section.type == "accordion" %}
+    {% include "sections/accordion.njk" %}
+  {% endif %}
+  {% ifAsync section.type == "cta" %}
+    {% include "sections/cta.njk" %}
+  {% endif %}
+{% endeach %}

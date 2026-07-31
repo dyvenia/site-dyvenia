@@ -1,0 +1,77 @@
+{# section.type: hero — expects `section` in scope #}
+{% from "sections/_shell.njk" import sectionButtonAttr %}
+
+{% set s = section %}
+{% set heroTheme = s.theme or "gray-dark" %}
+{% set heroDivider = s.divider if s.divider is defined else "divider/soft-top" %}
+{% set heroDividerClass = s.divider_class or "seperator" %}
+{% set heroHeight = s.height or "default" %}
+{% set heroBackground = s.background or "teal-800" %}
+{% set heroInline = s.align or "center" %}
+{% set heroBlock = s.content_block or "center" %}
+{% set heroRegionSpace = s.region_space or "xl" %}
+{% set heroVideo = s.video %}
+
+<header
+  class="section custom-hero section-hero"
+  data-section-theme="{{ heroTheme }}"
+  data-hero-media="{% if heroVideo %}video{% elif s.image %}image{% else %}none{% endif %}"
+  data-hero-height="{{ heroHeight }}"
+  data-hero-background="{{ heroBackground }}"
+  data-hero-content-inline="{{ heroInline }}"
+  data-hero-content-block="{{ heroBlock }}"
+  {% if s.id %}id="{{ s.id }}"{% endif %}
+>
+  {% if heroDivider %}
+    {% svg heroDivider, null, "seperator " + heroDividerClass if heroDividerClass else "" %}
+  {% endif %}
+
+  {% if heroVideo %}
+    <div class="custom-hero__video-container" aria-hidden="true">
+      <video
+        class="custom-hero__video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        aria-hidden="true"
+        tabindex="-1"
+        {% if s.image %}poster="{% imagePosterUrl s.image %}"{% endif %}
+      >
+        {% if heroVideo.webm %}
+          <source src="{{ heroVideo.webm | replace('./src', '') }}" type="video/webm" />
+        {% endif %}
+        {% if heroVideo.mp4 %}
+          <source src="{{ heroVideo.mp4 | replace('./src', '') }}" type="video/mp4" />
+        {% endif %}
+      </video>
+    </div>
+  {% endif %}
+
+  {% if s.image and not heroVideo %}
+    {% image s.image, s.image_alt or s.alt or "", null, "eager" %}
+  {% endif %}
+
+  <div class="custom-hero__content | section__inner region region-space-{{ heroRegionSpace }}">
+    <div class="wrapper flow">
+      <h1 class="fade-in-bottom">
+        {% if s.title %}{{ s.title | markdownInline | safe }}{% endif %}
+      </h1>
+
+      {% if s.subtitle %}
+        <div class="fade-in delay-3 flow">{{ s.subtitle | markdownFormat | safe }}</div>
+      {% endif %}
+
+      {% if s.button_text and s.button_target %}
+        <a
+          href="{{ s.button_target }}"
+          class="button flow-space-l fade-in delay-7"
+          {{ sectionButtonAttr(s.accent) }}
+        >
+          {{ s.button_text }} {% svg "misc/arrow" %}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</header>

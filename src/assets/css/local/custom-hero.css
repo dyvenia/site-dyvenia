@@ -1,12 +1,13 @@
 .custom-hero {
-  --custom-hero-bg: var(--color-blue-800);
+  --custom-hero-bg: var(--color-teal-800);
   display: grid;
   grid-template-columns: 1fr;
   place-content: center;
   background: var(--custom-hero-bg);
 }
 
-.custom-hero > * {
+/* Only intentional layers stack — not every accidental descendant */
+.custom-hero > :is(picture, .custom-hero__video-container, .custom-hero__content, .seperator) {
   grid-column: full;
   grid-column-start: 1;
   grid-row-start: 1;
@@ -26,6 +27,8 @@
 .custom-hero__content {
   display: grid;
   place-content: center;
+  /* Hero paints via --custom-hero-bg / media; keep content layer clear */
+  background-color: transparent;
 }
 
 .custom-hero__content h1 {
@@ -35,12 +38,12 @@
 }
 
 .custom-hero__content em {
-  color: color-mix(in oklab, var(--color-blue) 50%, var(--color-light));
+  color: color-mix(in oklab, var(--color-teal) 50%, var(--color-light));
   font-style: normal;
 }
 
 .custom-hero .wrapper > :is(p, h1) {
-  color: var(--color-light);
+  color: var(--color-text);
 }
 
 /* -------------------- media --------------------  */
@@ -89,6 +92,10 @@
 }
 
 /* -------------------- themes --------------------  */
+.custom-hero[data-hero-background='teal-800'] {
+  --custom-hero-bg: var(--color-teal-800);
+}
+
 .custom-hero[data-hero-background='purple-dark'] {
   --custom-hero-bg: var(--color-purple-800);
   --color-text: var(--color-purple-100);
