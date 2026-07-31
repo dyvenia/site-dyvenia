@@ -1,0 +1,18 @@
+<nav class="styleguide-nav | flow" aria-label="Style guide">
+  <p class="styleguide-nav__title">
+    <a href="/styleguide/" class="no-underline">Style guide</a>
+  </p>
+  <ul class="styleguide-nav__list | flow flow-space-2xs" role="list">
+    {% for item in styleguideNav %}
+      <li>
+        <a
+          href="{{ item.url }}"
+          class="styleguide-nav__link{% if page.url == item.url %} is-active{% endif %}"
+          {% if page.url == item.url %}aria-current="page"{% endif %}
+        >
+          {{ item.text }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
