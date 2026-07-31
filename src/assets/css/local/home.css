@@ -18,7 +18,7 @@
 }
 
 .home .intro strong {
-  color: var(--color-blue);
+  color: var(--color-teal);
 }
 
 .home .intro div > ul:first-child {
@@ -37,7 +37,7 @@
 }
 
 .home .highlight-one span {
-  color: var(--color-blue);
+  color: var(--color-teal);
 }
 
 .home .highlight-one svg {
@@ -46,7 +46,7 @@
   inset-inline-end: 0;
   inline-size: clamp(30ch, 40vw, 35rem);
   block-size: auto;
-  color: var(--color-blue-accent-2);
+  color: var(--color-teal-accent-2);
   mix-blend-mode: overlay;
   translate: var(--space-2xl) calc(var(--space-3xl) * -1);
 }
@@ -113,7 +113,7 @@
 @media screen(md) {
   .home .foundations svg {
     grid-column: 1/ 4;
-    color: var(--color-blue);
+    color: var(--color-teal);
     opacity: 1;
   }
 
@@ -145,7 +145,7 @@
   content: '';
   position: absolute;
   width: 0.25ch;
-  background: var(--color-blue);
+  background: var(--color-teal);
   inset-inline-start: var(--space-s);
   inset-block-start: calc(var(--space-s) * 2);
   inset-block-end: calc(-1 * var(--space-l));
@@ -167,8 +167,8 @@
 .home .foundations .timeline span {
   block-size: calc(var(--space-s) * 2);
   inline-size: calc(var(--space-s) * 2);
-  background: var(--color-blue);
-  color: var(--color-blue-100);
+  background: var(--color-teal);
+  color: var(--color-teal-100);
   font-size: var(--size-step-2);
   font-weight: var(--font-medium);
   display: flex;
@@ -252,7 +252,7 @@
   inset-inline: 0; /* Stretches the gradient across the container width */
   inset-block-end: 0; /* Anchors the gradient to the bottom */
   block-size: 50%; /* Covers 50% of the container height */
-  background: linear-gradient(to bottom, transparent, var(--color-blue-accent-6));
+  background: linear-gradient(to bottom, transparent, var(--color-teal-accent-6));
   pointer-events: none; /* Ensures it doesn’t block user interactions */
   z-index: 0; /* Places the gradient below the content */
 }
@@ -270,7 +270,7 @@
 
 .home .services picture {
   --flow-space: 0;
-  background: var(--color-blue-accent-5);
+  background: var(--color-teal-accent-5);
   mix-blend-mode: darken;
   max-block-size: 100%;
   overflow: hidden;
@@ -281,7 +281,7 @@
   content: '';
   position: absolute;
   inset: 0; /* Covers the entire image */
-  background: linear-gradient(to bottom, transparent, var(--color-blue-accent-5));
+  background: linear-gradient(to bottom, transparent, var(--color-teal-accent-5));
   pointer-events: none; /* Ensures no interference with user interactions */
   z-index: 1; /* Places the gradient above the image */
 }
@@ -321,12 +321,12 @@
 }
 
 .home .services h3 {
-  color: var(--color-blue-accent-4);
+  color: var(--color-teal-accent-4);
 }
 
 .home .services h3 span {
   display: block;
-  background: var(--color-blue);
+  background: var(--color-teal);
   color: var(--color-bg);
   inline-size: fit-content;
   border-radius: var(--border-radius-small);
@@ -339,7 +339,7 @@
   --grid-min-item-size: clamp(9rem, 25%, 20rem);
   background: var(--color-bg);
   border-radius: var(--border-radius-small);
-  border: 1px solid var(--color-blue-accent-3);
+  border: 1px solid var(--color-teal-accent-3);
   padding: var(--space-xs);
   margin-block-start: var(--space-l);
   position: relative;

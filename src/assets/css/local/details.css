@@ -36,13 +36,13 @@ is-land:not(:defined) .details .control {
 .details summary:hover,
 .details summary:focus-visible,
 .details[open] > summary {
-  color: var(--color-blue);
+  color: var(--color-teal);
 }
 
 .details summary::before {
   content: '+';
   display: block;
-  color: var(--color-blue);
+  color: var(--color-teal);
   font-family: var(--font-mono);
   font-size: var(--size-step-0);
   font-weight: var(--font-regular);
