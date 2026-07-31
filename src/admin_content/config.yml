@@ -449,6 +449,258 @@ collections:
               - {label: 'Image', name: 'image', widget: 'hidden', required: false}
               - {label: 'Footer', name: 'footer', widget: 'markdown', required: false}
 
+  # Solutions pages — composable sections list (type + appearance + content)
+  - name: 'solutions'
+    label: 'Solutions'
+    icon: 'hub'
+    folder: 'src/pages/solutions'
+    create: true
+    extension: 'njk'
+    format: 'frontmatter'
+    slug: '{{slug}}'
+    filter:
+      field: 'title'
+    fields:
+      - {label: 'Title', name: 'title', widget: 'string'}
+      - {label: 'Description', name: 'description', widget: 'text'}
+      - {label: 'Layout', name: 'layout', widget: 'hidden', default: 'modular'}
+      - {label: 'Body Class', name: 'bodyClass', widget: 'hidden', default: 'solutions'}
+      - label: 'Sections'
+        name: 'sections'
+        widget: 'list'
+        summary: '{{fields.type}} — {{fields.title}}'
+        types:
+          - label: 'Hero'
+            name: 'hero'
+            widget: 'object'
+            fields:
+              - {label: 'Title', name: 'title', widget: 'markdown'}
+              - {label: 'Subtitle', name: 'subtitle', widget: 'markdown', required: false}
+              - {label: 'Button Text', name: 'button_text', widget: 'string', required: false}
+              - {label: 'Button Target', name: 'button_target', widget: 'string', required: false}
+              - {label: 'Image', name: 'image', widget: 'image', required: false}
+              - {label: 'Image Alt', name: 'image_alt', widget: 'string', required: false}
+              - label: 'Background theme'
+                name: 'theme'
+                widget: 'select'
+                required: false
+                default: 'gray-dark'
+                options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+              - label: 'Accent / CTA'
+                name: 'accent'
+                widget: 'select'
+                required: false
+                default: 'default'
+                options: ['default', 'neutral', 'teal', 'purple', 'navy']
+              - label: 'Alignment'
+                name: 'align'
+                widget: 'select'
+                required: false
+                default: 'left'
+                options: ['left', 'center', 'right']
+              - label: 'Height'
+                name: 'height'
+                widget: 'select'
+                required: false
+                default: 'tall'
+                options: ['default', 'tall', 'cover']
+              - label: 'Background token'
+                name: 'background'
+                widget: 'select'
+                required: false
+                default: 'teal-800'
+                options: ['teal-800', 'purple-dark', 'navy-dark', 'bg-accent']
+          - label: 'Text'
+            name: 'text'
+            widget: 'object'
+            fields:
+              - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+              - {label: 'Content', name: 'content', widget: 'markdown', required: false}
+              - {label: 'Content Left', name: 'content_left', widget: 'markdown', required: false}
+              - {label: 'Content Right', name: 'content_right', widget: 'markdown', required: false}
+              - label: 'Background theme'
+                name: 'theme'
+                widget: 'select'
+                required: false
+                default: 'white'
+                options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+              - label: 'Alignment'
+                name: 'align'
+                widget: 'select'
+                required: false
+                default: 'left'
+                options: ['left', 'center', 'right']
+              - label: 'Width'
+                name: 'width'
+                widget: 'select'
+                required: false
+                default: 'feature'
+                options: ['content', 'feature', 'full']
+          - label: 'Highlight'
+            name: 'highlight'
+            widget: 'object'
+            fields:
+              - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+              - {label: 'Title line 1', name: 'title1', widget: 'string', required: false}
+              - {label: 'Title line 2', name: 'title2', widget: 'string', required: false}
+              - {label: 'Subtitle', name: 'subtitle', widget: 'markdown', required: false}
+              - {label: 'Content', name: 'content', widget: 'markdown', required: false}
+              - {label: 'Decoration SVG', name: 'decoration', widget: 'string', required: false, hint: 'e.g. brand/waves'}
+              - label: 'Background theme'
+                name: 'theme'
+                widget: 'select'
+                required: false
+                default: 'teal'
+                options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+              - label: 'Alignment'
+                name: 'align'
+                widget: 'select'
+                required: false
+                default: 'left'
+                options: ['left', 'center', 'right']
+          - label: 'List'
+            name: 'list'
+            widget: 'object'
+            fields:
+              - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+              - {label: 'Intro', name: 'content', widget: 'markdown', required: false}
+              - label: 'Variant'
+                name: 'variant'
+                widget: 'select'
+                default: 'definition'
+                options: ['definition', 'checklist', 'stack']
+              - label: 'Items'
+                name: 'items'
+                widget: 'list'
+                summary: '{{fields.title}}'
+                fields:
+                  - {label: 'Title', name: 'title', widget: 'string'}
+                  - {label: 'Content', name: 'content', widget: 'markdown', required: false}
+              - label: 'Background theme'
+                name: 'theme'
+                widget: 'select'
+                required: false
+                default: 'white'
+                options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+              - label: 'Alignment'
+                name: 'align'
+                widget: 'select'
+                required: false
+                default: 'left'
+                options: ['left', 'center', 'right']
+              - label: 'Width'
+                name: 'width'
+                widget: 'select'
+                required: false
+                default: 'feature'
+                options: ['content', 'feature', 'full']
+          - label: 'Process'
+            name: 'process'
+            widget: 'object'
+            fields:
+              - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+              - {label: 'Title line 1', name: 'title1', widget: 'string', required: false}
+              - {label: 'Title line 2', name: 'title2', widget: 'string', required: false}
+              - {label: 'Subtitle', name: 'subtitle', widget: 'markdown', required: false}
+              - {label: 'Decoration SVG', name: 'decoration', widget: 'string', required: false, hint: 'e.g. brand/medusa-organic'}
+              - label: 'Steps'
+                name: 'items'
+                widget: 'list'
+                summary: '{{fields.title}}'
+                fields:
+                  - {label: 'Title', name: 'title', widget: 'string'}
+                  - {label: 'Content', name: 'content', widget: 'markdown'}
+              - label: 'Alignment'
+                name: 'align'
+                widget: 'select'
+                required: false
+                default: 'center'
+                options: ['left', 'center', 'right']
+          - label: 'Feature'
+            name: 'feature'
+            widget: 'object'
+            fields:
+              - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+              - {label: 'Content', name: 'content', widget: 'markdown', required: false}
+              - {label: 'Image', name: 'image', widget: 'image', required: false}
+              - {label: 'Image Alt', name: 'image_alt', widget: 'string', required: false}
+              - {label: 'Button Text', name: 'button_text', widget: 'string', required: false}
+              - {label: 'Button Target', name: 'button_target', widget: 'string', required: false}
+              - label: 'Media side'
+                name: 'media_side'
+                widget: 'select'
+                required: false
+                default: 'right'
+                options: ['left', 'right']
+              - label: 'Accent / CTA'
+                name: 'accent'
+                widget: 'select'
+                required: false
+                default: 'default'
+                options: ['default', 'neutral', 'teal', 'purple', 'navy']
+              - label: 'Width'
+                name: 'width'
+                widget: 'select'
+                required: false
+                default: 'feature'
+                options: ['content', 'feature', 'full']
+          - label: 'Accordion'
+            name: 'accordion'
+            widget: 'object'
+            fields:
+              - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+              - {label: 'Intro', name: 'intro', widget: 'markdown', required: false}
+              - {label: 'Button Text', name: 'button_text', widget: 'string', required: false}
+              - {label: 'Button Target', name: 'button_target', widget: 'string', required: false}
+              - label: 'Items'
+                name: 'items'
+                widget: 'list'
+                summary: '{{fields.title}}'
+                fields:
+                  - {label: 'Title', name: 'title', widget: 'string'}
+                  - {label: 'Content', name: 'content', widget: 'markdown'}
+              - label: 'Accent / CTA'
+                name: 'accent'
+                widget: 'select'
+                required: false
+                default: 'default'
+                options: ['default', 'neutral', 'teal', 'purple', 'navy']
+              - label: 'Width'
+                name: 'width'
+                widget: 'select'
+                required: false
+                default: 'feature'
+                options: ['content', 'feature', 'full']
+          - label: 'CTA'
+            name: 'cta'
+            widget: 'object'
+            fields:
+              - {label: 'Title', name: 'title', widget: 'markdown'}
+              - {label: 'Subtitle', name: 'subtitle', widget: 'markdown', required: false}
+              - {label: 'Pre Button Text', name: 'pre', widget: 'markdown', required: false}
+              - {label: 'Button Text', name: 'button_text', widget: 'string', required: false}
+              - {label: 'Button Target', name: 'button_target', widget: 'string', required: false}
+              - {label: 'Image', name: 'image', widget: 'image', required: false}
+              - {label: 'Footer', name: 'footer', widget: 'markdown', required: false}
+              - label: 'Background theme'
+                name: 'theme'
+                widget: 'select'
+                required: false
+                default: 'gray-dark'
+                options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+              - label: 'Accent / CTA'
+                name: 'accent'
+                widget: 'select'
+                required: false
+                default: 'default'
+                options: ['default', 'neutral', 'teal', 'purple', 'navy']
+              - label: 'Alignment'
+                name: 'align'
+                widget: 'select'
+                required: false
+                default: 'left'
+                options: ['left', 'center', 'right']
+
   - name: 'navigation'
     label: 'Navigation'
     icon: 'menu'

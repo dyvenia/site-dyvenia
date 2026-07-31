@@ -1,6 +1,17 @@
 top:
   - text: About
     url: /about/
+  - text: Solutions
+    url: ''
+    submenu:
+      - text: Enterprise Data Platform
+        url: /solutions/enterprise-data-platform/
+      - text: Enterprise Data Core
+        url: /solutions/enterprise-data-core/
+      - text: Enterprise Intelligence & AI
+        url: /solutions/enterprise-intelligence-ai/
+      - text: Team Augmentation
+        url: /solutions/team-augmentation/
   - text: Resources
     url: ''
     submenu:
