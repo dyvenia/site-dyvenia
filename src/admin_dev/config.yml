@@ -458,8 +458,6 @@ collections:
     extension: 'njk'
     format: 'frontmatter'
     slug: '{{slug}}'
-    filter:
-      field: 'title'
     fields:
       - {label: 'Title', name: 'title', widget: 'string'}
       - {label: 'Description', name: 'description', widget: 'text'}
@@ -468,12 +466,20 @@ collections:
       - label: 'Sections'
         name: 'sections'
         widget: 'list'
-        summary: '{{fields.type}} — {{fields.title}}'
+        collapsed: true
+        summary: "{{fields.type}}: {{fields.internal_name | default('{{fields.title}}')}}"
         types:
           - label: 'Hero'
             name: 'hero'
             widget: 'object'
             fields:
+              - {
+                  label: 'Internal name',
+                  name: 'internal_name',
+                  widget: 'string',
+                  required: false,
+                  hint: 'Only visible in CMS list view'
+                }
               - {label: 'Title', name: 'title', widget: 'markdown'}
               - {label: 'Subtitle', name: 'subtitle', widget: 'markdown', required: false}
               - {label: 'Button Text', name: 'button_text', widget: 'string', required: false}
@@ -514,6 +520,13 @@ collections:
             name: 'text'
             widget: 'object'
             fields:
+              - {
+                  label: 'Internal name',
+                  name: 'internal_name',
+                  widget: 'string',
+                  required: false,
+                  hint: 'CMS list label only — not shown on the site'
+                }
               - {label: 'Title', name: 'title', widget: 'markdown', required: false}
               - {label: 'Content', name: 'content', widget: 'markdown', required: false}
               - {label: 'Content Left', name: 'content_left', widget: 'markdown', required: false}
@@ -540,12 +553,25 @@ collections:
             name: 'highlight'
             widget: 'object'
             fields:
+              - {
+                  label: 'Internal name',
+                  name: 'internal_name',
+                  widget: 'string',
+                  required: false,
+                  hint: 'CMS list label only — not shown on the site'
+                }
               - {label: 'Title', name: 'title', widget: 'markdown', required: false}
               - {label: 'Title line 1', name: 'title1', widget: 'string', required: false}
               - {label: 'Title line 2', name: 'title2', widget: 'string', required: false}
               - {label: 'Subtitle', name: 'subtitle', widget: 'markdown', required: false}
               - {label: 'Content', name: 'content', widget: 'markdown', required: false}
-              - {label: 'Decoration SVG', name: 'decoration', widget: 'string', required: false, hint: 'e.g. brand/waves'}
+              - {
+                  label: 'Decoration SVG',
+                  name: 'decoration',
+                  widget: 'string',
+                  required: false,
+                  hint: 'e.g. brand/waves'
+                }
               - label: 'Background theme'
                 name: 'theme'
                 widget: 'select'
@@ -562,6 +588,13 @@ collections:
             name: 'list'
             widget: 'object'
             fields:
+              - {
+                  label: 'Internal name',
+                  name: 'internal_name',
+                  widget: 'string',
+                  required: false,
+                  hint: 'CMS list label only — not shown on the site'
+                }
               - {label: 'Title', name: 'title', widget: 'markdown', required: false}
               - {label: 'Intro', name: 'content', widget: 'markdown', required: false}
               - label: 'Variant'
@@ -598,11 +631,24 @@ collections:
             name: 'process'
             widget: 'object'
             fields:
+              - {
+                  label: 'Internal name',
+                  name: 'internal_name',
+                  widget: 'string',
+                  required: false,
+                  hint: 'CMS list label only — not shown on the site'
+                }
               - {label: 'Title', name: 'title', widget: 'markdown', required: false}
               - {label: 'Title line 1', name: 'title1', widget: 'string', required: false}
               - {label: 'Title line 2', name: 'title2', widget: 'string', required: false}
               - {label: 'Subtitle', name: 'subtitle', widget: 'markdown', required: false}
-              - {label: 'Decoration SVG', name: 'decoration', widget: 'string', required: false, hint: 'e.g. brand/medusa-organic'}
+              - {
+                  label: 'Decoration SVG',
+                  name: 'decoration',
+                  widget: 'string',
+                  required: false,
+                  hint: 'e.g. brand/medusa-organic'
+                }
               - label: 'Steps'
                 name: 'items'
                 widget: 'list'
@@ -620,6 +666,13 @@ collections:
             name: 'feature'
             widget: 'object'
             fields:
+              - {
+                  label: 'Internal name',
+                  name: 'internal_name',
+                  widget: 'string',
+                  required: false,
+                  hint: 'CMS list label only — not shown on the site'
+                }
               - {label: 'Title', name: 'title', widget: 'markdown', required: false}
               - {label: 'Content', name: 'content', widget: 'markdown', required: false}
               - {label: 'Image', name: 'image', widget: 'image', required: false}
@@ -648,6 +701,13 @@ collections:
             name: 'accordion'
             widget: 'object'
             fields:
+              - {
+                  label: 'Internal name',
+                  name: 'internal_name',
+                  widget: 'string',
+                  required: false,
+                  hint: 'CMS list label only — not shown on the site'
+                }
               - {label: 'Title', name: 'title', widget: 'markdown', required: false}
               - {label: 'Intro', name: 'intro', widget: 'markdown', required: false}
               - {label: 'Button Text', name: 'button_text', widget: 'string', required: false}
@@ -675,6 +735,13 @@ collections:
             name: 'cta'
             widget: 'object'
             fields:
+              - {
+                  label: 'Internal name',
+                  name: 'internal_name',
+                  widget: 'string',
+                  required: false,
+                  hint: 'CMS list label only — not shown on the site'
+                }
               - {label: 'Title', name: 'title', widget: 'markdown'}
               - {label: 'Subtitle', name: 'subtitle', widget: 'markdown', required: false}
               - {label: 'Pre Button Text', name: 'pre', widget: 'markdown', required: false}
