@@ -25,4 +25,25 @@
   {% ifAsync section.type == "cta" %}
     {% include "sections/cta.njk" %}
   {% endif %}
+  {% ifAsync section.type == "posts" %}
+    {% include "sections/posts.njk" %}
+  {% endif %}
+  {% ifAsync section.type == "team" %}
+    {% include "sections/team.njk" %}
+  {% endif %}
+  {% ifAsync section.type == "form" %}
+    {% include "sections/form.njk" %}
+  {% endif %}
+  {% ifAsync section.type == "services" %}
+    {% include "sections/services.njk" %}
+  {% endif %}
+  {% ifAsync section.type == "tabs" %}
+    {% include "sections/tabs.njk" %}
+  {% endif %}
+  {% ifAsync section.type == "cases" %}
+    {% include "sections/cases.njk" %}
+  {% endif %}
+  {% ifAsync section.type == "gallery" %}
+    {% include "sections/gallery.njk" %}
+  {% endif %}
 {% endeach %}

@@ -1,0 +1,102 @@
+/* section.type: services — full-bleed BG + stacked rows */
+
+.section-services__band {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.section-services__band::after {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  inset-block-end: 0;
+  block-size: 50%;
+  background: linear-gradient(to bottom, transparent, var(--color-teal-accent-6));
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section-services__band > * {
+  position: relative;
+  z-index: 1;
+  grid-column: full;
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+
+.section-services__band picture {
+  --flow-space: 0;
+  background: var(--color-teal-accent-5);
+  mix-blend-mode: darken;
+  max-block-size: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.section-services__band picture::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent, var(--color-teal-accent-5));
+  pointer-events: none;
+  z-index: 1;
+}
+
+.section-services__band img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  aspect-ratio: 1 / 2;
+  filter: grayscale(100%) brightness(0.5) opacity(0.3) contrast(200%);
+  mix-blend-mode: multiply;
+}
+
+[data-theme='light'] .section-services__band img {
+  filter: grayscale(100%) brightness(0.5) opacity(0.3) contrast(200%);
+}
+
+[data-theme='dark'] .section-services__band img {
+  filter: grayscale(100%) brightness(0.7) opacity(0.5) contrast(200%);
+}
+
+@media screen(md) {
+  .section-services__band img {
+    aspect-ratio: 3 / 2;
+  }
+}
+
+.section-services__band h2 {
+  color: var(--color-light);
+  align-self: end;
+}
+
+.section-services__band h3 {
+  color: var(--color-teal-accent-4);
+}
+
+.section-services__band h3 span {
+  display: block;
+  background: var(--color-teal);
+  color: var(--color-bg);
+  inline-size: fit-content;
+  border-radius: var(--border-radius-small);
+  padding: var(--space-4xs) var(--space-3xs);
+  margin-block-start: var(--space-3xs);
+}
+
+.section-services__band .grid {
+  --gutter: var(--space-s);
+  --grid-min-item-size: clamp(9rem, 25%, 20rem);
+  background: var(--color-bg);
+  border-radius: var(--border-radius-small);
+  border: 1px solid var(--color-teal-accent-3);
+  padding: var(--space-xs);
+  margin-block-start: var(--space-l);
+  position: relative;
+  opacity: 0.8;
+}
+
+.section-services__band .grid div {
+  grid-column: span 2;
+}

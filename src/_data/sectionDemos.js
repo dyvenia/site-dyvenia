@@ -32,6 +32,34 @@ export default {
     cta: {
       title: 'cta',
       body: 'Closing or mid-page band (page-header pattern) with image treatment, title, subtitle, and button. Defaults to theme gray-dark.'
+    },
+    posts: {
+      title: 'posts',
+      body: 'Latest insights cards from the posts collection. Options: count, layout (grid | masonry), optional title link.'
+    },
+    team: {
+      title: 'team',
+      body: 'People grid from team_members. filter defaults to show_on_about; header_layout thirds matches the home about band.'
+    },
+    form: {
+      title: 'form',
+      body: 'HubSpot newsletter band. Optional title/intro; form copy comes from site meta.'
+    },
+    services: {
+      title: 'services',
+      body: 'Full-bleed background image with stacked service rows (prefix + title + markdown). Home-specific layout.'
+    },
+    tabs: {
+      title: 'tabs',
+      body: 'Multi-stage tabbed process (stage nav + step panels with what / outcomes). Distinct from the process timeline.'
+    },
+    cases: {
+      title: 'cases',
+      body: 'Case-study card strip (same card shell as posts). Renders empty when the case studies collection has no entries.'
+    },
+    gallery: {
+      title: 'gallery',
+      body: 'Modal image grid. Items: image, alt, optional caption.'
     }
   },
   hero: {
@@ -151,5 +179,126 @@ export default {
     button_text: 'Schedule a discovery call',
     button_target: 'https://meetings-eu1.hubspot.com/alessio-civitillo/book-a-call',
     image: './src/assets/images/backgrounds/sfondi-dyvenia04.jpg'
+  },
+  posts: {
+    type: 'posts',
+    theme: 'white',
+    width: 'feature',
+    title: 'Our Insights',
+    intro: 'Selected Articles. Check our blog for more.',
+    count: 3,
+    layout: 'grid'
+  },
+  team: {
+    type: 'team',
+    theme: 'white',
+    width: 'feature',
+    header_layout: 'thirds',
+    filter: 'show_on_about',
+    title: 'Who We Are',
+    content:
+      'We’re not just data engineers or consultants. We’ve sat on **both sides**.'
+  },
+  form: {
+    type: 'form',
+    theme: 'gray-light',
+    width: 'content',
+    title: 'Stay in the loop',
+    intro: 'Subscribe for insights on data platforms, metrics, and AI that ships.'
+  },
+  services: {
+    type: 'services',
+    theme: 'navy',
+    title: 'How We Deliver Results',
+    image: './src/assets/images/backgrounds/sfondi-dyvenia26.jpg',
+    items: [
+      {
+        prefix: 'Data Platform',
+        title: 'Engineering',
+        description:
+          'We design and build the foundation your data actually runs on.\n\n- Architectural design aligned with your systems\n- Pipelines with clear, traceable logic'
+      },
+      {
+        prefix: 'Metrics & Business',
+        title: 'Logic',
+        description:
+          'We make your numbers consistent, defined, and trusted across the organization.'
+      }
+    ]
+  },
+  tabs: {
+    type: 'tabs',
+    theme: 'white',
+    width: 'feature',
+    title: 'Our Process',
+    intro: 'A structured, two-stage process aligned to your business objectives.',
+    title_what: 'What we do?',
+    title_outcomes: 'Outcomes:',
+    stages: [
+      {
+        label: 'Stage 1',
+        name: 'Plan',
+        steps: [
+          {
+            label: 'Step 1',
+            title: 'Perform a Metrics Audit',
+            content:
+              'We evaluate your existing metrics, identify gaps, and define the desired outcome.',
+            outcomes: '- Identification of metrics gaps\n- A functional MVP to demonstrate value'
+          },
+          {
+            label: 'Step 2',
+            title: 'Create a Roadmap',
+            content: 'We translate the benchmark into a detailed roadmap.',
+            outcomes: '- A comprehensive data marts roadmap\n- A resource plan for successful execution'
+          }
+        ]
+      },
+      {
+        label: 'Stage 2',
+        name: 'Execution',
+        steps: [
+          {
+            label: 'Step 3',
+            title: 'Release Metrics & Reports',
+            content: 'Through iterative sprints, our analysts develop the agreed-upon metrics.',
+            outcomes: '- Unified metrics\n- Standardized reports ready for use'
+          },
+          {
+            label: 'Step 4',
+            title: 'Operationalize and Support',
+            content: 'We transition marts and reports to operations.',
+            outcomes: '- Handover to operational teams\n- Continued technical and strategic support'
+          }
+        ]
+      }
+    ]
+  },
+  cases: {
+    type: 'cases',
+    theme: 'white',
+    width: 'feature',
+    title: 'Case Studies',
+    intro: 'Selected client work. More coming soon.',
+    count: 3,
+    layout: 'grid'
+  },
+  gallery: {
+    type: 'gallery',
+    theme: 'white',
+    width: 'feature',
+    title: 'Gallery',
+    intro: 'Click an image to open it.',
+    items: [
+      {
+        image: './src/assets/images/backgrounds/sfondi-dyvenia04.jpg',
+        alt: 'Abstract teal background',
+        caption: 'Studio atmosphere'
+      },
+      {
+        image: './src/assets/images/backgrounds/sfondi-dyvenia26.jpg',
+        alt: 'Deep blue textured background'
+      }
+    ]
   }
 };

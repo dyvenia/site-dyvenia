@@ -1,0 +1,28 @@
+{# section.type: services — expects `section` in scope
+   Full-bleed BG image + stacked service rows #}
+{% from "sections/_shell.njk" import sectionThemeAttr %}
+
+{% set s = section %}
+{% set theme = s.theme or "navy" %}
+
+<div class="section-services | wrapper" {{ sectionThemeAttr(theme) }}{% if s.id %} id="{{ s.id }}"{% endif %}>
+  <div class="section-services__band | full wrapper section">
+    {% if s.image %}
+      {% image s.image, "" %}
+    {% endif %}
+    <article class="wrapper region flow">
+      {% if s.title %}<h2 class="text-center">{{ s.title | markdownInline | safe }}</h2>{% endif %}
+      {% for item in s.items %}
+        <div class="grid" data-layout="thirds">
+          <h3>
+            {% if item.prefix %}<span>{{ item.prefix }}</span>{% endif %}
+            {{ item.title }}
+          </h3>
+          <div>
+            {{ (item.description or item.content) | markdownFormat | safe }}
+          </div>
+        </div>
+      {% endfor %}
+    </article>
+  </div>
+</div>

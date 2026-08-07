@@ -1,0 +1,56 @@
+{# section.type: team — expects `section` in scope
+   Shell: .section-{type}.wrapper[data-section-theme] > .full.wrapper.section > .section__inner #}
+{% from "sections/_shell.njk" import sectionWidthClass, sectionAlignClass, sectionThemeAttr %}
+
+{% set s = section %}
+{% set theme = s.theme or "white" %}
+{% set widthClass = sectionWidthClass(s.width or "feature") or "feature" %}
+{% set alignClass = sectionAlignClass(s.align) %}
+{% set filterKey = s.filter or "show_on_about" %}
+{% set headerLayout = s.header_layout or "stack" %}
+{% set orderedTeamMembers = collections.team_members | sortByOrderIndex %}
+
+<div class="section-team | wrapper" {{ sectionThemeAttr(theme) }}{% if s.id %} id="{{ s.id }}"{% endif %}>
+  <div class="full wrapper section">
+    <article class="{{ widthClass }} | section__inner region">
+      {% if s.title or s.content or s.intro %}
+        {% if headerLayout == "thirds" %}
+          <header class="grid intro {{ alignClass }}" data-layout="thirds">
+            {% if s.title %}<h2>{{ s.title | markdownInline | safe }}</h2>{% endif %}
+            {% if s.content or s.intro %}
+              <div class="flow">{{ (s.content or s.intro) | markdownFormat | safe }}</div>
+            {% endif %}
+          </header>
+        {% else %}
+          <header class="flow prose {{ alignClass }}">
+            {% if s.title %}<h2>{{ s.title | markdownInline | safe }}</h2>{% endif %}
+            {% if s.content or s.intro %}
+              <div>{{ (s.content or s.intro) | markdownFormat | safe }}</div>
+            {% endif %}
+          </header>
+        {% endif %}
+      {% endif %}
+
+      <div class="grid team {% if s.title or s.content or s.intro %}mt-xl-2xl{% else %}mt-m-l{% endif %}" data-layout="thirds">
+        {% for member in orderedTeamMembers %}
+          {% if filterKey == "all" or member.data[filterKey] %}
+            <custom-card clickable small-padding img-3-2>
+              {% image "." + member.data.image, "" %}
+              <h3 class="text-step-1" slot="headline">
+                <a href="{{ member.url }}">
+                  {{ member.data.name }}
+                  {% if member.data.role %}
+                    <span class="text-step-min-1 font-bold">{{ member.data.role }}</span>
+                  {% endif %}
+                </a>
+              </h3>
+              <div slot="content" webc:nokeep>
+                {{ member.data.description_short | markdownFormat | safe }}
+              </div>
+            </custom-card>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </article>
+  </div>
+</div>

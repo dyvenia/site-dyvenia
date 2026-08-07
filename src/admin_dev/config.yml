@@ -30,78 +30,602 @@ collections:
         label: 'Home'
         name: 'home'
         fields:
-          - label: 'Hero'
-            name: 'hero'
-            widget: 'object'
-            fields:
-              - {label: 'Title', name: 'title', widget: 'markdown'}
-              - {label: 'Subtitle', name: 'subtitle', widget: 'markdown'}
-              - {label: 'Button Text', name: 'button_text', widget: 'string'}
-              - {label: 'Button Target', name: 'button_target', widget: 'string'}
-              - {label: 'Image', name: 'image', widget: 'hidden', required: false}
-              - {label: 'Video', name: 'video', widget: 'file', required: false}
-          - label: 'Introduction'
-            name: 'intro'
-            widget: 'object'
-            fields:
-              - {label: 'Title', name: 'title', widget: 'string'}
-              - {label: 'Content Left', name: 'content_left', widget: 'markdown'}
-              - {label: 'Content Right', name: 'content_right', widget: 'markdown'}
-          - label: 'Highlight One'
-            name: 'highlight_one'
-            widget: 'object'
-            fields:
-              - {label: 'Title', name: 'title', widget: 'string'}
-              - {label: 'Subtitle', name: 'subtitle', widget: 'markdown'}
-          - label: 'Highlight Two'
-            name: 'highlight_two'
-            widget: 'object'
-            fields:
-              - {label: 'Title One', name: 'title1', widget: 'string'}
-              - {label: 'Title Two', name: 'title2', widget: 'string'}
-              - {label: 'Content', name: 'content', widget: 'markdown'}
-          - label: '5 Foundations Titles'
-            name: 'foundations_titles'
-            widget: 'object'
-            fields:
-              - {label: 'Title One', name: 'title1', widget: 'string'}
-              - {label: 'Title Two', name: 'title2', widget: 'string'}
-          - label: 'Foundations Keys'
-            name: 'foundations_elements' #<- this doesn't seem to work
+          - {label: 'Title', name: 'title', widget: 'string'}
+          - {label: 'Description', name: 'description', widget: 'text'}
+          - {label: 'Layout', name: 'layout', widget: 'hidden', default: 'modular'}
+          - {label: 'Permalink', name: 'permalink', widget: 'hidden'}
+          - {label: 'Body Class', name: 'bodyClass', widget: 'hidden'}
+          - {label: 'Main Class', name: 'mainClass', widget: 'hidden'}
+          - label: 'Sections'
+            name: 'sections'
             widget: 'list'
-            fields:
-              - {label: 'Title', name: 'title', widget: 'string'}
-              - {label: 'Content', name: 'content', widget: 'string'}
-          - label: 'About Us'
-            name: 'about'
-            widget: 'object'
-            fields:
-              - {label: 'Title', name: 'title', widget: 'string'}
-              - {label: 'Content', name: 'content', widget: 'markdown'}
-          - label: 'Why Us Intro'
-            name: 'whyus_intro'
-            widget: 'object'
-            fields:
-              - {label: 'Title', name: 'title', widget: 'string'}
-              - {label: 'Content', name: 'content', widget: 'string'}
-          - label: 'Why Us - Elements'
-            name: 'whyus_elements'
-            widget: 'list'
-            fields:
-              - {label: 'Title', name: 'title', widget: 'string'}
-              - {label: 'Content', name: 'content', widget: 'string'}
-          - label: 'Our Services'
-            name: 'our_services'
-            widget: 'object'
-            fields:
-              - {label: 'Title', name: 'title', widget: 'string'}
-          - label: 'Our Services Items'
-            name: 'our_services_items'
-            widget: 'list'
-            fields:
-              - {label: 'Title', name: 'title', widget: 'string'}
-              - {label: 'Prefix', name: 'prefix', widget: 'string'}
-              - {label: 'Description', name: 'description', widget: 'markdown'}
+            collapsed: true
+            summary: "{{fields.type}}: {{fields.internal_name | default('{{fields.title}}')}}"
+            types:
+              - label: 'Hero'
+                name: 'hero'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'Only visible in CMS list view'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown'}
+                  - {label: 'Subtitle', name: 'subtitle', widget: 'markdown', required: false}
+                  - {label: 'Button Text', name: 'button_text', widget: 'string', required: false}
+                  - {label: 'Button Target', name: 'button_target', widget: 'string', required: false}
+                  - {label: 'Image', name: 'image', widget: 'image', required: false}
+                  - {label: 'Image Alt', name: 'image_alt', widget: 'string', required: false}
+                  - label: 'Video'
+                    name: 'video'
+                    widget: 'object'
+                    required: false
+                    fields:
+                      - {label: 'WebM', name: 'webm', widget: 'file', required: false}
+                      - {label: 'MP4', name: 'mp4', widget: 'file', required: false}
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'gray-dark'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Accent / CTA'
+                    name: 'accent'
+                    widget: 'select'
+                    required: false
+                    default: 'default'
+                    options: ['default', 'neutral', 'teal', 'purple', 'navy']
+                  - label: 'Alignment'
+                    name: 'align'
+                    widget: 'select'
+                    required: false
+                    default: 'left'
+                    options: ['left', 'center', 'right']
+                  - label: 'Height'
+                    name: 'height'
+                    widget: 'select'
+                    required: false
+                    default: 'tall'
+                    options: ['default', 'tall', 'cover']
+                  - label: 'Background token'
+                    name: 'background'
+                    widget: 'select'
+                    required: false
+                    default: 'teal-800'
+                    options: ['teal-800', 'purple-dark', 'navy-dark', 'bg-accent']
+              - label: 'Text'
+                name: 'text'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Content', name: 'content', widget: 'markdown', required: false}
+                  - {label: 'Content Left', name: 'content_left', widget: 'markdown', required: false}
+                  - {label: 'Content Right', name: 'content_right', widget: 'markdown', required: false}
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'white'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Alignment'
+                    name: 'align'
+                    widget: 'select'
+                    required: false
+                    default: 'left'
+                    options: ['left', 'center', 'right']
+                  - label: 'Width'
+                    name: 'width'
+                    widget: 'select'
+                    required: false
+                    default: 'feature'
+                    options: ['content', 'feature', 'full']
+              - label: 'Highlight'
+                name: 'highlight'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Title line 1', name: 'title1', widget: 'string', required: false}
+                  - {label: 'Title line 2', name: 'title2', widget: 'string', required: false}
+                  - {label: 'Subtitle', name: 'subtitle', widget: 'markdown', required: false}
+                  - {label: 'Content', name: 'content', widget: 'markdown', required: false}
+                  - {
+                      label: 'Decoration SVG',
+                      name: 'decoration',
+                      widget: 'string',
+                      required: false,
+                      hint: 'e.g. brand/waves'
+                    }
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'teal'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Alignment'
+                    name: 'align'
+                    widget: 'select'
+                    required: false
+                    default: 'left'
+                    options: ['left', 'center', 'right']
+              - label: 'List'
+                name: 'list'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Intro', name: 'content', widget: 'markdown', required: false}
+                  - label: 'Variant'
+                    name: 'variant'
+                    widget: 'select'
+                    default: 'definition'
+                    options: ['definition', 'checklist', 'stack']
+                  - label: 'Items'
+                    name: 'items'
+                    widget: 'list'
+                    summary: '{{fields.title}}'
+                    fields:
+                      - {label: 'Title', name: 'title', widget: 'string'}
+                      - {label: 'Content', name: 'content', widget: 'markdown', required: false}
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'white'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Alignment'
+                    name: 'align'
+                    widget: 'select'
+                    required: false
+                    default: 'left'
+                    options: ['left', 'center', 'right']
+                  - label: 'Width'
+                    name: 'width'
+                    widget: 'select'
+                    required: false
+                    default: 'feature'
+                    options: ['content', 'feature', 'full']
+              - label: 'Process'
+                name: 'process'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Title line 1', name: 'title1', widget: 'string', required: false}
+                  - {label: 'Title line 2', name: 'title2', widget: 'string', required: false}
+                  - {label: 'Subtitle', name: 'subtitle', widget: 'markdown', required: false}
+                  - {
+                      label: 'Decoration SVG',
+                      name: 'decoration',
+                      widget: 'string',
+                      required: false,
+                      hint: 'e.g. brand/medusa-organic'
+                    }
+                  - label: 'Steps'
+                    name: 'items'
+                    widget: 'list'
+                    summary: '{{fields.title}}'
+                    fields:
+                      - {label: 'Title', name: 'title', widget: 'string'}
+                      - {label: 'Content', name: 'content', widget: 'markdown'}
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'white'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Alignment'
+                    name: 'align'
+                    widget: 'select'
+                    required: false
+                    default: 'center'
+                    options: ['left', 'center', 'right']
+              - label: 'Feature'
+                name: 'feature'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Content', name: 'content', widget: 'markdown', required: false}
+                  - {label: 'Image', name: 'image', widget: 'image', required: false}
+                  - {label: 'Image Alt', name: 'image_alt', widget: 'string', required: false}
+                  - {label: 'Button Text', name: 'button_text', widget: 'string', required: false}
+                  - {label: 'Button Target', name: 'button_target', widget: 'string', required: false}
+                  - label: 'Media side'
+                    name: 'media_side'
+                    widget: 'select'
+                    required: false
+                    default: 'right'
+                    options: ['left', 'right']
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'white'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Accent / CTA'
+                    name: 'accent'
+                    widget: 'select'
+                    required: false
+                    default: 'default'
+                    options: ['default', 'neutral', 'teal', 'purple', 'navy']
+                  - label: 'Width'
+                    name: 'width'
+                    widget: 'select'
+                    required: false
+                    default: 'feature'
+                    options: ['content', 'feature', 'full']
+              - label: 'Accordion'
+                name: 'accordion'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Intro', name: 'intro', widget: 'markdown', required: false}
+                  - {label: 'Button Text', name: 'button_text', widget: 'string', required: false}
+                  - {label: 'Button Target', name: 'button_target', widget: 'string', required: false}
+                  - label: 'Items'
+                    name: 'items'
+                    widget: 'list'
+                    summary: '{{fields.title}}'
+                    fields:
+                      - {label: 'Title', name: 'title', widget: 'string'}
+                      - {label: 'Content', name: 'content', widget: 'markdown'}
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'white'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Accent / CTA'
+                    name: 'accent'
+                    widget: 'select'
+                    required: false
+                    default: 'default'
+                    options: ['default', 'neutral', 'teal', 'purple', 'navy']
+                  - label: 'Width'
+                    name: 'width'
+                    widget: 'select'
+                    required: false
+                    default: 'feature'
+                    options: ['content', 'feature', 'full']
+              - label: 'Posts'
+                name: 'posts'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Intro', name: 'intro', widget: 'markdown', required: false}
+                  - {label: 'Title link', name: 'title_href', widget: 'string', required: false, default: '/insights/'}
+                  - {label: 'Count', name: 'count', widget: 'number', required: false, default: 3, value_type: 'int'}
+                  - label: 'Layout'
+                    name: 'layout'
+                    widget: 'select'
+                    required: false
+                    default: 'grid'
+                    options: ['grid', 'masonry']
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'white'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Alignment'
+                    name: 'align'
+                    widget: 'select'
+                    required: false
+                    default: 'left'
+                    options: ['left', 'center', 'right']
+                  - label: 'Width'
+                    name: 'width'
+                    widget: 'select'
+                    required: false
+                    default: 'feature'
+                    options: ['content', 'feature', 'full']
+              - label: 'Team'
+                name: 'team'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Content', name: 'content', widget: 'markdown', required: false}
+                  - label: 'Filter'
+                    name: 'filter'
+                    widget: 'select'
+                    required: false
+                    default: 'show_on_about'
+                    options: ['show_on_about', 'all']
+                  - label: 'Header layout'
+                    name: 'header_layout'
+                    widget: 'select'
+                    required: false
+                    default: 'stack'
+                    options: ['stack', 'thirds']
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'white'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Alignment'
+                    name: 'align'
+                    widget: 'select'
+                    required: false
+                    default: 'left'
+                    options: ['left', 'center', 'right']
+                  - label: 'Width'
+                    name: 'width'
+                    widget: 'select'
+                    required: false
+                    default: 'feature'
+                    options: ['content', 'feature', 'full']
+              - label: 'Form'
+                name: 'form'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Intro', name: 'intro', widget: 'markdown', required: false}
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'white'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Alignment'
+                    name: 'align'
+                    widget: 'select'
+                    required: false
+                    default: 'left'
+                    options: ['left', 'center', 'right']
+                  - label: 'Width'
+                    name: 'width'
+                    widget: 'select'
+                    required: false
+                    default: 'content'
+                    options: ['content', 'feature', 'full']
+              - label: 'Services'
+                name: 'services'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Background image', name: 'image', widget: 'image', required: false}
+                  - label: 'Items'
+                    name: 'items'
+                    widget: 'list'
+                    summary: '{{fields.prefix}} {{fields.title}}'
+                    fields:
+                      - {label: 'Prefix', name: 'prefix', widget: 'string', required: false}
+                      - {label: 'Title', name: 'title', widget: 'string'}
+                      - {label: 'Description', name: 'description', widget: 'markdown'}
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'navy'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+              - label: 'Tabs'
+                name: 'tabs'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Intro', name: 'intro', widget: 'markdown', required: false}
+                  - {label: 'What heading', name: 'title_what', widget: 'string', required: false, default: 'What we do?'}
+                  - {label: 'Outcomes heading', name: 'title_outcomes', widget: 'string', required: false, default: 'Outcomes:'}
+                  - label: 'Stages'
+                    name: 'stages'
+                    widget: 'list'
+                    summary: '{{fields.label}} {{fields.name}}'
+                    fields:
+                      - {label: 'Label', name: 'label', widget: 'string'}
+                      - {label: 'Name', name: 'name', widget: 'string'}
+                      - label: 'Steps'
+                        name: 'steps'
+                        widget: 'list'
+                        summary: '{{fields.title}}'
+                        fields:
+                          - {label: 'Label', name: 'label', widget: 'string', required: false}
+                          - {label: 'Title', name: 'title', widget: 'string'}
+                          - {label: 'Content', name: 'content', widget: 'markdown'}
+                          - {label: 'Outcomes', name: 'outcomes', widget: 'markdown', required: false}
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'white'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Width'
+                    name: 'width'
+                    widget: 'select'
+                    required: false
+                    default: 'feature'
+                    options: ['content', 'feature', 'full']
+              - label: 'Cases'
+                name: 'cases'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Intro', name: 'intro', widget: 'markdown', required: false}
+                  - {label: 'Title link', name: 'title_href', widget: 'string', required: false, default: '/case-studies/'}
+                  - {label: 'Count', name: 'count', widget: 'number', required: false, default: 3, value_type: 'int'}
+                  - label: 'Layout'
+                    name: 'layout'
+                    widget: 'select'
+                    required: false
+                    default: 'grid'
+                    options: ['grid', 'masonry']
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'white'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Alignment'
+                    name: 'align'
+                    widget: 'select'
+                    required: false
+                    default: 'left'
+                    options: ['left', 'center', 'right']
+                  - label: 'Width'
+                    name: 'width'
+                    widget: 'select'
+                    required: false
+                    default: 'feature'
+                    options: ['content', 'feature', 'full']
+              - label: 'Gallery'
+                name: 'gallery'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Intro', name: 'intro', widget: 'markdown', required: false}
+                  - label: 'Items'
+                    name: 'items'
+                    widget: 'list'
+                    summary: '{{fields.alt}}'
+                    fields:
+                      - {label: 'Image', name: 'image', widget: 'image'}
+                      - {label: 'Alt', name: 'alt', widget: 'string'}
+                      - {label: 'Caption', name: 'caption', widget: 'string', required: false}
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'white'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Alignment'
+                    name: 'align'
+                    widget: 'select'
+                    required: false
+                    default: 'left'
+                    options: ['left', 'center', 'right']
+                  - label: 'Width'
+                    name: 'width'
+                    widget: 'select'
+                    required: false
+                    default: 'feature'
+                    options: ['content', 'feature', 'full']
+              - label: 'CTA'
+                name: 'cta'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown'}
+                  - {label: 'Subtitle', name: 'subtitle', widget: 'markdown', required: false}
+                  - {label: 'Pre Button Text', name: 'pre', widget: 'markdown', required: false}
+                  - {label: 'Button Text', name: 'button_text', widget: 'string', required: false}
+                  - {label: 'Button Target', name: 'button_target', widget: 'string', required: false}
+                  - {label: 'Image', name: 'image', widget: 'image', required: false}
+                  - {label: 'Footer', name: 'footer', widget: 'markdown', required: false}
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'gray-dark'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Accent / CTA'
+                    name: 'accent'
+                    widget: 'select'
+                    required: false
+                    default: 'default'
+                    options: ['default', 'neutral', 'teal', 'purple', 'navy']
+                  - label: 'Alignment'
+                    name: 'align'
+                    widget: 'select'
+                    required: false
+                    default: 'left'
+                    options: ['left', 'center', 'right']
 
   - name: 'blog'
     label: 'Posts'
@@ -198,23 +722,602 @@ collections:
         label: 'About'
         name: 'about'
         fields:
-          - {name: 'title', label: 'Title', widget: 'string'}
-          - {name: 'permalink', label: 'Permalink', widget: 'hidden'}
-          - {name: 'description', label: 'Meta Description', widget: 'text'}
-          - {name: 'layout', label: 'Layout', widget: 'hidden'}
-          - {name: 'bodyClass', label: 'Body Class', widget: 'hidden', required: false}
-          - {name: 'footerSpace', label: 'Footer Space Class', widget: 'hidden', required: false}
-          - {name: 'intro', label: 'Intro Text', widget: 'markdown'}
-          - {name: 'experts', label: 'Experts Label', widget: 'string'}
-          - label: 'Team Section'
-            name: 'team'
-            widget: 'object'
-            fields:
-              - {name: 'activate', label: 'Activate', widget: 'boolean', required: false}
-              - {name: 'title', label: 'Team Title', widget: 'string', required: false}
-              - {name: 'content', label: 'Team Content', widget: 'markdown', required: false}
-              - {name: 'image', label: 'Team Image', widget: 'image', required: false}
-              - {name: 'image_alt', label: 'Image Alt Text', widget: 'text', required: false}
+          - {label: 'Title', name: 'title', widget: 'string'}
+          - {label: 'Description', name: 'description', widget: 'text'}
+          - {label: 'Layout', name: 'layout', widget: 'hidden', default: 'modular'}
+          - {label: 'Permalink', name: 'permalink', widget: 'hidden'}
+          - {label: 'Body Class', name: 'bodyClass', widget: 'hidden'}
+          - {label: 'Footer Space', name: 'footerSpace', widget: 'hidden'}
+          - label: 'Sections'
+            name: 'sections'
+            widget: 'list'
+            collapsed: true
+            summary: "{{fields.type}}: {{fields.internal_name | default('{{fields.title}}')}}"
+            types:
+              - label: 'Hero'
+                name: 'hero'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'Only visible in CMS list view'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown'}
+                  - {label: 'Subtitle', name: 'subtitle', widget: 'markdown', required: false}
+                  - {label: 'Button Text', name: 'button_text', widget: 'string', required: false}
+                  - {label: 'Button Target', name: 'button_target', widget: 'string', required: false}
+                  - {label: 'Image', name: 'image', widget: 'image', required: false}
+                  - {label: 'Image Alt', name: 'image_alt', widget: 'string', required: false}
+                  - label: 'Video'
+                    name: 'video'
+                    widget: 'object'
+                    required: false
+                    fields:
+                      - {label: 'WebM', name: 'webm', widget: 'file', required: false}
+                      - {label: 'MP4', name: 'mp4', widget: 'file', required: false}
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'gray-dark'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Accent / CTA'
+                    name: 'accent'
+                    widget: 'select'
+                    required: false
+                    default: 'default'
+                    options: ['default', 'neutral', 'teal', 'purple', 'navy']
+                  - label: 'Alignment'
+                    name: 'align'
+                    widget: 'select'
+                    required: false
+                    default: 'left'
+                    options: ['left', 'center', 'right']
+                  - label: 'Height'
+                    name: 'height'
+                    widget: 'select'
+                    required: false
+                    default: 'tall'
+                    options: ['default', 'tall', 'cover']
+                  - label: 'Background token'
+                    name: 'background'
+                    widget: 'select'
+                    required: false
+                    default: 'teal-800'
+                    options: ['teal-800', 'purple-dark', 'navy-dark', 'bg-accent']
+              - label: 'Text'
+                name: 'text'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Content', name: 'content', widget: 'markdown', required: false}
+                  - {label: 'Content Left', name: 'content_left', widget: 'markdown', required: false}
+                  - {label: 'Content Right', name: 'content_right', widget: 'markdown', required: false}
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'white'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Alignment'
+                    name: 'align'
+                    widget: 'select'
+                    required: false
+                    default: 'left'
+                    options: ['left', 'center', 'right']
+                  - label: 'Width'
+                    name: 'width'
+                    widget: 'select'
+                    required: false
+                    default: 'feature'
+                    options: ['content', 'feature', 'full']
+              - label: 'Highlight'
+                name: 'highlight'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Title line 1', name: 'title1', widget: 'string', required: false}
+                  - {label: 'Title line 2', name: 'title2', widget: 'string', required: false}
+                  - {label: 'Subtitle', name: 'subtitle', widget: 'markdown', required: false}
+                  - {label: 'Content', name: 'content', widget: 'markdown', required: false}
+                  - {
+                      label: 'Decoration SVG',
+                      name: 'decoration',
+                      widget: 'string',
+                      required: false,
+                      hint: 'e.g. brand/waves'
+                    }
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'teal'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Alignment'
+                    name: 'align'
+                    widget: 'select'
+                    required: false
+                    default: 'left'
+                    options: ['left', 'center', 'right']
+              - label: 'List'
+                name: 'list'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Intro', name: 'content', widget: 'markdown', required: false}
+                  - label: 'Variant'
+                    name: 'variant'
+                    widget: 'select'
+                    default: 'definition'
+                    options: ['definition', 'checklist', 'stack']
+                  - label: 'Items'
+                    name: 'items'
+                    widget: 'list'
+                    summary: '{{fields.title}}'
+                    fields:
+                      - {label: 'Title', name: 'title', widget: 'string'}
+                      - {label: 'Content', name: 'content', widget: 'markdown', required: false}
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'white'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Alignment'
+                    name: 'align'
+                    widget: 'select'
+                    required: false
+                    default: 'left'
+                    options: ['left', 'center', 'right']
+                  - label: 'Width'
+                    name: 'width'
+                    widget: 'select'
+                    required: false
+                    default: 'feature'
+                    options: ['content', 'feature', 'full']
+              - label: 'Process'
+                name: 'process'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Title line 1', name: 'title1', widget: 'string', required: false}
+                  - {label: 'Title line 2', name: 'title2', widget: 'string', required: false}
+                  - {label: 'Subtitle', name: 'subtitle', widget: 'markdown', required: false}
+                  - {
+                      label: 'Decoration SVG',
+                      name: 'decoration',
+                      widget: 'string',
+                      required: false,
+                      hint: 'e.g. brand/medusa-organic'
+                    }
+                  - label: 'Steps'
+                    name: 'items'
+                    widget: 'list'
+                    summary: '{{fields.title}}'
+                    fields:
+                      - {label: 'Title', name: 'title', widget: 'string'}
+                      - {label: 'Content', name: 'content', widget: 'markdown'}
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'white'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Alignment'
+                    name: 'align'
+                    widget: 'select'
+                    required: false
+                    default: 'center'
+                    options: ['left', 'center', 'right']
+              - label: 'Feature'
+                name: 'feature'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Content', name: 'content', widget: 'markdown', required: false}
+                  - {label: 'Image', name: 'image', widget: 'image', required: false}
+                  - {label: 'Image Alt', name: 'image_alt', widget: 'string', required: false}
+                  - {label: 'Button Text', name: 'button_text', widget: 'string', required: false}
+                  - {label: 'Button Target', name: 'button_target', widget: 'string', required: false}
+                  - label: 'Media side'
+                    name: 'media_side'
+                    widget: 'select'
+                    required: false
+                    default: 'right'
+                    options: ['left', 'right']
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'white'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Accent / CTA'
+                    name: 'accent'
+                    widget: 'select'
+                    required: false
+                    default: 'default'
+                    options: ['default', 'neutral', 'teal', 'purple', 'navy']
+                  - label: 'Width'
+                    name: 'width'
+                    widget: 'select'
+                    required: false
+                    default: 'feature'
+                    options: ['content', 'feature', 'full']
+              - label: 'Accordion'
+                name: 'accordion'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Intro', name: 'intro', widget: 'markdown', required: false}
+                  - {label: 'Button Text', name: 'button_text', widget: 'string', required: false}
+                  - {label: 'Button Target', name: 'button_target', widget: 'string', required: false}
+                  - label: 'Items'
+                    name: 'items'
+                    widget: 'list'
+                    summary: '{{fields.title}}'
+                    fields:
+                      - {label: 'Title', name: 'title', widget: 'string'}
+                      - {label: 'Content', name: 'content', widget: 'markdown'}
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'white'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Accent / CTA'
+                    name: 'accent'
+                    widget: 'select'
+                    required: false
+                    default: 'default'
+                    options: ['default', 'neutral', 'teal', 'purple', 'navy']
+                  - label: 'Width'
+                    name: 'width'
+                    widget: 'select'
+                    required: false
+                    default: 'feature'
+                    options: ['content', 'feature', 'full']
+              - label: 'Posts'
+                name: 'posts'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Intro', name: 'intro', widget: 'markdown', required: false}
+                  - {label: 'Title link', name: 'title_href', widget: 'string', required: false, default: '/insights/'}
+                  - {label: 'Count', name: 'count', widget: 'number', required: false, default: 3, value_type: 'int'}
+                  - label: 'Layout'
+                    name: 'layout'
+                    widget: 'select'
+                    required: false
+                    default: 'grid'
+                    options: ['grid', 'masonry']
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'white'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Alignment'
+                    name: 'align'
+                    widget: 'select'
+                    required: false
+                    default: 'left'
+                    options: ['left', 'center', 'right']
+                  - label: 'Width'
+                    name: 'width'
+                    widget: 'select'
+                    required: false
+                    default: 'feature'
+                    options: ['content', 'feature', 'full']
+              - label: 'Team'
+                name: 'team'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Content', name: 'content', widget: 'markdown', required: false}
+                  - label: 'Filter'
+                    name: 'filter'
+                    widget: 'select'
+                    required: false
+                    default: 'show_on_about'
+                    options: ['show_on_about', 'all']
+                  - label: 'Header layout'
+                    name: 'header_layout'
+                    widget: 'select'
+                    required: false
+                    default: 'stack'
+                    options: ['stack', 'thirds']
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'white'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Alignment'
+                    name: 'align'
+                    widget: 'select'
+                    required: false
+                    default: 'left'
+                    options: ['left', 'center', 'right']
+                  - label: 'Width'
+                    name: 'width'
+                    widget: 'select'
+                    required: false
+                    default: 'feature'
+                    options: ['content', 'feature', 'full']
+              - label: 'Form'
+                name: 'form'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Intro', name: 'intro', widget: 'markdown', required: false}
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'white'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Alignment'
+                    name: 'align'
+                    widget: 'select'
+                    required: false
+                    default: 'left'
+                    options: ['left', 'center', 'right']
+                  - label: 'Width'
+                    name: 'width'
+                    widget: 'select'
+                    required: false
+                    default: 'content'
+                    options: ['content', 'feature', 'full']
+              - label: 'Services'
+                name: 'services'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Background image', name: 'image', widget: 'image', required: false}
+                  - label: 'Items'
+                    name: 'items'
+                    widget: 'list'
+                    summary: '{{fields.prefix}} {{fields.title}}'
+                    fields:
+                      - {label: 'Prefix', name: 'prefix', widget: 'string', required: false}
+                      - {label: 'Title', name: 'title', widget: 'string'}
+                      - {label: 'Description', name: 'description', widget: 'markdown'}
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'navy'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+              - label: 'Tabs'
+                name: 'tabs'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Intro', name: 'intro', widget: 'markdown', required: false}
+                  - {label: 'What heading', name: 'title_what', widget: 'string', required: false, default: 'What we do?'}
+                  - {label: 'Outcomes heading', name: 'title_outcomes', widget: 'string', required: false, default: 'Outcomes:'}
+                  - label: 'Stages'
+                    name: 'stages'
+                    widget: 'list'
+                    summary: '{{fields.label}} {{fields.name}}'
+                    fields:
+                      - {label: 'Label', name: 'label', widget: 'string'}
+                      - {label: 'Name', name: 'name', widget: 'string'}
+                      - label: 'Steps'
+                        name: 'steps'
+                        widget: 'list'
+                        summary: '{{fields.title}}'
+                        fields:
+                          - {label: 'Label', name: 'label', widget: 'string', required: false}
+                          - {label: 'Title', name: 'title', widget: 'string'}
+                          - {label: 'Content', name: 'content', widget: 'markdown'}
+                          - {label: 'Outcomes', name: 'outcomes', widget: 'markdown', required: false}
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'white'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Width'
+                    name: 'width'
+                    widget: 'select'
+                    required: false
+                    default: 'feature'
+                    options: ['content', 'feature', 'full']
+              - label: 'Cases'
+                name: 'cases'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Intro', name: 'intro', widget: 'markdown', required: false}
+                  - {label: 'Title link', name: 'title_href', widget: 'string', required: false, default: '/case-studies/'}
+                  - {label: 'Count', name: 'count', widget: 'number', required: false, default: 3, value_type: 'int'}
+                  - label: 'Layout'
+                    name: 'layout'
+                    widget: 'select'
+                    required: false
+                    default: 'grid'
+                    options: ['grid', 'masonry']
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'white'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Alignment'
+                    name: 'align'
+                    widget: 'select'
+                    required: false
+                    default: 'left'
+                    options: ['left', 'center', 'right']
+                  - label: 'Width'
+                    name: 'width'
+                    widget: 'select'
+                    required: false
+                    default: 'feature'
+                    options: ['content', 'feature', 'full']
+              - label: 'Gallery'
+                name: 'gallery'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Intro', name: 'intro', widget: 'markdown', required: false}
+                  - label: 'Items'
+                    name: 'items'
+                    widget: 'list'
+                    summary: '{{fields.alt}}'
+                    fields:
+                      - {label: 'Image', name: 'image', widget: 'image'}
+                      - {label: 'Alt', name: 'alt', widget: 'string'}
+                      - {label: 'Caption', name: 'caption', widget: 'string', required: false}
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'white'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Alignment'
+                    name: 'align'
+                    widget: 'select'
+                    required: false
+                    default: 'left'
+                    options: ['left', 'center', 'right']
+                  - label: 'Width'
+                    name: 'width'
+                    widget: 'select'
+                    required: false
+                    default: 'feature'
+                    options: ['content', 'feature', 'full']
+              - label: 'CTA'
+                name: 'cta'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown'}
+                  - {label: 'Subtitle', name: 'subtitle', widget: 'markdown', required: false}
+                  - {label: 'Pre Button Text', name: 'pre', widget: 'markdown', required: false}
+                  - {label: 'Button Text', name: 'button_text', widget: 'string', required: false}
+                  - {label: 'Button Target', name: 'button_target', widget: 'string', required: false}
+                  - {label: 'Image', name: 'image', widget: 'image', required: false}
+                  - {label: 'Footer', name: 'footer', widget: 'markdown', required: false}
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'gray-dark'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Accent / CTA'
+                    name: 'accent'
+                    widget: 'select'
+                    required: false
+                    default: 'default'
+                    options: ['default', 'neutral', 'teal', 'purple', 'navy']
+                  - label: 'Alignment'
+                    name: 'align'
+                    widget: 'select'
+                    required: false
+                    default: 'left'
+                    options: ['left', 'center', 'right']
 
   - name: 'team'
     label: 'Team Members'
@@ -277,120 +1380,602 @@ collections:
         label: 'Our Process'
         name: 'our_process'
         fields:
-          - {
-              label: 'Draft',
-              name: 'draft',
-              widget: 'boolean',
-              default: true,
-              hint: 'When enabled, this page is only visible in local development, not in production builds.'
-            }
           - {label: 'Title', name: 'title', widget: 'string'}
-          - {label: 'Description', name: 'description', widget: 'string'}
-          - label: 'Hero'
-            name: 'hero'
-            widget: 'object'
-            fields:
-              - {label: 'Title', name: 'title', widget: 'string'}
-              - {label: 'Subtitle', name: 'subtitle', widget: 'markdown'}
-              - {label: 'Button Text', name: 'button_text', widget: 'string'}
-              - {label: 'Button Target', name: 'button_target', widget: 'string'}
-              - {label: 'Image', name: 'image', widget: 'hidden', required: false}
-              - {label: 'Image Alt', name: 'image_alt', widget: 'hidden', required: false}
-          - label: 'Introduction'
-            name: 'intro'
-            widget: 'object'
-            fields:
-              - {label: 'Title 1', name: 'title1', widget: 'string'}
-              - {label: 'Title 2', name: 'title2', widget: 'string'}
-              - {label: 'Content', name: 'content', widget: 'markdown'}
-          - label: 'What Are Section'
-            name: 'what_are'
-            widget: 'object'
-            fields:
-              - {label: 'Title', name: 'title', widget: 'string'}
-              - {label: 'Content', name: 'content', widget: 'markdown'}
-              - {label: 'Button Text', name: 'button_text', widget: 'string'}
-              - {label: 'Button Target', name: 'button_target', widget: 'string'}
-              - {label: 'Image', name: 'image', widget: 'image'}
-              - {label: 'Image Alt', name: 'image_alt', widget: 'string', required: false}
-          - label: 'Steps'
-            name: 'steps'
-            widget: 'object'
-            fields:
-              - {label: 'Title', name: 'title', widget: 'string'}
-              - {label: 'Intro', name: 'intro', widget: 'markdown'}
-              - {label: 'Title Outcomes', name: 'title_outcomes', widget: 'string'}
-              - {label: 'Title What', name: 'title_what', widget: 'string'}
-          - label: 'Process Stages'
-            name: 'steps_elements'
-            widget: 'object'
-            fields:
-              - label: 'Stage 1'
-                name: 'stage_1'
-                widget: 'object'
-                fields:
-                  - {label: 'Label', name: 'label', widget: 'string'}
-                  - {label: 'Name', name: 'name', widget: 'string'}
-                  - label: 'Steps'
-                    name: 'steps'
-                    widget: 'list'
-                    collapsed: true
-                    min: 2
-                    max: 2
-                    fields:
-                      - {label: 'Label', name: 'label', widget: 'string'}
-                      - {label: 'Title', name: 'title', widget: 'string'}
-                      - {label: 'Content', name: 'content', widget: 'markdown'}
-                      - {label: 'Outcomes', name: 'outcomes', widget: 'markdown'}
-
-              - label: 'Stage 2'
-                name: 'stage_2'
-                widget: 'object'
-                fields:
-                  - {label: 'Label', name: 'label', widget: 'string'}
-                  - {label: 'Name', name: 'name', widget: 'string'}
-                  - label: 'Steps'
-                    name: 'steps'
-                    widget: 'list'
-                    collapsed: true
-                    min: 2
-                    max: 2
-                    fields:
-                      - {label: 'Label', name: 'label', widget: 'string'}
-                      - {label: 'Title', name: 'title', widget: 'string'}
-                      - {label: 'Content', name: 'content', widget: 'markdown'}
-                      - {label: 'Outcomes', name: 'outcomes', widget: 'markdown'}
-
-          - label: 'Why Section'
-            name: 'why'
-            widget: 'object'
-            fields:
-              - {label: 'Title', name: 'title', widget: 'string'}
-              - {label: 'Intro', name: 'intro', widget: 'markdown'}
-          - label: 'Why Elements'
-            name: 'why_elements'
+          - {label: 'Description', name: 'description', widget: 'text'}
+          - {label: 'Layout', name: 'layout', widget: 'hidden', default: 'modular'}
+          - {label: 'Permalink', name: 'permalink', widget: 'hidden'}
+          - {label: 'Body Class', name: 'bodyClass', widget: 'hidden'}
+          - {label: 'Draft', name: 'draft', widget: 'boolean'}
+          - label: 'Sections'
+            name: 'sections'
             widget: 'list'
-            fields:
-              - {label: 'Title', name: 'title', widget: 'string'}
-              - {label: 'Content', name: 'content', widget: 'markdown'}
-          - label: 'FAQ'
-            name: 'faq'
-            widget: 'object'
-            fields:
-              - {label: 'Title', name: 'title', widget: 'string'}
-              - {label: 'Intro', name: 'intro', widget: 'markdown'}
-              - label: 'Call to Action'
+            collapsed: true
+            summary: "{{fields.type}}: {{fields.internal_name | default('{{fields.title}}')}}"
+            types:
+              - label: 'Hero'
+                name: 'hero'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'Only visible in CMS list view'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown'}
+                  - {label: 'Subtitle', name: 'subtitle', widget: 'markdown', required: false}
+                  - {label: 'Button Text', name: 'button_text', widget: 'string', required: false}
+                  - {label: 'Button Target', name: 'button_target', widget: 'string', required: false}
+                  - {label: 'Image', name: 'image', widget: 'image', required: false}
+                  - {label: 'Image Alt', name: 'image_alt', widget: 'string', required: false}
+                  - label: 'Video'
+                    name: 'video'
+                    widget: 'object'
+                    required: false
+                    fields:
+                      - {label: 'WebM', name: 'webm', widget: 'file', required: false}
+                      - {label: 'MP4', name: 'mp4', widget: 'file', required: false}
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'gray-dark'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Accent / CTA'
+                    name: 'accent'
+                    widget: 'select'
+                    required: false
+                    default: 'default'
+                    options: ['default', 'neutral', 'teal', 'purple', 'navy']
+                  - label: 'Alignment'
+                    name: 'align'
+                    widget: 'select'
+                    required: false
+                    default: 'left'
+                    options: ['left', 'center', 'right']
+                  - label: 'Height'
+                    name: 'height'
+                    widget: 'select'
+                    required: false
+                    default: 'tall'
+                    options: ['default', 'tall', 'cover']
+                  - label: 'Background token'
+                    name: 'background'
+                    widget: 'select'
+                    required: false
+                    default: 'teal-800'
+                    options: ['teal-800', 'purple-dark', 'navy-dark', 'bg-accent']
+              - label: 'Text'
+                name: 'text'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Content', name: 'content', widget: 'markdown', required: false}
+                  - {label: 'Content Left', name: 'content_left', widget: 'markdown', required: false}
+                  - {label: 'Content Right', name: 'content_right', widget: 'markdown', required: false}
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'white'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Alignment'
+                    name: 'align'
+                    widget: 'select'
+                    required: false
+                    default: 'left'
+                    options: ['left', 'center', 'right']
+                  - label: 'Width'
+                    name: 'width'
+                    widget: 'select'
+                    required: false
+                    default: 'feature'
+                    options: ['content', 'feature', 'full']
+              - label: 'Highlight'
+                name: 'highlight'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Title line 1', name: 'title1', widget: 'string', required: false}
+                  - {label: 'Title line 2', name: 'title2', widget: 'string', required: false}
+                  - {label: 'Subtitle', name: 'subtitle', widget: 'markdown', required: false}
+                  - {label: 'Content', name: 'content', widget: 'markdown', required: false}
+                  - {
+                      label: 'Decoration SVG',
+                      name: 'decoration',
+                      widget: 'string',
+                      required: false,
+                      hint: 'e.g. brand/waves'
+                    }
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'teal'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Alignment'
+                    name: 'align'
+                    widget: 'select'
+                    required: false
+                    default: 'left'
+                    options: ['left', 'center', 'right']
+              - label: 'List'
+                name: 'list'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Intro', name: 'content', widget: 'markdown', required: false}
+                  - label: 'Variant'
+                    name: 'variant'
+                    widget: 'select'
+                    default: 'definition'
+                    options: ['definition', 'checklist', 'stack']
+                  - label: 'Items'
+                    name: 'items'
+                    widget: 'list'
+                    summary: '{{fields.title}}'
+                    fields:
+                      - {label: 'Title', name: 'title', widget: 'string'}
+                      - {label: 'Content', name: 'content', widget: 'markdown', required: false}
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'white'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Alignment'
+                    name: 'align'
+                    widget: 'select'
+                    required: false
+                    default: 'left'
+                    options: ['left', 'center', 'right']
+                  - label: 'Width'
+                    name: 'width'
+                    widget: 'select'
+                    required: false
+                    default: 'feature'
+                    options: ['content', 'feature', 'full']
+              - label: 'Process'
+                name: 'process'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Title line 1', name: 'title1', widget: 'string', required: false}
+                  - {label: 'Title line 2', name: 'title2', widget: 'string', required: false}
+                  - {label: 'Subtitle', name: 'subtitle', widget: 'markdown', required: false}
+                  - {
+                      label: 'Decoration SVG',
+                      name: 'decoration',
+                      widget: 'string',
+                      required: false,
+                      hint: 'e.g. brand/medusa-organic'
+                    }
+                  - label: 'Steps'
+                    name: 'items'
+                    widget: 'list'
+                    summary: '{{fields.title}}'
+                    fields:
+                      - {label: 'Title', name: 'title', widget: 'string'}
+                      - {label: 'Content', name: 'content', widget: 'markdown'}
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'white'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Alignment'
+                    name: 'align'
+                    widget: 'select'
+                    required: false
+                    default: 'center'
+                    options: ['left', 'center', 'right']
+              - label: 'Feature'
+                name: 'feature'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Content', name: 'content', widget: 'markdown', required: false}
+                  - {label: 'Image', name: 'image', widget: 'image', required: false}
+                  - {label: 'Image Alt', name: 'image_alt', widget: 'string', required: false}
+                  - {label: 'Button Text', name: 'button_text', widget: 'string', required: false}
+                  - {label: 'Button Target', name: 'button_target', widget: 'string', required: false}
+                  - label: 'Media side'
+                    name: 'media_side'
+                    widget: 'select'
+                    required: false
+                    default: 'right'
+                    options: ['left', 'right']
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'white'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Accent / CTA'
+                    name: 'accent'
+                    widget: 'select'
+                    required: false
+                    default: 'default'
+                    options: ['default', 'neutral', 'teal', 'purple', 'navy']
+                  - label: 'Width'
+                    name: 'width'
+                    widget: 'select'
+                    required: false
+                    default: 'feature'
+                    options: ['content', 'feature', 'full']
+              - label: 'Accordion'
+                name: 'accordion'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Intro', name: 'intro', widget: 'markdown', required: false}
+                  - {label: 'Button Text', name: 'button_text', widget: 'string', required: false}
+                  - {label: 'Button Target', name: 'button_target', widget: 'string', required: false}
+                  - label: 'Items'
+                    name: 'items'
+                    widget: 'list'
+                    summary: '{{fields.title}}'
+                    fields:
+                      - {label: 'Title', name: 'title', widget: 'string'}
+                      - {label: 'Content', name: 'content', widget: 'markdown'}
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'white'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Accent / CTA'
+                    name: 'accent'
+                    widget: 'select'
+                    required: false
+                    default: 'default'
+                    options: ['default', 'neutral', 'teal', 'purple', 'navy']
+                  - label: 'Width'
+                    name: 'width'
+                    widget: 'select'
+                    required: false
+                    default: 'feature'
+                    options: ['content', 'feature', 'full']
+              - label: 'Posts'
+                name: 'posts'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Intro', name: 'intro', widget: 'markdown', required: false}
+                  - {label: 'Title link', name: 'title_href', widget: 'string', required: false, default: '/insights/'}
+                  - {label: 'Count', name: 'count', widget: 'number', required: false, default: 3, value_type: 'int'}
+                  - label: 'Layout'
+                    name: 'layout'
+                    widget: 'select'
+                    required: false
+                    default: 'grid'
+                    options: ['grid', 'masonry']
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'white'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Alignment'
+                    name: 'align'
+                    widget: 'select'
+                    required: false
+                    default: 'left'
+                    options: ['left', 'center', 'right']
+                  - label: 'Width'
+                    name: 'width'
+                    widget: 'select'
+                    required: false
+                    default: 'feature'
+                    options: ['content', 'feature', 'full']
+              - label: 'Team'
+                name: 'team'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Content', name: 'content', widget: 'markdown', required: false}
+                  - label: 'Filter'
+                    name: 'filter'
+                    widget: 'select'
+                    required: false
+                    default: 'show_on_about'
+                    options: ['show_on_about', 'all']
+                  - label: 'Header layout'
+                    name: 'header_layout'
+                    widget: 'select'
+                    required: false
+                    default: 'stack'
+                    options: ['stack', 'thirds']
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'white'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Alignment'
+                    name: 'align'
+                    widget: 'select'
+                    required: false
+                    default: 'left'
+                    options: ['left', 'center', 'right']
+                  - label: 'Width'
+                    name: 'width'
+                    widget: 'select'
+                    required: false
+                    default: 'feature'
+                    options: ['content', 'feature', 'full']
+              - label: 'Form'
+                name: 'form'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Intro', name: 'intro', widget: 'markdown', required: false}
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'white'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Alignment'
+                    name: 'align'
+                    widget: 'select'
+                    required: false
+                    default: 'left'
+                    options: ['left', 'center', 'right']
+                  - label: 'Width'
+                    name: 'width'
+                    widget: 'select'
+                    required: false
+                    default: 'content'
+                    options: ['content', 'feature', 'full']
+              - label: 'Services'
+                name: 'services'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Background image', name: 'image', widget: 'image', required: false}
+                  - label: 'Items'
+                    name: 'items'
+                    widget: 'list'
+                    summary: '{{fields.prefix}} {{fields.title}}'
+                    fields:
+                      - {label: 'Prefix', name: 'prefix', widget: 'string', required: false}
+                      - {label: 'Title', name: 'title', widget: 'string'}
+                      - {label: 'Description', name: 'description', widget: 'markdown'}
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'navy'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+              - label: 'Tabs'
+                name: 'tabs'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Intro', name: 'intro', widget: 'markdown', required: false}
+                  - {label: 'What heading', name: 'title_what', widget: 'string', required: false, default: 'What we do?'}
+                  - {label: 'Outcomes heading', name: 'title_outcomes', widget: 'string', required: false, default: 'Outcomes:'}
+                  - label: 'Stages'
+                    name: 'stages'
+                    widget: 'list'
+                    summary: '{{fields.label}} {{fields.name}}'
+                    fields:
+                      - {label: 'Label', name: 'label', widget: 'string'}
+                      - {label: 'Name', name: 'name', widget: 'string'}
+                      - label: 'Steps'
+                        name: 'steps'
+                        widget: 'list'
+                        summary: '{{fields.title}}'
+                        fields:
+                          - {label: 'Label', name: 'label', widget: 'string', required: false}
+                          - {label: 'Title', name: 'title', widget: 'string'}
+                          - {label: 'Content', name: 'content', widget: 'markdown'}
+                          - {label: 'Outcomes', name: 'outcomes', widget: 'markdown', required: false}
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'white'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Width'
+                    name: 'width'
+                    widget: 'select'
+                    required: false
+                    default: 'feature'
+                    options: ['content', 'feature', 'full']
+              - label: 'Cases'
+                name: 'cases'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Intro', name: 'intro', widget: 'markdown', required: false}
+                  - {label: 'Title link', name: 'title_href', widget: 'string', required: false, default: '/case-studies/'}
+                  - {label: 'Count', name: 'count', widget: 'number', required: false, default: 3, value_type: 'int'}
+                  - label: 'Layout'
+                    name: 'layout'
+                    widget: 'select'
+                    required: false
+                    default: 'grid'
+                    options: ['grid', 'masonry']
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'white'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Alignment'
+                    name: 'align'
+                    widget: 'select'
+                    required: false
+                    default: 'left'
+                    options: ['left', 'center', 'right']
+                  - label: 'Width'
+                    name: 'width'
+                    widget: 'select'
+                    required: false
+                    default: 'feature'
+                    options: ['content', 'feature', 'full']
+              - label: 'Gallery'
+                name: 'gallery'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Intro', name: 'intro', widget: 'markdown', required: false}
+                  - label: 'Items'
+                    name: 'items'
+                    widget: 'list'
+                    summary: '{{fields.alt}}'
+                    fields:
+                      - {label: 'Image', name: 'image', widget: 'image'}
+                      - {label: 'Alt', name: 'alt', widget: 'string'}
+                      - {label: 'Caption', name: 'caption', widget: 'string', required: false}
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'white'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Alignment'
+                    name: 'align'
+                    widget: 'select'
+                    required: false
+                    default: 'left'
+                    options: ['left', 'center', 'right']
+                  - label: 'Width'
+                    name: 'width'
+                    widget: 'select'
+                    required: false
+                    default: 'feature'
+                    options: ['content', 'feature', 'full']
+              - label: 'CTA'
                 name: 'cta'
                 widget: 'object'
                 fields:
-                  - {label: 'Label', name: 'label', widget: 'string'}
-                  - {label: 'Target', name: 'target', widget: 'string'}
-              - label: 'FAQ Items'
-                name: 'items'
-                widget: 'list'
-                fields:
-                  - {label: 'Title', name: 'title', widget: 'string'}
-                  - {label: 'Content', name: 'content', widget: 'markdown'}
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown'}
+                  - {label: 'Subtitle', name: 'subtitle', widget: 'markdown', required: false}
+                  - {label: 'Pre Button Text', name: 'pre', widget: 'markdown', required: false}
+                  - {label: 'Button Text', name: 'button_text', widget: 'string', required: false}
+                  - {label: 'Button Target', name: 'button_target', widget: 'string', required: false}
+                  - {label: 'Image', name: 'image', widget: 'image', required: false}
+                  - {label: 'Footer', name: 'footer', widget: 'markdown', required: false}
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'gray-dark'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Accent / CTA'
+                    name: 'accent'
+                    widget: 'select'
+                    required: false
+                    default: 'default'
+                    options: ['default', 'neutral', 'teal', 'purple', 'navy']
+                  - label: 'Alignment'
+                    name: 'align'
+                    widget: 'select'
+                    required: false
+                    default: 'left'
+                    options: ['left', 'center', 'right']
 
   - name: 'careers'
     label: 'Careers'
@@ -404,52 +1989,601 @@ collections:
         name: 'careers'
         fields:
           - {label: 'Title', name: 'title', widget: 'string'}
-          - {label: 'Description', name: 'description', widget: 'string'}
-          - {label: 'Layout', name: 'layout', widget: 'hidden'}
+          - {label: 'Description', name: 'description', widget: 'text'}
+          - {label: 'Layout', name: 'layout', widget: 'hidden', default: 'modular'}
           - {label: 'Permalink', name: 'permalink', widget: 'hidden'}
           - {label: 'Body Class', name: 'bodyClass', widget: 'hidden'}
-          - label: 'Hero'
-            name: 'hero'
-            widget: 'object'
-            fields:
-              - {label: 'Title', name: 'title', widget: 'markdown'}
-              - {label: 'Subtitle', name: 'subtitle', widget: 'markdown'}
-              - {label: 'Image', name: 'image', widget: 'hidden', required: false}
-              - {label: 'Button Text', name: 'button_text', widget: 'string'}
-              - {label: 'Button Target', name: 'button_target', widget: 'string'}
-          - label: 'Values Section'
-            name: 'values'
-            widget: 'object'
-            fields:
-              - {label: 'Title', name: 'title', widget: 'string'}
-              - {label: 'Content', name: 'content', widget: 'markdown'}
-          - label: 'What We Offer Section'
-            name: 'offers'
-            widget: 'object'
-            fields:
-              - {label: 'Title', name: 'title', widget: 'string'}
-              - {label: 'Intro', name: 'intro', widget: 'markdown'}
-              - label: 'Offer Items'
-                name: 'items'
-                widget: 'list'
+          - label: 'Sections'
+            name: 'sections'
+            widget: 'list'
+            collapsed: true
+            summary: "{{fields.type}}: {{fields.internal_name | default('{{fields.title}}')}}"
+            types:
+              - label: 'Hero'
+                name: 'hero'
+                widget: 'object'
                 fields:
-                  - {label: 'Title', name: 'title', widget: 'string'}
-                  - {label: 'Content', name: 'content', widget: 'markdown'}
-              - {label: 'Button Text', name: 'button_text', widget: 'string'}
-              - {label: 'Button Target', name: 'button_target', widget: 'string'}
-          - label: 'Application CTA Section'
-            name: 'cta'
-            widget: 'object'
-            fields:
-              - {label: 'Title', name: 'title', widget: 'string'}
-              - {label: 'Subtitle', name: 'subtitle', widget: 'markdown'}
-              - {label: 'Pre Button Text', name: 'pre', widget: 'markdown', required: false}
-              - {label: 'Button Text', name: 'button_text', widget: 'string'}
-              - {label: 'Button Target', name: 'button_target', widget: 'string'}
-              - {label: 'Image', name: 'image', widget: 'hidden', required: false}
-              - {label: 'Footer', name: 'footer', widget: 'markdown', required: false}
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'Only visible in CMS list view'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown'}
+                  - {label: 'Subtitle', name: 'subtitle', widget: 'markdown', required: false}
+                  - {label: 'Button Text', name: 'button_text', widget: 'string', required: false}
+                  - {label: 'Button Target', name: 'button_target', widget: 'string', required: false}
+                  - {label: 'Image', name: 'image', widget: 'image', required: false}
+                  - {label: 'Image Alt', name: 'image_alt', widget: 'string', required: false}
+                  - label: 'Video'
+                    name: 'video'
+                    widget: 'object'
+                    required: false
+                    fields:
+                      - {label: 'WebM', name: 'webm', widget: 'file', required: false}
+                      - {label: 'MP4', name: 'mp4', widget: 'file', required: false}
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'gray-dark'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Accent / CTA'
+                    name: 'accent'
+                    widget: 'select'
+                    required: false
+                    default: 'default'
+                    options: ['default', 'neutral', 'teal', 'purple', 'navy']
+                  - label: 'Alignment'
+                    name: 'align'
+                    widget: 'select'
+                    required: false
+                    default: 'left'
+                    options: ['left', 'center', 'right']
+                  - label: 'Height'
+                    name: 'height'
+                    widget: 'select'
+                    required: false
+                    default: 'tall'
+                    options: ['default', 'tall', 'cover']
+                  - label: 'Background token'
+                    name: 'background'
+                    widget: 'select'
+                    required: false
+                    default: 'teal-800'
+                    options: ['teal-800', 'purple-dark', 'navy-dark', 'bg-accent']
+              - label: 'Text'
+                name: 'text'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Content', name: 'content', widget: 'markdown', required: false}
+                  - {label: 'Content Left', name: 'content_left', widget: 'markdown', required: false}
+                  - {label: 'Content Right', name: 'content_right', widget: 'markdown', required: false}
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'white'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Alignment'
+                    name: 'align'
+                    widget: 'select'
+                    required: false
+                    default: 'left'
+                    options: ['left', 'center', 'right']
+                  - label: 'Width'
+                    name: 'width'
+                    widget: 'select'
+                    required: false
+                    default: 'feature'
+                    options: ['content', 'feature', 'full']
+              - label: 'Highlight'
+                name: 'highlight'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Title line 1', name: 'title1', widget: 'string', required: false}
+                  - {label: 'Title line 2', name: 'title2', widget: 'string', required: false}
+                  - {label: 'Subtitle', name: 'subtitle', widget: 'markdown', required: false}
+                  - {label: 'Content', name: 'content', widget: 'markdown', required: false}
+                  - {
+                      label: 'Decoration SVG',
+                      name: 'decoration',
+                      widget: 'string',
+                      required: false,
+                      hint: 'e.g. brand/waves'
+                    }
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'teal'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Alignment'
+                    name: 'align'
+                    widget: 'select'
+                    required: false
+                    default: 'left'
+                    options: ['left', 'center', 'right']
+              - label: 'List'
+                name: 'list'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Intro', name: 'content', widget: 'markdown', required: false}
+                  - label: 'Variant'
+                    name: 'variant'
+                    widget: 'select'
+                    default: 'definition'
+                    options: ['definition', 'checklist', 'stack']
+                  - label: 'Items'
+                    name: 'items'
+                    widget: 'list'
+                    summary: '{{fields.title}}'
+                    fields:
+                      - {label: 'Title', name: 'title', widget: 'string'}
+                      - {label: 'Content', name: 'content', widget: 'markdown', required: false}
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'white'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Alignment'
+                    name: 'align'
+                    widget: 'select'
+                    required: false
+                    default: 'left'
+                    options: ['left', 'center', 'right']
+                  - label: 'Width'
+                    name: 'width'
+                    widget: 'select'
+                    required: false
+                    default: 'feature'
+                    options: ['content', 'feature', 'full']
+              - label: 'Process'
+                name: 'process'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Title line 1', name: 'title1', widget: 'string', required: false}
+                  - {label: 'Title line 2', name: 'title2', widget: 'string', required: false}
+                  - {label: 'Subtitle', name: 'subtitle', widget: 'markdown', required: false}
+                  - {
+                      label: 'Decoration SVG',
+                      name: 'decoration',
+                      widget: 'string',
+                      required: false,
+                      hint: 'e.g. brand/medusa-organic'
+                    }
+                  - label: 'Steps'
+                    name: 'items'
+                    widget: 'list'
+                    summary: '{{fields.title}}'
+                    fields:
+                      - {label: 'Title', name: 'title', widget: 'string'}
+                      - {label: 'Content', name: 'content', widget: 'markdown'}
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'white'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Alignment'
+                    name: 'align'
+                    widget: 'select'
+                    required: false
+                    default: 'center'
+                    options: ['left', 'center', 'right']
+              - label: 'Feature'
+                name: 'feature'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Content', name: 'content', widget: 'markdown', required: false}
+                  - {label: 'Image', name: 'image', widget: 'image', required: false}
+                  - {label: 'Image Alt', name: 'image_alt', widget: 'string', required: false}
+                  - {label: 'Button Text', name: 'button_text', widget: 'string', required: false}
+                  - {label: 'Button Target', name: 'button_target', widget: 'string', required: false}
+                  - label: 'Media side'
+                    name: 'media_side'
+                    widget: 'select'
+                    required: false
+                    default: 'right'
+                    options: ['left', 'right']
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'white'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Accent / CTA'
+                    name: 'accent'
+                    widget: 'select'
+                    required: false
+                    default: 'default'
+                    options: ['default', 'neutral', 'teal', 'purple', 'navy']
+                  - label: 'Width'
+                    name: 'width'
+                    widget: 'select'
+                    required: false
+                    default: 'feature'
+                    options: ['content', 'feature', 'full']
+              - label: 'Accordion'
+                name: 'accordion'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Intro', name: 'intro', widget: 'markdown', required: false}
+                  - {label: 'Button Text', name: 'button_text', widget: 'string', required: false}
+                  - {label: 'Button Target', name: 'button_target', widget: 'string', required: false}
+                  - label: 'Items'
+                    name: 'items'
+                    widget: 'list'
+                    summary: '{{fields.title}}'
+                    fields:
+                      - {label: 'Title', name: 'title', widget: 'string'}
+                      - {label: 'Content', name: 'content', widget: 'markdown'}
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'white'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Accent / CTA'
+                    name: 'accent'
+                    widget: 'select'
+                    required: false
+                    default: 'default'
+                    options: ['default', 'neutral', 'teal', 'purple', 'navy']
+                  - label: 'Width'
+                    name: 'width'
+                    widget: 'select'
+                    required: false
+                    default: 'feature'
+                    options: ['content', 'feature', 'full']
+              - label: 'Posts'
+                name: 'posts'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Intro', name: 'intro', widget: 'markdown', required: false}
+                  - {label: 'Title link', name: 'title_href', widget: 'string', required: false, default: '/insights/'}
+                  - {label: 'Count', name: 'count', widget: 'number', required: false, default: 3, value_type: 'int'}
+                  - label: 'Layout'
+                    name: 'layout'
+                    widget: 'select'
+                    required: false
+                    default: 'grid'
+                    options: ['grid', 'masonry']
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'white'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Alignment'
+                    name: 'align'
+                    widget: 'select'
+                    required: false
+                    default: 'left'
+                    options: ['left', 'center', 'right']
+                  - label: 'Width'
+                    name: 'width'
+                    widget: 'select'
+                    required: false
+                    default: 'feature'
+                    options: ['content', 'feature', 'full']
+              - label: 'Team'
+                name: 'team'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Content', name: 'content', widget: 'markdown', required: false}
+                  - label: 'Filter'
+                    name: 'filter'
+                    widget: 'select'
+                    required: false
+                    default: 'show_on_about'
+                    options: ['show_on_about', 'all']
+                  - label: 'Header layout'
+                    name: 'header_layout'
+                    widget: 'select'
+                    required: false
+                    default: 'stack'
+                    options: ['stack', 'thirds']
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'white'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Alignment'
+                    name: 'align'
+                    widget: 'select'
+                    required: false
+                    default: 'left'
+                    options: ['left', 'center', 'right']
+                  - label: 'Width'
+                    name: 'width'
+                    widget: 'select'
+                    required: false
+                    default: 'feature'
+                    options: ['content', 'feature', 'full']
+              - label: 'Form'
+                name: 'form'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Intro', name: 'intro', widget: 'markdown', required: false}
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'white'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Alignment'
+                    name: 'align'
+                    widget: 'select'
+                    required: false
+                    default: 'left'
+                    options: ['left', 'center', 'right']
+                  - label: 'Width'
+                    name: 'width'
+                    widget: 'select'
+                    required: false
+                    default: 'content'
+                    options: ['content', 'feature', 'full']
+              - label: 'Services'
+                name: 'services'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Background image', name: 'image', widget: 'image', required: false}
+                  - label: 'Items'
+                    name: 'items'
+                    widget: 'list'
+                    summary: '{{fields.prefix}} {{fields.title}}'
+                    fields:
+                      - {label: 'Prefix', name: 'prefix', widget: 'string', required: false}
+                      - {label: 'Title', name: 'title', widget: 'string'}
+                      - {label: 'Description', name: 'description', widget: 'markdown'}
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'navy'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+              - label: 'Tabs'
+                name: 'tabs'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Intro', name: 'intro', widget: 'markdown', required: false}
+                  - {label: 'What heading', name: 'title_what', widget: 'string', required: false, default: 'What we do?'}
+                  - {label: 'Outcomes heading', name: 'title_outcomes', widget: 'string', required: false, default: 'Outcomes:'}
+                  - label: 'Stages'
+                    name: 'stages'
+                    widget: 'list'
+                    summary: '{{fields.label}} {{fields.name}}'
+                    fields:
+                      - {label: 'Label', name: 'label', widget: 'string'}
+                      - {label: 'Name', name: 'name', widget: 'string'}
+                      - label: 'Steps'
+                        name: 'steps'
+                        widget: 'list'
+                        summary: '{{fields.title}}'
+                        fields:
+                          - {label: 'Label', name: 'label', widget: 'string', required: false}
+                          - {label: 'Title', name: 'title', widget: 'string'}
+                          - {label: 'Content', name: 'content', widget: 'markdown'}
+                          - {label: 'Outcomes', name: 'outcomes', widget: 'markdown', required: false}
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'white'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Width'
+                    name: 'width'
+                    widget: 'select'
+                    required: false
+                    default: 'feature'
+                    options: ['content', 'feature', 'full']
+              - label: 'Cases'
+                name: 'cases'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Intro', name: 'intro', widget: 'markdown', required: false}
+                  - {label: 'Title link', name: 'title_href', widget: 'string', required: false, default: '/case-studies/'}
+                  - {label: 'Count', name: 'count', widget: 'number', required: false, default: 3, value_type: 'int'}
+                  - label: 'Layout'
+                    name: 'layout'
+                    widget: 'select'
+                    required: false
+                    default: 'grid'
+                    options: ['grid', 'masonry']
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'white'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Alignment'
+                    name: 'align'
+                    widget: 'select'
+                    required: false
+                    default: 'left'
+                    options: ['left', 'center', 'right']
+                  - label: 'Width'
+                    name: 'width'
+                    widget: 'select'
+                    required: false
+                    default: 'feature'
+                    options: ['content', 'feature', 'full']
+              - label: 'Gallery'
+                name: 'gallery'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+                  - {label: 'Intro', name: 'intro', widget: 'markdown', required: false}
+                  - label: 'Items'
+                    name: 'items'
+                    widget: 'list'
+                    summary: '{{fields.alt}}'
+                    fields:
+                      - {label: 'Image', name: 'image', widget: 'image'}
+                      - {label: 'Alt', name: 'alt', widget: 'string'}
+                      - {label: 'Caption', name: 'caption', widget: 'string', required: false}
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'white'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Alignment'
+                    name: 'align'
+                    widget: 'select'
+                    required: false
+                    default: 'left'
+                    options: ['left', 'center', 'right']
+                  - label: 'Width'
+                    name: 'width'
+                    widget: 'select'
+                    required: false
+                    default: 'feature'
+                    options: ['content', 'feature', 'full']
+              - label: 'CTA'
+                name: 'cta'
+                widget: 'object'
+                fields:
+                  - {
+                      label: 'Internal name',
+                      name: 'internal_name',
+                      widget: 'string',
+                      required: false,
+                      hint: 'CMS list label only — not shown on the site'
+                    }
+                  - {label: 'Title', name: 'title', widget: 'markdown'}
+                  - {label: 'Subtitle', name: 'subtitle', widget: 'markdown', required: false}
+                  - {label: 'Pre Button Text', name: 'pre', widget: 'markdown', required: false}
+                  - {label: 'Button Text', name: 'button_text', widget: 'string', required: false}
+                  - {label: 'Button Target', name: 'button_target', widget: 'string', required: false}
+                  - {label: 'Image', name: 'image', widget: 'image', required: false}
+                  - {label: 'Footer', name: 'footer', widget: 'markdown', required: false}
+                  - label: 'Background theme'
+                    name: 'theme'
+                    widget: 'select'
+                    required: false
+                    default: 'gray-dark'
+                    options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+                  - label: 'Accent / CTA'
+                    name: 'accent'
+                    widget: 'select'
+                    required: false
+                    default: 'default'
+                    options: ['default', 'neutral', 'teal', 'purple', 'navy']
+                  - label: 'Alignment'
+                    name: 'align'
+                    widget: 'select'
+                    required: false
+                    default: 'left'
+                    options: ['left', 'center', 'right']
 
-  # Solutions pages — composable sections list (type + appearance + content)
   - name: 'solutions'
     label: 'Solutions'
     icon: 'hub'
@@ -486,6 +2620,13 @@ collections:
               - {label: 'Button Target', name: 'button_target', widget: 'string', required: false}
               - {label: 'Image', name: 'image', widget: 'image', required: false}
               - {label: 'Image Alt', name: 'image_alt', widget: 'string', required: false}
+              - label: 'Video'
+                name: 'video'
+                widget: 'object'
+                required: false
+                fields:
+                  - {label: 'WebM', name: 'webm', widget: 'file', required: false}
+                  - {label: 'MP4', name: 'mp4', widget: 'file', required: false}
               - label: 'Background theme'
                 name: 'theme'
                 widget: 'select'
@@ -656,6 +2797,12 @@ collections:
                 fields:
                   - {label: 'Title', name: 'title', widget: 'string'}
                   - {label: 'Content', name: 'content', widget: 'markdown'}
+              - label: 'Background theme'
+                name: 'theme'
+                widget: 'select'
+                required: false
+                default: 'white'
+                options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
               - label: 'Alignment'
                 name: 'align'
                 widget: 'select'
@@ -685,6 +2832,12 @@ collections:
                 required: false
                 default: 'right'
                 options: ['left', 'right']
+              - label: 'Background theme'
+                name: 'theme'
+                widget: 'select'
+                required: false
+                default: 'white'
+                options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
               - label: 'Accent / CTA'
                 name: 'accent'
                 widget: 'select'
@@ -719,12 +2872,279 @@ collections:
                 fields:
                   - {label: 'Title', name: 'title', widget: 'string'}
                   - {label: 'Content', name: 'content', widget: 'markdown'}
+              - label: 'Background theme'
+                name: 'theme'
+                widget: 'select'
+                required: false
+                default: 'white'
+                options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
               - label: 'Accent / CTA'
                 name: 'accent'
                 widget: 'select'
                 required: false
                 default: 'default'
                 options: ['default', 'neutral', 'teal', 'purple', 'navy']
+              - label: 'Width'
+                name: 'width'
+                widget: 'select'
+                required: false
+                default: 'feature'
+                options: ['content', 'feature', 'full']
+          - label: 'Posts'
+            name: 'posts'
+            widget: 'object'
+            fields:
+              - {
+                  label: 'Internal name',
+                  name: 'internal_name',
+                  widget: 'string',
+                  required: false,
+                  hint: 'CMS list label only — not shown on the site'
+                }
+              - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+              - {label: 'Intro', name: 'intro', widget: 'markdown', required: false}
+              - {label: 'Title link', name: 'title_href', widget: 'string', required: false, default: '/insights/'}
+              - {label: 'Count', name: 'count', widget: 'number', required: false, default: 3, value_type: 'int'}
+              - label: 'Layout'
+                name: 'layout'
+                widget: 'select'
+                required: false
+                default: 'grid'
+                options: ['grid', 'masonry']
+              - label: 'Background theme'
+                name: 'theme'
+                widget: 'select'
+                required: false
+                default: 'white'
+                options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+              - label: 'Alignment'
+                name: 'align'
+                widget: 'select'
+                required: false
+                default: 'left'
+                options: ['left', 'center', 'right']
+              - label: 'Width'
+                name: 'width'
+                widget: 'select'
+                required: false
+                default: 'feature'
+                options: ['content', 'feature', 'full']
+          - label: 'Team'
+            name: 'team'
+            widget: 'object'
+            fields:
+              - {
+                  label: 'Internal name',
+                  name: 'internal_name',
+                  widget: 'string',
+                  required: false,
+                  hint: 'CMS list label only — not shown on the site'
+                }
+              - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+              - {label: 'Content', name: 'content', widget: 'markdown', required: false}
+              - label: 'Filter'
+                name: 'filter'
+                widget: 'select'
+                required: false
+                default: 'show_on_about'
+                options: ['show_on_about', 'all']
+              - label: 'Header layout'
+                name: 'header_layout'
+                widget: 'select'
+                required: false
+                default: 'stack'
+                options: ['stack', 'thirds']
+              - label: 'Background theme'
+                name: 'theme'
+                widget: 'select'
+                required: false
+                default: 'white'
+                options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+              - label: 'Alignment'
+                name: 'align'
+                widget: 'select'
+                required: false
+                default: 'left'
+                options: ['left', 'center', 'right']
+              - label: 'Width'
+                name: 'width'
+                widget: 'select'
+                required: false
+                default: 'feature'
+                options: ['content', 'feature', 'full']
+          - label: 'Form'
+            name: 'form'
+            widget: 'object'
+            fields:
+              - {
+                  label: 'Internal name',
+                  name: 'internal_name',
+                  widget: 'string',
+                  required: false,
+                  hint: 'CMS list label only — not shown on the site'
+                }
+              - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+              - {label: 'Intro', name: 'intro', widget: 'markdown', required: false}
+              - label: 'Background theme'
+                name: 'theme'
+                widget: 'select'
+                required: false
+                default: 'white'
+                options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+              - label: 'Alignment'
+                name: 'align'
+                widget: 'select'
+                required: false
+                default: 'left'
+                options: ['left', 'center', 'right']
+              - label: 'Width'
+                name: 'width'
+                widget: 'select'
+                required: false
+                default: 'content'
+                options: ['content', 'feature', 'full']
+          - label: 'Services'
+            name: 'services'
+            widget: 'object'
+            fields:
+              - {
+                  label: 'Internal name',
+                  name: 'internal_name',
+                  widget: 'string',
+                  required: false,
+                  hint: 'CMS list label only — not shown on the site'
+                }
+              - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+              - {label: 'Background image', name: 'image', widget: 'image', required: false}
+              - label: 'Items'
+                name: 'items'
+                widget: 'list'
+                summary: '{{fields.prefix}} {{fields.title}}'
+                fields:
+                  - {label: 'Prefix', name: 'prefix', widget: 'string', required: false}
+                  - {label: 'Title', name: 'title', widget: 'string'}
+                  - {label: 'Description', name: 'description', widget: 'markdown'}
+              - label: 'Background theme'
+                name: 'theme'
+                widget: 'select'
+                required: false
+                default: 'navy'
+                options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+          - label: 'Tabs'
+            name: 'tabs'
+            widget: 'object'
+            fields:
+              - {
+                  label: 'Internal name',
+                  name: 'internal_name',
+                  widget: 'string',
+                  required: false,
+                  hint: 'CMS list label only — not shown on the site'
+                }
+              - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+              - {label: 'Intro', name: 'intro', widget: 'markdown', required: false}
+              - {label: 'What heading', name: 'title_what', widget: 'string', required: false, default: 'What we do?'}
+              - {label: 'Outcomes heading', name: 'title_outcomes', widget: 'string', required: false, default: 'Outcomes:'}
+              - label: 'Stages'
+                name: 'stages'
+                widget: 'list'
+                summary: '{{fields.label}} {{fields.name}}'
+                fields:
+                  - {label: 'Label', name: 'label', widget: 'string'}
+                  - {label: 'Name', name: 'name', widget: 'string'}
+                  - label: 'Steps'
+                    name: 'steps'
+                    widget: 'list'
+                    summary: '{{fields.title}}'
+                    fields:
+                      - {label: 'Label', name: 'label', widget: 'string', required: false}
+                      - {label: 'Title', name: 'title', widget: 'string'}
+                      - {label: 'Content', name: 'content', widget: 'markdown'}
+                      - {label: 'Outcomes', name: 'outcomes', widget: 'markdown', required: false}
+              - label: 'Background theme'
+                name: 'theme'
+                widget: 'select'
+                required: false
+                default: 'white'
+                options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+              - label: 'Width'
+                name: 'width'
+                widget: 'select'
+                required: false
+                default: 'feature'
+                options: ['content', 'feature', 'full']
+          - label: 'Cases'
+            name: 'cases'
+            widget: 'object'
+            fields:
+              - {
+                  label: 'Internal name',
+                  name: 'internal_name',
+                  widget: 'string',
+                  required: false,
+                  hint: 'CMS list label only — not shown on the site'
+                }
+              - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+              - {label: 'Intro', name: 'intro', widget: 'markdown', required: false}
+              - {label: 'Title link', name: 'title_href', widget: 'string', required: false, default: '/case-studies/'}
+              - {label: 'Count', name: 'count', widget: 'number', required: false, default: 3, value_type: 'int'}
+              - label: 'Layout'
+                name: 'layout'
+                widget: 'select'
+                required: false
+                default: 'grid'
+                options: ['grid', 'masonry']
+              - label: 'Background theme'
+                name: 'theme'
+                widget: 'select'
+                required: false
+                default: 'white'
+                options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+              - label: 'Alignment'
+                name: 'align'
+                widget: 'select'
+                required: false
+                default: 'left'
+                options: ['left', 'center', 'right']
+              - label: 'Width'
+                name: 'width'
+                widget: 'select'
+                required: false
+                default: 'feature'
+                options: ['content', 'feature', 'full']
+          - label: 'Gallery'
+            name: 'gallery'
+            widget: 'object'
+            fields:
+              - {
+                  label: 'Internal name',
+                  name: 'internal_name',
+                  widget: 'string',
+                  required: false,
+                  hint: 'CMS list label only — not shown on the site'
+                }
+              - {label: 'Title', name: 'title', widget: 'markdown', required: false}
+              - {label: 'Intro', name: 'intro', widget: 'markdown', required: false}
+              - label: 'Items'
+                name: 'items'
+                widget: 'list'
+                summary: '{{fields.alt}}'
+                fields:
+                  - {label: 'Image', name: 'image', widget: 'image'}
+                  - {label: 'Alt', name: 'alt', widget: 'string'}
+                  - {label: 'Caption', name: 'caption', widget: 'string', required: false}
+              - label: 'Background theme'
+                name: 'theme'
+                widget: 'select'
+                required: false
+                default: 'white'
+                options: ['white', 'gray-light', 'gray-dark', 'teal', 'purple', 'navy']
+              - label: 'Alignment'
+                name: 'align'
+                widget: 'select'
+                required: false
+                default: 'left'
+                options: ['left', 'center', 'right']
               - label: 'Width'
                 name: 'width'
                 widget: 'select'

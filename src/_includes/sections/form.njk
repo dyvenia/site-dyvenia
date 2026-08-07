@@ -1,0 +1,26 @@
+{# section.type: form — expects `section` in scope
+   Shell: .section-{type}.wrapper[data-section-theme] > .full.wrapper.section > .section__inner #}
+{% from "sections/_shell.njk" import sectionWidthClass, sectionAlignClass, sectionThemeAttr %}
+
+{% set s = section %}
+{% set theme = s.theme or "white" %}
+{% set widthClass = sectionWidthClass(s.width or "content") or "content" %}
+{% set alignClass = sectionAlignClass(s.align) %}
+{% set formWidth = widthClass %}
+
+<div class="section-form | wrapper" {{ sectionThemeAttr(theme) }}{% if s.id %} id="{{ s.id }}"{% endif %}>
+  <div class="full wrapper section">
+    <div class="{{ widthClass }} | section__inner region">
+      {% if s.title or s.intro or s.content %}
+        <header class="flow prose {{ alignClass }} mb-l">
+          {% if s.title %}<h2>{{ s.title | markdownInline | safe }}</h2>{% endif %}
+          {% if s.intro or s.content %}
+            <div>{{ (s.intro or s.content) | markdownFormat | safe }}</div>
+          {% endif %}
+        </header>
+      {% endif %}
+
+      {% include "partials/hubspot-form.njk" %}
+    </div>
+  </div>
+</div>

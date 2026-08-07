@@ -1,0 +1,38 @@
+{# section.type: gallery — modal image grid
+   Shell: .section-{type}.wrapper[data-section-theme] > .full.wrapper.section > .section__inner #}
+{% from "sections/_shell.njk" import sectionWidthClass, sectionAlignClass, sectionThemeAttr %}
+
+{% set s = section %}
+{% set theme = s.theme or "white" %}
+{% set widthClass = sectionWidthClass(s.width or "feature") or "feature" %}
+{% set alignClass = sectionAlignClass(s.align) %}
+{% set gallery = s.items or s.gallery or [] %}
+
+<div class="section-gallery | wrapper" {{ sectionThemeAttr(theme) }}{% if s.id %} id="{{ s.id }}"{% endif %}>
+  <div class="full wrapper section">
+    <div class="{{ widthClass }} | section__inner region">
+      {% if s.title or s.intro or s.content %}
+        <header class="flow prose {{ alignClass }}">
+          {% if s.title %}<h2>{{ s.title | markdownInline | safe }}</h2>{% endif %}
+          {% if s.intro or s.content %}
+            <div>{{ (s.intro or s.content) | markdownFormat | safe }}</div>
+          {% endif %}
+        </header>
+      {% endif %}
+
+      {% if gallery and gallery.length %}
+        <is-land on:idle>
+          <div class="gallery | grid mt-l-xl" role="list" style="--grid-min-item-size: clamp(16rem, 50vw, 20rem)">
+            {%- for item in gallery -%}
+              <dialog class="flow modal{{ loop.index }}">
+                <button type="button" class="button" autofocus>Close</button>
+                {%- image item.image, item.alt or "", item.caption -%}
+              </dialog>
+              <button type="button" data-index="{{ loop.index }}">{%- image item.image, item.alt or "" -%}</button>
+            {%- endfor -%}
+          </div>
+        </is-land>
+      {% endif %}
+    </div>
+  </div>
+</div>
