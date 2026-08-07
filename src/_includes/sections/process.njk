@@ -1,5 +1,9 @@
 {# section.type: process — expects `section` in scope
    Shell: .section-{type}.wrapper[data-section-theme] > .full.wrapper.section > .section__inner #}
+{% css "local" %}
+  {% include "css/sections/process.css" %}
+{% endcss %}
+
 {% from "sections/_shell.njk" import sectionAlignClass, sectionThemeAttr %}
 
 {% set s = section %}

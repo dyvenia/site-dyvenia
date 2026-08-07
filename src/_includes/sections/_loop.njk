@@ -1,3 +1,2 @@
-{# Renders page.sections[] — assets once, then section types. #}
-{% include "sections/_assets.njk" %}
+{# Renders page.sections[]. each section pulls its own CSS/JS. #}
 {% include "sections/_render.njk" %}

@@ -1,5 +1,13 @@
 {# section.type: gallery — modal image grid
    Shell: .section-{type}.wrapper[data-section-theme] > .full.wrapper.section > .section__inner #}
+{% css "local" %}
+  {% include "css/gallery.css" %}
+{% endcss %}
+
+{% js "defer" %}
+  {% include "scripts/dialog.js" %}
+{% endjs %}
+
 {% from "sections/_shell.njk" import sectionWidthClass, sectionAlignClass, sectionThemeAttr %}
 
 {% set s = section %}

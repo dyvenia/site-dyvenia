@@ -1,4 +1,8 @@
 {# section.type: cta — expects `section` in scope #}
+{% css "local" %}
+  {% include "css/page-header.css" %}
+{% endcss %}
+
 {% from "sections/_shell.njk" import sectionAlignClass, sectionThemeAttr, sectionButtonAttr %}
 
 {% set s = section %}

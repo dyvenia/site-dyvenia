@@ -1,5 +1,13 @@
 {# section.type: tabs — multi-stage tabbed process (not the process timeline)
    Expects `section` in scope. stages: [{ label, name, steps: [{ label, title, content, outcomes }] }] #}
+{% css "local" %}
+  {% include "css/sections/tabs.css" %}
+{% endcss %}
+
+{% js "defer" %}
+  {% include "scripts/tabs.js" %}
+{% endjs %}
+
 {% from "sections/_shell.njk" import sectionWidthClass, sectionThemeAttr %}
 
 {% set s = section %}

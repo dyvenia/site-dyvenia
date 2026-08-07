@@ -1,5 +1,13 @@
 {# section.type: form — expects `section` in scope
    Shell: .section-{type}.wrapper[data-section-theme] > .full.wrapper.section > .section__inner #}
+{% css "local" %}
+  {% include "css/form.css" %}
+{% endcss %}
+
+{% js "defer" %}
+  {% include "scripts/hubspot-submission.js" %}
+{% endjs %}
+
 {% from "sections/_shell.njk" import sectionWidthClass, sectionAlignClass, sectionThemeAttr %}
 
 {% set s = section %}

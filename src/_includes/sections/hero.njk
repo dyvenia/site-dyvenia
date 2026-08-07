@@ -1,4 +1,8 @@
 {# section.type: hero — expects `section` in scope #}
+{% css "local" %}
+  {% include "css/custom-hero.css" %}
+{% endcss %}
+
 {% from "sections/_shell.njk" import sectionButtonAttr %}
 
 {% set s = section %}

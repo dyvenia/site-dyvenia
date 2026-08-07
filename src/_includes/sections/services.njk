@@ -1,5 +1,9 @@
 {# section.type: services — expects `section` in scope
    Full-bleed BG image + stacked service rows #}
+{% css "local" %}
+  {% include "css/sections/services.css" %}
+{% endcss %}
+
 {% from "sections/_shell.njk" import sectionThemeAttr %}
 
 {% set s = section %}
