@@ -93,6 +93,7 @@
   --spot-color: var(--section-bg);
   --color-text: var(--section-text);
   --color-text-accent: var(--section-text-muted);
+  --section-accent: var(--color-teal);
   color: var(--section-text);
 }
 
@@ -151,6 +152,28 @@
   --section-cta-hover-bg: color-mix(in oklab, var(--color-navy) 85%, white);
 }
 
+/* Accent override — CTA via button variant; markers/checklist via --section-accent */
+[data-section-accent='teal'] {
+  --section-accent: var(--color-teal);
+}
+
+[data-section-accent='purple'] {
+  --section-accent: var(--color-purple);
+}
+
+[data-section-accent='navy'] {
+  --section-accent: var(--color-navy);
+}
+
+[data-section-accent='neutral'] {
+  --section-accent: var(--color-gray-900);
+}
+
+[data-section-theme='gray-dark'][data-section-accent='neutral'],
+[data-section-theme='navy'][data-section-accent='neutral'] {
+  --section-accent: var(--color-gray-100);
+}
+
 [data-section-theme='gray-dark'] img,
 [data-section-theme='navy'] img {
   filter: brightness(0.9);
@@ -159,10 +182,18 @@
 /* -------------------- site header over first dark-surface section -------------------- */
 
 @media screen(navigation) {
+  /* Dark section themes OR dark hero media washes (theme is peek/next band, not surface) */
   .site-header:has(+ main > [data-section-theme='gray-dark']:first-child),
   .site-header:has(+ main > [data-section-theme='navy']:first-child),
   .site-header:has(+ main > .wrapper > [data-section-theme='gray-dark']:first-child),
-  .site-header:has(+ main > .wrapper > [data-section-theme='navy']:first-child) {
+  .site-header:has(+ main > .wrapper > [data-section-theme='navy']:first-child),
+  .site-header:has(+ main > .custom-hero[data-hero-background='teal-800']:first-child),
+  .site-header:has(+ main > .custom-hero[data-hero-background='teal-600']:first-child),
+  .site-header:has(+ main > .custom-hero[data-hero-background='purple-800']:first-child),
+  .site-header:has(+ main > .custom-hero[data-hero-background='navy-dark']:first-child),
+  .site-header:has(+ main > .custom-hero[data-hero-background='navy']:first-child),
+  .site-header:has(+ main > .custom-hero[data-hero-background='gray-900']:first-child),
+  .site-header:has(+ main > .custom-hero[data-hero-background='gray-800']:first-child) {
     --color-text: var(--color-gray-100);
     --color-text-accent: var(--color-gray-200);
     --color-bg: var(--color-dark);
@@ -170,6 +201,13 @@
 }
 
 .site-header:has(+ main > [data-section-theme='gray-dark']:first-child) .search-toggle svg,
-.site-header:has(+ main > [data-section-theme='navy']:first-child) .search-toggle svg {
+.site-header:has(+ main > [data-section-theme='navy']:first-child) .search-toggle svg,
+.site-header:has(+ main > .custom-hero[data-hero-background='teal-800']:first-child) .search-toggle svg,
+.site-header:has(+ main > .custom-hero[data-hero-background='teal-600']:first-child) .search-toggle svg,
+.site-header:has(+ main > .custom-hero[data-hero-background='purple-800']:first-child) .search-toggle svg,
+.site-header:has(+ main > .custom-hero[data-hero-background='navy-dark']:first-child) .search-toggle svg,
+.site-header:has(+ main > .custom-hero[data-hero-background='navy']:first-child) .search-toggle svg,
+.site-header:has(+ main > .custom-hero[data-hero-background='gray-900']:first-child) .search-toggle svg,
+.site-header:has(+ main > .custom-hero[data-hero-background='gray-800']:first-child) .search-toggle svg {
   --color-text: var(--color-gray-100);
 }
