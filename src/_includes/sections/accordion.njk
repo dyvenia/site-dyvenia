@@ -9,15 +9,19 @@
   {% include "scripts/details.js" %}
 {% endjs %}
 
-{% from "sections/_shell.njk" import sectionWidthClass, sectionThemeAttr, sectionButtonAttr %}
+{% from "sections/_shell.njk" import sectionWidthClass, sectionThemeAttr, sectionAccentAttr, sectionButtonAttr %}
 
 {% set s = section %}
-{% set theme = s.theme or "white" %}
-{% set widthClass = sectionWidthClass(s.width or "feature") or "feature" %}
+{% set a = s.appearance or {} %}
+{% set theme = a.theme or s.theme or "white" %}
+{% set accent = a.accent if a.accent is defined else s.accent %}
+{% set align = a.align if a.align is defined else s.align %}
+{% set width = a.width if a.width is defined else s.width %}
+{% set widthClass = sectionWidthClass(width or "feature") or "feature" %}
 
 <div
   class="section-accordion faq | wrapper"
-  {{ sectionThemeAttr(theme) }}{% if s.id %}id="{{ s.id }}"{% endif %}
+  {{ sectionThemeAttr(theme) }}{{ sectionAccentAttr(accent) }}{% if s.id %}id="{{ s.id }}"{% endif %}
 >
   <div class="full wrapper section">
     <div class="{{ widthClass }} | section__inner region">
@@ -31,7 +35,7 @@
             <a
               href="{{ s.button_target }}"
               class="button flow-space-l no-indicator"
-              {{ sectionButtonAttr(s.accent) }}
+              {{ sectionButtonAttr(accent) }}
             >
               {{ s.button_text }} {% svg "misc/arrow" %}
             </a>

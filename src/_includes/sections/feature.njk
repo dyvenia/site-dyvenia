@@ -1,14 +1,18 @@
 {# section.type: feature — expects `section` in scope
    Shell: .section-{type}.wrapper[data-section-theme] > .full.wrapper.section > .section__inner #}
-{% from "sections/_shell.njk" import sectionWidthClass, sectionAlignClass, sectionThemeAttr, sectionButtonAttr %}
+{% from "sections/_shell.njk" import sectionWidthClass, sectionAlignClass, sectionThemeAttr, sectionAccentAttr, sectionButtonAttr %}
 
 {% set s = section %}
-{% set theme = s.theme or "white" %}
-{% set widthClass = sectionWidthClass(s.width or "feature") or "feature" %}
-{% set alignClass = sectionAlignClass(s.align) %}
-{% set mediaSide = s.media_side or "right" %}
+{% set a = s.appearance or {} %}
+{% set theme = a.theme or s.theme or "white" %}
+{% set accent = a.accent if a.accent is defined else s.accent %}
+{% set align = a.align if a.align is defined else s.align %}
+{% set width = a.width if a.width is defined else s.width %}
+{% set widthClass = sectionWidthClass(width or "feature") or "feature" %}
+{% set alignClass = sectionAlignClass(align) %}
+{% set mediaSide = a.media_side or s.media_side or "right" %}
 
-<div class="section-feature | wrapper" {{ sectionThemeAttr(theme) }}{% if s.id %} id="{{ s.id }}"{% endif %}>
+<div class="section-feature | wrapper" {{ sectionThemeAttr(theme) }}{{ sectionAccentAttr(accent) }}{% if s.id %} id="{{ s.id }}"{% endif %}>
   <div class="full wrapper section">
     <div class="{{ widthClass }} | section__inner region">
       <div class="grid {{ alignClass }}" data-layout="50-50"{% if mediaSide == "left" %} style="direction: rtl"{% endif %}>
@@ -19,7 +23,7 @@
             <a
               href="{{ s.button_target }}"
               class="button"
-              {{ sectionButtonAttr(s.accent) }}
+              {{ sectionButtonAttr(accent) }}
             >
               {{ s.button_text }} {% svg "misc/arrow" %}
             </a>

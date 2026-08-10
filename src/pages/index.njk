@@ -8,11 +8,6 @@ mainClass: scroll-fade-up-h2s
 sections:
   - type: hero
     internal_name: Hero
-    theme: gray-dark
-    align: left
-    height: cover
-    accent: teal
-    region_space: xl-2xl
     title: _Reliable_ data platforms. _Trusted_ metrics. AI that actually _works_.
     subtitle: |-
       Built by experts who understand your business, systems, and constraints.
@@ -21,15 +16,25 @@ sections:
       From raw data to decisions, everything stays connected and explainable.
     button_text: Schedule a discovery call
     button_target: https://meetings-eu1.hubspot.com/alessio-civitillo/book-a-call
+    image: ./src/assets/images/backgrounds/jellyfish-hr.jpg
+    image_alt: ''
     video:
       webm: ./src/assets/videos/jellyfish.webm
       mp4: ./src/assets/videos/jellyfish.mp4
-    image: ./src/assets/images/backgrounds/jellyfish-hr.jpg
+    appearance:
+      theme: white
+      accent: teal
+      align: center
+      height: tall
+      background: teal-800
+      content_block: center
+    region_space: xl-2xl
   - type: text
     internal_name: Intro
-    theme: white
-    width: feature
     title: The problem is not technology, data quality, or even lack of budget or business cases. It’s the **complexity of combining all these elements together into solutions that deliver ROI**.
+    appearance:
+      theme: white
+      width: feature
     content_left: |-
       Your systems work. Your teams work. Your data exists.
       But together, they don’t translate into measurable impact.
@@ -41,28 +46,31 @@ sections:
       - Metrics are defined differently across systems and teams
   - type: highlight
     internal_name: Highlight one
-    theme: teal
-    align: left
     title: We make your data, technology, metrics, and AI work as one.
     subtitle: |-
       by starting with the decisions your business needs to make, and aligning business and technology around them.
 
       We design your data platform, systems, and models as one connected foundation, preventing fragmented initiatives and wasted investment.
+    appearance:
+      theme: teal
+      align: left
     decoration: brand/waves
   - type: highlight
     internal_name: Highlight two
-    theme: teal
-    align: center
-    title1: The Goal?
-    title2: Establish a single, trusted view of the business, where decisions, data, and outcomes are aligned.
+    appearance:
+      theme: teal
+      align: center
     content: |-
       We replace fragmented architectures and conflicting logic with a connected data foundation that keeps systems, metrics, and decisions aligned.
 
       So you can move faster, trust what you see, and scale both analytics and AI with confidence.
+    title1: The Goal?
+    title2: Establish a single, trusted view of the business, where decisions, data, and outcomes are aligned.
   - type: process
     internal_name: Foundations
-    theme: white
-    align: center
+    appearance:
+      theme: white
+      align: center
     title1: The impact on
     title2: your business
     decoration: brand/medusa-organic
@@ -79,11 +87,12 @@ sections:
         content: As your business grows, your data and systems grow with it, without breaking or losing consistency.
   - type: team
     internal_name: Who we are
-    theme: white
-    width: feature
-    header_layout: thirds
-    filter: show_on_about
     title: Who We Are
+    appearance:
+      theme: white
+      width: feature
+      filter: show_on_about
+      header_layout: thirds
     content: |-
       We’re not just data engineers or consultants. We’ve sat on **both sides**.
 
@@ -96,10 +105,11 @@ sections:
       Our approach is simple: **design it properly, build it properly, and make sure it delivers measurable outcomes.**
   - type: list
     internal_name: Why us
-    theme: white
-    width: feature
-    variant: definition
     title: What’s Holding You Back
+    appearance:
+      theme: white
+      width: feature
+      variant: definition
     content: Enterprises are drowning in data, but struggling to turn it into performance.
     items:
       - title: Decisions feel slower than they should
@@ -124,9 +134,10 @@ sections:
         content: More data, faster reporting, and higher expectations built on systems that weren’t designed to support them.
   - type: services
     internal_name: Services
-    theme: navy
     title: How We Deliver Results
     image: ./src/assets/images/backgrounds/sfondi-dyvenia26.jpg
+    appearance:
+      theme: navy
     items:
       - title: Engineering
         prefix: Data Platform
@@ -160,11 +171,12 @@ sections:
           - Aligning AI use cases with real business decisions
   - type: posts
     internal_name: Insights
-    theme: white
-    width: feature
     title: Our Insights
+    appearance:
+      theme: white
+      width: feature
+      card_layout: grid
     intro: Selected Articles. Check our blog for more.
-    count: 3
-    layout: grid
     title_href: /insights/
+    count: 3
 ---

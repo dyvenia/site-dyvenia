@@ -4,13 +4,16 @@
   {% include "css/sections/process.css" %}
 {% endcss %}
 
-{% from "sections/_shell.njk" import sectionAlignClass, sectionThemeAttr %}
+{% from "sections/_shell.njk" import sectionAlignClass, sectionThemeAttr, sectionAccentAttr %}
 
 {% set s = section %}
-{% set theme = s.theme or "white" %}
-{% set alignClass = sectionAlignClass(s.align or "center") %}
+{% set a = s.appearance or {} %}
+{% set theme = a.theme or s.theme or "white" %}
+{% set accent = a.accent if a.accent is defined else s.accent %}
+{% set align = a.align if a.align is defined else s.align %}
+{% set alignClass = sectionAlignClass(align or "center") %}
 
-<div class="section-process | wrapper" {{ sectionThemeAttr(theme) }}{% if s.id %} id="{{ s.id }}"{% endif %}>
+<div class="section-process | wrapper" {{ sectionThemeAttr(theme) }}{{ sectionAccentAttr(accent) }}{% if s.id %} id="{{ s.id }}"{% endif %}>
   <div class="full wrapper section">
     <article class="full | section__inner region flow">
       <h2 class="text-step-3 {{ alignClass }}">

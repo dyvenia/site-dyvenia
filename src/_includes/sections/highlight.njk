@@ -1,12 +1,15 @@
 {# section.type: highlight — expects `section` in scope
    Shell: .section-{type}.wrapper[data-section-theme] > .full.wrapper.section > .section__inner #}
-{% from "sections/_shell.njk" import sectionAlignClass, sectionThemeAttr %}
+{% from "sections/_shell.njk" import sectionAlignClass, sectionThemeAttr, sectionAccentAttr %}
 
 {% set s = section %}
-{% set theme = s.theme or "teal" %}
-{% set alignClass = sectionAlignClass(s.align or "left") %}
+{% set a = s.appearance or {} %}
+{% set theme = a.theme or s.theme or "teal" %}
+{% set accent = a.accent if a.accent is defined else s.accent %}
+{% set align = a.align if a.align is defined else s.align %}
+{% set alignClass = sectionAlignClass(align or "left") %}
 
-<div class="section-highlight | wrapper" {{ sectionThemeAttr(theme) }}{% if s.id %} id="{{ s.id }}"{% endif %}>
+<div class="section-highlight | wrapper" {{ sectionThemeAttr(theme) }}{{ sectionAccentAttr(accent) }}{% if s.id %} id="{{ s.id }}"{% endif %}>
   <div class="full wrapper section">
     <article class="full | section__inner region flow prose {{ alignClass }}">
       {% if s.title1 or s.title2 %}

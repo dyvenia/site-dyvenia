@@ -4,15 +4,19 @@
   {% include "css/sections/list.css" %}
 {% endcss %}
 
-{% from "sections/_shell.njk" import sectionWidthClass, sectionAlignClass, sectionThemeAttr %}
+{% from "sections/_shell.njk" import sectionWidthClass, sectionAlignClass, sectionThemeAttr, sectionAccentAttr %}
 
 {% set s = section %}
-{% set theme = s.theme or "white" %}
-{% set variant = s.variant or "definition" %}
-{% set widthClass = sectionWidthClass(s.width or "feature") or "feature" %}
-{% set alignClass = sectionAlignClass(s.align) %}
+{% set a = s.appearance or {} %}
+{% set theme = a.theme or s.theme or "white" %}
+{% set accent = a.accent if a.accent is defined else s.accent %}
+{% set align = a.align if a.align is defined else s.align %}
+{% set width = a.width if a.width is defined else s.width %}
+{% set variant = a.variant or s.variant or "definition" %}
+{% set widthClass = sectionWidthClass(width or "feature") or "feature" %}
+{% set alignClass = sectionAlignClass(align) %}
 
-<div class="section-list | wrapper" {{ sectionThemeAttr(theme) }}{% if s.id %} id="{{ s.id }}"{% endif %}>
+<div class="section-list | wrapper" {{ sectionThemeAttr(theme) }}{{ sectionAccentAttr(accent) }}{% if s.id %} id="{{ s.id }}"{% endif %}>
   <div class="full wrapper section">
     <div class="{{ widthClass }} | section__inner region">
       <header class="flow prose {{ alignClass }}">

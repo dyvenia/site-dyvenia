@@ -4,18 +4,22 @@
   {% include "css/custom-card.css" %}
 {% endcss %}
 
-{% from "sections/_shell.njk" import sectionWidthClass, sectionAlignClass, sectionThemeAttr %}
+{% from "sections/_shell.njk" import sectionWidthClass, sectionAlignClass, sectionThemeAttr, sectionAccentAttr %}
 
 {% set s = section %}
-{% set theme = s.theme or "white" %}
-{% set widthClass = sectionWidthClass(s.width or "feature") or "feature" %}
-{% set alignClass = sectionAlignClass(s.align) %}
+{% set a = s.appearance or {} %}
+{% set theme = a.theme or s.theme or "white" %}
+{% set accent = a.accent if a.accent is defined else s.accent %}
+{% set align = a.align if a.align is defined else s.align %}
+{% set width = a.width if a.width is defined else s.width %}
+{% set widthClass = sectionWidthClass(width or "feature") or "feature" %}
+{% set alignClass = sectionAlignClass(align) %}
 {% set count = s.count or 3 %}
-{% set cardLayout = s.layout or "grid" %}
+{% set cardLayout = a.card_layout or s.card_layout or s.layout or "grid" %}
 {% set titleHref = s.title_href or "/insights/" %}
 {% set itemList = collections.allPosts %}
 
-<div class="section-posts | wrapper" {{ sectionThemeAttr(theme) }}{% if s.id %} id="{{ s.id }}"{% endif %}>
+<div class="section-posts | wrapper" {{ sectionThemeAttr(theme) }}{{ sectionAccentAttr(accent) }}{% if s.id %} id="{{ s.id }}"{% endif %}>
   <div class="full wrapper section">
     <div class="{{ widthClass }} | section__inner region">
       <div class="flow prose {{ alignClass }}">

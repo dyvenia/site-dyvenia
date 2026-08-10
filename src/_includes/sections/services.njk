@@ -4,12 +4,15 @@
   {% include "css/sections/services.css" %}
 {% endcss %}
 
-{% from "sections/_shell.njk" import sectionThemeAttr %}
+{% from "sections/_shell.njk" import sectionThemeAttr, sectionAccentAttr %}
 
 {% set s = section %}
-{% set theme = s.theme or "navy" %}
+{% set a = s.appearance or {} %}
+{% set theme = a.theme or s.theme or "navy" %}
+{% set accent = a.accent if a.accent is defined else s.accent %}
+{% set align = a.align if a.align is defined else s.align %}
 
-<div class="section-services | wrapper" {{ sectionThemeAttr(theme) }}{% if s.id %} id="{{ s.id }}"{% endif %}>
+<div class="section-services | wrapper" {{ sectionThemeAttr(theme) }}{{ sectionAccentAttr(accent) }}{% if s.id %} id="{{ s.id }}"{% endif %}>
   <div class="section-services__band | full wrapper section">
     {% if s.image %}
       {% image s.image, "" %}

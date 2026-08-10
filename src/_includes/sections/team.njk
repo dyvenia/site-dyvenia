@@ -4,17 +4,21 @@
   {% include "css/custom-card.css" %}
 {% endcss %}
 
-{% from "sections/_shell.njk" import sectionWidthClass, sectionAlignClass, sectionThemeAttr %}
+{% from "sections/_shell.njk" import sectionWidthClass, sectionAlignClass, sectionThemeAttr, sectionAccentAttr %}
 
 {% set s = section %}
-{% set theme = s.theme or "white" %}
-{% set widthClass = sectionWidthClass(s.width or "feature") or "feature" %}
-{% set alignClass = sectionAlignClass(s.align) %}
-{% set filterKey = s.filter or "show_on_about" %}
-{% set headerLayout = s.header_layout or "stack" %}
+{% set a = s.appearance or {} %}
+{% set theme = a.theme or s.theme or "white" %}
+{% set accent = a.accent if a.accent is defined else s.accent %}
+{% set align = a.align if a.align is defined else s.align %}
+{% set width = a.width if a.width is defined else s.width %}
+{% set widthClass = sectionWidthClass(width or "feature") or "feature" %}
+{% set alignClass = sectionAlignClass(align) %}
+{% set filterKey = a.filter or s.filter or "show_on_about" %}
+{% set headerLayout = a.header_layout or s.header_layout or "stack" %}
 {% set orderedTeamMembers = collections.team_members | sortByOrderIndex %}
 
-<div class="section-team | wrapper" {{ sectionThemeAttr(theme) }}{% if s.id %} id="{{ s.id }}"{% endif %}>
+<div class="section-team | wrapper" {{ sectionThemeAttr(theme) }}{{ sectionAccentAttr(accent) }}{% if s.id %} id="{{ s.id }}"{% endif %}>
   <div class="full wrapper section">
     <article class="{{ widthClass }} | section__inner region">
       {% if s.title or s.content or s.intro %}

@@ -3,22 +3,25 @@
   {% include "css/custom-hero.css" %}
 {% endcss %}
 
-{% from "sections/_shell.njk" import sectionButtonAttr %}
+{% from "sections/_shell.njk" import sectionButtonAttr, sectionAccentAttr %}
 
 {% set s = section %}
-{% set heroTheme = s.theme or "gray-dark" %}
+{% set a = s.appearance or {} %}
+{% set theme = a.theme or s.theme or "gray-dark" %}
+{% set accent = a.accent if a.accent is defined else s.accent %}
+{% set align = a.align if a.align is defined else s.align %}
 {% set heroDivider = s.divider if s.divider is defined else "divider/soft-top" %}
 {% set heroDividerClass = s.divider_class or "seperator" %}
-{% set heroHeight = s.height or "default" %}
-{% set heroBackground = s.background or "teal-800" %}
-{% set heroInline = s.align or "center" %}
-{% set heroBlock = s.content_block or "center" %}
+{% set heroHeight = a.height or s.height or "default" %}
+{% set heroBackground = a.background or s.background or "teal-800" %}
+{% set heroInline = align or "center" %}
+{% set heroBlock = a.content_block or s.content_block or "center" %}
 {% set heroRegionSpace = s.region_space or "xl" %}
 {% set heroVideo = s.video %}
 
 <header
   class="section custom-hero section-hero"
-  data-section-theme="{{ heroTheme }}"
+  data-section-theme="{{ theme }}"{{ sectionAccentAttr(accent) }}
   data-hero-media="{% if heroVideo %}video{% elif s.image %}image{% else %}none{% endif %}"
   data-hero-height="{{ heroHeight }}"
   data-hero-background="{{ heroBackground }}"
@@ -71,7 +74,7 @@
         <a
           href="{{ s.button_target }}"
           class="button flow-space-l fade-in delay-7"
-          {{ sectionButtonAttr(s.accent) }}
+          {{ sectionButtonAttr(accent) }}
         >
           {{ s.button_text }} {% svg "misc/arrow" %}
         </a>

@@ -3,16 +3,19 @@
   {% include "css/page-header.css" %}
 {% endcss %}
 
-{% from "sections/_shell.njk" import sectionAlignClass, sectionThemeAttr, sectionButtonAttr %}
+{% from "sections/_shell.njk" import sectionAlignClass, sectionThemeAttr, sectionAccentAttr, sectionButtonAttr %}
 
 {% set s = section %}
-{% set theme = s.theme or "gray-dark" %}
-{% set alignClass = sectionAlignClass(s.align or "center") %}
+{% set a = s.appearance or {} %}
+{% set theme = a.theme or s.theme or "gray-dark" %}
+{% set accent = a.accent if a.accent is defined else s.accent %}
+{% set align = a.align if a.align is defined else s.align %}
+{% set alignClass = sectionAlignClass(align or "center") %}
 
 <div
   class="section-cta | section page-header"
   {% if s.id %}id="{{ s.id }}"{% endif %}
-  {{ sectionThemeAttr(theme) }}
+  {{ sectionThemeAttr(theme) }}{{ sectionAccentAttr(accent) }}
 >
   {% svg "divider/soft-top", null, "seperator" %}
 
@@ -22,14 +25,14 @@
 
   <div>
     <div class="wrapper region region-space-xl-2xl flow prose {{ alignClass }}">
-      {% if s.title %}<h2 class="{% if s.align == 'left' %}left{% endif %}">{{ s.title | markdownInline | safe }}</h2>{% endif %}
+      {% if s.title %}<h2 class="{% if align == 'left' %}left{% endif %}">{{ s.title | markdownInline | safe }}</h2>{% endif %}
       {% if s.subtitle %}{{ s.subtitle | markdownFormat | safe }}{% endif %}
       {% if s.pre %}{{ s.pre | markdownFormat | safe }}{% endif %}
       {% if s.button_text and s.button_target %}
         <a
           href="{{ s.button_target }}"
           class="button no-indicator"
-          {{ sectionButtonAttr(s.accent) }}
+          {{ sectionButtonAttr(accent) }}
         >
           {{ s.button_text }} {% svg "misc/arrow" %}
         </a>
