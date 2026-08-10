@@ -1,0 +1,42 @@
+---
+title: Sections
+permalink: /styleguide/sections/index.html
+description: Composable page sections — types and shared appearance options.
+---
+
+<div class="styleguide-full__intro | wrapper region flow">
+  {% include "styleguide/sections-nav.njk" %}
+
+  <header class="intro flow">
+    <h1>{{ title }}</h1>
+    <p>
+      Live Dyvenia copy for each composable section type. Use the fixtures form to preview shared appearance
+      options, then open a type from the nav below.
+    </p>
+    <ul>
+      <li>
+        <strong>theme</strong>: full-bleed surface color.
+        {% for theme in styleguide.sectionAppearance.themes %}<code>{{ theme }}</code>{% if not loop.last %} {% endif %}{% endfor %}
+      </li>
+      <li>
+        <strong>accent</strong>: CTA and list marker color. <code>default</code> follows the theme for buttons; markers stay teal unless overridden.
+        {% for accent in styleguide.sectionAppearance.accents %}<code>{{ accent }}</code>{% if not loop.last %} {% endif %}{% endfor %}
+      </li>
+      <li>
+        <strong>width</strong>:
+        {% for width in styleguide.sectionAppearance.widths %}<code>{{ width }}</code>{% if not loop.last %} {% endif %}{% endfor %}
+      </li>
+      <li>
+        <strong>align</strong>:
+        {% for align in styleguide.sectionAppearance.aligns %}<code>{{ align }}</code>{% if not loop.last %} {% endif %}{% endfor %}
+      </li>
+    </ul>
+  </header>
+
+  {% include "styleguide/fixtures-theme.njk" %}
+  {% include "styleguide/fixtures-layout.njk" %}
+</div>
+
+{% js "defer" %}
+  {% include "scripts/styleguide-section-preview.js" %}
+{% endjs %}

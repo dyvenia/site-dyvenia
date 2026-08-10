@@ -1,0 +1,17 @@
+<nav class="styleguide-sections-nav" aria-label="Section types">
+  <ul class="styleguide-sections-nav__list | cluster gutter-2xs" role="list">
+    {% for key in styleguide.sectionDemos.keys %}
+      {% set itemUrl = "/styleguide/sections/" + key + "/" %}
+      <li>
+        <a
+          href="{{ itemUrl }}"
+          class="styleguide-sections-nav__link{% if page.url == itemUrl %} is-active{% endif %} | button"
+          data-pill-button
+          {% if page.url == itemUrl %}aria-current="page"{% endif %}
+        >
+          {{ key }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

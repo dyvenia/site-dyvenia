@@ -1,9 +1,13 @@
+:root {
+  --color-border: color-mix(in oklab, var(--color-text) 12%, transparent);
+}
+
 .styleguide-full {
   --region-space-top: var(--space-l);
 }
 
 .styleguide-full__nav {
-  border-block-end: 1px solid color-mix(in oklab, var(--color-text) 12%, transparent);
+  border-block-end: 1px solid var(--color-border);
 }
 
 .styleguide-full__nav-inner {
@@ -39,6 +43,10 @@
   position: sticky;
   top: var(--space-xs);
   margin-block-start: var(--space-m);
+}
+
+.styleguide-sections-nav {
+  border-block-end: 1px solid var(--color-border);
 }
 
 .styleguide-nav__title {
@@ -125,7 +133,7 @@
 }
 
 .styleguide-section-label {
-  border-block-start: 1px solid color-mix(in oklab, var(--color-text) 20%, transparent);
+  border-block-start: 1px solid var(--color-border);
   padding-block-start: var(--space-s);
 }
 
@@ -160,7 +168,6 @@
   border: 1px solid color-mix(in oklab, var(--color-text) 25%, transparent);
 }
 
-/* Neutral doc bands between live section demos */
 .sg-section-doc {
   border-block: 1px solid color-mix(in oklab, var(--color-text) 12%, transparent);
   background: var(--color-bg);
@@ -180,5 +187,9 @@
 }
 
 .sg-section-doc__type code {
+  font-size: inherit;
+}
+
+.styleguide-full__intro .intro h1 code {
   font-size: inherit;
 }

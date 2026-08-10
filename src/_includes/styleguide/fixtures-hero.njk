@@ -1,0 +1,26 @@
+<form class="sg-preview sg-preview--hero | cluster" aria-label="Hero fixtures">
+  <div class="sg-preview__field | cluster">
+    <label for="sg-height">Height</label>
+    <select id="sg-height" data-sg-height name="height">
+      {% for height in styleguide.sectionAppearance.heroHeights %}
+        <option value="{{ height }}">{{ height }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="sg-preview__field | cluster">
+    <label for="sg-media-bg">Media background</label>
+    <select id="sg-media-bg" data-sg-media-bg name="media_bg">
+      {% for bg in styleguide.sectionAppearance.heroBackgrounds %}
+        <option value="{{ bg }}">{{ bg }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="sg-preview__field | cluster">
+    <label for="sg-valign">Vertical align</label>
+    <select id="sg-valign" data-sg-valign name="valign">
+      {% for align in styleguide.sectionAppearance.verticalAligns %}
+        <option value="{{ align }}">{{ align }}</option>
+      {% endfor %}
+    </select>
+  </div>
+</form>

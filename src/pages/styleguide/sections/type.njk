@@ -1,0 +1,37 @@
+---
+pagination:
+  data: styleguide.sectionDemos.keys
+  size: 1
+  alias: sectionKey
+permalink: /styleguide/sections/{{ sectionKey }}/index.html
+eleventyComputed:
+  title: 'Section · {{ sectionKey }}'
+  description: 'Styleguide demo for the {{ sectionKey }} section type.'
+---
+
+{% set doc = styleguide.sectionDemos.docs[sectionKey] %}
+{% set demo = styleguide.sectionDemos[sectionKey] %}
+
+<div class="styleguide-full__intro | wrapper region flow">
+  {% include "styleguide/sections-nav.njk" %}
+
+  <header class="intro flow">
+    <h1><code>{{ doc.title }}</code></h1>
+    <p>{{ doc.body }}</p>
+  </header>
+
+  {% include "styleguide/fixtures-theme.njk" %}
+  {% include "styleguide/fixtures-layout.njk" %}
+  {% if sectionKey == "hero" %}
+    {% include "styleguide/fixtures-hero.njk" %}
+  {% endif %}
+</div>
+
+<div data-sg-demos>
+  {% set sections = [demo] %}
+  {% include "sections/_render.njk" %}
+</div>
+
+{% js "defer" %}
+  {% include "scripts/styleguide-section-preview.js" %}
+{% endjs %}
