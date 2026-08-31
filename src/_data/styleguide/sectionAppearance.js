@@ -110,7 +110,7 @@ export default {
     },
     tabs: {
       align: true,
-      width: 'full'
+      width: 'measure'
     },
     cases: {
       align: true,

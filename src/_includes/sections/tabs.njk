@@ -8,7 +8,7 @@
   {% include "scripts/tabs.js" %}
 {% endjs %}
 
-{% from "sections/_shell.njk" import sectionWidthClass, sectionThemeAttr, sectionAccentAttr %}
+{% from "sections/_shell.njk" import sectionWidthClass, sectionAlignClass, sectionThemeAttr, sectionAccentAttr %}
 
 {% set s = section %}
 {% set a = s.appearance or {} %}
@@ -16,7 +16,9 @@
 {% set accent = a.accent if a.accent is defined else s.accent %}
 {% set align = a.align if a.align is defined else s.align %}
 {% set width = a.width if a.width is defined else s.width %}
+{% if width == "full" %}{% set width = "feature" %}{% endif %}
 {% set widthClass = sectionWidthClass(width or "feature") or "feature" %}
+{% set alignClass = sectionAlignClass(align) %}
 {% set titleWhat = s.title_what or "What we do?" %}
 {% set titleOutcomes = s.title_outcomes or "Outcomes:" %}
 {% set stages = s.stages or s.items or [] %}
@@ -25,7 +27,7 @@
 <div class="section-tabs | wrapper" {{ sectionThemeAttr(theme) }}{{ sectionAccentAttr(accent) }}{% if s.id %} id="{{ s.id }}"{% endif %}>
   <div class="full wrapper section">
     <section class="{{ widthClass }} | section__inner region" aria-labelledby="{{ tabsId }}-title">
-      <header id="{{ tabsId }}-title" class="header | flow">
+      <header id="{{ tabsId }}-title" class="section-tabs__header | header flow {{ alignClass }}">
         {% if s.title %}<h2 class="text-step-3">{{ s.title | markdownInline | safe }}</h2>{% endif %}
         {% if s.intro or s.content %}
           <p>{{ (s.intro or s.content) | markdownInline | safe }}</p>

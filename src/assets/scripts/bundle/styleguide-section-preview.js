@@ -551,14 +551,18 @@
   const applyAlign = align => {
     if (!demos || !align) return;
     const targets = demos.querySelectorAll(
-      '.section__inner, .section__inner .prose, .section__inner header, .section-form__header, .custom-hero .wrapper, .section-cta .wrapper'
+      '.section__inner, .section__inner .prose, .section__inner header, .section-form__header, .section-tabs__header, .custom-hero .wrapper, .section-cta .wrapper'
     );
     targets.forEach(el => {
-      if (el.classList.contains('section__inner') && el.closest('.section-form')) {
+      if (el.classList.contains('section__inner') && el.closest('.section-form, .section-tabs')) {
         el.classList.remove(...ALIGN_CLASSES);
         return;
       }
       if (el.closest('.section-text')) {
+        el.classList.remove(...ALIGN_CLASSES);
+        return;
+      }
+      if (el.closest('.section-tabs') && !el.classList.contains('section-tabs__header')) {
         el.classList.remove(...ALIGN_CLASSES);
         return;
       }

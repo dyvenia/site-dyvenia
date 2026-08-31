@@ -1573,8 +1573,6 @@ collections:
                             value: content
                           - label: feature
                             value: feature
-                          - label: full
-                            value: full
                         default: feature
               - label: Cases
                 name: cases
@@ -3638,8 +3636,6 @@ collections:
                             value: content
                           - label: feature
                             value: feature
-                          - label: full
-                            value: full
                         default: feature
               - label: Cases
                 name: cases
@@ -5691,8 +5687,6 @@ collections:
                             value: content
                           - label: feature
                             value: feature
-                          - label: full
-                            value: full
                         default: feature
               - label: Cases
                 name: cases
@@ -7654,8 +7648,6 @@ collections:
                             value: content
                           - label: feature
                             value: feature
-                          - label: full
-                            value: full
                         default: feature
               - label: Cases
                 name: cases
@@ -9657,8 +9649,6 @@ collections:
                             value: content
                           - label: feature
                             value: feature
-                          - label: full
-                            value: full
                         default: feature
               - label: Cases
                 name: cases
@@ -11656,8 +11646,6 @@ collections:
                         value: content
                       - label: feature
                         value: feature
-                      - label: full
-                        value: full
                     default: feature
           - label: Cases
             name: cases

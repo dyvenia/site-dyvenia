@@ -179,6 +179,129 @@
   --section-accent: var(--color-gray-100);
 }
 
+/* Tab step scales — default accent = teal; override via data-section-accent on .section-tabs */
+.section-tabs {
+  --color-scale-1: var(--color-teal-500);
+  --color-scale-2: var(--color-teal-600);
+  --color-scale-3: var(--color-teal-700);
+  --color-scale-4: var(--color-teal-800);
+  --color-scale-contrast: var(--color-teal-100);
+}
+
+.section-tabs[data-section-accent='teal'] {
+  --color-scale-1: var(--color-teal-500);
+  --color-scale-2: var(--color-teal-600);
+  --color-scale-3: var(--color-teal-700);
+  --color-scale-4: var(--color-teal-800);
+  --color-scale-contrast: var(--color-teal-100);
+}
+
+.section-tabs[data-section-accent='purple'] {
+  --color-scale-1: var(--color-purple-500);
+  --color-scale-2: var(--color-purple-600);
+  --color-scale-3: var(--color-purple-700);
+  --color-scale-4: var(--color-purple-800);
+  --color-scale-contrast: var(--color-purple-100);
+}
+
+.section-tabs[data-section-accent='navy'] {
+  --color-scale-1: var(--color-navy-500);
+  --color-scale-2: var(--color-navy-600);
+  --color-scale-3: var(--color-navy-700);
+  --color-scale-4: var(--color-navy-800);
+  --color-scale-contrast: var(--color-navy-100);
+}
+
+.section-tabs[data-section-accent='neutral'] {
+  --color-scale-1: var(--color-gray-500);
+  --color-scale-2: var(--color-gray-600);
+  --color-scale-3: var(--color-gray-700);
+  --color-scale-4: var(--color-gray-800);
+  --color-scale-contrast: var(--color-gray-100);
+}
+
+@media (prefers-color-scheme: dark) {
+  .section-tabs {
+    --color-scale-1: var(--color-teal-200);
+    --color-scale-2: var(--color-teal-300);
+    --color-scale-3: var(--color-teal-400);
+    --color-scale-4: var(--color-teal-500);
+    --color-scale-contrast: var(--color-teal-900);
+  }
+
+  .section-tabs[data-section-accent='teal'] {
+    --color-scale-1: var(--color-teal-200);
+    --color-scale-2: var(--color-teal-300);
+    --color-scale-3: var(--color-teal-400);
+    --color-scale-4: var(--color-teal-500);
+    --color-scale-contrast: var(--color-teal-900);
+  }
+
+  .section-tabs[data-section-accent='purple'] {
+    --color-scale-1: var(--color-purple-200);
+    --color-scale-2: var(--color-purple-300);
+    --color-scale-3: var(--color-purple-400);
+    --color-scale-4: var(--color-purple-500);
+    --color-scale-contrast: var(--color-purple-900);
+  }
+
+  .section-tabs[data-section-accent='navy'] {
+    --color-scale-1: var(--color-navy-200);
+    --color-scale-2: var(--color-navy-300);
+    --color-scale-3: var(--color-navy-400);
+    --color-scale-4: var(--color-navy-500);
+    --color-scale-contrast: var(--color-navy-900);
+  }
+
+  .section-tabs[data-section-accent='neutral'] {
+    --color-scale-1: var(--color-gray-200);
+    --color-scale-2: var(--color-gray-300);
+    --color-scale-3: var(--color-gray-400);
+    --color-scale-4: var(--color-gray-500);
+    --color-scale-contrast: var(--color-gray-900);
+  }
+}
+
+:root[data-theme='dark'] .section-tabs {
+  --color-scale-1: var(--color-teal-200);
+  --color-scale-2: var(--color-teal-300);
+  --color-scale-3: var(--color-teal-400);
+  --color-scale-4: var(--color-teal-500);
+  --color-scale-contrast: var(--color-teal-900);
+}
+
+:root[data-theme='dark'] .section-tabs[data-section-accent='teal'] {
+  --color-scale-1: var(--color-teal-200);
+  --color-scale-2: var(--color-teal-300);
+  --color-scale-3: var(--color-teal-400);
+  --color-scale-4: var(--color-teal-500);
+  --color-scale-contrast: var(--color-teal-900);
+}
+
+:root[data-theme='dark'] .section-tabs[data-section-accent='purple'] {
+  --color-scale-1: var(--color-purple-200);
+  --color-scale-2: var(--color-purple-300);
+  --color-scale-3: var(--color-purple-400);
+  --color-scale-4: var(--color-purple-500);
+  --color-scale-contrast: var(--color-purple-900);
+}
+
+:root[data-theme='dark'] .section-tabs[data-section-accent='navy'] {
+  --color-scale-1: var(--color-navy-200);
+  --color-scale-2: var(--color-navy-300);
+  --color-scale-3: var(--color-navy-400);
+  --color-scale-4: var(--color-navy-500);
+  --color-scale-contrast: var(--color-navy-900);
+}
+
+:root[data-theme='dark'] .section-tabs[data-section-accent='neutral'] {
+  --color-scale-1: var(--color-gray-200);
+  --color-scale-2: var(--color-gray-300);
+  --color-scale-3: var(--color-gray-400);
+  --color-scale-4: var(--color-gray-500);
+  --color-scale-contrast: var(--color-gray-900);
+}
+
 [data-section-theme='gray-dark'] img,
 [data-section-theme='teal-dark'] img,
 [data-section-theme='navy'] img {

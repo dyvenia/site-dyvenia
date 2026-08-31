@@ -1,32 +1,5 @@
 /* section.type: tabs — multi-stage process tabs (ported from process page) */
 
-.section-tabs,
-:root[data-theme='light'] .section-tabs {
-  --color-scale-1: var(--color-purple-500);
-  --color-scale-2: var(--color-purple-600);
-  --color-scale-3: var(--color-purple-700);
-  --color-scale-4: var(--color-purple-800);
-  --color-scale-contrast: var(--color-purple-100);
-}
-
-@media (prefers-color-scheme: dark) {
-  .section-tabs {
-    --color-scale-1: var(--color-purple-200);
-    --color-scale-2: var(--color-purple-300);
-    --color-scale-3: var(--color-purple-400);
-    --color-scale-4: var(--color-purple-500);
-    --color-scale-contrast: var(--color-purple-900);
-  }
-}
-
-:root[data-theme='dark'] .section-tabs {
-  --color-scale-1: var(--color-purple-200);
-  --color-scale-2: var(--color-purple-300);
-  --color-scale-3: var(--color-purple-400);
-  --color-scale-4: var(--color-purple-500);
-  --color-scale-contrast: var(--color-purple-900);
-}
-
 .section-tabs .tabs nav {
   overflow: hidden;
   margin-inline-start: calc(var(--gap) * -1);
@@ -85,7 +58,7 @@
 }
 
 .section-tabs .step-number {
-  --step-number-color: --color-scale-contrast;
+  --step-number-color: var(--color-scale-contrast);
   color: var(--step-number-color);
   font-size: var(--size-step-4);
   font-weight: var(--font-bold);
