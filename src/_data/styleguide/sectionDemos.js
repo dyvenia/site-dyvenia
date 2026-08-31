@@ -162,7 +162,6 @@ export default {
     title2: 'deliver',
     decoration: 'brand/medusa-organic',
     appearance: {
-      decoration_accent: 'teal'
     },
     items: [
       {

@@ -12,6 +12,12 @@ backend:
   branch: dev
 media_folder: /src/assets/images/
 public_folder: /assets/images/
+asset_collections:
+  - name: sections
+    label: Sections
+    icon: dashboard
+    media_folder: /src/assets/images/sections/
+    public_folder: /assets/images/sections/
 collections:
 - name: home
   label: Home Page
@@ -19,6 +25,8 @@ collections:
   create: false
   extension: njk
   format: frontmatter
+  media_folder: /src/assets/images/sections/
+  public_folder: /assets/images/sections/
   files:
   - file: src/pages/index.njk
     label: Home
@@ -151,6 +159,8 @@ collections:
         - label: Image
           name: image
           widget: image
+          media_folder: /src/assets/images/sections/
+          public_folder: /assets/images/sections/
           required: false
           hint: Custom upload — overrides preset if set.
         - label: Image Alt
@@ -307,7 +317,7 @@ collections:
               value: ''
             - label: small
               value: small
-            default: ''
+            default: teal
       - label: Text
         name: text
         widget: object
@@ -874,6 +884,8 @@ collections:
         - label: Image
           name: image
           widget: image
+          media_folder: /src/assets/images/sections/
+          public_folder: /assets/images/sections/
           required: false
           hint: Custom upload — overrides preset if set.
         - label: Image Alt
@@ -962,6 +974,12 @@ collections:
             - label: bottom
               value: bottom
             default: right
+          - label: Open image in dialog
+            name: lightbox
+            widget: boolean
+            required: false
+            default: false
+            hint: Click the image to enlarge it (same as gallery).
       - label: Accordion
         name: accordion
         widget: object
@@ -1705,6 +1723,8 @@ collections:
           - label: Image
             name: image
             widget: image
+            media_folder: /src/assets/images/sections/
+            public_folder: /assets/images/sections/
           - label: Alt
             name: alt
             widget: string
@@ -1884,6 +1904,8 @@ collections:
         - label: Image
           name: image
           widget: image
+          media_folder: /src/assets/images/sections/
+          public_folder: /assets/images/sections/
           required: false
           hint: Custom upload — overrides preset if set.
         - label: Footer
@@ -1989,7 +2011,7 @@ collections:
                 value: divider/soft-invert
               - label: Waves
                 value: divider/waves
-            default: ''
+            default: teal
           - label: Divider (bottom)
             name: divider
             widget: select
@@ -2016,7 +2038,7 @@ collections:
                 value: ''
               - label: small
                 value: small
-            default: ''
+            default: teal
 - name: blog
   label: Posts
   label_singular: Post
@@ -2066,7 +2088,8 @@ collections:
   create: false
   extension: njk
   format: frontmatter
-  media_folder: /src/assets/images/backgrounds/
+  media_folder: /src/assets/images/sections/
+  public_folder: /assets/images/sections/
   files:
   - file: src/pages/blog.njk
     label: Insights
@@ -2214,6 +2237,8 @@ collections:
         - label: Image
           name: image
           widget: image
+          media_folder: /src/assets/images/sections/
+          public_folder: /assets/images/sections/
           required: false
           hint: Custom upload — overrides preset if set.
         - label: Image Alt
@@ -2370,7 +2395,7 @@ collections:
               value: ''
             - label: small
               value: small
-            default: ''
+            default: teal
       - label: Text
         name: text
         widget: object
@@ -2937,6 +2962,8 @@ collections:
         - label: Image
           name: image
           widget: image
+          media_folder: /src/assets/images/sections/
+          public_folder: /assets/images/sections/
           required: false
           hint: Custom upload — overrides preset if set.
         - label: Image Alt
@@ -3025,6 +3052,12 @@ collections:
             - label: bottom
               value: bottom
             default: right
+          - label: Open image in dialog
+            name: lightbox
+            widget: boolean
+            required: false
+            default: false
+            hint: Click the image to enlarge it (same as gallery).
       - label: Accordion
         name: accordion
         widget: object
@@ -3768,6 +3801,8 @@ collections:
           - label: Image
             name: image
             widget: image
+            media_folder: /src/assets/images/sections/
+            public_folder: /assets/images/sections/
           - label: Alt
             name: alt
             widget: string
@@ -3947,6 +3982,8 @@ collections:
         - label: Image
           name: image
           widget: image
+          media_folder: /src/assets/images/sections/
+          public_folder: /assets/images/sections/
           required: false
           hint: Custom upload — overrides preset if set.
         - label: Footer
@@ -4132,7 +4169,8 @@ collections:
   create: false
   extension: njk
   format: frontmatter
-  media_folder: /src/assets/images/team/
+  media_folder: /src/assets/images/sections/
+  public_folder: /assets/images/sections/
   files:
   - file: src/pages/about.njk
     label: About
@@ -4265,6 +4303,8 @@ collections:
         - label: Image
           name: image
           widget: image
+          media_folder: /src/assets/images/sections/
+          public_folder: /assets/images/sections/
           required: false
           hint: Custom upload — overrides preset if set.
         - label: Image Alt
@@ -4955,7 +4995,7 @@ collections:
               value: navy
             - label: neutral
               value: neutral
-            default: teal
+            default: ''
             hint: Decorative SVG only — independent of Accent (timeline + title line 2)
           - label: Alignment
             name: align
@@ -4988,6 +5028,8 @@ collections:
         - label: Image
           name: image
           widget: image
+          media_folder: /src/assets/images/sections/
+          public_folder: /assets/images/sections/
           required: false
           hint: Custom upload — overrides preset if set.
         - label: Image Alt
@@ -5076,6 +5118,12 @@ collections:
             - label: bottom
               value: bottom
             default: right
+          - label: Open image in dialog
+            name: lightbox
+            widget: boolean
+            required: false
+            default: false
+            hint: Click the image to enlarge it (same as gallery).
       - label: Accordion
         name: accordion
         widget: object
@@ -5819,6 +5867,8 @@ collections:
           - label: Image
             name: image
             widget: image
+            media_folder: /src/assets/images/sections/
+            public_folder: /assets/images/sections/
           - label: Alt
             name: alt
             widget: string
@@ -5998,6 +6048,8 @@ collections:
         - label: Image
           name: image
           widget: image
+          media_folder: /src/assets/images/sections/
+          public_folder: /assets/images/sections/
           required: false
           hint: Custom upload — overrides preset if set.
         - label: Footer
@@ -6200,6 +6252,8 @@ collections:
   create: false
   extension: njk
   format: frontmatter
+  media_folder: /src/assets/images/sections/
+  public_folder: /assets/images/sections/
   files:
   - file: src/pages/our-process.njk
     label: Our Process
@@ -6332,6 +6386,8 @@ collections:
         - label: Image
           name: image
           widget: image
+          media_folder: /src/assets/images/sections/
+          public_folder: /assets/images/sections/
           required: false
           hint: Custom upload — overrides preset if set.
         - label: Image Alt
@@ -7000,7 +7056,7 @@ collections:
               value: navy
             - label: neutral
               value: neutral
-            default: teal
+            default: ''
             hint: Decorative SVG only — independent of Accent (timeline + title line 2)
           - label: Alignment
             name: align
@@ -7033,6 +7089,8 @@ collections:
         - label: Image
           name: image
           widget: image
+          media_folder: /src/assets/images/sections/
+          public_folder: /assets/images/sections/
           required: false
           hint: Custom upload — overrides preset if set.
         - label: Image Alt
@@ -7121,6 +7179,12 @@ collections:
             - label: bottom
               value: bottom
             default: right
+          - label: Open image in dialog
+            name: lightbox
+            widget: boolean
+            required: false
+            default: false
+            hint: Click the image to enlarge it (same as gallery).
       - label: Accordion
         name: accordion
         widget: object
@@ -7780,6 +7844,8 @@ collections:
           - label: Image
             name: image
             widget: image
+            media_folder: /src/assets/images/sections/
+            public_folder: /assets/images/sections/
           - label: Alt
             name: alt
             widget: string
@@ -7959,6 +8025,8 @@ collections:
         - label: Image
           name: image
           widget: image
+          media_folder: /src/assets/images/sections/
+          public_folder: /assets/images/sections/
           required: false
           hint: Custom upload — overrides preset if set.
         - label: Footer
@@ -8098,6 +8166,8 @@ collections:
   create: false
   extension: njk
   format: frontmatter
+  media_folder: /src/assets/images/sections/
+  public_folder: /assets/images/sections/
   files:
   - file: src/pages/careers.njk
     label: Careers
@@ -8227,6 +8297,8 @@ collections:
         - label: Image
           name: image
           widget: image
+          media_folder: /src/assets/images/sections/
+          public_folder: /assets/images/sections/
           required: false
           hint: Custom upload — overrides preset if set.
         - label: Image Alt
@@ -8917,7 +8989,7 @@ collections:
               value: navy
             - label: neutral
               value: neutral
-            default: teal
+            default: ''
             hint: Decorative SVG only — independent of Accent (timeline + title line 2)
           - label: Alignment
             name: align
@@ -8950,6 +9022,8 @@ collections:
         - label: Image
           name: image
           widget: image
+          media_folder: /src/assets/images/sections/
+          public_folder: /assets/images/sections/
           required: false
           hint: Custom upload — overrides preset if set.
         - label: Image Alt
@@ -9038,6 +9112,12 @@ collections:
             - label: bottom
               value: bottom
             default: right
+          - label: Open image in dialog
+            name: lightbox
+            widget: boolean
+            required: false
+            default: false
+            hint: Click the image to enlarge it (same as gallery).
       - label: Accordion
         name: accordion
         widget: object
@@ -9781,6 +9861,8 @@ collections:
           - label: Image
             name: image
             widget: image
+            media_folder: /src/assets/images/sections/
+            public_folder: /assets/images/sections/
           - label: Alt
             name: alt
             widget: string
@@ -9960,6 +10042,8 @@ collections:
         - label: Image
           name: image
           widget: image
+          media_folder: /src/assets/images/sections/
+          public_folder: /assets/images/sections/
           required: false
           hint: Custom upload — overrides preset if set.
         - label: Footer
@@ -10101,6 +10185,8 @@ collections:
   extension: njk
   format: frontmatter
   slug: '{{slug}}'
+  media_folder: /src/assets/images/sections/
+  public_folder: /assets/images/sections/
   fields:
   - label: Title
     name: title
@@ -10224,6 +10310,8 @@ collections:
       - label: Image
         name: image
         widget: image
+        media_folder: /src/assets/images/sections/
+        public_folder: /assets/images/sections/
         required: false
         hint: Custom upload — overrides preset if set.
       - label: Image Alt
@@ -10914,7 +11002,7 @@ collections:
             value: navy
           - label: neutral
             value: neutral
-          default: teal
+          default: ''
           hint: Decorative SVG only — independent of Accent (timeline + title line 2)
         - label: Alignment
           name: align
@@ -10947,6 +11035,8 @@ collections:
       - label: Image
         name: image
         widget: image
+        media_folder: /src/assets/images/sections/
+        public_folder: /assets/images/sections/
         required: false
         hint: Custom upload — overrides preset if set.
       - label: Image Alt
@@ -11035,6 +11125,12 @@ collections:
           - label: bottom
             value: bottom
           default: right
+        - label: Open image in dialog
+          name: lightbox
+          widget: boolean
+          required: false
+          default: false
+          hint: Click the image to enlarge it (same as gallery).
     - label: Accordion
       name: accordion
       widget: object
@@ -11778,6 +11874,8 @@ collections:
         - label: Image
           name: image
           widget: image
+          media_folder: /src/assets/images/sections/
+          public_folder: /assets/images/sections/
         - label: Alt
           name: alt
           widget: string
@@ -11957,6 +12055,8 @@ collections:
       - label: Image
         name: image
         widget: image
+        media_folder: /src/assets/images/sections/
+        public_folder: /assets/images/sections/
         required: false
         hint: Custom upload — overrides preset if set.
       - label: Footer

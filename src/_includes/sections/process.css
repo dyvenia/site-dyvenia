@@ -1,4 +1,6 @@
 .section-process__split {
+  --region-space-bottom: var(--space-s);
+
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   padding-inline: var(--gap);
@@ -18,8 +20,13 @@
   color: var(--section-accent, var(--color-teal));
 }
 
-/* SVG color — independent of classic accent (title2 / timeline) */
+/* SVG color — independent of accent (title2 / timeline) */
 .section-process {
+  --section-decoration: var(--color-teal);
+  --section-accent-ink: var(--color-gray-100);
+}
+
+.section-process[data-section-decoration='teal'] {
   --section-decoration: var(--color-teal);
 }
 
@@ -39,6 +46,14 @@
 .section-process[data-section-theme='teal-dark'][data-section-decoration='neutral'],
 .section-process[data-section-theme='navy'][data-section-decoration='neutral'] {
   --section-decoration: var(--color-gray-100);
+}
+
+/* Light accent markers (e.g. gray-dark + neutral) need dark digits */
+.section-process[data-section-theme='gray-dark'][data-section-accent='neutral'],
+.section-process[data-section-theme='teal-dark'][data-section-accent='neutral'],
+.section-process[data-section-theme='navy'][data-section-accent='neutral'],
+.section-process[data-section-theme='teal-dark']:not([data-section-accent]) {
+  --section-accent-ink: var(--color-gray-900);
 }
 
 .section-process__decoration {
@@ -114,7 +129,7 @@
   block-size: calc(var(--space-s) * 2);
   inline-size: calc(var(--space-s) * 2);
   background: var(--section-accent, var(--color-teal));
-  color: var(--color-gray-100);
+  color: var(--section-accent-ink, var(--color-gray-100));
   font-size: var(--size-step-2);
   font-weight: var(--font-medium);
   display: flex;

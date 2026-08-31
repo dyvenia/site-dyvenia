@@ -3,6 +3,7 @@
    width content|feature: both inside that measure
    width full: copy stays in feature band; media breaks out (side edge or full-bleed below)
    media_side: left | right | bottom
+   appearance.lightbox: open image in dialog on click (same pattern as gallery)
    Do not wrap {% image %} / {% svg %} in macros — they cannot await. #}
 {% css "local" %}
   {% include "css/sections/feature.css" %}
@@ -20,8 +21,15 @@
 {% endif %}
 {% set mediaSide = a.media_side or s.media_side or "right" %}
 {% set widthClass = sectionWidthClass(width) %}
+{% set lightbox = a.lightbox if a.lightbox is defined else s.lightbox %}
 
-<div class="section-feature | wrapper" {{ sectionThemeAttr(theme) }}{{ sectionAccentAttr(accent) }} data-feature-width="{{ width }}" data-media-side="{{ mediaSide }}"{% if s.id %} id="{{ s.id }}"{% endif %}>
+{% if lightbox and s.image %}
+  {% js "defer" %}
+    {% include "scripts/feature-lightbox.js" %}
+  {% endjs %}
+{% endif %}
+
+<div class="section-feature | wrapper" {{ sectionThemeAttr(theme) }}{{ sectionAccentAttr(accent) }} data-feature-width="{{ width }}" data-media-side="{{ mediaSide }}"{% if lightbox %} data-feature-lightbox="true"{% endif %}{% if s.id %} id="{{ s.id }}"{% endif %}>
   <div class="full wrapper section">
     {% if width == "full" %}
       <div class="section-feature__copy | flow prose region">
@@ -35,7 +43,24 @@
       </div>
       {% if s.image %}
         <div class="section-feature__media">
-          {% image s.image, s.image_alt or "", s.caption or "" %}
+          {% if lightbox %}
+            <is-land on:idle>
+              <div class="gallery">
+                <dialog class="flow">
+                  <button type="button" class="button" autofocus>Close</button>
+                  {% image s.image, s.image_alt or "", s.caption or "" %}
+                </dialog>
+                <button type="button" data-lightbox-trigger>
+                  {% image s.image, s.image_alt or "", "" %}
+                </button>
+              </div>
+            </is-land>
+            {% if s.caption %}
+              <p class="section-feature__caption">{{ s.caption }}</p>
+            {% endif %}
+          {% else %}
+            {% image s.image, s.image_alt or "", s.caption or "" %}
+          {% endif %}
         </div>
       {% endif %}
     {% else %}
@@ -52,7 +77,24 @@
           </div>
           {% if s.image %}
             <div class="section-feature__media">
-              {% image s.image, s.image_alt or "", s.caption or "" %}
+              {% if lightbox %}
+                <is-land on:idle>
+                  <div class="gallery">
+                    <dialog class="flow">
+                      <button type="button" class="button" autofocus>Close</button>
+                      {% image s.image, s.image_alt or "", s.caption or "" %}
+                    </dialog>
+                    <button type="button" data-lightbox-trigger>
+                      {% image s.image, s.image_alt or "", "" %}
+                    </button>
+                  </div>
+                </is-land>
+                {% if s.caption %}
+                  <p class="section-feature__caption">{{ s.caption }}</p>
+                {% endif %}
+              {% else %}
+                {% image s.image, s.image_alt or "", s.caption or "" %}
+              {% endif %}
             </div>
           {% endif %}
         </div>
