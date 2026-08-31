@@ -1,142 +1,195 @@
 ---
 title: Enterprise Data Core
 description: Standardize entities, events, metrics, and business logic so every team trusts the same numbers.
+layout: modular
+bodyClass: solutions
 sections:
-- type: hero
-  title: One trusted representation of your business.
-  subtitle: |-
-    Your systems contain the data. We turn it into a consistent business model by standardizing entities, events, metrics, and logic. The result is a single, trusted foundation for reporting, analytics, and AI that everyone can rely on.
-  button_text: Schedule a discovery call
-  button_target: https://meetings-eu1.hubspot.com/alessio-civitillo/book-a-call
-  image: ./src/assets/images/backgrounds/sfondi-8-high.jpg
-  appearance:
-    theme: gray-dark
-    accent: teal
-    align: left
-    height: tall
-    background: navy-dark
-- type: statement
-  title: Your business shouldn't have multiple versions of the truth.
-  subtitle: |-
-    Your ERP tracks orders, your CRM manages customers, finance calculates margins, and operations monitors inventory. While each system is correct in its own silo, none represents the business as a whole.
+  - type: hero
+    internal_name: ''
+    title: One trusted representation of your business.
+    subtitle: Your systems contain the data. We turn it into a consistent business model by standardizing entities, events, metrics, and logic. The result is a single, trusted foundation for reporting, analytics, and AI that everyone can rely on.
+    button_text: Schedule a discovery call
+    button_target: https://meetings-eu1.hubspot.com/alessio-civitillo/book-a-call
+    preset_image: ./src/assets/images/backgrounds/sfondi-dyvenia14.jpg
+    image: ''
+    image_alt: ''
+    video: null
+    appearance:
+      theme: background-accent
+      accent: teal
+      align: left
+      height: tall
+      background: gray-200
+      content_block: center
+      divider: divider/soft-invert
+      divider_class: ''
+  - type: statement
+    internal_name: ''
+    title: Your business shouldn't have multiple versions of the truth.
+    subtitle: |-
+      Your ERP tracks orders, your CRM manages customers, finance calculates margins, and operations monitors inventory. While each system is correct in its own silo, none represents the business as a whole.
 
-    Consequently, teams spend more time reconciling conflicting numbers than making decisions. The breakdown isn't in your reporting tools; it's the absence of a shared, centralized business model beneath them.
-  appearance:
-    theme: navy
-    align: left
-- type: text
-  title: Decisions depend on shared business context
-  content: |-
-    Before you can trust a KPI, forecast demand, or deploy AI, your organization must agree on fundamental questions:
+      Consequently, teams spend more time reconciling conflicting numbers than making decisions. The breakdown isn't in your reporting tools; it's the absence of a shared, centralized business model beneath them.
+    appearance:
+      theme: background-accent
+      accent: default
+      align: center
+      width: content
+      body_size: default
+    decoration: ''
+    eyebrow: ''
+  - type: text
+    internal_name: ''
+    title: Decisions depend on shared business context
+    appearance:
+      theme: background-default
+      accent: default
+      align: left
+      width: feature
+      title_size: small
+      body_size: default
+    content: |-
+      Before you can trust a KPI, forecast demand, or deploy AI, your organization must agree on **fundamental questions:**
 
-    What exactly defines a customer?
-    When is revenue officially recognized?
-    How is the margin calculated across different channels?
+      When these answers differ by department, downstream insights become impossible to trust. The Enterprise Data Core establishes these definitions once and embeds them directly into your data model, ensuring absolute consistency across reporting, analytics, and AI.
+    content_left: |-
+      - What exactly defines a customer?
+      - When is revenue officially recognized?
+      - How is the margin calculated across different channels?
+    content_right: When these answers differ by department, downstream insights become impossible to trust. The **Enterprise Data Core** establishes these definitions once and embeds them directly into your data model, ensuring absolute consistency across reporting, analytics, and AI.
+    decoration: brand/stack
+  - type: process
+    internal_name: ''
+    title: We model the business, not just the data
+    subtitle: 'We design your data core around dimensional modeling principles because they mirror how your business actually operates. Instead of organizing data by application, we organize it by:'
+    appearance:
+      theme: teal
+      accent: default
+      align: left
+      decoration_accent: neutral
+    decoration: brand/brick
+    items:
+      - title: Business Events
+        content: The measurable activities that drive your company (sales, orders, shipments, inventory movements). These become the facts.
+      - title: Business Entities
+        content: The context around those activities (customers, products, suppliers, locations). These become the dimensions.
+      - title: Business Rules
+        content: The calculations, definitions, and relationships that measure performance. We embed this logic directly into the data model rather than duplicating it across dozens of isolated dashboards.
+    title1: We model the business
+    title2: not just the data
+  - type: feature
+    internal_name: ''
+    title: What 'good' looks like
+    button_text: ''
+    button_target: ''
+    image: ./src/assets/images/data-marts.png
+    image_alt: ''
+    appearance:
+      theme: background-default
+      accent: teal
+      width: feature
+      media_side: bottom
+      lightbox: false
+    content: |-
+      Businesses don't make decisions based on raw database tables; they make them based on events and entities.
 
-    When these answers differ by department, downstream insights become impossible to trust. The Enterprise Data Core establishes these definitions once and embeds them directly into your data model, ensuring absolute consistency across reporting, analytics, and AI.
-  appearance:
-    width: feature
-    align: left
-- type: process
-  title: We model the business, not just the data
-  subtitle: |-
-    We design your data core around dimensional modeling principles because they mirror how your business actually operates. Instead of organizing data by application, we organize it by:
-  decoration: brand/medusa-organic
-  items:
-  - title: Business Events
-    content: The measurable activities that drive your company (sales, orders, shipments, inventory movements). These become the facts.
-  - title: Business Entities
-    content: The context around those activities (customers, products, suppliers, locations). These become the dimensions.
-  - title: Business Rules
-    content: The calculations, definitions, and relationships that measure performance. We embed this logic directly into the data model rather than duplicating it across dozens of isolated dashboards.
-  appearance:
-    theme: background-default
-- type: feature
-  title: What 'good' looks like
-  content: |-
-    Businesses don't make decisions based on raw database tables; they make them based on events and entities.
-
-    By organizing data around core business concepts instead of individual application schemas, we build an Enterprise Data Core that remains intuitive, easily traceable, and reusable across all downstream reporting and AI applications.
-  image: ./src/assets/images/data-marts.png
-  appearance:
-    accent: teal
-    width: feature
-    media_side: bottom
-- type: services
-  title: Enterprise Data Core Services
-  decoration: brand/arrows
-  items:
-  - title: Business Discovery & Process Modeling
-    description: We start with the decisions your business needs to make and map the processes, entities, and events that drive them.
-  - title: Enterprise Dimensional Modeling
-    description: Designing intuitive, highly performant fact and dimension models based on proven Kimball principles.
-  - title: Centralized Metrics & Logic
-    description: Standardizing KPI definitions and embedding business rules directly into the data layer.
-  - title: Conformed Enterprise Models
-    description: Connecting finance, operations, sales, and supply chain into one unified, cross-functional view.
-  - title: Analytics & Semantic Foundations
-    description: Building clean, reporting-ready models to power executive dashboards, self-service BI, and AI.
-  - title: Lineage & Traceability
-    description: Ensuring every metric can be traced directly back to its source system, giving your teams ultimate confidence in the numbers.
-  appearance:
-    theme: navy
-- type: list
-  title: 'Signs your business has outgrown its current data model:'
-  items:
-  - Different departments report conflicting numbers for the same KPIs.
-  - Business logic is hidden inside individual spreadsheets or dashboard files.
-  - Data models are organized around database schemas rather than real-world business processes.
-  - Combining data from ERP, CRM, and operational systems requires manual, repetitive reconciliation.
-  - AI initiatives produce unreliable or conflicting outputs because they lack standardized business definitions.
-  appearance:
-    width: feature
-    variant: stack
-    checks: true
-    theme: background-accent
-- type: process
-  title: 'What changes for your business:'
-  decoration: brand/check
-  items:
-  - title: One shared language
-    content: Core entities like "customer" or "product" mean the exact same thing to every team.
-  - title: Metrics everyone trusts
-    content: Key metrics are defined once, governed centrally, and reused everywhere.
-  - title: Decisions, not reconciliations
-    content: Teams spend zero time arguing over whose data is correct and more time acting on insights.
-  - title: AI with business context
-    content: Your AI models operate on the same governed business logic as your analysts, minimizing hallucinations and conflicting outputs.
-  - title: A future-proof model
-    content: When operational systems change, your central business model preserves continuity without breaking downstream reports.
-  appearance:
-    theme: background-default
-- type: accordion
-  title: FAQ
-  button_text: Book a call
-  button_target: https://meetings-eu1.hubspot.com/alessio-civitillo/book-a-call
-  items:
-  - title: What is an Enterprise Data Core?
-    content: It is a unified, structured representation of your business. It organizes your data around real business events and entities, creating a single, trusted logic layer for all reporting, analytics, and AI.
-  - title: How is it different from a data warehouse?
-    content: A data warehouse stores and integrates raw data. An Enterprise Data Core adds standardized business context, metrics, and rules. This ensures everyone queries the same defined logic rather than writing their own rules in separate tools.
-  - title: How does it support AI?
-    content: AI is only as good as the context it is given. By standardizing your business entities and metrics, the Enterprise Data Core provides AI models with clean, structured, and explainable data, drastically reducing errors and manual validation.
-  - title: Why do you use dimensional modeling?
-    content: Dimensional modeling provides a simple, scalable way to represent how a business operates. Organizing data around business events (facts) and business entities (dimensions), it creates models that are intuitive, performant, and easy to use for reporting, analytics, and AI.
-  - title: Can you combine data from multiple systems?
-    content: Yes. We integrate data from ERP, CRM, EPM, operational systems, and third-party applications into a single, consistent business model, enabling analysis across systems rather than within individual applications.
-  - title: Is the Enterprise Data Core only for reporting?
-    content: No. While it improves reporting and analytics, it also provides the trusted, governed context needed for AI, automation, planning, and operational applications.
-  appearance:
-    accent: teal
-    width: feature
-- type: cta
-  title: Build a metrics core your business can trust
-  subtitle: Let's align your definitions, systems, and decisions.
-  button_text: Schedule a discovery call
-  button_target: https://meetings-eu1.hubspot.com/alessio-civitillo/book-a-call
-  image: ./src/assets/images/backgrounds/sfondi-dyvenia04.jpg
-  appearance:
-    theme: gray-dark
-    accent: navy
-    align: left
+      By organizing data around core business concepts instead of individual application schemas, we build an Enterprise Data Core that remains intuitive, easily traceable, and reusable across all downstream reporting and AI applications.
+    caption: ''
+  - type: services
+    internal_name: ''
+    title: Enterprise Data Core Services
+    appearance:
+      theme: background-accent
+      accent: default
+      width: content
+    decoration: brand/arrows
+    items:
+      - title: Business Discovery & Process Modeling
+        prefix: ''
+        description: We start with the decisions your business needs to make and map the processes, entities, and events that drive them.
+      - title: Enterprise Dimensional Modeling
+        prefix: ''
+        description: Designing intuitive, highly performant fact and dimension models based on proven Kimball principles.
+      - title: Centralized Metrics & Logic
+        prefix: ''
+        description: Standardizing KPI definitions and embedding business rules directly into the data layer.
+      - title: Conformed Enterprise Models
+        prefix: ''
+        description: Connecting finance, operations, sales, and supply chain into one unified, cross-functional view.
+      - title: Analytics & Semantic Foundations
+        prefix: ''
+        description: Building clean, reporting-ready models to power executive dashboards, self-service BI, and AI.
+      - title: Lineage & Traceability
+        prefix: ''
+        description: Ensuring every metric can be traced directly back to its source system, giving your teams ultimate confidence in the numbers.
+  - type: list
+    internal_name: ''
+    title: 'Signs your business has outgrown its current data model:'
+    appearance:
+      theme: gray-dark
+      accent: purple
+      align: left
+      width: feature
+      variant: stack
+      checks: false
+      bordered: true
+    content: ''
+    items:
+      - title: Different departments report conflicting numbers for the same KPIs.
+        content: ''
+      - title: Business logic is hidden inside individual spreadsheets or dashboard files.
+        content: ''
+      - title: Data models are organized around database schemas rather than real-world business processes.
+        content: ''
+      - title: Combining data from ERP, CRM, and operational systems requires manual, repetitive reconciliation.
+        content: ''
+      - title: AI initiatives produce unreliable or conflicting outputs because they lack standardized business definitions.
+        content: ''
+  - type: process
+    internal_name: ''
+    title: 'What changes for your business:'
+    subtitle: ''
+    appearance:
+      theme: background-accent
+      accent: default
+      align: left
+      decoration_accent: neutral
+    decoration: brand/forward
+    items:
+      - title: One shared language
+        content: Core entities like "customer" or "product" mean the exact same thing to every team.
+      - title: Metrics everyone trusts
+        content: Key metrics are defined once, governed centrally, and reused everywhere.
+      - title: Decisions, not reconciliations
+        content: Teams spend zero time arguing over whose data is correct and more time acting on insights.
+      - title: AI with business context
+        content: Your AI models operate on the same governed business logic as your analysts, minimizing hallucinations and conflicting outputs.
+      - title: A future-proof model
+        content: When operational systems change, your central business model preserves continuity without breaking downstream reports.
+    title1: ''
+    title2: ''
+  - type: accordion
+    internal_name: ''
+    title: FAQ
+    button_text: Book a call
+    button_target: https://meetings-eu1.hubspot.com/alessio-civitillo/book-a-call
+    appearance:
+      theme: background-default
+      accent: teal
+      align: left
+      width: feature
+    items:
+      - title: What is an Enterprise Data Core?
+        content: It is a unified, structured representation of your business. It organizes your data around real business events and entities, creating a single, trusted logic layer for all reporting, analytics, and AI.
+      - title: How is it different from a data warehouse?
+        content: A data warehouse stores and integrates raw data. An Enterprise Data Core adds standardized business context, metrics, and rules. This ensures everyone queries the same defined logic rather than writing their own rules in separate tools.
+      - title: How does it support AI?
+        content: AI is only as good as the context it is given. By standardizing your business entities and metrics, the Enterprise Data Core provides AI models with clean, structured, and explainable data, drastically reducing errors and manual validation.
+      - title: Why do you use dimensional modeling?
+        content: Dimensional modeling provides a simple, scalable way to represent how a business operates. Organizing data around business events (facts) and business entities (dimensions), it creates models that are intuitive, performant, and easy to use for reporting, analytics, and AI.
+      - title: Can you combine data from multiple systems?
+        content: Yes. We integrate data from ERP, CRM, EPM, operational systems, and third-party applications into a single, consistent business model, enabling analysis across systems rather than within individual applications.
+      - title: Is the Enterprise Data Core only for reporting?
+        content: No. While it improves reporting and analytics, it also provides the trusted, governed context needed for AI, automation, planning, and operational applications.
+    intro: ''
 ---
