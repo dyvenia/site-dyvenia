@@ -3,8 +3,8 @@
    Width always feature; no align control. #}
 {% css "local" %}
   {% include "css/custom-card.css" %}
+  {% include "css/sections/team.css" %}
 {% endcss %}
-
 {% from "sections/_shell.njk" import sectionThemeAttr, sectionAccentAttr %}
 
 {% set s = section %}
@@ -15,7 +15,10 @@
 {% set headerLayout = a.header_layout or s.header_layout or "stack" %}
 {% set orderedTeamMembers = collections.team_members | sortByOrderIndex %}
 
-<div class="section-team | wrapper" {{ sectionThemeAttr(theme) }}{{ sectionAccentAttr(accent) }}{% if s.id %} id="{{ s.id }}"{% endif %}>
+<div
+  class="section-team | wrapper"
+  {{ sectionThemeAttr(theme) }}{{ sectionAccentAttr(accent) }}{% if s.id %}id="{{ s.id }}"{% endif %}
+>
   <div class="full wrapper section">
     <article class="feature | section__inner region">
       {% if s.title or s.content or s.intro %}
@@ -36,7 +39,10 @@
         {% endif %}
       {% endif %}
 
-      <div class="grid team {% if s.title or s.content or s.intro %}mt-xl-2xl{% else %}mt-m-l{% endif %}" data-layout="thirds">
+      <div
+        class="grid team {% if s.title or s.content or s.intro %}mt-xl-2xl{% else %}mt-m-l{% endif %}"
+        data-layout="thirds"
+      >
         {% for member in orderedTeamMembers %}
           {% if filterKey == "all" or member.data[filterKey] %}
             <custom-card clickable small-padding img-3-2>
