@@ -1,6 +1,7 @@
 {# section.type: cta — expects `section` in scope #}
 {% css "local" %}
   {% include "css/page-header.css" %}
+  {% include "css/media-background.css" %}
 {% endcss %}
 
 {% from "sections/_shell.njk" import sectionAlignClass, sectionThemeAttr, sectionAccentAttr, sectionButtonAttr %}
@@ -11,16 +12,19 @@
 {% set accent = a.accent if a.accent is defined else s.accent %}
 {% set align = a.align if a.align is defined else s.align %}
 {% set alignClass = sectionAlignClass(align or "center") %}
+{% set mediaImage = s.image or s.preset_image %}
+{% set mediaBackground = a.background or s.background or "teal-800" %}
 
 <div
   class="section-cta | section page-header"
   {% if s.id %}id="{{ s.id }}"{% endif %}
   {{ sectionThemeAttr(theme) }}{{ sectionAccentAttr(accent) }}
+  {% if mediaImage %}data-hero-background="{{ mediaBackground }}"{% endif %}
 >
   {% svg "divider/soft-top", null, "seperator" %}
 
-  {% if s.image %}
-    {% image s.image, "" %}
+  {% if mediaImage %}
+    {% image mediaImage, "" %}
   {% endif %}
 
   <div>

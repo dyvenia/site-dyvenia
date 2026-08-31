@@ -20,63 +20,63 @@ export default {
   docs: {
     hero: {
       title: 'hero',
-      body: 'Page opener with media, title, subtitle, and CTA. Theme drives surface + text contrast and the default CTA; accent overrides the button color.'
+      body: ''
     },
     text: {
       title: 'text',
-      body: 'Prose block — full-width content and/or split columns. Optional brand decoration as a watermark behind copy. Width: content or feature. Title size: default or small. Body size: default or large. Bold text uses the section accent.'
+      body: ''
     },
     statement: {
       title: 'statement',
-      body: 'Title band with optional eyebrow, support text, and decoration. With an eyebrow, the title uses the section accent (former goal). Width: content or feature. Body size: default or small. Defaults to theme teal.'
+      body: ''
     },
     list: {
       title: 'list',
-      body: 'Variants: definition (bold accent title + body) and stack (plain stacked title + content). Optional checks + borders on both. Width: content or feature.'
+      body: ''
     },
     process: {
       title: 'process',
-      body: 'Numbered delivery timeline with optional SVG decoration. Uses title1/title2 or a single title.'
+      body: ''
     },
     feature: {
       title: 'feature',
-      body: 'Text + media split. media_side: left or right. Width feature keeps both in measure; full breaks media out to the edge while copy stays in feature. No align.'
+      body: ''
     },
     accordion: {
       title: 'accordion',
-      body: 'FAQ / expandable details with optional intro and CTA. Expand/collapse controls are included. Theme and width follow the shared shell.'
+      body: ''
     },
     cta: {
       title: 'cta',
-      body: 'Closing or mid-page band (page-header pattern) with image treatment, title, subtitle, and button. Defaults to theme gray-dark.'
+      body: ''
     },
     posts: {
       title: 'posts',
-      body: 'Latest insights cards from the posts collection. Options: count, card_layout (grid | masonry), optional title link.'
+      body: ''
     },
     team: {
       title: 'team',
-      body: 'People grid from team_members. filter defaults to show_on_about; header_layout thirds matches the home about band.'
+      body: ''
     },
     form: {
       title: 'form',
-      body: 'HubSpot newsletter band. Optional title/intro; form copy comes from site meta.'
+      body: ''
     },
     services: {
       title: 'services',
-      body: 'Stacked service rows (prefix + title + markdown). Optional full-bleed background image and/or decorative SVG (e.g. arrows) — both can be used together.'
+      body: ''
     },
     tabs: {
       title: 'tabs',
-      body: 'Multi-stage tabbed process (stage nav + step panels with what / outcomes). Distinct from the process timeline.'
+      body: ''
     },
     cases: {
       title: 'cases',
-      body: 'Case-study card strip (same card shell as posts). Renders empty when the case studies collection has no entries.'
+      body: ''
     },
     gallery: {
       title: 'gallery',
-      body: 'Modal image grid. Width: content or feature. Align center only centers the title.'
+      body: ''
     }
   },
   hero: {
@@ -184,14 +184,16 @@ export default {
     type: 'feature',
     appearance: {
       width: 'feature',
-      media_side: 'right'
+      media_side: 'bottom'
     },
     title: 'Metrics that travel with the platform',
     content:
       'We embed standardized definitions into your data models so every downstream tool inherits the same logic.',
     button_text: 'Talk to us',
     button_target: 'https://meetings-eu1.hubspot.com/alessio-civitillo/book-a-call',
-    image: './src/assets/images/backgrounds/jellyfish-hr.jpg'
+    image: './src/assets/images/backgrounds/jellyfish-hr.jpg',
+    image_alt: 'Jellyfish in deep water',
+    caption: 'Platform metrics stay consistent across every tool in the stack.'
   },
   accordion: {
     type: 'accordion',
@@ -219,7 +221,8 @@ export default {
     type: 'cta',
     appearance: {
       theme: 'gray-dark',
-      align: 'left'
+      align: 'left',
+      background: 'teal-800'
     },
     title: 'Ready to strengthen your data platform?',
     subtitle:

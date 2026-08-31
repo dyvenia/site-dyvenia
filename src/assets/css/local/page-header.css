@@ -1,6 +1,10 @@
 .page-header {
   display: grid;
   grid-template-columns: 1fr;
+  /* Media wash defaults; recipes on [data-hero-background] override via custom-hero.css */
+  --custom-hero-bg: var(--color-teal-800);
+  --hero-text: var(--color-gray-100);
+  --hero-text-muted: color-mix(in oklab, var(--hero-text) 95%, transparent);
 }
 
 /* Only intentional layers stack — not every accidental descendant */
@@ -18,7 +22,7 @@
 
 .page-header picture {
   --flow-space: 0;
-  background: var(--color-page-header-accent, var(--color-teal-accent-5));
+  background: var(--custom-hero-bg);
   mix-blend-mode: darken;
   block-size: max(25rem, 50vh);
   overflow: hidden;
@@ -62,6 +66,14 @@
 
 .page-header .wrapper > :is(p, h1, h2, h3) {
   color: var(--color-page-header-text, var(--color-text));
+}
+
+.page-header[data-hero-background] .wrapper > :is(p, h1, h2, h3) {
+  color: var(--hero-text);
+}
+
+.page-header[data-hero-background] .wrapper :is(.flow, .flow p) {
+  color: var(--hero-text-muted);
 }
 
 @media (min-width: 1000px) {

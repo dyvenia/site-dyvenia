@@ -19,8 +19,8 @@ export default {
   decorationAccents: ['teal', 'purple', 'navy', 'neutral'],
   widths: ['content', 'feature', 'full'],
   widthsMeasure: ['content', 'feature'],
-  widthsFeature: ['feature', 'full'],
-  mediaSides: ['left', 'right'],
+  widthsFeature: ['content', 'feature', 'full'],
+  mediaSides: ['left', 'right', 'bottom'],
   aligns: ['left', 'center'],
   textBodySizes: ['default', 'large'],
   textTitleSizes: ['default', 'small'],
@@ -46,7 +46,8 @@ export default {
       align: true,
       height: true,
       background: true,
-      content_block: true
+      content_block: true,
+      preset_image: true
     },
     text: {
       align: true,
@@ -106,7 +107,9 @@ export default {
       width: 'measure'
     },
     cta: {
-      align: true
+      align: true,
+      background: true,
+      preset_image: true
     }
   }
 };

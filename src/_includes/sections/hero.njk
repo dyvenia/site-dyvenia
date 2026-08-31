@@ -1,6 +1,7 @@
 {# section.type: hero — expects `section` in scope #}
 {% css "local" %}
   {% include "css/custom-hero.css" %}
+  {% include "css/media-background.css" %}
 {% endcss %}
 
 {% from "sections/_shell.njk" import sectionButtonAttr, sectionAccentAttr %}
@@ -17,12 +18,13 @@
 {% set heroInline = align or "center" %}
 {% set heroBlock = a.content_block or s.content_block or "center" %}
 {% set heroRegionSpace = s.region_space or "xl" %}
+{% set heroImage = s.image or s.preset_image %}
 {% set heroVideo = s.video %}
 
 <header
   class="section custom-hero section-hero"
   data-section-theme="{{ theme }}"{{ sectionAccentAttr(accent) }}
-  data-hero-media="{% if heroVideo %}video{% elif s.image %}image{% else %}none{% endif %}"
+  data-hero-media="{% if heroVideo %}video{% elif heroImage %}image{% else %}none{% endif %}"
   data-hero-height="{{ heroHeight }}"
   data-hero-background="{{ heroBackground }}"
   data-hero-content-inline="{{ heroInline }}"
@@ -44,7 +46,7 @@
         preload="metadata"
         aria-hidden="true"
         tabindex="-1"
-        {% if s.image %}poster="{% imagePosterUrl s.image %}"{% endif %}
+        {% if heroImage %}poster="{% imagePosterUrl heroImage %}"{% endif %}
       >
         {% if heroVideo.webm %}
           <source src="{{ heroVideo.webm | replace('./src', '') }}" type="video/webm" />
@@ -56,8 +58,8 @@
     </div>
   {% endif %}
 
-  {% if s.image and not heroVideo %}
-    {% image s.image, s.image_alt or s.alt or "", null, "eager" %}
+  {% if heroImage and not heroVideo %}
+    {% image heroImage, s.image_alt or s.alt or "", null, "eager" %}
   {% endif %}
 
   <div class="custom-hero__content | section__inner region region-space-{{ heroRegionSpace }}">

@@ -97,6 +97,25 @@
     </div>
   {% endif %}
 
+  {% if caps.preset_image %}
+    <div class="sg-preview__field | cluster">
+      <label for="sg-preset-image">Preset image</label>
+      <select id="sg-preset-image" data-sg-preset-image name="preset_image">
+        {% for opt in backgrounds.options %}
+          <option value="{{ opt.value }}">{{ opt.label }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    {# Pre-rendered pictures for live swap (eleventy-img is build-time) #}
+    <div hidden data-sg-preset-bank>
+      {% for opt in backgrounds.options %}
+        {% if opt.value %}
+          <template data-value="{{ opt.value }}">{% image opt.value, "", null, "lazy" %}</template>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% endif %}
+
   {% if caps.content_block %}
     <div class="sg-preview__field | cluster">
       <label for="sg-valign">Vertical align</label>

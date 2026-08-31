@@ -9,6 +9,8 @@
   const titleSizeSelect = document.querySelector('[data-sg-title-size]');
   const heightSelect = document.querySelector('[data-sg-height]');
   const mediaBgSelect = document.querySelector('[data-sg-media-bg]');
+  const presetImageSelect = document.querySelector('[data-sg-preset-image]');
+  const presetBank = document.querySelector('[data-sg-preset-bank]');
   const vAlignSelect = document.querySelector('[data-sg-valign]');
   const decorationSelect = document.querySelector('[data-sg-decoration]');
   const decorationAccentSelect = document.querySelector('[data-sg-decoration-accent]');
@@ -111,6 +113,60 @@
     });
   };
 
+  const clonePresetPicture = value => {
+    if (!presetBank || !value) return null;
+    const tpl = [...presetBank.querySelectorAll('template')].find(
+      t => t.getAttribute('data-value') === value
+    );
+    if (!tpl) return null;
+    return tpl.content.firstElementChild?.cloneNode(true) || null;
+  };
+
+  const mediaRoots = () => {
+    if (!demos) return [];
+    return demos.querySelectorAll('.custom-hero, .section-cta.page-header, .page-header');
+  };
+
+  const applyPresetImage = value => {
+    if (!demos || !presetImageSelect) return;
+    mediaRoots().forEach(root => {
+      if (root.getAttribute('data-hero-media') === 'video') return;
+      const oldPic = root.querySelector(':scope > picture');
+      if (!value) {
+        oldPic?.remove();
+        if (root.classList.contains('custom-hero')) {
+          root.setAttribute('data-hero-media', 'none');
+        } else {
+          root.removeAttribute('data-hero-background');
+        }
+        return;
+      }
+      const clone = clonePresetPicture(value);
+      if (!clone) return;
+      if (oldPic) oldPic.replaceWith(clone);
+      else {
+        const sep = root.querySelector(':scope > .seperator, :scope > .svg-divider, :scope > svg.seperator');
+        if (sep) sep.after(clone);
+        else root.prepend(clone);
+      }
+      if (root.classList.contains('custom-hero')) {
+        root.setAttribute('data-hero-media', 'image');
+      }
+      const bg = mediaBgSelect?.value || root.getAttribute('data-hero-background') || 'teal-800';
+      root.setAttribute('data-hero-background', bg);
+    });
+  };
+
+  const applyMediaBackground = value => {
+    if (!demos || !mediaBgSelect || !value) return;
+    mediaRoots().forEach(el => {
+      const hasMedia =
+        el.classList.contains('custom-hero') || el.querySelector(':scope > picture');
+      if (!hasMedia) return;
+      el.setAttribute('data-hero-background', value);
+    });
+  };
+
   const applyFeatureAppearance = () => {
     if (!demos) return;
     const root = demos.querySelector('.section-feature');
@@ -175,6 +231,31 @@
       if (vAlignSelect && block) vAlignSelect.value = block;
       if (inline && alignSelect && [...alignSelect.options].some(o => o.value === inline)) {
         alignSelect.value = inline;
+      }
+    }
+    const cta = demos.querySelector('.section-cta, .page-header');
+    if (cta && mediaBgSelect) {
+      const bg = cta.getAttribute('data-hero-background');
+      if (bg && [...mediaBgSelect.options].some(o => o.value === bg)) {
+        mediaBgSelect.value = bg;
+      }
+    }
+    if (presetImageSelect) {
+      const pic =
+        demos.querySelector('.custom-hero > picture img, .section-cta > picture img, .page-header > picture img') ||
+        demos.querySelector('.custom-hero img, .section-cta img, .page-header img');
+      // Match option by filename in generated src (name-650w.jpeg → jellyfish-hr)
+      const src = pic?.getAttribute('src') || '';
+      const match = [...presetImageSelect.options].find(o => {
+        if (!o.value) return false;
+        const base = o.value.split('/').pop()?.replace(/\.[^.]+$/, '');
+        return base && src.includes(base);
+      });
+      if (match) presetImageSelect.value = match.value;
+      else if (demos.querySelector('.custom-hero, .section-cta, .page-header')?.querySelector(':scope > picture')) {
+        /* keep first non-empty if we can't match */
+      } else {
+        presetImageSelect.value = '';
       }
     }
     const inner = demos.querySelector('.section__inner');
@@ -252,6 +333,7 @@
     if (titleSizeSelect) defaults.titleSize = titleSizeSelect.value;
     if (heightSelect) defaults.height = heightSelect.value;
     if (mediaBgSelect) defaults.mediaBg = mediaBgSelect.value;
+    if (presetImageSelect) defaults.presetImage = presetImageSelect.value;
     if (vAlignSelect) defaults.vAlign = vAlignSelect.value;
     if (decorationSelect) defaults.decoration = decorationSelect.value;
     if (decorationAccentSelect) defaults.decorationAccent = decorationAccentSelect.value;
@@ -278,6 +360,7 @@
     titleSize: titleSizeSelect?.value,
     height: heightSelect?.value,
     mediaBg: mediaBgSelect?.value,
+    presetImage: presetImageSelect?.value,
     vAlign: vAlignSelect?.value,
     decoration: decorationSelect?.value,
     decorationAccent: decorationAccentSelect?.value,
@@ -305,6 +388,13 @@
     if (stored.titleSize && titleSizeSelect) titleSizeSelect.value = stored.titleSize;
     if (stored.height && heightSelect) heightSelect.value = stored.height;
     if (stored.mediaBg && mediaBgSelect) mediaBgSelect.value = stored.mediaBg;
+    if (
+      stored.presetImage != null &&
+      presetImageSelect &&
+      [...presetImageSelect.options].some(o => o.value === stored.presetImage)
+    ) {
+      presetImageSelect.value = stored.presetImage;
+    }
     if (stored.vAlign && vAlignSelect) vAlignSelect.value = stored.vAlign;
     if (
       stored.decoration != null &&
@@ -487,6 +577,7 @@
     const titleSize = titleSizeSelect?.value;
     const height = heightSelect?.value;
     const mediaBg = mediaBgSelect?.value;
+    const presetImage = presetImageSelect?.value;
     const vAlign = vAlignSelect?.value;
     const decoration = decorationSelect?.value;
     const decorationAccent = decorationAccentSelect?.value;
@@ -514,9 +605,11 @@
     demos.querySelectorAll('.custom-hero').forEach(el => {
       el.setAttribute('data-section-theme', theme || 'background-default');
       if (height) el.setAttribute('data-hero-height', height);
-      if (mediaBg) el.setAttribute('data-hero-background', mediaBg);
       if (vAlign) el.setAttribute('data-hero-content-block', vAlign);
     });
+
+    if (presetImageSelect) applyPresetImage(presetImage || '');
+    applyMediaBackground(mediaBg);
 
     demos.querySelectorAll('.button:not([data-small-button]):not([data-pill-button])').forEach(btn => {
       if (accent && accent !== 'default') {
@@ -558,6 +651,7 @@
   titleSizeSelect?.addEventListener('change', onChange);
   heightSelect?.addEventListener('change', onChange);
   mediaBgSelect?.addEventListener('change', onChange);
+  presetImageSelect?.addEventListener('change', onChange);
   vAlignSelect?.addEventListener('change', onChange);
   decorationSelect?.addEventListener('change', onChange);
   decorationAccentSelect?.addEventListener('change', onChange);
@@ -575,6 +669,9 @@
     if (titleSizeSelect && defaults.titleSize != null) titleSizeSelect.value = defaults.titleSize;
     if (heightSelect && defaults.height != null) heightSelect.value = defaults.height;
     if (mediaBgSelect && defaults.mediaBg != null) mediaBgSelect.value = defaults.mediaBg;
+    if (presetImageSelect && defaults.presetImage != null) {
+      presetImageSelect.value = defaults.presetImage;
+    }
     if (vAlignSelect && defaults.vAlign != null) vAlignSelect.value = defaults.vAlign;
     if (decorationSelect && defaults.decoration != null) decorationSelect.value = defaults.decoration;
     if (decorationAccentSelect && defaults.decorationAccent != null) {

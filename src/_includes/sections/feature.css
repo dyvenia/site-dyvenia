@@ -14,8 +14,31 @@
   display: block;
 }
 
+.section-feature__media figcaption {
+  font-size: var(--size-step-min-1);
+  margin-block-start: var(--space-2xs);
+}
+
+/* bottom: always stacked copy above media */
+.section-feature[data-media-side='bottom'] .section-feature__grid {
+  grid-template-columns: 1fr;
+  align-items: start;
+}
+
+.section-feature[data-feature-width='full'][data-media-side='bottom'] > .section {
+  row-gap: var(--space-l);
+}
+
+.section-feature[data-feature-width='full'][data-media-side='bottom'] .section-feature__copy {
+  grid-column: feature-start / feature-end;
+}
+
+.section-feature[data-feature-width='full'][data-media-side='bottom'] .section-feature__media {
+  grid-column: full-start / full-end;
+}
+
 @media screen(md) {
-  .section-feature__grid {
+  .section-feature:not([data-media-side='bottom']) .section-feature__grid {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -23,7 +46,6 @@
     order: -1;
   }
 
-  /* full: copy stays in feature band; media breaks out to the full edge */
   .section-feature[data-feature-width='full'][data-media-side='right'] .section-feature__copy {
     grid-column: feature-start / content-end;
   }
