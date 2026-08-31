@@ -60,8 +60,18 @@
 }
 
 .section.page-header > .seperator {
-  align-self: end;
   z-index: 1;
+}
+
+.section.page-header > .seperator--top {
+  align-self: start;
+  transform: translateY(0);
+}
+
+.section.page-header > .seperator--bottom,
+.section.page-header > .seperator:not(.seperator--top) {
+  align-self: end;
+  transform: rotate(180deg) translateY(-1px);
 }
 
 .page-header .wrapper > :is(p, h1, h2, h3) {

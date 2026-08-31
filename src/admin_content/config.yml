@@ -279,6 +279,33 @@ collections:
                           - label: bottom
                             value: bottom
                         default: center
+                      - label: Divider
+                        name: divider
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        hint: Bottom edge shape. None hides the divider.
+                        options:
+                          - label: — none —
+                            value: ''
+                          - label: Soft
+                            value: divider/soft
+                          - label: Soft invert
+                            value: divider/soft-invert
+                          - label: Waves
+                            value: divider/waves
+                        default: divider/soft
+                      - label: Divider size
+                        name: divider_class
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                        - label: default
+                          value: ''
+                        - label: small
+                          value: small
+                        default: ''
               - label: Text
                 name: text
                 widget: object
@@ -1949,6 +1976,49 @@ collections:
                             value: white
                         default: teal-800
                         hint: Wash on the media; text contrast is automatic.
+                      - label: Divider (top)
+                        name: divider_top
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        hint: Optional shape on the top edge
+                        options:
+                          - label: — none —
+                            value: ''
+                          - label: Soft
+                            value: divider/soft
+                          - label: Soft invert
+                            value: divider/soft-invert
+                          - label: Waves
+                            value: divider/waves
+                        default: ''
+                      - label: Divider (bottom)
+                        name: divider
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        hint: Bottom edge shape. None hides it.
+                        options:
+                          - label: — none —
+                            value: ''
+                          - label: Soft
+                            value: divider/soft
+                          - label: Soft invert
+                            value: divider/soft-invert
+                          - label: Waves
+                            value: divider/waves
+                        default: divider/soft
+                      - label: Divider size
+                        name: divider_class
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: default
+                            value: ''
+                          - label: small
+                            value: small
+                        default: ''
   - name: blog
     label: Posts
     label_singular: Post
@@ -2343,6 +2413,33 @@ collections:
                           - label: bottom
                             value: bottom
                         default: center
+                      - label: Divider
+                        name: divider
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        hint: Bottom edge shape. None hides the divider.
+                        options:
+                          - label: — none —
+                            value: ''
+                          - label: Soft
+                            value: divider/soft
+                          - label: Soft invert
+                            value: divider/soft-invert
+                          - label: Waves
+                            value: divider/waves
+                        default: divider/soft
+                      - label: Divider size
+                        name: divider_class
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                        - label: default
+                          value: ''
+                        - label: small
+                          value: small
+                        default: ''
               - label: Text
                 name: text
                 widget: object
@@ -4013,6 +4110,49 @@ collections:
                             value: white
                         default: teal-800
                         hint: Wash on the media; text contrast is automatic.
+                      - label: Divider (top)
+                        name: divider_top
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        hint: Optional shape on the top edge
+                        options:
+                          - label: — none —
+                            value: ''
+                          - label: Soft
+                            value: divider/soft
+                          - label: Soft invert
+                            value: divider/soft-invert
+                          - label: Waves
+                            value: divider/waves
+                        default: ''
+                      - label: Divider (bottom)
+                        name: divider
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        hint: Bottom edge shape. None hides it.
+                        options:
+                          - label: — none —
+                            value: ''
+                          - label: Soft
+                            value: divider/soft
+                          - label: Soft invert
+                            value: divider/soft-invert
+                          - label: Waves
+                            value: divider/waves
+                        default: divider/soft
+                      - label: Divider size
+                        name: divider_class
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: default
+                            value: ''
+                          - label: small
+                            value: small
+                        default: ''
   - name: team
     label: Team Members
     icon: group
@@ -4331,6 +4471,33 @@ collections:
                           - label: bottom
                             value: bottom
                         default: center
+                      - label: Divider
+                        name: divider
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        hint: Bottom edge shape. None hides the divider.
+                        options:
+                          - label: — none —
+                            value: ''
+                          - label: Soft
+                            value: divider/soft
+                          - label: Soft invert
+                            value: divider/soft-invert
+                          - label: Waves
+                            value: divider/waves
+                        default: divider/soft
+                      - label: Divider size
+                        name: divider_class
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                        - label: default
+                          value: ''
+                        - label: small
+                          value: small
+                        default: ''
               - label: Text
                 name: text
                 widget: object
@@ -5906,6 +6073,49 @@ collections:
                             value: white
                         default: teal-800
                         hint: Wash on the media; text contrast is automatic.
+                      - label: Divider (top)
+                        name: divider_top
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        hint: Optional shape on the top edge
+                        options:
+                          - label: — none —
+                            value: ''
+                          - label: Soft
+                            value: divider/soft
+                          - label: Soft invert
+                            value: divider/soft-invert
+                          - label: Waves
+                            value: divider/waves
+                        default: ''
+                      - label: Divider (bottom)
+                        name: divider
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        hint: Bottom edge shape. None hides it.
+                        options:
+                          - label: — none —
+                            value: ''
+                          - label: Soft
+                            value: divider/soft
+                          - label: Soft invert
+                            value: divider/soft-invert
+                          - label: Waves
+                            value: divider/waves
+                        default: divider/soft
+                      - label: Divider size
+                        name: divider_class
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: default
+                            value: ''
+                          - label: small
+                            value: small
+                        default: ''
   - name: careers
     label: Careers
     icon: work
@@ -6169,6 +6379,33 @@ collections:
                           - label: bottom
                             value: bottom
                         default: center
+                      - label: Divider
+                        name: divider
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        hint: Bottom edge shape. None hides the divider.
+                        options:
+                          - label: — none —
+                            value: ''
+                          - label: Soft
+                            value: divider/soft
+                          - label: Soft invert
+                            value: divider/soft-invert
+                          - label: Waves
+                            value: divider/waves
+                        default: divider/soft
+                      - label: Divider size
+                        name: divider_class
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                        - label: default
+                          value: ''
+                        - label: small
+                          value: small
+                        default: ''
               - label: Text
                 name: text
                 widget: object
@@ -7839,6 +8076,49 @@ collections:
                             value: white
                         default: teal-800
                         hint: Wash on the media; text contrast is automatic.
+                      - label: Divider (top)
+                        name: divider_top
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        hint: Optional shape on the top edge
+                        options:
+                          - label: — none —
+                            value: ''
+                          - label: Soft
+                            value: divider/soft
+                          - label: Soft invert
+                            value: divider/soft-invert
+                          - label: Waves
+                            value: divider/waves
+                        default: ''
+                      - label: Divider (bottom)
+                        name: divider
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        hint: Bottom edge shape. None hides it.
+                        options:
+                          - label: — none —
+                            value: ''
+                          - label: Soft
+                            value: divider/soft
+                          - label: Soft invert
+                            value: divider/soft-invert
+                          - label: Waves
+                            value: divider/waves
+                        default: divider/soft
+                      - label: Divider size
+                        name: divider_class
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: default
+                            value: ''
+                          - label: small
+                            value: small
+                        default: ''
   - name: solutions
     label: Solutions
     icon: hub
@@ -8098,6 +8378,33 @@ collections:
                       - label: bottom
                         value: bottom
                     default: center
+                  - label: Divider
+                    name: divider
+                    widget: select
+                    required: false
+                    dropdown_threshold: 0
+                    hint: Bottom edge shape. None hides the divider.
+                    options:
+                      - label: — none —
+                        value: ''
+                      - label: Soft
+                        value: divider/soft
+                      - label: Soft invert
+                        value: divider/soft-invert
+                      - label: Waves
+                        value: divider/waves
+                    default: divider/soft
+                  - label: Divider size
+                    name: divider_class
+                    widget: select
+                    required: false
+                    dropdown_threshold: 0
+                    options:
+                    - label: default
+                      value: ''
+                    - label: small
+                      value: small
+                    default: ''
           - label: Text
             name: text
             widget: object
@@ -9768,6 +10075,49 @@ collections:
                         value: white
                     default: teal-800
                     hint: Wash on the media; text contrast is automatic.
+                  - label: Divider (top)
+                    name: divider_top
+                    widget: select
+                    required: false
+                    dropdown_threshold: 0
+                    hint: Optional shape on the top edge
+                    options:
+                      - label: — none —
+                        value: ''
+                      - label: Soft
+                        value: divider/soft
+                      - label: Soft invert
+                        value: divider/soft-invert
+                      - label: Waves
+                        value: divider/waves
+                    default: ''
+                  - label: Divider (bottom)
+                    name: divider
+                    widget: select
+                    required: false
+                    dropdown_threshold: 0
+                    hint: Bottom edge shape. None hides it.
+                    options:
+                      - label: — none —
+                        value: ''
+                      - label: Soft
+                        value: divider/soft
+                      - label: Soft invert
+                        value: divider/soft-invert
+                      - label: Waves
+                        value: divider/waves
+                    default: divider/soft
+                  - label: Divider size
+                    name: divider_class
+                    widget: select
+                    required: false
+                    dropdown_threshold: 0
+                    options:
+                      - label: default
+                        value: ''
+                      - label: small
+                        value: small
+                    default: ''
   - name: navigation
     label: Navigation
     icon: menu

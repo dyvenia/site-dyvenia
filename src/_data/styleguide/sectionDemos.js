@@ -102,6 +102,8 @@ export default {
       theme: 'background-accent'
     },
     title: 'One platform. **Clear lineage.** Trusted outcomes.',
+    content:
+      'Full width content. We design and build the data platform your business actually runs on — aligned to your systems, processes, and decision needs.',
     content_left:
       'We design and build the data platform your business actually runs on — aligned to your systems, processes, and decision needs.',
     content_right:
@@ -222,7 +224,9 @@ export default {
     appearance: {
       theme: 'gray-dark',
       align: 'left',
-      background: 'teal-800'
+      background: 'teal-800',
+      divider_top: 'divider/soft',
+      divider: 'divider/soft'
     },
     title: 'Ready to strengthen your data platform?',
     subtitle:

@@ -116,6 +116,36 @@
     </div>
   {% endif %}
 
+  {% if caps.divider or caps.divider_top %}
+    {% if caps.divider_top %}
+      <div class="sg-preview__field | cluster">
+        <label for="sg-divider-top">Divider (top)</label>
+        <select id="sg-divider-top" data-sg-divider-top name="divider_top">
+          {% for opt in styleguide.sectionAppearance.dividers %}
+            <option value="{{ opt.value }}">{{ opt.label }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    {% endif %}
+    {% if caps.divider %}
+      <div class="sg-preview__field | cluster">
+        <label for="sg-divider">{% if caps.divider_top %}Divider (bottom){% else %}Divider{% endif %}</label>
+        <select id="sg-divider" data-sg-divider name="divider">
+          {% for opt in styleguide.sectionAppearance.dividers %}
+            <option value="{{ opt.value }}"{% if opt.value == "divider/soft" %} selected{% endif %}>{{ opt.label }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    {% endif %}
+    <div hidden data-sg-divider-bank>
+      {% for opt in styleguide.sectionAppearance.dividers %}
+        {% if opt.value %}
+          <template data-value="{{ opt.value }}">{% svg opt.value %}</template>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% endif %}
+
   {% if caps.content_block %}
     <div class="sg-preview__field | cluster">
       <label for="sg-valign">Vertical align</label>

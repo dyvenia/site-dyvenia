@@ -1,7 +1,7 @@
 {% set heroData = customHero.hero or hero %}
 
 {% set heroTheme = customHero.theme or "gray-dark" %}
-{% set heroDivider = customHero.divider if customHero.divider is defined else "divider/soft-top" %}
+{% set heroDivider = customHero.divider if customHero.divider is defined else "divider/soft" %}
 {% set heroDividerClass = customHero.divider_class or "seperator" %}
 {% set heroHeight = customHero.height or heroData.height or "default" %}
 {% set heroBackground = customHero.background or heroData.background or "teal-800" %}

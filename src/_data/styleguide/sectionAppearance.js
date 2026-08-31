@@ -10,10 +10,10 @@ export default {
     'background-default': 'Background',
     'background-accent': 'Background accent',
     'gray-dark': 'gray-dark',
-    teal: 'teal',
+    'teal': 'teal',
     'teal-dark': 'teal-dark',
-    purple: 'purple',
-    navy: 'navy'
+    'purple': 'purple',
+    'navy': 'navy'
   },
   accents: ['default', 'neutral', 'teal', 'purple', 'navy'],
   decorationAccents: ['teal', 'purple', 'navy', 'neutral'],
@@ -22,6 +22,12 @@ export default {
   widthsFeature: ['content', 'feature', 'full'],
   mediaSides: ['left', 'right', 'bottom'],
   aligns: ['left', 'center'],
+  dividers: [
+    {label: '— none —', value: ''},
+    {label: 'Soft', value: 'divider/soft'},
+    {label: 'Soft invert', value: 'divider/soft-invert'},
+    {label: 'Waves', value: 'divider/waves'}
+  ],
   textBodySizes: ['default', 'large'],
   textTitleSizes: ['default', 'small'],
   statementBodySizes: ['default', 'small'],
@@ -47,7 +53,8 @@ export default {
       height: true,
       background: true,
       content_block: true,
-      preset_image: true
+      preset_image: true,
+      divider: true
     },
     text: {
       align: true,
@@ -109,7 +116,9 @@ export default {
     cta: {
       align: true,
       background: true,
-      preset_image: true
+      preset_image: true,
+      divider: true,
+      divider_top: true
     }
   }
 };

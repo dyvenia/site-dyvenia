@@ -14,6 +14,21 @@
 {% set alignClass = sectionAlignClass(align or "center") %}
 {% set mediaImage = s.image or s.preset_image %}
 {% set mediaBackground = a.background or s.background or "teal-800" %}
+{% if a.divider is defined %}
+  {% set dividerBottom = a.divider %}
+{% elif s.divider is defined %}
+  {% set dividerBottom = s.divider %}
+{% else %}
+  {% set dividerBottom = "divider/soft" %}
+{% endif %}
+{% if a.divider_top is defined %}
+  {% set dividerTop = a.divider_top %}
+{% elif s.divider_top is defined %}
+  {% set dividerTop = s.divider_top %}
+{% else %}
+  {% set dividerTop = "" %}
+{% endif %}
+{% set dividerClass = a.divider_class or s.divider_class or "" %}
 
 <div
   class="section-cta | section page-header"
@@ -21,7 +36,9 @@
   {{ sectionThemeAttr(theme) }}{{ sectionAccentAttr(accent) }}
   {% if mediaImage %}data-hero-background="{{ mediaBackground }}"{% endif %}
 >
-  {% svg "divider/soft-top", null, "seperator" %}
+  {% if dividerTop %}
+    {% svg dividerTop, null, "seperator seperator--top" + (" " + dividerClass if dividerClass else "") %}
+  {% endif %}
 
   {% if mediaImage %}
     {% image mediaImage, "" %}
@@ -46,4 +63,8 @@
       {% endif %}
     </div>
   </div>
+
+  {% if dividerBottom %}
+    {% svg dividerBottom, null, "seperator seperator--bottom" + (" " + dividerClass if dividerClass else "") %}
+  {% endif %}
 </div>

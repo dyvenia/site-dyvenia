@@ -11,6 +11,9 @@
   const mediaBgSelect = document.querySelector('[data-sg-media-bg]');
   const presetImageSelect = document.querySelector('[data-sg-preset-image]');
   const presetBank = document.querySelector('[data-sg-preset-bank]');
+  const dividerSelect = document.querySelector('[data-sg-divider]');
+  const dividerTopSelect = document.querySelector('[data-sg-divider-top]');
+  const dividerBank = document.querySelector('[data-sg-divider-bank]');
   const vAlignSelect = document.querySelector('[data-sg-valign]');
   const decorationSelect = document.querySelector('[data-sg-decoration]');
   const decorationAccentSelect = document.querySelector('[data-sg-decoration-accent]');
@@ -164,6 +167,53 @@
         el.classList.contains('custom-hero') || el.querySelector(':scope > picture');
       if (!hasMedia) return;
       el.setAttribute('data-hero-background', value);
+    });
+  };
+
+  const cloneDividerSvg = value => {
+    if (!dividerBank || !value) return null;
+    const tpl = [...dividerBank.querySelectorAll('template')].find(
+      t => t.getAttribute('data-value') === value
+    );
+    if (!tpl) return null;
+    const svg = tpl.content.firstElementChild?.cloneNode(true);
+    if (!svg) return null;
+    svg.setAttribute('aria-hidden', 'true');
+    return svg;
+  };
+
+  const applyDividers = () => {
+    if (!demos || (!dividerSelect && !dividerTopSelect)) return;
+
+    demos.querySelectorAll('.custom-hero').forEach(root => {
+      if (!dividerSelect) return;
+      root.querySelectorAll(':scope > .seperator').forEach(el => el.remove());
+      const value = dividerSelect.value || '';
+      if (!value) return;
+      const svg = cloneDividerSvg(value);
+      if (!svg) return;
+      svg.classList.add('seperator');
+      root.prepend(svg);
+    });
+
+    demos.querySelectorAll('.section-cta.page-header, .page-header.section-cta').forEach(root => {
+      root.querySelectorAll(':scope > .seperator').forEach(el => el.remove());
+      const topVal = dividerTopSelect?.value || '';
+      const bottomVal = dividerSelect?.value || '';
+      if (topVal) {
+        const svg = cloneDividerSvg(topVal);
+        if (svg) {
+          svg.classList.add('seperator', 'seperator--top');
+          root.prepend(svg);
+        }
+      }
+      if (bottomVal) {
+        const svg = cloneDividerSvg(bottomVal);
+        if (svg) {
+          svg.classList.add('seperator', 'seperator--bottom');
+          root.append(svg);
+        }
+      }
     });
   };
 
@@ -334,6 +384,8 @@
     if (heightSelect) defaults.height = heightSelect.value;
     if (mediaBgSelect) defaults.mediaBg = mediaBgSelect.value;
     if (presetImageSelect) defaults.presetImage = presetImageSelect.value;
+    if (dividerSelect) defaults.divider = dividerSelect.value;
+    if (dividerTopSelect) defaults.dividerTop = dividerTopSelect.value;
     if (vAlignSelect) defaults.vAlign = vAlignSelect.value;
     if (decorationSelect) defaults.decoration = decorationSelect.value;
     if (decorationAccentSelect) defaults.decorationAccent = decorationAccentSelect.value;
@@ -361,6 +413,8 @@
     height: heightSelect?.value,
     mediaBg: mediaBgSelect?.value,
     presetImage: presetImageSelect?.value,
+    divider: dividerSelect?.value,
+    dividerTop: dividerTopSelect?.value,
     vAlign: vAlignSelect?.value,
     decoration: decorationSelect?.value,
     decorationAccent: decorationAccentSelect?.value,
@@ -394,6 +448,20 @@
       [...presetImageSelect.options].some(o => o.value === stored.presetImage)
     ) {
       presetImageSelect.value = stored.presetImage;
+    }
+    if (
+      stored.divider != null &&
+      dividerSelect &&
+      [...dividerSelect.options].some(o => o.value === stored.divider)
+    ) {
+      dividerSelect.value = stored.divider;
+    }
+    if (
+      stored.dividerTop != null &&
+      dividerTopSelect &&
+      [...dividerTopSelect.options].some(o => o.value === stored.dividerTop)
+    ) {
+      dividerTopSelect.value = stored.dividerTop;
     }
     if (stored.vAlign && vAlignSelect) vAlignSelect.value = stored.vAlign;
     if (
@@ -610,6 +678,7 @@
 
     if (presetImageSelect) applyPresetImage(presetImage || '');
     applyMediaBackground(mediaBg);
+    applyDividers();
 
     demos.querySelectorAll('.button:not([data-small-button]):not([data-pill-button])').forEach(btn => {
       if (accent && accent !== 'default') {
@@ -652,6 +721,8 @@
   heightSelect?.addEventListener('change', onChange);
   mediaBgSelect?.addEventListener('change', onChange);
   presetImageSelect?.addEventListener('change', onChange);
+  dividerSelect?.addEventListener('change', onChange);
+  dividerTopSelect?.addEventListener('change', onChange);
   vAlignSelect?.addEventListener('change', onChange);
   decorationSelect?.addEventListener('change', onChange);
   decorationAccentSelect?.addEventListener('change', onChange);
@@ -671,6 +742,10 @@
     if (mediaBgSelect && defaults.mediaBg != null) mediaBgSelect.value = defaults.mediaBg;
     if (presetImageSelect && defaults.presetImage != null) {
       presetImageSelect.value = defaults.presetImage;
+    }
+    if (dividerSelect && defaults.divider != null) dividerSelect.value = defaults.divider;
+    if (dividerTopSelect && defaults.dividerTop != null) {
+      dividerTopSelect.value = defaults.dividerTop;
     }
     if (vAlignSelect && defaults.vAlign != null) vAlignSelect.value = defaults.vAlign;
     if (decorationSelect && defaults.decoration != null) decorationSelect.value = defaults.decoration;

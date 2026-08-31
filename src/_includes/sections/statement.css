@@ -4,8 +4,11 @@
 }
 
 .section-statement__headline {
-  font-weight: var(--font-regular);
-  max-inline-size: 70ch;
+  max-inline-size: 58ch;
+}
+
+.text-left .section-statement__headline {
+  max-inline-size: 30ch;
 }
 
 .section-statement__eyebrow {
@@ -14,13 +17,8 @@
   opacity: 0.75;
 }
 
-/* Dominant line uses accent when paired with an eyebrow (former goal) */
-.section-statement__eyebrow + .section-statement__title {
-  color: var(--section-accent, var(--color-teal));
-}
-
 .section-statement__support {
-  max-inline-size: 58ch;
+  max-inline-size: 65ch;
   opacity: 0.85;
 }
 

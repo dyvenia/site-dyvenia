@@ -163,7 +163,7 @@
   }
 
   .custom-hero[data-hero-height='tall'] :is(picture, .custom-hero__video) {
-    max-block-size: 40rem;
+    max-block-size: 65vh;
   }
 
   .custom-hero[data-hero-height='cover'] :is(picture, .custom-hero__video) {

@@ -11,8 +11,14 @@
 {% set theme = a.theme or s.theme or "gray-dark" %}
 {% set accent = a.accent if a.accent is defined else s.accent %}
 {% set align = a.align if a.align is defined else s.align %}
-{% set heroDivider = s.divider if s.divider is defined else "divider/soft-top" %}
-{% set heroDividerClass = s.divider_class or "seperator" %}
+{% if a.divider is defined %}
+  {% set heroDivider = a.divider %}
+{% elif s.divider is defined %}
+  {% set heroDivider = s.divider %}
+{% else %}
+  {% set heroDivider = "divider/soft" %}
+{% endif %}
+{% set dividerSize = a.divider_class or s.divider_class or "" %}
 {% set heroHeight = a.height or s.height or "default" %}
 {% set heroBackground = a.background or s.background or "teal-800" %}
 {% set heroInline = align or "center" %}
@@ -32,7 +38,7 @@
   {% if s.id %}id="{{ s.id }}"{% endif %}
 >
   {% if heroDivider %}
-    {% svg heroDivider, null, "seperator " + heroDividerClass if heroDividerClass else "" %}
+    {% svg heroDivider, null, "seperator" + (" " + dividerSize if dividerSize else "") %}
   {% endif %}
 
   {% if heroVideo %}
