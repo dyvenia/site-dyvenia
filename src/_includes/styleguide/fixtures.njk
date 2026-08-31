@@ -137,6 +137,16 @@
         </select>
       </div>
     {% endif %}
+    {% if caps.divider_size %}
+      <div class="sg-preview__field | cluster">
+        <label for="sg-divider-size">Divider size</label>
+        <select id="sg-divider-size" data-sg-divider-size name="divider_size">
+          {% for opt in styleguide.sectionAppearance.dividerSizes %}
+            <option value="{{ opt.value }}">{{ opt.label }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    {% endif %}
     <div hidden data-sg-divider-bank>
       {% for opt in styleguide.sectionAppearance.dividers %}
         {% if opt.value %}
@@ -223,6 +233,16 @@
     <div class="sg-preview__field | cluster">
       <label for="sg-list-bordered">Bordered</label>
       <select id="sg-list-bordered" data-sg-list-bordered name="list_bordered">
+        <option value="on">on</option>
+        <option value="off">off</option>
+      </select>
+    </div>
+  {% endif %}
+
+  {% if caps.list_highlight_header %}
+    <div class="sg-preview__field | cluster">
+      <label for="sg-list-highlight">Highlight header</label>
+      <select id="sg-list-highlight" data-sg-list-highlight name="list_highlight_header">
         <option value="on">on</option>
         <option value="off">off</option>
       </select>

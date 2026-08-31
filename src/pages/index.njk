@@ -16,6 +16,7 @@ sections:
       From raw data to decisions, everything stays connected and explainable.
     button_text: Schedule a discovery call
     button_target: https://meetings-eu1.hubspot.com/alessio-civitillo/book-a-call
+    preset_image: ''
     image: ./src/assets/images/backgrounds/jellyfish-hr.jpg
     image_alt: ''
     video:
@@ -28,6 +29,8 @@ sections:
       height: cover
       background: teal-800
       content_block: center
+      divider: divider/soft
+      divider_class: ''
     region_space: xl-2xl
   - type: text
     internal_name: Intro
@@ -51,7 +54,7 @@ sections:
       - Metrics are defined differently across systems and teams
     decoration: ''
   - type: statement
-    internal_name: Statement "We make your data"
+    internal_name: We make your data
     title: We make your data, technology, metrics, and AI work as one. **\***
     subtitle: '**\*** by starting with the decisions your business needs to make, and aligning business and technology around them. We design your data platform, systems, and models as one connected foundation, preventing fragmented initiatives and wasted investment.'
     appearance:
@@ -63,7 +66,7 @@ sections:
     decoration: brand/waves
     eyebrow: ''
   - type: statement
-    internal_name: 'Statement: "The Goal?"'
+    internal_name: The Goal?
     title: Establish a single, trusted view of the business, where decisions, data, and outcomes are aligned.
     subtitle: |-
       We replace fragmented architectures and conflicting logic with a connected data foundation that keeps systems, metrics, and decisions aligned.
@@ -78,11 +81,11 @@ sections:
     decoration: ''
     eyebrow: The Goal?
   - type: process
-    internal_name: Foundations
+    internal_name: The impact on your business
     title: ''
     subtitle: ''
     appearance:
-      theme: background-default
+      theme: background-accent
       accent: default
       align: left
       decoration_accent: teal
@@ -120,16 +123,17 @@ sections:
 
       Our approach is simple: **design it properly, build it properly, and make sure it delivers measurable outcomes.**
   - type: list
-    internal_name: Why us
+    internal_name: What’s Holding You Back
     title: What’s Holding You Back
     appearance:
       theme: background-default
-      accent: default
+      accent: purple
       align: left
       width: feature
       variant: definition
-      checks: true
-      bordered: true
+      checks: false
+      bordered: false
+      highlight_header: true
     content: Enterprises are drowning in data, but struggling to turn it into performance.
     items:
       - title: Decisions feel slower than they should
@@ -153,13 +157,12 @@ sections:
       - title: Growing pressure on unstable foundations
         content: More data, faster reporting, and higher expectations built on systems that weren’t designed to support them.
   - type: services
-    internal_name: Services
+    internal_name: How We Deliver Results
     title: How We Deliver Results
-    image: ./src/assets/images/backgrounds/sfondi-dyvenia26.jpg
     appearance:
-      theme: navy
+      theme: teal-dark
       accent: default
-      align: left
+      width: content
     decoration: brand/arrows
     items:
       - title: Engineering

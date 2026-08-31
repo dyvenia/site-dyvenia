@@ -1,5 +1,5 @@
 /**
- * Stock background images for hero / CTA sections.
+ * Stock background images for hero and CTA sections.
  * Scans src/assets/images/backgrounds — label is the file name.
  * Values match frontmatter paths used with {% image %}.
  */

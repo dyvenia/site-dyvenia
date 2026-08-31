@@ -28,6 +28,10 @@ export default {
     {label: 'Soft invert', value: 'divider/soft-invert'},
     {label: 'Waves', value: 'divider/waves'}
   ],
+  dividerSizes: [
+    {label: 'default', value: ''},
+    {label: 'small', value: 'small'}
+  ],
   textBodySizes: ['default', 'large'],
   textTitleSizes: ['default', 'small'],
   statementBodySizes: ['default', 'small'],
@@ -38,6 +42,7 @@ export default {
     'teal-800',
     'teal-600',
     'purple-800',
+    'purple-300',
     'navy-dark',
     'navy',
     'gray-900',
@@ -54,7 +59,8 @@ export default {
       background: true,
       content_block: true,
       preset_image: true,
-      divider: true
+      divider: true,
+      divider_size: true
     },
     text: {
       align: true,
@@ -74,7 +80,8 @@ export default {
       width: 'measure',
       list_variant: true,
       list_checks: true,
-      list_bordered: true
+      list_bordered: true,
+      list_highlight_header: true
     },
     process: {
       decoration: true,
@@ -95,11 +102,11 @@ export default {
     team: {},
     form: {
       align: true,
-      width: 'full'
+      width: 'measure'
     },
     services: {
-      align: true,
-      decoration: true
+      decoration: true,
+      width: 'measure'
     },
     tabs: {
       align: true,
@@ -118,7 +125,8 @@ export default {
       background: true,
       preset_image: true,
       divider: true,
-      divider_top: true
+      divider_top: true,
+      divider_size: true
     }
   }
 };

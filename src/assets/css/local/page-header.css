@@ -7,6 +7,15 @@
   --hero-text-muted: color-mix(in oklab, var(--hero-text) 95%, transparent);
 }
 
+/* Underlay so wash fills the full band when content outgrows the media layer */
+.page-header[data-hero-background] {
+  background-color: var(--custom-hero-bg);
+}
+
+.page-header:not([data-hero-background]) {
+  background-color: var(--section-bg);
+}
+
 /* Only intentional layers stack — not every accidental descendant */
 .page-header > :is(picture, .seperator, div) {
   grid-column: full;
@@ -18,20 +27,26 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  z-index: 1;
 }
 
 .page-header picture {
   --flow-space: 0;
+  position: relative;
+  align-self: stretch;
+  min-block-size: max(25rem, 50vh);
   background: var(--custom-hero-bg);
   mix-blend-mode: darken;
-  block-size: max(25rem, 50vh);
   overflow: hidden;
 }
 
 .page-header img {
+  position: absolute;
+  inset: 0;
   inline-size: 100%;
+  block-size: 100%;
   object-fit: cover;
-  aspect-ratio: 1 / 2;
   filter: grayscale(100%) brightness(0.5) opacity(0.3) contrast(200%);
   mix-blend-mode: multiply;
 }
@@ -84,10 +99,4 @@
 
 .page-header[data-hero-background] .wrapper :is(.flow, .flow p) {
   color: var(--hero-text-muted);
-}
-
-@media (min-width: 1000px) {
-  .page-header :is(img, .custom-hero__video) {
-    aspect-ratio: 3/2;
-  }
 }

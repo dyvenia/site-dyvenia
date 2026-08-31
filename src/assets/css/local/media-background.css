@@ -1,4 +1,4 @@
-/* Shared media wash + ink recipes for hero (.custom-hero) and CTA (.page-header).
+/* Shared media wash recipes for hero (.custom-hero) and CTA (.page-header).
    Set data-hero-background on the section root. */
 
 :is(.custom-hero, .page-header)[data-hero-background='teal-800'] {
@@ -17,6 +17,12 @@
   --custom-hero-bg: var(--color-purple-800);
   --hero-text: var(--color-purple-100);
   --hero-em: color-mix(in oklab, var(--color-purple) 60%, var(--color-light));
+}
+
+:is(.custom-hero, .page-header)[data-hero-background='purple-300'] {
+  --custom-hero-bg: var(--color-purple-300);
+  --hero-text: var(--color-gray-900);
+  --hero-em: var(--color-purple-800);
 }
 
 :is(.custom-hero, .page-header)[data-hero-background='navy-dark'] {

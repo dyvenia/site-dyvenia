@@ -113,11 +113,22 @@ input[type='checkbox']:checked::before {
   border-radius: var(--border-radius-small);
 }
 
-/* Section form: panel on section surface with soft border */
+.section-form .content {
+  --region-space-bottom: var(--space-m);
+}
+
 .section-form .newsletter {
   background: var(--color-bg);
   color: var(--color-text);
-  border: 1px solid var(--color-bg-accent-2);
+  text-align: start;
+}
+
+.section-form__header.text-center {
+  margin-inline: auto;
+}
+
+.section-form__header.text-center p {
+  max-inline-size: none;
 }
 
 .section-form .newsletter :is(h3, label, p, input, .text-gray) {

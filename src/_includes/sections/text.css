@@ -25,3 +25,22 @@
   position: relative;
   z-index: 1;
 }
+
+.section-text__title.text-center,
+.section-text__content.text-center,
+.section-text__content.text-center p {
+  margin-inline: auto;
+}
+
+.section-text__columns {
+  text-align: start;
+}
+
+.section-text__columns[data-layout='50-50'] {
+  --grid-placement: auto-fit;
+  --grid-min-item-size: clamp(16rem, 50vw, 25rem);
+}
+
+.section-text__columns > div + div ul:first-child {
+  margin-block-start: 0;
+}

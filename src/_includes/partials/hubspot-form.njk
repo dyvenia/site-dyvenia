@@ -1,6 +1,10 @@
 {% set formWidth = formWidth | default("content") %}
 
-<aside class="newsletter |  {{ formWidth }} wrapper">
+{% if formLayout == "section" %}
+<aside class="newsletter">
+{% else %}
+<aside class="newsletter | {{ formWidth }} wrapper">
+{% endif %}
   <div class="flow">
     <h3>{{ meta.newsletter_title }}</h3>
     <form data-hubspot class="flow">

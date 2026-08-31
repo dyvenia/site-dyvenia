@@ -13,6 +13,7 @@
   const presetBank = document.querySelector('[data-sg-preset-bank]');
   const dividerSelect = document.querySelector('[data-sg-divider]');
   const dividerTopSelect = document.querySelector('[data-sg-divider-top]');
+  const dividerSizeSelect = document.querySelector('[data-sg-divider-size]');
   const dividerBank = document.querySelector('[data-sg-divider-bank]');
   const vAlignSelect = document.querySelector('[data-sg-valign]');
   const decorationSelect = document.querySelector('[data-sg-decoration]');
@@ -22,6 +23,7 @@
   const listVariantSelect = document.querySelector('[data-sg-list-variant]');
   const listChecksSelect = document.querySelector('[data-sg-list-checks]');
   const listBorderedSelect = document.querySelector('[data-sg-list-bordered]');
+  const listHighlightSelect = document.querySelector('[data-sg-list-highlight]');
   const listCheckBank = document.querySelector('[data-sg-list-check-bank]');
   const resetBtn = document.querySelector('[data-sg-reset]');
 
@@ -70,11 +72,11 @@
       selector: '.section-services__decoration',
       className: 'section-services__decoration',
       mount(root, svg) {
-        const band = root.querySelector('.section-services__band');
-        const article = band?.querySelector('article');
-        if (!band) return;
-        if (article) band.insertBefore(svg, article);
-        else band.append(svg);
+        const section = root.querySelector('.section');
+        const inner = section?.querySelector('.section__inner');
+        if (!section) return;
+        if (inner) section.insertBefore(svg, inner);
+        else section.prepend(svg);
       }
     }
   ];
@@ -163,8 +165,7 @@
   const applyMediaBackground = value => {
     if (!demos || !mediaBgSelect || !value) return;
     mediaRoots().forEach(el => {
-      const hasMedia =
-        el.classList.contains('custom-hero') || el.querySelector(':scope > picture');
+      const hasMedia = el.classList.contains('custom-hero') || el.querySelector(':scope > picture');
       if (!hasMedia) return;
       el.setAttribute('data-hero-background', value);
     });
@@ -184,6 +185,7 @@
 
   const applyDividers = () => {
     if (!demos || (!dividerSelect && !dividerTopSelect)) return;
+    const sizeClass = dividerSizeSelect?.value || '';
 
     demos.querySelectorAll('.custom-hero').forEach(root => {
       if (!dividerSelect) return;
@@ -193,6 +195,7 @@
       const svg = cloneDividerSvg(value);
       if (!svg) return;
       svg.classList.add('seperator');
+      if (sizeClass) svg.classList.add(sizeClass);
       root.prepend(svg);
     });
 
@@ -204,6 +207,7 @@
         const svg = cloneDividerSvg(topVal);
         if (svg) {
           svg.classList.add('seperator', 'seperator--top');
+          if (sizeClass) svg.classList.add(sizeClass);
           root.prepend(svg);
         }
       }
@@ -211,6 +215,7 @@
         const svg = cloneDividerSvg(bottomVal);
         if (svg) {
           svg.classList.add('seperator', 'seperator--bottom');
+          if (sizeClass) svg.classList.add(sizeClass);
           root.append(svg);
         }
       }
@@ -292,17 +297,23 @@
     }
     if (presetImageSelect) {
       const pic =
-        demos.querySelector('.custom-hero > picture img, .section-cta > picture img, .page-header > picture img') ||
-        demos.querySelector('.custom-hero img, .section-cta img, .page-header img');
+        demos.querySelector(
+          '.custom-hero > picture img, .section-cta > picture img, .page-header > picture img'
+        ) || demos.querySelector('.custom-hero img, .section-cta img, .page-header img');
       // Match option by filename in generated src (name-650w.jpeg → jellyfish-hr)
       const src = pic?.getAttribute('src') || '';
       const match = [...presetImageSelect.options].find(o => {
         if (!o.value) return false;
-        const base = o.value.split('/').pop()?.replace(/\.[^.]+$/, '');
+        const base = o.value
+          .split('/')
+          .pop()
+          ?.replace(/\.[^.]+$/, '');
         return base && src.includes(base);
       });
       if (match) presetImageSelect.value = match.value;
-      else if (demos.querySelector('.custom-hero, .section-cta, .page-header')?.querySelector(':scope > picture')) {
+      else if (
+        demos.querySelector('.custom-hero, .section-cta, .page-header')?.querySelector(':scope > picture')
+      ) {
         /* keep first non-empty if we can't match */
       } else {
         presetImageSelect.value = '';
@@ -333,8 +344,7 @@
       accentSelect.value = variant;
     }
     if (decorationSelect) {
-      const deco =
-        demos.querySelector('[data-decoration]')?.getAttribute('data-decoration') || '';
+      const deco = demos.querySelector('[data-decoration]')?.getAttribute('data-decoration') || '';
       if (!deco || [...decorationSelect.options].some(o => o.value === deco)) {
         decorationSelect.value = deco;
       }
@@ -367,8 +377,11 @@
         listChecksSelect.value = listRoot.getAttribute('data-list-checks') === 'false' ? 'off' : 'on';
       }
       if (listBorderedSelect) {
-        listBorderedSelect.value =
-          listRoot.getAttribute('data-list-bordered') === 'false' ? 'off' : 'on';
+        listBorderedSelect.value = listRoot.getAttribute('data-list-bordered') === 'false' ? 'off' : 'on';
+      }
+      if (listHighlightSelect) {
+        listHighlightSelect.value =
+          listRoot.getAttribute('data-list-highlight-header') === 'true' ? 'on' : 'off';
       }
     }
   };
@@ -386,6 +399,7 @@
     if (presetImageSelect) defaults.presetImage = presetImageSelect.value;
     if (dividerSelect) defaults.divider = dividerSelect.value;
     if (dividerTopSelect) defaults.dividerTop = dividerTopSelect.value;
+    if (dividerSizeSelect) defaults.dividerSize = dividerSizeSelect.value;
     if (vAlignSelect) defaults.vAlign = vAlignSelect.value;
     if (decorationSelect) defaults.decoration = decorationSelect.value;
     if (decorationAccentSelect) defaults.decorationAccent = decorationAccentSelect.value;
@@ -393,6 +407,7 @@
     if (listVariantSelect) defaults.listVariant = listVariantSelect.value;
     if (listChecksSelect) defaults.listChecks = listChecksSelect.value;
     if (listBorderedSelect) defaults.listBordered = listBorderedSelect.value;
+    if (listHighlightSelect) defaults.listHighlight = listHighlightSelect.value;
   };
 
   const readStored = () => {
@@ -415,13 +430,15 @@
     presetImage: presetImageSelect?.value,
     divider: dividerSelect?.value,
     dividerTop: dividerTopSelect?.value,
+    dividerSize: dividerSizeSelect?.value,
     vAlign: vAlignSelect?.value,
     decoration: decorationSelect?.value,
     decorationAccent: decorationAccentSelect?.value,
     mediaSide: mediaSideSelect?.value,
     listVariant: listVariantSelect?.value,
     listChecks: listChecksSelect?.value,
-    listBordered: listBorderedSelect?.value
+    listBordered: listBorderedSelect?.value,
+    listHighlight: listHighlightSelect?.value
   });
 
   const writeStored = state => {
@@ -436,7 +453,11 @@
       widthSelect.value = stored.width;
     }
     if (stored.align && alignSelect) alignSelect.value = stored.align;
-    if (stored.bodySize && bodySizeSelect && [...bodySizeSelect.options].some(o => o.value === stored.bodySize)) {
+    if (
+      stored.bodySize &&
+      bodySizeSelect &&
+      [...bodySizeSelect.options].some(o => o.value === stored.bodySize)
+    ) {
       bodySizeSelect.value = stored.bodySize;
     }
     if (stored.titleSize && titleSizeSelect) titleSizeSelect.value = stored.titleSize;
@@ -462,6 +483,13 @@
       [...dividerTopSelect.options].some(o => o.value === stored.dividerTop)
     ) {
       dividerTopSelect.value = stored.dividerTop;
+    }
+    if (
+      stored.dividerSize != null &&
+      dividerSizeSelect &&
+      [...dividerSizeSelect.options].some(o => o.value === stored.dividerSize)
+    ) {
+      dividerSizeSelect.value = stored.dividerSize;
     }
     if (stored.vAlign && vAlignSelect) vAlignSelect.value = stored.vAlign;
     if (
@@ -494,6 +522,7 @@
     }
     if (stored.listChecks && listChecksSelect) listChecksSelect.value = stored.listChecks;
     if (stored.listBordered && listBorderedSelect) listBorderedSelect.value = stored.listBordered;
+    if (stored.listHighlight && listHighlightSelect) listHighlightSelect.value = stored.listHighlight;
   };
 
   const sectionRoots = () => {
@@ -509,15 +538,34 @@
     });
   };
 
+  const applyTextAlign = align => {
+    if (!demos) return;
+    demos
+      .querySelectorAll('.section-text .section-text__title, .section-text .section-text__content')
+      .forEach(el => {
+        el.classList.remove(...ALIGN_CLASSES);
+        if (align === 'center') el.classList.add('text-center');
+      });
+  };
+
   const applyAlign = align => {
     if (!demos || !align) return;
     const targets = demos.querySelectorAll(
-      '.section__inner, .section__inner .prose, .section__inner header, .custom-hero .wrapper, .section-cta .wrapper'
+      '.section__inner, .section__inner .prose, .section__inner header, .section-form__header, .custom-hero .wrapper, .section-cta .wrapper'
     );
     targets.forEach(el => {
+      if (el.classList.contains('section__inner') && el.closest('.section-form')) {
+        el.classList.remove(...ALIGN_CLASSES);
+        return;
+      }
+      if (el.closest('.section-text')) {
+        el.classList.remove(...ALIGN_CLASSES);
+        return;
+      }
       el.classList.remove(...ALIGN_CLASSES);
       if (align === 'center') el.classList.add('text-center');
     });
+    applyTextAlign(align);
     demos.querySelectorAll('.custom-hero').forEach(el => {
       el.setAttribute('data-hero-content-inline', align || 'left');
     });
@@ -547,10 +595,8 @@
   const readListItems = listRoot => {
     const items = [];
     listRoot.querySelectorAll('.section-list__item').forEach(li => {
-      const title =
-        li.querySelector('.section-list__item-title')?.textContent?.trim() || '';
-      const content =
-        li.querySelector('.section-list__item-content')?.textContent?.trim() || '';
+      const title = li.querySelector('.section-list__item-title')?.textContent?.trim() || '';
+      const content = li.querySelector('.section-list__item-content')?.textContent?.trim() || '';
       if (title || content) items.push({title, content});
     });
     return items;
@@ -636,6 +682,20 @@
     if (listBorderedSelect) listBorderedSelect.disabled = false;
   };
 
+  const applyListHighlightHeader = () => {
+    if (!demos) return;
+    const listRoot = demos.querySelector('.section-list');
+    if (!listRoot) return;
+    const header = listRoot.querySelector('.section-list__header');
+    const h2 = header?.querySelector('h2');
+    const on =
+      listHighlightSelect?.value === 'on' ||
+      (!listHighlightSelect && listRoot.getAttribute('data-list-highlight-header') === 'true');
+    listRoot.setAttribute('data-list-highlight-header', on ? 'true' : 'false');
+    header?.classList.toggle('section-list__header--highlight', on);
+    h2?.classList.toggle('heading-line', on);
+  };
+
   const apply = () => {
     const theme = themeSelect.value;
     const accent = accentSelect.value;
@@ -704,6 +764,7 @@
     if (decorationSelect) applyDecoration(decoration || '');
     if (decorationAccentSelect) applyDecorationAccent(decorationAccent || 'teal');
     applyListAppearance();
+    applyListHighlightHeader();
   };
 
   seedFromDemo();
@@ -723,6 +784,7 @@
   presetImageSelect?.addEventListener('change', onChange);
   dividerSelect?.addEventListener('change', onChange);
   dividerTopSelect?.addEventListener('change', onChange);
+  dividerSizeSelect?.addEventListener('change', onChange);
   vAlignSelect?.addEventListener('change', onChange);
   decorationSelect?.addEventListener('change', onChange);
   decorationAccentSelect?.addEventListener('change', onChange);
@@ -730,6 +792,7 @@
   listVariantSelect?.addEventListener('change', onChange);
   listChecksSelect?.addEventListener('change', onChange);
   listBorderedSelect?.addEventListener('change', onChange);
+  listHighlightSelect?.addEventListener('change', onChange);
   resetBtn?.addEventListener('click', () => {
     sessionStorage.removeItem(STORAGE_KEY);
     themeSelect.value = defaults.theme;
@@ -747,6 +810,9 @@
     if (dividerTopSelect && defaults.dividerTop != null) {
       dividerTopSelect.value = defaults.dividerTop;
     }
+    if (dividerSizeSelect && defaults.dividerSize != null) {
+      dividerSizeSelect.value = defaults.dividerSize;
+    }
     if (vAlignSelect && defaults.vAlign != null) vAlignSelect.value = defaults.vAlign;
     if (decorationSelect && defaults.decoration != null) decorationSelect.value = defaults.decoration;
     if (decorationAccentSelect && defaults.decorationAccent != null) {
@@ -757,6 +823,9 @@
     if (listChecksSelect && defaults.listChecks != null) listChecksSelect.value = defaults.listChecks;
     if (listBorderedSelect && defaults.listBordered != null) {
       listBorderedSelect.value = defaults.listBordered;
+    }
+    if (listHighlightSelect && defaults.listHighlight != null) {
+      listHighlightSelect.value = defaults.listHighlight;
     }
     apply();
   });

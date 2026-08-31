@@ -31,13 +31,14 @@
 {% else %}
   {% set bordered = variant == "stack" %}
 {% endif %}
+{% set highlightHeader = a.highlight_header if a.highlight_header is defined else s.highlight_header or false %}
 
-<div class="section-list | wrapper" {{ sectionThemeAttr(theme) }}{{ sectionAccentAttr(accent) }} data-list-variant="{{ variant }}" data-list-checks="{{ "true" if showChecks else "false" }}" data-list-bordered="{{ "true" if bordered else "false" }}"{% if s.id %} id="{{ s.id }}"{% endif %}>
+<div class="section-list | wrapper" {{ sectionThemeAttr(theme) }}{{ sectionAccentAttr(accent) }} data-list-variant="{{ variant }}" data-list-checks="{{ "true" if showChecks else "false" }}" data-list-bordered="{{ "true" if bordered else "false" }}" data-list-highlight-header="{{ "true" if highlightHeader else "false" }}"{% if s.id %} id="{{ s.id }}"{% endif %}>
   <div class="full wrapper section">
     <div class="{{ widthClass }} | section__inner region">
       {% if s.title or intro %}
-        <header class="section-list__header | flow prose {{ alignClass }}">
-          {% if s.title %}<h2>{{ s.title | markdownInline | safe }}</h2>{% endif %}
+        <header class="section-list__header | flow prose {{ alignClass }}{% if highlightHeader %} section-list__header--highlight{% endif %}">
+          {% if s.title %}<h2{% if highlightHeader %} class="heading-line"{% endif %}>{{ s.title | markdownInline | safe }}</h2>{% endif %}
           {% if intro %}
             <div class="section-list__intro">{{ intro | markdownFormat | safe }}</div>
           {% endif %}
@@ -63,7 +64,7 @@
           {% endfor %}
         </ul>
       {% else %}
-        <dl class="section-list__items section-list__definition | grid mt-l" data-layout="50-50">
+        <dl class="section-list__items section-list__definition | grid mt-xl" data-layout="50-50">
           {% for item in s.items %}
             <div class="section-list__item{% if bordered %} section-list__item--bordered{% endif %}">
               {% if showChecks %}

@@ -131,7 +131,8 @@ export default {
       width: 'feature',
       variant: 'stack',
       checks: true,
-      bordered: true
+      bordered: true,
+      highlight_header: true
     },
     title: 'What working with us feels like',
     content:
@@ -268,22 +269,23 @@ export default {
   services: {
     type: 'services',
     appearance: {
-      theme: 'navy'
+      theme: 'navy',
+      width: 'feature'
     },
     title: 'How We Deliver Results',
-    image: './src/assets/images/backgrounds/sfondi-dyvenia26.jpg',
     decoration: 'brand/arrows',
     items: [
       {
         prefix: 'Data Platform',
         title: 'Engineering',
         description:
-          'We design and build the foundation your data actually runs on.\n\n- Architectural design aligned with your systems\n- Pipelines with clear, traceable logic'
+          'We design and build the foundation your data actually runs on.\n\n- Architectural design aligned with your systems\n- Pipelines with clear, traceable logic\n- Integration across ERP, CRM, and operational systems\n- Scalable, maintainable data platform implementation\n- Data governance, observability, and reliability built in from the start'
       },
       {
         prefix: 'Metrics & Business',
         title: 'Logic',
-        description: 'We make your numbers consistent, defined, and trusted across the organization.'
+        description:
+          'We make your numbers consistent, defined, and trusted across the organization.\n\n- Architectural design aligned with your systems\n- Pipelines with clear, traceable logic\n- Integration across ERP, CRM, and operational systems\n- Scalable, maintainable data platform implementation\n- Data governance, observability, and reliability built in from the start'
       }
     ]
   },

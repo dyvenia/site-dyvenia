@@ -1,59 +1,59 @@
 ---
-layout: base
 title: Insights
-description: 'Gain expert strategies, real-world perspectives, and best practices in data engineering, analytics, and AI. Explore our latest insights to stay ahead in the ever-evolving data landscape.'
+description: Gain expert strategies, real-world perspectives, and best practices in data engineering, analytics, and AI. Explore our latest insights to stay ahead in the ever-evolving data landscape.
+layout: modular
+permalink: insights/{% if pagination.pageNumber >=1 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}index.html
 bodyClass: insights
-image: ./src/assets/images/backgrounds/sfondi-dyvenia10.jpg
 footerSpace: mt-2xl
 pagination:
   data: collections.allPosts
   size: 6
-permalink: 'insights/{% if pagination.pageNumber >=1 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}index.html'
-intro: >
-  Gain expert strategies, real-world perspectives, and best practices in data engineering, analytics, and AI. Explore our latest insights to stay ahead in the ever-evolving data landscape.
+sections:
+  - type: hero
+    internal_name: Hero
+    title: Insights
+    subtitle: Gain expert strategies, real-world perspectives, and best practices in data engineering, analytics, and AI. Explore our latest insights to stay ahead in the ever-evolving data landscape.
+    button_text: ''
+    button_target: ''
+    preset_image: ./src/assets/images/backgrounds/sfondi-8-high.jpg
+    image: ./src/assets/images/backgrounds/sfondi-dyvenia10.jpg
+    image_alt: Insights
+    video: null
+    appearance:
+      theme: background-default
+      accent: default
+      align: center
+      height: default
+      background: teal-800
+      content_block: center
+      divider: divider/soft
+      divider_class: ''
+    region_space: xl-2xl
+  - type: form
+    internal_name: Newsletter
+    title: ''
+    appearance:
+      theme: background-default
+      accent: default
+      align: left
+      width: content
+    intro: ''
 ---
 
-  {% set blogHero = {
-    title: title,
-    subtitle: intro,
-    image: image,
-    image_alt: alt or title
-  } %}
-  {% set customHero = {
-    hero: blogHero,
-    region_space: "xl-2xl"
-  } %}
-  {% include "partials/custom-hero.njk" %}
-
 <div class="wrapper flow">
-  <aside class="full | section" style="--spot-color: var(--color-bg); --flow-space: 0;">
-    <div class="section__inner flow wrapper pt-l-xl full">
-    {% include "partials/hubspot-form.njk" %}
-  </div>
-  </aside>
+  <section class="feature mt-xl-2xl" aria-describedby="blog-section">
+    <h2 id="blog-section" class="visually-hidden">Blog posts</h2>
 
-<section class="feature mt-xl-2xl" aria-describedby="blog-section">
-  <h2 id="blog-section" class="visually-hidden">Blog posts</h2>
+    <custom-masonry layout="50-50">
+      {% asyncEach item in pagination.items %}
+        {% include "partials/card-blog.njk" %}
+      {% endeach %}
+    </custom-masonry>
+  </section>
 
-  <custom-masonry layout="50-50">
-		{% asyncEach item in pagination.items %}
-			{% include "partials/card-blog.njk" %}
-		{% endeach %}
-	</custom-masonry>
-</section>
-
-
-  <!-- set collection to paginate -->
   {% set collectionToPaginate = collections.posts %}
-  <!-- set target pagination settings in meta.js -->
   {% set metaKey = "blog" %}
-  <!-- if the number of items in the collection is greater than the number of items shown on one page -->
   {% if collectionToPaginate.length > pagination.size %}
-    <!-- include pagination -->
     {% include 'partials/pagination.njk' %}
   {% endif %}
 </div>
-
-{%- css "local" -%}
-  {%- include "css/custom-hero.css" -%}
-{%- endcss -%}

@@ -28,6 +28,6 @@
   opacity: 95%;
 }
 
-.section div + div ul {
+/* .section div + div ul {
   margin-block-start: 0;
-}
+} */

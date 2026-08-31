@@ -1,38 +1,38 @@
 {# section.type: services — expects `section` in scope
-   Full-bleed BG image + stacked service rows #}
+   Shell: .section-{type}.wrapper[data-section-theme] > .full.wrapper.section > .section__inner #}
 {% css "local" %}
   {% include "css/sections/services.css" %}
 {% endcss %}
-
-{% from "sections/_shell.njk" import sectionThemeAttr, sectionAccentAttr %}
+{% from "sections/_shell.njk" import sectionWidthClass, sectionThemeAttr, sectionAccentAttr %}
 
 {% set s = section %}
 {% set a = s.appearance or {} %}
 {% set theme = a.theme or s.theme or "navy" %}
 {% set accent = a.accent if a.accent is defined else s.accent %}
-{% set align = a.align if a.align is defined else s.align %}
+{% set width = a.width if a.width is defined else s.width %}
+{% set widthClass = sectionWidthClass(width or "feature") or "feature" %}
 
-<div class="section-services | wrapper" {{ sectionThemeAttr(theme) }}{{ sectionAccentAttr(accent) }}{% if s.decoration %} data-decoration="{{ s.decoration }}"{% endif %}{% if s.id %} id="{{ s.id }}"{% endif %}>
-  <div class="section-services__band | full wrapper section">
-    {% if s.image %}
-      {% image s.image, "" %}
-    {% endif %}
+<div
+  class="section-services | wrapper"
+  {{ sectionThemeAttr(theme) }}{{ sectionAccentAttr(accent) }}{% if s.decoration %}data-decoration="{{ s.decoration }}"{% endif %}{% if s.id %}id="{{ s.id }}"{% endif %}
+>
+  <div class="full wrapper section">
     {% if s.decoration %}
       {% svg s.decoration, "", "section-services__decoration" %}
     {% endif %}
-    <article class="wrapper region flow">
-      {% if s.title %}<h2 class="text-center">{{ s.title | markdownInline | safe }}</h2>{% endif %}
-      {% for item in s.items %}
-        <div class="grid" data-layout="thirds">
-          <h3>
-            {% if item.prefix %}<span>{{ item.prefix }}</span>{% endif %}
-            {{ item.title }}
-          </h3>
-          <div>
-            {{ (item.description or item.content) | markdownFormat | safe }}
+    <div class="{{ widthClass }} | section__inner region section-services__band">
+      <div class="flow">
+        {% if s.title %}<h2 class="text-center">{{ s.title | markdownInline | safe }}</h2>{% endif %}
+        {% for item in s.items %}
+          <div class="grid prose" data-layout="thirds">
+            <h3>
+              {% if item.prefix %}<span>{{ item.prefix }}</span>{% endif %}
+              {{ item.title }}
+            </h3>
+            <div>{{ (item.description or item.content) | markdownFormat | safe }}</div>
           </div>
-        </div>
-      {% endfor %}
-    </article>
+        {% endfor %}
+      </div>
+    </div>
   </div>
 </div>

@@ -250,6 +250,8 @@ collections:
                             value: teal-600
                           - label: purple-800
                             value: purple-800
+                          - label: purple-300
+                            value: purple-300
                           - label: navy-dark
                             value: navy-dark
                           - label: navy
@@ -1346,16 +1348,12 @@ collections:
                     name: title
                     widget: markdown
                     required: false
-                  - label: Background image
-                    name: image
-                    widget: image
-                    required: false
                   - label: Decoration SVG
                     name: decoration
                     widget: select
                     required: false
                     dropdown_threshold: 0
-                    hint: Optional mark (e.g. Arrows). Can be used with or without background image.
+                    hint: Optional mark (e.g. Arrows).
                     options:
                       - label: — none —
                         value: ''
@@ -1443,17 +1441,17 @@ collections:
                           - label: navy
                             value: navy
                         default: default
-                      - label: Alignment
-                        name: align
+                      - label: Width
+                        name: width
                         widget: select
                         required: false
                         dropdown_threshold: 0
                         options:
-                          - label: left
-                            value: left
-                          - label: center
-                            value: center
-                        default: left
+                          - label: content
+                            value: content
+                          - label: feature
+                            value: feature
+                        default: feature
               - label: Tabs
                 name: tabs
                 widget: object
@@ -1960,6 +1958,8 @@ collections:
                             value: teal-600
                           - label: purple-800
                             value: purple-800
+                          - label: purple-300
+                            value: purple-300
                           - label: navy-dark
                             value: navy-dark
                           - label: navy
@@ -2074,32 +2074,2016 @@ collections:
         label: Insights
         name: insights
         fields:
-          - name: title
-            label: Title
+          - label: Title
+            name: title
             widget: string
-          - name: permalink
-            label: Permalink
-            widget: hidden
-          - name: description
-            label: Meta Description
+          - label: Description
+            name: description
             widget: text
-          - name: layout
-            label: Layout
+          - label: Layout
+            name: layout
             widget: hidden
-          - name: bodyClass
-            label: Body Class
+            default: modular
+          - label: Permalink
+            name: permalink
             widget: hidden
-            required: false
-          - name: footerSpace
-            label: Footer Space Class
+          - label: Body Class
+            name: bodyClass
             widget: hidden
-            required: false
-          - name: intro
-            label: Intro Text
-            widget: markdown
-          - name: image
-            label: Hero Image
+            default: insights
+          - label: Footer Space
+            name: footerSpace
             widget: hidden
+            default: mt-2xl
+          - label: Pagination
+            name: pagination
+            widget: object
+            collapsed: true
+            fields:
+              - label: Data
+                name: data
+                widget: hidden
+                default: collections.allPosts
+              - label: Size
+                name: size
+                widget: hidden
+                default: 6
+          - label: Sections
+            name: sections
+            widget: list
+            collapsed: true
+            summary: "{{fields.type}}: {{fields.internal_name | default('{{fields.title}}')}}"
+            types:
+              - label: Hero
+                name: hero
+                widget: object
+                fields:
+                  - label: Internal name
+                    name: internal_name
+                    widget: string
+                    required: false
+                    hint: Only visible in CMS list view
+                  - label: Title
+                    name: title
+                    widget: markdown
+                  - label: Subtitle
+                    name: subtitle
+                    widget: markdown
+                    required: false
+                  - label: Button Text
+                    name: button_text
+                    widget: string
+                    required: false
+                  - label: Button Target
+                    name: button_target
+                    widget: string
+                    required: false
+                  - label: Preset background
+                    name: preset_image
+                    widget: select
+                    required: false
+                    dropdown_threshold: 0
+                    hint: Stock image from backgrounds/. Custom upload below overrides this.
+                    options:
+                    - label: — none —
+                      value: ''
+                    - label: jellyfish-hr.jpg
+                      value: ./src/assets/images/backgrounds/jellyfish-hr.jpg
+                    - label: sfondi-8-high.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-8-high.jpg
+                    - label: sfondi-dyvenia02.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia02.jpg
+                    - label: sfondi-dyvenia03.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia03.jpg
+                    - label: sfondi-dyvenia04.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia04.jpg
+                    - label: sfondi-dyvenia05.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia05.jpg
+                    - label: sfondi-dyvenia06.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia06.jpg
+                    - label: sfondi-dyvenia07.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia07.jpg
+                    - label: sfondi-dyvenia08.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia08.jpg
+                    - label: sfondi-dyvenia09.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia09.jpg
+                    - label: sfondi-dyvenia10.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia10.jpg
+                    - label: sfondi-dyvenia11.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia11.jpg
+                    - label: sfondi-dyvenia12.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia12.jpg
+                    - label: sfondi-dyvenia13.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia13.jpg
+                    - label: sfondi-dyvenia14.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia14.jpg
+                    - label: sfondi-dyvenia15.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia15.jpg
+                    - label: sfondi-dyvenia16.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia16.jpg
+                    - label: sfondi-dyvenia17.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia17.jpg
+                    - label: sfondi-dyvenia18.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia18.jpg
+                    - label: sfondi-dyvenia19.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia19.jpg
+                    - label: sfondi-dyvenia20.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia20.jpg
+                    - label: sfondi-dyvenia21.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia21.jpg
+                    - label: sfondi-dyvenia22.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia22.jpg
+                    - label: sfondi-dyvenia23.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia23.jpg
+                    - label: sfondi-dyvenia24.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia24.jpg
+                    - label: sfondi-dyvenia25.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia25.jpg
+                    - label: sfondi-dyvenia26.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia26.jpg
+                    - label: sfondi-dyvenia27.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia27.jpg
+                    - label: sfondi-dyvenia28.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia28.jpg
+                    - label: sfondi-dyvenia29.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia29.jpg
+                    - label: sfondi-dyvenia30.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia30.jpg
+                    - label: sfondi-dyvenia31.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia31.jpg
+                    - label: sfondi-dyvenia32.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia32.jpg
+                  - label: Image
+                    name: image
+                    widget: image
+                    required: false
+                    hint: Custom upload — overrides preset if set.
+                  - label: Image Alt
+                    name: image_alt
+                    widget: string
+                    required: false
+                  - label: Video
+                    name: video
+                    widget: object
+                    required: false
+                    fields:
+                      - label: WebM
+                        name: webm
+                        widget: file
+                        required: false
+                      - label: MP4
+                        name: mp4
+                        widget: file
+                        required: false
+                  - label: Settings
+                    name: appearance
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: Background theme
+                        name: theme
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: Background
+                            value: background-default
+                          - label: Background accent
+                            value: background-accent
+                          - label: gray-dark
+                            value: gray-dark
+                          - label: teal
+                            value: teal
+                          - label: teal-dark
+                            value: teal-dark
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: background-default
+                        hint: Color peeking through the separator (match the next section).
+                      - label: Accent / CTA
+                        name: accent
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: default
+                            value: default
+                          - label: neutral
+                            value: neutral
+                          - label: teal
+                            value: teal
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: default
+                      - label: Alignment
+                        name: align
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: left
+                            value: left
+                          - label: center
+                            value: center
+                        default: left
+                      - label: Height
+                        name: height
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: default
+                            value: default
+                          - label: tall
+                            value: tall
+                          - label: cover
+                            value: cover
+                        default: tall
+                      - label: Media background
+                        name: background
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: teal-800
+                            value: teal-800
+                          - label: teal-600
+                            value: teal-600
+                          - label: purple-800
+                            value: purple-800
+                          - label: purple-300
+                            value: purple-300
+                          - label: navy-dark
+                            value: navy-dark
+                          - label: navy
+                            value: navy
+                          - label: gray-900
+                            value: gray-900
+                          - label: gray-800
+                            value: gray-800
+                          - label: gray-200
+                            value: gray-200
+                          - label: gray-100
+                            value: gray-100
+                          - label: white
+                            value: white
+                        default: teal-800
+                        hint: Wash on the media; text contrast is automatic.
+                      - label: Vertical alignment
+                        name: content_block
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: top
+                            value: top
+                          - label: center
+                            value: center
+                          - label: bottom
+                            value: bottom
+                        default: center
+                      - label: Divider
+                        name: divider
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        hint: Bottom edge shape. None hides the divider.
+                        options:
+                          - label: — none —
+                            value: ''
+                          - label: Soft
+                            value: divider/soft
+                          - label: Soft invert
+                            value: divider/soft-invert
+                          - label: Waves
+                            value: divider/waves
+                        default: divider/soft
+                      - label: Divider size
+                        name: divider_class
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                        - label: default
+                          value: ''
+                        - label: small
+                          value: small
+                        default: ''
+              - label: Text
+                name: text
+                widget: object
+                fields:
+                  - label: Internal name
+                    name: internal_name
+                    widget: string
+                    required: false
+                    hint: CMS list label only — not shown on the site
+                  - label: Title
+                    name: title
+                    widget: markdown
+                    required: false
+                  - label: Content
+                    name: content
+                    widget: markdown
+                    required: false
+                    hint: Full-width body prose. Can be used together with left/right columns.
+                  - label: Content Left
+                    name: content_left
+                    widget: markdown
+                    required: false
+                    hint: Optional left column; stacks under full-width content when both are set.
+                  - label: Content Right
+                    name: content_right
+                    widget: markdown
+                    required: false
+                    hint: Optional right column; stacks under full-width content when both are set.
+                  - label: Decoration SVG
+                    name: decoration
+                    widget: select
+                    required: false
+                    dropdown_threshold: 0
+                    hint: Watermark behind copy
+                    options:
+                      - label: — none —
+                        value: ''
+                      - label: Arrow
+                        value: brand/arrow
+                      - label: Arrows
+                        value: brand/arrows
+                      - label: Brick
+                        value: brand/brick
+                      - label: Check
+                        value: brand/check
+                      - label: Forward
+                        value: brand/forward
+                      - label: Medusa
+                        value: brand/medusa
+                      - label: Medusa organic
+                        value: brand/medusa-organic
+                      - label: Rings
+                        value: brand/rings
+                      - label: Scale
+                        value: brand/scale
+                      - label: Simple
+                        value: brand/simple
+                      - label: Stack
+                        value: brand/stack
+                      - label: Staggered
+                        value: brand/staggered
+                      - label: Waves
+                        value: brand/waves
+                  - label: Settings
+                    name: appearance
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: Background theme
+                        name: theme
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: Background
+                            value: background-default
+                          - label: Background accent
+                            value: background-accent
+                          - label: gray-dark
+                            value: gray-dark
+                          - label: teal
+                            value: teal
+                          - label: teal-dark
+                            value: teal-dark
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: background-default
+                      - label: Accent / CTA
+                        name: accent
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: default
+                            value: default
+                          - label: neutral
+                            value: neutral
+                          - label: teal
+                            value: teal
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: default
+                      - label: Alignment
+                        name: align
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: left
+                            value: left
+                          - label: center
+                            value: center
+                        default: left
+                      - label: Width
+                        name: width
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: content
+                            value: content
+                          - label: feature
+                            value: feature
+                        default: feature
+                      - label: Title size
+                        name: title_size
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: Default
+                            value: default
+                          - label: Small
+                            value: small
+                        default: default
+                        hint: Default matches heading scale; small uses size-step-2.
+                      - label: Body size
+                        name: body_size
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: Default
+                            value: default
+                          - label: Large
+                            value: large
+                        default: default
+                        hint: Applies to body prose (not the title).
+              - label: Statement
+                name: statement
+                widget: object
+                fields:
+                  - label: Internal name
+                    name: internal_name
+                    widget: string
+                    required: false
+                    hint: CMS list label only — not shown on the site
+                  - label: Eyebrow
+                    name: eyebrow
+                    widget: string
+                    required: false
+                    hint: Optional small line above the title (aliases title1)
+                  - label: Title
+                    name: title
+                    widget: markdown
+                    required: false
+                  - label: Subtitle
+                    name: subtitle
+                    widget: markdown
+                    required: false
+                  - label: Decoration SVG
+                    name: decoration
+                    widget: select
+                    required: false
+                    dropdown_threshold: 0
+                    hint: Brand mark from src/assets/svg/brand (header logos excluded)
+                    options:
+                      - label: — none —
+                        value: ''
+                      - label: Arrow
+                        value: brand/arrow
+                      - label: Arrows
+                        value: brand/arrows
+                      - label: Brick
+                        value: brand/brick
+                      - label: Check
+                        value: brand/check
+                      - label: Forward
+                        value: brand/forward
+                      - label: Medusa
+                        value: brand/medusa
+                      - label: Medusa organic
+                        value: brand/medusa-organic
+                      - label: Rings
+                        value: brand/rings
+                      - label: Scale
+                        value: brand/scale
+                      - label: Simple
+                        value: brand/simple
+                      - label: Stack
+                        value: brand/stack
+                      - label: Staggered
+                        value: brand/staggered
+                      - label: Waves
+                        value: brand/waves
+                  - label: Settings
+                    name: appearance
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: Background theme
+                        name: theme
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: Background
+                            value: background-default
+                          - label: Background accent
+                            value: background-accent
+                          - label: gray-dark
+                            value: gray-dark
+                          - label: teal
+                            value: teal
+                          - label: teal-dark
+                            value: teal-dark
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: teal
+                      - label: Accent / CTA
+                        name: accent
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: default
+                            value: default
+                          - label: neutral
+                            value: neutral
+                          - label: teal
+                            value: teal
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: default
+                      - label: Alignment
+                        name: align
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: left
+                            value: left
+                          - label: center
+                            value: center
+                        default: left
+                      - label: Width
+                        name: width
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: content
+                            value: content
+                          - label: feature
+                            value: feature
+                        default: feature
+                      - label: Body size
+                        name: body_size
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: Default
+                            value: default
+                          - label: Small
+                            value: small
+                        default: small
+                        hint: Support text size; small is text-step-min-1.
+              - label: List
+                name: list
+                widget: object
+                fields:
+                  - label: Internal name
+                    name: internal_name
+                    widget: string
+                    required: false
+                    hint: CMS list label only — not shown on the site
+                  - label: Title
+                    name: title
+                    widget: markdown
+                    required: false
+                  - label: Intro
+                    name: content
+                    widget: markdown
+                    required: false
+                  - label: Items
+                    name: items
+                    widget: list
+                    collapsed: true
+                    summary: '{{fields.title}}'
+                    fields:
+                      - label: Title
+                        name: title
+                        widget: string
+                      - label: Content
+                        name: content
+                        widget: markdown
+                        required: false
+                  - label: Settings
+                    name: appearance
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: Background theme
+                        name: theme
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: Background
+                            value: background-default
+                          - label: Background accent
+                            value: background-accent
+                          - label: gray-dark
+                            value: gray-dark
+                          - label: teal
+                            value: teal
+                          - label: teal-dark
+                            value: teal-dark
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: background-default
+                      - label: Accent / CTA
+                        name: accent
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: default
+                            value: default
+                          - label: neutral
+                            value: neutral
+                          - label: teal
+                            value: teal
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: default
+                      - label: Alignment
+                        name: align
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: left
+                            value: left
+                          - label: center
+                            value: center
+                        default: left
+                      - label: Width
+                        name: width
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: content
+                            value: content
+                          - label: feature
+                            value: feature
+                        default: feature
+                      - label: Variant
+                        name: variant
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: definition
+                            value: definition
+                          - label: stack
+                            value: stack
+                        default: definition
+                      - label: Checkmarks
+                        name: checks
+                        widget: boolean
+                        required: false
+                        default: true
+                        hint: Optional accent check icons
+                      - label: Bordered
+                        name: bordered
+                        widget: boolean
+                        required: false
+                        default: true
+                        hint: Optional item borders
+              - label: Process
+                name: process
+                widget: object
+                fields:
+                  - label: Internal name
+                    name: internal_name
+                    widget: string
+                    required: false
+                    hint: CMS list label only — not shown on the site
+                  - label: Title
+                    name: title
+                    widget: markdown
+                    required: false
+                  - label: Title line 1
+                    name: title1
+                    widget: string
+                    required: false
+                  - label: Title line 2
+                    name: title2
+                    widget: string
+                    required: false
+                  - label: Subtitle
+                    name: subtitle
+                    widget: markdown
+                    required: false
+                  - label: Decoration SVG
+                    name: decoration
+                    widget: select
+                    required: false
+                    dropdown_threshold: 0
+                    hint: Brand mark from src/assets/svg/brand (header logos excluded)
+                    options:
+                      - label: — none —
+                        value: ''
+                      - label: Arrow
+                        value: brand/arrow
+                      - label: Arrows
+                        value: brand/arrows
+                      - label: Brick
+                        value: brand/brick
+                      - label: Check
+                        value: brand/check
+                      - label: Forward
+                        value: brand/forward
+                      - label: Medusa
+                        value: brand/medusa
+                      - label: Medusa organic
+                        value: brand/medusa-organic
+                      - label: Rings
+                        value: brand/rings
+                      - label: Scale
+                        value: brand/scale
+                      - label: Simple
+                        value: brand/simple
+                      - label: Stack
+                        value: brand/stack
+                      - label: Staggered
+                        value: brand/staggered
+                      - label: Waves
+                        value: brand/waves
+                  - label: Steps
+                    name: items
+                    widget: list
+                    collapsed: true
+                    summary: '{{fields.title}}'
+                    fields:
+                      - label: Title
+                        name: title
+                        widget: string
+                      - label: Content
+                        name: content
+                        widget: markdown
+                  - label: Settings
+                    name: appearance
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: Background theme
+                        name: theme
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: Background
+                            value: background-default
+                          - label: Background accent
+                            value: background-accent
+                          - label: gray-dark
+                            value: gray-dark
+                          - label: teal
+                            value: teal
+                          - label: teal-dark
+                            value: teal-dark
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: background-default
+                      - label: Accent / CTA
+                        name: accent
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: default
+                            value: default
+                          - label: neutral
+                            value: neutral
+                          - label: teal
+                            value: teal
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: default
+                      - label: Decoration color
+                        name: decoration_accent
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: teal
+                            value: teal
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                          - label: neutral
+                            value: neutral
+                        default: teal
+                        hint: Decorative SVG only — independent of Accent (timeline + title line 2)
+                      - label: Alignment
+                        name: align
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: left
+                            value: left
+                          - label: center
+                            value: center
+                        default: left
+              - label: Feature
+                name: feature
+                widget: object
+                fields:
+                  - label: Internal name
+                    name: internal_name
+                    widget: string
+                    required: false
+                    hint: CMS list label only — not shown on the site
+                  - label: Title
+                    name: title
+                    widget: markdown
+                    required: false
+                  - label: Content
+                    name: content
+                    widget: markdown
+                    required: false
+                  - label: Image
+                    name: image
+                    widget: image
+                    required: false
+                    hint: Custom upload — overrides preset if set.
+                  - label: Image Alt
+                    name: image_alt
+                    widget: string
+                    required: false
+                  - label: Caption
+                    name: caption
+                    widget: string
+                    required: false
+                  - label: Button Text
+                    name: button_text
+                    widget: string
+                    required: false
+                  - label: Button Target
+                    name: button_target
+                    widget: string
+                    required: false
+                  - label: Settings
+                    name: appearance
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: Background theme
+                        name: theme
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: Background
+                            value: background-default
+                          - label: Background accent
+                            value: background-accent
+                          - label: gray-dark
+                            value: gray-dark
+                          - label: teal
+                            value: teal
+                          - label: teal-dark
+                            value: teal-dark
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: background-default
+                      - label: Accent / CTA
+                        name: accent
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: default
+                            value: default
+                          - label: neutral
+                            value: neutral
+                          - label: teal
+                            value: teal
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: default
+                      - label: Width
+                        name: width
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: content
+                            value: content
+                          - label: feature
+                            value: feature
+                          - label: full
+                            value: full
+                        default: feature
+                        hint: full = media breaks out; copy stays in feature
+                      - label: Media side
+                        name: media_side
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: left
+                            value: left
+                          - label: right
+                            value: right
+                          - label: bottom
+                            value: bottom
+                        default: right
+              - label: Accordion
+                name: accordion
+                widget: object
+                fields:
+                  - label: Internal name
+                    name: internal_name
+                    widget: string
+                    required: false
+                    hint: CMS list label only — not shown on the site
+                  - label: Title
+                    name: title
+                    widget: markdown
+                    required: false
+                  - label: Intro
+                    name: intro
+                    widget: markdown
+                    required: false
+                  - label: Button Text
+                    name: button_text
+                    widget: string
+                    required: false
+                  - label: Button Target
+                    name: button_target
+                    widget: string
+                    required: false
+                  - label: Items
+                    name: items
+                    widget: list
+                    summary: '{{fields.title}}'
+                    fields:
+                      - label: Title
+                        name: title
+                        widget: string
+                      - label: Content
+                        name: content
+                        widget: markdown
+                  - label: Settings
+                    name: appearance
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: Background theme
+                        name: theme
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: Background
+                            value: background-default
+                          - label: Background accent
+                            value: background-accent
+                          - label: gray-dark
+                            value: gray-dark
+                          - label: teal
+                            value: teal
+                          - label: teal-dark
+                            value: teal-dark
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: background-default
+                      - label: Accent / CTA
+                        name: accent
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: default
+                            value: default
+                          - label: neutral
+                            value: neutral
+                          - label: teal
+                            value: teal
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: default
+                      - label: Alignment
+                        name: align
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: left
+                            value: left
+                          - label: center
+                            value: center
+                        default: left
+                      - label: Width
+                        name: width
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: content
+                            value: content
+                          - label: feature
+                            value: feature
+                        default: feature
+              - label: Posts
+                name: posts
+                widget: object
+                fields:
+                  - label: Internal name
+                    name: internal_name
+                    widget: string
+                    required: false
+                    hint: CMS list label only — not shown on the site
+                  - label: Title
+                    name: title
+                    widget: markdown
+                    required: false
+                  - label: Intro
+                    name: intro
+                    widget: markdown
+                    required: false
+                  - label: Title link
+                    name: title_href
+                    widget: string
+                    required: false
+                    default: /insights/
+                  - label: Count
+                    name: count
+                    widget: number
+                    required: false
+                    default: 3
+                    value_type: int
+                  - label: Settings
+                    name: appearance
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: Background theme
+                        name: theme
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: Background
+                            value: background-default
+                          - label: Background accent
+                            value: background-accent
+                          - label: gray-dark
+                            value: gray-dark
+                          - label: teal
+                            value: teal
+                          - label: teal-dark
+                            value: teal-dark
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: background-default
+                      - label: Accent / CTA
+                        name: accent
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: default
+                            value: default
+                          - label: neutral
+                            value: neutral
+                          - label: teal
+                            value: teal
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: default
+                      - label: Alignment
+                        name: align
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: left
+                            value: left
+                          - label: center
+                            value: center
+                        default: left
+                      - label: Width
+                        name: width
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: content
+                            value: content
+                          - label: feature
+                            value: feature
+                          - label: full
+                            value: full
+                        default: feature
+                      - label: Card layout
+                        name: card_layout
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: grid
+                            value: grid
+                          - label: masonry
+                            value: masonry
+                        default: grid
+              - label: Team
+                name: team
+                widget: object
+                fields:
+                  - label: Internal name
+                    name: internal_name
+                    widget: string
+                    required: false
+                    hint: CMS list label only — not shown on the site
+                  - label: Title
+                    name: title
+                    widget: markdown
+                    required: false
+                  - label: Content
+                    name: content
+                    widget: markdown
+                    required: false
+                  - label: Settings
+                    name: appearance
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: Background theme
+                        name: theme
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: Background
+                            value: background-default
+                          - label: Background accent
+                            value: background-accent
+                          - label: gray-dark
+                            value: gray-dark
+                          - label: teal
+                            value: teal
+                          - label: teal-dark
+                            value: teal-dark
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: background-default
+                      - label: Accent / CTA
+                        name: accent
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: default
+                            value: default
+                          - label: neutral
+                            value: neutral
+                          - label: teal
+                            value: teal
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: default
+                      - label: Filter
+                        name: filter
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: show_on_about
+                            value: show_on_about
+                          - label: all
+                            value: all
+                        default: show_on_about
+                      - label: Header layout
+                        name: header_layout
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: stack
+                            value: stack
+                          - label: thirds
+                            value: thirds
+                        default: stack
+              - label: Form
+                name: form
+                widget: object
+                fields:
+                  - label: Internal name
+                    name: internal_name
+                    widget: string
+                    required: false
+                    hint: CMS list label only — not shown on the site
+                  - label: Title
+                    name: title
+                    widget: markdown
+                    required: false
+                  - label: Intro
+                    name: intro
+                    widget: markdown
+                    required: false
+                  - label: Settings
+                    name: appearance
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: Background theme
+                        name: theme
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: Background
+                            value: background-default
+                          - label: Background accent
+                            value: background-accent
+                          - label: gray-dark
+                            value: gray-dark
+                          - label: teal
+                            value: teal
+                          - label: teal-dark
+                            value: teal-dark
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: background-default
+                      - label: Accent / CTA
+                        name: accent
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: default
+                            value: default
+                          - label: neutral
+                            value: neutral
+                          - label: teal
+                            value: teal
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: default
+                      - label: Alignment
+                        name: align
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: left
+                            value: left
+                          - label: center
+                            value: center
+                        default: left
+                      - label: Width
+                        name: width
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: content
+                            value: content
+                          - label: feature
+                            value: feature
+                          - label: full
+                            value: full
+                        default: feature
+              - label: Services
+                name: services
+                widget: object
+                fields:
+                  - label: Internal name
+                    name: internal_name
+                    widget: string
+                    required: false
+                    hint: CMS list label only — not shown on the site
+                  - label: Title
+                    name: title
+                    widget: markdown
+                    required: false
+                  - label: Decoration SVG
+                    name: decoration
+                    widget: select
+                    required: false
+                    dropdown_threshold: 0
+                    hint: Optional mark (e.g. Arrows).
+                    options:
+                      - label: — none —
+                        value: ''
+                      - label: Arrow
+                        value: brand/arrow
+                      - label: Arrows
+                        value: brand/arrows
+                      - label: Brick
+                        value: brand/brick
+                      - label: Check
+                        value: brand/check
+                      - label: Forward
+                        value: brand/forward
+                      - label: Medusa
+                        value: brand/medusa
+                      - label: Medusa organic
+                        value: brand/medusa-organic
+                      - label: Rings
+                        value: brand/rings
+                      - label: Scale
+                        value: brand/scale
+                      - label: Simple
+                        value: brand/simple
+                      - label: Stack
+                        value: brand/stack
+                      - label: Staggered
+                        value: brand/staggered
+                      - label: Waves
+                        value: brand/waves
+                  - label: Items
+                    name: items
+                    widget: list
+                    summary: '{{fields.prefix}} {{fields.title}}'
+                    fields:
+                      - label: Prefix
+                        name: prefix
+                        widget: string
+                        required: false
+                      - label: Title
+                        name: title
+                        widget: string
+                      - label: Description
+                        name: description
+                        widget: markdown
+                  - label: Settings
+                    name: appearance
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: Background theme
+                        name: theme
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: Background
+                            value: background-default
+                          - label: Background accent
+                            value: background-accent
+                          - label: gray-dark
+                            value: gray-dark
+                          - label: teal
+                            value: teal
+                          - label: teal-dark
+                            value: teal-dark
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: background-default
+                      - label: Accent / CTA
+                        name: accent
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: default
+                            value: default
+                          - label: neutral
+                            value: neutral
+                          - label: teal
+                            value: teal
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: default
+                      - label: Width
+                        name: width
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: content
+                            value: content
+                          - label: feature
+                            value: feature
+                        default: feature
+              - label: Tabs
+                name: tabs
+                widget: object
+                fields:
+                  - label: Internal name
+                    name: internal_name
+                    widget: string
+                    required: false
+                    hint: CMS list label only — not shown on the site
+                  - label: Title
+                    name: title
+                    widget: markdown
+                    required: false
+                  - label: Intro
+                    name: intro
+                    widget: markdown
+                    required: false
+                  - label: What heading
+                    name: title_what
+                    widget: string
+                    required: false
+                    default: What we do?
+                  - label: Outcomes heading
+                    name: title_outcomes
+                    widget: string
+                    required: false
+                    default: 'Outcomes:'
+                  - label: Stages
+                    name: stages
+                    widget: list
+                    summary: '{{fields.label}} {{fields.name}}'
+                    fields:
+                      - label: Label
+                        name: label
+                        widget: string
+                      - label: Name
+                        name: name
+                        widget: string
+                      - label: Steps
+                        name: steps
+                        widget: list
+                        summary: '{{fields.title}}'
+                        fields:
+                          - label: Label
+                            name: label
+                            widget: string
+                            required: false
+                          - label: Title
+                            name: title
+                            widget: string
+                          - label: Content
+                            name: content
+                            widget: markdown
+                          - label: Outcomes
+                            name: outcomes
+                            widget: markdown
+                            required: false
+                  - label: Settings
+                    name: appearance
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: Background theme
+                        name: theme
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: Background
+                            value: background-default
+                          - label: Background accent
+                            value: background-accent
+                          - label: gray-dark
+                            value: gray-dark
+                          - label: teal
+                            value: teal
+                          - label: teal-dark
+                            value: teal-dark
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: background-default
+                      - label: Accent / CTA
+                        name: accent
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: default
+                            value: default
+                          - label: neutral
+                            value: neutral
+                          - label: teal
+                            value: teal
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: default
+                      - label: Alignment
+                        name: align
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: left
+                            value: left
+                          - label: center
+                            value: center
+                        default: left
+                      - label: Width
+                        name: width
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: content
+                            value: content
+                          - label: feature
+                            value: feature
+                          - label: full
+                            value: full
+                        default: feature
+              - label: Cases
+                name: cases
+                widget: object
+                fields:
+                  - label: Internal name
+                    name: internal_name
+                    widget: string
+                    required: false
+                    hint: CMS list label only — not shown on the site
+                  - label: Title
+                    name: title
+                    widget: markdown
+                    required: false
+                  - label: Intro
+                    name: intro
+                    widget: markdown
+                    required: false
+                  - label: Title link
+                    name: title_href
+                    widget: string
+                    required: false
+                    default: /case-studies/
+                  - label: Count
+                    name: count
+                    widget: number
+                    required: false
+                    default: 3
+                    value_type: int
+                  - label: Settings
+                    name: appearance
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: Background theme
+                        name: theme
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: Background
+                            value: background-default
+                          - label: Background accent
+                            value: background-accent
+                          - label: gray-dark
+                            value: gray-dark
+                          - label: teal
+                            value: teal
+                          - label: teal-dark
+                            value: teal-dark
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: background-default
+                      - label: Accent / CTA
+                        name: accent
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: default
+                            value: default
+                          - label: neutral
+                            value: neutral
+                          - label: teal
+                            value: teal
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: default
+                      - label: Alignment
+                        name: align
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: left
+                            value: left
+                          - label: center
+                            value: center
+                        default: left
+                      - label: Width
+                        name: width
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: content
+                            value: content
+                          - label: feature
+                            value: feature
+                          - label: full
+                            value: full
+                        default: feature
+                      - label: Card layout
+                        name: card_layout
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: grid
+                            value: grid
+                          - label: masonry
+                            value: masonry
+                        default: grid
+              - label: Gallery
+                name: gallery
+                widget: object
+                fields:
+                  - label: Internal name
+                    name: internal_name
+                    widget: string
+                    required: false
+                    hint: CMS list label only — not shown on the site
+                  - label: Title
+                    name: title
+                    widget: markdown
+                    required: false
+                  - label: Intro
+                    name: intro
+                    widget: markdown
+                    required: false
+                  - label: Items
+                    name: items
+                    widget: list
+                    summary: '{{fields.alt}}'
+                    fields:
+                      - label: Image
+                        name: image
+                        widget: image
+                      - label: Alt
+                        name: alt
+                        widget: string
+                      - label: Caption
+                        name: caption
+                        widget: string
+                        required: false
+                  - label: Settings
+                    name: appearance
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: Background theme
+                        name: theme
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: Background
+                            value: background-default
+                          - label: Background accent
+                            value: background-accent
+                          - label: gray-dark
+                            value: gray-dark
+                          - label: teal
+                            value: teal
+                          - label: teal-dark
+                            value: teal-dark
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: background-default
+                      - label: Accent / CTA
+                        name: accent
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: default
+                            value: default
+                          - label: neutral
+                            value: neutral
+                          - label: teal
+                            value: teal
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: default
+                      - label: Alignment
+                        name: align
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: left
+                            value: left
+                          - label: center
+                            value: center
+                        default: left
+                      - label: Width
+                        name: width
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: content
+                            value: content
+                          - label: feature
+                            value: feature
+                        default: feature
+                        hint: content or feature only
+              - label: CTA
+                name: cta
+                widget: object
+                fields:
+                  - label: Internal name
+                    name: internal_name
+                    widget: string
+                    required: false
+                    hint: CMS list label only — not shown on the site
+                  - label: Title
+                    name: title
+                    widget: markdown
+                  - label: Subtitle
+                    name: subtitle
+                    widget: markdown
+                    required: false
+                  - label: Pre Button Text
+                    name: pre
+                    widget: markdown
+                    required: false
+                  - label: Button Text
+                    name: button_text
+                    widget: string
+                    required: false
+                  - label: Button Target
+                    name: button_target
+                    widget: string
+                    required: false
+                  - label: Preset background
+                    name: preset_image
+                    widget: select
+                    required: false
+                    dropdown_threshold: 0
+                    hint: Stock image from backgrounds/. Custom upload below overrides this.
+                    options:
+                    - label: — none —
+                      value: ''
+                    - label: jellyfish-hr.jpg
+                      value: ./src/assets/images/backgrounds/jellyfish-hr.jpg
+                    - label: sfondi-8-high.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-8-high.jpg
+                    - label: sfondi-dyvenia02.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia02.jpg
+                    - label: sfondi-dyvenia03.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia03.jpg
+                    - label: sfondi-dyvenia04.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia04.jpg
+                    - label: sfondi-dyvenia05.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia05.jpg
+                    - label: sfondi-dyvenia06.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia06.jpg
+                    - label: sfondi-dyvenia07.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia07.jpg
+                    - label: sfondi-dyvenia08.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia08.jpg
+                    - label: sfondi-dyvenia09.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia09.jpg
+                    - label: sfondi-dyvenia10.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia10.jpg
+                    - label: sfondi-dyvenia11.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia11.jpg
+                    - label: sfondi-dyvenia12.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia12.jpg
+                    - label: sfondi-dyvenia13.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia13.jpg
+                    - label: sfondi-dyvenia14.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia14.jpg
+                    - label: sfondi-dyvenia15.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia15.jpg
+                    - label: sfondi-dyvenia16.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia16.jpg
+                    - label: sfondi-dyvenia17.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia17.jpg
+                    - label: sfondi-dyvenia18.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia18.jpg
+                    - label: sfondi-dyvenia19.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia19.jpg
+                    - label: sfondi-dyvenia20.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia20.jpg
+                    - label: sfondi-dyvenia21.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia21.jpg
+                    - label: sfondi-dyvenia22.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia22.jpg
+                    - label: sfondi-dyvenia23.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia23.jpg
+                    - label: sfondi-dyvenia24.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia24.jpg
+                    - label: sfondi-dyvenia25.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia25.jpg
+                    - label: sfondi-dyvenia26.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia26.jpg
+                    - label: sfondi-dyvenia27.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia27.jpg
+                    - label: sfondi-dyvenia28.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia28.jpg
+                    - label: sfondi-dyvenia29.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia29.jpg
+                    - label: sfondi-dyvenia30.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia30.jpg
+                    - label: sfondi-dyvenia31.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia31.jpg
+                    - label: sfondi-dyvenia32.jpg
+                      value: ./src/assets/images/backgrounds/sfondi-dyvenia32.jpg
+                  - label: Image
+                    name: image
+                    widget: image
+                    required: false
+                    hint: Custom upload — overrides preset if set.
+                  - label: Footer
+                    name: footer
+                    widget: markdown
+                    required: false
+                  - label: Settings
+                    name: appearance
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: Background theme
+                        name: theme
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: Background
+                            value: background-default
+                          - label: Background accent
+                            value: background-accent
+                          - label: gray-dark
+                            value: gray-dark
+                          - label: teal
+                            value: teal
+                          - label: teal-dark
+                            value: teal-dark
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: background-default
+                      - label: Accent / CTA
+                        name: accent
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: default
+                            value: default
+                          - label: neutral
+                            value: neutral
+                          - label: teal
+                            value: teal
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: default
+                      - label: Alignment
+                        name: align
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: left
+                            value: left
+                          - label: center
+                            value: center
+                        default: left
+                      - label: Media background
+                        name: background
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: teal-800
+                            value: teal-800
+                          - label: teal-600
+                            value: teal-600
+                          - label: purple-800
+                            value: purple-800
+                          - label: purple-300
+                            value: purple-300
+                          - label: navy-dark
+                            value: navy-dark
+                          - label: navy
+                            value: navy
+                          - label: gray-900
+                            value: gray-900
+                          - label: gray-800
+                            value: gray-800
+                          - label: gray-200
+                            value: gray-200
+                          - label: gray-100
+                            value: gray-100
+                          - label: white
+                            value: white
+                        default: teal-800
+                        hint: Wash on the media; text contrast is automatic.
+                      - label: Divider (top)
+                        name: divider_top
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        hint: Optional shape on the top edge
+                        options:
+                          - label: — none —
+                            value: ''
+                          - label: Soft
+                            value: divider/soft
+                          - label: Soft invert
+                            value: divider/soft-invert
+                          - label: Waves
+                            value: divider/waves
+                        default: ''
+                      - label: Divider (bottom)
+                        name: divider
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        hint: Bottom edge shape. None hides it.
+                        options:
+                          - label: — none —
+                            value: ''
+                          - label: Soft
+                            value: divider/soft
+                          - label: Soft invert
+                            value: divider/soft-invert
+                          - label: Waves
+                            value: divider/waves
+                        default: divider/soft
+                      - label: Divider size
+                        name: divider_class
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: default
+                            value: ''
+                          - label: small
+                            value: small
+                        default: ''
   - name: case_studies
     label: Case Studies
     label_singular: Case Study
@@ -2384,6 +4368,8 @@ collections:
                             value: teal-600
                           - label: purple-800
                             value: purple-800
+                          - label: purple-300
+                            value: purple-300
                           - label: navy-dark
                             value: navy-dark
                           - label: navy
@@ -3480,16 +5466,12 @@ collections:
                     name: title
                     widget: markdown
                     required: false
-                  - label: Background image
-                    name: image
-                    widget: image
-                    required: false
                   - label: Decoration SVG
                     name: decoration
                     widget: select
                     required: false
                     dropdown_threshold: 0
-                    hint: Optional mark (e.g. Arrows). Can be used with or without background image.
+                    hint: Optional mark (e.g. Arrows).
                     options:
                       - label: — none —
                         value: ''
@@ -3577,17 +5559,17 @@ collections:
                           - label: navy
                             value: navy
                         default: default
-                      - label: Alignment
-                        name: align
+                      - label: Width
+                        name: width
                         widget: select
                         required: false
                         dropdown_threshold: 0
                         options:
-                          - label: left
-                            value: left
-                          - label: center
-                            value: center
-                        default: left
+                          - label: content
+                            value: content
+                          - label: feature
+                            value: feature
+                        default: feature
               - label: Tabs
                 name: tabs
                 widget: object
@@ -4094,6 +6076,8 @@ collections:
                             value: teal-600
                           - label: purple-800
                             value: purple-800
+                          - label: purple-300
+                            value: purple-300
                           - label: navy-dark
                             value: navy-dark
                           - label: navy
@@ -4442,6 +6426,8 @@ collections:
                             value: teal-600
                           - label: purple-800
                             value: purple-800
+                          - label: purple-300
+                            value: purple-300
                           - label: navy-dark
                             value: navy-dark
                           - label: navy
@@ -5443,16 +7429,12 @@ collections:
                     name: title
                     widget: markdown
                     required: false
-                  - label: Background image
-                    name: image
-                    widget: image
-                    required: false
                   - label: Decoration SVG
                     name: decoration
                     widget: select
                     required: false
                     dropdown_threshold: 0
-                    hint: Optional mark (e.g. Arrows). Can be used with or without background image.
+                    hint: Optional mark (e.g. Arrows).
                     options:
                       - label: — none —
                         value: ''
@@ -5540,17 +7522,17 @@ collections:
                           - label: navy
                             value: navy
                         default: default
-                      - label: Alignment
-                        name: align
+                      - label: Width
+                        name: width
                         widget: select
                         required: false
                         dropdown_threshold: 0
                         options:
-                          - label: left
-                            value: left
-                          - label: center
-                            value: center
-                        default: left
+                          - label: content
+                            value: content
+                          - label: feature
+                            value: feature
+                        default: feature
               - label: Tabs
                 name: tabs
                 widget: object
@@ -6057,6 +8039,8 @@ collections:
                             value: teal-600
                           - label: purple-800
                             value: purple-800
+                          - label: purple-300
+                            value: purple-300
                           - label: navy-dark
                             value: navy-dark
                           - label: navy
@@ -6350,6 +8334,8 @@ collections:
                             value: teal-600
                           - label: purple-800
                             value: purple-800
+                          - label: purple-300
+                            value: purple-300
                           - label: navy-dark
                             value: navy-dark
                           - label: navy
@@ -7446,16 +9432,12 @@ collections:
                     name: title
                     widget: markdown
                     required: false
-                  - label: Background image
-                    name: image
-                    widget: image
-                    required: false
                   - label: Decoration SVG
                     name: decoration
                     widget: select
                     required: false
                     dropdown_threshold: 0
-                    hint: Optional mark (e.g. Arrows). Can be used with or without background image.
+                    hint: Optional mark (e.g. Arrows).
                     options:
                       - label: — none —
                         value: ''
@@ -7543,17 +9525,17 @@ collections:
                           - label: navy
                             value: navy
                         default: default
-                      - label: Alignment
-                        name: align
+                      - label: Width
+                        name: width
                         widget: select
                         required: false
                         dropdown_threshold: 0
                         options:
-                          - label: left
-                            value: left
-                          - label: center
-                            value: center
-                        default: left
+                          - label: content
+                            value: content
+                          - label: feature
+                            value: feature
+                        default: feature
               - label: Tabs
                 name: tabs
                 widget: object
@@ -8060,6 +10042,8 @@ collections:
                             value: teal-600
                           - label: purple-800
                             value: purple-800
+                          - label: purple-300
+                            value: purple-300
                           - label: navy-dark
                             value: navy-dark
                           - label: navy
@@ -8349,6 +10333,8 @@ collections:
                         value: teal-600
                       - label: purple-800
                         value: purple-800
+                      - label: purple-300
+                        value: purple-300
                       - label: navy-dark
                         value: navy-dark
                       - label: navy
@@ -9445,16 +11431,12 @@ collections:
                 name: title
                 widget: markdown
                 required: false
-              - label: Background image
-                name: image
-                widget: image
-                required: false
               - label: Decoration SVG
                 name: decoration
                 widget: select
                 required: false
                 dropdown_threshold: 0
-                hint: Optional mark (e.g. Arrows). Can be used with or without background image.
+                hint: Optional mark (e.g. Arrows).
                 options:
                   - label: — none —
                     value: ''
@@ -9542,17 +11524,17 @@ collections:
                       - label: navy
                         value: navy
                     default: default
-                  - label: Alignment
-                    name: align
+                  - label: Width
+                    name: width
                     widget: select
                     required: false
                     dropdown_threshold: 0
                     options:
-                      - label: left
-                        value: left
-                      - label: center
-                        value: center
-                    default: left
+                      - label: content
+                        value: content
+                      - label: feature
+                        value: feature
+                    default: feature
           - label: Tabs
             name: tabs
             widget: object
@@ -10059,6 +12041,8 @@ collections:
                         value: teal-600
                       - label: purple-800
                         value: purple-800
+                      - label: purple-300
+                        value: purple-300
                       - label: navy-dark
                         value: navy-dark
                       - label: navy
