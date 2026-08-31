@@ -3,7 +3,7 @@ export default {
   keys: [
     'hero',
     'text',
-    'highlight',
+    'statement',
     'list',
     'process',
     'feature',
@@ -24,15 +24,15 @@ export default {
     },
     text: {
       title: 'text',
-      body: 'Prose block — single column or split (content_left / content_right). Theme paints a full-bleed band; width sets the inner measure (content / feature / full).'
+      body: 'Prose block — full-width content and/or split columns. Optional brand decoration as a watermark behind copy. Width: content or feature. Title size: default or small. Body size: default or large. Bold text uses the section accent.'
     },
-    highlight: {
-      title: 'highlight',
-      body: 'Full-bleed callout. Defaults to theme teal. Supports title or title1/title2, plus optional subtitle and content.'
+    statement: {
+      title: 'statement',
+      body: 'Title band with optional eyebrow, support text, and decoration. With an eyebrow, the title uses the section accent (former goal). Width: content or feature. Body size: default or small. Defaults to theme teal.'
     },
     list: {
       title: 'list',
-      body: 'Structured items. Variants: definition (default), checklist, stack. Theme bands the full width; width controls the inner column.'
+      body: 'Variants: definition (bold accent title + body) and stack (plain stacked title + content). Optional checks + borders on both. Width: content or feature.'
     },
     process: {
       title: 'process',
@@ -40,7 +40,7 @@ export default {
     },
     feature: {
       title: 'feature',
-      body: 'Text + media split. media_side: left or right. CTA uses theme default accent unless overridden.'
+      body: 'Text + media split. media_side: left or right. Width feature keeps both in measure; full breaks media out to the edge while copy stays in feature. No align.'
     },
     accordion: {
       title: 'accordion',
@@ -64,7 +64,7 @@ export default {
     },
     services: {
       title: 'services',
-      body: 'Full-bleed background image with stacked service rows (prefix + title + markdown). Home-specific layout.'
+      body: 'Stacked service rows (prefix + title + markdown). Optional full-bleed background image and/or decorative SVG (e.g. arrows) — both can be used together.'
     },
     tabs: {
       title: 'tabs',
@@ -76,13 +76,13 @@ export default {
     },
     gallery: {
       title: 'gallery',
-      body: 'Modal image grid. Items: image, alt, optional caption.'
+      body: 'Modal image grid. Width: content or feature. Align center only centers the title.'
     }
   },
   hero: {
     type: 'hero',
     appearance: {
-      theme: 'white',
+      theme: 'background-default',
       align: 'left',
       height: 'tall',
       background: 'teal-800'
@@ -98,54 +98,69 @@ export default {
     type: 'text',
     appearance: {
       align: 'left',
-      width: 'feature'
+      width: 'feature',
+      theme: 'background-accent'
     },
-    title: 'One platform. Clear lineage. Trusted outcomes.',
+    title: 'One platform. **Clear lineage.** Trusted outcomes.',
     content_left:
       'We design and build the data platform your business actually runs on — aligned to your systems, processes, and decision needs.',
     content_right:
-      '- Architectural design across ERP, CRM, and operational systems\n- Pipelines and transformations with clear, traceable logic\n- Governance, observability, and reliability from day one'
+      '- Architectural design across ERP, CRM, and operational systems\n- Pipelines and transformations with **clear, traceable logic**\n- Governance, observability, and reliability from day one',
+    decoration: 'brand/stack'
   },
-  highlight: {
-    type: 'highlight',
+  statement: {
+    type: 'statement',
     appearance: {
       theme: 'teal',
-      align: 'left'
+      align: 'center',
+      body_size: 'small'
     },
-    title: 'Stop stitching tools together. Start running a platform.',
+    eyebrow: 'The Goal?',
+    title:
+      'Establish a single, trusted view of the business, where decisions, data, and outcomes are aligned.',
     subtitle:
-      'We align business and technology around the decisions you need to make, then engineer the platform to support them.'
+      'We replace fragmented architectures and conflicting logic with a connected data foundation that keeps systems, metrics, and decisions aligned.',
+    decoration: 'brand/waves'
   },
   list: {
     type: 'list',
     appearance: {
+      theme: 'gray-dark',
       width: 'feature',
-      variant: 'definition'
+      variant: 'stack',
+      checks: true,
+      bordered: true
     },
-    title: 'What you get',
+    title: 'What working with us feels like',
+    content:
+      'We build for teams that want to spend more time delivering and less time managing platform friction.',
     items: [
       {
-        title: 'Integrated architecture',
-        content: 'Systems, pipelines, and models designed as one consistent structure.'
+        title: 'Production-grade foundations',
+        content: 'Instead of duct-taped workflows.'
       },
       {
-        title: 'Operational reliability',
-        content: 'Observability and clear ownership so issues are detected and fixed quickly.'
+        title: 'Operational patterns that stick',
+        content: 'CI/CD, observability, and deployment habits that reduce risk.'
       },
       {
-        title: 'A foundation that scales',
-        content: 'Growth without breaking consistency or reinventing integrations.'
+        title: 'Reusable project structure',
+        content: 'Templates and ownership models your teams can extend.'
+      },
+      {
+        title: 'Fewer incidents',
+        content: 'Clearer ownership and more predictable operations.'
       }
     ]
   },
   process: {
     type: 'process',
-    appearance: {
-      align: 'center'
-    },
     title1: 'How we',
     title2: 'deliver',
     decoration: 'brand/medusa-organic',
+    appearance: {
+      decoration_accent: 'teal'
+    },
     items: [
       {
         title: 'Assess & align',
@@ -216,7 +231,7 @@ export default {
   posts: {
     type: 'posts',
     appearance: {
-      theme: 'white',
+      theme: 'background-default',
       width: 'feature',
       card_layout: 'grid'
     },
@@ -227,8 +242,7 @@ export default {
   team: {
     type: 'team',
     appearance: {
-      theme: 'white',
-      width: 'feature',
+      theme: 'background-default',
       filter: 'show_on_about',
       header_layout: 'thirds'
     },
@@ -238,7 +252,7 @@ export default {
   form: {
     type: 'form',
     appearance: {
-      theme: 'gray-light',
+      theme: 'background-accent',
       width: 'content'
     },
     title: 'Stay in the loop',
@@ -251,6 +265,7 @@ export default {
     },
     title: 'How We Deliver Results',
     image: './src/assets/images/backgrounds/sfondi-dyvenia26.jpg',
+    decoration: 'brand/arrows',
     items: [
       {
         prefix: 'Data Platform',
@@ -268,7 +283,7 @@ export default {
   tabs: {
     type: 'tabs',
     appearance: {
-      theme: 'white',
+      theme: 'background-default',
       width: 'feature'
     },
     title: 'Our Process',
@@ -317,7 +332,7 @@ export default {
   cases: {
     type: 'cases',
     appearance: {
-      theme: 'white',
+      theme: 'background-default',
       width: 'feature',
       card_layout: 'grid'
     },
@@ -328,7 +343,7 @@ export default {
   gallery: {
     type: 'gallery',
     appearance: {
-      theme: 'white',
+      theme: 'background-default',
       width: 'feature'
     },
     title: 'Gallery',

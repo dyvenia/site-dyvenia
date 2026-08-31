@@ -5,7 +5,7 @@
 /*
   Full-bleed theme paint lives on `.section` (the `.full` band),
   not on `.section__inner` (content width). Hero / page-header keep
-  their own media backgrounds. Every named theme paints (including white).
+  their own media backgrounds. Every named theme paints (including background-default).
 */
 [data-section-theme] > .section:not(.custom-hero):not(.page-header),
 .section[data-section-theme]:not(.custom-hero):not(.page-header) {
@@ -26,4 +26,8 @@
 
 .section :is(h1, h2, h3, blockquote) {
   opacity: 95%;
+}
+
+.section div + div ul {
+  margin-block-start: 0;
 }

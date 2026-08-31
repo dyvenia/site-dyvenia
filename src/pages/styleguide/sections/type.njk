@@ -20,11 +20,7 @@ eleventyComputed:
     <p>{{ doc.body }}</p>
   </header>
 
-  {% include "styleguide/fixtures-theme.njk" %}
-  {% include "styleguide/fixtures-layout.njk" %}
-  {% if sectionKey == "hero" %}
-    {% include "styleguide/fixtures-hero.njk" %}
-  {% endif %}
+  {% include "styleguide/fixtures.njk" %}
 </div>
 
 <div data-sg-demos>

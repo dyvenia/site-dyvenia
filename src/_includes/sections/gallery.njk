@@ -1,5 +1,6 @@
 {# section.type: gallery — modal image grid
-   Shell: .section-{type}.wrapper[data-section-theme] > .full.wrapper.section > .section__inner #}
+   Shell: .section-{type}.wrapper[data-section-theme] > .full.wrapper.section > .section__inner
+   Width: content | feature (no full). Align center only centers the title. #}
 {% css "local" %}
   {% include "css/gallery.css" %}
 {% endcss %}
@@ -8,24 +9,27 @@
   {% include "scripts/dialog.js" %}
 {% endjs %}
 
-{% from "sections/_shell.njk" import sectionWidthClass, sectionAlignClass, sectionThemeAttr, sectionAccentAttr %}
+{% from "sections/_shell.njk" import sectionThemeAttr, sectionAccentAttr %}
 
 {% set s = section %}
 {% set a = s.appearance or {} %}
-{% set theme = a.theme or s.theme or "white" %}
+{% set theme = a.theme or s.theme or "background-default" %}
 {% set accent = a.accent if a.accent is defined else s.accent %}
 {% set align = a.align if a.align is defined else s.align %}
 {% set width = a.width if a.width is defined else s.width %}
-{% set widthClass = sectionWidthClass(width or "feature") or "feature" %}
-{% set alignClass = sectionAlignClass(align) %}
+{% if width == "full" or not width %}
+  {% set width = "feature" %}
+{% endif %}
+{% set widthClass = "feature" if width == "feature" else "" %}
+{% set titleAlignClass = "text-center" if align == "center" else "" %}
 {% set gallery = s.items or s.gallery or [] %}
 
 <div class="section-gallery | wrapper" {{ sectionThemeAttr(theme) }}{{ sectionAccentAttr(accent) }}{% if s.id %} id="{{ s.id }}"{% endif %}>
   <div class="full wrapper section">
     <div class="{{ widthClass }} | section__inner region">
       {% if s.title or s.intro or s.content %}
-        <header class="flow prose {{ alignClass }}">
-          {% if s.title %}<h2>{{ s.title | markdownInline | safe }}</h2>{% endif %}
+        <header class="flow prose">
+          {% if s.title %}<h2{% if titleAlignClass %} class="{{ titleAlignClass }}"{% endif %}>{{ s.title | markdownInline | safe }}</h2>{% endif %}
           {% if s.intro or s.content %}
             <div>{{ (s.intro or s.content) | markdownFormat | safe }}</div>
           {% endif %}

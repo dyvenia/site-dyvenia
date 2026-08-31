@@ -1,19 +1,19 @@
 /* © Andy Bell - https://github.com/Set-Creative-Studio/cube-boilerplate */
 
-import plugin from 'tailwindcss/plugin';
 import postcss from 'postcss';
 import postcssJs from 'postcss-js';
+import plugin from 'tailwindcss/plugin';
 
 import {clampGenerator} from './src/_config/utils/clamp-generator.js';
 import {tokensToTailwind} from './src/_config/utils/tokens-to-tailwind.js';
 
 // Raw design tokens
-import colorTokens from './src/_data/designTokens/colors.json';
 import borderRadiusTokens from './src/_data/designTokens/borderRadius.json';
+import colorTokens from './src/_data/designTokens/colors.json';
 import fontTokens from './src/_data/designTokens/fonts.json';
 import spacingTokens from './src/_data/designTokens/spacing.json';
-import textSizeTokens from './src/_data/designTokens/textSizes.json';
 import textLeadingTokens from './src/_data/designTokens/textLeading.json';
+import textSizeTokens from './src/_data/designTokens/textSizes.json';
 import textWeightTokens from './src/_data/designTokens/textWeights.json';
 import viewportTokens from './src/_data/designTokens/viewports.json';
 
@@ -36,7 +36,9 @@ export default {
       xs: `${viewportTokens.xs}px`,
       sm: `${viewportTokens.sm}px`,
       md: `${viewportTokens.md}px`,
-      max: `${viewportTokens.max}px`
+      lg: `${viewportTokens.md}px`,
+      max: `${viewportTokens.max}px`,
+      safewide: `${viewportTokens.safewide}px`
     },
     colors,
     borderRadius,

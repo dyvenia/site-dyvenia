@@ -22,10 +22,10 @@ sections:
       webm: ./src/assets/videos/jellyfish.webm
       mp4: ./src/assets/videos/jellyfish.mp4
     appearance:
-      theme: white
+      theme: background-default
       accent: teal
-      align: center
-      height: tall
+      align: left
+      height: cover
       background: teal-800
       content_block: center
     region_space: xl-2xl
@@ -33,8 +33,13 @@ sections:
     internal_name: Intro
     title: The problem is not technology, data quality, or even lack of budget or business cases. It’s the **complexity of combining all these elements together into solutions that deliver ROI**.
     appearance:
-      theme: white
+      theme: background-default
       width: feature
+    content: |-
+      Your systems work. Your teams work. Your data exists.
+      But together, they don’t translate into measurable impact.
+
+      The problem isn’t individual systems. It’s misaligned priorities across disconnected initiatives that waste investment.
     content_left: |-
       Your systems work. Your teams work. Your data exists.
       But together, they don’t translate into measurable impact.
@@ -44,8 +49,8 @@ sections:
       - Investments in data and AI that don’t pay off
       - ERP, CRM, and operational systems aren’t truly integrated
       - Metrics are defined differently across systems and teams
-  - type: highlight
-    internal_name: Highlight one
+  - type: statement
+    internal_name: Statement
     title: We make your data, technology, metrics, and AI work as one.
     subtitle: |-
       by starting with the decisions your business needs to make, and aligning business and technology around them.
@@ -55,22 +60,21 @@ sections:
       theme: teal
       align: left
     decoration: brand/waves
-  - type: highlight
-    internal_name: Highlight two
+  - type: statement
+    internal_name: Goal
     appearance:
       theme: teal
       align: center
-    content: |-
+    eyebrow: The Goal?
+    title: Establish a single, trusted view of the business, where decisions, data, and outcomes are aligned.
+    subtitle: |-
       We replace fragmented architectures and conflicting logic with a connected data foundation that keeps systems, metrics, and decisions aligned.
 
       So you can move faster, trust what you see, and scale both analytics and AI with confidence.
-    title1: The Goal?
-    title2: Establish a single, trusted view of the business, where decisions, data, and outcomes are aligned.
   - type: process
     internal_name: Foundations
     appearance:
-      theme: white
-      align: center
+      theme: background-default
     title1: The impact on
     title2: your business
     decoration: brand/medusa-organic
@@ -89,7 +93,7 @@ sections:
     internal_name: Who we are
     title: Who We Are
     appearance:
-      theme: white
+      theme: background-default
       width: feature
       filter: show_on_about
       header_layout: thirds
@@ -107,7 +111,7 @@ sections:
     internal_name: Why us
     title: What’s Holding You Back
     appearance:
-      theme: white
+      theme: background-default
       width: feature
       variant: definition
     content: Enterprises are drowning in data, but struggling to turn it into performance.
@@ -136,6 +140,7 @@ sections:
     internal_name: Services
     title: How We Deliver Results
     image: ./src/assets/images/backgrounds/sfondi-dyvenia26.jpg
+    decoration: brand/arrows
     appearance:
       theme: navy
     items:
@@ -173,7 +178,7 @@ sections:
     internal_name: Insights
     title: Our Insights
     appearance:
-      theme: white
+      theme: background-default
       width: feature
       card_layout: grid
     intro: Selected Articles. Check our blog for more.

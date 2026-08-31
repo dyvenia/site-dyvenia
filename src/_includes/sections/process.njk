@@ -1,37 +1,43 @@
 {# section.type: process — expects `section` in scope
+   Title always centered; timeline items always left.
    Shell: .section-{type}.wrapper[data-section-theme] > .full.wrapper.section > .section__inner #}
 {% css "local" %}
   {% include "css/sections/process.css" %}
 {% endcss %}
-
-{% from "sections/_shell.njk" import sectionAlignClass, sectionThemeAttr, sectionAccentAttr %}
+{% from "sections/_shell.njk" import sectionThemeAttr, sectionAccentAttr %}
 
 {% set s = section %}
 {% set a = s.appearance or {} %}
-{% set theme = a.theme or s.theme or "white" %}
+{% set theme = a.theme or s.theme or "background-default" %}
 {% set accent = a.accent if a.accent is defined else s.accent %}
-{% set align = a.align if a.align is defined else s.align %}
-{% set alignClass = sectionAlignClass(align or "center") %}
+{% set decorationAccent = a.decoration_accent or s.decoration_accent or "teal" %}
 
-<div class="section-process | wrapper" {{ sectionThemeAttr(theme) }}{{ sectionAccentAttr(accent) }}{% if s.id %} id="{{ s.id }}"{% endif %}>
+<div
+  class="section-process | wrapper"
+  {{ sectionThemeAttr(theme) }}{{ sectionAccentAttr(accent) }}{% if decorationAccent %}data-section-decoration="{{ decorationAccent }}"{% endif %}{% if s.decoration %}data-decoration="{{ s.decoration }}"{% endif %}{% if s.id %}id="{{ s.id }}"{% endif %}
+>
   <div class="full wrapper section">
     <article class="full | section__inner region flow">
-      <h2 class="text-step-3 {{ alignClass }}">
+      <h2 class="section-process__title | text-step-3 text-center">
         {% if s.title1 or s.title2 %}
           {{ s.title1 }}
-          {% if s.title2 %}<span class="block uppercase text-teal-500">{{ s.title2 }}</span>{% endif %}
+          {% if s.title2 %}<span class="section-process__title-accent | block uppercase"
+            >{{ s.title2 }}</span
+          >{% endif %}
         {% elif s.title %}
           {{ s.title | markdownInline | safe }}
         {% endif %}
       </h2>
 
       {% if s.subtitle %}
-        <div class="prose {{ alignClass }}">{{ s.subtitle | markdownFormat | safe }}</div>
+        <div class="section-process__subtitle | prose text-center">
+          {{ s.subtitle | markdownFormat | safe }}
+        </div>
       {% endif %}
 
       <div class="section-process__split | split region">
         {% if s.decoration %}
-          {% svg s.decoration %}
+          {% svg s.decoration, "", "section-process__decoration" %}
         {% endif %}
         <ol class="section-process__timeline | timeline">
           {% for item in s.items %}

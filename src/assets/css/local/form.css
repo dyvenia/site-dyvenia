@@ -113,6 +113,23 @@ input[type='checkbox']:checked::before {
   border-radius: var(--border-radius-small);
 }
 
+/* Section form: panel on section surface with soft border */
+.section-form .newsletter {
+  background: var(--color-bg);
+  color: var(--color-text);
+  border: 1px solid var(--color-bg-accent-2);
+}
+
+.section-form .newsletter :is(h3, label, p, input, .text-gray) {
+  color: var(--color-text);
+}
+
+.section-form .newsletter :is(input, textarea) {
+  border-color: var(--color-bg-accent-2);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
 .newsletter > * {
   --flow-space: var(--space-l);
 }

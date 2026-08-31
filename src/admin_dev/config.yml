@@ -105,19 +105,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
             hint: Color peeking through the separator (match the next section).
           - label: Accent / CTA
             name: accent
@@ -146,8 +148,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
           - label: Height
             name: height
@@ -220,14 +220,52 @@ collections:
           name: content
           widget: markdown
           required: false
+          hint: Full-width body prose. Can be used together with left/right columns.
         - label: Content Left
           name: content_left
           widget: markdown
           required: false
+          hint: Optional left column; stacks under full-width content when both are set.
         - label: Content Right
           name: content_right
           widget: markdown
           required: false
+          hint: Optional right column; stacks under full-width content when both are set.
+        - label: Decoration SVG
+          name: decoration
+          widget: select
+          required: false
+          dropdown_threshold: 0
+          hint: Watermark behind copy
+          options:
+            - label: — none —
+              value: ""
+            - label: Arrow
+              value: brand/arrow
+            - label: Arrows
+              value: brand/arrows
+            - label: Brick
+              value: brand/brick
+            - label: Check
+              value: brand/check
+            - label: Forward
+              value: brand/forward
+            - label: Medusa
+              value: brand/medusa
+            - label: Medusa organic
+              value: brand/medusa-organic
+            - label: Rings
+              value: brand/rings
+            - label: Scale
+              value: brand/scale
+            - label: Simple
+              value: brand/simple
+            - label: Stack
+              value: brand/stack
+            - label: Staggered
+              value: brand/staggered
+            - label: Waves
+              value: brand/waves
         - label: Settings
           name: appearance
           widget: object
@@ -239,19 +277,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -279,8 +319,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
           - label: Width
             name: width
@@ -292,11 +330,33 @@ collections:
               value: content
             - label: feature
               value: feature
-            - label: full
-              value: full
             default: feature
-      - label: Highlight
-        name: highlight
+          - label: Title size
+            name: title_size
+            widget: select
+            required: false
+            dropdown_threshold: 0
+            options:
+            - label: Default
+              value: default
+            - label: Small
+              value: small
+            default: default
+            hint: Default matches heading scale; small uses size-step-2.
+          - label: Body size
+            name: body_size
+            widget: select
+            required: false
+            dropdown_threshold: 0
+            options:
+            - label: Default
+              value: default
+            - label: Large
+              value: large
+            default: default
+            hint: Applies to body prose (not the title).
+      - label: Statement
+        name: statement
         widget: object
         fields:
         - label: Internal name
@@ -304,31 +364,54 @@ collections:
           widget: string
           required: false
           hint: CMS list label only — not shown on the site
+        - label: Eyebrow
+          name: eyebrow
+          widget: string
+          required: false
+          hint: Optional small line above the title (aliases title1)
         - label: Title
           name: title
           widget: markdown
-          required: false
-        - label: Title line 1
-          name: title1
-          widget: string
-          required: false
-        - label: Title line 2
-          name: title2
-          widget: string
           required: false
         - label: Subtitle
           name: subtitle
           widget: markdown
           required: false
-        - label: Content
-          name: content
-          widget: markdown
-          required: false
         - label: Decoration SVG
           name: decoration
-          widget: string
+          widget: select
           required: false
-          hint: e.g. brand/waves
+          dropdown_threshold: 0
+          hint: Brand mark from src/assets/svg/brand (header logos excluded)
+          options:
+            - label: — none —
+              value: ""
+            - label: Arrow
+              value: brand/arrow
+            - label: Arrows
+              value: brand/arrows
+            - label: Brick
+              value: brand/brick
+            - label: Check
+              value: brand/check
+            - label: Forward
+              value: brand/forward
+            - label: Medusa
+              value: brand/medusa
+            - label: Medusa organic
+              value: brand/medusa-organic
+            - label: Rings
+              value: brand/rings
+            - label: Scale
+              value: brand/scale
+            - label: Simple
+              value: brand/simple
+            - label: Stack
+              value: brand/stack
+            - label: Staggered
+              value: brand/staggered
+            - label: Waves
+              value: brand/waves
         - label: Settings
           name: appearance
           widget: object
@@ -340,19 +423,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: teal
           - label: Accent / CTA
             name: accent
             widget: select
@@ -380,9 +465,30 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
+          - label: Width
+            name: width
+            widget: select
+            required: false
+            dropdown_threshold: 0
+            options:
+            - label: content
+              value: content
+            - label: feature
+              value: feature
+            default: feature
+          - label: Body size
+            name: body_size
+            widget: select
+            required: false
+            dropdown_threshold: 0
+            options:
+            - label: Default
+              value: default
+            - label: Small
+              value: small
+            default: small
+            hint: Support text size; small is text-step-min-1.
       - label: List
         name: list
         widget: object
@@ -403,6 +509,7 @@ collections:
         - label: Items
           name: items
           widget: list
+          collapsed: true
           summary: '{{fields.title}}'
           fields:
           - label: Title
@@ -423,19 +530,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -463,8 +572,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
           - label: Width
             name: width
@@ -476,8 +583,6 @@ collections:
               value: content
             - label: feature
               value: feature
-            - label: full
-              value: full
             default: feature
           - label: Variant
             name: variant
@@ -487,11 +592,21 @@ collections:
             options:
             - label: definition
               value: definition
-            - label: checklist
-              value: checklist
             - label: stack
               value: stack
             default: definition
+          - label: Checkmarks
+            name: checks
+            widget: boolean
+            required: false
+            default: true
+            hint: Optional accent check icons
+          - label: Bordered
+            name: bordered
+            widget: boolean
+            required: false
+            default: true
+            hint: Optional item borders
       - label: Process
         name: process
         widget: object
@@ -519,12 +634,43 @@ collections:
           required: false
         - label: Decoration SVG
           name: decoration
-          widget: string
+          widget: select
           required: false
-          hint: e.g. brand/medusa-organic
+          dropdown_threshold: 0
+          hint: Brand mark from src/assets/svg/brand (header logos excluded)
+          options:
+            - label: — none —
+              value: ""
+            - label: Arrow
+              value: brand/arrow
+            - label: Arrows
+              value: brand/arrows
+            - label: Brick
+              value: brand/brick
+            - label: Check
+              value: brand/check
+            - label: Forward
+              value: brand/forward
+            - label: Medusa
+              value: brand/medusa
+            - label: Medusa organic
+              value: brand/medusa-organic
+            - label: Rings
+              value: brand/rings
+            - label: Scale
+              value: brand/scale
+            - label: Simple
+              value: brand/simple
+            - label: Stack
+              value: brand/stack
+            - label: Staggered
+              value: brand/staggered
+            - label: Waves
+              value: brand/waves
         - label: Steps
           name: items
           widget: list
+          collapsed: true
           summary: '{{fields.title}}'
           fields:
           - label: Title
@@ -544,19 +690,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -574,6 +722,22 @@ collections:
             - label: navy
               value: navy
             default: default
+          - label: Decoration color
+            name: decoration_accent
+            widget: select
+            required: false
+            dropdown_threshold: 0
+            options:
+            - label: teal
+              value: teal
+            - label: purple
+              value: purple
+            - label: navy
+              value: navy
+            - label: neutral
+              value: neutral
+            default: teal
+            hint: Decorative SVG only — independent of Accent (timeline + title line 2)
           - label: Alignment
             name: align
             widget: select
@@ -584,8 +748,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
       - label: Feature
         name: feature
@@ -631,19 +793,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -661,32 +825,18 @@ collections:
             - label: navy
               value: navy
             default: default
-          - label: Alignment
-            name: align
-            widget: select
-            required: false
-            dropdown_threshold: 0
-            options:
-            - label: left
-              value: left
-            - label: center
-              value: center
-            - label: right
-              value: right
-            default: left
           - label: Width
             name: width
             widget: select
             required: false
             dropdown_threshold: 0
             options:
-            - label: content
-              value: content
             - label: feature
               value: feature
             - label: full
               value: full
             default: feature
+            hint: full = media breaks out; copy stays in feature
           - label: Media side
             name: media_side
             widget: select
@@ -745,19 +895,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -785,8 +937,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
           - label: Width
             name: width
@@ -798,8 +948,6 @@ collections:
               value: content
             - label: feature
               value: feature
-            - label: full
-              value: full
             default: feature
       - label: Posts
         name: posts
@@ -840,19 +988,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -880,8 +1030,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
           - label: Width
             name: width
@@ -935,19 +1083,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -965,32 +1115,6 @@ collections:
             - label: navy
               value: navy
             default: default
-          - label: Alignment
-            name: align
-            widget: select
-            required: false
-            dropdown_threshold: 0
-            options:
-            - label: left
-              value: left
-            - label: center
-              value: center
-            - label: right
-              value: right
-            default: left
-          - label: Width
-            name: width
-            widget: select
-            required: false
-            dropdown_threshold: 0
-            options:
-            - label: content
-              value: content
-            - label: feature
-              value: feature
-            - label: full
-              value: full
-            default: feature
           - label: Filter
             name: filter
             widget: select
@@ -1041,19 +1165,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -1081,8 +1207,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
           - label: Width
             name: width
@@ -1114,6 +1238,41 @@ collections:
           name: image
           widget: image
           required: false
+        - label: Decoration SVG
+          name: decoration
+          widget: select
+          required: false
+          dropdown_threshold: 0
+          hint: Optional mark (e.g. Arrows). Can be used with or without background image.
+          options:
+            - label: — none —
+              value: ""
+            - label: Arrow
+              value: brand/arrow
+            - label: Arrows
+              value: brand/arrows
+            - label: Brick
+              value: brand/brick
+            - label: Check
+              value: brand/check
+            - label: Forward
+              value: brand/forward
+            - label: Medusa
+              value: brand/medusa
+            - label: Medusa organic
+              value: brand/medusa-organic
+            - label: Rings
+              value: brand/rings
+            - label: Scale
+              value: brand/scale
+            - label: Simple
+              value: brand/simple
+            - label: Stack
+              value: brand/stack
+            - label: Staggered
+              value: brand/staggered
+            - label: Waves
+              value: brand/waves
         - label: Items
           name: items
           widget: list
@@ -1140,19 +1299,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -1180,8 +1341,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
       - label: Tabs
         name: tabs
@@ -1251,19 +1410,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -1291,8 +1452,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
           - label: Width
             name: width
@@ -1346,19 +1505,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -1386,8 +1547,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
           - label: Width
             name: width
@@ -1456,19 +1615,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -1496,8 +1657,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
           - label: Width
             name: width
@@ -1509,9 +1668,8 @@ collections:
               value: content
             - label: feature
               value: feature
-            - label: full
-              value: full
             default: feature
+            hint: content or feature only
       - label: CTA
         name: cta
         widget: object
@@ -1559,19 +1717,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -1599,8 +1759,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
 - name: blog
   label: Posts
@@ -1822,19 +1980,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
             hint: Color peeking through the separator (match the next section).
           - label: Accent / CTA
             name: accent
@@ -1863,8 +2023,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
           - label: Height
             name: height
@@ -1937,14 +2095,52 @@ collections:
           name: content
           widget: markdown
           required: false
+          hint: Full-width body prose. Can be used together with left/right columns.
         - label: Content Left
           name: content_left
           widget: markdown
           required: false
+          hint: Optional left column; stacks under full-width content when both are set.
         - label: Content Right
           name: content_right
           widget: markdown
           required: false
+          hint: Optional right column; stacks under full-width content when both are set.
+        - label: Decoration SVG
+          name: decoration
+          widget: select
+          required: false
+          dropdown_threshold: 0
+          hint: Watermark behind copy
+          options:
+            - label: — none —
+              value: ""
+            - label: Arrow
+              value: brand/arrow
+            - label: Arrows
+              value: brand/arrows
+            - label: Brick
+              value: brand/brick
+            - label: Check
+              value: brand/check
+            - label: Forward
+              value: brand/forward
+            - label: Medusa
+              value: brand/medusa
+            - label: Medusa organic
+              value: brand/medusa-organic
+            - label: Rings
+              value: brand/rings
+            - label: Scale
+              value: brand/scale
+            - label: Simple
+              value: brand/simple
+            - label: Stack
+              value: brand/stack
+            - label: Staggered
+              value: brand/staggered
+            - label: Waves
+              value: brand/waves
         - label: Settings
           name: appearance
           widget: object
@@ -1956,19 +2152,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -1996,8 +2194,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
           - label: Width
             name: width
@@ -2009,11 +2205,33 @@ collections:
               value: content
             - label: feature
               value: feature
-            - label: full
-              value: full
             default: feature
-      - label: Highlight
-        name: highlight
+          - label: Title size
+            name: title_size
+            widget: select
+            required: false
+            dropdown_threshold: 0
+            options:
+            - label: Default
+              value: default
+            - label: Small
+              value: small
+            default: default
+            hint: Default matches heading scale; small uses size-step-2.
+          - label: Body size
+            name: body_size
+            widget: select
+            required: false
+            dropdown_threshold: 0
+            options:
+            - label: Default
+              value: default
+            - label: Large
+              value: large
+            default: default
+            hint: Applies to body prose (not the title).
+      - label: Statement
+        name: statement
         widget: object
         fields:
         - label: Internal name
@@ -2021,31 +2239,54 @@ collections:
           widget: string
           required: false
           hint: CMS list label only — not shown on the site
+        - label: Eyebrow
+          name: eyebrow
+          widget: string
+          required: false
+          hint: Optional small line above the title (aliases title1)
         - label: Title
           name: title
           widget: markdown
-          required: false
-        - label: Title line 1
-          name: title1
-          widget: string
-          required: false
-        - label: Title line 2
-          name: title2
-          widget: string
           required: false
         - label: Subtitle
           name: subtitle
           widget: markdown
           required: false
-        - label: Content
-          name: content
-          widget: markdown
-          required: false
         - label: Decoration SVG
           name: decoration
-          widget: string
+          widget: select
           required: false
-          hint: e.g. brand/waves
+          dropdown_threshold: 0
+          hint: Brand mark from src/assets/svg/brand (header logos excluded)
+          options:
+            - label: — none —
+              value: ""
+            - label: Arrow
+              value: brand/arrow
+            - label: Arrows
+              value: brand/arrows
+            - label: Brick
+              value: brand/brick
+            - label: Check
+              value: brand/check
+            - label: Forward
+              value: brand/forward
+            - label: Medusa
+              value: brand/medusa
+            - label: Medusa organic
+              value: brand/medusa-organic
+            - label: Rings
+              value: brand/rings
+            - label: Scale
+              value: brand/scale
+            - label: Simple
+              value: brand/simple
+            - label: Stack
+              value: brand/stack
+            - label: Staggered
+              value: brand/staggered
+            - label: Waves
+              value: brand/waves
         - label: Settings
           name: appearance
           widget: object
@@ -2057,19 +2298,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: teal
           - label: Accent / CTA
             name: accent
             widget: select
@@ -2097,9 +2340,30 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
+          - label: Width
+            name: width
+            widget: select
+            required: false
+            dropdown_threshold: 0
+            options:
+            - label: content
+              value: content
+            - label: feature
+              value: feature
+            default: feature
+          - label: Body size
+            name: body_size
+            widget: select
+            required: false
+            dropdown_threshold: 0
+            options:
+            - label: Default
+              value: default
+            - label: Small
+              value: small
+            default: small
+            hint: Support text size; small is text-step-min-1.
       - label: List
         name: list
         widget: object
@@ -2120,6 +2384,7 @@ collections:
         - label: Items
           name: items
           widget: list
+          collapsed: true
           summary: '{{fields.title}}'
           fields:
           - label: Title
@@ -2140,19 +2405,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -2180,8 +2447,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
           - label: Width
             name: width
@@ -2193,8 +2458,6 @@ collections:
               value: content
             - label: feature
               value: feature
-            - label: full
-              value: full
             default: feature
           - label: Variant
             name: variant
@@ -2204,11 +2467,21 @@ collections:
             options:
             - label: definition
               value: definition
-            - label: checklist
-              value: checklist
             - label: stack
               value: stack
             default: definition
+          - label: Checkmarks
+            name: checks
+            widget: boolean
+            required: false
+            default: true
+            hint: Optional accent check icons
+          - label: Bordered
+            name: bordered
+            widget: boolean
+            required: false
+            default: true
+            hint: Optional item borders
       - label: Process
         name: process
         widget: object
@@ -2236,12 +2509,43 @@ collections:
           required: false
         - label: Decoration SVG
           name: decoration
-          widget: string
+          widget: select
           required: false
-          hint: e.g. brand/medusa-organic
+          dropdown_threshold: 0
+          hint: Brand mark from src/assets/svg/brand (header logos excluded)
+          options:
+            - label: — none —
+              value: ""
+            - label: Arrow
+              value: brand/arrow
+            - label: Arrows
+              value: brand/arrows
+            - label: Brick
+              value: brand/brick
+            - label: Check
+              value: brand/check
+            - label: Forward
+              value: brand/forward
+            - label: Medusa
+              value: brand/medusa
+            - label: Medusa organic
+              value: brand/medusa-organic
+            - label: Rings
+              value: brand/rings
+            - label: Scale
+              value: brand/scale
+            - label: Simple
+              value: brand/simple
+            - label: Stack
+              value: brand/stack
+            - label: Staggered
+              value: brand/staggered
+            - label: Waves
+              value: brand/waves
         - label: Steps
           name: items
           widget: list
+          collapsed: true
           summary: '{{fields.title}}'
           fields:
           - label: Title
@@ -2261,19 +2565,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -2291,6 +2597,22 @@ collections:
             - label: navy
               value: navy
             default: default
+          - label: Decoration color
+            name: decoration_accent
+            widget: select
+            required: false
+            dropdown_threshold: 0
+            options:
+            - label: teal
+              value: teal
+            - label: purple
+              value: purple
+            - label: navy
+              value: navy
+            - label: neutral
+              value: neutral
+            default: teal
+            hint: Decorative SVG only — independent of Accent (timeline + title line 2)
           - label: Alignment
             name: align
             widget: select
@@ -2301,8 +2623,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
       - label: Feature
         name: feature
@@ -2348,19 +2668,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -2378,32 +2700,18 @@ collections:
             - label: navy
               value: navy
             default: default
-          - label: Alignment
-            name: align
-            widget: select
-            required: false
-            dropdown_threshold: 0
-            options:
-            - label: left
-              value: left
-            - label: center
-              value: center
-            - label: right
-              value: right
-            default: left
           - label: Width
             name: width
             widget: select
             required: false
             dropdown_threshold: 0
             options:
-            - label: content
-              value: content
             - label: feature
               value: feature
             - label: full
               value: full
             default: feature
+            hint: full = media breaks out; copy stays in feature
           - label: Media side
             name: media_side
             widget: select
@@ -2462,19 +2770,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -2502,8 +2812,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
           - label: Width
             name: width
@@ -2515,8 +2823,6 @@ collections:
               value: content
             - label: feature
               value: feature
-            - label: full
-              value: full
             default: feature
       - label: Posts
         name: posts
@@ -2557,19 +2863,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -2597,8 +2905,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
           - label: Width
             name: width
@@ -2652,19 +2958,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -2682,32 +2990,6 @@ collections:
             - label: navy
               value: navy
             default: default
-          - label: Alignment
-            name: align
-            widget: select
-            required: false
-            dropdown_threshold: 0
-            options:
-            - label: left
-              value: left
-            - label: center
-              value: center
-            - label: right
-              value: right
-            default: left
-          - label: Width
-            name: width
-            widget: select
-            required: false
-            dropdown_threshold: 0
-            options:
-            - label: content
-              value: content
-            - label: feature
-              value: feature
-            - label: full
-              value: full
-            default: feature
           - label: Filter
             name: filter
             widget: select
@@ -2758,19 +3040,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -2798,8 +3082,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
           - label: Width
             name: width
@@ -2831,6 +3113,41 @@ collections:
           name: image
           widget: image
           required: false
+        - label: Decoration SVG
+          name: decoration
+          widget: select
+          required: false
+          dropdown_threshold: 0
+          hint: Optional mark (e.g. Arrows). Can be used with or without background image.
+          options:
+            - label: — none —
+              value: ""
+            - label: Arrow
+              value: brand/arrow
+            - label: Arrows
+              value: brand/arrows
+            - label: Brick
+              value: brand/brick
+            - label: Check
+              value: brand/check
+            - label: Forward
+              value: brand/forward
+            - label: Medusa
+              value: brand/medusa
+            - label: Medusa organic
+              value: brand/medusa-organic
+            - label: Rings
+              value: brand/rings
+            - label: Scale
+              value: brand/scale
+            - label: Simple
+              value: brand/simple
+            - label: Stack
+              value: brand/stack
+            - label: Staggered
+              value: brand/staggered
+            - label: Waves
+              value: brand/waves
         - label: Items
           name: items
           widget: list
@@ -2857,19 +3174,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -2897,8 +3216,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
       - label: Tabs
         name: tabs
@@ -2968,19 +3285,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -3008,8 +3327,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
           - label: Width
             name: width
@@ -3063,19 +3380,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -3103,8 +3422,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
           - label: Width
             name: width
@@ -3173,19 +3490,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -3213,8 +3532,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
           - label: Width
             name: width
@@ -3226,9 +3543,8 @@ collections:
               value: content
             - label: feature
               value: feature
-            - label: full
-              value: full
             default: feature
+            hint: content or feature only
       - label: CTA
         name: cta
         widget: object
@@ -3276,19 +3592,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -3316,8 +3634,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
 - name: team
   label: Team Members
@@ -3474,19 +3790,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
             hint: Color peeking through the separator (match the next section).
           - label: Accent / CTA
             name: accent
@@ -3505,19 +3823,6 @@ collections:
             - label: navy
               value: navy
             default: default
-          - label: Alignment
-            name: align
-            widget: select
-            required: false
-            dropdown_threshold: 0
-            options:
-            - label: left
-              value: left
-            - label: center
-              value: center
-            - label: right
-              value: right
-            default: left
           - label: Height
             name: height
             widget: select
@@ -3589,14 +3894,52 @@ collections:
           name: content
           widget: markdown
           required: false
+          hint: Full-width body prose. Can be used together with left/right columns.
         - label: Content Left
           name: content_left
           widget: markdown
           required: false
+          hint: Optional left column; stacks under full-width content when both are set.
         - label: Content Right
           name: content_right
           widget: markdown
           required: false
+          hint: Optional right column; stacks under full-width content when both are set.
+        - label: Decoration SVG
+          name: decoration
+          widget: select
+          required: false
+          dropdown_threshold: 0
+          hint: Watermark behind copy
+          options:
+            - label: — none —
+              value: ""
+            - label: Arrow
+              value: brand/arrow
+            - label: Arrows
+              value: brand/arrows
+            - label: Brick
+              value: brand/brick
+            - label: Check
+              value: brand/check
+            - label: Forward
+              value: brand/forward
+            - label: Medusa
+              value: brand/medusa
+            - label: Medusa organic
+              value: brand/medusa-organic
+            - label: Rings
+              value: brand/rings
+            - label: Scale
+              value: brand/scale
+            - label: Simple
+              value: brand/simple
+            - label: Stack
+              value: brand/stack
+            - label: Staggered
+              value: brand/staggered
+            - label: Waves
+              value: brand/waves
         - label: Settings
           name: appearance
           widget: object
@@ -3608,19 +3951,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -3648,8 +3993,141 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
+            default: left
+          - label: Title size
+            name: title_size
+            widget: select
+            required: false
+            dropdown_threshold: 0
+            options:
+            - label: Default
+              value: default
+            - label: Small
+              value: small
+            default: default
+            hint: Default matches heading scale; small uses size-step-2.
+          - label: Body size
+            name: body_size
+            widget: select
+            required: false
+            dropdown_threshold: 0
+            options:
+            - label: Default
+              value: default
+            - label: Large
+              value: large
+            default: default
+            hint: Applies to body prose (not the title).
+      - label: Statement
+        name: statement
+        widget: object
+        fields:
+        - label: Internal name
+          name: internal_name
+          widget: string
+          required: false
+          hint: CMS list label only — not shown on the site
+        - label: Eyebrow
+          name: eyebrow
+          widget: string
+          required: false
+          hint: Optional small line above the title (aliases title1)
+        - label: Title
+          name: title
+          widget: markdown
+          required: false
+        - label: Subtitle
+          name: subtitle
+          widget: markdown
+          required: false
+        - label: Decoration SVG
+          name: decoration
+          widget: select
+          required: false
+          dropdown_threshold: 0
+          hint: Brand mark from src/assets/svg/brand (header logos excluded)
+          options:
+            - label: — none —
+              value: ""
+            - label: Arrow
+              value: brand/arrow
+            - label: Arrows
+              value: brand/arrows
+            - label: Brick
+              value: brand/brick
+            - label: Check
+              value: brand/check
+            - label: Forward
+              value: brand/forward
+            - label: Medusa
+              value: brand/medusa
+            - label: Medusa organic
+              value: brand/medusa-organic
+            - label: Rings
+              value: brand/rings
+            - label: Scale
+              value: brand/scale
+            - label: Simple
+              value: brand/simple
+            - label: Stack
+              value: brand/stack
+            - label: Staggered
+              value: brand/staggered
+            - label: Waves
+              value: brand/waves
+        - label: Settings
+          name: appearance
+          widget: object
+          collapsed: true
+          fields:
+          - label: Background theme
+            name: theme
+            widget: select
+            required: false
+            dropdown_threshold: 0
+            options:
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
+            - label: gray-dark
+              value: gray-dark
+            - label: teal
+              value: teal
+            - label: teal-dark
+              value: teal-dark
+            - label: purple
+              value: purple
+            - label: navy
+              value: navy
+            default: teal
+          - label: Accent / CTA
+            name: accent
+            widget: select
+            required: false
+            dropdown_threshold: 0
+            options:
+            - label: default
+              value: default
+            - label: neutral
+              value: neutral
+            - label: teal
+              value: teal
+            - label: purple
+              value: purple
+            - label: navy
+              value: navy
+            default: default
+          - label: Alignment
+            name: align
+            widget: select
+            required: false
+            dropdown_threshold: 0
+            options:
+            - label: left
+              value: left
+            - label: center
+              value: center
             default: left
           - label: Width
             name: width
@@ -3661,97 +4139,19 @@ collections:
               value: content
             - label: feature
               value: feature
-            - label: full
-              value: full
             default: feature
-      - label: Highlight
-        name: highlight
-        widget: object
-        fields:
-        - label: Internal name
-          name: internal_name
-          widget: string
-          required: false
-          hint: CMS list label only — not shown on the site
-        - label: Title
-          name: title
-          widget: markdown
-          required: false
-        - label: Title line 1
-          name: title1
-          widget: string
-          required: false
-        - label: Title line 2
-          name: title2
-          widget: string
-          required: false
-        - label: Subtitle
-          name: subtitle
-          widget: markdown
-          required: false
-        - label: Content
-          name: content
-          widget: markdown
-          required: false
-        - label: Decoration SVG
-          name: decoration
-          widget: string
-          required: false
-          hint: e.g. brand/waves
-        - label: Settings
-          name: appearance
-          widget: object
-          collapsed: true
-          fields:
-          - label: Background theme
-            name: theme
+          - label: Body size
+            name: body_size
             widget: select
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
-            - label: gray-dark
-              value: gray-dark
-            - label: teal
-              value: teal
-            - label: purple
-              value: purple
-            - label: navy
-              value: navy
-            default: white
-          - label: Accent / CTA
-            name: accent
-            widget: select
-            required: false
-            dropdown_threshold: 0
-            options:
-            - label: default
+            - label: Default
               value: default
-            - label: neutral
-              value: neutral
-            - label: teal
-              value: teal
-            - label: purple
-              value: purple
-            - label: navy
-              value: navy
-            default: default
-          - label: Alignment
-            name: align
-            widget: select
-            required: false
-            dropdown_threshold: 0
-            options:
-            - label: left
-              value: left
-            - label: center
-              value: center
-            - label: right
-              value: right
-            default: left
+            - label: Small
+              value: small
+            default: small
+            hint: Support text size; small is text-step-min-1.
       - label: List
         name: list
         widget: object
@@ -3772,6 +4172,7 @@ collections:
         - label: Items
           name: items
           widget: list
+          collapsed: true
           summary: '{{fields.title}}'
           fields:
           - label: Title
@@ -3792,19 +4193,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -3832,8 +4235,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
           - label: Width
             name: width
@@ -3845,8 +4246,6 @@ collections:
               value: content
             - label: feature
               value: feature
-            - label: full
-              value: full
             default: feature
           - label: Variant
             name: variant
@@ -3856,11 +4255,21 @@ collections:
             options:
             - label: definition
               value: definition
-            - label: checklist
-              value: checklist
             - label: stack
               value: stack
             default: definition
+          - label: Checkmarks
+            name: checks
+            widget: boolean
+            required: false
+            default: true
+            hint: Optional accent check icons
+          - label: Bordered
+            name: bordered
+            widget: boolean
+            required: false
+            default: true
+            hint: Optional item borders
       - label: Process
         name: process
         widget: object
@@ -3888,12 +4297,43 @@ collections:
           required: false
         - label: Decoration SVG
           name: decoration
-          widget: string
+          widget: select
           required: false
-          hint: e.g. brand/medusa-organic
+          dropdown_threshold: 0
+          hint: Brand mark from src/assets/svg/brand (header logos excluded)
+          options:
+            - label: — none —
+              value: ""
+            - label: Arrow
+              value: brand/arrow
+            - label: Arrows
+              value: brand/arrows
+            - label: Brick
+              value: brand/brick
+            - label: Check
+              value: brand/check
+            - label: Forward
+              value: brand/forward
+            - label: Medusa
+              value: brand/medusa
+            - label: Medusa organic
+              value: brand/medusa-organic
+            - label: Rings
+              value: brand/rings
+            - label: Scale
+              value: brand/scale
+            - label: Simple
+              value: brand/simple
+            - label: Stack
+              value: brand/stack
+            - label: Staggered
+              value: brand/staggered
+            - label: Waves
+              value: brand/waves
         - label: Steps
           name: items
           widget: list
+          collapsed: true
           summary: '{{fields.title}}'
           fields:
           - label: Title
@@ -3913,19 +4353,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -3943,6 +4385,22 @@ collections:
             - label: navy
               value: navy
             default: default
+          - label: Decoration color
+            name: decoration_accent
+            widget: select
+            required: false
+            dropdown_threshold: 0
+            options:
+            - label: teal
+              value: teal
+            - label: purple
+              value: purple
+            - label: navy
+              value: navy
+            - label: neutral
+              value: neutral
+            default: teal
+            hint: Decorative SVG only — independent of Accent (timeline + title line 2)
           - label: Alignment
             name: align
             widget: select
@@ -3953,8 +4411,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
       - label: Feature
         name: feature
@@ -4000,19 +4456,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -4030,32 +4488,18 @@ collections:
             - label: navy
               value: navy
             default: default
-          - label: Alignment
-            name: align
-            widget: select
-            required: false
-            dropdown_threshold: 0
-            options:
-            - label: left
-              value: left
-            - label: center
-              value: center
-            - label: right
-              value: right
-            default: left
           - label: Width
             name: width
             widget: select
             required: false
             dropdown_threshold: 0
             options:
-            - label: content
-              value: content
             - label: feature
               value: feature
             - label: full
               value: full
             default: feature
+            hint: full = media breaks out; copy stays in feature
           - label: Media side
             name: media_side
             widget: select
@@ -4114,19 +4558,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -4154,8 +4600,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
           - label: Width
             name: width
@@ -4167,8 +4611,6 @@ collections:
               value: content
             - label: feature
               value: feature
-            - label: full
-              value: full
             default: feature
       - label: Posts
         name: posts
@@ -4209,19 +4651,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -4249,8 +4693,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
           - label: Width
             name: width
@@ -4304,19 +4746,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -4344,8 +4788,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
           - label: Width
             name: width
@@ -4381,48 +4823,25 @@ collections:
               value: stack
             - label: thirds
               value: thirds
-            default: stack
-      - label: Form
-        name: form
-        widget: object
-        fields:
-        - label: Internal name
-          name: internal_name
-          widget: string
-          required: false
-          hint: CMS list label only — not shown on the site
-        - label: Title
-          name: title
-          widget: markdown
-          required: false
-        - label: Intro
-          name: intro
-          widget: markdown
-          required: false
-        - label: Settings
-          name: appearance
-          widget: object
-          collapsed: true
-          fields:
-          - label: Background theme
-            name: theme
-            widget: select
+            default: stackct
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -4450,8 +4869,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
           - label: Width
             name: width
@@ -4483,6 +4900,41 @@ collections:
           name: image
           widget: image
           required: false
+        - label: Decoration SVG
+          name: decoration
+          widget: select
+          required: false
+          dropdown_threshold: 0
+          hint: Optional mark (e.g. Arrows). Can be used with or without background image.
+          options:
+            - label: — none —
+              value: ""
+            - label: Arrow
+              value: brand/arrow
+            - label: Arrows
+              value: brand/arrows
+            - label: Brick
+              value: brand/brick
+            - label: Check
+              value: brand/check
+            - label: Forward
+              value: brand/forward
+            - label: Medusa
+              value: brand/medusa
+            - label: Medusa organic
+              value: brand/medusa-organic
+            - label: Rings
+              value: brand/rings
+            - label: Scale
+              value: brand/scale
+            - label: Simple
+              value: brand/simple
+            - label: Stack
+              value: brand/stack
+            - label: Staggered
+              value: brand/staggered
+            - label: Waves
+              value: brand/waves
         - label: Items
           name: items
           widget: list
@@ -4509,19 +4961,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -4549,8 +5003,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
       - label: Tabs
         name: tabs
@@ -4620,19 +5072,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -4660,8 +5114,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
           - label: Width
             name: width
@@ -4715,19 +5167,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -4755,8 +5209,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
           - label: Width
             name: width
@@ -4825,19 +5277,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -4865,8 +5319,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
           - label: Width
             name: width
@@ -4878,9 +5330,8 @@ collections:
               value: content
             - label: feature
               value: feature
-            - label: full
-              value: full
             default: feature
+            hint: content or feature only
       - label: CTA
         name: cta
         widget: object
@@ -4928,19 +5379,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -4968,8 +5421,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
 - name: careers
   label: Careers
@@ -5060,19 +5511,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
             hint: Color peeking through the separator (match the next section).
           - label: Accent / CTA
             name: accent
@@ -5101,8 +5554,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
           - label: Height
             name: height
@@ -5175,14 +5626,52 @@ collections:
           name: content
           widget: markdown
           required: false
+          hint: Full-width body prose. Can be used together with left/right columns.
         - label: Content Left
           name: content_left
           widget: markdown
           required: false
+          hint: Optional left column; stacks under full-width content when both are set.
         - label: Content Right
           name: content_right
           widget: markdown
           required: false
+          hint: Optional right column; stacks under full-width content when both are set.
+        - label: Decoration SVG
+          name: decoration
+          widget: select
+          required: false
+          dropdown_threshold: 0
+          hint: Watermark behind copy
+          options:
+            - label: — none —
+              value: ""
+            - label: Arrow
+              value: brand/arrow
+            - label: Arrows
+              value: brand/arrows
+            - label: Brick
+              value: brand/brick
+            - label: Check
+              value: brand/check
+            - label: Forward
+              value: brand/forward
+            - label: Medusa
+              value: brand/medusa
+            - label: Medusa organic
+              value: brand/medusa-organic
+            - label: Rings
+              value: brand/rings
+            - label: Scale
+              value: brand/scale
+            - label: Simple
+              value: brand/simple
+            - label: Stack
+              value: brand/stack
+            - label: Staggered
+              value: brand/staggered
+            - label: Waves
+              value: brand/waves
         - label: Settings
           name: appearance
           widget: object
@@ -5194,19 +5683,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -5234,8 +5725,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
           - label: Width
             name: width
@@ -5247,11 +5736,33 @@ collections:
               value: content
             - label: feature
               value: feature
-            - label: full
-              value: full
             default: feature
-      - label: Highlight
-        name: highlight
+          - label: Title size
+            name: title_size
+            widget: select
+            required: false
+            dropdown_threshold: 0
+            options:
+            - label: Default
+              value: default
+            - label: Small
+              value: small
+            default: default
+            hint: Default matches heading scale; small uses size-step-2.
+          - label: Body size
+            name: body_size
+            widget: select
+            required: false
+            dropdown_threshold: 0
+            options:
+            - label: Default
+              value: default
+            - label: Large
+              value: large
+            default: default
+            hint: Applies to body prose (not the title).
+      - label: Statement
+        name: statement
         widget: object
         fields:
         - label: Internal name
@@ -5259,31 +5770,54 @@ collections:
           widget: string
           required: false
           hint: CMS list label only — not shown on the site
+        - label: Eyebrow
+          name: eyebrow
+          widget: string
+          required: false
+          hint: Optional small line above the title (aliases title1)
         - label: Title
           name: title
           widget: markdown
-          required: false
-        - label: Title line 1
-          name: title1
-          widget: string
-          required: false
-        - label: Title line 2
-          name: title2
-          widget: string
           required: false
         - label: Subtitle
           name: subtitle
           widget: markdown
           required: false
-        - label: Content
-          name: content
-          widget: markdown
-          required: false
         - label: Decoration SVG
           name: decoration
-          widget: string
+          widget: select
           required: false
-          hint: e.g. brand/waves
+          dropdown_threshold: 0
+          hint: Brand mark from src/assets/svg/brand (header logos excluded)
+          options:
+            - label: — none —
+              value: ""
+            - label: Arrow
+              value: brand/arrow
+            - label: Arrows
+              value: brand/arrows
+            - label: Brick
+              value: brand/brick
+            - label: Check
+              value: brand/check
+            - label: Forward
+              value: brand/forward
+            - label: Medusa
+              value: brand/medusa
+            - label: Medusa organic
+              value: brand/medusa-organic
+            - label: Rings
+              value: brand/rings
+            - label: Scale
+              value: brand/scale
+            - label: Simple
+              value: brand/simple
+            - label: Stack
+              value: brand/stack
+            - label: Staggered
+              value: brand/staggered
+            - label: Waves
+              value: brand/waves
         - label: Settings
           name: appearance
           widget: object
@@ -5295,19 +5829,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: teal
           - label: Accent / CTA
             name: accent
             widget: select
@@ -5335,9 +5871,30 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
+          - label: Width
+            name: width
+            widget: select
+            required: false
+            dropdown_threshold: 0
+            options:
+            - label: content
+              value: content
+            - label: feature
+              value: feature
+            default: feature
+          - label: Body size
+            name: body_size
+            widget: select
+            required: false
+            dropdown_threshold: 0
+            options:
+            - label: Default
+              value: default
+            - label: Small
+              value: small
+            default: small
+            hint: Support text size; small is text-step-min-1.
       - label: List
         name: list
         widget: object
@@ -5358,6 +5915,7 @@ collections:
         - label: Items
           name: items
           widget: list
+          collapsed: true
           summary: '{{fields.title}}'
           fields:
           - label: Title
@@ -5378,19 +5936,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -5418,8 +5978,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
           - label: Width
             name: width
@@ -5431,8 +5989,6 @@ collections:
               value: content
             - label: feature
               value: feature
-            - label: full
-              value: full
             default: feature
           - label: Variant
             name: variant
@@ -5442,11 +5998,21 @@ collections:
             options:
             - label: definition
               value: definition
-            - label: checklist
-              value: checklist
             - label: stack
               value: stack
             default: definition
+          - label: Checkmarks
+            name: checks
+            widget: boolean
+            required: false
+            default: true
+            hint: Optional accent check icons
+          - label: Bordered
+            name: bordered
+            widget: boolean
+            required: false
+            default: true
+            hint: Optional item borders
       - label: Process
         name: process
         widget: object
@@ -5474,12 +6040,43 @@ collections:
           required: false
         - label: Decoration SVG
           name: decoration
-          widget: string
+          widget: select
           required: false
-          hint: e.g. brand/medusa-organic
+          dropdown_threshold: 0
+          hint: Brand mark from src/assets/svg/brand (header logos excluded)
+          options:
+            - label: — none —
+              value: ""
+            - label: Arrow
+              value: brand/arrow
+            - label: Arrows
+              value: brand/arrows
+            - label: Brick
+              value: brand/brick
+            - label: Check
+              value: brand/check
+            - label: Forward
+              value: brand/forward
+            - label: Medusa
+              value: brand/medusa
+            - label: Medusa organic
+              value: brand/medusa-organic
+            - label: Rings
+              value: brand/rings
+            - label: Scale
+              value: brand/scale
+            - label: Simple
+              value: brand/simple
+            - label: Stack
+              value: brand/stack
+            - label: Staggered
+              value: brand/staggered
+            - label: Waves
+              value: brand/waves
         - label: Steps
           name: items
           widget: list
+          collapsed: true
           summary: '{{fields.title}}'
           fields:
           - label: Title
@@ -5499,19 +6096,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -5529,6 +6128,22 @@ collections:
             - label: navy
               value: navy
             default: default
+          - label: Decoration color
+            name: decoration_accent
+            widget: select
+            required: false
+            dropdown_threshold: 0
+            options:
+            - label: teal
+              value: teal
+            - label: purple
+              value: purple
+            - label: navy
+              value: navy
+            - label: neutral
+              value: neutral
+            default: teal
+            hint: Decorative SVG only — independent of Accent (timeline + title line 2)
           - label: Alignment
             name: align
             widget: select
@@ -5539,8 +6154,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
       - label: Feature
         name: feature
@@ -5586,19 +6199,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -5616,32 +6231,18 @@ collections:
             - label: navy
               value: navy
             default: default
-          - label: Alignment
-            name: align
-            widget: select
-            required: false
-            dropdown_threshold: 0
-            options:
-            - label: left
-              value: left
-            - label: center
-              value: center
-            - label: right
-              value: right
-            default: left
           - label: Width
             name: width
             widget: select
             required: false
             dropdown_threshold: 0
             options:
-            - label: content
-              value: content
             - label: feature
               value: feature
             - label: full
               value: full
             default: feature
+            hint: full = media breaks out; copy stays in feature
           - label: Media side
             name: media_side
             widget: select
@@ -5700,19 +6301,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -5740,8 +6343,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
           - label: Width
             name: width
@@ -5753,8 +6354,6 @@ collections:
               value: content
             - label: feature
               value: feature
-            - label: full
-              value: full
             default: feature
       - label: Posts
         name: posts
@@ -5795,19 +6394,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -5835,8 +6436,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
           - label: Width
             name: width
@@ -5890,19 +6489,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -5920,32 +6521,6 @@ collections:
             - label: navy
               value: navy
             default: default
-          - label: Alignment
-            name: align
-            widget: select
-            required: false
-            dropdown_threshold: 0
-            options:
-            - label: left
-              value: left
-            - label: center
-              value: center
-            - label: right
-              value: right
-            default: left
-          - label: Width
-            name: width
-            widget: select
-            required: false
-            dropdown_threshold: 0
-            options:
-            - label: content
-              value: content
-            - label: feature
-              value: feature
-            - label: full
-              value: full
-            default: feature
           - label: Filter
             name: filter
             widget: select
@@ -5996,19 +6571,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -6036,8 +6613,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
           - label: Width
             name: width
@@ -6069,6 +6644,41 @@ collections:
           name: image
           widget: image
           required: false
+        - label: Decoration SVG
+          name: decoration
+          widget: select
+          required: false
+          dropdown_threshold: 0
+          hint: Optional mark (e.g. Arrows). Can be used with or without background image.
+          options:
+            - label: — none —
+              value: ""
+            - label: Arrow
+              value: brand/arrow
+            - label: Arrows
+              value: brand/arrows
+            - label: Brick
+              value: brand/brick
+            - label: Check
+              value: brand/check
+            - label: Forward
+              value: brand/forward
+            - label: Medusa
+              value: brand/medusa
+            - label: Medusa organic
+              value: brand/medusa-organic
+            - label: Rings
+              value: brand/rings
+            - label: Scale
+              value: brand/scale
+            - label: Simple
+              value: brand/simple
+            - label: Stack
+              value: brand/stack
+            - label: Staggered
+              value: brand/staggered
+            - label: Waves
+              value: brand/waves
         - label: Items
           name: items
           widget: list
@@ -6095,19 +6705,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -6135,8 +6747,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
       - label: Tabs
         name: tabs
@@ -6206,19 +6816,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -6246,8 +6858,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
           - label: Width
             name: width
@@ -6301,19 +6911,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -6341,8 +6953,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
           - label: Width
             name: width
@@ -6411,19 +7021,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -6451,8 +7063,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
           - label: Width
             name: width
@@ -6464,9 +7074,8 @@ collections:
               value: content
             - label: feature
               value: feature
-            - label: full
-              value: full
             default: feature
+            hint: content or feature only
       - label: CTA
         name: cta
         widget: object
@@ -6514,19 +7123,21 @@ collections:
             required: false
             dropdown_threshold: 0
             options:
-            - label: white
-              value: white
-            - label: gray-light
-              value: gray-light
+            - label: Background
+              value: background-default
+            - label: Background accent
+              value: background-accent
             - label: gray-dark
               value: gray-dark
             - label: teal
               value: teal
+            - label: teal-dark
+              value: teal-dark
             - label: purple
               value: purple
             - label: navy
               value: navy
-            default: white
+            default: background-default
           - label: Accent / CTA
             name: accent
             widget: select
@@ -6554,8 +7165,6 @@ collections:
               value: left
             - label: center
               value: center
-            - label: right
-              value: right
             default: left
 - name: solutions
   label: Solutions
@@ -6642,19 +7251,21 @@ collections:
           required: false
           dropdown_threshold: 0
           options:
-          - label: white
-            value: white
-          - label: gray-light
-            value: gray-light
+          - label: Background
+            value: background-default
+          - label: Background accent
+            value: background-accent
           - label: gray-dark
             value: gray-dark
           - label: teal
             value: teal
+          - label: teal-dark
+            value: teal-dark
           - label: purple
             value: purple
           - label: navy
             value: navy
-          default: white
+          default: background-default
           hint: Color peeking through the separator (match the next section).
         - label: Accent / CTA
           name: accent
@@ -6683,8 +7294,6 @@ collections:
             value: left
           - label: center
             value: center
-          - label: right
-            value: right
           default: left
         - label: Height
           name: height
@@ -6757,14 +7366,52 @@ collections:
         name: content
         widget: markdown
         required: false
+        hint: Full-width body prose. Can be used together with left/right columns.
       - label: Content Left
         name: content_left
         widget: markdown
         required: false
+        hint: Optional left column; stacks under full-width content when both are set.
       - label: Content Right
         name: content_right
         widget: markdown
         required: false
+        hint: Optional right column; stacks under full-width content when both are set.
+      - label: Decoration SVG
+        name: decoration
+        widget: select
+        required: false
+        dropdown_threshold: 0
+        hint: Watermark behind copy
+        options:
+          - label: — none —
+            value: ""
+          - label: Arrow
+            value: brand/arrow
+          - label: Arrows
+            value: brand/arrows
+          - label: Brick
+            value: brand/brick
+          - label: Check
+            value: brand/check
+          - label: Forward
+            value: brand/forward
+          - label: Medusa
+            value: brand/medusa
+          - label: Medusa organic
+            value: brand/medusa-organic
+          - label: Rings
+            value: brand/rings
+          - label: Scale
+            value: brand/scale
+          - label: Simple
+            value: brand/simple
+          - label: Stack
+            value: brand/stack
+          - label: Staggered
+            value: brand/staggered
+          - label: Waves
+            value: brand/waves
       - label: Settings
         name: appearance
         widget: object
@@ -6776,19 +7423,21 @@ collections:
           required: false
           dropdown_threshold: 0
           options:
-          - label: white
-            value: white
-          - label: gray-light
-            value: gray-light
+          - label: Background
+            value: background-default
+          - label: Background accent
+            value: background-accent
           - label: gray-dark
             value: gray-dark
           - label: teal
             value: teal
+          - label: teal-dark
+            value: teal-dark
           - label: purple
             value: purple
           - label: navy
             value: navy
-          default: white
+          default: background-default
         - label: Accent / CTA
           name: accent
           widget: select
@@ -6816,8 +7465,6 @@ collections:
             value: left
           - label: center
             value: center
-          - label: right
-            value: right
           default: left
         - label: Width
           name: width
@@ -6829,11 +7476,33 @@ collections:
             value: content
           - label: feature
             value: feature
-          - label: full
-            value: full
           default: feature
-    - label: Highlight
-      name: highlight
+        - label: Title size
+          name: title_size
+          widget: select
+          required: false
+          dropdown_threshold: 0
+          options:
+          - label: Default
+            value: default
+          - label: Small
+            value: small
+          default: default
+          hint: Default matches heading scale; small uses size-step-2.
+        - label: Body size
+          name: body_size
+          widget: select
+          required: false
+          dropdown_threshold: 0
+          options:
+          - label: Default
+            value: default
+          - label: Large
+            value: large
+          default: default
+          hint: Applies to body prose (not the title).
+    - label: Statement
+      name: statement
       widget: object
       fields:
       - label: Internal name
@@ -6841,31 +7510,54 @@ collections:
         widget: string
         required: false
         hint: CMS list label only — not shown on the site
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+        required: false
+        hint: Optional small line above the title (aliases title1)
       - label: Title
         name: title
         widget: markdown
-        required: false
-      - label: Title line 1
-        name: title1
-        widget: string
-        required: false
-      - label: Title line 2
-        name: title2
-        widget: string
         required: false
       - label: Subtitle
         name: subtitle
         widget: markdown
         required: false
-      - label: Content
-        name: content
-        widget: markdown
-        required: false
       - label: Decoration SVG
         name: decoration
-        widget: string
+        widget: select
         required: false
-        hint: e.g. brand/waves
+        dropdown_threshold: 0
+        hint: Brand mark from src/assets/svg/brand (header logos excluded)
+        options:
+          - label: — none —
+            value: ""
+          - label: Arrow
+            value: brand/arrow
+          - label: Arrows
+            value: brand/arrows
+          - label: Brick
+            value: brand/brick
+          - label: Check
+            value: brand/check
+          - label: Forward
+            value: brand/forward
+          - label: Medusa
+            value: brand/medusa
+          - label: Medusa organic
+            value: brand/medusa-organic
+          - label: Rings
+            value: brand/rings
+          - label: Scale
+            value: brand/scale
+          - label: Simple
+            value: brand/simple
+          - label: Stack
+            value: brand/stack
+          - label: Staggered
+            value: brand/staggered
+          - label: Waves
+            value: brand/waves
       - label: Settings
         name: appearance
         widget: object
@@ -6877,19 +7569,21 @@ collections:
           required: false
           dropdown_threshold: 0
           options:
-          - label: white
-            value: white
-          - label: gray-light
-            value: gray-light
+          - label: Background
+            value: background-default
+          - label: Background accent
+            value: background-accent
           - label: gray-dark
             value: gray-dark
           - label: teal
             value: teal
+          - label: teal-dark
+            value: teal-dark
           - label: purple
             value: purple
           - label: navy
             value: navy
-          default: white
+          default: teal
         - label: Accent / CTA
           name: accent
           widget: select
@@ -6917,9 +7611,30 @@ collections:
             value: left
           - label: center
             value: center
-          - label: right
-            value: right
           default: left
+        - label: Width
+          name: width
+          widget: select
+          required: false
+          dropdown_threshold: 0
+          options:
+          - label: content
+            value: content
+          - label: feature
+            value: feature
+          default: feature
+        - label: Body size
+          name: body_size
+          widget: select
+          required: false
+          dropdown_threshold: 0
+          options:
+          - label: Default
+            value: default
+          - label: Small
+            value: small
+          default: small
+          hint: Support text size; small is text-step-min-1.
     - label: List
       name: list
       widget: object
@@ -6940,6 +7655,7 @@ collections:
       - label: Items
         name: items
         widget: list
+        collapsed: true
         summary: '{{fields.title}}'
         fields:
         - label: Title
@@ -6960,19 +7676,21 @@ collections:
           required: false
           dropdown_threshold: 0
           options:
-          - label: white
-            value: white
-          - label: gray-light
-            value: gray-light
+          - label: Background
+            value: background-default
+          - label: Background accent
+            value: background-accent
           - label: gray-dark
             value: gray-dark
           - label: teal
             value: teal
+          - label: teal-dark
+            value: teal-dark
           - label: purple
             value: purple
           - label: navy
             value: navy
-          default: white
+          default: background-default
         - label: Accent / CTA
           name: accent
           widget: select
@@ -7000,8 +7718,6 @@ collections:
             value: left
           - label: center
             value: center
-          - label: right
-            value: right
           default: left
         - label: Width
           name: width
@@ -7013,8 +7729,6 @@ collections:
             value: content
           - label: feature
             value: feature
-          - label: full
-            value: full
           default: feature
         - label: Variant
           name: variant
@@ -7024,11 +7738,21 @@ collections:
           options:
           - label: definition
             value: definition
-          - label: checklist
-            value: checklist
           - label: stack
             value: stack
           default: definition
+        - label: Checkmarks
+          name: checks
+          widget: boolean
+          required: false
+          default: true
+          hint: Optional accent check icons
+        - label: Bordered
+          name: bordered
+          widget: boolean
+          required: false
+          default: true
+          hint: Optional item borders
     - label: Process
       name: process
       widget: object
@@ -7056,12 +7780,43 @@ collections:
         required: false
       - label: Decoration SVG
         name: decoration
-        widget: string
+        widget: select
         required: false
-        hint: e.g. brand/medusa-organic
+        dropdown_threshold: 0
+        hint: Brand mark from src/assets/svg/brand (header logos excluded)
+        options:
+          - label: — none —
+            value: ""
+          - label: Arrow
+            value: brand/arrow
+          - label: Arrows
+            value: brand/arrows
+          - label: Brick
+            value: brand/brick
+          - label: Check
+            value: brand/check
+          - label: Forward
+            value: brand/forward
+          - label: Medusa
+            value: brand/medusa
+          - label: Medusa organic
+            value: brand/medusa-organic
+          - label: Rings
+            value: brand/rings
+          - label: Scale
+            value: brand/scale
+          - label: Simple
+            value: brand/simple
+          - label: Stack
+            value: brand/stack
+          - label: Staggered
+            value: brand/staggered
+          - label: Waves
+            value: brand/waves
       - label: Steps
         name: items
         widget: list
+        collapsed: true
         summary: '{{fields.title}}'
         fields:
         - label: Title
@@ -7081,19 +7836,21 @@ collections:
           required: false
           dropdown_threshold: 0
           options:
-          - label: white
-            value: white
-          - label: gray-light
-            value: gray-light
+          - label: Background
+            value: background-default
+          - label: Background accent
+            value: background-accent
           - label: gray-dark
             value: gray-dark
           - label: teal
             value: teal
+          - label: teal-dark
+            value: teal-dark
           - label: purple
             value: purple
           - label: navy
             value: navy
-          default: white
+          default: background-default
         - label: Accent / CTA
           name: accent
           widget: select
@@ -7111,6 +7868,22 @@ collections:
           - label: navy
             value: navy
           default: default
+        - label: Decoration color
+          name: decoration_accent
+          widget: select
+          required: false
+          dropdown_threshold: 0
+          options:
+          - label: teal
+            value: teal
+          - label: purple
+            value: purple
+          - label: navy
+            value: navy
+          - label: neutral
+            value: neutral
+          default: teal
+          hint: Decorative SVG only — independent of Accent (timeline + title line 2)
         - label: Alignment
           name: align
           widget: select
@@ -7121,8 +7894,6 @@ collections:
             value: left
           - label: center
             value: center
-          - label: right
-            value: right
           default: left
     - label: Feature
       name: feature
@@ -7168,19 +7939,21 @@ collections:
           required: false
           dropdown_threshold: 0
           options:
-          - label: white
-            value: white
-          - label: gray-light
-            value: gray-light
+          - label: Background
+            value: background-default
+          - label: Background accent
+            value: background-accent
           - label: gray-dark
             value: gray-dark
           - label: teal
             value: teal
+          - label: teal-dark
+            value: teal-dark
           - label: purple
             value: purple
           - label: navy
             value: navy
-          default: white
+          default: background-default
         - label: Accent / CTA
           name: accent
           widget: select
@@ -7198,32 +7971,18 @@ collections:
           - label: navy
             value: navy
           default: default
-        - label: Alignment
-          name: align
-          widget: select
-          required: false
-          dropdown_threshold: 0
-          options:
-          - label: left
-            value: left
-          - label: center
-            value: center
-          - label: right
-            value: right
-          default: left
         - label: Width
           name: width
           widget: select
           required: false
           dropdown_threshold: 0
           options:
-          - label: content
-            value: content
           - label: feature
             value: feature
           - label: full
             value: full
           default: feature
+          hint: full = media breaks out; copy stays in feature
         - label: Media side
           name: media_side
           widget: select
@@ -7282,19 +8041,21 @@ collections:
           required: false
           dropdown_threshold: 0
           options:
-          - label: white
-            value: white
-          - label: gray-light
-            value: gray-light
+          - label: Background
+            value: background-default
+          - label: Background accent
+            value: background-accent
           - label: gray-dark
             value: gray-dark
           - label: teal
             value: teal
+          - label: teal-dark
+            value: teal-dark
           - label: purple
             value: purple
           - label: navy
             value: navy
-          default: white
+          default: background-default
         - label: Accent / CTA
           name: accent
           widget: select
@@ -7322,8 +8083,6 @@ collections:
             value: left
           - label: center
             value: center
-          - label: right
-            value: right
           default: left
         - label: Width
           name: width
@@ -7335,8 +8094,6 @@ collections:
             value: content
           - label: feature
             value: feature
-          - label: full
-            value: full
           default: feature
     - label: Posts
       name: posts
@@ -7377,19 +8134,21 @@ collections:
           required: false
           dropdown_threshold: 0
           options:
-          - label: white
-            value: white
-          - label: gray-light
-            value: gray-light
+          - label: Background
+            value: background-default
+          - label: Background accent
+            value: background-accent
           - label: gray-dark
             value: gray-dark
           - label: teal
             value: teal
+          - label: teal-dark
+            value: teal-dark
           - label: purple
             value: purple
           - label: navy
             value: navy
-          default: white
+          default: background-default
         - label: Accent / CTA
           name: accent
           widget: select
@@ -7417,8 +8176,6 @@ collections:
             value: left
           - label: center
             value: center
-          - label: right
-            value: right
           default: left
         - label: Width
           name: width
@@ -7472,19 +8229,21 @@ collections:
           required: false
           dropdown_threshold: 0
           options:
-          - label: white
-            value: white
-          - label: gray-light
-            value: gray-light
+          - label: Background
+            value: background-default
+          - label: Background accent
+            value: background-accent
           - label: gray-dark
             value: gray-dark
           - label: teal
             value: teal
+          - label: teal-dark
+            value: teal-dark
           - label: purple
             value: purple
           - label: navy
             value: navy
-          default: white
+          default: background-default
         - label: Accent / CTA
           name: accent
           widget: select
@@ -7502,32 +8261,6 @@ collections:
           - label: navy
             value: navy
           default: default
-        - label: Alignment
-          name: align
-          widget: select
-          required: false
-          dropdown_threshold: 0
-          options:
-          - label: left
-            value: left
-          - label: center
-            value: center
-          - label: right
-            value: right
-          default: left
-        - label: Width
-          name: width
-          widget: select
-          required: false
-          dropdown_threshold: 0
-          options:
-          - label: content
-            value: content
-          - label: feature
-            value: feature
-          - label: full
-            value: full
-          default: feature
         - label: Filter
           name: filter
           widget: select
@@ -7578,19 +8311,21 @@ collections:
           required: false
           dropdown_threshold: 0
           options:
-          - label: white
-            value: white
-          - label: gray-light
-            value: gray-light
+          - label: Background
+            value: background-default
+          - label: Background accent
+            value: background-accent
           - label: gray-dark
             value: gray-dark
           - label: teal
             value: teal
+          - label: teal-dark
+            value: teal-dark
           - label: purple
             value: purple
           - label: navy
             value: navy
-          default: white
+          default: background-default
         - label: Accent / CTA
           name: accent
           widget: select
@@ -7618,8 +8353,6 @@ collections:
             value: left
           - label: center
             value: center
-          - label: right
-            value: right
           default: left
         - label: Width
           name: width
@@ -7651,6 +8384,41 @@ collections:
         name: image
         widget: image
         required: false
+      - label: Decoration SVG
+        name: decoration
+        widget: select
+        required: false
+        dropdown_threshold: 0
+        hint: Optional mark (e.g. Arrows). Can be used with or without background image.
+        options:
+          - label: — none —
+            value: ""
+          - label: Arrow
+            value: brand/arrow
+          - label: Arrows
+            value: brand/arrows
+          - label: Brick
+            value: brand/brick
+          - label: Check
+            value: brand/check
+          - label: Forward
+            value: brand/forward
+          - label: Medusa
+            value: brand/medusa
+          - label: Medusa organic
+            value: brand/medusa-organic
+          - label: Rings
+            value: brand/rings
+          - label: Scale
+            value: brand/scale
+          - label: Simple
+            value: brand/simple
+          - label: Stack
+            value: brand/stack
+          - label: Staggered
+            value: brand/staggered
+          - label: Waves
+            value: brand/waves
       - label: Items
         name: items
         widget: list
@@ -7677,19 +8445,21 @@ collections:
           required: false
           dropdown_threshold: 0
           options:
-          - label: white
-            value: white
-          - label: gray-light
-            value: gray-light
+          - label: Background
+            value: background-default
+          - label: Background accent
+            value: background-accent
           - label: gray-dark
             value: gray-dark
           - label: teal
             value: teal
+          - label: teal-dark
+            value: teal-dark
           - label: purple
             value: purple
           - label: navy
             value: navy
-          default: white
+          default: background-default
         - label: Accent / CTA
           name: accent
           widget: select
@@ -7717,8 +8487,6 @@ collections:
             value: left
           - label: center
             value: center
-          - label: right
-            value: right
           default: left
     - label: Tabs
       name: tabs
@@ -7788,19 +8556,21 @@ collections:
           required: false
           dropdown_threshold: 0
           options:
-          - label: white
-            value: white
-          - label: gray-light
-            value: gray-light
+          - label: Background
+            value: background-default
+          - label: Background accent
+            value: background-accent
           - label: gray-dark
             value: gray-dark
           - label: teal
             value: teal
+          - label: teal-dark
+            value: teal-dark
           - label: purple
             value: purple
           - label: navy
             value: navy
-          default: white
+          default: background-default
         - label: Accent / CTA
           name: accent
           widget: select
@@ -7828,8 +8598,6 @@ collections:
             value: left
           - label: center
             value: center
-          - label: right
-            value: right
           default: left
         - label: Width
           name: width
@@ -7883,19 +8651,21 @@ collections:
           required: false
           dropdown_threshold: 0
           options:
-          - label: white
-            value: white
-          - label: gray-light
-            value: gray-light
+          - label: Background
+            value: background-default
+          - label: Background accent
+            value: background-accent
           - label: gray-dark
             value: gray-dark
           - label: teal
             value: teal
+          - label: teal-dark
+            value: teal-dark
           - label: purple
             value: purple
           - label: navy
             value: navy
-          default: white
+          default: background-default
         - label: Accent / CTA
           name: accent
           widget: select
@@ -7923,8 +8693,6 @@ collections:
             value: left
           - label: center
             value: center
-          - label: right
-            value: right
           default: left
         - label: Width
           name: width
@@ -7993,19 +8761,21 @@ collections:
           required: false
           dropdown_threshold: 0
           options:
-          - label: white
-            value: white
-          - label: gray-light
-            value: gray-light
+          - label: Background
+            value: background-default
+          - label: Background accent
+            value: background-accent
           - label: gray-dark
             value: gray-dark
           - label: teal
             value: teal
+          - label: teal-dark
+            value: teal-dark
           - label: purple
             value: purple
           - label: navy
             value: navy
-          default: white
+          default: background-default
         - label: Accent / CTA
           name: accent
           widget: select
@@ -8033,8 +8803,6 @@ collections:
             value: left
           - label: center
             value: center
-          - label: right
-            value: right
           default: left
         - label: Width
           name: width
@@ -8046,9 +8814,8 @@ collections:
             value: content
           - label: feature
             value: feature
-          - label: full
-            value: full
           default: feature
+          hint: content or feature only
     - label: CTA
       name: cta
       widget: object
@@ -8096,19 +8863,21 @@ collections:
           required: false
           dropdown_threshold: 0
           options:
-          - label: white
-            value: white
-          - label: gray-light
-            value: gray-light
+          - label: Background
+            value: background-default
+          - label: Background accent
+            value: background-accent
           - label: gray-dark
             value: gray-dark
           - label: teal
             value: teal
+          - label: teal-dark
+            value: teal-dark
           - label: purple
             value: purple
           - label: navy
             value: navy
-          default: white
+          default: background-default
         - label: Accent / CTA
           name: accent
           widget: select
@@ -8136,8 +8905,6 @@ collections:
             value: left
           - label: center
             value: center
-          - label: right
-            value: right
           default: left
 - name: navigation
   label: Navigation

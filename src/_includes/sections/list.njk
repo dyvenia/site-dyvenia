@@ -1,5 +1,7 @@
 {# section.type: list — expects `section` in scope
-   Shell: .section-{type}.wrapper[data-section-theme] > .full.wrapper.section > .section__inner #}
+   Shell: .section-{type}.wrapper[data-section-theme] > .full.wrapper.section > .section__inner
+   Variants: definition | stack (legacy alias: checklist → stack)
+   Both: optional checkmarks + borders via appearance.checks / appearance.bordered #}
 {% css "local" %}
   {% include "css/sections/list.css" %}
 {% endcss %}
@@ -8,51 +10,71 @@
 
 {% set s = section %}
 {% set a = s.appearance or {} %}
-{% set theme = a.theme or s.theme or "white" %}
+{% set theme = a.theme or s.theme or "background-default" %}
 {% set accent = a.accent if a.accent is defined else s.accent %}
 {% set align = a.align if a.align is defined else s.align %}
 {% set width = a.width if a.width is defined else s.width %}
-{% set variant = a.variant or s.variant or "definition" %}
+{% set rawVariant = a.variant or s.variant or "definition" %}
+{% set variant = "stack" if rawVariant == "checklist" else rawVariant %}
 {% set widthClass = sectionWidthClass(width or "feature") or "feature" %}
+{% if widthClass == "full" %}{% set widthClass = "feature" %}{% endif %}
 {% set alignClass = sectionAlignClass(align) %}
+{% set intro = s.intro or s.content %}
+{# Defaults: stack (ex-checklist) on; definition off unless set #}
+{% if a.checks is defined %}
+  {% set showChecks = a.checks %}
+{% else %}
+  {% set showChecks = variant == "stack" %}
+{% endif %}
+{% if a.bordered is defined %}
+  {% set bordered = a.bordered %}
+{% else %}
+  {% set bordered = variant == "stack" %}
+{% endif %}
 
-<div class="section-list | wrapper" {{ sectionThemeAttr(theme) }}{{ sectionAccentAttr(accent) }}{% if s.id %} id="{{ s.id }}"{% endif %}>
+<div class="section-list | wrapper" {{ sectionThemeAttr(theme) }}{{ sectionAccentAttr(accent) }} data-list-variant="{{ variant }}" data-list-checks="{{ "true" if showChecks else "false" }}" data-list-bordered="{{ "true" if bordered else "false" }}"{% if s.id %} id="{{ s.id }}"{% endif %}>
   <div class="full wrapper section">
     <div class="{{ widthClass }} | section__inner region">
-      <header class="flow prose {{ alignClass }}">
-        {% if s.title %}<h2>{{ s.title | markdownInline | safe }}</h2>{% endif %}
-        {% if s.content or s.intro %}
-          <div>{{ (s.content or s.intro) | markdownFormat | safe }}</div>
-        {% endif %}
-      </header>
+      {% if s.title or intro %}
+        <header class="section-list__header | flow prose {{ alignClass }}">
+          {% if s.title %}<h2>{{ s.title | markdownInline | safe }}</h2>{% endif %}
+          {% if intro %}
+            <div class="section-list__intro">{{ intro | markdownFormat | safe }}</div>
+          {% endif %}
+        </header>
+      {% endif %}
 
-      {% if variant == "checklist" %}
-        <ul class="section-list__checklist | grid mt-l" data-layout="50-50" role="list">
+      {% if variant == "stack" %}
+        <ul class="section-list__items | grid mt-l" data-layout="50-50" role="list">
           {% for item in s.items %}
-            <li class="flow">
-              {% if item.title %}<strong>{{ item.title }}</strong>{% endif %}
-              {% if item.content %}<span>{{ item.content | markdownFormat | safe }}</span>
-              {% elif item is string %}<span>{{ item }}</span>{% endif %}
+            <li class="section-list__item{% if bordered %} section-list__item--bordered{% endif %}">
+              {% if showChecks %}
+                {% svg "misc/checkmark", "", "section-list__check" %}
+              {% endif %}
+              <div class="section-list__item-body | flow flow-space-3xs">
+                {% if item is string %}
+                  <span class="section-list__item-title">{{ item }}</span>
+                {% else %}
+                  {% if item.title %}<span class="section-list__item-title">{{ item.title }}</span>{% endif %}
+                  {% if item.content %}<div class="section-list__item-content">{{ item.content | markdownFormat | safe }}</div>{% endif %}
+                {% endif %}
+              </div>
             </li>
           {% endfor %}
         </ul>
-      {% elif variant == "stack" %}
-        <div class="section-list__stack | prose flow mt-l {{ alignClass }}">
-          {% if s.body %}{{ s.body | markdownFormat | safe }}{% endif %}
-          {% if s.items %}
-            <ul role="list">
-              {% for item in s.items %}
-                <li>{% if item.title %}{{ item.title }}{% else %}{{ item }}{% endif %}</li>
-              {% endfor %}
-            </ul>
-          {% endif %}
-        </div>
       {% else %}
-        <dl class="section-list__definition | column mt-l">
+        <dl class="section-list__items section-list__definition | grid mt-l" data-layout="50-50">
           {% for item in s.items %}
-            <div class="flow flow-space-2xs">
-              <dt class="text-step-1">{{ item.title }}</dt>
-              <dd>{{ item.content | markdownFormat | safe }}</dd>
+            <div class="section-list__item{% if bordered %} section-list__item--bordered{% endif %}">
+              {% if showChecks %}
+                {% svg "misc/checkmark", "", "section-list__check" %}
+              {% endif %}
+              <div class="section-list__item-body | flow flow-space-3xs">
+                <dt class="section-list__item-title">{{ item.title }}</dt>
+                {% if item.content %}
+                  <dd class="section-list__item-content">{{ item.content | markdownFormat | safe }}</dd>
+                {% endif %}
+              </div>
             </div>
           {% endfor %}
         </dl>

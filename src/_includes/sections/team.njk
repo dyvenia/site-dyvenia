@@ -1,36 +1,33 @@
 {# section.type: team — expects `section` in scope
-   Shell: .section-{type}.wrapper[data-section-theme] > .full.wrapper.section > .section__inner #}
+   Shell: .section-{type}.wrapper[data-section-theme] > .full.wrapper.section > .section__inner
+   Width always feature; no align control. #}
 {% css "local" %}
   {% include "css/custom-card.css" %}
 {% endcss %}
 
-{% from "sections/_shell.njk" import sectionWidthClass, sectionAlignClass, sectionThemeAttr, sectionAccentAttr %}
+{% from "sections/_shell.njk" import sectionThemeAttr, sectionAccentAttr %}
 
 {% set s = section %}
 {% set a = s.appearance or {} %}
-{% set theme = a.theme or s.theme or "white" %}
+{% set theme = a.theme or s.theme or "background-default" %}
 {% set accent = a.accent if a.accent is defined else s.accent %}
-{% set align = a.align if a.align is defined else s.align %}
-{% set width = a.width if a.width is defined else s.width %}
-{% set widthClass = sectionWidthClass(width or "feature") or "feature" %}
-{% set alignClass = sectionAlignClass(align) %}
 {% set filterKey = a.filter or s.filter or "show_on_about" %}
 {% set headerLayout = a.header_layout or s.header_layout or "stack" %}
 {% set orderedTeamMembers = collections.team_members | sortByOrderIndex %}
 
 <div class="section-team | wrapper" {{ sectionThemeAttr(theme) }}{{ sectionAccentAttr(accent) }}{% if s.id %} id="{{ s.id }}"{% endif %}>
   <div class="full wrapper section">
-    <article class="{{ widthClass }} | section__inner region">
+    <article class="feature | section__inner region">
       {% if s.title or s.content or s.intro %}
         {% if headerLayout == "thirds" %}
-          <header class="grid intro {{ alignClass }}" data-layout="thirds">
+          <header class="grid intro" data-layout="thirds">
             {% if s.title %}<h2>{{ s.title | markdownInline | safe }}</h2>{% endif %}
             {% if s.content or s.intro %}
               <div class="flow">{{ (s.content or s.intro) | markdownFormat | safe }}</div>
             {% endif %}
           </header>
         {% else %}
-          <header class="flow prose {{ alignClass }}">
+          <header class="flow prose">
             {% if s.title %}<h2>{{ s.title | markdownInline | safe }}</h2>{% endif %}
             {% if s.content or s.intro %}
               <div>{{ (s.content or s.intro) | markdownFormat | safe }}</div>

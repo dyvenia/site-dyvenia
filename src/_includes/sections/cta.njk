@@ -25,7 +25,7 @@
 
   <div>
     <div class="wrapper region region-space-xl-2xl flow prose {{ alignClass }}">
-      {% if s.title %}<h2 class="{% if align == 'left' %}left{% endif %}">{{ s.title | markdownInline | safe }}</h2>{% endif %}
+      {% if s.title %}<h2>{{ s.title | markdownInline | safe }}</h2>{% endif %}
       {% if s.subtitle %}{{ s.subtitle | markdownFormat | safe }}{% endif %}
       {% if s.pre %}{{ s.pre | markdownFormat | safe }}{% endif %}
       {% if s.button_text and s.button_target %}

@@ -1,0 +1,47 @@
+{# section.type: statement — optional eyebrow + title + support + decoration
+   Aliases from former goal: title1→eyebrow, title2→title, content→subtitle #}
+{% css "local" %}
+  {% include "css/sections/statement.css" %}
+{% endcss %}
+
+{% from "sections/_shell.njk" import sectionWidthClass, sectionAlignClass, sectionThemeAttr, sectionAccentAttr %}
+
+{% set s = section %}
+{% set a = s.appearance or {} %}
+{% set theme = a.theme or s.theme or "teal" %}
+{% set accent = a.accent if a.accent is defined else s.accent %}
+{% set align = a.align if a.align is defined else s.align %}
+{% set width = a.width if a.width is defined else s.width %}
+{% set bodySize = a.body_size or s.body_size or "small" %}
+{% set widthClass = sectionWidthClass(width or "feature") or "feature" %}
+{% if widthClass == "full" %}{% set widthClass = "feature" %}{% endif %}
+{% set alignClass = sectionAlignClass(align or "left") %}
+{% set bodySizeClass = "text-step-min-1" if bodySize == "small" else "" %}
+{% set eyebrow = s.eyebrow or s.title1 %}
+{% set title = s.title or s.title2 %}
+{% set support = s.subtitle or s.content %}
+
+<div class="section-statement | wrapper" {{ sectionThemeAttr(theme) }}{{ sectionAccentAttr(accent) }}{% if s.decoration %} data-decoration="{{ s.decoration }}"{% endif %}{% if s.id %} id="{{ s.id }}"{% endif %}>
+  <div class="full wrapper section">
+    <article class="{{ widthClass }} | section__inner region flow prose {{ alignClass }}">
+      {% if eyebrow or title %}
+        <h2 class="section-statement__headline{% if not eyebrow %} text-step-3{% endif %}">
+          {% if eyebrow %}
+            <span class="section-statement__eyebrow">{{ eyebrow }}</span>
+          {% endif %}
+          {% if title %}
+            <span class="section-statement__title{% if eyebrow %} | block text-step-3 mt-2xs{% endif %}">{{ title | markdownInline | safe }}</span>
+          {% endif %}
+        </h2>
+      {% endif %}
+
+      {% if support %}
+        <div class="section-statement__support{% if bodySizeClass %} {{ bodySizeClass }}{% endif %}">{{ support | markdownFormat | safe }}</div>
+      {% endif %}
+
+      {% if s.decoration %}
+        {% svg s.decoration, "", "section-statement__decoration" %}
+      {% endif %}
+    </article>
+  </div>
+</div>

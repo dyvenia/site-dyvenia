@@ -1,19 +1,19 @@
 /* Section theme recipes + contrast contract.
-   Named by surface color (not light/dark mode).
+   Named by surface role (background-default / background-accent track site bg tokens).
    Site mode (root data-theme / prefers-color-scheme) remaps soft bands;
-   gray-dark + navy stay dark with light text. */
+   gray-dark, teal-dark + navy stay dark with light text. */
 
 /* -------------------- recipe tokens (site mode) -------------------- */
 
 :root,
 :root[data-theme='light'] {
-  --theme-white-bg: white;
-  --theme-white-text: var(--color-gray-900);
-  --theme-white-text-muted: var(--color-gray-800);
+  --theme-background-default-bg: var(--color-bg);
+  --theme-background-default-text: var(--color-text);
+  --theme-background-default-text-muted: var(--color-text-accent);
 
-  --theme-gray-light-bg: var(--color-gray-100);
-  --theme-gray-light-text: var(--color-gray-900);
-  --theme-gray-light-text-muted: var(--color-gray-800);
+  --theme-background-accent-bg: var(--color-bg-accent);
+  --theme-background-accent-text: var(--color-text);
+  --theme-background-accent-text-muted: var(--color-text-accent);
 
   --theme-gray-dark-bg: var(--color-gray-900);
   --theme-gray-dark-text: var(--color-gray-100);
@@ -22,6 +22,11 @@
   --theme-teal-bg: var(--color-teal-100);
   --theme-teal-text: var(--color-gray-900);
   --theme-teal-text-muted: var(--color-gray-800);
+
+  /* Brand teal surface — fixed in light + dark (former blue / blue-accent) */
+  --theme-teal-dark-bg: var(--color-teal-800);
+  --theme-teal-dark-text: var(--color-gray-100);
+  --theme-teal-dark-text-muted: var(--color-gray-200);
 
   --theme-purple-bg: var(--color-purple-100);
   --theme-purple-text: var(--color-gray-900);
@@ -34,15 +39,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    /* Soft bands collapse toward two dark greys in site dark mode */
-    --theme-white-bg: var(--color-gray-800);
-    --theme-white-text: var(--color-gray-100);
-    --theme-white-text-muted: var(--color-gray-200);
-
-    --theme-gray-light-bg: var(--color-gray-900);
-    --theme-gray-light-text: var(--color-gray-100);
-    --theme-gray-light-text-muted: var(--color-gray-200);
-
+    /* Soft brand bands collapse toward dark greys; bg themes follow --color-bg* from variables.css */
     --theme-gray-dark-bg: var(--color-gray-900);
     --theme-gray-dark-text: var(--color-gray-100);
     --theme-gray-dark-text-muted: var(--color-gray-200);
@@ -62,14 +59,6 @@
 }
 
 :root[data-theme='dark'] {
-  --theme-white-bg: var(--color-gray-800);
-  --theme-white-text: var(--color-gray-100);
-  --theme-white-text-muted: var(--color-gray-200);
-
-  --theme-gray-light-bg: var(--color-gray-900);
-  --theme-gray-light-text: var(--color-gray-100);
-  --theme-gray-light-text-muted: var(--color-gray-200);
-
   --theme-gray-dark-bg: var(--color-gray-900);
   --theme-gray-dark-text: var(--color-gray-100);
   --theme-gray-dark-text-muted: var(--color-gray-200);
@@ -91,25 +80,30 @@
 
 [data-section-theme] {
   --spot-color: var(--section-bg);
+  /* Remap common surface tokens so cards, borders, forms, details follow the section */
+  --color-bg: var(--section-bg);
+  --color-bg-accent: color-mix(in srgb, var(--section-text) 12%, var(--section-bg));
+  --color-bg-accent-2: color-mix(in srgb, var(--section-text) 20%, var(--section-bg));
+  --color-bg-accent-3: color-mix(in srgb, var(--section-text) 30%, var(--section-bg));
   --color-text: var(--section-text);
   --color-text-accent: var(--section-text-muted);
   --section-accent: var(--color-teal);
   color: var(--section-text);
 }
 
-[data-section-theme='white'] {
-  --section-bg: var(--theme-white-bg);
-  --section-text: var(--theme-white-text);
-  --section-text-muted: var(--theme-white-text-muted);
+[data-section-theme='background-default'] {
+  --section-bg: var(--theme-background-default-bg);
+  --section-text: var(--theme-background-default-text);
+  --section-text-muted: var(--theme-background-default-text-muted);
   --section-cta-bg: var(--color-gray-900);
   --section-cta-color: var(--color-gray-100);
   --section-cta-hover-bg: var(--color-gray-800);
 }
 
-[data-section-theme='gray-light'] {
-  --section-bg: var(--theme-gray-light-bg);
-  --section-text: var(--theme-gray-light-text);
-  --section-text-muted: var(--theme-gray-light-text-muted);
+[data-section-theme='background-accent'] {
+  --section-bg: var(--theme-background-accent-bg);
+  --section-text: var(--theme-background-accent-text);
+  --section-text-muted: var(--theme-background-accent-text-muted);
   --section-cta-bg: var(--color-gray-900);
   --section-cta-color: var(--color-gray-100);
   --section-cta-hover-bg: var(--color-gray-800);
@@ -131,6 +125,16 @@
   --section-cta-bg: var(--color-teal);
   --section-cta-color: var(--color-teal-100);
   --section-cta-hover-bg: var(--color-teal-600);
+}
+
+[data-section-theme='teal-dark'] {
+  --section-bg: var(--theme-teal-dark-bg);
+  --section-text: var(--theme-teal-dark-text);
+  --section-text-muted: var(--theme-teal-dark-text-muted);
+  --section-accent: var(--color-teal-100);
+  --section-cta-bg: var(--color-gray-100);
+  --section-cta-color: var(--color-gray-900);
+  --section-cta-hover-bg: var(--color-gray-200);
 }
 
 [data-section-theme='purple'] {
@@ -170,11 +174,13 @@
 }
 
 [data-section-theme='gray-dark'][data-section-accent='neutral'],
+[data-section-theme='teal-dark'][data-section-accent='neutral'],
 [data-section-theme='navy'][data-section-accent='neutral'] {
   --section-accent: var(--color-gray-100);
 }
 
 [data-section-theme='gray-dark'] img,
+[data-section-theme='teal-dark'] img,
 [data-section-theme='navy'] img {
   filter: brightness(0.9);
 }
@@ -184,8 +190,10 @@
 @media screen(navigation) {
   /* Dark section themes OR dark hero media washes (theme is peek/next band, not surface) */
   .site-header:has(+ main > [data-section-theme='gray-dark']:first-child),
+  .site-header:has(+ main > [data-section-theme='teal-dark']:first-child),
   .site-header:has(+ main > [data-section-theme='navy']:first-child),
   .site-header:has(+ main > .wrapper > [data-section-theme='gray-dark']:first-child),
+  .site-header:has(+ main > .wrapper > [data-section-theme='teal-dark']:first-child),
   .site-header:has(+ main > .wrapper > [data-section-theme='navy']:first-child),
   .site-header:has(+ main > .custom-hero[data-hero-background='teal-800']:first-child),
   .site-header:has(+ main > .custom-hero[data-hero-background='teal-600']:first-child),
@@ -201,6 +209,7 @@
 }
 
 .site-header:has(+ main > [data-section-theme='gray-dark']:first-child) .search-toggle svg,
+.site-header:has(+ main > [data-section-theme='teal-dark']:first-child) .search-toggle svg,
 .site-header:has(+ main > [data-section-theme='navy']:first-child) .search-toggle svg,
 .site-header:has(+ main > .custom-hero[data-hero-background='teal-800']:first-child) .search-toggle svg,
 .site-header:has(+ main > .custom-hero[data-hero-background='teal-600']:first-child) .search-toggle svg,

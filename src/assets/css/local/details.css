@@ -5,6 +5,18 @@
   padding-block-start: var(--space-xs);
 }
 
+/* Section themes: small control buttons follow section CTA tokens */
+[data-section-theme] .details .control .button {
+  --button-bg: var(--section-cta-bg);
+  --button-color: var(--section-cta-color);
+  --button-hover-bg: var(--section-cta-hover-bg);
+  --button-border-color: var(--section-cta-bg);
+  --button-hover-border-color: var(--section-cta-hover-bg);
+  background: var(--button-bg);
+  color: var(--button-color);
+  border-color: var(--button-border-color);
+}
+
 /* Hide without JS */
 is-land:not(:defined) .details .control {
   display: none;
@@ -20,9 +32,6 @@ is-land:not(:defined) .details .control {
 
 .details summary {
   grid-column: content;
-}
-
-.details summary {
   display: flex;
   align-items: baseline;
   line-height: 1.2;
@@ -36,13 +45,13 @@ is-land:not(:defined) .details .control {
 .details summary:hover,
 .details summary:focus-visible,
 .details[open] > summary {
-  color: var(--color-teal);
+  color: var(--section-accent, var(--color-teal));
 }
 
 .details summary::before {
   content: '+';
   display: block;
-  color: var(--color-teal);
+  color: var(--section-accent, var(--color-teal));
   font-family: var(--font-mono);
   font-size: var(--size-step-0);
   font-weight: var(--font-regular);
@@ -54,13 +63,6 @@ is-land:not(:defined) .details .control {
 
 .details details[open] summary::before {
   content: '–';
-}
-
-.details details > :is(h2, h3) {
-  font-weight: var(--font-bold);
-  font-size: var(--size-step-0);
-  border-block-end: 1px solid var(--color-bg-accent);
-  padding-block-end: var(--space-xs);
 }
 
 .details details > :is(h2, h3) {

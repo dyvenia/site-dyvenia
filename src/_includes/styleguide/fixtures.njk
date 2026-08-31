@@ -1,0 +1,190 @@
+{# Unified section fixtures — pass `sectionKey` (type page) or omit for index (theme/accent only). #}
+{% set caps = styleguide.sectionAppearance.previewByType[sectionKey] if sectionKey else {} %}
+{% set widthMode = caps.width if caps else none %}
+{% if widthMode == "measure" %}
+  {% set widthOptions = styleguide.sectionAppearance.widthsMeasure %}
+{% elif widthMode == "feature" %}
+  {% set widthOptions = styleguide.sectionAppearance.widthsFeature %}
+{% else %}
+  {% set widthOptions = styleguide.sectionAppearance.widths %}
+{% endif %}
+
+<form class="sg-preview | cluster" aria-label="Section appearance fixtures">
+  <div class="sg-preview__field | cluster">
+    <label for="sg-theme">Theme</label>
+    <select id="sg-theme" data-sg-theme name="theme">
+      {% for theme in styleguide.sectionAppearance.themes %}
+        <option value="{{ theme }}">{{ styleguide.sectionAppearance.themeLabels[theme] or theme }}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <div class="sg-preview__field | cluster">
+    <label for="sg-accent">Accent</label>
+    <select id="sg-accent" data-sg-accent name="accent">
+      {% for accent in styleguide.sectionAppearance.accents %}
+        <option value="{{ accent }}">
+          {% if accent == "default" %}default (theme){% else %}{{ accent }}{% endif %}
+        </option>
+      {% endfor %}
+    </select>
+  </div>
+
+  {% if caps.align %}
+    <div class="sg-preview__field | cluster">
+      <label for="sg-align">Align</label>
+      <select id="sg-align" data-sg-align name="align">
+        {% for align in styleguide.sectionAppearance.aligns %}
+          <option value="{{ align }}">{{ align }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  {% endif %}
+
+  {% if widthMode %}
+    <div class="sg-preview__field | cluster">
+      <label for="sg-width">Width</label>
+      <select id="sg-width" data-sg-width name="width">
+        {% for width in widthOptions %}
+          <option value="{{ width }}"{% if width == "feature" %} selected{% endif %}>{{ width }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  {% endif %}
+
+  {% if caps.title_size %}
+    <div class="sg-preview__field | cluster">
+      <label for="sg-title-size">Title size</label>
+      <select id="sg-title-size" data-sg-title-size name="title_size">
+        {% for size in styleguide.sectionAppearance.textTitleSizes %}
+          <option value="{{ size }}">{{ size }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  {% endif %}
+
+  {% if caps.body_size %}
+    {% set bodySizeOptions = styleguide.sectionAppearance.statementBodySizes if caps.body_size == "statement" else styleguide.sectionAppearance.textBodySizes %}
+    <div class="sg-preview__field | cluster">
+      <label for="sg-body-size">Body size</label>
+      <select id="sg-body-size" data-sg-body-size name="body_size">
+        {% for size in bodySizeOptions %}
+          <option value="{{ size }}"{% if caps.body_size == "statement" and size == "small" %} selected{% endif %}>{{ size }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  {% endif %}
+
+  {% if caps.height %}
+    <div class="sg-preview__field | cluster">
+      <label for="sg-height">Height</label>
+      <select id="sg-height" data-sg-height name="height">
+        {% for height in styleguide.sectionAppearance.heroHeights %}
+          <option value="{{ height }}">{{ height }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  {% endif %}
+
+  {% if caps.background %}
+    <div class="sg-preview__field | cluster">
+      <label for="sg-media-bg">Media background</label>
+      <select id="sg-media-bg" data-sg-media-bg name="media_bg">
+        {% for bg in styleguide.sectionAppearance.heroBackgrounds %}
+          <option value="{{ bg }}">{{ bg }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  {% endif %}
+
+  {% if caps.content_block %}
+    <div class="sg-preview__field | cluster">
+      <label for="sg-valign">Vertical align</label>
+      <select id="sg-valign" data-sg-valign name="valign">
+        {% for align in styleguide.sectionAppearance.verticalAligns %}
+          <option value="{{ align }}">{{ align }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  {% endif %}
+
+  {% if caps.decoration %}
+    <div class="sg-preview__field | cluster">
+      <label for="sg-decoration">Decoration</label>
+      <select id="sg-decoration" data-sg-decoration name="decoration">
+        <option value="">none</option>
+        {% for opt in decorations.options %}
+          <option value="{{ opt.value }}">{{ opt.label }}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    {# Inline bank for live swap (SVGs are build-time inlined, not fetchable) #}
+    <div hidden data-sg-deco-bank>
+      {% for opt in decorations.options %}
+        <template data-value="{{ opt.value }}">{% svg opt.value %}</template>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% if caps.decoration_accent %}
+    <div class="sg-preview__field | cluster">
+      <label for="sg-decoration-accent">Decoration color</label>
+      <select id="sg-decoration-accent" data-sg-decoration-accent name="decoration_accent">
+        {% for accent in styleguide.sectionAppearance.decorationAccents %}
+          <option value="{{ accent }}"{% if accent == "teal" %} selected{% endif %}>{{ accent }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  {% endif %}
+
+  {% if caps.media_side %}
+    <div class="sg-preview__field | cluster">
+      <label for="sg-media-side">Media side</label>
+      <select id="sg-media-side" data-sg-media-side name="media_side">
+        {% for side in styleguide.sectionAppearance.mediaSides %}
+          <option value="{{ side }}"{% if side == "right" %} selected{% endif %}>{{ side }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  {% endif %}
+
+  {% if caps.list_variant %}
+    <div class="sg-preview__field | cluster">
+      <label for="sg-list-variant">Variant</label>
+      <select id="sg-list-variant" data-sg-list-variant name="list_variant">
+        {% for variant in styleguide.sectionAppearance.listVariants %}
+          <option value="{{ variant }}">{{ variant }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  {% endif %}
+
+  {% if caps.list_checks %}
+    <div class="sg-preview__field | cluster">
+      <label for="sg-list-checks">Checkmarks</label>
+      <select id="sg-list-checks" data-sg-list-checks name="list_checks">
+        <option value="on">on</option>
+        <option value="off">off</option>
+      </select>
+    </div>
+  {% endif %}
+
+  {% if caps.list_bordered %}
+    <div class="sg-preview__field | cluster">
+      <label for="sg-list-bordered">Bordered</label>
+      <select id="sg-list-bordered" data-sg-list-bordered name="list_bordered">
+        <option value="on">on</option>
+        <option value="off">off</option>
+      </select>
+    </div>
+  {% endif %}
+
+  {% if caps.list_checks or caps.list_variant %}
+    <div hidden data-sg-list-check-bank>
+      <template>{% svg "misc/checkmark", "", "section-list__check" %}</template>
+    </div>
+  {% endif %}
+
+  <button type="button" class="button" data-small-button data-sg-reset>Reset</button>
+</form>

@@ -45,8 +45,14 @@
   z-index: 1;
 }
 
-.page-header .wrapper > *:not(.left) {
+/* Center only when the wrapper is centered — left keeps a shared start edge */
+.page-header .wrapper.text-center > * {
   justify-self: center;
+  text-align: center;
+}
+
+.page-header .wrapper:not(.text-center) > * {
+  justify-self: start;
 }
 
 .section.page-header > .seperator {

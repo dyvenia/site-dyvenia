@@ -12,10 +12,13 @@
 {% set accent = a.accent if a.accent is defined else s.accent %}
 {% set align = a.align if a.align is defined else s.align %}
 
-<div class="section-services | wrapper" {{ sectionThemeAttr(theme) }}{{ sectionAccentAttr(accent) }}{% if s.id %} id="{{ s.id }}"{% endif %}>
+<div class="section-services | wrapper" {{ sectionThemeAttr(theme) }}{{ sectionAccentAttr(accent) }}{% if s.decoration %} data-decoration="{{ s.decoration }}"{% endif %}{% if s.id %} id="{{ s.id }}"{% endif %}>
   <div class="section-services__band | full wrapper section">
     {% if s.image %}
       {% image s.image, "" %}
+    {% endif %}
+    {% if s.decoration %}
+      {% svg s.decoration, "", "section-services__decoration" %}
     {% endif %}
     <article class="wrapper region flow">
       {% if s.title %}<h2 class="text-center">{{ s.title | markdownInline | safe }}</h2>{% endif %}

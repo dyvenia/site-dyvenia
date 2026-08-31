@@ -8,7 +8,7 @@
 
 {% set s = section %}
 {% set a = s.appearance or {} %}
-{% set theme = a.theme or s.theme or "white" %}
+{% set theme = a.theme or s.theme or "background-default" %}
 {% set accent = a.accent if a.accent is defined else s.accent %}
 {% set align = a.align if a.align is defined else s.align %}
 {% set width = a.width if a.width is defined else s.width %}

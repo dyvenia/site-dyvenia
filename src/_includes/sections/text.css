@@ -1,0 +1,27 @@
+.section-text > .section {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-text :is(strong, b) {
+  color: var(--section-accent, var(--color-teal));
+}
+
+.section-text__decoration {
+  block-size: auto;
+  color: color-mix(in srgb, var(--section-text) 3%, var(--section-bg));
+  grid-column: full;
+  inline-size: clamp(40ch, 60vw, 55rem);
+  inset-block-start: var(--space-s);
+  inset-inline-start: 0;
+  pointer-events: none;
+  position: absolute;
+  rotate: 15deg;
+  translate: var(--space-xl) calc(var(--space-2xl) * -1);
+  z-index: 0;
+}
+
+.section-text > .section > .section__inner {
+  position: relative;
+  z-index: 1;
+}

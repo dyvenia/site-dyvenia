@@ -7,8 +7,8 @@
   {% ifAsync section.type == "text" %}
     {% include "sections/text.njk" %}
   {% endif %}
-  {% ifAsync section.type == "highlight" %}
-    {% include "sections/highlight.njk" %}
+  {% ifAsync section.type == "statement" %}
+    {% include "sections/statement.njk" %}
   {% endif %}
   {% ifAsync section.type == "list" %}
     {% include "sections/list.njk" %}
