@@ -69,19 +69,11 @@ The harness acts as the governing layer, mediating between the raw processing po
 
 To structure these patterns, [this article](https://www.dbreunig.com/2026/08/14/harnesses-are-situated-agents.html) breaks down the essential primitives required for enterprise agents. They are: 
 
-| Environment | The runtime infrastructure. Includes sandboxes, compute resources, and network boundaries. |
-| Memory | The information layer. Handles transient session context and long-term knowledge retrieval. |
-| Agents / Skills | The capability set. The defined tools, APIs, and functions the agent is authorized to use. |
-| Team | This is similar to active directory groups. It is the way artifacts, agents, and secrets are shared within the organization. |
-| Organization | The policies, audits, and models defined by the company. This is also the part with audit trails and legal compliance. |
-| Model | The LLM model. In a harness, the LLM model is chosen at the Organization or Team level, not by the individual user. |
-| Session | The current task, context. Think chat conversation, or a workflow run, or a scheduled job run. |
+![primitives required for enterprise agents](/assets/images/blog/primitives_enterprise_agents.png)
 
 To adjust the framework to the Enterprise problem space, I would also add four primitives to the harness: 
 
-| Facts | The current task, context. Think chat conversation, or a workflow run, or a scheduled job run. |
-| Dimensions | Logical boundaries for execution. Defines cost centers, project scopes, or business units to limit the agent's operating sphere. |
-| Semantic Model | The shared business dictionary. Ensures the agent interprets data definitions consistently across disparate enterprise systems. |
+![additional primitivies](/assets/images/blog/harness_primitives.png)
 
 ![harness architecture](/assets/images/blog/image%202_harness%20architecture.jpg)
 
@@ -112,7 +104,6 @@ This is where the agent loop transforms the process into a dynamic workflow. Dyn
 ## The Loop inside the Harness
 
 If the loop provides the intelligence, where does it actually sit? Think of the loop as the engine, and the harness as the surrounding chassis that keeps it on the road.
-
 
 When researchers analyzed leaked source code from Anthropic's Claude Code, the breakdown was striking. As shown in their high-level system diagram below, the core agent loop makes up **less than 2%** of the overall architecture: 
 
