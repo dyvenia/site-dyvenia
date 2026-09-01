@@ -3,17 +3,15 @@ layout: base
 schema: blog
 ---
 
-<div class="region blog">
+<div class="blog | region region-space-3xl">
   <div class="wrapper flow">
     <h1>{{ title }}</h1>
 
     {% if image %}
       {% image image, alt or "", credit, "eager", "feature" %}
     {% endif %}
-    {% set definedDate = date %}
-    {% include "partials/date.njk" %}
 
-    <div class="flow prose{% if h2ScrollFade %} scroll-fade-h2s{% endif %}">{{ content | safe }}</div>
+    <div class="flow prose{% if h2ScrollFade %}scroll-fade-h2s{% endif %}">{{ content | safe }}</div>
     <div class="mt-xl-2xl">{% include "partials/hubspot-form.njk" %}</div>
   </div>
 

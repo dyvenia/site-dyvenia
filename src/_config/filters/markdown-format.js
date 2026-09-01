@@ -5,9 +5,11 @@ import markdownParser from 'markdown-it';
 const markdown = markdownParser();
 
 export const markdownFormat = string => {
-  return markdown.render(string);
+  if (string == null || string === '') return '';
+  return markdown.render(String(string));
 };
 
 export const markdownInline = string => {
-  return markdown.renderInline(string);
+  if (string == null || string === '') return '';
+  return markdown.renderInline(String(string));
 };

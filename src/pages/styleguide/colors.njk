@@ -1,0 +1,65 @@
+---
+title: Colors
+permalink: /styleguide/colors/index.html
+customColors:
+  - property: '--color-text'
+  - property: '--color-text-accent'
+  - property: '--color-bg'
+  - property: '--color-bg-accent'
+  - property: '--color-bg-accent-2'
+  - property: '--color-teal'
+  - property: '--color-purple'
+  - property: '--color-navy'
+  - property: '--color-navy-dark'
+customGradients:
+  - property: '--gradient-rainbow'
+  - property: '--gradient-conic'
+  - property: '--gradient-stripes'
+---
+
+<div class="styleguide-page | wrapper region flow">
+  <header class="intro flow">
+    <h1>{{ title }}</h1>
+    <p>{{ designTokens.colors.description }}</p>
+  </header>
+
+  <div class="colors | flow">
+    <ul role="list">
+      {%- for color in designTokens.colors.items -%}
+        <li>
+          <div style="background-color: var(--color-{{ color.name | slugify }})"></div>
+          <p>
+            <code>var(--color-{{ color.name | slugify }})</code>
+          </p>
+        </li>
+      {%- endfor -%}
+    </ul>
+
+    <h2 class="heading-line | mt-l-xl">Custom colors</h2>
+    <p>in <code>variables.css</code>. Some only change for dark theme.</p>
+
+    <ul role="list">
+      {%- for color in customColors -%}
+        <li>
+          <div style="background-color: var({{ color.property }})"></div>
+          <p>
+            <code>{{ color.property }}</code>
+          </p>
+        </li>
+      {%- endfor -%}
+    </ul>
+
+    <h2 class="heading-line | mt-l-xl">Gradients</h2>
+
+    <ul role="list">
+      {%- for gradient in customGradients -%}
+        <li>
+          <div style="background-image: var({{ gradient.property }})"></div>
+          <p>
+            <code>{{ gradient.property }}</code>
+          </p>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</div>

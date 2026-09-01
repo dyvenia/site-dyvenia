@@ -29,7 +29,7 @@
 }
 
 .pagination li:has(a[aria-current='page']) {
-  --pagination-bg: var(--color-blue);
-  --pagination-border: var(--color-blue);
+  --pagination-bg: var(--color-teal);
+  --pagination-border: var(--color-teal);
   --pagination-text: var(--color-light);
 }

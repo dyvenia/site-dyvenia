@@ -1,0 +1,117 @@
+---
+description: Dyvenia composable sections system — architecture, conventions, and remaining work from the module-based branch.
+alwaysApply: true
+---
+
+# Sections system handoff (site-dyvenia)
+
+Branch: `lene/module-based`. Repo: **site-dyvenia** only (TSW is reference, do not copy agency kit fingerprints).
+
+## What shipped
+
+### Composable sections (Nunjucks, not WebC)
+
+- Path: `src/_includes/sections/`
+- Types: `hero`, `text`, `highlight`, `list`, `process`, `feature`, `accordion`, `cta`, `posts`, `team`, `form`, `services`, `tabs`, `cases`, `gallery`
+- Loop: `_assets.njk` (CSS/JS once) + `_render.njk` (`{% asyncEach %}` + `{% ifAsync %}` + `{% include %}`)
+- **Never use macros for section bodies that call async shortcodes** (`{% svg %}`, `{% image %}`) — macros cannot await; hero never closed and everything stacked via `.custom-hero > *`
+- Shell helpers in `_shell.njk`: `sectionThemeAttr`, `sectionButtonAttr`, width/align (sync macros OK)
+- Layout: `src/_layouts/modular.njk` → include `_loop.njk`
+- Co-located CSS: `sections/*.css` → built by `build-css.js` to `src/_includes/css/sections/`
+- Modular pages: Solutions + home, about, careers, our-process (`sections[]` + CMS list types). Skip `contact` (TSW Meetings iframe; Dyvenia uses book-a-call links).
+
+### Unified section markup
+
+```
+.section-{type}.wrapper[data-section-theme]
+  > .full.wrapper.section          ← full-bleed theme paint
+    > .section__inner (+ width)    ← content measure only (no bg)
+```
+
+Hero/CTA keep media backgrounds; excluded from generic `.section` paint.
+
+### Theme = surface color (not site light/dark)
+
+Site mode stays on `:root` / `data-theme` / `prefers-color-scheme`.
+
+Section themes (`data-section-theme`):
+| Value | Role |
+|---|---|
+| `white` | page white |
+| `gray-light` | soft gray band |
+| `gray-dark` | dark gray, light text |
+| `teal` | soft teal band (was wrongly named blue) |
+| `purple` | soft purple band |
+| `navy` | dark navy, light text |
+
+Recipes + CTA tokens: `src/assets/css/global/base/themes.css` (imported after `variables.css` in `global.css`).
+
+**Cascade:** section default CTA rules must live in **`blocks` layer** (`button.css`), not `variables` — otherwise base `.button` wins and gray-dark CTAs get light-on-light text.
+
+### Accent / CTA
+
+- `accent: default` (or omit) → theme-fitting CTA via `--section-cta-*`
+  - white / gray-light → neutral dark button
+  - gray-dark → neutral light button
+  - teal / purple → **teal** brand CTA (`#0E909D`)
+  - navy → navy CTA
+- Override: `neutral` | `teal` | `purple` | `navy`
+- No `ghost` in section CMS options (legacy `data-ghost-button` still used elsewhere)
+
+### Color tokens
+
+- `#0E909D` renamed **Teal** (not blue) in `colorsBase.json` → regenerate with `npm run colors`
+- Navy is a full vibrant scale + `Navy Dark` standalone
+- CSS: `--color-teal*`, `--color-navy-100…900`, `--color-navy-dark`
+
+### Solutions pages
+
+- `src/pages/solutions/*` + `solutions.json` (modular layout, permalink `/solutions/…/`)
+- Nav submenu in `src/_data/navigation.yaml`
+- CMS: Solutions collection in `admin_content` + `admin_dev`
+  - **Do not** add incomplete `filter: { field: title }` — hides all entries
+  - Sections list: `collapsed: true`
+  - Optional `internal_name` (CMS-only); summary:
+    `{{fields.type}}: {{fields.internal_name | default('{{fields.title}}')}}`
+    (YAML must use double quotes outside, single quotes inside `default()` or nested `}}` breaks)
+
+### Styleguide
+
+- Multipage under `src/pages/styleguide/` + `styleguide.njk` layout + top nav
+- Sections page: live Dyvenia copy from `sectionDemos.js`, neutral `sg-section-doc` bands between demos
+- Preview toolbar: theme + accent selects (`styleguide-section-preview.js`) — sets `data-section-theme` only (no inline `--spot-color`)
+
+## Key files
+
+- Sections: `src/_includes/sections/*`
+- Themes: `src/assets/css/global/base/themes.css`
+- Section paint: `src/assets/css/global/blocks/section.css`
+- Buttons/CTA inherit: `src/assets/css/global/blocks/button.css`
+- CMS: `src/admin_content/config.yml`, `src/admin_dev/config.yml`
+- Tokens: `src/_data/designTokens/colorsBase.json`
+
+## Remaining / next work (pick up here)
+
+1. Soft navy band recipe could use `navy-100` scale (product decision).
+2. Hero `data-hero-background` still separate from section theme; keep media-special.
+3. Blog/subscribe listing chrome still hardcoded (pagination stays page-level); optional `form` band later.
+4. `contact` skipped — TSW Meetings iframe; Dyvenia uses book-a-call CTAs.
+
+## Section catalog
+
+### Shipped (15)
+
+`hero`, `text`, `highlight`, `list`, `process`, `feature`, `accordion`, `cta`, `posts`, `team`, `form`, `services`, `tabs`, `cases`, `gallery`
+
+Modular pages: Solutions, home, about, careers, our-process.
+
+### Skip
+
+`contact` (TSW only). Header/footer/nav/search/consent; pagination/tags; styleguide; privacy/legal; article body layouts.
+
+## Hard constraints
+
+- Includes + `asyncEach`/`ifAsync` for anything with `{% image %}` / `{% svg %}`
+- Theme names are colors (`gray-dark`, `teal`), never `dark`/`light`/`default`/`accent` for section surfaces
+- Full-bleed bg on `.section`, not `.section__inner`
+- CTA theme defaults in `button.css` (blocks layer)

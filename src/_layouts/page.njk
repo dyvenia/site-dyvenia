@@ -2,7 +2,11 @@
 layout: base
 ---
 
-<div class="region wrapper flow prose{% if h2ScrollFade %} scroll-fade-h2s{% endif %}" style="--region-space-top: var(--space-xl-2xl)">
+<div class="region region-space-2xl-3xl wrapper flow prose{% if h2ScrollFade %}scroll-fade-h2s{% endif %}">
   <h1>{{ title }}</h1>
   {{ content | safe }}
 </div>
+
+{%- css "local" -%}
+  {%- include 'css/page.css' -%}
+{%- endcss -%}

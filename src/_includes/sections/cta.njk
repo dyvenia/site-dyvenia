@@ -1,0 +1,64 @@
+{% css "local" %}
+  {% include "css/page-header.css" %}
+  {% include "css/media-background.css" %}
+{% endcss %}
+{% from "sections/_shell.njk" import sectionAlignClass, sectionThemeAttr, sectionAccentAttr, sectionButtonAttr %}
+
+{% set s = section %}
+{% set a = s.appearance or {} %}
+{% set theme = a.theme or s.theme or "gray-dark" %}
+{% set accent = a.accent if a.accent is defined else s.accent %}
+{% set align = a.align if a.align is defined else s.align %}
+{% set alignClass = sectionAlignClass(align or "center") %}
+{% set mediaImage = s.image or s.preset_image %}
+{% set mediaBackground = a.background or s.background or "teal-800" %}
+{% if a.divider is defined %}
+  {% set dividerBottom = a.divider %}
+{% elif s.divider is defined %}
+  {% set dividerBottom = s.divider %}
+{% else %}
+  {% set dividerBottom = "divider/soft" %}
+{% endif %}
+{% if a.divider_top is defined %}
+  {% set dividerTop = a.divider_top %}
+{% elif s.divider_top is defined %}
+  {% set dividerTop = s.divider_top %}
+{% else %}
+  {% set dividerTop = "" %}
+{% endif %}
+{% set dividerClass = a.divider_class or s.divider_class or "" %}
+
+<div
+  class="section-cta | section page-header"
+  {% if s.id %}id="{{ s.id }}"{% endif %}
+  {{ sectionThemeAttr(theme) }}{{ sectionAccentAttr(accent) }}
+  {% if mediaImage %}data-hero-background="{{ mediaBackground }}"{% endif %}
+>
+  {% if dividerTop %}
+    {% svg dividerTop, null, "seperator seperator--top" + (" " + dividerClass if dividerClass else "") %}
+  {% endif %}
+
+  {% if mediaImage %}
+    {% image mediaImage, "" %}
+  {% endif %}
+
+  <div>
+    <div class="wrapper region region-space-xl-2xl flow prose {{ alignClass }}">
+      {% if s.title %}<h2>{{ s.title | markdownInline | safe }}</h2>{% endif %}
+      {% if s.subtitle %}{{ s.subtitle | markdownFormat | safe }}{% endif %}
+      {% if s.pre %}{{ s.pre | markdownFormat | safe }}{% endif %}
+      {% if s.button_text and s.button_target %}
+        <a href="{{ s.button_target }}" class="button no-indicator" {{ sectionButtonAttr(accent) }}>
+          {{ s.button_text }} {% svg "misc/arrow" %}
+        </a>
+      {% endif %}
+      {% if s.footer %}
+        <div class="mt-l">{{ s.footer | markdownFormat | safe }}</div>
+      {% endif %}
+    </div>
+  </div>
+
+  {% if dividerBottom %}
+    {% svg dividerBottom, null, "seperator seperator--bottom" + (" " + dividerClass if dividerClass else "") %}
+  {% endif %}
+</div>

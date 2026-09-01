@@ -1,0 +1,23 @@
+---
+title: Fonts
+permalink: /styleguide/fonts/index.html
+---
+
+<div class="styleguide-page | wrapper region flow">
+  <header class="intro flow">
+    <h1>{{ title }}</h1>
+  </header>
+
+  <section class="fonts | flow">
+    <ul class="fonts | flow flow-space-m" role="list">
+      {%- for font in designTokens.fonts.items -%}
+        <li class="font" style="font-family: var(--font-{{ font.name | slugify }})">
+          <h2 style="font-family: var(--font-{{ font.name | slugify }})">{{ font.name }}</h2>
+          <p>{{ font.description }}</p>
+          <p><strong>Font Families</strong>: {{ font.value | join(', ') }}</p>
+          <code>var(--font-{{ font.name | slugify }})</code>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </section>
+</div>

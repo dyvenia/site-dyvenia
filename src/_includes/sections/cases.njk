@@ -1,0 +1,61 @@
+
+{% css "local" %}
+  {% include "css/custom-card.css" %}
+  {% include "css/sections/cases.css" %}
+{% endcss %}
+
+{% from "sections/_shell.njk" import sectionWidthClass, sectionAlignClass, sectionThemeAttr, sectionAccentAttr %}
+
+{% set s = section %}
+{% set a = s.appearance or {} %}
+{% set theme = a.theme or s.theme or "background-default" %}
+{% set accent = a.accent if a.accent is defined else s.accent %}
+{% set align = a.align if a.align is defined else s.align %}
+{% set width = a.width if a.width is defined else s.width %}
+{% set widthClass = sectionWidthClass(width or "feature") or "feature" %}
+{% set alignClass = sectionAlignClass(align) %}
+{% set count = s.count or 3 %}
+{% set cardLayout = a.card_layout or s.card_layout or s.layout or "grid" %}
+{% set titleHref = s.title_href or "/case-studies/" %}
+{% set itemList = collections.allCaseStudies %}
+
+<div class="section-cases | wrapper" {{ sectionThemeAttr(theme) }}{{ sectionAccentAttr(accent) }}{% if s.id %} id="{{ s.id }}"{% endif %}>
+  <div class="full wrapper section">
+    <div class="{{ widthClass }} | section__inner region">
+      {% if s.title or s.intro or s.content %}
+        <header class="section-cases__header | flow prose {{ alignClass }}">
+          {% if s.title %}
+            <h2>
+              <a class="no-underline hover:underline" href="{{ titleHref }}">{{ s.title | markdownInline | safe }}</a>
+            </h2>
+          {% endif %}
+          {% if s.intro or s.content %}
+            <p>{{ (s.intro or s.content) | markdownInline | safe }}</p>
+          {% endif %}
+        </header>
+      {% endif %}
+
+      {% if itemList and itemList.length %}
+        {% if cardLayout == "masonry" %}
+          <custom-masonry class="section-cases__cards mt-l" layout="50-50">
+            {% asyncEach item in itemList.slice(0, count) %}
+              {% set showTags = false %}
+              {% set showDate = false %}
+              {% set headingLevel = "h3" %}
+              {% include "partials/card-blog.njk" %}
+            {% endeach %}
+          </custom-masonry>
+        {% else %}
+          <div class="section-cases__cards grid gutter-s mt-l" data-layout="thirds">
+            {% asyncEach item in itemList.slice(0, count) %}
+              {% set showTags = false %}
+              {% set showDate = false %}
+              {% set headingLevel = "h3" %}
+              {% include "partials/card-blog.njk" %}
+            {% endeach %}
+          </div>
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>
+</div>

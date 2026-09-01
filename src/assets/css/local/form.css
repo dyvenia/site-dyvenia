@@ -96,7 +96,7 @@ input[type='checkbox']::before {
   transform: scale(0);
   transform-origin: bottom left;
   transition: 120ms transform ease-in-out;
-  box-shadow: inset 1em 1em var(--color-blue);
+  box-shadow: inset 1em 1em var(--color-teal);
   /* Windows High Contrast Mode */
   background-color: CanvasText;
 }
@@ -111,6 +111,34 @@ input[type='checkbox']:checked::before {
   background: var(--color-bg-accent);
   color: var(--color-text);
   border-radius: var(--border-radius-small);
+}
+
+.section-form .content {
+  --region-space-bottom: var(--space-m);
+}
+
+.section-form .newsletter {
+  background: var(--color-bg);
+  color: var(--color-text);
+  text-align: start;
+}
+
+.section-form__header.text-center {
+  margin-inline: auto;
+}
+
+.section-form__header.text-center p {
+  max-inline-size: none;
+}
+
+.section-form .newsletter :is(h3, label, p, input, .text-gray) {
+  color: var(--color-text);
+}
+
+.section-form .newsletter :is(input, textarea) {
+  border-color: var(--color-bg-accent-2);
+  background: var(--color-bg);
+  color: var(--color-text);
 }
 
 .newsletter > * {

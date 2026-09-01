@@ -1,0 +1,20 @@
+<nav class="styleguide-nav | flow" aria-label="Style guide">
+  <p class="styleguide-nav__title">
+    <a href="/styleguide/" class="no-underline">Style guide</a>
+  </p>
+  <ul class="styleguide-nav__list | flow flow-space-2xs" role="list">
+    {% for item in styleguide.nav %}
+      {% set pageUrl = page.url or "" %}
+      {% set sectionsActive = item.url == "/styleguide/sections/" and pageUrl.indexOf("/styleguide/sections/") == 0 %}
+      <li>
+        <a
+          href="{{ item.url }}"
+          class="styleguide-nav__link{% if pageUrl == item.url or sectionsActive %} is-active{% endif %}"
+          {% if pageUrl == item.url %}aria-current="page"{% elif sectionsActive %}aria-current="true"{% endif %}
+        >
+          {{ item.text }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

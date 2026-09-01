@@ -1,0 +1,68 @@
+/* Shared media wash recipes for hero (.custom-hero) and CTA (.page-header).
+   Set data-hero-background on the section root. */
+
+:is(.custom-hero, .page-header)[data-hero-background='teal-800'] {
+  --custom-hero-bg: var(--color-teal-800);
+  --hero-text: var(--color-gray-100);
+  --hero-em: color-mix(in oklab, var(--color-teal) 50%, var(--color-light));
+}
+
+:is(.custom-hero, .page-header)[data-hero-background='teal-600'] {
+  --custom-hero-bg: var(--color-teal-600);
+  --hero-text: var(--color-gray-100);
+  --hero-em: color-mix(in oklab, var(--color-teal) 40%, var(--color-light));
+}
+
+:is(.custom-hero, .page-header)[data-hero-background='purple-800'] {
+  --custom-hero-bg: var(--color-purple-800);
+  --hero-text: var(--color-purple-100);
+  --hero-em: color-mix(in oklab, var(--color-purple) 60%, var(--color-light));
+}
+
+:is(.custom-hero, .page-header)[data-hero-background='purple-300'] {
+  --custom-hero-bg: var(--color-purple-300);
+  --hero-text: var(--color-gray-900);
+  --hero-em: var(--color-purple-800);
+}
+
+:is(.custom-hero, .page-header)[data-hero-background='navy-dark'] {
+  --custom-hero-bg: var(--color-navy-dark);
+  --hero-text: var(--color-gray-100);
+  --hero-em: color-mix(in oklab, var(--color-navy) 40%, var(--color-light));
+}
+
+:is(.custom-hero, .page-header)[data-hero-background='navy'] {
+  --custom-hero-bg: var(--color-navy);
+  --hero-text: var(--color-gray-100);
+  --hero-em: color-mix(in oklab, var(--color-navy) 40%, var(--color-light));
+}
+
+:is(.custom-hero, .page-header)[data-hero-background='gray-900'] {
+  --custom-hero-bg: var(--color-gray-900);
+  --hero-text: var(--color-gray-100);
+  --hero-em: var(--color-teal-300);
+}
+
+:is(.custom-hero, .page-header)[data-hero-background='gray-800'] {
+  --custom-hero-bg: var(--color-gray-800);
+  --hero-text: var(--color-gray-100);
+  --hero-em: var(--color-teal-300);
+}
+
+:is(.custom-hero, .page-header)[data-hero-background='gray-200'] {
+  --custom-hero-bg: var(--color-gray-200);
+  --hero-text: var(--color-gray-900);
+  --hero-em: var(--color-teal-800);
+}
+
+:is(.custom-hero, .page-header)[data-hero-background='gray-100'] {
+  --custom-hero-bg: var(--color-gray-100);
+  --hero-text: var(--color-gray-900);
+  --hero-em: var(--color-teal-800);
+}
+
+:is(.custom-hero, .page-header)[data-hero-background='white'] {
+  --custom-hero-bg: white;
+  --hero-text: var(--color-gray-900);
+  --hero-em: var(--color-teal-800);
+}

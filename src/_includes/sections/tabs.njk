@@ -1,0 +1,105 @@
+{% css "local" %}
+  {% include "css/sections/tabs.css" %}
+{% endcss %}
+
+{% js "defer" %}
+  {% include "scripts/tabs.js" %}
+{% endjs %}
+{% from "sections/_shell.njk" import sectionWidthClass, sectionAlignClass, sectionThemeAttr, sectionAccentAttr %}
+
+{% set s = section %}
+{% set a = s.appearance or {} %}
+{% set theme = a.theme or s.theme or "background-default" %}
+{% set accent = a.accent if a.accent is defined else s.accent %}
+{% set align = a.align if a.align is defined else s.align %}
+{% set width = a.width if a.width is defined else s.width %}
+{% if width == "full" %}{% set width = "feature" %}{% endif %}
+{% set widthClass = sectionWidthClass(width or "feature") or "feature" %}
+{% set alignClass = sectionAlignClass(align) %}
+{% set titleWhat = s.title_what or "What we do?" %}
+{% set titleOutcomes = s.title_outcomes or "Outcomes:" %}
+{% set stages = s.stages or s.items or [] %}
+{% set tabsId = s.id or "tabs" %}
+
+<div
+  class="section-tabs | wrapper"
+  {{ sectionThemeAttr(theme) }}{{ sectionAccentAttr(accent) }}{% if s.id %}id="{{ s.id }}"{% endif %}
+>
+  <div class="full wrapper section">
+    <section class="{{ widthClass }} | section__inner region" aria-labelledby="{{ tabsId }}-title">
+      <header id="{{ tabsId }}-title" class="section-tabs__header | header flow {{ alignClass }}">
+        {% if s.title %}<h2 class="text-step-3">{{ s.title | markdownInline | safe }}</h2>{% endif %}
+        {% if s.intro or s.content %}
+          <p>{{ (s.intro or s.content) | markdownInline | safe }}</p>
+        {% endif %}
+      </header>
+
+      {% if stages and stages.length %}
+        <div class="tabs mt-xl">
+          <nav aria-label="Process Stages">
+            <ul class="arrows | repel" role="list">
+              {% for stage in stages %}
+                {% set stageIndex = loop.index %}
+                {% set isFirstStage = loop.first %}
+                <li>
+                  <h3>
+                    {% if stage.label %}<span>{{ stage.label }}</span>{% endif %}
+                    {{ stage.name or stage.title }}
+                  </h3>
+                  <ul class="cluster" role="tablist">
+                    {% for step in stage.steps %}
+                      <li role="presentation">
+                        <span class="step-number" aria-hidden="true">
+                          {% if step.label %}{{ step.label | replace("Step ", "") }}{% else %}{{ loop.index }}{% endif %}
+                        </span>
+                        <button
+                          id="tab-{{ stageIndex }}-{{ loop.index }}"
+                          type="button"
+                          role="tab"
+                          data-tab-target="panel-{{ stageIndex }}-{{ loop.index }}"
+                          aria-controls="panel-{{ stageIndex }}-{{ loop.index }}"
+                          aria-selected="{% if isFirstStage and loop.first %}true{% else %}false{% endif %}"
+                          class="button"
+                        >
+                          <span class="step-title">{{ step.title }}</span>
+                        </button>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                </li>
+              {% endfor %}
+            </ul>
+          </nav>
+
+          {% for stage in stages %}
+            {% set stageIndex = loop.index %}
+            {% for step in stage.steps %}
+              <div
+                tabindex="0"
+                id="panel-{{ stageIndex }}-{{ loop.index }}"
+                role="tabpanel"
+                data-tab-panel="panel-{{ stageIndex }}-{{ loop.index }}"
+                aria-labelledby="tab-{{ stageIndex }}-{{ loop.index }}"
+              >
+                <div class="sidebar mt-xl">
+                  <header class="flow">
+                    <p class="button" data-label>{{ stage.label }} {{ stage.name or stage.title }}</p>
+                    <h3 class="flow-space-2xs">{{ step.title }}</h3>
+                  </header>
+                  <article class="flow prose">
+                    <h4>{{ titleWhat }}</h4>
+                    {{ step.content | markdownFormat | safe }}
+                    {% if step.outcomes %}
+                      <h4>{{ titleOutcomes }}</h4>
+                      {{ step.outcomes | markdownFormat | safe }}
+                    {% endif %}
+                  </article>
+                </div>
+              </div>
+            {% endfor %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    </section>
+  </div>
+</div>

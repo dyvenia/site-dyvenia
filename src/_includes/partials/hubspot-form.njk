@@ -1,8 +1,12 @@
 {% set formWidth = formWidth | default("content") %}
 
-<aside class="newsletter |  {{ formWidth }} wrapper">
+{% if formLayout == "section" %}
+<aside class="newsletter">
+{% else %}
+<aside class="newsletter | {{ formWidth }} wrapper">
+{% endif %}
   <div class="flow">
-    <h3>{{ meta.newsletter_title }}</h3>
+    <h2>{{ meta.newsletter_title }}</h2>
     <form data-hubspot class="flow">
       <label class="form-control gutter-xs text-step-min-1">
         <input type="checkbox" name="consent" required />
@@ -37,7 +41,7 @@
             />
           </div>
 
-          <button class="button" type="submit" data-button-variant="blue">Submit</button>
+          <button class="button" type="submit" data-button-variant="teal">Submit</button>
         </div>
       </div>
     </form>

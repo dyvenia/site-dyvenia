@@ -1,0 +1,23 @@
+.section-team .grid.intro {
+  --gutter: var(--space-l);
+}
+
+.section-team header div {
+  grid-column: span 2;
+  max-inline-size: 45ch;
+}
+
+.section-team .intro h2 {
+  font-size: var(--size-step-2);
+  line-height: 1.4;
+  max-inline-size: 50ch;
+}
+
+.section-team .intro :is(strong, b) {
+  color: var(--section-accent, var(--color-teal));
+}
+
+.section-team .grid {
+  --gutter: var(--space-s);
+  --grid-min-item-size: clamp(16rem, 28%, 25rem);
+}

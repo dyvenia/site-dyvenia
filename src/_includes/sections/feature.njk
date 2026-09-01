@@ -1,0 +1,82 @@
+{% css "local" %}
+  {% include "css/sections/feature.css" %}
+{% endcss %}
+{% from "sections/_shell.njk" import sectionThemeAttr, sectionAccentAttr, sectionButtonAttr, sectionWidthClass %}
+
+{% set s = section %}
+{% set a = s.appearance or {} %}
+{% set theme = a.theme or s.theme or "background-default" %}
+{% set accent = a.accent if a.accent is defined else s.accent %}
+{% set width = a.width if a.width is defined else s.width %}
+{% if not width %}
+  {% set width = "feature" %}
+{% endif %}
+{% set mediaSide = a.media_side or s.media_side or "right" %}
+{% set widthClass = sectionWidthClass(width) %}
+{% set lightbox = a.lightbox if a.lightbox is defined else s.lightbox %}
+
+{% if lightbox and s.image %}
+  {% js "defer" %}
+    {% include "scripts/dialog.js" %}
+  {% endjs %}
+{% endif %}
+
+<div
+  class="section-feature | wrapper"
+  {{ sectionThemeAttr(theme) }}{{ sectionAccentAttr(accent) }}
+  data-feature-width="{{ width }}"
+  data-media-side="{{ mediaSide }}"
+  {% if s.id %}id="{{ s.id }}"{% endif %}
+>
+  <div class="full wrapper section">
+    {% if width == "full" %}
+      <div class="section-feature__copy | flow prose region">
+        {% if s.title %}<h2>{{ s.title | markdownInline | safe }}</h2>{% endif %}
+        {% if s.content %}{{ s.content | markdownFormat | safe }}{% endif %}
+        {% if s.button_text and s.button_target %}
+          <a href="{{ s.button_target }}" class="button" {{ sectionButtonAttr(accent) }}>
+            {{ s.button_text }} {% svg "misc/arrow" %}
+          </a>
+        {% endif %}
+      </div>
+      {% if s.image %}
+        <div class="section-feature__media">
+          {% if lightbox %}
+            {% set image = s.image %}
+            {% set alt = s.image_alt %}
+            {% set caption = s.caption %}
+            {% include "partials/details-image.njk" %}
+          {% else %}
+            {% image s.image, s.image_alt or "", s.caption or "" %}
+          {% endif %}
+        </div>
+      {% endif %}
+    {% else %}
+      <div class="{% if widthClass %}{{ widthClass }} |{% endif %}section__inner region">
+        <div class="section-feature__grid">
+          <div class="section-feature__copy | flow prose">
+            {% if s.title %}<h2>{{ s.title | markdownInline | safe }}</h2>{% endif %}
+            {% if s.content %}{{ s.content | markdownFormat | safe }}{% endif %}
+            {% if s.button_text and s.button_target %}
+              <a href="{{ s.button_target }}" class="button" {{ sectionButtonAttr(accent) }}>
+                {{ s.button_text }} {% svg "misc/arrow" %}
+              </a>
+            {% endif %}
+          </div>
+          {% if s.image %}
+            <div class="section-feature__media">
+              {% if lightbox %}
+                {% set image = s.image %}
+                {% set alt = s.image_alt %}
+                {% set caption = s.caption %}
+                {% include "partials/details-image.njk" %}
+              {% else %}
+                {% image s.image, s.image_alt or "", s.caption or "" %}
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</div>
