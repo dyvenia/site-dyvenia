@@ -1,0 +1,12 @@
+.section-posts__header.text-center p {
+  margin-inline: auto;
+}
+
+.section-posts__cards,
+.section-posts custom-card {
+  text-align: start;
+}
+
+.section-posts > .wrapper > .full {
+  margin-inline: var(--gap);
+}

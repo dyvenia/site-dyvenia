@@ -1,5 +1,3 @@
-{# section.type: accordion — expects `section` in scope
-   Shell: .section-{type}.wrapper[data-section-theme] > .full.wrapper.section > .section__inner #}
 {% css "local" %}
   {% include "css/faq.css" %}
   {% include "css/details.css" %}
@@ -8,7 +6,6 @@
 {% js "defer" %}
   {% include "scripts/details.js" %}
 {% endjs %}
-
 {% from "sections/_shell.njk" import sectionWidthClass, sectionThemeAttr, sectionAccentAttr, sectionButtonAttr %}
 
 {% set s = section %}

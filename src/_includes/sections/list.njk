@@ -1,7 +1,4 @@
-{# section.type: list — expects `section` in scope
-   Shell: .section-{type}.wrapper[data-section-theme] > .full.wrapper.section > .section__inner
-   Variants: definition | stack (legacy alias: checklist → stack)
-   Both: optional checkmarks + borders via appearance.checks / appearance.bordered #}
+
 {% css "local" %}
   {% include "css/sections/list.css" %}
 {% endcss %}
@@ -35,7 +32,7 @@
 
 <div class="section-list | wrapper" {{ sectionThemeAttr(theme) }}{{ sectionAccentAttr(accent) }} data-list-variant="{{ variant }}" data-list-checks="{{ "true" if showChecks else "false" }}" data-list-bordered="{{ "true" if bordered else "false" }}" data-list-highlight-header="{{ "true" if highlightHeader else "false" }}"{% if s.id %} id="{{ s.id }}"{% endif %}>
   <div class="full wrapper section">
-    <div class="{{ widthClass }} | section__inner region">
+    <div class="{{ widthClass }} section__inner region">
       {% if s.title or intro %}
         <header class="section-list__header | flow prose {{ alignClass }}{% if highlightHeader %} section-list__header--highlight{% endif %}">
           {% if s.title %}<h2{% if highlightHeader %} class="heading-line"{% endif %}>{{ s.title | markdownInline | safe }}</h2>{% endif %}

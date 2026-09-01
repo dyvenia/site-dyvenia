@@ -1,9 +1,7 @@
-{# section.type: hero — expects `section` in scope #}
 {% css "local" %}
   {% include "css/custom-hero.css" %}
   {% include "css/media-background.css" %}
 {% endcss %}
-
 {% from "sections/_shell.njk" import sectionButtonAttr, sectionAccentAttr %}
 
 {% set s = section %}
@@ -29,7 +27,8 @@
 
 <header
   class="section custom-hero section-hero"
-  data-section-theme="{{ theme }}"{{ sectionAccentAttr(accent) }}
+  data-section-theme="{{ theme }}"
+  {{ sectionAccentAttr(accent) }}
   data-hero-media="{% if heroVideo %}video{% elif heroImage %}image{% else %}none{% endif %}"
   data-hero-height="{{ heroHeight }}"
   data-hero-background="{{ heroBackground }}"
@@ -70,9 +69,7 @@
 
   <div class="custom-hero__content | section__inner region region-space-{{ heroRegionSpace }}">
     <div class="wrapper flow">
-      <h1 class="fade-in-bottom">
-        {% if s.title %}{{ s.title | markdownInline | safe }}{% endif %}
-      </h1>
+      <h1 class="fade-in-bottom">{% if s.title %}{{ s.title | markdownInline | safe }}{% endif %}</h1>
 
       {% if s.subtitle %}
         <div class="fade-in delay-3 flow">{{ s.subtitle | markdownFormat | safe }}</div>

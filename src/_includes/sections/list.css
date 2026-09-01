@@ -1,10 +1,16 @@
 .section-list__header.text-center,
 .section-list .section__inner > .text-center.section-list__header {
+  text-align: center;
   margin-inline: auto;
 }
 
-.section-list__header.text-center .section-list__intro {
+.section-list__header.text-center :is(p, .section-list__intro) {
   margin-inline: auto;
+}
+
+.section-list__items,
+.section-list__item-body {
+  text-align: start;
 }
 
 .section-list__header--highlight {

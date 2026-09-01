@@ -562,6 +562,18 @@
         el.classList.remove(...ALIGN_CLASSES);
         return;
       }
+      if (el.closest('.section-cases, .section-posts, .section-list')) {
+        el.classList.remove(...ALIGN_CLASSES);
+        if (
+          (el.classList.contains('section-cases__header') ||
+            el.classList.contains('section-posts__header') ||
+            el.classList.contains('section-list__header')) &&
+          align === 'center'
+        ) {
+          el.classList.add('text-center');
+        }
+        return;
+      }
       if (el.closest('.section-tabs') && !el.classList.contains('section-tabs__header')) {
         el.classList.remove(...ALIGN_CLASSES);
         return;

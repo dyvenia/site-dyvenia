@@ -1,9 +1,7 @@
-{# section.type: cta — expects `section` in scope #}
 {% css "local" %}
   {% include "css/page-header.css" %}
   {% include "css/media-background.css" %}
 {% endcss %}
-
 {% from "sections/_shell.njk" import sectionAlignClass, sectionThemeAttr, sectionAccentAttr, sectionButtonAttr %}
 
 {% set s = section %}
@@ -50,11 +48,7 @@
       {% if s.subtitle %}{{ s.subtitle | markdownFormat | safe }}{% endif %}
       {% if s.pre %}{{ s.pre | markdownFormat | safe }}{% endif %}
       {% if s.button_text and s.button_target %}
-        <a
-          href="{{ s.button_target }}"
-          class="button no-indicator"
-          {{ sectionButtonAttr(accent) }}
-        >
+        <a href="{{ s.button_target }}" class="button no-indicator" {{ sectionButtonAttr(accent) }}>
           {{ s.button_text }} {% svg "misc/arrow" %}
         </a>
       {% endif %}

@@ -39,6 +39,10 @@
   margin-block-start: var(--space-3xs);
 }
 
+.section-services__band div > ul:first-child {
+  margin-block-start: 0;
+}
+
 .section-services__band .grid {
   --gutter: var(--space-s);
   --grid-min-item-size: clamp(9rem, 25%, 20rem);

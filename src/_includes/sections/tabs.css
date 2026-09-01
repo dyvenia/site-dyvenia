@@ -22,6 +22,10 @@
   color: var(--color-text-accent);
 }
 
+.section-tabs__header.text-center p {
+  margin-inline: auto;
+}
+
 @media screen(xs) {
   .section-tabs .tabs nav {
     overflow: visible;

@@ -1,7 +1,7 @@
-{# section.type: posts — expects `section` in scope
-   Shell: .section-{type}.wrapper[data-section-theme] > .full.wrapper.section > .section__inner #}
+
 {% css "local" %}
   {% include "css/custom-card.css" %}
+  {% include "css/sections/posts.css" %}
 {% endcss %}
 
 {% from "sections/_shell.njk" import sectionWidthClass, sectionAlignClass, sectionThemeAttr, sectionAccentAttr %}
@@ -22,38 +22,40 @@
 <div class="section-posts | wrapper" {{ sectionThemeAttr(theme) }}{{ sectionAccentAttr(accent) }}{% if s.id %} id="{{ s.id }}"{% endif %}>
   <div class="full wrapper section">
     <div class="{{ widthClass }} | section__inner region">
-      <div class="flow prose {{ alignClass }}">
-        {% if s.title %}
-          <h2>
-            <a class="no-underline hover:underline" href="{{ titleHref }}">{{ s.title | markdownInline | safe }}</a>
-          </h2>
-        {% endif %}
-        {% if s.intro or s.content %}
-          <p>{{ (s.intro or s.content) | markdownInline | safe }}</p>
-        {% endif %}
-
-        {% if itemList and itemList.length %}
-          {% if cardLayout == "masonry" %}
-            <custom-masonry layout="50-50">
-              {% asyncEach item in itemList.slice(0, count) %}
-                {% set showTags = false %}
-                {% set headingLevel = "h3" %}
-                {% set definedDate = item.date %}
-                {% include "partials/card-blog.njk" %}
-              {% endeach %}
-            </custom-masonry>
-          {% else %}
-            <div class="grid gutter-s" data-layout="thirds">
-              {% asyncEach item in itemList.slice(0, count) %}
-                {% set showTags = false %}
-                {% set headingLevel = "h3" %}
-                {% set definedDate = item.date %}
-                {% include "partials/card-blog.njk" %}
-              {% endeach %}
-            </div>
+      {% if s.title or s.intro or s.content %}
+        <header class="section-posts__header | flow prose {{ alignClass }}">
+          {% if s.title %}
+            <h2>
+              <a class="no-underline hover:underline" href="{{ titleHref }}">{{ s.title | markdownInline | safe }}</a>
+            </h2>
           {% endif %}
+          {% if s.intro or s.content %}
+            <p>{{ (s.intro or s.content) | markdownInline | safe }}</p>
+          {% endif %}
+        </header>
+      {% endif %}
+
+      {% if itemList and itemList.length %}
+        {% if cardLayout == "masonry" %}
+          <custom-masonry class="section-posts__cards mt-l" layout="50-50">
+            {% asyncEach item in itemList.slice(0, count) %}
+              {% set showTags = false %}
+              {% set headingLevel = "h3" %}
+              {% set definedDate = item.date %}
+              {% include "partials/card-blog.njk" %}
+            {% endeach %}
+          </custom-masonry>
+        {% else %}
+          <div class="section-posts__cards grid gutter-s mt-l" data-layout="thirds">
+            {% asyncEach item in itemList.slice(0, count) %}
+              {% set showTags = false %}
+              {% set headingLevel = "h3" %}
+              {% set definedDate = item.date %}
+              {% include "partials/card-blog.njk" %}
+            {% endeach %}
+          </div>
         {% endif %}
-      </div>
+      {% endif %}
     </div>
   </div>
 </div>
