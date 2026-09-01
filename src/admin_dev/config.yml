@@ -1353,6 +1353,12 @@ collections:
             - label: full
               value: full
             default: feature
+          - label: Drop block spacing
+            name: drop_block_spacing
+            widget: boolean
+            required: false
+            default: false
+            hint: Omit region vertical padding on this form band.
       - label: Services
         name: services
         widget: object
@@ -3431,6 +3437,12 @@ collections:
             - label: full
               value: full
             default: feature
+          - label: Drop block spacing
+            name: drop_block_spacing
+            widget: boolean
+            required: false
+            default: false
+            hint: Omit region vertical padding on this form band.
       - label: Services
         name: services
         widget: object
@@ -5466,6 +5478,12 @@ collections:
             - label: full
               value: full
             default: feature
+          - label: Drop block spacing
+            name: drop_block_spacing
+            widget: boolean
+            required: false
+            default: false
+            hint: Omit region vertical padding on this form band.
       - label: Services
         name: services
         widget: object
@@ -7532,6 +7550,12 @@ collections:
             - label: full
               value: full
             default: feature
+          - label: Drop block spacing
+            name: drop_block_spacing
+            widget: boolean
+            required: false
+            default: false
+            hint: Omit region vertical padding on this form band.
       - label: Services
         name: services
         widget: object
@@ -11526,6 +11550,12 @@ collections:
             - label: full
               value: full
             default: feature
+          - label: Drop block spacing
+            name: drop_block_spacing
+            widget: boolean
+            required: false
+            default: false
+            hint: Omit region vertical padding on this form band.
       - label: Services
         name: services
         widget: object
@@ -13539,6 +13569,12 @@ collections:
           - label: full
             value: full
           default: feature
+        - label: Drop block spacing
+          name: drop_block_spacing
+          widget: boolean
+          required: false
+          default: false
+          hint: Omit region vertical padding on this form band.
     - label: Services
       name: services
       widget: object

@@ -18,13 +18,14 @@
 {% if width == "full" %}{% set width = "feature" %}{% endif %}
 {% set widthClass = sectionWidthClass(width or "feature") or "content" %}
 {% set alignClass = sectionAlignClass(align) %}
+{% set dropBlockSpacing = a.drop_block_spacing if a.drop_block_spacing is defined else s.drop_block_spacing %}
 
 <div
   class="section-form | wrapper"
   {{ sectionThemeAttr(theme) }}{{ sectionAccentAttr(accent) }}{% if s.id %}id="{{ s.id }}"{% endif %}
 >
   <div class="full wrapper section">
-    <div class="{{ widthClass }} | section__inner region">
+    <div class="{{ widthClass }} | section__inner{% if not dropBlockSpacing %} region{% endif %}">
       {% if s.title or s.intro or s.content %}
         <header class="section-form__header | flow prose {{ alignClass }} mb-l">
           {% if s.title %}<h2>{{ s.title | markdownInline | safe }}</h2>{% endif %}
