@@ -17,6 +17,8 @@ top:
     submenu:
       - text: Blog
         url: /insights/
+      - text: Case Studies
+        url: /case-studies/
       - text: Dimensional Modeling Docs
         url: https://dimensional-modelling.dyvenia.com/
   - text: Careers

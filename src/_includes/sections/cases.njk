@@ -37,8 +37,8 @@
             <custom-masonry layout="50-50">
               {% asyncEach item in itemList.slice(0, count) %}
                 {% set showTags = false %}
+                {% set showDate = false %}
                 {% set headingLevel = "h3" %}
-                {% set definedDate = item.date %}
                 {% include "partials/card-blog.njk" %}
               {% endeach %}
             </custom-masonry>
@@ -46,8 +46,8 @@
             <div class="grid gutter-s" data-layout="thirds">
               {% asyncEach item in itemList.slice(0, count) %}
                 {% set showTags = false %}
+                {% set showDate = false %}
                 {% set headingLevel = "h3" %}
-                {% set definedDate = item.date %}
                 {% include "partials/card-blog.njk" %}
               {% endeach %}
             </div>

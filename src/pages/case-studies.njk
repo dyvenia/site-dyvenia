@@ -1,0 +1,61 @@
+---
+title: Case studies
+description: Explore our success stories, which showcase how our approach to data platform engineering has helped businesses achieve greater scalability, efficiency, and reliability in their data operations.
+layout: modular
+permalink: case-studies/{% if pagination.pageNumber >=1 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}index.html
+bodyClass: insights
+footerSpace: mt-2xl
+pagination:
+  data: collections.allCaseStudies
+  size: 6
+sections:
+  - type: hero
+    internal_name: Hero
+    title: Case studies
+    subtitle: Explore our success stories, which showcase how our approach to data platform engineering has helped businesses achieve greater scalability, efficiency, and reliability in their data operations.
+    button_text: ''
+    button_target: ''
+    preset_image: ./src/assets/images/backgrounds/sfondi-dyvenia03.jpg
+    image: ''
+    image_alt: ''
+    video: null
+    appearance:
+      theme: background-accent
+      accent: neutral
+      align: center
+      height: default
+      background: teal-600
+      content_block: center
+      divider: divider/soft-invert
+      divider_class: small
+    region_space: xl-2xl
+  - type: form
+    internal_name: Newsletter
+    title: ''
+    appearance:
+      theme: background-accent
+      accent: default
+      align: left
+      width: content
+    intro: ''
+---
+
+<div class="wrapper flow">
+  <section class="feature mt-xl-2xl" aria-describedby="case-studies-section">
+    <h2 id="case-studies-section" class="visually-hidden">Case studies</h2>
+
+    <custom-masonry layout="50-50">
+      {% asyncEach item in pagination.items %}
+        {% set showDate = false %}
+        {% set showTags = false %}
+        {% include "partials/card-blog.njk" %}
+      {% endeach %}
+    </custom-masonry>
+  </section>
+
+  {% set collectionToPaginate = collections.allCaseStudies %}
+  {% set metaKey = "caseStudies" %}
+  {% if collectionToPaginate.length > pagination.size %}
+    {% include 'partials/pagination.njk' %}
+  {% endif %}
+</div>
