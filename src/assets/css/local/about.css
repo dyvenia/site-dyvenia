@@ -1,8 +1,0 @@
-.about main wrapper > * {
-  border-inline-end: 1px solid var(--color-bg-accent);
-}
-
-.about .grid {
-  --gutter: var(--space-s);
-  --grid-min-item-size: clamp(16rem, 28%, 25rem);
-}

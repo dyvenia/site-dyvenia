@@ -1,0 +1,57 @@
+.section-statement > .section {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-statement__headline {
+  max-inline-size: 58ch;
+}
+
+.text-left .section-statement__headline {
+  max-inline-size: 30ch;
+}
+
+.section-statement__eyebrow {
+  display: block;
+  font-size: var(--size-step-1);
+  opacity: 0.75;
+}
+
+.section-statement__support {
+  max-inline-size: 65ch;
+  opacity: 0.85;
+}
+
+.section-statement .section__inner.text-center .section-statement__headline,
+.section-statement .section__inner.text-center .section-statement__support {
+  margin-inline: auto;
+}
+
+.section-statement :is(strong, b) {
+  color: var(--section-accent, var(--color-teal));
+}
+
+.section-statement__decoration {
+  grid-column: content-start / full-end;
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-end: 0;
+  inline-size: clamp(30ch, 40vw, 35rem);
+  block-size: auto;
+  color: var(--section-accent, var(--color-teal));
+  opacity: 0.1;
+  translate: var(--space-2xl) calc(var(--space-xl) * -1);
+  pointer-events: none;
+}
+
+@media screen(md) {
+  .section-statement__decoration {
+    opacity: 0.3;
+  }
+}
+
+@media screen(safewide) {
+  .section-statement__decoration {
+    opacity: 1;
+  }
+}

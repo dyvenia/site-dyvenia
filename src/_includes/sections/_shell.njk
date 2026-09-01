@@ -1,0 +1,36 @@
+{# Shared appearance helpers for composable page sections.
+   Resolve nested appearance in each section:
+     {% set a = s.appearance or {} %}
+     {% set theme = a.theme or s.theme or "background-default" %}
+     {% set accent = a.accent if a.accent is defined else s.accent %}
+     {% set align = a.align if a.align is defined else s.align %}
+     {% set width = a.width if a.width is defined else s.width %}
+   Theme paints via data-section-theme → themes.css onto `.section` (full-bleed).
+   Accent default = theme-fitting CTA (CSS); set accent to override. #}
+
+{% macro sectionWidthClass(width) -%}
+{%- if width == "full" -%}full
+{%- elif width == "feature" -%}feature
+{%- else -%}{%- endif -%}
+{%- endmacro %}
+
+{% macro sectionThemeAttr(theme) -%}
+data-section-theme="{{ theme or "background-default" }}"
+{%- endmacro %}
+
+{% macro sectionAlignClass(align) -%}
+{%- if align == "center" -%}text-center
+{%- elif align == "left" -%}text-left
+{%- else -%}{%- endif -%}
+{%- endmacro %}
+
+{# Omit attribute when default so themes.css section CTA tokens apply.
+   Explicit accent: neutral | teal | purple | navy #}
+{% macro sectionButtonAttr(accent) -%}
+{%- if accent and accent != "default" %}data-button-variant="{{ accent }}"{% endif -%}
+{%- endmacro %}
+
+{# Section-level accent for markers and other non-button accents. Omit when default. #}
+{% macro sectionAccentAttr(accent) -%}
+{%- if accent and accent != "default" %} data-section-accent="{{ accent }}"{% endif -%}
+{%- endmacro %}

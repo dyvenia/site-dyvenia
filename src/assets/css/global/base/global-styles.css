@@ -20,7 +20,7 @@ body {
   line-height: var(--leading-standard);
   color: var(--color-text);
   background-color: var(--color-bg);
-  accent-color: var(--color-blue);
+  accent-color: var(--color-teal);
 }
 
 body > * {
@@ -79,7 +79,7 @@ blockquote {
 
 blockquote::before {
   font-size: var(--size-step-5);
-  color: var(--color-blue);
+  color: var(--color-teal);
   position: absolute;
   content: '“';
   inset-inline-start: -0.2em;
@@ -95,7 +95,7 @@ blockquote > * + * {
 /* Form elements */
 input,
 textarea {
-  caret-color: var(--color-blue);
+  caret-color: var(--color-teal);
 }
 
 /* SVG */

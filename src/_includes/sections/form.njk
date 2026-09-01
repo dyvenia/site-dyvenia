@@ -1,0 +1,39 @@
+{% css "local" %}
+  {% include "css/form.css" %}
+{% endcss %}
+
+{% js "defer" %}
+  {% include "scripts/hubspot-submission.js" %}
+{% endjs %}
+{% from "sections/_shell.njk" import sectionWidthClass, sectionAlignClass, sectionThemeAttr, sectionAccentAttr %}
+
+{% set s = section %}
+{% set a = s.appearance or {} %}
+{% set theme = a.theme or s.theme or "background-default" %}
+{% set accent = a.accent if a.accent is defined else s.accent %}
+{% set align = a.align if a.align is defined else s.align %}
+{% set width = a.width if a.width is defined else s.width %}
+{% if width == "full" %}{% set width = "feature" %}{% endif %}
+{% set widthClass = sectionWidthClass(width or "feature") or "content" %}
+{% set alignClass = sectionAlignClass(align) %}
+{% set dropBlockSpacing = a.drop_block_spacing if a.drop_block_spacing is defined else s.drop_block_spacing %}
+
+<div
+  class="section-form | wrapper"
+  {{ sectionThemeAttr(theme) }}{{ sectionAccentAttr(accent) }}{% if s.id %}id="{{ s.id }}"{% endif %}
+>
+  <div class="full wrapper section">
+    <div class="{{ widthClass }} | section__inner{% if not dropBlockSpacing %}region{% endif %}">
+      {% if s.title or s.intro or s.content %}
+        <header class="section-form__header | flow prose {{ alignClass }} mb-l">
+          {% if s.title %}<h2>{{ s.title | markdownInline | safe }}</h2>{% endif %}
+          {% if s.intro or s.content %}
+            <div>{{ (s.intro or s.content) | markdownFormat | safe }}</div>
+          {% endif %}
+        </header>
+      {% endif %}
+      {% set formLayout = "section" %}
+      {% include "partials/hubspot-form.njk" %}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+---
+title: Sizes
+permalink: /styleguide/sizes/index.html
+---
+
+<div class="styleguide-page | wrapper region flow">
+  <header class="intro flow">
+    <h1>{{ title }}</h1>
+    <p>
+      {{ designTokens.textSizes.description }}. Fluid type and space scales were
+      <a href="{{ designTokens.textSizes.meta.scaleGenerator }}">generated with Utopia</a>.
+    </p>
+  </header>
+
+  <section class="sizes | flow">
+    <table class="sizes flow flow-space-m">
+      {%- for size in designTokens.textSizes.items -%}
+        <tr>
+          <th scope="row">
+            <h2>{{ size.name }}</h2>
+          </th>
+          <td>
+            <span class="flow">
+              <p>{{ size.min }}px to {{ size.max }}px</p>
+              <code>var(--size-{{ size.name | slugify }})</code>
+            </span>
+          </td>
+          <td class="sizes-example">
+            <p style="font-size:var(--size-{{ size.name | slugify }})">{{ size.name }}</p>
+          </td>
+        </tr>
+      {%- endfor -%}
+    </table>
+  </section>
+</div>

@@ -1,0 +1,55 @@
+{# section.type: text — expects `section` in scope
+   Shell: .section-{type}.wrapper[data-section-theme] > .full.wrapper.section > .section__inner #}
+{% css "local" %}
+  {% include "css/sections/text.css" %}
+{% endcss %}
+{% from "sections/_shell.njk" import sectionWidthClass, sectionAlignClass, sectionThemeAttr, sectionAccentAttr %}
+
+{% set s = section %}
+{% set a = s.appearance or {} %}
+{% set theme = a.theme or s.theme or "background-default" %}
+{% set accent = a.accent if a.accent is defined else s.accent %}
+{% set align = a.align if a.align is defined else s.align %}
+{% set width = a.width if a.width is defined else s.width %}
+{% set titleSize = a.title_size or s.title_size or "default" %}
+{% set bodySize = a.body_size or s.body_size or "default" %}
+{% set widthClass = sectionWidthClass(width or "feature") or "feature" %}
+{% if widthClass == "full" %}{% set widthClass = "feature" %}{% endif %}
+{% set alignClass = sectionAlignClass(align) %}
+{% set titleSizeClass = "text-step-2" if titleSize == "small" else "" %}
+{% set bodySizeClass = "text-step-1" if bodySize == "large" else "text-step-0" %}
+
+<div
+  class="section-text | wrapper"
+  {{ sectionThemeAttr(theme) }}{{ sectionAccentAttr(accent) }}{% if s.decoration %}data-decoration="{{ s.decoration }}"{% endif %}{% if s.id %}id="{{ s.id }}"{% endif %}
+>
+  <div class="full wrapper section">
+    {% if s.decoration %}
+      {% svg s.decoration, "", "section-text__decoration" %}
+    {% endif %}
+    <article class="{{ widthClass }} | section__inner region flow prose">
+      {% if s.title %}
+        <h2
+          class="section-text__title{% if titleSizeClass %}{{ titleSizeClass }}{% endif %} {% if alignClass %}{{ alignClass }}{% endif %}"
+        >
+          {{ s.title | markdownInline | safe }}
+        </h2>
+      {% endif %}
+
+      {% if s.content %}
+        <div
+          class="section-text__content flow {{ bodySizeClass }} {% if alignClass %}{{ alignClass }}{% endif %}"
+        >
+          {{ s.content | markdownFormat | safe }}
+        </div>
+      {% endif %}
+
+      {% if s.content_left or s.content_right %}
+        <div class="section-text__columns grid {{ bodySizeClass }}" data-layout="50-50">
+          <div>{% if s.content_left %}{{ s.content_left | markdownFormat | safe }}{% endif %}</div>
+          <div>{% if s.content_right %}{{ s.content_right | markdownFormat | safe }}{% endif %}</div>
+        </div>
+      {% endif %}
+    </article>
+  </div>
+</div>

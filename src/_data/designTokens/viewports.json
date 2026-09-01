@@ -6,5 +6,6 @@
   "navigation": 800,
   "sm": 670,
   "md": 1000,
-  "max": 1360
+  "max": 1360,
+  "safewide": 1800
 }

@@ -1,0 +1,63 @@
+/* section.type: services — stacked service rows + optional decoration */
+
+.section-services > .section {
+  position: relative;
+}
+
+.section-services .section-services__decoration {
+  block-size: auto;
+  color: var(--section-accent, var(--color-teal));
+  inline-size: clamp(10ch, 40vw, 30rem);
+  inset-block-start: var(--space-s);
+  inset-inline-end: var(--space-m);
+  max-inline-size: none;
+  pointer-events: none;
+  position: absolute;
+  grid-column: content-start / full-end;
+  opacity: 0.4;
+}
+
+.section-services__band {
+  z-index: 1;
+}
+
+.section-services__band h2 {
+  color: var(--section-text, var(--color-text));
+}
+
+.section-services__band h3 {
+  color: var(--section-accent, var(--color-teal));
+}
+
+.section-services__band h3 span {
+  display: block;
+  background: var(--section-accent, var(--color-teal));
+  color: var(--section-bg, var(--color-bg));
+  inline-size: fit-content;
+  border-radius: var(--border-radius-small);
+  padding: var(--space-4xs) var(--space-3xs);
+  margin-block-start: var(--space-3xs);
+}
+
+.section-services__band div > ul:first-child {
+  margin-block-start: 0;
+}
+
+.section-services__band .grid {
+  --gutter: var(--space-s);
+  --grid-min-item-size: clamp(9rem, 25%, 20rem);
+  background: color-mix(
+    in srgb,
+    var(--section-bg, var(--color-bg)) 88%,
+    var(--section-text, var(--color-text))
+  );
+  color: var(--section-text, var(--color-text));
+  border-radius: var(--border-radius-small);
+  border: 1px solid var(--color-bg-accent-2);
+  padding: var(--space-xs);
+  margin-block-start: var(--space-l);
+}
+
+.section-services__band .grid div {
+  grid-column: span 2;
+}

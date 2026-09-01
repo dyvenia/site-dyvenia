@@ -1,0 +1,6 @@
+{
+  "layout": "modular",
+  "tags": "pages",
+  "permalink": "/solutions/{{ page.fileSlug }}/index.html",
+  "bodyClass": "solutions"
+}

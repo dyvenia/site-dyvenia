@@ -54,6 +54,13 @@ export const blog = {
   paginationNext: 'Next',
   paginationNumbers: true
 };
+export const caseStudies = {
+  paginationLabel: 'Case studies',
+  paginationPage: 'Page',
+  paginationPrevious: 'Previous',
+  paginationNext: 'Next',
+  paginationNumbers: true
+};
 export const details = {
   aria: 'section controls',
   expand: 'expand all',

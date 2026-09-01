@@ -1,0 +1,91 @@
+.section-list__header.text-center,
+.section-list .section__inner > .text-center.section-list__header {
+  text-align: center;
+  margin-inline: auto;
+}
+
+.section-list__header.text-center :is(p, .section-list__intro) {
+  margin-inline: auto;
+}
+
+.section-list__items,
+.section-list__item-body {
+  text-align: start;
+}
+
+.section-list__header--highlight {
+  --gutter: var(--space-xs);
+}
+
+.section-list__header--highlight .section-list__intro p {
+  font-size: var(--size-step-1);
+  font-weight: var(--font-medium);
+}
+
+@media screen(sm) {
+  .section-list__header--highlight .section-list__intro p {
+    max-inline-size: 50%;
+    margin-inline-start: calc(50% + var(--gutter) / 2);
+  }
+}
+
+.section-list__items {
+  --grid-min-item-size: clamp(16rem, 50vw, 25rem);
+  --gutter: var(--space-xs);
+
+  list-style: none;
+  padding: 0;
+}
+
+.section-list__definition {
+  --gutter: var(--space-xs);
+}
+
+.section-list__item {
+  display: flex;
+  gap: var(--space-xs);
+  align-items: flex-start;
+}
+
+.section-list__item--bordered {
+  border: 2px solid var(--color-bg-accent-3, var(--color-gray-600));
+  padding: var(--space-xs);
+  border-radius: var(--border-radius-small);
+}
+
+.section-list__check {
+  flex-shrink: 0;
+  color: var(--section-accent, var(--color-teal));
+  font-size: var(--size-step-1);
+  margin-block-start: 0.15em;
+}
+
+.section-list__item-body {
+  min-inline-size: 0;
+}
+
+.section-list__item-body :is(p) {
+  margin-block: 0;
+}
+
+/* definition: bold accent title; default size for title + content */
+.section-list[data-list-variant='definition'] .section-list__item-title {
+  font-weight: var(--font-bold, 700);
+  color: var(--section-accent, var(--color-teal));
+}
+
+.section-list[data-list-variant='definition'] .section-list__item-content {
+  margin: 0;
+}
+
+/* stack: title + content normal weight/color/size, stacked */
+.section-list[data-list-variant='stack'] .section-list__item-title,
+.section-list[data-list-variant='stack'] .section-list__item-content {
+  font-weight: inherit;
+  color: inherit;
+  font-size: inherit;
+}
+
+.section-list[data-list-variant='definition'][data-list-bordered='false'] .section-list__item {
+  margin-block-start: var(--space-s);
+}

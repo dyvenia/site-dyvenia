@@ -3,7 +3,7 @@
 }
 
 .faq .prose li::marker {
-  color: var(--color-purple);
+  color: var(--section-accent, var(--color-purple));
   content: '';
 }
 
@@ -13,6 +13,6 @@
 }
 
 .faq .prose li li::marker {
-  color: var(--color-purple);
+  color: var(--section-accent, var(--color-purple));
   content: '- ';
 }

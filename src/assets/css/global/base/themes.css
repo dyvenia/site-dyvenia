@@ -1,0 +1,345 @@
+/* Section theme recipes + contrast contract.
+   Named by surface role (background-default / background-accent track site bg tokens).
+   Site mode (root data-theme / prefers-color-scheme) remaps soft bands;
+   gray-dark, teal-dark + navy stay dark with light text. */
+
+/* -------------------- recipe tokens (site mode) -------------------- */
+
+:root,
+:root[data-theme='light'] {
+  --theme-background-default-bg: var(--color-bg);
+  --theme-background-default-text: var(--color-text);
+  --theme-background-default-text-muted: var(--color-text-accent);
+
+  --theme-background-accent-bg: var(--color-bg-accent);
+  --theme-background-accent-text: var(--color-text);
+  --theme-background-accent-text-muted: var(--color-text-accent);
+
+  --theme-gray-dark-bg: var(--color-gray-900);
+  --theme-gray-dark-text: var(--color-gray-100);
+  --theme-gray-dark-text-muted: var(--color-gray-200);
+
+  --theme-teal-bg: var(--color-teal-100);
+  --theme-teal-text: var(--color-gray-900);
+  --theme-teal-text-muted: var(--color-gray-800);
+
+  /* Brand teal surface — fixed in light + dark (former blue / blue-accent) */
+  --theme-teal-dark-bg: var(--color-teal-800);
+  --theme-teal-dark-text: var(--color-gray-100);
+  --theme-teal-dark-text-muted: var(--color-gray-200);
+
+  --theme-purple-bg: var(--color-purple-100);
+  --theme-purple-text: var(--color-gray-900);
+  --theme-purple-text-muted: var(--color-gray-800);
+
+  --theme-navy-bg: var(--color-navy);
+  --theme-navy-text: var(--color-gray-100);
+  --theme-navy-text-muted: var(--color-gray-200);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Soft brand bands collapse toward dark greys; bg themes follow --color-bg* from variables.css */
+    --theme-gray-dark-bg: var(--color-gray-900);
+    --theme-gray-dark-text: var(--color-gray-100);
+    --theme-gray-dark-text-muted: var(--color-gray-200);
+
+    --theme-teal-bg: var(--color-gray-900);
+    --theme-teal-text: var(--color-gray-100);
+    --theme-teal-text-muted: var(--color-gray-200);
+
+    --theme-purple-bg: var(--color-gray-900);
+    --theme-purple-text: var(--color-gray-100);
+    --theme-purple-text-muted: var(--color-gray-200);
+
+    --theme-navy-bg: var(--color-navy-dark);
+    --theme-navy-text: var(--color-gray-100);
+    --theme-navy-text-muted: var(--color-gray-200);
+  }
+}
+
+:root[data-theme='dark'] {
+  --theme-gray-dark-bg: var(--color-gray-900);
+  --theme-gray-dark-text: var(--color-gray-100);
+  --theme-gray-dark-text-muted: var(--color-gray-200);
+
+  --theme-teal-bg: var(--color-gray-900);
+  --theme-teal-text: var(--color-gray-100);
+  --theme-teal-text-muted: var(--color-gray-200);
+
+  --theme-purple-bg: var(--color-gray-900);
+  --theme-purple-text: var(--color-gray-100);
+  --theme-purple-text-muted: var(--color-gray-200);
+
+  --theme-navy-bg: var(--color-navy-dark);
+  --theme-navy-text: var(--color-gray-100);
+  --theme-navy-text-muted: var(--color-gray-200);
+}
+
+/* -------------------- section contract -------------------- */
+
+[data-section-theme] {
+  --spot-color: var(--section-bg);
+  /* Remap common surface tokens so cards, borders, forms, details follow the section */
+  --color-bg: var(--section-bg);
+  --color-bg-accent: color-mix(in srgb, var(--section-text) 12%, var(--section-bg));
+  --color-bg-accent-2: color-mix(in srgb, var(--section-text) 20%, var(--section-bg));
+  --color-bg-accent-3: color-mix(in srgb, var(--section-text) 30%, var(--section-bg));
+  --color-text: var(--section-text);
+  --color-text-accent: var(--section-text-muted);
+  --section-accent: var(--color-teal);
+  color: var(--section-text);
+}
+
+[data-section-theme='background-default'] {
+  --section-bg: var(--theme-background-default-bg);
+  --section-text: var(--theme-background-default-text);
+  --section-text-muted: var(--theme-background-default-text-muted);
+  --section-cta-bg: var(--color-gray-900);
+  --section-cta-color: var(--color-gray-100);
+  --section-cta-hover-bg: var(--color-gray-800);
+}
+
+[data-section-theme='background-accent'] {
+  --section-bg: var(--theme-background-accent-bg);
+  --section-text: var(--theme-background-accent-text);
+  --section-text-muted: var(--theme-background-accent-text-muted);
+  --section-cta-bg: var(--color-gray-900);
+  --section-cta-color: var(--color-gray-100);
+  --section-cta-hover-bg: var(--color-gray-800);
+}
+
+[data-section-theme='gray-dark'] {
+  --section-bg: var(--theme-gray-dark-bg);
+  --section-text: var(--theme-gray-dark-text);
+  --section-text-muted: var(--theme-gray-dark-text-muted);
+  --section-cta-bg: var(--color-gray-100);
+  --section-cta-color: var(--color-gray-900);
+  --section-cta-hover-bg: var(--color-gray-200);
+}
+
+[data-section-theme='teal'] {
+  --section-bg: var(--theme-teal-bg);
+  --section-text: var(--theme-teal-text);
+  --section-text-muted: var(--theme-teal-text-muted);
+  --section-cta-bg: var(--color-teal);
+  --section-cta-color: var(--color-teal-100);
+  --section-cta-hover-bg: var(--color-teal-600);
+}
+
+[data-section-theme='teal-dark'] {
+  --section-bg: var(--theme-teal-dark-bg);
+  --section-text: var(--theme-teal-dark-text);
+  --section-text-muted: var(--theme-teal-dark-text-muted);
+  --section-accent: var(--color-teal-100);
+  --section-cta-bg: var(--color-gray-100);
+  --section-cta-color: var(--color-gray-900);
+  --section-cta-hover-bg: var(--color-gray-200);
+}
+
+[data-section-theme='purple'] {
+  --section-bg: var(--theme-purple-bg);
+  --section-text: var(--theme-purple-text);
+  --section-text-muted: var(--theme-purple-text-muted);
+  /* Brand teal CTA on purple band (same default as teal theme) */
+  --section-cta-bg: var(--color-teal);
+  --section-cta-color: var(--color-teal-100);
+  --section-cta-hover-bg: var(--color-teal-600);
+}
+
+[data-section-theme='navy'] {
+  --section-bg: var(--theme-navy-bg);
+  --section-text: var(--theme-navy-text);
+  --section-text-muted: var(--theme-navy-text-muted);
+  --section-cta-bg: var(--color-navy);
+  --section-cta-color: var(--color-light);
+  --section-cta-hover-bg: color-mix(in oklab, var(--color-navy) 85%, white);
+}
+
+/* Accent override — CTA via button variant; markers/checklist via --section-accent */
+[data-section-accent='teal'] {
+  --section-accent: var(--color-teal);
+}
+
+[data-section-accent='purple'] {
+  --section-accent: var(--color-purple);
+}
+
+[data-section-accent='navy'] {
+  --section-accent: var(--color-navy);
+}
+
+[data-section-accent='neutral'] {
+  --section-accent: var(--color-gray-900);
+}
+
+[data-section-theme='gray-dark'][data-section-accent='neutral'],
+[data-section-theme='teal-dark'][data-section-accent='neutral'],
+[data-section-theme='navy'][data-section-accent='neutral'] {
+  --section-accent: var(--color-gray-100);
+}
+
+/* Tab step scales — default accent = teal; override via data-section-accent on .section-tabs */
+.section-tabs {
+  --color-scale-1: var(--color-teal-500);
+  --color-scale-2: var(--color-teal-600);
+  --color-scale-3: var(--color-teal-700);
+  --color-scale-4: var(--color-teal-800);
+  --color-scale-contrast: var(--color-teal-100);
+}
+
+.section-tabs[data-section-accent='teal'] {
+  --color-scale-1: var(--color-teal-500);
+  --color-scale-2: var(--color-teal-600);
+  --color-scale-3: var(--color-teal-700);
+  --color-scale-4: var(--color-teal-800);
+  --color-scale-contrast: var(--color-teal-100);
+}
+
+.section-tabs[data-section-accent='purple'] {
+  --color-scale-1: var(--color-purple-500);
+  --color-scale-2: var(--color-purple-600);
+  --color-scale-3: var(--color-purple-700);
+  --color-scale-4: var(--color-purple-800);
+  --color-scale-contrast: var(--color-purple-100);
+}
+
+.section-tabs[data-section-accent='navy'] {
+  --color-scale-1: var(--color-navy-500);
+  --color-scale-2: var(--color-navy-600);
+  --color-scale-3: var(--color-navy-700);
+  --color-scale-4: var(--color-navy-800);
+  --color-scale-contrast: var(--color-navy-100);
+}
+
+.section-tabs[data-section-accent='neutral'] {
+  --color-scale-1: var(--color-gray-500);
+  --color-scale-2: var(--color-gray-600);
+  --color-scale-3: var(--color-gray-700);
+  --color-scale-4: var(--color-gray-800);
+  --color-scale-contrast: var(--color-gray-100);
+}
+
+@media (prefers-color-scheme: dark) {
+  .section-tabs {
+    --color-scale-1: var(--color-teal-200);
+    --color-scale-2: var(--color-teal-300);
+    --color-scale-3: var(--color-teal-400);
+    --color-scale-4: var(--color-teal-500);
+    --color-scale-contrast: var(--color-teal-900);
+  }
+
+  .section-tabs[data-section-accent='teal'] {
+    --color-scale-1: var(--color-teal-200);
+    --color-scale-2: var(--color-teal-300);
+    --color-scale-3: var(--color-teal-400);
+    --color-scale-4: var(--color-teal-500);
+    --color-scale-contrast: var(--color-teal-900);
+  }
+
+  .section-tabs[data-section-accent='purple'] {
+    --color-scale-1: var(--color-purple-200);
+    --color-scale-2: var(--color-purple-300);
+    --color-scale-3: var(--color-purple-400);
+    --color-scale-4: var(--color-purple-500);
+    --color-scale-contrast: var(--color-purple-900);
+  }
+
+  .section-tabs[data-section-accent='navy'] {
+    --color-scale-1: var(--color-navy-200);
+    --color-scale-2: var(--color-navy-300);
+    --color-scale-3: var(--color-navy-400);
+    --color-scale-4: var(--color-navy-500);
+    --color-scale-contrast: var(--color-navy-900);
+  }
+
+  .section-tabs[data-section-accent='neutral'] {
+    --color-scale-1: var(--color-gray-200);
+    --color-scale-2: var(--color-gray-300);
+    --color-scale-3: var(--color-gray-400);
+    --color-scale-4: var(--color-gray-500);
+    --color-scale-contrast: var(--color-gray-900);
+  }
+}
+
+:root[data-theme='dark'] .section-tabs {
+  --color-scale-1: var(--color-teal-200);
+  --color-scale-2: var(--color-teal-300);
+  --color-scale-3: var(--color-teal-400);
+  --color-scale-4: var(--color-teal-500);
+  --color-scale-contrast: var(--color-teal-900);
+}
+
+:root[data-theme='dark'] .section-tabs[data-section-accent='teal'] {
+  --color-scale-1: var(--color-teal-200);
+  --color-scale-2: var(--color-teal-300);
+  --color-scale-3: var(--color-teal-400);
+  --color-scale-4: var(--color-teal-500);
+  --color-scale-contrast: var(--color-teal-900);
+}
+
+:root[data-theme='dark'] .section-tabs[data-section-accent='purple'] {
+  --color-scale-1: var(--color-purple-200);
+  --color-scale-2: var(--color-purple-300);
+  --color-scale-3: var(--color-purple-400);
+  --color-scale-4: var(--color-purple-500);
+  --color-scale-contrast: var(--color-purple-900);
+}
+
+:root[data-theme='dark'] .section-tabs[data-section-accent='navy'] {
+  --color-scale-1: var(--color-navy-200);
+  --color-scale-2: var(--color-navy-300);
+  --color-scale-3: var(--color-navy-400);
+  --color-scale-4: var(--color-navy-500);
+  --color-scale-contrast: var(--color-navy-900);
+}
+
+:root[data-theme='dark'] .section-tabs[data-section-accent='neutral'] {
+  --color-scale-1: var(--color-gray-200);
+  --color-scale-2: var(--color-gray-300);
+  --color-scale-3: var(--color-gray-400);
+  --color-scale-4: var(--color-gray-500);
+  --color-scale-contrast: var(--color-gray-900);
+}
+
+[data-section-theme='gray-dark'] img,
+[data-section-theme='teal-dark'] img,
+[data-section-theme='navy'] img {
+  filter: brightness(0.9);
+}
+
+/* -------------------- site header over first dark-surface section -------------------- */
+
+@media screen(navigation) {
+  /* Dark section themes OR dark hero media washes (theme is peek/next band, not surface) */
+  .site-header:has(+ main > [data-section-theme='gray-dark']:first-child),
+  .site-header:has(+ main > [data-section-theme='teal-dark']:first-child),
+  .site-header:has(+ main > [data-section-theme='navy']:first-child),
+  .site-header:has(+ main > .wrapper > [data-section-theme='gray-dark']:first-child),
+  .site-header:has(+ main > .wrapper > [data-section-theme='teal-dark']:first-child),
+  .site-header:has(+ main > .wrapper > [data-section-theme='navy']:first-child),
+  .site-header:has(+ main > .custom-hero[data-hero-background='teal-800']:first-child),
+  .site-header:has(+ main > .custom-hero[data-hero-background='teal-600']:first-child),
+  .site-header:has(+ main > .custom-hero[data-hero-background='purple-800']:first-child),
+  .site-header:has(+ main > .custom-hero[data-hero-background='navy-dark']:first-child),
+  .site-header:has(+ main > .custom-hero[data-hero-background='navy']:first-child),
+  .site-header:has(+ main > .custom-hero[data-hero-background='gray-900']:first-child),
+  .site-header:has(+ main > .custom-hero[data-hero-background='gray-800']:first-child) {
+    --color-text: var(--color-gray-100);
+    --color-text-accent: var(--color-gray-200);
+    --color-bg: var(--color-dark);
+  }
+}
+
+.site-header:has(+ main > [data-section-theme='gray-dark']:first-child) .search-toggle svg,
+.site-header:has(+ main > [data-section-theme='teal-dark']:first-child) .search-toggle svg,
+.site-header:has(+ main > [data-section-theme='navy']:first-child) .search-toggle svg,
+.site-header:has(+ main > .custom-hero[data-hero-background='teal-800']:first-child) .search-toggle svg,
+.site-header:has(+ main > .custom-hero[data-hero-background='teal-600']:first-child) .search-toggle svg,
+.site-header:has(+ main > .custom-hero[data-hero-background='purple-800']:first-child) .search-toggle svg,
+.site-header:has(+ main > .custom-hero[data-hero-background='navy-dark']:first-child) .search-toggle svg,
+.site-header:has(+ main > .custom-hero[data-hero-background='navy']:first-child) .search-toggle svg,
+.site-header:has(+ main > .custom-hero[data-hero-background='gray-900']:first-child) .search-toggle svg,
+.site-header:has(+ main > .custom-hero[data-hero-background='gray-800']:first-child) .search-toggle svg {
+  --color-text: var(--color-gray-100);
+}

@@ -1,0 +1,39 @@
+---
+title: Spacing
+permalink: /styleguide/spacing/index.html
+---
+
+<div class="styleguide-page | wrapper region flow">
+  <header class="intro flow">
+    <h1>{{ title }}</h1>
+    <p>
+      {{ designTokens.spacing.description }}<br />
+      Fluid type and space scales were
+      <a href="{{ designTokens.spacing.meta.scaleGenerator }}">generated with Utopia</a>.
+    </p>
+  </header>
+
+  <section class="spacing | flow">
+    <table class="spacing flow flow-space-m">
+      {%- for space in designTokens.spacing.items -%}
+        <tr>
+          <th scope="row">
+            <h2>{{ space.name }}</h2>
+          </th>
+          <td>
+            <span class="flow">
+              <p>{{ space.min }}px to {{ space.max }}px</p>
+              <code>var(--space-{{ space.name | slugify }})</code>
+            </span>
+          </td>
+          <td>
+            <div
+              class="space"
+              style="height:var(--space-{{ space.name | slugify }}); width:var(--space-{{ space.name | slugify }});"
+            ></div>
+          </td>
+        </tr>
+      {%- endfor -%}
+    </table>
+  </section>
+</div>
