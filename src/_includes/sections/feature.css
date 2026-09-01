@@ -14,61 +14,9 @@
   display: block;
 }
 
-.section-feature__media figcaption,
-.section-feature__caption {
+.section-feature__media figcaption {
   font-size: var(--size-step-min-1);
   margin-block-start: var(--space-2xs);
-}
-
-.section-feature[data-feature-lightbox] .section-feature__media .gallery {
-  display: block;
-}
-
-.section-feature[data-feature-lightbox] .gallery dialog {
-  border-radius: var(--border-radius-small);
-  inset: revert;
-}
-
-.section-feature[data-feature-lightbox] .gallery dialog::backdrop {
-  background: var(--color-dark);
-  opacity: 0.9;
-  filter: brightness(50%);
-}
-
-.section-feature[data-feature-lightbox] .gallery dialog img {
-  aspect-ratio: auto;
-  max-block-size: 70vh;
-  max-inline-size: min(95vw, 67rem);
-  inline-size: auto;
-  object-fit: contain;
-}
-
-.section-feature[data-feature-lightbox] .gallery dialog figcaption {
-  color: var(--color-light);
-  font-size: var(--size-step-min-1);
-  margin-block-start: var(--space-2xs);
-}
-
-.section-feature[data-feature-lightbox] .gallery dialog + button {
-  --flow-space: 0;
-  display: block;
-  inline-size: 100%;
-  padding: 0;
-  border: 0;
-  background: none;
-  cursor: pointer;
-  text-align: inherit;
-  font: inherit;
-}
-
-is-land:not(:defined) .section-feature[data-feature-lightbox] .gallery dialog + button {
-  cursor: default;
-}
-
-.section-feature[data-feature-lightbox] .gallery dialog + button :is(img, picture, .image) {
-  inline-size: 100%;
-  block-size: auto;
-  display: block;
 }
 
 /* bottom: always stacked copy above media */
