@@ -6,6 +6,7 @@
 @import 'tailwindcss/components' layer(tailwindComponents);
 
 @import 'base/variables.css' layer(variables);
+@import 'base/themes.css' layer(variables);
 @import 'base/global-styles.css' layer(global);
 
 @import-glob 'compositions/*.css' layer(compositions);

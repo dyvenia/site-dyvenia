@@ -1,10 +1,10 @@
 {% set heroData = customHero.hero or hero %}
 
-{% set heroTheme = customHero.theme or "dark" %}
-{% set heroDivider = customHero.divider if customHero.divider is defined else "divider/soft-top" %}
+{% set heroTheme = customHero.theme or "gray-dark" %}
+{% set heroDivider = customHero.divider if customHero.divider is defined else "divider/soft" %}
 {% set heroDividerClass = customHero.divider_class or "seperator" %}
 {% set heroHeight = customHero.height or heroData.height or "default" %}
-{% set heroBackground = customHero.background or heroData.background or "blue-800" %}
+{% set heroBackground = customHero.background or heroData.background or "teal-800" %}
 {% set heroInline = customHero.content_inline or "center" %}
 {% set heroBlock = customHero.content_block or "center" %}
 {% set heroRegionSpace = customHero.region_space or "xl" %}
@@ -53,7 +53,7 @@
 
   <div class="custom-hero__content | section__inner region region-space-{{ heroRegionSpace }}">
     <div class="wrapper flow">
-      <h1 class="fade-in-bottom{% if heroTheme == "dark" %}text-base-light{% endif %}">
+      <h1 class="fade-in-bottom">
         {{ heroData.title | markdownInline | safe }}
       </h1>
 

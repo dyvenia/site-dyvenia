@@ -7,11 +7,11 @@
   position: relative;
 }
 .logo svg {
-  color: var(--color-blue-500);
+  color: var(--color-teal-500);
   block-size: calc(var(--size-step-0) * 1.4);
 }
 
 .logo svg:last-of-type {
-  color: var(--color-blue);
+  color: var(--color-teal);
   block-size: var(--size-step-0);
 }

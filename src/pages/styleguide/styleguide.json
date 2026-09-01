@@ -1,0 +1,7 @@
+{
+  "layout": "styleguide",
+  "eleventyExcludeFromCollections": true,
+  "excludeFromSitemap": true,
+  "draft": true,
+  "tags": "styleguide"
+}

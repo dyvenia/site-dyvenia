@@ -14,7 +14,7 @@ is-land:not(:defined) .gallery dialog + button {
 }
 
 .gallery dialog::backdrop {
-  background-image: var(--gradient-stripes);
+  background: var(--color-dark);
   opacity: 0.9;
   filter: brightness(50%);
 }
@@ -27,4 +27,6 @@ is-land:not(:defined) .gallery dialog + button {
 
 .gallery dialog figcaption {
   color: var(--color-light);
+  font-size: var(--size-step-min-1);
+  margin-block-start: var(--space-2xs);
 }

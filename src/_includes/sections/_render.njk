@@ -1,0 +1,49 @@
+{# Renders `sections` array by type. Expects `sections` in scope
+   Use asyncEach + ifAsync + includes  #}
+{% asyncEach section in sections %}
+  {% ifAsync section.type == "hero" %}
+    {% include "sections/hero.njk" %}
+  {% endif %}
+  {% ifAsync section.type == "text" %}
+    {% include "sections/text.njk" %}
+  {% endif %}
+  {% ifAsync section.type == "statement" %}
+    {% include "sections/statement.njk" %}
+  {% endif %}
+  {% ifAsync section.type == "list" %}
+    {% include "sections/list.njk" %}
+  {% endif %}
+  {% ifAsync section.type == "process" %}
+    {% include "sections/process.njk" %}
+  {% endif %}
+  {% ifAsync section.type == "feature" %}
+    {% include "sections/feature.njk" %}
+  {% endif %}
+  {% ifAsync section.type == "accordion" %}
+    {% include "sections/accordion.njk" %}
+  {% endif %}
+  {% ifAsync section.type == "cta" %}
+    {% include "sections/cta.njk" %}
+  {% endif %}
+  {% ifAsync section.type == "posts" %}
+    {% include "sections/posts.njk" %}
+  {% endif %}
+  {% ifAsync section.type == "team" %}
+    {% include "sections/team.njk" %}
+  {% endif %}
+  {% ifAsync section.type == "form" %}
+    {% include "sections/form.njk" %}
+  {% endif %}
+  {% ifAsync section.type == "services" %}
+    {% include "sections/services.njk" %}
+  {% endif %}
+  {% ifAsync section.type == "tabs" %}
+    {% include "sections/tabs.njk" %}
+  {% endif %}
+  {% ifAsync section.type == "cases" %}
+    {% include "sections/cases.njk" %}
+  {% endif %}
+  {% ifAsync section.type == "gallery" %}
+    {% include "sections/gallery.njk" %}
+  {% endif %}
+{% endeach %}

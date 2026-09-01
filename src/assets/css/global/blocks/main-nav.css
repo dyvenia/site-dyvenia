@@ -88,7 +88,7 @@ body:has(.nav-drawer-toggle[aria-expanded='true']) {
   padding: var(--space-3xs);
   line-height: var(--leading-flat);
   border-radius: var(--border-radius-medium);
-  background: var(--color-blue);
+  background: var(--color-teal);
   color: var(--color-light);
 }
 
@@ -206,14 +206,14 @@ body:has(.nav-drawer-toggle[aria-expanded='true']) {
 /* last child */
 
 .mainnav > ul:first-of-type > li:last-child a {
-  --nav-item-background: var(--color-blue);
+  --nav-item-background: var(--color-teal);
   --nav-item-text-color: var(--color-light);
   --nav-item-padding: 0.2em var(--space-2xs);
 }
 
 .mainnav > ul:first-of-type > li:last-child a:is(:hover, :focus),
 .mainnav > ul:first-of-type > li:last-child [aria-current='page'] {
-  --nav-item-background: var(--color-blue-600);
+  --nav-item-background: var(--color-teal-600);
   --nav-item-decoration-color: transparent;
   --nav-item-text-color: var(--color-text);
 }

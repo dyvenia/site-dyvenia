@@ -1,0 +1,52 @@
+
+{% css "local" %}
+  {% include "css/gallery.css" %}
+{% endcss %}
+
+{% js "defer" %}
+  {% include "scripts/dialog.js" %}
+{% endjs %}
+
+{% from "sections/_shell.njk" import sectionThemeAttr, sectionAccentAttr %}
+
+{% set s = section %}
+{% set a = s.appearance or {} %}
+{% set theme = a.theme or s.theme or "background-default" %}
+{% set accent = a.accent if a.accent is defined else s.accent %}
+{% set align = a.align if a.align is defined else s.align %}
+{% set width = a.width if a.width is defined else s.width %}
+{% if width == "full" or not width %}
+  {% set width = "feature" %}
+{% endif %}
+{% set widthClass = "feature" if width == "feature" else "" %}
+{% set titleAlignClass = "text-center" if align == "center" else "" %}
+{% set gallery = s.items or s.gallery or [] %}
+
+<div class="section-gallery | wrapper" {{ sectionThemeAttr(theme) }}{{ sectionAccentAttr(accent) }}{% if s.id %} id="{{ s.id }}"{% endif %}>
+  <div class="full wrapper section">
+    <div class="{{ widthClass }} | section__inner region">
+      {% if s.title or s.intro or s.content %}
+        <header class="flow prose">
+          {% if s.title %}<h2{% if titleAlignClass %} class="{{ titleAlignClass }}"{% endif %}>{{ s.title | markdownInline | safe }}</h2>{% endif %}
+          {% if s.intro or s.content %}
+            <div>{{ (s.intro or s.content) | markdownFormat | safe }}</div>
+          {% endif %}
+        </header>
+      {% endif %}
+
+      {% if gallery and gallery.length %}
+        <is-land on:idle>
+          <div class="gallery | grid mt-l-xl" role="list" style="--grid-min-item-size: clamp(16rem, 50vw, 20rem)">
+            {%- for item in gallery -%}
+              <dialog class="flow modal{{ loop.index }}">
+                <button type="button" class="button" autofocus>Close</button>
+                {%- image item.image, item.alt or "", item.caption -%}
+              </dialog>
+              <button type="button" data-index="{{ loop.index }}">{%- image item.image, item.alt or "" -%}</button>
+            {%- endfor -%}
+          </div>
+        </is-land>
+      {% endif %}
+    </div>
+  </div>
+</div>

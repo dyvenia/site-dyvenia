@@ -75,40 +75,76 @@
       "value": "#170c35"
     },
     {
-      "name": "Blue 100",
+      "name": "Teal 100",
       "value": "#e4f6f8"
     },
     {
-      "name": "Blue 200",
+      "name": "Teal 200",
       "value": "#c9f4fa"
     },
     {
-      "name": "Blue 300",
+      "name": "Teal 300",
       "value": "#92e0ea"
     },
     {
-      "name": "Blue 400",
+      "name": "Teal 400",
       "value": "#61beca"
     },
     {
-      "name": "Blue 500",
+      "name": "Teal 500",
       "value": "#1e97a4"
     },
     {
-      "name": "Blue 600",
+      "name": "Teal 600",
       "value": "#00737f"
     },
     {
-      "name": "Blue 700",
+      "name": "Teal 700",
       "value": "#005b68"
     },
     {
-      "name": "Blue 800",
+      "name": "Teal 800",
       "value": "#004953"
     },
     {
-      "name": "Blue 900",
+      "name": "Teal 900",
       "value": "#001c22"
+    },
+    {
+      "name": "Navy 100",
+      "value": "#f0f0ff"
+    },
+    {
+      "name": "Navy 200",
+      "value": "#e6e7ff"
+    },
+    {
+      "name": "Navy 300",
+      "value": "#c9caff"
+    },
+    {
+      "name": "Navy 400",
+      "value": "#a6a5ec"
+    },
+    {
+      "name": "Navy 500",
+      "value": "#7e7cc7"
+    },
+    {
+      "name": "Navy 600",
+      "value": "#5c59a0"
+    },
+    {
+      "name": "Navy 700",
+      "value": "#474287"
+    },
+    {
+      "name": "Navy 800",
+      "value": "#38346d"
+    },
+    {
+      "name": "Navy 900",
+      "value": "#141030"
     },
     {
       "name": "Purple",
@@ -119,16 +155,20 @@
       "value": "#9488d4"
     },
     {
-      "name": "Blue",
+      "name": "Teal",
       "value": "#0E909D"
     },
     {
-      "name": "Blue Subdued",
+      "name": "Teal Subdued",
       "value": "#3b8d97"
     },
     {
       "name": "Navy",
       "value": "#1F1254"
+    },
+    {
+      "name": "Navy Subdued",
+      "value": "#1e184a"
     },
     {
       "name": "Navy Dark",

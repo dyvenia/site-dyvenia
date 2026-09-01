@@ -1,0 +1,12 @@
+.section-cases__header.text-center p {
+  margin-inline: auto;
+}
+
+.section-cases__cards,
+.section-cases custom-card {
+  text-align: start;
+}
+
+.section-cases > .wrapper > .full {
+  margin-inline: var(--gap);
+}

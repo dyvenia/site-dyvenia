@@ -1,0 +1,82 @@
+
+{% css "local" %}
+  {% include "css/sections/list.css" %}
+{% endcss %}
+
+{% from "sections/_shell.njk" import sectionWidthClass, sectionAlignClass, sectionThemeAttr, sectionAccentAttr %}
+
+{% set s = section %}
+{% set a = s.appearance or {} %}
+{% set theme = a.theme or s.theme or "background-default" %}
+{% set accent = a.accent if a.accent is defined else s.accent %}
+{% set align = a.align if a.align is defined else s.align %}
+{% set width = a.width if a.width is defined else s.width %}
+{% set rawVariant = a.variant or s.variant or "definition" %}
+{% set variant = "stack" if rawVariant == "checklist" else rawVariant %}
+{% set widthClass = sectionWidthClass(width or "feature") or "feature" %}
+{% if widthClass == "full" %}{% set widthClass = "feature" %}{% endif %}
+{% set alignClass = sectionAlignClass(align) %}
+{% set intro = s.intro or s.content %}
+{# Defaults: stack (ex-checklist) on; definition off unless set #}
+{% if a.checks is defined %}
+  {% set showChecks = a.checks %}
+{% else %}
+  {% set showChecks = variant == "stack" %}
+{% endif %}
+{% if a.bordered is defined %}
+  {% set bordered = a.bordered %}
+{% else %}
+  {% set bordered = variant == "stack" %}
+{% endif %}
+{% set highlightHeader = a.highlight_header if a.highlight_header is defined else s.highlight_header or false %}
+
+<div class="section-list | wrapper" {{ sectionThemeAttr(theme) }}{{ sectionAccentAttr(accent) }} data-list-variant="{{ variant }}" data-list-checks="{{ "true" if showChecks else "false" }}" data-list-bordered="{{ "true" if bordered else "false" }}" data-list-highlight-header="{{ "true" if highlightHeader else "false" }}"{% if s.id %} id="{{ s.id }}"{% endif %}>
+  <div class="full wrapper section">
+    <div class="{{ widthClass }} section__inner region">
+      {% if s.title or intro %}
+        <header class="section-list__header | flow prose {{ alignClass }}{% if highlightHeader %} section-list__header--highlight{% endif %}">
+          {% if s.title %}<h2{% if highlightHeader %} class="heading-line"{% endif %}>{{ s.title | markdownInline | safe }}</h2>{% endif %}
+          {% if intro %}
+            <div class="section-list__intro">{{ intro | markdownFormat | safe }}</div>
+          {% endif %}
+        </header>
+      {% endif %}
+
+      {% if variant == "stack" %}
+        <ul class="section-list__items | grid mt-l" data-layout="50-50" role="list">
+          {% for item in s.items %}
+            <li class="section-list__item{% if bordered %} section-list__item--bordered{% endif %}">
+              {% if showChecks %}
+                {% svg "misc/checkmark", "", "section-list__check" %}
+              {% endif %}
+              <div class="section-list__item-body | flow flow-space-3xs">
+                {% if item is string %}
+                  <span class="section-list__item-title">{{ item }}</span>
+                {% else %}
+                  {% if item.title %}<span class="section-list__item-title">{{ item.title }}</span>{% endif %}
+                  {% if item.content %}<div class="section-list__item-content">{{ item.content | markdownFormat | safe }}</div>{% endif %}
+                {% endif %}
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <dl class="section-list__items section-list__definition | grid mt-xl" data-layout="50-50">
+          {% for item in s.items %}
+            <div class="section-list__item{% if bordered %} section-list__item--bordered{% endif %}">
+              {% if showChecks %}
+                {% svg "misc/checkmark", "", "section-list__check" %}
+              {% endif %}
+              <div class="section-list__item-body | flow flow-space-3xs">
+                <dt class="section-list__item-title">{{ item.title }}</dt>
+                {% if item.content %}
+                  <dd class="section-list__item-content">{{ item.content | markdownFormat | safe }}</dd>
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        </dl>
+      {% endif %}
+    </div>
+  </div>
+</div>
