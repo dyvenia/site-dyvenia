@@ -1,0 +1,9 @@
+.page :is(h2, h3, h4) {
+  --flow-space: var(--space-m);
+  font-size: var(--size-step-0);
+  font-weight: var(--font-bold);
+}
+
+.page .prose :where(h2 + *, h3 + *, h4 + *):not(figure) {
+  --flow-space: var(--space-3xs);
+}
