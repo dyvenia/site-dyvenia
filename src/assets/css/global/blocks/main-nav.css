@@ -92,11 +92,11 @@ body:has(.nav-drawer-toggle[aria-expanded='true']) {
   color: var(--color-light);
 }
 
-.mainnav span {
-  font-weight: var(--font-medium);
-  text-transform: uppercase;
-  font-family: var(--font-display);
-  font-size: var(--size-step-min-1);
+.mainnav .nav-sublist__button {
+  --button-text-transform: uppercase;
+  --button-font-weight: var(--font-medium);
+  --button-font-family: var(--font-display);
+  --button-font-size: var(--size-step-min-1);
 }
 
 .mainnav svg {
@@ -208,7 +208,7 @@ body:has(.nav-drawer-toggle[aria-expanded='true']) {
 .mainnav > ul:first-of-type > li:last-child a {
   --nav-item-background: var(--color-teal);
   --nav-item-text-color: var(--color-light);
-  --nav-item-padding: 0.2em var(--space-2xs);
+  --button-text-transform: none;
 }
 
 .mainnav > ul:first-of-type > li:last-child a:is(:hover, :focus),

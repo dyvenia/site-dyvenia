@@ -1,0 +1,53 @@
+.consent {
+  position: fixed;
+  inset-block-end: 0%;
+  inset-inline-start: 0%;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  padding: var(--space-s);
+  margin: var(--gap);
+  max-inline-size: min(95vw, 30rem);
+  font-size: var(--size-step-min-1);
+  border: 1px solid var(--color-bg-accent);
+  z-index: 10;
+}
+
+.consent.contain {
+  --margin: 0px;
+  overflow: auto;
+  max-inline-size: calc(100% - (var(--margin) * 2));
+  max-block-size: calc(100% - (var(--margin) * 2));
+}
+
+.consent .service-item {
+  padding-block: var(--space-2xs);
+  border-block-start: 1px solid var(--color-bg-accent-2);
+  border-radius: var(--button-radius-small);
+}
+
+/* .cluster sets display:flex and beats the UA [hidden] rule */
+.consent [data-consent-all-actions][hidden] {
+  display: none;
+}
+
+.consent .button[data-consent-state='accepted'] {
+  --button-bg: #2f9e44;
+  --button-border-color: #2f9e44;
+  --button-color: #fff;
+  --button-hover-bg: #2b8a3e;
+  --button-hover-border-color: #2b8a3e;
+  background: var(--button-bg);
+  color: var(--button-color);
+  border-color: var(--button-border-color);
+}
+
+.consent .button[data-consent-state='declined'] {
+  --button-bg: #e03131;
+  --button-border-color: #e03131;
+  --button-color: #fff;
+  --button-hover-bg: #c92a2a;
+  --button-hover-border-color: #c92a2a;
+  background: var(--button-bg);
+  color: var(--button-color);
+  border-color: var(--button-border-color);
+}

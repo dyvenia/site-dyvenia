@@ -54,5 +54,11 @@
     </main>
 
     {% include "partials/footer.njk" %}
+    {% include "partials/consent-banner.njk" %}
   </body>
 </html>
+
+{% js "defer" %}
+  {% include "scripts/consent.js" %}
+  {% include "scripts/book-call-click.js" %}
+{% endjs %}
