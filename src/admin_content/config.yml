@@ -88,74 +88,74 @@ collections:
                     dropdown_threshold: 0
                     hint: Stock image from backgrounds/. Custom upload below overrides this.
                     options:
-                    - label: — none —
-                      value: ''
-                    - label: jellyfish-hr.jpg
-                      value: ./src/assets/images/backgrounds/jellyfish-hr.jpg
-                    - label: sfondi-8-high.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-8-high.jpg
-                    - label: sfondi-dyvenia02.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia02.jpg
-                    - label: sfondi-dyvenia03.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia03.jpg
-                    - label: sfondi-dyvenia04.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia04.jpg
-                    - label: sfondi-dyvenia05.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia05.jpg
-                    - label: sfondi-dyvenia06.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia06.jpg
-                    - label: sfondi-dyvenia07.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia07.jpg
-                    - label: sfondi-dyvenia08.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia08.jpg
-                    - label: sfondi-dyvenia09.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia09.jpg
-                    - label: sfondi-dyvenia10.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia10.jpg
-                    - label: sfondi-dyvenia11.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia11.jpg
-                    - label: sfondi-dyvenia12.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia12.jpg
-                    - label: sfondi-dyvenia13.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia13.jpg
-                    - label: sfondi-dyvenia14.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia14.jpg
-                    - label: sfondi-dyvenia15.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia15.jpg
-                    - label: sfondi-dyvenia16.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia16.jpg
-                    - label: sfondi-dyvenia17.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia17.jpg
-                    - label: sfondi-dyvenia18.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia18.jpg
-                    - label: sfondi-dyvenia19.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia19.jpg
-                    - label: sfondi-dyvenia20.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia20.jpg
-                    - label: sfondi-dyvenia21.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia21.jpg
-                    - label: sfondi-dyvenia22.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia22.jpg
-                    - label: sfondi-dyvenia23.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia23.jpg
-                    - label: sfondi-dyvenia24.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia24.jpg
-                    - label: sfondi-dyvenia25.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia25.jpg
-                    - label: sfondi-dyvenia26.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia26.jpg
-                    - label: sfondi-dyvenia27.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia27.jpg
-                    - label: sfondi-dyvenia28.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia28.jpg
-                    - label: sfondi-dyvenia29.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia29.jpg
-                    - label: sfondi-dyvenia30.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia30.jpg
-                    - label: sfondi-dyvenia31.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia31.jpg
-                    - label: sfondi-dyvenia32.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia32.jpg
+                      - label: — none —
+                        value: ''
+                      - label: jellyfish-hr.jpg
+                        value: ./src/assets/images/backgrounds/jellyfish-hr.jpg
+                      - label: sfondi-8-high.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-8-high.jpg
+                      - label: sfondi-dyvenia02.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia02.jpg
+                      - label: sfondi-dyvenia03.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia03.jpg
+                      - label: sfondi-dyvenia04.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia04.jpg
+                      - label: sfondi-dyvenia05.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia05.jpg
+                      - label: sfondi-dyvenia06.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia06.jpg
+                      - label: sfondi-dyvenia07.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia07.jpg
+                      - label: sfondi-dyvenia08.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia08.jpg
+                      - label: sfondi-dyvenia09.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia09.jpg
+                      - label: sfondi-dyvenia10.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia10.jpg
+                      - label: sfondi-dyvenia11.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia11.jpg
+                      - label: sfondi-dyvenia12.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia12.jpg
+                      - label: sfondi-dyvenia13.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia13.jpg
+                      - label: sfondi-dyvenia14.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia14.jpg
+                      - label: sfondi-dyvenia15.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia15.jpg
+                      - label: sfondi-dyvenia16.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia16.jpg
+                      - label: sfondi-dyvenia17.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia17.jpg
+                      - label: sfondi-dyvenia18.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia18.jpg
+                      - label: sfondi-dyvenia19.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia19.jpg
+                      - label: sfondi-dyvenia20.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia20.jpg
+                      - label: sfondi-dyvenia21.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia21.jpg
+                      - label: sfondi-dyvenia22.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia22.jpg
+                      - label: sfondi-dyvenia23.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia23.jpg
+                      - label: sfondi-dyvenia24.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia24.jpg
+                      - label: sfondi-dyvenia25.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia25.jpg
+                      - label: sfondi-dyvenia26.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia26.jpg
+                      - label: sfondi-dyvenia27.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia27.jpg
+                      - label: sfondi-dyvenia28.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia28.jpg
+                      - label: sfondi-dyvenia29.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia29.jpg
+                      - label: sfondi-dyvenia30.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia30.jpg
+                      - label: sfondi-dyvenia31.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia31.jpg
+                      - label: sfondi-dyvenia32.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia32.jpg
                   - label: Image
                     name: image
                     widget: image
@@ -313,10 +313,10 @@ collections:
                         required: false
                         dropdown_threshold: 0
                         options:
-                        - label: default
-                          value: ''
-                        - label: small
-                          value: small
+                          - label: default
+                            value: ''
+                          - label: small
+                            value: small
                         default: teal
               - label: Text
                 name: text
@@ -1839,74 +1839,74 @@ collections:
                     dropdown_threshold: 0
                     hint: Stock image from backgrounds/. Custom upload below overrides this.
                     options:
-                    - label: — none —
-                      value: ''
-                    - label: jellyfish-hr.jpg
-                      value: ./src/assets/images/backgrounds/jellyfish-hr.jpg
-                    - label: sfondi-8-high.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-8-high.jpg
-                    - label: sfondi-dyvenia02.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia02.jpg
-                    - label: sfondi-dyvenia03.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia03.jpg
-                    - label: sfondi-dyvenia04.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia04.jpg
-                    - label: sfondi-dyvenia05.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia05.jpg
-                    - label: sfondi-dyvenia06.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia06.jpg
-                    - label: sfondi-dyvenia07.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia07.jpg
-                    - label: sfondi-dyvenia08.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia08.jpg
-                    - label: sfondi-dyvenia09.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia09.jpg
-                    - label: sfondi-dyvenia10.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia10.jpg
-                    - label: sfondi-dyvenia11.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia11.jpg
-                    - label: sfondi-dyvenia12.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia12.jpg
-                    - label: sfondi-dyvenia13.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia13.jpg
-                    - label: sfondi-dyvenia14.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia14.jpg
-                    - label: sfondi-dyvenia15.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia15.jpg
-                    - label: sfondi-dyvenia16.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia16.jpg
-                    - label: sfondi-dyvenia17.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia17.jpg
-                    - label: sfondi-dyvenia18.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia18.jpg
-                    - label: sfondi-dyvenia19.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia19.jpg
-                    - label: sfondi-dyvenia20.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia20.jpg
-                    - label: sfondi-dyvenia21.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia21.jpg
-                    - label: sfondi-dyvenia22.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia22.jpg
-                    - label: sfondi-dyvenia23.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia23.jpg
-                    - label: sfondi-dyvenia24.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia24.jpg
-                    - label: sfondi-dyvenia25.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia25.jpg
-                    - label: sfondi-dyvenia26.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia26.jpg
-                    - label: sfondi-dyvenia27.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia27.jpg
-                    - label: sfondi-dyvenia28.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia28.jpg
-                    - label: sfondi-dyvenia29.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia29.jpg
-                    - label: sfondi-dyvenia30.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia30.jpg
-                    - label: sfondi-dyvenia31.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia31.jpg
-                    - label: sfondi-dyvenia32.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia32.jpg
+                      - label: — none —
+                        value: ''
+                      - label: jellyfish-hr.jpg
+                        value: ./src/assets/images/backgrounds/jellyfish-hr.jpg
+                      - label: sfondi-8-high.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-8-high.jpg
+                      - label: sfondi-dyvenia02.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia02.jpg
+                      - label: sfondi-dyvenia03.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia03.jpg
+                      - label: sfondi-dyvenia04.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia04.jpg
+                      - label: sfondi-dyvenia05.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia05.jpg
+                      - label: sfondi-dyvenia06.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia06.jpg
+                      - label: sfondi-dyvenia07.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia07.jpg
+                      - label: sfondi-dyvenia08.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia08.jpg
+                      - label: sfondi-dyvenia09.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia09.jpg
+                      - label: sfondi-dyvenia10.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia10.jpg
+                      - label: sfondi-dyvenia11.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia11.jpg
+                      - label: sfondi-dyvenia12.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia12.jpg
+                      - label: sfondi-dyvenia13.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia13.jpg
+                      - label: sfondi-dyvenia14.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia14.jpg
+                      - label: sfondi-dyvenia15.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia15.jpg
+                      - label: sfondi-dyvenia16.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia16.jpg
+                      - label: sfondi-dyvenia17.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia17.jpg
+                      - label: sfondi-dyvenia18.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia18.jpg
+                      - label: sfondi-dyvenia19.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia19.jpg
+                      - label: sfondi-dyvenia20.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia20.jpg
+                      - label: sfondi-dyvenia21.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia21.jpg
+                      - label: sfondi-dyvenia22.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia22.jpg
+                      - label: sfondi-dyvenia23.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia23.jpg
+                      - label: sfondi-dyvenia24.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia24.jpg
+                      - label: sfondi-dyvenia25.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia25.jpg
+                      - label: sfondi-dyvenia26.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia26.jpg
+                      - label: sfondi-dyvenia27.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia27.jpg
+                      - label: sfondi-dyvenia28.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia28.jpg
+                      - label: sfondi-dyvenia29.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia29.jpg
+                      - label: sfondi-dyvenia30.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia30.jpg
+                      - label: sfondi-dyvenia31.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia31.jpg
+                      - label: sfondi-dyvenia32.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia32.jpg
                   - label: Image
                     name: image
                     widget: image
@@ -2172,74 +2172,74 @@ collections:
                     dropdown_threshold: 0
                     hint: Stock image from backgrounds/. Custom upload below overrides this.
                     options:
-                    - label: — none —
-                      value: ''
-                    - label: jellyfish-hr.jpg
-                      value: ./src/assets/images/backgrounds/jellyfish-hr.jpg
-                    - label: sfondi-8-high.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-8-high.jpg
-                    - label: sfondi-dyvenia02.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia02.jpg
-                    - label: sfondi-dyvenia03.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia03.jpg
-                    - label: sfondi-dyvenia04.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia04.jpg
-                    - label: sfondi-dyvenia05.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia05.jpg
-                    - label: sfondi-dyvenia06.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia06.jpg
-                    - label: sfondi-dyvenia07.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia07.jpg
-                    - label: sfondi-dyvenia08.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia08.jpg
-                    - label: sfondi-dyvenia09.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia09.jpg
-                    - label: sfondi-dyvenia10.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia10.jpg
-                    - label: sfondi-dyvenia11.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia11.jpg
-                    - label: sfondi-dyvenia12.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia12.jpg
-                    - label: sfondi-dyvenia13.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia13.jpg
-                    - label: sfondi-dyvenia14.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia14.jpg
-                    - label: sfondi-dyvenia15.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia15.jpg
-                    - label: sfondi-dyvenia16.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia16.jpg
-                    - label: sfondi-dyvenia17.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia17.jpg
-                    - label: sfondi-dyvenia18.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia18.jpg
-                    - label: sfondi-dyvenia19.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia19.jpg
-                    - label: sfondi-dyvenia20.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia20.jpg
-                    - label: sfondi-dyvenia21.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia21.jpg
-                    - label: sfondi-dyvenia22.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia22.jpg
-                    - label: sfondi-dyvenia23.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia23.jpg
-                    - label: sfondi-dyvenia24.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia24.jpg
-                    - label: sfondi-dyvenia25.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia25.jpg
-                    - label: sfondi-dyvenia26.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia26.jpg
-                    - label: sfondi-dyvenia27.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia27.jpg
-                    - label: sfondi-dyvenia28.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia28.jpg
-                    - label: sfondi-dyvenia29.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia29.jpg
-                    - label: sfondi-dyvenia30.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia30.jpg
-                    - label: sfondi-dyvenia31.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia31.jpg
-                    - label: sfondi-dyvenia32.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia32.jpg
+                      - label: — none —
+                        value: ''
+                      - label: jellyfish-hr.jpg
+                        value: ./src/assets/images/backgrounds/jellyfish-hr.jpg
+                      - label: sfondi-8-high.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-8-high.jpg
+                      - label: sfondi-dyvenia02.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia02.jpg
+                      - label: sfondi-dyvenia03.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia03.jpg
+                      - label: sfondi-dyvenia04.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia04.jpg
+                      - label: sfondi-dyvenia05.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia05.jpg
+                      - label: sfondi-dyvenia06.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia06.jpg
+                      - label: sfondi-dyvenia07.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia07.jpg
+                      - label: sfondi-dyvenia08.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia08.jpg
+                      - label: sfondi-dyvenia09.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia09.jpg
+                      - label: sfondi-dyvenia10.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia10.jpg
+                      - label: sfondi-dyvenia11.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia11.jpg
+                      - label: sfondi-dyvenia12.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia12.jpg
+                      - label: sfondi-dyvenia13.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia13.jpg
+                      - label: sfondi-dyvenia14.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia14.jpg
+                      - label: sfondi-dyvenia15.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia15.jpg
+                      - label: sfondi-dyvenia16.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia16.jpg
+                      - label: sfondi-dyvenia17.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia17.jpg
+                      - label: sfondi-dyvenia18.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia18.jpg
+                      - label: sfondi-dyvenia19.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia19.jpg
+                      - label: sfondi-dyvenia20.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia20.jpg
+                      - label: sfondi-dyvenia21.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia21.jpg
+                      - label: sfondi-dyvenia22.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia22.jpg
+                      - label: sfondi-dyvenia23.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia23.jpg
+                      - label: sfondi-dyvenia24.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia24.jpg
+                      - label: sfondi-dyvenia25.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia25.jpg
+                      - label: sfondi-dyvenia26.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia26.jpg
+                      - label: sfondi-dyvenia27.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia27.jpg
+                      - label: sfondi-dyvenia28.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia28.jpg
+                      - label: sfondi-dyvenia29.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia29.jpg
+                      - label: sfondi-dyvenia30.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia30.jpg
+                      - label: sfondi-dyvenia31.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia31.jpg
+                      - label: sfondi-dyvenia32.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia32.jpg
                   - label: Image
                     name: image
                     widget: image
@@ -2397,10 +2397,10 @@ collections:
                         required: false
                         dropdown_threshold: 0
                         options:
-                        - label: default
-                          value: ''
-                        - label: small
-                          value: small
+                          - label: default
+                            value: ''
+                          - label: small
+                            value: small
                         default: teal
               - label: Text
                 name: text
@@ -3923,74 +3923,74 @@ collections:
                     dropdown_threshold: 0
                     hint: Stock image from backgrounds/. Custom upload below overrides this.
                     options:
-                    - label: — none —
-                      value: ''
-                    - label: jellyfish-hr.jpg
-                      value: ./src/assets/images/backgrounds/jellyfish-hr.jpg
-                    - label: sfondi-8-high.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-8-high.jpg
-                    - label: sfondi-dyvenia02.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia02.jpg
-                    - label: sfondi-dyvenia03.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia03.jpg
-                    - label: sfondi-dyvenia04.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia04.jpg
-                    - label: sfondi-dyvenia05.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia05.jpg
-                    - label: sfondi-dyvenia06.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia06.jpg
-                    - label: sfondi-dyvenia07.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia07.jpg
-                    - label: sfondi-dyvenia08.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia08.jpg
-                    - label: sfondi-dyvenia09.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia09.jpg
-                    - label: sfondi-dyvenia10.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia10.jpg
-                    - label: sfondi-dyvenia11.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia11.jpg
-                    - label: sfondi-dyvenia12.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia12.jpg
-                    - label: sfondi-dyvenia13.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia13.jpg
-                    - label: sfondi-dyvenia14.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia14.jpg
-                    - label: sfondi-dyvenia15.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia15.jpg
-                    - label: sfondi-dyvenia16.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia16.jpg
-                    - label: sfondi-dyvenia17.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia17.jpg
-                    - label: sfondi-dyvenia18.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia18.jpg
-                    - label: sfondi-dyvenia19.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia19.jpg
-                    - label: sfondi-dyvenia20.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia20.jpg
-                    - label: sfondi-dyvenia21.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia21.jpg
-                    - label: sfondi-dyvenia22.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia22.jpg
-                    - label: sfondi-dyvenia23.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia23.jpg
-                    - label: sfondi-dyvenia24.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia24.jpg
-                    - label: sfondi-dyvenia25.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia25.jpg
-                    - label: sfondi-dyvenia26.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia26.jpg
-                    - label: sfondi-dyvenia27.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia27.jpg
-                    - label: sfondi-dyvenia28.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia28.jpg
-                    - label: sfondi-dyvenia29.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia29.jpg
-                    - label: sfondi-dyvenia30.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia30.jpg
-                    - label: sfondi-dyvenia31.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia31.jpg
-                    - label: sfondi-dyvenia32.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia32.jpg
+                      - label: — none —
+                        value: ''
+                      - label: jellyfish-hr.jpg
+                        value: ./src/assets/images/backgrounds/jellyfish-hr.jpg
+                      - label: sfondi-8-high.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-8-high.jpg
+                      - label: sfondi-dyvenia02.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia02.jpg
+                      - label: sfondi-dyvenia03.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia03.jpg
+                      - label: sfondi-dyvenia04.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia04.jpg
+                      - label: sfondi-dyvenia05.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia05.jpg
+                      - label: sfondi-dyvenia06.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia06.jpg
+                      - label: sfondi-dyvenia07.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia07.jpg
+                      - label: sfondi-dyvenia08.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia08.jpg
+                      - label: sfondi-dyvenia09.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia09.jpg
+                      - label: sfondi-dyvenia10.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia10.jpg
+                      - label: sfondi-dyvenia11.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia11.jpg
+                      - label: sfondi-dyvenia12.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia12.jpg
+                      - label: sfondi-dyvenia13.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia13.jpg
+                      - label: sfondi-dyvenia14.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia14.jpg
+                      - label: sfondi-dyvenia15.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia15.jpg
+                      - label: sfondi-dyvenia16.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia16.jpg
+                      - label: sfondi-dyvenia17.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia17.jpg
+                      - label: sfondi-dyvenia18.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia18.jpg
+                      - label: sfondi-dyvenia19.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia19.jpg
+                      - label: sfondi-dyvenia20.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia20.jpg
+                      - label: sfondi-dyvenia21.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia21.jpg
+                      - label: sfondi-dyvenia22.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia22.jpg
+                      - label: sfondi-dyvenia23.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia23.jpg
+                      - label: sfondi-dyvenia24.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia24.jpg
+                      - label: sfondi-dyvenia25.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia25.jpg
+                      - label: sfondi-dyvenia26.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia26.jpg
+                      - label: sfondi-dyvenia27.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia27.jpg
+                      - label: sfondi-dyvenia28.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia28.jpg
+                      - label: sfondi-dyvenia29.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia29.jpg
+                      - label: sfondi-dyvenia30.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia30.jpg
+                      - label: sfondi-dyvenia31.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia31.jpg
+                      - label: sfondi-dyvenia32.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia32.jpg
                   - label: Image
                     name: image
                     widget: image
@@ -4213,74 +4213,74 @@ collections:
                     dropdown_threshold: 0
                     hint: Stock image from backgrounds/. Custom upload below overrides this.
                     options:
-                    - label: — none —
-                      value: ''
-                    - label: jellyfish-hr.jpg
-                      value: ./src/assets/images/backgrounds/jellyfish-hr.jpg
-                    - label: sfondi-8-high.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-8-high.jpg
-                    - label: sfondi-dyvenia02.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia02.jpg
-                    - label: sfondi-dyvenia03.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia03.jpg
-                    - label: sfondi-dyvenia04.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia04.jpg
-                    - label: sfondi-dyvenia05.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia05.jpg
-                    - label: sfondi-dyvenia06.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia06.jpg
-                    - label: sfondi-dyvenia07.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia07.jpg
-                    - label: sfondi-dyvenia08.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia08.jpg
-                    - label: sfondi-dyvenia09.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia09.jpg
-                    - label: sfondi-dyvenia10.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia10.jpg
-                    - label: sfondi-dyvenia11.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia11.jpg
-                    - label: sfondi-dyvenia12.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia12.jpg
-                    - label: sfondi-dyvenia13.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia13.jpg
-                    - label: sfondi-dyvenia14.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia14.jpg
-                    - label: sfondi-dyvenia15.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia15.jpg
-                    - label: sfondi-dyvenia16.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia16.jpg
-                    - label: sfondi-dyvenia17.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia17.jpg
-                    - label: sfondi-dyvenia18.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia18.jpg
-                    - label: sfondi-dyvenia19.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia19.jpg
-                    - label: sfondi-dyvenia20.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia20.jpg
-                    - label: sfondi-dyvenia21.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia21.jpg
-                    - label: sfondi-dyvenia22.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia22.jpg
-                    - label: sfondi-dyvenia23.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia23.jpg
-                    - label: sfondi-dyvenia24.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia24.jpg
-                    - label: sfondi-dyvenia25.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia25.jpg
-                    - label: sfondi-dyvenia26.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia26.jpg
-                    - label: sfondi-dyvenia27.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia27.jpg
-                    - label: sfondi-dyvenia28.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia28.jpg
-                    - label: sfondi-dyvenia29.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia29.jpg
-                    - label: sfondi-dyvenia30.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia30.jpg
-                    - label: sfondi-dyvenia31.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia31.jpg
-                    - label: sfondi-dyvenia32.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia32.jpg
+                      - label: — none —
+                        value: ''
+                      - label: jellyfish-hr.jpg
+                        value: ./src/assets/images/backgrounds/jellyfish-hr.jpg
+                      - label: sfondi-8-high.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-8-high.jpg
+                      - label: sfondi-dyvenia02.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia02.jpg
+                      - label: sfondi-dyvenia03.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia03.jpg
+                      - label: sfondi-dyvenia04.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia04.jpg
+                      - label: sfondi-dyvenia05.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia05.jpg
+                      - label: sfondi-dyvenia06.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia06.jpg
+                      - label: sfondi-dyvenia07.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia07.jpg
+                      - label: sfondi-dyvenia08.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia08.jpg
+                      - label: sfondi-dyvenia09.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia09.jpg
+                      - label: sfondi-dyvenia10.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia10.jpg
+                      - label: sfondi-dyvenia11.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia11.jpg
+                      - label: sfondi-dyvenia12.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia12.jpg
+                      - label: sfondi-dyvenia13.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia13.jpg
+                      - label: sfondi-dyvenia14.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia14.jpg
+                      - label: sfondi-dyvenia15.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia15.jpg
+                      - label: sfondi-dyvenia16.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia16.jpg
+                      - label: sfondi-dyvenia17.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia17.jpg
+                      - label: sfondi-dyvenia18.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia18.jpg
+                      - label: sfondi-dyvenia19.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia19.jpg
+                      - label: sfondi-dyvenia20.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia20.jpg
+                      - label: sfondi-dyvenia21.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia21.jpg
+                      - label: sfondi-dyvenia22.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia22.jpg
+                      - label: sfondi-dyvenia23.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia23.jpg
+                      - label: sfondi-dyvenia24.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia24.jpg
+                      - label: sfondi-dyvenia25.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia25.jpg
+                      - label: sfondi-dyvenia26.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia26.jpg
+                      - label: sfondi-dyvenia27.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia27.jpg
+                      - label: sfondi-dyvenia28.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia28.jpg
+                      - label: sfondi-dyvenia29.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia29.jpg
+                      - label: sfondi-dyvenia30.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia30.jpg
+                      - label: sfondi-dyvenia31.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia31.jpg
+                      - label: sfondi-dyvenia32.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia32.jpg
                   - label: Image
                     name: image
                     widget: image
@@ -4438,10 +4438,10 @@ collections:
                         required: false
                         dropdown_threshold: 0
                         options:
-                        - label: default
-                          value: ''
-                        - label: small
-                          value: small
+                          - label: default
+                            value: ''
+                          - label: small
+                            value: small
                         default: teal
               - label: Text
                 name: text
@@ -5964,74 +5964,74 @@ collections:
                     dropdown_threshold: 0
                     hint: Stock image from backgrounds/. Custom upload below overrides this.
                     options:
-                    - label: — none —
-                      value: ''
-                    - label: jellyfish-hr.jpg
-                      value: ./src/assets/images/backgrounds/jellyfish-hr.jpg
-                    - label: sfondi-8-high.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-8-high.jpg
-                    - label: sfondi-dyvenia02.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia02.jpg
-                    - label: sfondi-dyvenia03.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia03.jpg
-                    - label: sfondi-dyvenia04.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia04.jpg
-                    - label: sfondi-dyvenia05.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia05.jpg
-                    - label: sfondi-dyvenia06.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia06.jpg
-                    - label: sfondi-dyvenia07.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia07.jpg
-                    - label: sfondi-dyvenia08.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia08.jpg
-                    - label: sfondi-dyvenia09.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia09.jpg
-                    - label: sfondi-dyvenia10.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia10.jpg
-                    - label: sfondi-dyvenia11.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia11.jpg
-                    - label: sfondi-dyvenia12.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia12.jpg
-                    - label: sfondi-dyvenia13.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia13.jpg
-                    - label: sfondi-dyvenia14.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia14.jpg
-                    - label: sfondi-dyvenia15.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia15.jpg
-                    - label: sfondi-dyvenia16.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia16.jpg
-                    - label: sfondi-dyvenia17.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia17.jpg
-                    - label: sfondi-dyvenia18.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia18.jpg
-                    - label: sfondi-dyvenia19.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia19.jpg
-                    - label: sfondi-dyvenia20.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia20.jpg
-                    - label: sfondi-dyvenia21.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia21.jpg
-                    - label: sfondi-dyvenia22.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia22.jpg
-                    - label: sfondi-dyvenia23.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia23.jpg
-                    - label: sfondi-dyvenia24.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia24.jpg
-                    - label: sfondi-dyvenia25.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia25.jpg
-                    - label: sfondi-dyvenia26.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia26.jpg
-                    - label: sfondi-dyvenia27.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia27.jpg
-                    - label: sfondi-dyvenia28.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia28.jpg
-                    - label: sfondi-dyvenia29.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia29.jpg
-                    - label: sfondi-dyvenia30.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia30.jpg
-                    - label: sfondi-dyvenia31.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia31.jpg
-                    - label: sfondi-dyvenia32.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia32.jpg
+                      - label: — none —
+                        value: ''
+                      - label: jellyfish-hr.jpg
+                        value: ./src/assets/images/backgrounds/jellyfish-hr.jpg
+                      - label: sfondi-8-high.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-8-high.jpg
+                      - label: sfondi-dyvenia02.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia02.jpg
+                      - label: sfondi-dyvenia03.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia03.jpg
+                      - label: sfondi-dyvenia04.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia04.jpg
+                      - label: sfondi-dyvenia05.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia05.jpg
+                      - label: sfondi-dyvenia06.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia06.jpg
+                      - label: sfondi-dyvenia07.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia07.jpg
+                      - label: sfondi-dyvenia08.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia08.jpg
+                      - label: sfondi-dyvenia09.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia09.jpg
+                      - label: sfondi-dyvenia10.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia10.jpg
+                      - label: sfondi-dyvenia11.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia11.jpg
+                      - label: sfondi-dyvenia12.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia12.jpg
+                      - label: sfondi-dyvenia13.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia13.jpg
+                      - label: sfondi-dyvenia14.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia14.jpg
+                      - label: sfondi-dyvenia15.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia15.jpg
+                      - label: sfondi-dyvenia16.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia16.jpg
+                      - label: sfondi-dyvenia17.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia17.jpg
+                      - label: sfondi-dyvenia18.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia18.jpg
+                      - label: sfondi-dyvenia19.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia19.jpg
+                      - label: sfondi-dyvenia20.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia20.jpg
+                      - label: sfondi-dyvenia21.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia21.jpg
+                      - label: sfondi-dyvenia22.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia22.jpg
+                      - label: sfondi-dyvenia23.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia23.jpg
+                      - label: sfondi-dyvenia24.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia24.jpg
+                      - label: sfondi-dyvenia25.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia25.jpg
+                      - label: sfondi-dyvenia26.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia26.jpg
+                      - label: sfondi-dyvenia27.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia27.jpg
+                      - label: sfondi-dyvenia28.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia28.jpg
+                      - label: sfondi-dyvenia29.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia29.jpg
+                      - label: sfondi-dyvenia30.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia30.jpg
+                      - label: sfondi-dyvenia31.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia31.jpg
+                      - label: sfondi-dyvenia32.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia32.jpg
                   - label: Image
                     name: image
                     widget: image
@@ -6285,74 +6285,74 @@ collections:
                     dropdown_threshold: 0
                     hint: Stock image from backgrounds/. Custom upload below overrides this.
                     options:
-                    - label: — none —
-                      value: ''
-                    - label: jellyfish-hr.jpg
-                      value: ./src/assets/images/backgrounds/jellyfish-hr.jpg
-                    - label: sfondi-8-high.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-8-high.jpg
-                    - label: sfondi-dyvenia02.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia02.jpg
-                    - label: sfondi-dyvenia03.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia03.jpg
-                    - label: sfondi-dyvenia04.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia04.jpg
-                    - label: sfondi-dyvenia05.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia05.jpg
-                    - label: sfondi-dyvenia06.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia06.jpg
-                    - label: sfondi-dyvenia07.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia07.jpg
-                    - label: sfondi-dyvenia08.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia08.jpg
-                    - label: sfondi-dyvenia09.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia09.jpg
-                    - label: sfondi-dyvenia10.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia10.jpg
-                    - label: sfondi-dyvenia11.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia11.jpg
-                    - label: sfondi-dyvenia12.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia12.jpg
-                    - label: sfondi-dyvenia13.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia13.jpg
-                    - label: sfondi-dyvenia14.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia14.jpg
-                    - label: sfondi-dyvenia15.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia15.jpg
-                    - label: sfondi-dyvenia16.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia16.jpg
-                    - label: sfondi-dyvenia17.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia17.jpg
-                    - label: sfondi-dyvenia18.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia18.jpg
-                    - label: sfondi-dyvenia19.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia19.jpg
-                    - label: sfondi-dyvenia20.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia20.jpg
-                    - label: sfondi-dyvenia21.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia21.jpg
-                    - label: sfondi-dyvenia22.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia22.jpg
-                    - label: sfondi-dyvenia23.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia23.jpg
-                    - label: sfondi-dyvenia24.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia24.jpg
-                    - label: sfondi-dyvenia25.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia25.jpg
-                    - label: sfondi-dyvenia26.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia26.jpg
-                    - label: sfondi-dyvenia27.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia27.jpg
-                    - label: sfondi-dyvenia28.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia28.jpg
-                    - label: sfondi-dyvenia29.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia29.jpg
-                    - label: sfondi-dyvenia30.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia30.jpg
-                    - label: sfondi-dyvenia31.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia31.jpg
-                    - label: sfondi-dyvenia32.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia32.jpg
+                      - label: — none —
+                        value: ''
+                      - label: jellyfish-hr.jpg
+                        value: ./src/assets/images/backgrounds/jellyfish-hr.jpg
+                      - label: sfondi-8-high.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-8-high.jpg
+                      - label: sfondi-dyvenia02.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia02.jpg
+                      - label: sfondi-dyvenia03.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia03.jpg
+                      - label: sfondi-dyvenia04.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia04.jpg
+                      - label: sfondi-dyvenia05.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia05.jpg
+                      - label: sfondi-dyvenia06.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia06.jpg
+                      - label: sfondi-dyvenia07.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia07.jpg
+                      - label: sfondi-dyvenia08.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia08.jpg
+                      - label: sfondi-dyvenia09.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia09.jpg
+                      - label: sfondi-dyvenia10.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia10.jpg
+                      - label: sfondi-dyvenia11.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia11.jpg
+                      - label: sfondi-dyvenia12.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia12.jpg
+                      - label: sfondi-dyvenia13.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia13.jpg
+                      - label: sfondi-dyvenia14.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia14.jpg
+                      - label: sfondi-dyvenia15.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia15.jpg
+                      - label: sfondi-dyvenia16.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia16.jpg
+                      - label: sfondi-dyvenia17.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia17.jpg
+                      - label: sfondi-dyvenia18.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia18.jpg
+                      - label: sfondi-dyvenia19.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia19.jpg
+                      - label: sfondi-dyvenia20.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia20.jpg
+                      - label: sfondi-dyvenia21.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia21.jpg
+                      - label: sfondi-dyvenia22.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia22.jpg
+                      - label: sfondi-dyvenia23.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia23.jpg
+                      - label: sfondi-dyvenia24.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia24.jpg
+                      - label: sfondi-dyvenia25.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia25.jpg
+                      - label: sfondi-dyvenia26.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia26.jpg
+                      - label: sfondi-dyvenia27.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia27.jpg
+                      - label: sfondi-dyvenia28.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia28.jpg
+                      - label: sfondi-dyvenia29.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia29.jpg
+                      - label: sfondi-dyvenia30.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia30.jpg
+                      - label: sfondi-dyvenia31.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia31.jpg
+                      - label: sfondi-dyvenia32.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia32.jpg
                   - label: Image
                     name: image
                     widget: image
@@ -6510,10 +6510,10 @@ collections:
                         required: false
                         dropdown_threshold: 0
                         options:
-                        - label: default
-                          value: ''
-                        - label: small
-                          value: small
+                          - label: default
+                            value: ''
+                          - label: small
+                            value: small
                         default: ''
               - label: Text
                 name: text
@@ -8036,74 +8036,74 @@ collections:
                     dropdown_threshold: 0
                     hint: Stock image from backgrounds/. Custom upload below overrides this.
                     options:
-                    - label: — none —
-                      value: ''
-                    - label: jellyfish-hr.jpg
-                      value: ./src/assets/images/backgrounds/jellyfish-hr.jpg
-                    - label: sfondi-8-high.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-8-high.jpg
-                    - label: sfondi-dyvenia02.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia02.jpg
-                    - label: sfondi-dyvenia03.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia03.jpg
-                    - label: sfondi-dyvenia04.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia04.jpg
-                    - label: sfondi-dyvenia05.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia05.jpg
-                    - label: sfondi-dyvenia06.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia06.jpg
-                    - label: sfondi-dyvenia07.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia07.jpg
-                    - label: sfondi-dyvenia08.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia08.jpg
-                    - label: sfondi-dyvenia09.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia09.jpg
-                    - label: sfondi-dyvenia10.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia10.jpg
-                    - label: sfondi-dyvenia11.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia11.jpg
-                    - label: sfondi-dyvenia12.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia12.jpg
-                    - label: sfondi-dyvenia13.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia13.jpg
-                    - label: sfondi-dyvenia14.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia14.jpg
-                    - label: sfondi-dyvenia15.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia15.jpg
-                    - label: sfondi-dyvenia16.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia16.jpg
-                    - label: sfondi-dyvenia17.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia17.jpg
-                    - label: sfondi-dyvenia18.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia18.jpg
-                    - label: sfondi-dyvenia19.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia19.jpg
-                    - label: sfondi-dyvenia20.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia20.jpg
-                    - label: sfondi-dyvenia21.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia21.jpg
-                    - label: sfondi-dyvenia22.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia22.jpg
-                    - label: sfondi-dyvenia23.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia23.jpg
-                    - label: sfondi-dyvenia24.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia24.jpg
-                    - label: sfondi-dyvenia25.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia25.jpg
-                    - label: sfondi-dyvenia26.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia26.jpg
-                    - label: sfondi-dyvenia27.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia27.jpg
-                    - label: sfondi-dyvenia28.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia28.jpg
-                    - label: sfondi-dyvenia29.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia29.jpg
-                    - label: sfondi-dyvenia30.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia30.jpg
-                    - label: sfondi-dyvenia31.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia31.jpg
-                    - label: sfondi-dyvenia32.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia32.jpg
+                      - label: — none —
+                        value: ''
+                      - label: jellyfish-hr.jpg
+                        value: ./src/assets/images/backgrounds/jellyfish-hr.jpg
+                      - label: sfondi-8-high.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-8-high.jpg
+                      - label: sfondi-dyvenia02.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia02.jpg
+                      - label: sfondi-dyvenia03.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia03.jpg
+                      - label: sfondi-dyvenia04.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia04.jpg
+                      - label: sfondi-dyvenia05.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia05.jpg
+                      - label: sfondi-dyvenia06.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia06.jpg
+                      - label: sfondi-dyvenia07.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia07.jpg
+                      - label: sfondi-dyvenia08.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia08.jpg
+                      - label: sfondi-dyvenia09.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia09.jpg
+                      - label: sfondi-dyvenia10.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia10.jpg
+                      - label: sfondi-dyvenia11.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia11.jpg
+                      - label: sfondi-dyvenia12.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia12.jpg
+                      - label: sfondi-dyvenia13.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia13.jpg
+                      - label: sfondi-dyvenia14.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia14.jpg
+                      - label: sfondi-dyvenia15.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia15.jpg
+                      - label: sfondi-dyvenia16.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia16.jpg
+                      - label: sfondi-dyvenia17.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia17.jpg
+                      - label: sfondi-dyvenia18.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia18.jpg
+                      - label: sfondi-dyvenia19.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia19.jpg
+                      - label: sfondi-dyvenia20.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia20.jpg
+                      - label: sfondi-dyvenia21.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia21.jpg
+                      - label: sfondi-dyvenia22.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia22.jpg
+                      - label: sfondi-dyvenia23.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia23.jpg
+                      - label: sfondi-dyvenia24.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia24.jpg
+                      - label: sfondi-dyvenia25.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia25.jpg
+                      - label: sfondi-dyvenia26.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia26.jpg
+                      - label: sfondi-dyvenia27.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia27.jpg
+                      - label: sfondi-dyvenia28.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia28.jpg
+                      - label: sfondi-dyvenia29.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia29.jpg
+                      - label: sfondi-dyvenia30.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia30.jpg
+                      - label: sfondi-dyvenia31.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia31.jpg
+                      - label: sfondi-dyvenia32.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia32.jpg
                   - label: Image
                     name: image
                     widget: image
@@ -8374,74 +8374,74 @@ collections:
                     dropdown_threshold: 0
                     hint: Stock image from backgrounds/. Custom upload below overrides this.
                     options:
-                    - label: — none —
-                      value: ''
-                    - label: jellyfish-hr.jpg
-                      value: ./src/assets/images/backgrounds/jellyfish-hr.jpg
-                    - label: sfondi-8-high.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-8-high.jpg
-                    - label: sfondi-dyvenia02.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia02.jpg
-                    - label: sfondi-dyvenia03.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia03.jpg
-                    - label: sfondi-dyvenia04.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia04.jpg
-                    - label: sfondi-dyvenia05.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia05.jpg
-                    - label: sfondi-dyvenia06.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia06.jpg
-                    - label: sfondi-dyvenia07.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia07.jpg
-                    - label: sfondi-dyvenia08.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia08.jpg
-                    - label: sfondi-dyvenia09.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia09.jpg
-                    - label: sfondi-dyvenia10.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia10.jpg
-                    - label: sfondi-dyvenia11.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia11.jpg
-                    - label: sfondi-dyvenia12.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia12.jpg
-                    - label: sfondi-dyvenia13.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia13.jpg
-                    - label: sfondi-dyvenia14.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia14.jpg
-                    - label: sfondi-dyvenia15.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia15.jpg
-                    - label: sfondi-dyvenia16.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia16.jpg
-                    - label: sfondi-dyvenia17.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia17.jpg
-                    - label: sfondi-dyvenia18.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia18.jpg
-                    - label: sfondi-dyvenia19.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia19.jpg
-                    - label: sfondi-dyvenia20.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia20.jpg
-                    - label: sfondi-dyvenia21.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia21.jpg
-                    - label: sfondi-dyvenia22.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia22.jpg
-                    - label: sfondi-dyvenia23.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia23.jpg
-                    - label: sfondi-dyvenia24.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia24.jpg
-                    - label: sfondi-dyvenia25.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia25.jpg
-                    - label: sfondi-dyvenia26.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia26.jpg
-                    - label: sfondi-dyvenia27.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia27.jpg
-                    - label: sfondi-dyvenia28.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia28.jpg
-                    - label: sfondi-dyvenia29.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia29.jpg
-                    - label: sfondi-dyvenia30.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia30.jpg
-                    - label: sfondi-dyvenia31.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia31.jpg
-                    - label: sfondi-dyvenia32.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia32.jpg
+                      - label: — none —
+                        value: ''
+                      - label: jellyfish-hr.jpg
+                        value: ./src/assets/images/backgrounds/jellyfish-hr.jpg
+                      - label: sfondi-8-high.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-8-high.jpg
+                      - label: sfondi-dyvenia02.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia02.jpg
+                      - label: sfondi-dyvenia03.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia03.jpg
+                      - label: sfondi-dyvenia04.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia04.jpg
+                      - label: sfondi-dyvenia05.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia05.jpg
+                      - label: sfondi-dyvenia06.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia06.jpg
+                      - label: sfondi-dyvenia07.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia07.jpg
+                      - label: sfondi-dyvenia08.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia08.jpg
+                      - label: sfondi-dyvenia09.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia09.jpg
+                      - label: sfondi-dyvenia10.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia10.jpg
+                      - label: sfondi-dyvenia11.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia11.jpg
+                      - label: sfondi-dyvenia12.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia12.jpg
+                      - label: sfondi-dyvenia13.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia13.jpg
+                      - label: sfondi-dyvenia14.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia14.jpg
+                      - label: sfondi-dyvenia15.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia15.jpg
+                      - label: sfondi-dyvenia16.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia16.jpg
+                      - label: sfondi-dyvenia17.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia17.jpg
+                      - label: sfondi-dyvenia18.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia18.jpg
+                      - label: sfondi-dyvenia19.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia19.jpg
+                      - label: sfondi-dyvenia20.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia20.jpg
+                      - label: sfondi-dyvenia21.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia21.jpg
+                      - label: sfondi-dyvenia22.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia22.jpg
+                      - label: sfondi-dyvenia23.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia23.jpg
+                      - label: sfondi-dyvenia24.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia24.jpg
+                      - label: sfondi-dyvenia25.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia25.jpg
+                      - label: sfondi-dyvenia26.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia26.jpg
+                      - label: sfondi-dyvenia27.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia27.jpg
+                      - label: sfondi-dyvenia28.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia28.jpg
+                      - label: sfondi-dyvenia29.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia29.jpg
+                      - label: sfondi-dyvenia30.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia30.jpg
+                      - label: sfondi-dyvenia31.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia31.jpg
+                      - label: sfondi-dyvenia32.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia32.jpg
                   - label: Image
                     name: image
                     widget: image
@@ -8588,10 +8588,10 @@ collections:
                         required: false
                         dropdown_threshold: 0
                         options:
-                        - label: default
-                          value: ''
-                        - label: small
-                          value: small
+                          - label: default
+                            value: ''
+                          - label: small
+                            value: small
                         default: ''
               - label: Text
                 name: text
@@ -10013,74 +10013,74 @@ collections:
                     dropdown_threshold: 0
                     hint: Stock image from backgrounds/. Custom upload below overrides this.
                     options:
-                    - label: — none —
-                      value: ''
-                    - label: jellyfish-hr.jpg
-                      value: ./src/assets/images/backgrounds/jellyfish-hr.jpg
-                    - label: sfondi-8-high.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-8-high.jpg
-                    - label: sfondi-dyvenia02.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia02.jpg
-                    - label: sfondi-dyvenia03.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia03.jpg
-                    - label: sfondi-dyvenia04.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia04.jpg
-                    - label: sfondi-dyvenia05.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia05.jpg
-                    - label: sfondi-dyvenia06.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia06.jpg
-                    - label: sfondi-dyvenia07.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia07.jpg
-                    - label: sfondi-dyvenia08.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia08.jpg
-                    - label: sfondi-dyvenia09.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia09.jpg
-                    - label: sfondi-dyvenia10.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia10.jpg
-                    - label: sfondi-dyvenia11.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia11.jpg
-                    - label: sfondi-dyvenia12.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia12.jpg
-                    - label: sfondi-dyvenia13.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia13.jpg
-                    - label: sfondi-dyvenia14.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia14.jpg
-                    - label: sfondi-dyvenia15.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia15.jpg
-                    - label: sfondi-dyvenia16.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia16.jpg
-                    - label: sfondi-dyvenia17.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia17.jpg
-                    - label: sfondi-dyvenia18.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia18.jpg
-                    - label: sfondi-dyvenia19.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia19.jpg
-                    - label: sfondi-dyvenia20.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia20.jpg
-                    - label: sfondi-dyvenia21.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia21.jpg
-                    - label: sfondi-dyvenia22.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia22.jpg
-                    - label: sfondi-dyvenia23.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia23.jpg
-                    - label: sfondi-dyvenia24.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia24.jpg
-                    - label: sfondi-dyvenia25.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia25.jpg
-                    - label: sfondi-dyvenia26.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia26.jpg
-                    - label: sfondi-dyvenia27.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia27.jpg
-                    - label: sfondi-dyvenia28.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia28.jpg
-                    - label: sfondi-dyvenia29.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia29.jpg
-                    - label: sfondi-dyvenia30.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia30.jpg
-                    - label: sfondi-dyvenia31.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia31.jpg
-                    - label: sfondi-dyvenia32.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia32.jpg
+                      - label: — none —
+                        value: ''
+                      - label: jellyfish-hr.jpg
+                        value: ./src/assets/images/backgrounds/jellyfish-hr.jpg
+                      - label: sfondi-8-high.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-8-high.jpg
+                      - label: sfondi-dyvenia02.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia02.jpg
+                      - label: sfondi-dyvenia03.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia03.jpg
+                      - label: sfondi-dyvenia04.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia04.jpg
+                      - label: sfondi-dyvenia05.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia05.jpg
+                      - label: sfondi-dyvenia06.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia06.jpg
+                      - label: sfondi-dyvenia07.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia07.jpg
+                      - label: sfondi-dyvenia08.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia08.jpg
+                      - label: sfondi-dyvenia09.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia09.jpg
+                      - label: sfondi-dyvenia10.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia10.jpg
+                      - label: sfondi-dyvenia11.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia11.jpg
+                      - label: sfondi-dyvenia12.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia12.jpg
+                      - label: sfondi-dyvenia13.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia13.jpg
+                      - label: sfondi-dyvenia14.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia14.jpg
+                      - label: sfondi-dyvenia15.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia15.jpg
+                      - label: sfondi-dyvenia16.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia16.jpg
+                      - label: sfondi-dyvenia17.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia17.jpg
+                      - label: sfondi-dyvenia18.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia18.jpg
+                      - label: sfondi-dyvenia19.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia19.jpg
+                      - label: sfondi-dyvenia20.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia20.jpg
+                      - label: sfondi-dyvenia21.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia21.jpg
+                      - label: sfondi-dyvenia22.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia22.jpg
+                      - label: sfondi-dyvenia23.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia23.jpg
+                      - label: sfondi-dyvenia24.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia24.jpg
+                      - label: sfondi-dyvenia25.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia25.jpg
+                      - label: sfondi-dyvenia26.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia26.jpg
+                      - label: sfondi-dyvenia27.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia27.jpg
+                      - label: sfondi-dyvenia28.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia28.jpg
+                      - label: sfondi-dyvenia29.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia29.jpg
+                      - label: sfondi-dyvenia30.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia30.jpg
+                      - label: sfondi-dyvenia31.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia31.jpg
+                      - label: sfondi-dyvenia32.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia32.jpg
                   - label: Image
                     name: image
                     widget: image
@@ -10285,74 +10285,74 @@ collections:
                     dropdown_threshold: 0
                     hint: Stock image from backgrounds/. Custom upload below overrides this.
                     options:
-                    - label: — none —
-                      value: ''
-                    - label: jellyfish-hr.jpg
-                      value: ./src/assets/images/backgrounds/jellyfish-hr.jpg
-                    - label: sfondi-8-high.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-8-high.jpg
-                    - label: sfondi-dyvenia02.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia02.jpg
-                    - label: sfondi-dyvenia03.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia03.jpg
-                    - label: sfondi-dyvenia04.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia04.jpg
-                    - label: sfondi-dyvenia05.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia05.jpg
-                    - label: sfondi-dyvenia06.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia06.jpg
-                    - label: sfondi-dyvenia07.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia07.jpg
-                    - label: sfondi-dyvenia08.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia08.jpg
-                    - label: sfondi-dyvenia09.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia09.jpg
-                    - label: sfondi-dyvenia10.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia10.jpg
-                    - label: sfondi-dyvenia11.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia11.jpg
-                    - label: sfondi-dyvenia12.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia12.jpg
-                    - label: sfondi-dyvenia13.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia13.jpg
-                    - label: sfondi-dyvenia14.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia14.jpg
-                    - label: sfondi-dyvenia15.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia15.jpg
-                    - label: sfondi-dyvenia16.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia16.jpg
-                    - label: sfondi-dyvenia17.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia17.jpg
-                    - label: sfondi-dyvenia18.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia18.jpg
-                    - label: sfondi-dyvenia19.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia19.jpg
-                    - label: sfondi-dyvenia20.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia20.jpg
-                    - label: sfondi-dyvenia21.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia21.jpg
-                    - label: sfondi-dyvenia22.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia22.jpg
-                    - label: sfondi-dyvenia23.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia23.jpg
-                    - label: sfondi-dyvenia24.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia24.jpg
-                    - label: sfondi-dyvenia25.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia25.jpg
-                    - label: sfondi-dyvenia26.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia26.jpg
-                    - label: sfondi-dyvenia27.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia27.jpg
-                    - label: sfondi-dyvenia28.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia28.jpg
-                    - label: sfondi-dyvenia29.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia29.jpg
-                    - label: sfondi-dyvenia30.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia30.jpg
-                    - label: sfondi-dyvenia31.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia31.jpg
-                    - label: sfondi-dyvenia32.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia32.jpg
+                      - label: — none —
+                        value: ''
+                      - label: jellyfish-hr.jpg
+                        value: ./src/assets/images/backgrounds/jellyfish-hr.jpg
+                      - label: sfondi-8-high.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-8-high.jpg
+                      - label: sfondi-dyvenia02.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia02.jpg
+                      - label: sfondi-dyvenia03.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia03.jpg
+                      - label: sfondi-dyvenia04.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia04.jpg
+                      - label: sfondi-dyvenia05.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia05.jpg
+                      - label: sfondi-dyvenia06.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia06.jpg
+                      - label: sfondi-dyvenia07.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia07.jpg
+                      - label: sfondi-dyvenia08.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia08.jpg
+                      - label: sfondi-dyvenia09.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia09.jpg
+                      - label: sfondi-dyvenia10.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia10.jpg
+                      - label: sfondi-dyvenia11.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia11.jpg
+                      - label: sfondi-dyvenia12.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia12.jpg
+                      - label: sfondi-dyvenia13.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia13.jpg
+                      - label: sfondi-dyvenia14.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia14.jpg
+                      - label: sfondi-dyvenia15.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia15.jpg
+                      - label: sfondi-dyvenia16.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia16.jpg
+                      - label: sfondi-dyvenia17.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia17.jpg
+                      - label: sfondi-dyvenia18.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia18.jpg
+                      - label: sfondi-dyvenia19.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia19.jpg
+                      - label: sfondi-dyvenia20.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia20.jpg
+                      - label: sfondi-dyvenia21.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia21.jpg
+                      - label: sfondi-dyvenia22.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia22.jpg
+                      - label: sfondi-dyvenia23.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia23.jpg
+                      - label: sfondi-dyvenia24.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia24.jpg
+                      - label: sfondi-dyvenia25.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia25.jpg
+                      - label: sfondi-dyvenia26.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia26.jpg
+                      - label: sfondi-dyvenia27.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia27.jpg
+                      - label: sfondi-dyvenia28.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia28.jpg
+                      - label: sfondi-dyvenia29.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia29.jpg
+                      - label: sfondi-dyvenia30.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia30.jpg
+                      - label: sfondi-dyvenia31.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia31.jpg
+                      - label: sfondi-dyvenia32.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia32.jpg
                   - label: Image
                     name: image
                     widget: image
@@ -10510,10 +10510,10 @@ collections:
                         required: false
                         dropdown_threshold: 0
                         options:
-                        - label: default
-                          value: ''
-                        - label: small
-                          value: small
+                          - label: default
+                            value: ''
+                          - label: small
+                            value: small
                         default: ''
               - label: Text
                 name: text
@@ -12036,74 +12036,74 @@ collections:
                     dropdown_threshold: 0
                     hint: Stock image from backgrounds/. Custom upload below overrides this.
                     options:
-                    - label: — none —
-                      value: ''
-                    - label: jellyfish-hr.jpg
-                      value: ./src/assets/images/backgrounds/jellyfish-hr.jpg
-                    - label: sfondi-8-high.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-8-high.jpg
-                    - label: sfondi-dyvenia02.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia02.jpg
-                    - label: sfondi-dyvenia03.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia03.jpg
-                    - label: sfondi-dyvenia04.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia04.jpg
-                    - label: sfondi-dyvenia05.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia05.jpg
-                    - label: sfondi-dyvenia06.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia06.jpg
-                    - label: sfondi-dyvenia07.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia07.jpg
-                    - label: sfondi-dyvenia08.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia08.jpg
-                    - label: sfondi-dyvenia09.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia09.jpg
-                    - label: sfondi-dyvenia10.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia10.jpg
-                    - label: sfondi-dyvenia11.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia11.jpg
-                    - label: sfondi-dyvenia12.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia12.jpg
-                    - label: sfondi-dyvenia13.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia13.jpg
-                    - label: sfondi-dyvenia14.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia14.jpg
-                    - label: sfondi-dyvenia15.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia15.jpg
-                    - label: sfondi-dyvenia16.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia16.jpg
-                    - label: sfondi-dyvenia17.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia17.jpg
-                    - label: sfondi-dyvenia18.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia18.jpg
-                    - label: sfondi-dyvenia19.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia19.jpg
-                    - label: sfondi-dyvenia20.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia20.jpg
-                    - label: sfondi-dyvenia21.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia21.jpg
-                    - label: sfondi-dyvenia22.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia22.jpg
-                    - label: sfondi-dyvenia23.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia23.jpg
-                    - label: sfondi-dyvenia24.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia24.jpg
-                    - label: sfondi-dyvenia25.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia25.jpg
-                    - label: sfondi-dyvenia26.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia26.jpg
-                    - label: sfondi-dyvenia27.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia27.jpg
-                    - label: sfondi-dyvenia28.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia28.jpg
-                    - label: sfondi-dyvenia29.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia29.jpg
-                    - label: sfondi-dyvenia30.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia30.jpg
-                    - label: sfondi-dyvenia31.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia31.jpg
-                    - label: sfondi-dyvenia32.jpg
-                      value: ./src/assets/images/backgrounds/sfondi-dyvenia32.jpg
+                      - label: — none —
+                        value: ''
+                      - label: jellyfish-hr.jpg
+                        value: ./src/assets/images/backgrounds/jellyfish-hr.jpg
+                      - label: sfondi-8-high.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-8-high.jpg
+                      - label: sfondi-dyvenia02.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia02.jpg
+                      - label: sfondi-dyvenia03.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia03.jpg
+                      - label: sfondi-dyvenia04.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia04.jpg
+                      - label: sfondi-dyvenia05.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia05.jpg
+                      - label: sfondi-dyvenia06.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia06.jpg
+                      - label: sfondi-dyvenia07.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia07.jpg
+                      - label: sfondi-dyvenia08.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia08.jpg
+                      - label: sfondi-dyvenia09.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia09.jpg
+                      - label: sfondi-dyvenia10.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia10.jpg
+                      - label: sfondi-dyvenia11.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia11.jpg
+                      - label: sfondi-dyvenia12.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia12.jpg
+                      - label: sfondi-dyvenia13.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia13.jpg
+                      - label: sfondi-dyvenia14.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia14.jpg
+                      - label: sfondi-dyvenia15.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia15.jpg
+                      - label: sfondi-dyvenia16.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia16.jpg
+                      - label: sfondi-dyvenia17.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia17.jpg
+                      - label: sfondi-dyvenia18.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia18.jpg
+                      - label: sfondi-dyvenia19.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia19.jpg
+                      - label: sfondi-dyvenia20.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia20.jpg
+                      - label: sfondi-dyvenia21.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia21.jpg
+                      - label: sfondi-dyvenia22.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia22.jpg
+                      - label: sfondi-dyvenia23.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia23.jpg
+                      - label: sfondi-dyvenia24.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia24.jpg
+                      - label: sfondi-dyvenia25.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia25.jpg
+                      - label: sfondi-dyvenia26.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia26.jpg
+                      - label: sfondi-dyvenia27.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia27.jpg
+                      - label: sfondi-dyvenia28.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia28.jpg
+                      - label: sfondi-dyvenia29.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia29.jpg
+                      - label: sfondi-dyvenia30.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia30.jpg
+                      - label: sfondi-dyvenia31.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia31.jpg
+                      - label: sfondi-dyvenia32.jpg
+                        value: ./src/assets/images/backgrounds/sfondi-dyvenia32.jpg
                   - label: Image
                     name: image
                     widget: image
@@ -12304,74 +12304,74 @@ collections:
                 dropdown_threshold: 0
                 hint: Stock image from backgrounds/. Custom upload below overrides this.
                 options:
-                - label: — none —
-                  value: ''
-                - label: jellyfish-hr.jpg
-                  value: ./src/assets/images/backgrounds/jellyfish-hr.jpg
-                - label: sfondi-8-high.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-8-high.jpg
-                - label: sfondi-dyvenia02.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia02.jpg
-                - label: sfondi-dyvenia03.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia03.jpg
-                - label: sfondi-dyvenia04.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia04.jpg
-                - label: sfondi-dyvenia05.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia05.jpg
-                - label: sfondi-dyvenia06.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia06.jpg
-                - label: sfondi-dyvenia07.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia07.jpg
-                - label: sfondi-dyvenia08.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia08.jpg
-                - label: sfondi-dyvenia09.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia09.jpg
-                - label: sfondi-dyvenia10.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia10.jpg
-                - label: sfondi-dyvenia11.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia11.jpg
-                - label: sfondi-dyvenia12.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia12.jpg
-                - label: sfondi-dyvenia13.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia13.jpg
-                - label: sfondi-dyvenia14.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia14.jpg
-                - label: sfondi-dyvenia15.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia15.jpg
-                - label: sfondi-dyvenia16.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia16.jpg
-                - label: sfondi-dyvenia17.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia17.jpg
-                - label: sfondi-dyvenia18.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia18.jpg
-                - label: sfondi-dyvenia19.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia19.jpg
-                - label: sfondi-dyvenia20.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia20.jpg
-                - label: sfondi-dyvenia21.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia21.jpg
-                - label: sfondi-dyvenia22.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia22.jpg
-                - label: sfondi-dyvenia23.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia23.jpg
-                - label: sfondi-dyvenia24.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia24.jpg
-                - label: sfondi-dyvenia25.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia25.jpg
-                - label: sfondi-dyvenia26.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia26.jpg
-                - label: sfondi-dyvenia27.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia27.jpg
-                - label: sfondi-dyvenia28.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia28.jpg
-                - label: sfondi-dyvenia29.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia29.jpg
-                - label: sfondi-dyvenia30.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia30.jpg
-                - label: sfondi-dyvenia31.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia31.jpg
-                - label: sfondi-dyvenia32.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia32.jpg
+                  - label: — none —
+                    value: ''
+                  - label: jellyfish-hr.jpg
+                    value: ./src/assets/images/backgrounds/jellyfish-hr.jpg
+                  - label: sfondi-8-high.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-8-high.jpg
+                  - label: sfondi-dyvenia02.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia02.jpg
+                  - label: sfondi-dyvenia03.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia03.jpg
+                  - label: sfondi-dyvenia04.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia04.jpg
+                  - label: sfondi-dyvenia05.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia05.jpg
+                  - label: sfondi-dyvenia06.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia06.jpg
+                  - label: sfondi-dyvenia07.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia07.jpg
+                  - label: sfondi-dyvenia08.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia08.jpg
+                  - label: sfondi-dyvenia09.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia09.jpg
+                  - label: sfondi-dyvenia10.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia10.jpg
+                  - label: sfondi-dyvenia11.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia11.jpg
+                  - label: sfondi-dyvenia12.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia12.jpg
+                  - label: sfondi-dyvenia13.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia13.jpg
+                  - label: sfondi-dyvenia14.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia14.jpg
+                  - label: sfondi-dyvenia15.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia15.jpg
+                  - label: sfondi-dyvenia16.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia16.jpg
+                  - label: sfondi-dyvenia17.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia17.jpg
+                  - label: sfondi-dyvenia18.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia18.jpg
+                  - label: sfondi-dyvenia19.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia19.jpg
+                  - label: sfondi-dyvenia20.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia20.jpg
+                  - label: sfondi-dyvenia21.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia21.jpg
+                  - label: sfondi-dyvenia22.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia22.jpg
+                  - label: sfondi-dyvenia23.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia23.jpg
+                  - label: sfondi-dyvenia24.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia24.jpg
+                  - label: sfondi-dyvenia25.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia25.jpg
+                  - label: sfondi-dyvenia26.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia26.jpg
+                  - label: sfondi-dyvenia27.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia27.jpg
+                  - label: sfondi-dyvenia28.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia28.jpg
+                  - label: sfondi-dyvenia29.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia29.jpg
+                  - label: sfondi-dyvenia30.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia30.jpg
+                  - label: sfondi-dyvenia31.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia31.jpg
+                  - label: sfondi-dyvenia32.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia32.jpg
               - label: Image
                 name: image
                 widget: image
@@ -12529,10 +12529,10 @@ collections:
                     required: false
                     dropdown_threshold: 0
                     options:
-                    - label: default
-                      value: ''
-                    - label: small
-                      value: small
+                      - label: default
+                        value: ''
+                      - label: small
+                        value: small
                     default: ''
           - label: Text
             name: text
@@ -14055,74 +14055,74 @@ collections:
                 dropdown_threshold: 0
                 hint: Stock image from backgrounds/. Custom upload below overrides this.
                 options:
-                - label: — none —
-                  value: ''
-                - label: jellyfish-hr.jpg
-                  value: ./src/assets/images/backgrounds/jellyfish-hr.jpg
-                - label: sfondi-8-high.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-8-high.jpg
-                - label: sfondi-dyvenia02.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia02.jpg
-                - label: sfondi-dyvenia03.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia03.jpg
-                - label: sfondi-dyvenia04.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia04.jpg
-                - label: sfondi-dyvenia05.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia05.jpg
-                - label: sfondi-dyvenia06.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia06.jpg
-                - label: sfondi-dyvenia07.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia07.jpg
-                - label: sfondi-dyvenia08.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia08.jpg
-                - label: sfondi-dyvenia09.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia09.jpg
-                - label: sfondi-dyvenia10.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia10.jpg
-                - label: sfondi-dyvenia11.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia11.jpg
-                - label: sfondi-dyvenia12.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia12.jpg
-                - label: sfondi-dyvenia13.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia13.jpg
-                - label: sfondi-dyvenia14.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia14.jpg
-                - label: sfondi-dyvenia15.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia15.jpg
-                - label: sfondi-dyvenia16.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia16.jpg
-                - label: sfondi-dyvenia17.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia17.jpg
-                - label: sfondi-dyvenia18.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia18.jpg
-                - label: sfondi-dyvenia19.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia19.jpg
-                - label: sfondi-dyvenia20.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia20.jpg
-                - label: sfondi-dyvenia21.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia21.jpg
-                - label: sfondi-dyvenia22.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia22.jpg
-                - label: sfondi-dyvenia23.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia23.jpg
-                - label: sfondi-dyvenia24.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia24.jpg
-                - label: sfondi-dyvenia25.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia25.jpg
-                - label: sfondi-dyvenia26.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia26.jpg
-                - label: sfondi-dyvenia27.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia27.jpg
-                - label: sfondi-dyvenia28.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia28.jpg
-                - label: sfondi-dyvenia29.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia29.jpg
-                - label: sfondi-dyvenia30.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia30.jpg
-                - label: sfondi-dyvenia31.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia31.jpg
-                - label: sfondi-dyvenia32.jpg
-                  value: ./src/assets/images/backgrounds/sfondi-dyvenia32.jpg
+                  - label: — none —
+                    value: ''
+                  - label: jellyfish-hr.jpg
+                    value: ./src/assets/images/backgrounds/jellyfish-hr.jpg
+                  - label: sfondi-8-high.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-8-high.jpg
+                  - label: sfondi-dyvenia02.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia02.jpg
+                  - label: sfondi-dyvenia03.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia03.jpg
+                  - label: sfondi-dyvenia04.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia04.jpg
+                  - label: sfondi-dyvenia05.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia05.jpg
+                  - label: sfondi-dyvenia06.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia06.jpg
+                  - label: sfondi-dyvenia07.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia07.jpg
+                  - label: sfondi-dyvenia08.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia08.jpg
+                  - label: sfondi-dyvenia09.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia09.jpg
+                  - label: sfondi-dyvenia10.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia10.jpg
+                  - label: sfondi-dyvenia11.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia11.jpg
+                  - label: sfondi-dyvenia12.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia12.jpg
+                  - label: sfondi-dyvenia13.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia13.jpg
+                  - label: sfondi-dyvenia14.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia14.jpg
+                  - label: sfondi-dyvenia15.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia15.jpg
+                  - label: sfondi-dyvenia16.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia16.jpg
+                  - label: sfondi-dyvenia17.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia17.jpg
+                  - label: sfondi-dyvenia18.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia18.jpg
+                  - label: sfondi-dyvenia19.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia19.jpg
+                  - label: sfondi-dyvenia20.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia20.jpg
+                  - label: sfondi-dyvenia21.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia21.jpg
+                  - label: sfondi-dyvenia22.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia22.jpg
+                  - label: sfondi-dyvenia23.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia23.jpg
+                  - label: sfondi-dyvenia24.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia24.jpg
+                  - label: sfondi-dyvenia25.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia25.jpg
+                  - label: sfondi-dyvenia26.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia26.jpg
+                  - label: sfondi-dyvenia27.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia27.jpg
+                  - label: sfondi-dyvenia28.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia28.jpg
+                  - label: sfondi-dyvenia29.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia29.jpg
+                  - label: sfondi-dyvenia30.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia30.jpg
+                  - label: sfondi-dyvenia31.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia31.jpg
+                  - label: sfondi-dyvenia32.jpg
+                    value: ./src/assets/images/backgrounds/sfondi-dyvenia32.jpg
               - label: Image
                 name: image
                 widget: image
@@ -14348,3 +14348,40 @@ collections:
             name: newsletter_consent_required
             widget: string
             hint: Message shown when the user tries to submit without giving consent
+  - name: consent
+    label: Cookie Consent
+    icon: cookie
+    extension: yaml
+    format: yaml
+    files:
+      - file: src/_data/consent.yaml
+        label: Consent Messages
+        name: consent
+        fields:
+          - label: Banner Message
+            name: message
+            widget: text
+            hint: Main message shown in the consent banner. Supports HTML links.
+          - label: Accept (per service)
+            name: accept
+            widget: string
+          - label: Decline (per service)
+            name: decline
+            widget: string
+          - label: Accept All
+            name: accept_all
+            widget: string
+          - label: Decline All
+            name: decline_all
+            widget: string
+          - label: Change Preferences Label
+            name: change
+            widget: string
+            hint: Accessible label for the footer cookie preferences control
+          - label: Marketing Title
+            name: marketing_title
+            widget: string
+          - label: Marketing Description
+            name: marketing_description
+            widget: text
+            hint: Short explanation of the marketing category. Supports HTML.

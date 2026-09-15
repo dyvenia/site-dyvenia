@@ -78,10 +78,10 @@
       {% if s.button_text and s.button_target %}
         <a
           href="{{ s.button_target }}"
-          class="button flow-space-l fade-in delay-7"
+          class="button flow-space-l fade-in delay-7 no-indicator"
           {{ sectionButtonAttr(accent) }}
         >
-          {{ s.button_text }} {% svg "misc/arrow" %}
+          <span>{{ s.button_text }}</span> {% svg "misc/arrow" %}
         </a>
       {% endif %}
     </div>

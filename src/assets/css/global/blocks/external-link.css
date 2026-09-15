@@ -3,7 +3,7 @@ a[href^='http']:not([href*='localhost:8080']):not(.button) {
 }
 
 a[href^='http']:not([href*='localhost:8080']):not(.button):not(.no-indicator)::after,
-a[href^='http'].button span::after {
+a[href^='http'].button:not(.no-indicator) span::after {
   position: absolute;
   display: inline-block;
   inline-size: 1em;
@@ -12,13 +12,11 @@ a[href^='http'].button span::after {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 60% auto;
-  /* alternative text rules */
   content: '(external link)';
   overflow: hidden;
   white-space: nowrap;
-  text-indent: 1em; /* the width of the icon */
+  text-indent: 1em;
 }
-
 a[href^='http'].button span::after {
   background-position: 100%;
   background-size: 70% auto;

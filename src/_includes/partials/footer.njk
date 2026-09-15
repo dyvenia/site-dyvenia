@@ -28,6 +28,11 @@
           {% svg "misc/rss" %}
         </a>
 
+        <button type="button" data-consent-banner>
+          <span class="visually-hidden">{{ consent.change }}</span>
+          {% svg "misc/cookie" %}
+        </button>
+
         {% for key, value in personal.platforms %}
           {% if value != "" %}
             <!-- regular platforms -->

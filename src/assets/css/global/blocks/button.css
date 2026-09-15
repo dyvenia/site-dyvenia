@@ -9,7 +9,7 @@
   --button-hover-border-color: var(--button-hover-bg);
   --button-font-weight: var(--font-regular);
   --button-gap: var(--space-2xs);
-  --button-padding: var(--space-3xs) var(--space-s) 0.4em var(--space-s);
+  --button-padding: var(--space-3xs) var(--space-s);
   --button-font-size: var(--size-step-0);
   --button-text-transform: none;
   --button-radius: var(--border-radius-small);
@@ -29,21 +29,23 @@
   font-size: var(--button-font-size);
   line-height: var(--leading-flat);
   text-transform: var(--button-text-transform);
-  /* trim the space at the cap height - in  Safari Technology Preview */
-  text-box-trim: trim-both;
-  text-box-edge: cap alphabetic;
   transition:
     text-decoration var(--transition-duration) var(--transition-timing),
     background-color var(--transition-duration) var(--transition-timing),
     border-color var(--transition-duration) var(--transition-timing);
 }
 
+.button span,
+span.button {
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
 .button:has(svg) {
-  --button-padding: var(--space-3xs) var(--space-xs) 0.4em var(--space-s);
+  --button-padding: var(--space-3xs) var(--space-xs) var(--space-3xs) var(--space-s);
 }
 
 .button svg {
-  margin-block-start: 0.2em;
   block-size: var(--button-icon-size, 1.2cap);
   flex: none;
 }
@@ -70,7 +72,10 @@
   Section theme default CTAs — must live in `blocks` layer (not variables),
   or base `.button` custom props win and ignore --section-cta-*.
 */
-[data-section-theme] .button:not([data-button-variant]):not([data-small-button]):not([data-pill-button]):not([data-button-text]):not([data-ghost-button]) {
+[data-section-theme]
+  .button:not([data-button-variant]):not([data-small-button]):not([data-pill-button]):not(
+    [data-button-text]
+  ):not([data-ghost-button]) {
   --button-bg: var(--section-cta-bg);
   --button-color: var(--section-cta-color);
   --button-hover-bg: var(--section-cta-hover-bg);
@@ -129,7 +134,7 @@
   --button-border-width: 2px;
   --button-radius: var(--border-radius-small);
   --button-font-size: var(--size-step-min-2);
-  --button-padding: var(--space-4xs) var(--space-2xs);
+  --button-padding: var(--space-3xs) var(--space-2xs);
   --button-text-transform: uppercase;
   --button-font-weight: var(--font-medium);
 }
