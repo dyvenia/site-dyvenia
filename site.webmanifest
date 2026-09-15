@@ -1,0 +1,26 @@
+{
+  "name": "dyvenia - Data Done Right. Crafting data solutions that fit your business needs, not just your tech stack.",
+  "short_name": "dyvenia",
+  "start_url": "http://localhost:8080",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/maskable-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "theme_color": "#0E909D",
+  "background_color": "#f8f8f9",
+  "display": "standalone"
+}
