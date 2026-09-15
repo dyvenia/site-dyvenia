@@ -1,9 +1,17 @@
-.page :is(h2, h3, h4) {
+.page :where(h2, h3, h4) {
   --flow-space: var(--space-m);
   font-size: var(--size-step-0);
   font-weight: var(--font-bold);
 }
 
-.page .prose :where(h2 + *, h3 + *, h4 + *):not(figure) {
+.page :where(h3, h4) {
+  color: var(--color-text-accent-2);
+}
+
+.page :where(h2 + *, h3 + *, h4 + *):not(figure) {
   --flow-space: var(--space-3xs);
+}
+
+.page h2 + h3 {
+  --flow-space: var(--space-xs);
 }

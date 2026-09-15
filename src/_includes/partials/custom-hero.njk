@@ -53,9 +53,7 @@
 
   <div class="custom-hero__content | section__inner region region-space-{{ heroRegionSpace }}">
     <div class="wrapper flow">
-      <h1 class="fade-in-bottom">
-        {{ heroData.title | markdownInline | safe }}
-      </h1>
+      <h1 class="fade-in-bottom">{{ heroData.title | markdownInline | safe }}</h1>
 
       {% if heroData.subtitle %}
         <div class="fade-in delay-3 flow">{{ heroData.subtitle | markdownFormat | safe }}</div>
@@ -64,10 +62,10 @@
       {% if heroData.button_text and heroData.button_target %}
         <a
           href="{{ heroData.button_target }}"
-          class="button flow-space-l fade-in delay-7"
+          class="button flow-space-l fade-in delay-7 no-indicator"
           {% if heroButtonVariant %}data-button-variant="{{ heroButtonVariant }}"{% endif %}
         >
-          {{ heroData.button_text }} {% svg "misc/arrow" %}
+          <span>{{ heroData.button_text }}</span> {% svg "misc/arrow" %}
         </a>
       {% endif %}
     </div>

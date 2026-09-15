@@ -15,7 +15,7 @@
             aria-controls="mainnav-{{ loop.index }}-sub"
             data-btn-submenu
           >
-            {{ item.text }} {% svg "misc/chev-down" %}
+            <span>{{ item.text }}</span> {% svg "misc/chev-down" %}
           </button>
           <ul class="nav-sublist" id="mainnav-{{ loop.index }}-sub">
             {% for subitem in item.submenu %}
@@ -46,7 +46,7 @@
               |
               safe
             }}
-            >{{ item.text }}</a
+            ><span>{{ item.text }}</span></a
           >
         </li>
       {% endif %}
@@ -58,7 +58,7 @@
         target="blank"
         data-button-variant="teal"
       >
-        {{ meta.book_call }}
+        <span>{{ meta.book_call }}</span>
       </a>
     </li>
   </ul>
