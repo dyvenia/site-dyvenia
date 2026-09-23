@@ -1281,6 +1281,12 @@ collections:
                           - label: feature
                             value: feature
                         default: feature
+                      - label: Drop block spacing
+                        name: drop_block_spacing
+                        widget: boolean
+                        required: false
+                        default: false
+                        hint: Omit region vertical padding on this tags band.
               - label: Team
                 name: team
                 widget: object
@@ -3462,6 +3468,12 @@ collections:
                           - label: feature
                             value: feature
                         default: feature
+                      - label: Drop block spacing
+                        name: drop_block_spacing
+                        widget: boolean
+                        required: false
+                        default: false
+                        hint: Omit region vertical padding on this tags band.
               - label: Team
                 name: team
                 widget: object
@@ -5597,6 +5609,12 @@ collections:
                           - label: feature
                             value: feature
                         default: feature
+                      - label: Drop block spacing
+                        name: drop_block_spacing
+                        widget: boolean
+                        required: false
+                        default: false
+                        hint: Omit region vertical padding on this tags band.
               - label: Team
                 name: team
                 widget: object
@@ -7763,6 +7781,12 @@ collections:
                           - label: feature
                             value: feature
                         default: feature
+                      - label: Drop block spacing
+                        name: drop_block_spacing
+                        widget: boolean
+                        required: false
+                        default: false
+                        hint: Omit region vertical padding on this tags band.
               - label: Team
                 name: team
                 widget: object
@@ -9924,6 +9948,12 @@ collections:
                           - label: feature
                             value: feature
                         default: feature
+                      - label: Drop block spacing
+                        name: drop_block_spacing
+                        widget: boolean
+                        required: false
+                        default: false
+                        hint: Omit region vertical padding on this tags band.
               - label: Team
                 name: team
                 widget: object
@@ -11951,6 +11981,12 @@ collections:
                           - label: feature
                             value: feature
                         default: feature
+                      - label: Drop block spacing
+                        name: drop_block_spacing
+                        widget: boolean
+                        required: false
+                        default: false
+                        hint: Omit region vertical padding on this tags band.
               - label: Team
                 name: team
                 widget: object
@@ -14064,6 +14100,12 @@ collections:
                       - label: feature
                         value: feature
                     default: feature
+                  - label: Drop block spacing
+                    name: drop_block_spacing
+                    widget: boolean
+                    required: false
+                    default: false
+                    hint: Omit region vertical padding on this tags band.
           - label: Team
             name: team
             widget: object
