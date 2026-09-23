@@ -1199,6 +1199,88 @@ collections:
                           - label: '3'
                             value: '3'
                         default: '3'
+              - label: Tags
+                name: tags
+                widget: object
+                fields:
+                  - label: Internal name
+                    name: internal_name
+                    widget: string
+                    required: false
+                    hint: CMS list label only — not shown on the site
+                  - label: Title
+                    name: title
+                    widget: markdown
+                    required: false
+                  - label: Intro
+                    name: intro
+                    widget: markdown
+                    required: false
+                  - label: Settings
+                    name: appearance
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: Background theme
+                        name: theme
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: Background
+                            value: background-default
+                          - label: Background accent
+                            value: background-accent
+                          - label: gray-dark
+                            value: gray-dark
+                          - label: teal
+                            value: teal
+                          - label: teal-dark
+                            value: teal-dark
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: background-default
+                      - label: Accent / CTA
+                        name: accent
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: default
+                            value: default
+                          - label: neutral
+                            value: neutral
+                          - label: teal
+                            value: teal
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: default
+                      - label: Alignment
+                        name: align
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: left
+                            value: left
+                          - label: center
+                            value: center
+                        default: left
+                      - label: Width
+                        name: width
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: content
+                            value: content
+                          - label: feature
+                            value: feature
+                        default: feature
               - label: Team
                 name: team
                 widget: object
@@ -3298,6 +3380,88 @@ collections:
                           - label: '3'
                             value: '3'
                         default: '3'
+              - label: Tags
+                name: tags
+                widget: object
+                fields:
+                  - label: Internal name
+                    name: internal_name
+                    widget: string
+                    required: false
+                    hint: CMS list label only — not shown on the site
+                  - label: Title
+                    name: title
+                    widget: markdown
+                    required: false
+                  - label: Intro
+                    name: intro
+                    widget: markdown
+                    required: false
+                  - label: Settings
+                    name: appearance
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: Background theme
+                        name: theme
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: Background
+                            value: background-default
+                          - label: Background accent
+                            value: background-accent
+                          - label: gray-dark
+                            value: gray-dark
+                          - label: teal
+                            value: teal
+                          - label: teal-dark
+                            value: teal-dark
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: background-default
+                      - label: Accent / CTA
+                        name: accent
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: default
+                            value: default
+                          - label: neutral
+                            value: neutral
+                          - label: teal
+                            value: teal
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: default
+                      - label: Alignment
+                        name: align
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: left
+                            value: left
+                          - label: center
+                            value: center
+                        default: left
+                      - label: Width
+                        name: width
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: content
+                            value: content
+                          - label: feature
+                            value: feature
+                        default: feature
               - label: Team
                 name: team
                 widget: object
@@ -5351,6 +5515,88 @@ collections:
                           - label: '3'
                             value: '3'
                         default: '3'
+              - label: Tags
+                name: tags
+                widget: object
+                fields:
+                  - label: Internal name
+                    name: internal_name
+                    widget: string
+                    required: false
+                    hint: CMS list label only — not shown on the site
+                  - label: Title
+                    name: title
+                    widget: markdown
+                    required: false
+                  - label: Intro
+                    name: intro
+                    widget: markdown
+                    required: false
+                  - label: Settings
+                    name: appearance
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: Background theme
+                        name: theme
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: Background
+                            value: background-default
+                          - label: Background accent
+                            value: background-accent
+                          - label: gray-dark
+                            value: gray-dark
+                          - label: teal
+                            value: teal
+                          - label: teal-dark
+                            value: teal-dark
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: background-default
+                      - label: Accent / CTA
+                        name: accent
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: default
+                            value: default
+                          - label: neutral
+                            value: neutral
+                          - label: teal
+                            value: teal
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: default
+                      - label: Alignment
+                        name: align
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: left
+                            value: left
+                          - label: center
+                            value: center
+                        default: left
+                      - label: Width
+                        name: width
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: content
+                            value: content
+                          - label: feature
+                            value: feature
+                        default: feature
               - label: Team
                 name: team
                 widget: object
@@ -7435,6 +7681,88 @@ collections:
                           - label: '3'
                             value: '3'
                         default: '3'
+              - label: Tags
+                name: tags
+                widget: object
+                fields:
+                  - label: Internal name
+                    name: internal_name
+                    widget: string
+                    required: false
+                    hint: CMS list label only — not shown on the site
+                  - label: Title
+                    name: title
+                    widget: markdown
+                    required: false
+                  - label: Intro
+                    name: intro
+                    widget: markdown
+                    required: false
+                  - label: Settings
+                    name: appearance
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: Background theme
+                        name: theme
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: Background
+                            value: background-default
+                          - label: Background accent
+                            value: background-accent
+                          - label: gray-dark
+                            value: gray-dark
+                          - label: teal
+                            value: teal
+                          - label: teal-dark
+                            value: teal-dark
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: background-default
+                      - label: Accent / CTA
+                        name: accent
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: default
+                            value: default
+                          - label: neutral
+                            value: neutral
+                          - label: teal
+                            value: teal
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: default
+                      - label: Alignment
+                        name: align
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: left
+                            value: left
+                          - label: center
+                            value: center
+                        default: left
+                      - label: Width
+                        name: width
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: content
+                            value: content
+                          - label: feature
+                            value: feature
+                        default: feature
               - label: Team
                 name: team
                 widget: object
@@ -9514,6 +9842,88 @@ collections:
                           - label: '3'
                             value: '3'
                         default: '3'
+              - label: Tags
+                name: tags
+                widget: object
+                fields:
+                  - label: Internal name
+                    name: internal_name
+                    widget: string
+                    required: false
+                    hint: CMS list label only — not shown on the site
+                  - label: Title
+                    name: title
+                    widget: markdown
+                    required: false
+                  - label: Intro
+                    name: intro
+                    widget: markdown
+                    required: false
+                  - label: Settings
+                    name: appearance
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: Background theme
+                        name: theme
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: Background
+                            value: background-default
+                          - label: Background accent
+                            value: background-accent
+                          - label: gray-dark
+                            value: gray-dark
+                          - label: teal
+                            value: teal
+                          - label: teal-dark
+                            value: teal-dark
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: background-default
+                      - label: Accent / CTA
+                        name: accent
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: default
+                            value: default
+                          - label: neutral
+                            value: neutral
+                          - label: teal
+                            value: teal
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: default
+                      - label: Alignment
+                        name: align
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: left
+                            value: left
+                          - label: center
+                            value: center
+                        default: left
+                      - label: Width
+                        name: width
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: content
+                            value: content
+                          - label: feature
+                            value: feature
+                        default: feature
               - label: Team
                 name: team
                 widget: object
@@ -11459,6 +11869,88 @@ collections:
                           - label: '3'
                             value: '3'
                         default: '3'
+              - label: Tags
+                name: tags
+                widget: object
+                fields:
+                  - label: Internal name
+                    name: internal_name
+                    widget: string
+                    required: false
+                    hint: CMS list label only — not shown on the site
+                  - label: Title
+                    name: title
+                    widget: markdown
+                    required: false
+                  - label: Intro
+                    name: intro
+                    widget: markdown
+                    required: false
+                  - label: Settings
+                    name: appearance
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: Background theme
+                        name: theme
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: Background
+                            value: background-default
+                          - label: Background accent
+                            value: background-accent
+                          - label: gray-dark
+                            value: gray-dark
+                          - label: teal
+                            value: teal
+                          - label: teal-dark
+                            value: teal-dark
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: background-default
+                      - label: Accent / CTA
+                        name: accent
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: default
+                            value: default
+                          - label: neutral
+                            value: neutral
+                          - label: teal
+                            value: teal
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: default
+                      - label: Alignment
+                        name: align
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: left
+                            value: left
+                          - label: center
+                            value: center
+                        default: left
+                      - label: Width
+                        name: width
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: content
+                            value: content
+                          - label: feature
+                            value: feature
+                        default: feature
               - label: Team
                 name: team
                 widget: object
@@ -13490,6 +13982,88 @@ collections:
                       - label: '3'
                         value: '3'
                     default: '3'
+          - label: Tags
+            name: tags
+            widget: object
+            fields:
+              - label: Internal name
+                name: internal_name
+                widget: string
+                required: false
+                hint: CMS list label only — not shown on the site
+              - label: Title
+                name: title
+                widget: markdown
+                required: false
+              - label: Intro
+                name: intro
+                widget: markdown
+                required: false
+              - label: Settings
+                name: appearance
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Background theme
+                    name: theme
+                    widget: select
+                    required: false
+                    dropdown_threshold: 0
+                    options:
+                      - label: Background
+                        value: background-default
+                      - label: Background accent
+                        value: background-accent
+                      - label: gray-dark
+                        value: gray-dark
+                      - label: teal
+                        value: teal
+                      - label: teal-dark
+                        value: teal-dark
+                      - label: purple
+                        value: purple
+                      - label: navy
+                        value: navy
+                    default: background-default
+                  - label: Accent / CTA
+                    name: accent
+                    widget: select
+                    required: false
+                    dropdown_threshold: 0
+                    options:
+                      - label: default
+                        value: default
+                      - label: neutral
+                        value: neutral
+                      - label: teal
+                        value: teal
+                      - label: purple
+                        value: purple
+                      - label: navy
+                        value: navy
+                    default: default
+                  - label: Alignment
+                    name: align
+                    widget: select
+                    required: false
+                    dropdown_threshold: 0
+                    options:
+                      - label: left
+                        value: left
+                      - label: center
+                        value: center
+                    default: left
+                  - label: Width
+                    name: width
+                    widget: select
+                    required: false
+                    dropdown_threshold: 0
+                    options:
+                      - label: content
+                        value: content
+                      - label: feature
+                        value: feature
+                    default: feature
           - label: Team
             name: team
             widget: object

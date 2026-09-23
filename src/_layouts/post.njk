@@ -22,7 +22,7 @@ schema: blog
         <!-- tags -->
         {% for tag in tags %}{% if tag != "posts" and tag != "case-studies" %}
           <a class="button" data-small-button data-ghost-button href="/tags/{{ tag | slugify }}/">
-            {{ tag }}
+            <span>{{ tag }}</span>
           </a>
         {% endif %}{% endfor %}
       {% endif %}

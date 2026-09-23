@@ -28,6 +28,9 @@
   {% ifAsync section.type == "posts" %}
     {% include "sections/posts.njk" %}
   {% endif %}
+  {% ifAsync section.type == "tags" %}
+    {% include "sections/tags.njk" %}
+  {% endif %}
   {% ifAsync section.type == "team" %}
     {% include "sections/team.njk" %}
   {% endif %}

@@ -10,6 +10,7 @@ export default {
     'accordion',
     'cta',
     'posts',
+    'tags',
     'team',
     'form',
     'services',
@@ -52,6 +53,10 @@ export default {
     },
     posts: {
       title: 'posts',
+      body: ''
+    },
+    tags: {
+      title: 'tags',
       body: ''
     },
     team: {
@@ -161,8 +166,7 @@ export default {
     title1: 'How we',
     title2: 'deliver',
     decoration: 'brand/medusa-organic',
-    appearance: {
-    },
+    appearance: {},
     items: [
       {
         title: 'Assess & align',
@@ -244,7 +248,17 @@ export default {
       count: 3
     },
     title: 'Our Insights',
-    intro: 'Selected Articles. Check our blog for more.',
+    intro: 'Selected Articles. Check our blog for more.'
+  },
+  tags: {
+    type: 'tags',
+    appearance: {
+      theme: 'background-default',
+      align: 'left',
+      width: 'feature'
+    },
+    title: 'Browse by topic',
+    intro: 'Jump into insights by tag.'
   },
   team: {
     type: 'team',
