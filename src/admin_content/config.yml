@@ -317,7 +317,7 @@ collections:
                             value: ''
                           - label: small
                             value: small
-                        default: teal
+                        default: ''
               - label: Text
                 name: text
                 widget: object
@@ -2017,7 +2017,7 @@ collections:
                             value: divider/soft-invert
                           - label: Waves
                             value: divider/waves
-                        default: teal
+                        default: ''
                       - label: Divider (bottom)
                         name: divider
                         widget: select
@@ -2044,7 +2044,7 @@ collections:
                             value: ''
                           - label: small
                             value: small
-                        default: teal
+                        default: ''
   - name: blog
     label: Posts
     label_singular: Post
@@ -2401,7 +2401,7 @@ collections:
                             value: ''
                           - label: small
                             value: small
-                        default: teal
+                        default: ''
               - label: Text
                 name: text
                 widget: object
@@ -4442,7 +4442,7 @@ collections:
                             value: ''
                           - label: small
                             value: small
-                        default: teal
+                        default: ''
               - label: Text
                 name: text
                 widget: object
