@@ -14,15 +14,29 @@
 {% set width = a.width if a.width is defined else s.width %}
 {% set widthClass = sectionWidthClass(width or "feature") or "feature" %}
 {% set alignClass = sectionAlignClass(align) %}
-{% set count = s.count or 3 %}
-{% set cardLayout = a.card_layout or s.card_layout or s.layout or "grid" %}
+{% set count = a.count or s.count or 3 %}
+{% set listing = (a.listing if a.listing is defined else s.listing) == true %}
+{% set showCardTags = (a.show_tags if a.show_tags is defined else s.show_tags) == true %}
+{% set cols = a.card_layout or s.card_layout or "3" %}
+{# legacy: masonry/50-50 → 2 cols; grid/thirds → 3 cols #}
+{% if cols == "2" or cols == "50-50" or cols == "masonry" %}
+  {% set dataLayout = "50-50" %}
+{% else %}
+  {% set dataLayout = "thirds" %}
+{% endif %}
 {% set titleHref = s.title_href or "/insights/" %}
-{% set itemList = collections.allPosts %}
+{% if listing %}
+  {% set itemList = pagination.items %}
+{% else %}
+  {% set itemList = collections.allPosts.slice(0, count) %}
+{% endif %}
 
-<div class="section-posts | wrapper" {{ sectionThemeAttr(theme) }}{{ sectionAccentAttr(accent) }}{% if s.id %} id="{{ s.id }}"{% endif %}>
+<div class="section-posts | wrapper" {{ sectionThemeAttr(theme) }}{{ sectionAccentAttr(accent) }}{% if s.id %} id="{{ s.id }}"{% endif %}{% if listing and not s.title %} aria-describedby="blog-section"{% endif %}>
   <div class="full wrapper section">
     <div class="{{ widthClass }} | section__inner region">
-      {% if s.title or s.intro or s.content %}
+      {% if listing and not s.title %}
+        <h2 id="blog-section" class="visually-hidden">Blog posts</h2>
+      {% elif s.title or s.intro or s.content %}
         <header class="section-posts__header | flow prose {{ alignClass }}">
           {% if s.title %}
             <h2>
@@ -36,25 +50,20 @@
       {% endif %}
 
       {% if itemList and itemList.length %}
-        {% if cardLayout == "masonry" %}
-          <custom-masonry class="section-posts__cards mt-l" layout="50-50">
-            {% asyncEach item in itemList.slice(0, count) %}
-              {% set showTags = false %}
-              {% set headingLevel = "h3" %}
-              {% set definedDate = item.date %}
-              {% include "partials/card-blog.njk" %}
-            {% endeach %}
-          </custom-masonry>
-        {% else %}
-          <div class="section-posts__cards grid gutter-s mt-l" data-layout="thirds">
-            {% asyncEach item in itemList.slice(0, count) %}
-              {% set showTags = false %}
-              {% set headingLevel = "h3" %}
-              {% set definedDate = item.date %}
-              {% include "partials/card-blog.njk" %}
-            {% endeach %}
-          </div>
-        {% endif %}
+        <div class="section-posts__cards grid gutter-s{% if not listing or s.title or s.intro or s.content %} mt-l{% endif %}" data-layout="{{ dataLayout }}">
+          {% asyncEach item in itemList %}
+            {% set showTags = showCardTags %}
+            {% set headingLevel = "h3" %}
+            {% set definedDate = item.date %}
+            {% include "partials/card-blog.njk" %}
+          {% endeach %}
+        </div>
+      {% endif %}
+
+      {% if listing and collections.allPosts.length > pagination.size %}
+        {% set collectionToPaginate = collections.allPosts %}
+        {% set metaKey = "blog" %}
+        {% include "partials/pagination.njk" %}
       {% endif %}
     </div>
   </div>

@@ -240,11 +240,11 @@ export default {
     appearance: {
       theme: 'background-default',
       width: 'feature',
-      card_layout: 'grid'
+      card_layout: '3',
+      count: 3
     },
     title: 'Our Insights',
     intro: 'Selected Articles. Check our blog for more.',
-    count: 3
   },
   team: {
     type: 'team',
@@ -342,7 +342,7 @@ export default {
     appearance: {
       theme: 'background-default',
       width: 'feature',
-      card_layout: 'grid'
+      card_layout: '3'
     },
     title: 'Case Studies',
     intro: 'Selected client work. More coming soon.',

@@ -1103,17 +1103,29 @@ collections:
                     widget: string
                     required: false
                     default: /insights/
-                  - label: Count
-                    name: count
-                    widget: number
-                    required: false
-                    default: 3
-                    value_type: int
                   - label: Settings
                     name: appearance
                     widget: object
                     collapsed: true
                     fields:
+                      - label: Count
+                        name: count
+                        widget: number
+                        required: false
+                        default: 3
+                        value_type: int
+                        hint: Teaser only, ignored when Listing is on
+                      - label: Listing
+                        name: listing
+                        widget: boolean
+                        required: false
+                        default: false
+                        hint: Full Insights listing. Uses page pagination, Count is ignored
+                      - label: Show tags
+                        name: show_tags
+                        widget: boolean
+                        required: false
+                        default: false
                       - label: Background theme
                         name: theme
                         widget: select
@@ -1176,17 +1188,17 @@ collections:
                           - label: full
                             value: full
                         default: feature
-                      - label: Card layout
+                      - label: Columns
                         name: card_layout
                         widget: select
                         required: false
                         dropdown_threshold: 0
                         options:
-                          - label: grid
-                            value: grid
-                          - label: masonry
-                            value: masonry
-                        default: grid
+                          - label: '2'
+                            value: '2'
+                          - label: '3'
+                            value: '3'
+                        default: '3'
               - label: Team
                 name: team
                 widget: object
@@ -2133,8 +2145,11 @@ collections:
                 default: collections.allPosts
               - label: Size
                 name: size
-                widget: hidden
+                widget: number
                 default: 6
+                value_type: int
+                required: false
+                hint: Posts per page
           - label: Sections
             name: sections
             widget: list
@@ -3187,17 +3202,29 @@ collections:
                     widget: string
                     required: false
                     default: /insights/
-                  - label: Count
-                    name: count
-                    widget: number
-                    required: false
-                    default: 3
-                    value_type: int
                   - label: Settings
                     name: appearance
                     widget: object
                     collapsed: true
                     fields:
+                      - label: Count
+                        name: count
+                        widget: number
+                        required: false
+                        default: 3
+                        value_type: int
+                        hint: Teaser only — ignored when Listing is on
+                      - label: Listing
+                        name: listing
+                        widget: boolean
+                        required: false
+                        default: false
+                        hint: Full Insights listing — uses page pagination; Count is ignored
+                      - label: Show tags
+                        name: show_tags
+                        widget: boolean
+                        required: false
+                        default: false
                       - label: Background theme
                         name: theme
                         widget: select
@@ -3260,17 +3287,17 @@ collections:
                           - label: full
                             value: full
                         default: feature
-                      - label: Card layout
+                      - label: Columns
                         name: card_layout
                         widget: select
                         required: false
                         dropdown_threshold: 0
                         options:
-                          - label: grid
-                            value: grid
-                          - label: masonry
-                            value: masonry
-                        default: grid
+                          - label: '2'
+                            value: '2'
+                          - label: '3'
+                            value: '3'
+                        default: '3'
               - label: Team
                 name: team
                 widget: object
@@ -5228,17 +5255,29 @@ collections:
                     widget: string
                     required: false
                     default: /insights/
-                  - label: Count
-                    name: count
-                    widget: number
-                    required: false
-                    default: 3
-                    value_type: int
                   - label: Settings
                     name: appearance
                     widget: object
                     collapsed: true
                     fields:
+                      - label: Count
+                        name: count
+                        widget: number
+                        required: false
+                        default: 3
+                        value_type: int
+                        hint: Teaser only — ignored when Listing is on
+                      - label: Listing
+                        name: listing
+                        widget: boolean
+                        required: false
+                        default: false
+                        hint: Full Insights listing — uses page pagination; Count is ignored
+                      - label: Show tags
+                        name: show_tags
+                        widget: boolean
+                        required: false
+                        default: false
                       - label: Background theme
                         name: theme
                         widget: select
@@ -5301,17 +5340,17 @@ collections:
                           - label: full
                             value: full
                         default: feature
-                      - label: Card layout
+                      - label: Columns
                         name: card_layout
                         widget: select
                         required: false
                         dropdown_threshold: 0
                         options:
-                          - label: grid
-                            value: grid
-                          - label: masonry
-                            value: masonry
-                        default: grid
+                          - label: '2'
+                            value: '2'
+                          - label: '3'
+                            value: '3'
+                        default: '3'
               - label: Team
                 name: team
                 widget: object
@@ -7300,17 +7339,29 @@ collections:
                     widget: string
                     required: false
                     default: /insights/
-                  - label: Count
-                    name: count
-                    widget: number
-                    required: false
-                    default: 3
-                    value_type: int
                   - label: Settings
                     name: appearance
                     widget: object
                     collapsed: true
                     fields:
+                      - label: Count
+                        name: count
+                        widget: number
+                        required: false
+                        default: 3
+                        value_type: int
+                        hint: Teaser only — ignored when Listing is on
+                      - label: Listing
+                        name: listing
+                        widget: boolean
+                        required: false
+                        default: false
+                        hint: Full Insights listing — uses page pagination; Count is ignored
+                      - label: Show tags
+                        name: show_tags
+                        widget: boolean
+                        required: false
+                        default: false
                       - label: Background theme
                         name: theme
                         widget: select
@@ -7373,17 +7424,17 @@ collections:
                           - label: full
                             value: full
                         default: feature
-                      - label: Card layout
+                      - label: Columns
                         name: card_layout
                         widget: select
                         required: false
                         dropdown_threshold: 0
                         options:
-                          - label: grid
-                            value: grid
-                          - label: masonry
-                            value: masonry
-                        default: grid
+                          - label: '2'
+                            value: '2'
+                          - label: '3'
+                            value: '3'
+                        default: '3'
               - label: Team
                 name: team
                 widget: object
@@ -9367,17 +9418,29 @@ collections:
                     widget: string
                     required: false
                     default: /insights/
-                  - label: Count
-                    name: count
-                    widget: number
-                    required: false
-                    default: 3
-                    value_type: int
                   - label: Settings
                     name: appearance
                     widget: object
                     collapsed: true
                     fields:
+                      - label: Count
+                        name: count
+                        widget: number
+                        required: false
+                        default: 3
+                        value_type: int
+                        hint: Teaser only — ignored when Listing is on
+                      - label: Listing
+                        name: listing
+                        widget: boolean
+                        required: false
+                        default: false
+                        hint: Full Insights listing — uses page pagination; Count is ignored
+                      - label: Show tags
+                        name: show_tags
+                        widget: boolean
+                        required: false
+                        default: false
                       - label: Background theme
                         name: theme
                         widget: select
@@ -9440,17 +9503,17 @@ collections:
                           - label: full
                             value: full
                         default: feature
-                      - label: Card layout
+                      - label: Columns
                         name: card_layout
                         widget: select
                         required: false
                         dropdown_threshold: 0
                         options:
-                          - label: grid
-                            value: grid
-                          - label: masonry
-                            value: masonry
-                        default: grid
+                          - label: '2'
+                            value: '2'
+                          - label: '3'
+                            value: '3'
+                        default: '3'
               - label: Team
                 name: team
                 widget: object
@@ -11300,17 +11363,29 @@ collections:
                     widget: string
                     required: false
                     default: /insights/
-                  - label: Count
-                    name: count
-                    widget: number
-                    required: false
-                    default: 3
-                    value_type: int
                   - label: Settings
                     name: appearance
                     widget: object
                     collapsed: true
                     fields:
+                      - label: Count
+                        name: count
+                        widget: number
+                        required: false
+                        default: 3
+                        value_type: int
+                        hint: Teaser only — ignored when Listing is on
+                      - label: Listing
+                        name: listing
+                        widget: boolean
+                        required: false
+                        default: false
+                        hint: Full Insights listing — uses page pagination; Count is ignored
+                      - label: Show tags
+                        name: show_tags
+                        widget: boolean
+                        required: false
+                        default: false
                       - label: Background theme
                         name: theme
                         widget: select
@@ -11373,17 +11448,17 @@ collections:
                           - label: full
                             value: full
                         default: feature
-                      - label: Card layout
+                      - label: Columns
                         name: card_layout
                         widget: select
                         required: false
                         dropdown_threshold: 0
                         options:
-                          - label: grid
-                            value: grid
-                          - label: masonry
-                            value: masonry
-                        default: grid
+                          - label: '2'
+                            value: '2'
+                          - label: '3'
+                            value: '3'
+                        default: '3'
               - label: Team
                 name: team
                 widget: object
@@ -13319,17 +13394,29 @@ collections:
                 widget: string
                 required: false
                 default: /insights/
-              - label: Count
-                name: count
-                widget: number
-                required: false
-                default: 3
-                value_type: int
               - label: Settings
                 name: appearance
                 widget: object
                 collapsed: true
                 fields:
+                  - label: Count
+                    name: count
+                    widget: number
+                    required: false
+                    default: 3
+                    value_type: int
+                    hint: Teaser only — ignored when Listing is on
+                  - label: Listing
+                    name: listing
+                    widget: boolean
+                    required: false
+                    default: false
+                    hint: Full Insights listing — uses page pagination; Count is ignored
+                  - label: Show tags
+                    name: show_tags
+                    widget: boolean
+                    required: false
+                    default: false
                   - label: Background theme
                     name: theme
                     widget: select
@@ -13392,17 +13479,17 @@ collections:
                       - label: full
                         value: full
                     default: feature
-                  - label: Card layout
+                  - label: Columns
                     name: card_layout
                     widget: select
                     required: false
                     dropdown_threshold: 0
                     options:
-                      - label: grid
-                        value: grid
-                      - label: masonry
-                        value: masonry
-                    default: grid
+                      - label: '2'
+                        value: '2'
+                      - label: '3'
+                        value: '3'
+                    default: '3'
           - label: Team
             name: team
             widget: object

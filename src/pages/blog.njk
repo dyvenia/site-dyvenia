@@ -29,32 +29,28 @@ sections:
       divider: divider/soft
       divider_class: ''
     region_space: xl-2xl
+  - type: posts
+    internal_name: Posts
+    title: ''
+    appearance:
+      theme: background-default
+      accent: default
+      align: left
+      width: feature
+      count: 3
+      listing: true
+      show_tags: true
+      card_layout: '2'
+    intro: ''
+    title_href: /insights/
   - type: form
     internal_name: Newsletter
     title: ''
     appearance:
-      theme: background-default
+      theme: background-accent
       accent: default
       align: left
       width: content
       drop_block_spacing: true
     intro: ''
 ---
-
-<div class="wrapper flow">
-  <section class="feature mt-xl-2xl" aria-describedby="blog-section">
-    <h2 id="blog-section" class="visually-hidden">Blog posts</h2>
-
-    <custom-masonry layout="50-50">
-      {% asyncEach item in pagination.items %}
-        {% include "partials/card-blog.njk" %}
-      {% endeach %}
-    </custom-masonry>
-  </section>
-
-  {% set collectionToPaginate = collections.posts %}
-  {% set metaKey = "blog" %}
-  {% if collectionToPaginate.length > pagination.size %}
-    {% include 'partials/pagination.njk' %}
-  {% endif %}
-</div>
