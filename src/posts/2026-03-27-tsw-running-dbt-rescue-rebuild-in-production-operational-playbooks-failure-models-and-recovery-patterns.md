@@ -4,9 +4,10 @@ date: 2026-03-27 16:55:00
 author: Andrii Kachan
 description: 'Go beyond the setup and into real-world execution. Learn how we run dbt rescue rebuilds in production: scoping dependencies, managing warehouse contention, handling incremental models, and recovering from outages with precision, without introducing new risks to pipeline stability.'
 tags:
+  - dbt Recovery & Rebuilds
+  - Data Engineering
   - dbt
-  - data reliability
-  - pipeline recovery
+  - DataOps Pipelines
 internal_notes: part 2 of a dbt rescue pipeline series by Andrii Kachan
 ---
 
