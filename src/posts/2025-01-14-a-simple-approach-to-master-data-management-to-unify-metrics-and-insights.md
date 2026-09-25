@@ -4,7 +4,9 @@ date: 2025-01-14
 author: Alessio Civitillo
 description: Discover the role of master data management (MDM) in achieving consistent and accurate business metrics. This article explains the concept of master data, outlines key challenges organizations face, and introduces two accessible approaches to MDM. By focusing on practical steps and avoiding common pitfalls, we show how businesses can enhance data quality without large budgets or complex systems.
 tags:
-  - data management
+  - Data Marts Architecture
+  - Data Governance
+  - Data Strategy
 internal_notes: |-
   **Audience:**
 
@@ -25,6 +27,7 @@ internal_notes: |-
   - The Consolidated Master Data
       - Great for application data, it works well when source data in applications is kept of good quality. In this approach data is just consolidated from applications and users are not allowed to modify it, they can only modify it in the original application.
 ---
+
 Master data management (MDM) often sparks debate. It's a frequently proposed budget item that rarely gets approved, yet it's a fundamental reason business leaders struggle to achieve granular and unified metrics. This article aims to demystify MDM by showing that it doesn't always have to involve big budgets or complex tools. Instead, we will define master data and explore two straightforward approaches to MDM that can be implemented without lengthy multi-year technology roadmaps. While the complexity of MDM varies by case, we believe most organizations can achieve significant improvements by following a few practical steps.
 
 ### **What is Master Data Management?**
