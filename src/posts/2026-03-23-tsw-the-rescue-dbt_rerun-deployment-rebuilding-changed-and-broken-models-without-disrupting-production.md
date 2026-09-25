@@ -4,9 +4,10 @@ date: 2026-03-23 13:45:00
 author: Andrii Kachan
 description: Keeping production data correct after a dbt change is harder than it looks. Learn how we introduced a dedicated rescue deployment to rebuild exactly what’s needed and when it’s needed, bringing consistency back to production data without costly full reruns or pipeline disruptions.
 tags:
+  - dbt Recovery & Rebuilds
+  - Data Engineering
   - dbt
-  - data reliability
-  - pipeline recovery
+  - CI/CD & DataOps
 internal_notes: blog post on the rescue dbt_rerun deployment by Andrii Kachan
 ---
 

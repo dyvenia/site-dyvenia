@@ -4,11 +4,10 @@ date: 2026-06-25 13:30:00
 author: Alessio Civitillo
 description: Domains bring data ownership closer to the business, but governance, access management, and shared standards remain difficult to decentralize. This article explores a Hub & Domains operating model that combines business ownership with centralized governance and platform controls.
 tags:
+  - Data Operating Model
   - Data Governance
-  - Data Mesh
   - Data Architecture
   - Data Strategy
-  - Data Management
 internal_notes: PArt 3 of Alessio's series on data governance
 ---
 

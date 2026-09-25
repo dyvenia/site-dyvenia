@@ -4,10 +4,9 @@ date: 2026-01-22 13:00:00
 author: Mateusz Paździor
 description: When development and production share the same data environment, even small changes can trigger costly outages. This article explains why separating dev and prod is foundational for reliable analytics, and how teams can do it without overengineering or blowing the budget.
 tags:
+  - CI/CD & DataOps
   - Data Engineering
-  - Dev vs Prod
-  - Data Infrastructure
-  - CI/CD
+  - Cloud Infrastructure
 internal_notes: Article by Mateusz on why data teams struggle without separate dev and prod environments
 ---
 

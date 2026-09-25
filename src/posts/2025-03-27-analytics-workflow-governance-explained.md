@@ -4,11 +4,12 @@ date: 2025-03-27 10:47:00
 author: Alessio Civitillo
 description: Code-based analytics workflows offer a unique advantage - the ability to combine robust collaboration with strict governance. While technically straightforward to implement, this approach only reaches its full potential when aligned with well-adapted business and analytics processes.
 tags:
-  - governance
-  - analytics workflow
-  - roles
+  - Data Strategy
+  - Data Operating Model
+  - Data Engineering
 internal_notes: No notes
 ---
+
 An analytics workflow documents the journey from raw data to production-ready data models, encompassing development and testing phases. A critical component is governance, implemented through a Pull Request approval process that facilitates regular code reviews and prevents technical debt accumulation. This structured approach ensures quality and maintainability while supporting collaborative development.
 
 To manage this governance effectively, several roles are typically involved. It's becoming increasingly rare to see a single analyst handle the entire end-to-end process of creating a report or data model. Instead, the trend is moving toward a growing number of specialized roles, each with distinct responsibilities.
