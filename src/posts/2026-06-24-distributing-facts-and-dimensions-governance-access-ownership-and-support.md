@@ -4,11 +4,9 @@ date: 2026-06-24 10:00:00
 author: Alessio Civitillo
 description: Building facts and dimensions is only part of the challenge. This article explores how certified data should be distributed across the organization through controlled access paths, ownership models, governance processes, and support structures.
 tags:
+  - Data Operating Model
   - Data Governance
   - Data Architecture
-  - Data Warehouse
-  - Data Modeling
-  - Business Intelligence
 internal_notes: Alessio's article on distributing facts and dimensions
 ---
 
