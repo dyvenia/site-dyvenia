@@ -4,10 +4,9 @@ date: 2025-03-05 09:50:00
 author: Karol Wolski
 description: Optimize your data platform by making informed networking decisions. This article explores how networking impacts ELT workflows, covering key connectivity options, security considerations, and best practices. Learn how to design a secure, scalable, and high-performing data platform architecture with the right networking.
 tags:
-  - networking
-  - data platform architecture
-  - elt process
-  - connectivity
+  - Cloud Infrastructure
+  - Data Architecture
+  - Data Security
 internal_notes: |-
   **Audience:**
 
@@ -39,6 +38,7 @@ internal_notes: |-
       - Other Networking Possibilities
   - Conclusions
 ---
+
 A poorly designed network can cripple even the most advanced data platform. Slow queries, failed data transfers, and security vulnerabilities often stem from overlooked networking decisions. Yet, networking remains one of the least understood aspects of data architecture. 
 
 The Extract, Load, and Transform (ELT) process has become the standard for data integration. It enables organizations to move raw data from source systems to destinations like data warehouses, where it can be analyzed using Business Intelligence (BI) tools. While many aspects of this process deserve attention, networking is a critical yet often underestimated component.
