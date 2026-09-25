@@ -99,6 +99,10 @@ export default {
       align: true,
       width: 'full'
     },
+    tags: {
+      align: true,
+      width: 'measure'
+    },
     team: {},
     form: {
       align: true,

@@ -317,7 +317,7 @@ collections:
                             value: ''
                           - label: small
                             value: small
-                        default: teal
+                        default: ''
               - label: Text
                 name: text
                 widget: object
@@ -1103,12 +1103,119 @@ collections:
                     widget: string
                     required: false
                     default: /insights/
-                  - label: Count
-                    name: count
-                    widget: number
+                  - label: Settings
+                    name: appearance
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: Count
+                        name: count
+                        widget: number
+                        required: false
+                        default: 3
+                        value_type: int
+                        hint: Teaser only, ignored when Listing is on
+                      - label: Listing
+                        name: listing
+                        widget: boolean
+                        required: false
+                        default: false
+                        hint: Full Insights listing. Uses page pagination, Count is ignored
+                      - label: Show tags
+                        name: show_tags
+                        widget: boolean
+                        required: false
+                        default: false
+                      - label: Background theme
+                        name: theme
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: Background
+                            value: background-default
+                          - label: Background accent
+                            value: background-accent
+                          - label: gray-dark
+                            value: gray-dark
+                          - label: teal
+                            value: teal
+                          - label: teal-dark
+                            value: teal-dark
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: background-default
+                      - label: Accent / CTA
+                        name: accent
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: default
+                            value: default
+                          - label: neutral
+                            value: neutral
+                          - label: teal
+                            value: teal
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: default
+                      - label: Alignment
+                        name: align
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: left
+                            value: left
+                          - label: center
+                            value: center
+                        default: left
+                      - label: Width
+                        name: width
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: content
+                            value: content
+                          - label: feature
+                            value: feature
+                          - label: full
+                            value: full
+                        default: feature
+                      - label: Columns
+                        name: card_layout
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: '2'
+                            value: '2'
+                          - label: '3'
+                            value: '3'
+                        default: '3'
+              - label: Tags
+                name: tags
+                widget: object
+                fields:
+                  - label: Internal name
+                    name: internal_name
+                    widget: string
                     required: false
-                    default: 3
-                    value_type: int
+                    hint: CMS list label only — not shown on the site
+                  - label: Title
+                    name: title
+                    widget: markdown
+                    required: false
+                  - label: Intro
+                    name: intro
+                    widget: markdown
+                    required: false
                   - label: Settings
                     name: appearance
                     widget: object
@@ -1173,20 +1280,13 @@ collections:
                             value: content
                           - label: feature
                             value: feature
-                          - label: full
-                            value: full
                         default: feature
-                      - label: Card layout
-                        name: card_layout
-                        widget: select
+                      - label: Drop block spacing
+                        name: drop_block_spacing
+                        widget: boolean
                         required: false
-                        dropdown_threshold: 0
-                        options:
-                          - label: grid
-                            value: grid
-                          - label: masonry
-                            value: masonry
-                        default: grid
+                        default: false
+                        hint: Omit region vertical padding on this tags band.
               - label: Team
                 name: team
                 widget: object
@@ -2017,7 +2117,7 @@ collections:
                             value: divider/soft-invert
                           - label: Waves
                             value: divider/waves
-                        default: teal
+                        default: ''
                       - label: Divider (bottom)
                         name: divider
                         widget: select
@@ -2044,7 +2144,7 @@ collections:
                             value: ''
                           - label: small
                             value: small
-                        default: teal
+                        default: ''
   - name: blog
     label: Posts
     label_singular: Post
@@ -2133,8 +2233,11 @@ collections:
                 default: collections.allPosts
               - label: Size
                 name: size
-                widget: hidden
+                widget: number
                 default: 6
+                value_type: int
+                required: false
+                hint: Posts per page
           - label: Sections
             name: sections
             widget: list
@@ -2401,7 +2504,7 @@ collections:
                             value: ''
                           - label: small
                             value: small
-                        default: teal
+                        default: ''
               - label: Text
                 name: text
                 widget: object
@@ -3187,12 +3290,119 @@ collections:
                     widget: string
                     required: false
                     default: /insights/
-                  - label: Count
-                    name: count
-                    widget: number
+                  - label: Settings
+                    name: appearance
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: Count
+                        name: count
+                        widget: number
+                        required: false
+                        default: 3
+                        value_type: int
+                        hint: Teaser only — ignored when Listing is on
+                      - label: Listing
+                        name: listing
+                        widget: boolean
+                        required: false
+                        default: false
+                        hint: Full Insights listing — uses page pagination; Count is ignored
+                      - label: Show tags
+                        name: show_tags
+                        widget: boolean
+                        required: false
+                        default: false
+                      - label: Background theme
+                        name: theme
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: Background
+                            value: background-default
+                          - label: Background accent
+                            value: background-accent
+                          - label: gray-dark
+                            value: gray-dark
+                          - label: teal
+                            value: teal
+                          - label: teal-dark
+                            value: teal-dark
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: background-default
+                      - label: Accent / CTA
+                        name: accent
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: default
+                            value: default
+                          - label: neutral
+                            value: neutral
+                          - label: teal
+                            value: teal
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: default
+                      - label: Alignment
+                        name: align
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: left
+                            value: left
+                          - label: center
+                            value: center
+                        default: left
+                      - label: Width
+                        name: width
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: content
+                            value: content
+                          - label: feature
+                            value: feature
+                          - label: full
+                            value: full
+                        default: feature
+                      - label: Columns
+                        name: card_layout
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: '2'
+                            value: '2'
+                          - label: '3'
+                            value: '3'
+                        default: '3'
+              - label: Tags
+                name: tags
+                widget: object
+                fields:
+                  - label: Internal name
+                    name: internal_name
+                    widget: string
                     required: false
-                    default: 3
-                    value_type: int
+                    hint: CMS list label only — not shown on the site
+                  - label: Title
+                    name: title
+                    widget: markdown
+                    required: false
+                  - label: Intro
+                    name: intro
+                    widget: markdown
+                    required: false
                   - label: Settings
                     name: appearance
                     widget: object
@@ -3257,20 +3467,13 @@ collections:
                             value: content
                           - label: feature
                             value: feature
-                          - label: full
-                            value: full
                         default: feature
-                      - label: Card layout
-                        name: card_layout
-                        widget: select
+                      - label: Drop block spacing
+                        name: drop_block_spacing
+                        widget: boolean
                         required: false
-                        dropdown_threshold: 0
-                        options:
-                          - label: grid
-                            value: grid
-                          - label: masonry
-                            value: masonry
-                        default: grid
+                        default: false
+                        hint: Omit region vertical padding on this tags band.
               - label: Team
                 name: team
                 widget: object
@@ -4442,7 +4645,7 @@ collections:
                             value: ''
                           - label: small
                             value: small
-                        default: teal
+                        default: ''
               - label: Text
                 name: text
                 widget: object
@@ -5228,12 +5431,119 @@ collections:
                     widget: string
                     required: false
                     default: /insights/
-                  - label: Count
-                    name: count
-                    widget: number
+                  - label: Settings
+                    name: appearance
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: Count
+                        name: count
+                        widget: number
+                        required: false
+                        default: 3
+                        value_type: int
+                        hint: Teaser only — ignored when Listing is on
+                      - label: Listing
+                        name: listing
+                        widget: boolean
+                        required: false
+                        default: false
+                        hint: Full Insights listing — uses page pagination; Count is ignored
+                      - label: Show tags
+                        name: show_tags
+                        widget: boolean
+                        required: false
+                        default: false
+                      - label: Background theme
+                        name: theme
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: Background
+                            value: background-default
+                          - label: Background accent
+                            value: background-accent
+                          - label: gray-dark
+                            value: gray-dark
+                          - label: teal
+                            value: teal
+                          - label: teal-dark
+                            value: teal-dark
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: background-default
+                      - label: Accent / CTA
+                        name: accent
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: default
+                            value: default
+                          - label: neutral
+                            value: neutral
+                          - label: teal
+                            value: teal
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: default
+                      - label: Alignment
+                        name: align
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: left
+                            value: left
+                          - label: center
+                            value: center
+                        default: left
+                      - label: Width
+                        name: width
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: content
+                            value: content
+                          - label: feature
+                            value: feature
+                          - label: full
+                            value: full
+                        default: feature
+                      - label: Columns
+                        name: card_layout
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: '2'
+                            value: '2'
+                          - label: '3'
+                            value: '3'
+                        default: '3'
+              - label: Tags
+                name: tags
+                widget: object
+                fields:
+                  - label: Internal name
+                    name: internal_name
+                    widget: string
                     required: false
-                    default: 3
-                    value_type: int
+                    hint: CMS list label only — not shown on the site
+                  - label: Title
+                    name: title
+                    widget: markdown
+                    required: false
+                  - label: Intro
+                    name: intro
+                    widget: markdown
+                    required: false
                   - label: Settings
                     name: appearance
                     widget: object
@@ -5298,20 +5608,13 @@ collections:
                             value: content
                           - label: feature
                             value: feature
-                          - label: full
-                            value: full
                         default: feature
-                      - label: Card layout
-                        name: card_layout
-                        widget: select
+                      - label: Drop block spacing
+                        name: drop_block_spacing
+                        widget: boolean
                         required: false
-                        dropdown_threshold: 0
-                        options:
-                          - label: grid
-                            value: grid
-                          - label: masonry
-                            value: masonry
-                        default: grid
+                        default: false
+                        hint: Omit region vertical padding on this tags band.
               - label: Team
                 name: team
                 widget: object
@@ -7300,12 +7603,119 @@ collections:
                     widget: string
                     required: false
                     default: /insights/
-                  - label: Count
-                    name: count
-                    widget: number
+                  - label: Settings
+                    name: appearance
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: Count
+                        name: count
+                        widget: number
+                        required: false
+                        default: 3
+                        value_type: int
+                        hint: Teaser only — ignored when Listing is on
+                      - label: Listing
+                        name: listing
+                        widget: boolean
+                        required: false
+                        default: false
+                        hint: Full Insights listing — uses page pagination; Count is ignored
+                      - label: Show tags
+                        name: show_tags
+                        widget: boolean
+                        required: false
+                        default: false
+                      - label: Background theme
+                        name: theme
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: Background
+                            value: background-default
+                          - label: Background accent
+                            value: background-accent
+                          - label: gray-dark
+                            value: gray-dark
+                          - label: teal
+                            value: teal
+                          - label: teal-dark
+                            value: teal-dark
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: background-default
+                      - label: Accent / CTA
+                        name: accent
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: default
+                            value: default
+                          - label: neutral
+                            value: neutral
+                          - label: teal
+                            value: teal
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: default
+                      - label: Alignment
+                        name: align
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: left
+                            value: left
+                          - label: center
+                            value: center
+                        default: left
+                      - label: Width
+                        name: width
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: content
+                            value: content
+                          - label: feature
+                            value: feature
+                          - label: full
+                            value: full
+                        default: feature
+                      - label: Columns
+                        name: card_layout
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: '2'
+                            value: '2'
+                          - label: '3'
+                            value: '3'
+                        default: '3'
+              - label: Tags
+                name: tags
+                widget: object
+                fields:
+                  - label: Internal name
+                    name: internal_name
+                    widget: string
                     required: false
-                    default: 3
-                    value_type: int
+                    hint: CMS list label only — not shown on the site
+                  - label: Title
+                    name: title
+                    widget: markdown
+                    required: false
+                  - label: Intro
+                    name: intro
+                    widget: markdown
+                    required: false
                   - label: Settings
                     name: appearance
                     widget: object
@@ -7370,20 +7780,13 @@ collections:
                             value: content
                           - label: feature
                             value: feature
-                          - label: full
-                            value: full
                         default: feature
-                      - label: Card layout
-                        name: card_layout
-                        widget: select
+                      - label: Drop block spacing
+                        name: drop_block_spacing
+                        widget: boolean
                         required: false
-                        dropdown_threshold: 0
-                        options:
-                          - label: grid
-                            value: grid
-                          - label: masonry
-                            value: masonry
-                        default: grid
+                        default: false
+                        hint: Omit region vertical padding on this tags band.
               - label: Team
                 name: team
                 widget: object
@@ -9367,12 +9770,119 @@ collections:
                     widget: string
                     required: false
                     default: /insights/
-                  - label: Count
-                    name: count
-                    widget: number
+                  - label: Settings
+                    name: appearance
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: Count
+                        name: count
+                        widget: number
+                        required: false
+                        default: 3
+                        value_type: int
+                        hint: Teaser only — ignored when Listing is on
+                      - label: Listing
+                        name: listing
+                        widget: boolean
+                        required: false
+                        default: false
+                        hint: Full Insights listing — uses page pagination; Count is ignored
+                      - label: Show tags
+                        name: show_tags
+                        widget: boolean
+                        required: false
+                        default: false
+                      - label: Background theme
+                        name: theme
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: Background
+                            value: background-default
+                          - label: Background accent
+                            value: background-accent
+                          - label: gray-dark
+                            value: gray-dark
+                          - label: teal
+                            value: teal
+                          - label: teal-dark
+                            value: teal-dark
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: background-default
+                      - label: Accent / CTA
+                        name: accent
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: default
+                            value: default
+                          - label: neutral
+                            value: neutral
+                          - label: teal
+                            value: teal
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: default
+                      - label: Alignment
+                        name: align
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: left
+                            value: left
+                          - label: center
+                            value: center
+                        default: left
+                      - label: Width
+                        name: width
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: content
+                            value: content
+                          - label: feature
+                            value: feature
+                          - label: full
+                            value: full
+                        default: feature
+                      - label: Columns
+                        name: card_layout
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: '2'
+                            value: '2'
+                          - label: '3'
+                            value: '3'
+                        default: '3'
+              - label: Tags
+                name: tags
+                widget: object
+                fields:
+                  - label: Internal name
+                    name: internal_name
+                    widget: string
                     required: false
-                    default: 3
-                    value_type: int
+                    hint: CMS list label only — not shown on the site
+                  - label: Title
+                    name: title
+                    widget: markdown
+                    required: false
+                  - label: Intro
+                    name: intro
+                    widget: markdown
+                    required: false
                   - label: Settings
                     name: appearance
                     widget: object
@@ -9437,20 +9947,13 @@ collections:
                             value: content
                           - label: feature
                             value: feature
-                          - label: full
-                            value: full
                         default: feature
-                      - label: Card layout
-                        name: card_layout
-                        widget: select
+                      - label: Drop block spacing
+                        name: drop_block_spacing
+                        widget: boolean
                         required: false
-                        dropdown_threshold: 0
-                        options:
-                          - label: grid
-                            value: grid
-                          - label: masonry
-                            value: masonry
-                        default: grid
+                        default: false
+                        hint: Omit region vertical padding on this tags band.
               - label: Team
                 name: team
                 widget: object
@@ -11300,12 +11803,119 @@ collections:
                     widget: string
                     required: false
                     default: /insights/
-                  - label: Count
-                    name: count
-                    widget: number
+                  - label: Settings
+                    name: appearance
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: Count
+                        name: count
+                        widget: number
+                        required: false
+                        default: 3
+                        value_type: int
+                        hint: Teaser only — ignored when Listing is on
+                      - label: Listing
+                        name: listing
+                        widget: boolean
+                        required: false
+                        default: false
+                        hint: Full Insights listing — uses page pagination; Count is ignored
+                      - label: Show tags
+                        name: show_tags
+                        widget: boolean
+                        required: false
+                        default: false
+                      - label: Background theme
+                        name: theme
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: Background
+                            value: background-default
+                          - label: Background accent
+                            value: background-accent
+                          - label: gray-dark
+                            value: gray-dark
+                          - label: teal
+                            value: teal
+                          - label: teal-dark
+                            value: teal-dark
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: background-default
+                      - label: Accent / CTA
+                        name: accent
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: default
+                            value: default
+                          - label: neutral
+                            value: neutral
+                          - label: teal
+                            value: teal
+                          - label: purple
+                            value: purple
+                          - label: navy
+                            value: navy
+                        default: default
+                      - label: Alignment
+                        name: align
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: left
+                            value: left
+                          - label: center
+                            value: center
+                        default: left
+                      - label: Width
+                        name: width
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: content
+                            value: content
+                          - label: feature
+                            value: feature
+                          - label: full
+                            value: full
+                        default: feature
+                      - label: Columns
+                        name: card_layout
+                        widget: select
+                        required: false
+                        dropdown_threshold: 0
+                        options:
+                          - label: '2'
+                            value: '2'
+                          - label: '3'
+                            value: '3'
+                        default: '3'
+              - label: Tags
+                name: tags
+                widget: object
+                fields:
+                  - label: Internal name
+                    name: internal_name
+                    widget: string
                     required: false
-                    default: 3
-                    value_type: int
+                    hint: CMS list label only — not shown on the site
+                  - label: Title
+                    name: title
+                    widget: markdown
+                    required: false
+                  - label: Intro
+                    name: intro
+                    widget: markdown
+                    required: false
                   - label: Settings
                     name: appearance
                     widget: object
@@ -11370,20 +11980,13 @@ collections:
                             value: content
                           - label: feature
                             value: feature
-                          - label: full
-                            value: full
                         default: feature
-                      - label: Card layout
-                        name: card_layout
-                        widget: select
+                      - label: Drop block spacing
+                        name: drop_block_spacing
+                        widget: boolean
                         required: false
-                        dropdown_threshold: 0
-                        options:
-                          - label: grid
-                            value: grid
-                          - label: masonry
-                            value: masonry
-                        default: grid
+                        default: false
+                        hint: Omit region vertical padding on this tags band.
               - label: Team
                 name: team
                 widget: object
@@ -13319,12 +13922,119 @@ collections:
                 widget: string
                 required: false
                 default: /insights/
-              - label: Count
-                name: count
-                widget: number
+              - label: Settings
+                name: appearance
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Count
+                    name: count
+                    widget: number
+                    required: false
+                    default: 3
+                    value_type: int
+                    hint: Teaser only — ignored when Listing is on
+                  - label: Listing
+                    name: listing
+                    widget: boolean
+                    required: false
+                    default: false
+                    hint: Full Insights listing — uses page pagination; Count is ignored
+                  - label: Show tags
+                    name: show_tags
+                    widget: boolean
+                    required: false
+                    default: false
+                  - label: Background theme
+                    name: theme
+                    widget: select
+                    required: false
+                    dropdown_threshold: 0
+                    options:
+                      - label: Background
+                        value: background-default
+                      - label: Background accent
+                        value: background-accent
+                      - label: gray-dark
+                        value: gray-dark
+                      - label: teal
+                        value: teal
+                      - label: teal-dark
+                        value: teal-dark
+                      - label: purple
+                        value: purple
+                      - label: navy
+                        value: navy
+                    default: background-default
+                  - label: Accent / CTA
+                    name: accent
+                    widget: select
+                    required: false
+                    dropdown_threshold: 0
+                    options:
+                      - label: default
+                        value: default
+                      - label: neutral
+                        value: neutral
+                      - label: teal
+                        value: teal
+                      - label: purple
+                        value: purple
+                      - label: navy
+                        value: navy
+                    default: default
+                  - label: Alignment
+                    name: align
+                    widget: select
+                    required: false
+                    dropdown_threshold: 0
+                    options:
+                      - label: left
+                        value: left
+                      - label: center
+                        value: center
+                    default: left
+                  - label: Width
+                    name: width
+                    widget: select
+                    required: false
+                    dropdown_threshold: 0
+                    options:
+                      - label: content
+                        value: content
+                      - label: feature
+                        value: feature
+                      - label: full
+                        value: full
+                    default: feature
+                  - label: Columns
+                    name: card_layout
+                    widget: select
+                    required: false
+                    dropdown_threshold: 0
+                    options:
+                      - label: '2'
+                        value: '2'
+                      - label: '3'
+                        value: '3'
+                    default: '3'
+          - label: Tags
+            name: tags
+            widget: object
+            fields:
+              - label: Internal name
+                name: internal_name
+                widget: string
                 required: false
-                default: 3
-                value_type: int
+                hint: CMS list label only — not shown on the site
+              - label: Title
+                name: title
+                widget: markdown
+                required: false
+              - label: Intro
+                name: intro
+                widget: markdown
+                required: false
               - label: Settings
                 name: appearance
                 widget: object
@@ -13389,20 +14099,13 @@ collections:
                         value: content
                       - label: feature
                         value: feature
-                      - label: full
-                        value: full
                     default: feature
-                  - label: Card layout
-                    name: card_layout
-                    widget: select
+                  - label: Drop block spacing
+                    name: drop_block_spacing
+                    widget: boolean
                     required: false
-                    dropdown_threshold: 0
-                    options:
-                      - label: grid
-                        value: grid
-                      - label: masonry
-                        value: masonry
-                    default: grid
+                    default: false
+                    hint: Omit region vertical padding on this tags band.
           - label: Team
             name: team
             widget: object
