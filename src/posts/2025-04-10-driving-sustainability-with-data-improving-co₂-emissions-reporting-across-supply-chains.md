@@ -4,10 +4,9 @@ date: 2025-04-10 13:20:00
 author: Agata Kawalec
 description: Accurate CO₂ emissions reporting is vital for meeting sustainability goals and regulatory requirements. This article delves into the challenges of Scope 3 emissions, the importance of clean data, and how structured data systems like sustainability marts can improve reporting, ensure compliance, and support better decision-making for businesses.
 tags:
-  - sustainability
-  - data mart
-  - metrics
-  - supply chains
+  - Data Strategy
+  - Business Intelligence
+  - Sustainability Data
 internal_notes: |-
   **Audience:**
 
@@ -19,6 +18,7 @@ internal_notes: |-
 
   - In this article, we showcase our expertise in handling sustainability data, specifically focusing on reporting material and logistics-related CO₂ emissions. We present our experience in helping organizations structure their data effectively to meet reporting standards and drive sustainability initiatives.
 ---
+
 According to [KPMG’s 2024 Survey of Sustainability Reporting](https://kpmg.com/dk/en/home/insights/2024/11/survey-of-sustainability-reporting-2024.html), **80% of the 5,800 surveyed companies have established carbon reduction targets**. This number highlights the increasing focus on sustainability but also the critical need for accurate emissions tracking. While setting targets is the first step, high-quality, reliable data is essential for consistent and accurate reporting across all areas of a business, particularly in supply chains.
 
 ## Understanding the Greenhouse Gas Protocol
