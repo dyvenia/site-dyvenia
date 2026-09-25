@@ -4,11 +4,9 @@ date: 2026-06-25 15:41:00
 author: Alessio Civitillo
 description: 'AI introduces a new access management challenge: what the user can see, what the agent can see, and what the LLM can see are not the same thing. This article explores how AI governance can be integrated into an existing hub-and-domain data architecture through identity groups, secured schemas, and governed AI harnesses.'
 tags:
-  - AI Governance
-  - AI Agents
+  - Data Operating Model
   - Data Governance
-  - Data Architecture
-  - Access Management
+  - Artificial Intelligence
 internal_notes: 4th part of the data governance series
 ---
 
