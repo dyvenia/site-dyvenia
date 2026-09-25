@@ -4,10 +4,9 @@ date: 2025-01-15 09:29:00
 author: Karol Wolski
 description: A pattern to improve observability, monitoring and, ultimately, data operations with Prefect. We show how to find the right trade off between number of deployments and improved operations.
 tags:
-  - prefect
-  - data platform architecture
-  - orchestration
-  - productized data platform
+  - Data Orchestration
+  - Cloud Infrastructure
+  - Prefect
 internal_notes: |-
   ### The Simplest Way to Set Up Scalable Data Platform on Google Cloud Platform (GCP)
 
@@ -42,6 +41,7 @@ internal_notes: |-
   - Lightweight Prefect Deployment Solution
   - Conclusion
 ---
+
 Choosing the right data platform architecture is quite a challenge for any organization. It’s a balancing act: you need something that delivers immediate value while staying flexible enough for future growth, all without sacrificing scalability, simplicity, or efficiency.
 
 This article offers a thoughtful guide to the decision-making process behind choosing Prefect with lightweight Kubernetes (K3S) on a single Virtual Machine (VM) with any cloud provider. You’ll explore:
