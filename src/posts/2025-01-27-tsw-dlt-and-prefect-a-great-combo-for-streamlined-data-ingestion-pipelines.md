@@ -4,11 +4,10 @@ date: 2025-01-27 12:54:00
 author: Michał Zawadzki
 description: Streamline your data ingestion pipelines with dlt and Prefect. This article explores how combining these powerful open-source tools enables scalable, efficient, and production-ready data workflows. Learn best practices, key features, and real-world insights to simplify data engineering.
 tags:
+  - Data Engineering
+  - Data Orchestration
+  - Prefect
   - dlt
-  - prefect
-  - data ingestion
-  - data orchestration
-  - data pipelines
 internal_notes: |-
   **Audience:** 
 
