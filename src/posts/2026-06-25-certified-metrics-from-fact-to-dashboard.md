@@ -4,10 +4,9 @@ date: 2026-06-25 11:00:00
 author: Alessio Civitillo
 description: Certified metrics require more than documented formulas. Learn how facts, measures, dimensions, aggregate metrics, and dashboards work together to create trusted and reusable business metrics.
 tags:
-  - Metrics
+  - Data Operating Model
   - Data Governance
   - Business Intelligence
-  - Analytics
 internal_notes: Part 2 of Alessio's article on Distributing data (Facts & Dimensions)
 ---
 
