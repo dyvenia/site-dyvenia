@@ -18,7 +18,7 @@ form .sidebar > * {
 }
 
 :is(input:not([type='checkbox'], [type='radio'], [type='color']), select, textarea) {
-  padding: calc(var(--space-3xs) + 0.05em) var(--space-xs);
+  padding: calc(var(--space-3xs) - 0.08em) var(--space-xs);
   border-radius: var(--border-radius-small);
   border: 1px solid var(--color-mid);
   background: var(--color-bg);

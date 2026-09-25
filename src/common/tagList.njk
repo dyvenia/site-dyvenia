@@ -19,12 +19,11 @@ eleventyComputed:
 
 <h2>{{ meta.blog.tagMore }}</h2>
 
-<ul class="taglist | my-s-m cluster gutter-xs" role="list">
+<div class="taglist | my-s-m cluster gutter-3xs" role="list">
   {% for tag in collections.tagList %}
-    <li>
       <a
         href="/tags/{{ tag | slugify }}/"
-        class="button"
+        class="button" data-small-button data-ghost-button
         {{
           helpers.getLinkActiveState('/tags/' + tag | slugify + '/',
           page.url)
@@ -32,8 +31,7 @@ eleventyComputed:
           safe
         }}
       >
-        {{ tag }}
+        <span>{{ tag }}</span>
       </a>
-    </li>
   {% endfor %}
-</ul>
+</div>

@@ -55,9 +55,12 @@ span.button {
 .button[aria-current='page'],
 .button[aria-pressed='true'],
 .button[data-state='active'] {
-  background: var(--button-hover-bg);
-  color: var(--button-color);
-  border-color: var(--button-hover-border-color);
+  --_hover-bg: var(--button-hover-bg);
+  --_hover-color: var(--button-color);
+  --_hover-border-color: var(--button-hover-border-color);
+  background: var(--_hover-bg);
+  color: var(--_hover-color);
+  border-color: var(--_hover-border-color);
 }
 
 .button:focus {
@@ -127,7 +130,15 @@ span.button {
 .button[data-ghost-button]:hover {
   --_ghost-hover-bg: var(--button-bg);
   --_ghost-hover-bg: color-mix(in oklab, var(--button-bg) 95%, var(--color-dark));
-  background: var(--_ghost-hover-bg);
+  --_hover-bg: var(--_ghost-hover-bg);
+}
+
+.button[data-ghost-button][aria-current='page'],
+.button[data-ghost-button][aria-pressed='true'],
+.button[data-ghost-button][data-state='active'] {
+  --_hover-bg: var(--color-text);
+  --_hover-color: var(--color-bg);
+  --_hover-border-color: var(--color-text);
 }
 
 .button[data-small-button] {
