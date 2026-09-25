@@ -4,9 +4,12 @@ date: 2024-12-23
 author: Alessio Civitillo
 description: We explain what data marts are and how they help business leaders in managing their company performance by having faster and better metrics. We start by giving a short history of data warehousing and the typical challenges, and then move over to explain data marts and how they can help companies get better metrics today.
 tags:
-  - data marts
+  - Data Marts Architecture
+  - Data Architecture
+  - Business Intelligence
 internal_notes: test
 ---
+
 The growing number of tools and solutions in the data ecosystem can be overwhelming for business leaders. Some data solutions are so advanced that they resemble full-scale "digital transformation" initiatives—a term often used by IT professionals.
 
 However, one area of data analytics has remained largely unchanged for the past 30 years: business intelligence. Companies once relied on robust data warehouses with well-defined structures paired with straightforward reporting tools that efficiently extracted insights.
