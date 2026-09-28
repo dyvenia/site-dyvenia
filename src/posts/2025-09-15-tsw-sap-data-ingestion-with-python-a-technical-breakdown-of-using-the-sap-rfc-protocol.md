@@ -4,13 +4,13 @@ date: 2025-09-15 08:00:00
 author: Mateusz Paździor
 description: Streamline SAP data integration with Python by leveraging the RFC protocol. This interview with the lead engineer of a new SAP RFC Connector explores the challenges of large-scale data extraction and explains how a C++ integration improves stability, speed, and reliability for modern data workflows.
 tags:
+  - Data Engineering
+  - Data Ingestion
   - SAP
   - Python
-  - Data Integration
-  - RFC Protocol
-  - Data Engineering
 internal_notes: Interview with Dominik Tyrała
 ---
+
 If you’ve ever tried to get data out of SAP, you know it’s often easier said than done. Manual exports take up a lot of time, standard tools don’t always fit real needs, and moving data into modern analytics or machine learning pipelines can feel like forcing two worlds together.
 
 For years, many teams relied on pyRFC, the official Python library for SAP Remote Function Calls. But with pyRFC being decommissioned, there’s now a real gap for anyone who wants to keep integrating SAP data into Python workflows.

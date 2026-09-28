@@ -4,12 +4,12 @@ date: 2025-10-27 13:06:00
 author: Karol Wolski
 description: Explore how you can dramatically reduce data platform costs without sacrificing performance. This guide breaks down actionable techniques across query tuning, incremental data loading, cloud resource management, and storage lifecycle design.
 tags:
-  - Data Platform Optimization
-  - Cloud Cost Management
-  - Query Performance
-  - Data Engineering
+  - Data Strategy
+  - Cloud Infrastructure
+  - Data Architecture
 internal_notes: Comprehensive guide covering cost optimization techniques for data platforms deployed across AWS, GCP, and Azure environments. Focuses on practical strategies to reduce infrastructure costs while maintaining performance and scalability.
 ---
+
 Data platform costs can quickly spiral out of control, often catching organizations off guard as workloads scale and data volumes increase. Whether you're a data engineer optimizing transformation pipelines, a data analyst writing complex queries, or a DevOps engineer managing infrastructure across AWS, GCP, and Azure, you have direct influence over your platform’s total cost of ownership.
 
 Cost optimization isn't the sole responsibility of a single team or role. Every decision made throughout the data platform lifecycle affects the bottom line. A poorly written query can consume hundreds of dollars in compute resources within minutes. Unnecessary data retention policies can bloat storage costs month after month. Inadequate resource planning can lead to over-provisioned infrastructure that runs idle most of the time.

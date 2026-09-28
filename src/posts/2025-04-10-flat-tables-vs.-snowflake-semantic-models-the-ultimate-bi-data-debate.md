@@ -4,10 +4,9 @@ date: 2025-04-10 14:07:00
 author: Agata Kawalec
 description: Structuring data for BI is a key decision that impacts performance, scalability, and data consistency. This article compares flat tables and semantic models, highlighting the strengths and trade-offs of each. Learn how a hybrid approach can offer the best of both worlds—combining consistency, flexibility, and efficient analytics across tools and teams.
 tags:
+  - Data Marts Architecture
+  - Data Architecture
   - Business Intelligence
-  - Data Modeling
-  - Flat Tables
-  - Semantic Models
 internal_notes: |-
   **Audience:**
 
@@ -17,6 +16,7 @@ internal_notes: |-
 
   - The article educates and guides readers in choosing between flat tables (OBT) and semantic models for BI. It explains the pros and cons of each, highlights common pitfalls, and proposes a hybrid approach as a balanced solution. This article also helps position Dyvenia as a thought leader in data architecture and BI best practices.
 ---
+
 Most data ends up in Business Intelligence (BI) reports. That’s no surprise: **BI transforms raw data into actionable insights**, helping businesses to make informed decisions, spot trends, and drive strategy with confidence.
 
 But when it comes to structuring data for BI, one big question arises: Should data transformations happen within the BI tool, or should you create a flat table in the database? 

@@ -4,11 +4,10 @@ date: 2025-03-05 13:31:00
 author: Karol Wolski
 description: Learn how to set up a secure, scalable data platform infrastructure on Google Cloud Platform (GCP) using Terraform. This step-by-step guide covers VPC configuration, Compute Engine setup, firewall rules, Identity-Aware Proxy (IAP), Cloud NAT, and more, ensuring a cost-effective, flexible, and secure foundation for your data platform.
 tags:
-  - google cloud platform
-  - terraform
-  - data platform architecture
-  - prefect
-  - productized data platform
+  - Data Orchestration
+  - Cloud Infrastructure
+  - GCP
+  - Terraform
 internal_notes: |-
   **Audience:** Data Engineer / DevOps Engineer trying to setup data platform
 
