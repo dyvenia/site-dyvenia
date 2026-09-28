@@ -1,6 +1,7 @@
 top:
   - text: About
     url: /about/
+    submenu: []
   - text: Solutions
     url: ''
     submenu:
@@ -15,7 +16,7 @@ top:
   - text: Resources
     url: ''
     submenu:
-      - text: Blog
+      - text: Insights
         url: /insights/
       - text: Case Studies
         url: /case-studies/
@@ -23,6 +24,7 @@ top:
         url: https://dimensional-modelling.dyvenia.com/
   - text: Careers
     url: /careers/
+    submenu: []
 bottom:
   - text: Subscribe to Newsletter
     url: /subscribe/
