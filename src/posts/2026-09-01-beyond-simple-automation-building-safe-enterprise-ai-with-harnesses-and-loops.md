@@ -4,10 +4,9 @@ date: 2026-09-01 14:23:00
 author: Alessio Civitillo
 description: Deploying autonomous AI agents directly onto enterprise ERPs and CRMs introduces security and operational risks. Discover how pairing dynamic agent loops with governance harnesses enables reliable, auditable, and adaptive AI workflows without sacrificing control.
 tags:
-  - Enterprise AI
-  - AI Architecture
-  - Agentic Workflows
-  - AI Governance
+  - Artificial Intelligence
+  - AI Safety
+  - Enterprise Automation
 internal_notes: article by AC on AI Design (Harnesses, Agent Loops and Dynamic Workflows)
 ---
 

@@ -4,8 +4,9 @@ date: 2025-01-02
 author: Alessio Civitillo
 description: Data marts simplify access to meaningful business metrics, helping leaders drive performance improvements with clarity and precision. This article breaks down what a data mart is, how it functions, and what makes a metric truly effective. Explore how data marts consolidate information from multiple sources to provide actionable insights, avoid common data pitfalls, and enable smarter decision-making.
 tags:
-  - analytics
-  - BI
+  - Data Marts Architecture
+  - Data Architecture
+  - Business Intelligence
 internal_notes: |-
   **Outline**
 
@@ -16,6 +17,7 @@ internal_notes: |-
       - Usability, Understanding Self-Service
       - Compliance, Understanding Auditability
 ---
+
 Business leaders are always under constant pressure to improve operational efficiency, maintain product quality, and optimize financial performance. Good data and, more importantly, good metrics are important for effectively addressing these challenges.
 
 A critical yet often underutilized tool for achieving reliable business metrics is the **data mart**. In this article, we will explore what a data mart is and how it functions. We will also define what is a “**good metric**” and examine how data marts enable business leaders with metrics that enhance visibility, control, and predictability—ultimately **improving business performance**.

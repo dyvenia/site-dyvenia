@@ -5,10 +5,8 @@ author: Mateusz Paździor
 description: Establish scalable, secure access controls for your data platform with a systematic RBAC strategy built on Microsoft Entra ID. This article outlines a five-phase implementation—from user persona mapping to automated auditing—designed to balance flexibility, compliance, and operational efficiency.
 tags:
   - Data Governance
-  - Access Management
-  - RBAC
+  - Data Security
   - Entra ID
-  - Security Architecture
 internal_notes: |-
   **Audience:**
 
@@ -18,10 +16,11 @@ internal_notes: |-
   - Security specialists
   - CIO/CTO
 
-  **Purpose&#32;**(What is the purpose of this article?):
+  **Purpose** (What is the purpose of this article?):
 
   The purpose of this article is to show the recommendations for setting-up the data access governance around Data Platform modules.
 ---
+
 When data platforms grow in scale and complexity, so do the risks. Suddenly, you’re juggling dozens of tools, a growing number of users, and multiple layers of sensitive data, while trying to balance it all with security controls. Managing who gets access to what (and making sure they only get only what they need) quickly becomes a full-time job.  
 
 This reality requires flexible and manageable access controls. That’s exactly where **Role-Based Access Control (RBAC)** enters the scene. 

@@ -4,11 +4,10 @@ date: 2025-06-10 11:00:00
 author: Karol Wolski
 description: Run your first data ingestion workflow with Prefect, Docker, and Kubernetes. This guide walks through containerized flow execution, Prefect worker deployment, and clean deployment configs, laying the foundation for a scalable, maintainable orchestration layer.
 tags:
-  - prefect
-  - data platform architecture
-  - workflow orchestration
+  - Data Orchestration
+  - Data Engineering
+  - Prefect
   - Kubernetes
-  - productized data platform
 internal_notes: |-
   **Audience:** Data Engineer / DevOps Engineer trying to set up a data platform
 

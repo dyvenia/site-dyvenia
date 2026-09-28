@@ -4,13 +4,10 @@ date: 2025-07-03 11:00:00
 author: Karol Wolski
 description: The final part of the Data Platform Infrastructure on GCP series covers CI/CD for Prefect deployments using GitHub Actions and Docker. Automate flow builds, worker updates, and streamline orchestration across environments.
 tags:
-  - prefect
-  - prefect worker
-  - github actions
-  - CI/CD
-  - data workflows
-  - data platform architecture
-  - productized data platform
+  - Data Orchestration
+  - CI/CD & DataOps
+  - Prefect
+  - GitHub Actions
 internal_notes: |-
   **Audience:** Data Engineer / DevOps Engineer trying to setup data platform
 

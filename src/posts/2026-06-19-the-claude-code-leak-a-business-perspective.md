@@ -4,11 +4,9 @@ date: 2026-06-19 12:20:00
 author: Alessio Civitillo
 description: The Claude Code leak provides a practical look at AI architecture and where value is created in enterprise AI applications. This article explores why governance, workflows, and deterministic logic often matter more than AI itself when building reliable, cost-effective solutions.
 tags:
-  - AI Strategy
-  - AI Governance
-  - Enterprise AI
-  - AI Agents
-  - Software Architecture
+  - Artificial Intelligence
+  - AI Safety
+  - Enterprise Automation
 internal_notes: Article by AC on a recent Claude Code Leak
 ---
 
