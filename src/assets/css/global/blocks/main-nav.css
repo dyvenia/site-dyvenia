@@ -85,11 +85,19 @@ body:has(.nav-drawer-toggle[aria-expanded='true']) {
   display: var(--nav-button-display, flex);
   position: relative;
   z-index: 2;
-  padding: var(--space-3xs);
+  padding: var(--space-3xs) var(--space-2xs);
   line-height: var(--leading-flat);
-  border-radius: var(--border-radius-medium);
+  border-radius: var(--border-radius-small);
   background: var(--color-teal);
   color: var(--color-light);
+  text-transform: uppercase;
+  font-weight: var(--font-medium);
+  font-size: var(--size-step-min-1);
+}
+
+.mainnav .nav-drawer-toggle span {
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
 }
 
 .mainnav .nav-sublist__button {
@@ -100,7 +108,7 @@ body:has(.nav-drawer-toggle[aria-expanded='true']) {
 }
 
 .mainnav svg {
-  block-size: 0.8em;
+  block-size: 1em;
   color: var(--color-text);
   stroke-width: 2.5;
   pointer-events: auto;
