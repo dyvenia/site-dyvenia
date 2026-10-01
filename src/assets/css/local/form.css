@@ -131,7 +131,7 @@ input[type='checkbox']:checked::before {
   max-inline-size: none;
 }
 
-.section-form .newsletter :is(h3, label, p, input, .text-gray) {
+.section-form .newsletter :is(h3, label, p, input) {
   color: var(--color-text);
 }
 
