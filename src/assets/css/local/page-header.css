@@ -1,10 +1,8 @@
 .page-header {
   display: grid;
   grid-template-columns: 1fr;
-  /* Media wash defaults; recipes on [data-hero-background] override via custom-hero.css */
   --custom-hero-bg: var(--color-teal-800);
-  --hero-text: var(--color-gray-100);
-  --hero-text-muted: color-mix(in oklab, var(--hero-text) 95%, transparent);
+  color: var(--section-text);
 }
 
 /* Underlay so wash fills the full band when content outgrows the media layer */
@@ -90,13 +88,9 @@
 }
 
 .page-header .wrapper > :is(p, h1, h2, h3) {
-  color: var(--color-page-header-text, var(--color-text));
+  color: var(--section-text);
 }
 
-.page-header[data-hero-background] .wrapper > :is(p, h1, h2, h3) {
-  color: var(--hero-text);
-}
-
-.page-header[data-hero-background] .wrapper :is(.flow, .flow p) {
-  color: var(--hero-text-muted);
+.page-header .wrapper :is(.flow, .flow p) {
+  color: var(--section-text-muted);
 }

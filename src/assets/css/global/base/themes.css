@@ -80,6 +80,7 @@
 
 [data-section-theme] {
   --spot-color: var(--section-bg);
+  /* Section owns surface + ink for every section type */
   --color-bg: var(--section-bg);
   --color-bg-accent: color-mix(in srgb, var(--section-text) 12%, var(--section-bg));
   --color-bg-accent-2: color-mix(in srgb, var(--section-text) 20%, var(--section-bg));
