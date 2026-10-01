@@ -1,7 +1,6 @@
 top:
   - text: About
     url: /about/
-    submenu: []
   - text: Solutions
     url: ''
     submenu:
