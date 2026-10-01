@@ -5,7 +5,7 @@
   "author": "Lene Saile",
   "type": "module",
   "engines": {
-    "node": ">=20.x.x"
+    "node": ">=24.x.x"
   },
   "scripts": {
     "clean": "rimraf _site src/_includes/css src/_includes/scripts",
