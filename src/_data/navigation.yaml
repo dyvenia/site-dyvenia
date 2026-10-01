@@ -23,7 +23,6 @@ top:
         url: https://dimensional-modelling.dyvenia.com/
   - text: Careers
     url: /careers/
-    submenu: []
 bottom:
   - text: Subscribe to Newsletter
     url: /subscribe/
