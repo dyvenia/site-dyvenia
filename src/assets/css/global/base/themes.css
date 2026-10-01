@@ -80,13 +80,13 @@
 
 [data-section-theme] {
   --spot-color: var(--section-bg);
-  /* Remap common surface tokens so cards, borders, forms, details follow the section */
   --color-bg: var(--section-bg);
   --color-bg-accent: color-mix(in srgb, var(--section-text) 12%, var(--section-bg));
   --color-bg-accent-2: color-mix(in srgb, var(--section-text) 20%, var(--section-bg));
   --color-bg-accent-3: color-mix(in srgb, var(--section-text) 30%, var(--section-bg));
   --color-text: var(--section-text);
   --color-text-accent: var(--section-text-muted);
+  --color-text-accent-2: color-mix(in srgb, var(--section-text) 55%, var(--section-bg));
   --section-accent: var(--color-teal);
   color: var(--section-text);
 }

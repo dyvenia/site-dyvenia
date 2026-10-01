@@ -174,7 +174,7 @@ span.button {
   --button-hover-border-color: transparent;
 
   --button-text-decoration-color: transparent;
-  --button-text-decoration-thickness: 3px;
+  --button-text-decoration-thickness: 1px;
   --button-text-decoration-offset: 0.2em;
 
   text-decoration-line: underline;
@@ -185,6 +185,6 @@ span.button {
 
 .button[data-button-text]:hover {
   --button-text-decoration-color: var(--color-text);
-  --button-text-decoration-thickness: 3px;
+  --button-text-decoration-thickness: 1px;
   --button-text-decoration-offset: 0.2em;
 }

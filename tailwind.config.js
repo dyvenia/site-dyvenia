@@ -17,8 +17,22 @@ import textSizeTokens from './src/_data/designTokens/textSizes.json';
 import textWeightTokens from './src/_data/designTokens/textWeights.json';
 import viewportTokens from './src/_data/designTokens/viewports.json';
 
+const tokenColors = tokensToTailwind(colorTokens.items);
+const semanticColors = {
+  'theme-light': 'var(--color-light)',
+  'theme-dark': 'var(--color-dark)',
+  'theme-mid': 'var(--color-mid)',
+  'theme-text': 'var(--color-text)',
+  'theme-text-accent': 'var(--color-text-accent)',
+  'theme-text-accent-2': 'var(--color-text-accent-2)',
+  'theme-bg': 'var(--color-bg)',
+  'theme-bg-accent': 'var(--color-bg-accent)',
+  'theme-bg-accent-2': 'var(--color-bg-accent-2)',
+  'theme-bg-accent-3': 'var(--color-bg-accent-3)'
+};
+
 // Process design tokens
-const colors = tokensToTailwind(colorTokens.items);
+const colors = {...tokenColors, ...semanticColors};
 const borderRadius = tokensToTailwind(borderRadiusTokens.items);
 const fontFamily = tokensToTailwind(fontTokens.items);
 const fontSize = tokensToTailwind(clampGenerator(textSizeTokens.items));
