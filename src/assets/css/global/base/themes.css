@@ -180,6 +180,33 @@
   --section-accent: var(--color-gray-100);
 }
 
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) [data-section-accent='neutral'] {
+    --section-accent: var(--color-gray-100);
+  }
+}
+
+:root[data-theme='dark'] [data-section-accent='neutral'] {
+  --section-accent: var(--color-gray-100);
+}
+
+/* Navy brand is too dark on dark surfaces — use a lighter step */
+[data-section-theme='gray-dark'][data-section-accent='navy'],
+[data-section-theme='teal-dark'][data-section-accent='navy'],
+[data-section-theme='navy'][data-section-accent='navy'] {
+  --section-accent: var(--color-navy-300);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) [data-section-accent='navy'] {
+    --section-accent: var(--color-navy-300);
+  }
+}
+
+:root[data-theme='dark'] [data-section-accent='navy'] {
+  --section-accent: var(--color-navy-300);
+}
+
 /* Tab step scales — default accent = teal; override via data-section-accent on .section-tabs */
 .section-tabs {
   --color-scale-1: var(--color-teal-500);

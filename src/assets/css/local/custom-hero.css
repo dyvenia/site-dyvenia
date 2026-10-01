@@ -73,12 +73,12 @@
 }
 
 :root[data-theme='dark'] .custom-hero :is(picture, .custom-hero__video-container) {
-  mix-blend-mode: lighten;
+  mix-blend-mode: darken;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) .custom-hero :is(picture, .custom-hero__video-container) {
-    mix-blend-mode: lighten;
+    mix-blend-mode: darken;
   }
 }
 

@@ -1,6 +1,8 @@
 /* Media wash recipes — exception to section ink.
    Only when a real media layer is present (hero image/video, or CTA with image).
-   Overrides --section-text* / --section-accent; theming owns ink otherwise. */
+   Overrides --section-text* / --section-accent; theming owns ink otherwise.
+   Light wash names (gray-200/100, white, purple-300) are soft-surface roles:
+   lighter + dark ink in light mode; dark wash + light ink in dark mode. */
 
 :is(
   .custom-hero[data-hero-media='image'],
@@ -95,7 +97,7 @@
   .custom-hero[data-hero-media='video'],
   .page-header[data-hero-background]
 )[data-hero-background='gray-200'] {
-  --custom-hero-bg: var(--color-gray-200);
+  --custom-hero-bg: var(--color-gray-100);
   --section-text: var(--color-gray-900);
   --section-text-muted: color-mix(in oklab, var(--section-text) 85%, transparent);
   --section-accent: var(--color-teal-800);
@@ -106,7 +108,7 @@
   .custom-hero[data-hero-media='video'],
   .page-header[data-hero-background]
 )[data-hero-background='gray-100'] {
-  --custom-hero-bg: var(--color-gray-100);
+  --custom-hero-bg: white;
   --section-text: var(--color-gray-900);
   --section-text-muted: color-mix(in oklab, var(--section-text) 85%, transparent);
   --section-accent: var(--color-teal-800);
@@ -121,4 +123,103 @@
   --section-text: var(--color-gray-900);
   --section-text-muted: color-mix(in oklab, var(--section-text) 85%, transparent);
   --section-accent: var(--color-teal-800);
+}
+
+/* Light washes → dark surfaces in dark mode (dark mode stays dark) */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light'])
+    :is(
+      .custom-hero[data-hero-media='image'],
+      .custom-hero[data-hero-media='video'],
+      .page-header[data-hero-background]
+    )[data-hero-background='gray-200'] {
+    --custom-hero-bg: var(--color-gray-800);
+    --section-text: var(--color-gray-100);
+    --section-text-muted: color-mix(in oklab, var(--section-text) 95%, transparent);
+    --section-accent: var(--color-teal-300);
+  }
+
+  :root:not([data-theme='light'])
+    :is(
+      .custom-hero[data-hero-media='image'],
+      .custom-hero[data-hero-media='video'],
+      .page-header[data-hero-background]
+    )[data-hero-background='gray-100'] {
+    --custom-hero-bg: var(--color-gray-900);
+    --section-text: var(--color-gray-100);
+    --section-text-muted: color-mix(in oklab, var(--section-text) 95%, transparent);
+    --section-accent: var(--color-teal-300);
+  }
+
+  :root:not([data-theme='light'])
+    :is(
+      .custom-hero[data-hero-media='image'],
+      .custom-hero[data-hero-media='video'],
+      .page-header[data-hero-background]
+    )[data-hero-background='white'] {
+    --custom-hero-bg: var(--color-gray-900);
+    --section-text: var(--color-gray-100);
+    --section-text-muted: color-mix(in oklab, var(--section-text) 95%, transparent);
+    --section-accent: var(--color-teal-300);
+  }
+
+  :root:not([data-theme='light'])
+    :is(
+      .custom-hero[data-hero-media='image'],
+      .custom-hero[data-hero-media='video'],
+      .page-header[data-hero-background]
+    )[data-hero-background='purple-300'] {
+    --custom-hero-bg: var(--color-purple-800);
+    --section-text: var(--color-purple-100);
+    --section-text-muted: color-mix(in oklab, var(--section-text) 95%, transparent);
+    --section-accent: color-mix(in oklab, var(--color-purple) 60%, var(--color-light));
+  }
+}
+
+:root[data-theme='dark']
+  :is(
+    .custom-hero[data-hero-media='image'],
+    .custom-hero[data-hero-media='video'],
+    .page-header[data-hero-background]
+  )[data-hero-background='gray-200'] {
+  --custom-hero-bg: var(--color-gray-800);
+  --section-text: var(--color-gray-100);
+  --section-text-muted: color-mix(in oklab, var(--section-text) 95%, transparent);
+  --section-accent: var(--color-teal-300);
+}
+
+:root[data-theme='dark']
+  :is(
+    .custom-hero[data-hero-media='image'],
+    .custom-hero[data-hero-media='video'],
+    .page-header[data-hero-background]
+  )[data-hero-background='gray-100'] {
+  --custom-hero-bg: var(--color-gray-900);
+  --section-text: var(--color-gray-100);
+  --section-text-muted: color-mix(in oklab, var(--section-text) 95%, transparent);
+  --section-accent: var(--color-teal-300);
+}
+
+:root[data-theme='dark']
+  :is(
+    .custom-hero[data-hero-media='image'],
+    .custom-hero[data-hero-media='video'],
+    .page-header[data-hero-background]
+  )[data-hero-background='white'] {
+  --custom-hero-bg: var(--color-gray-900);
+  --section-text: var(--color-gray-100);
+  --section-text-muted: color-mix(in oklab, var(--section-text) 95%, transparent);
+  --section-accent: var(--color-teal-300);
+}
+
+:root[data-theme='dark']
+  :is(
+    .custom-hero[data-hero-media='image'],
+    .custom-hero[data-hero-media='video'],
+    .page-header[data-hero-background]
+  )[data-hero-background='purple-300'] {
+  --custom-hero-bg: var(--color-purple-800);
+  --section-text: var(--color-purple-100);
+  --section-text-muted: color-mix(in oklab, var(--section-text) 95%, transparent);
+  --section-accent: color-mix(in oklab, var(--color-purple) 60%, var(--color-light));
 }
