@@ -35,17 +35,17 @@
               class="button flow-space-l no-indicator"
               {{ sectionButtonAttr(accent) }}
             >
-              {{ s.button_text }} {% svg "misc/arrow" %}
+              <span>{{ s.button_text }}</span> {% svg "misc/arrow" %}
             </a>
           {% endif %}
         </div>
         <div class="details flow">
           <div class="control | cluster" aria-label="{{ meta.details.aria }}">
             <button type="button" id="expandAll" class="button" data-small-button>
-              {{ meta.details.expand }}
+              <span>{{ meta.details.expand }}</span>
             </button>
             <button type="button" id="collapseAll" class="button" data-small-button>
-              {{ meta.details.collapse }}
+              <span></span>{{ meta.details.collapse }}</span>
             </button>
           </div>
           {% for item in s.items %}

@@ -15074,13 +15074,35 @@ collections:
           - label: Accept All
             name: accept_all
             widget: string
-          - label: Decline All
+          - label: Reject Optional
             name: decline_all
             widget: string
-          - label: Change Preferences Label
+          - label: Manage Preferences
+            name: manage
+            widget: string
+          - label: Save Preferences
+            name: save
+            widget: string
+          - label: Cookie Preferences Label
             name: change
             widget: string
-            hint: Accessible label for the footer cookie preferences control
+            hint: Visible footer control label to reopen cookie preferences
+          - label: Necessary Title
+            name: necessary_title
+            widget: string
+          - label: Necessary Description
+            name: necessary_description
+            widget: text
+          - label: Necessary Status
+            name: necessary_status
+            widget: string
+            hint: Shown instead of Accept/Decline, e.g. Always active
+          - label: Functional Title
+            name: functional_title
+            widget: string
+          - label: Functional Description
+            name: functional_description
+            widget: text
           - label: Marketing Title
             name: marketing_title
             widget: string
@@ -15088,3 +15110,7 @@ collections:
             name: marketing_description
             widget: text
             hint: Short explanation of the marketing category. Supports HTML.
+          - label: Marketing Cookies HTML
+            name: marketing_cookies
+            widget: text
+            hint: HTML list of marketing cookies shown under the Marketing category.

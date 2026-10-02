@@ -1,6 +1,6 @@
 <footer class="site-footer {{ footerSpace }}">
   <div class="wrapper">
-    <div class="footer__meta | cluster">
+    <div class="footer__meta | feature cluster">
       <nav
         class="footer__meta | cluster gutter-2xs text-step-0"
         aria-label="{{ meta.navigation.ariaBottom }}"
@@ -21,16 +21,16 @@
         {% endfor %}
       </nav>
 
-      <nav class="footer__meta | cluster" aria-label="{{ meta.navigation.ariaPlatforms }}">
+      <nav class="cluster" aria-label="{{ meta.navigation.ariaPlatforms }}">
         <!-- gets the first item from the feed loop set in meta -->
         <a href="{{ meta.blog.feedLinks[0].url }}" rel="alternate" type="{{ meta.blog.feedLinks[0].type }}">
           <span class="visually-hidden">{{ meta.blog.feedLinks[0].title }}</span>
           {% svg "misc/rss" %}
         </a>
 
-        <button type="button" data-consent-banner>
-          <span class="visually-hidden">{{ consent.change }}</span>
+        <button type="button" data-consent-banner class="button" data-button-text>
           {% svg "misc/cookie" %}
+          <span>{{ consent.change }}</span>
         </button>
 
         {% for key, value in personal.platforms %}

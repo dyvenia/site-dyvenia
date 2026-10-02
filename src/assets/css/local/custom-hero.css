@@ -1,17 +1,12 @@
 .custom-hero {
-  /* Defaults = teal-800 media recipe (light type on dark wash) */
   --custom-hero-bg: var(--color-teal-800);
-  --hero-text: var(--color-gray-100);
-  --hero-text-muted: color-mix(in oklab, var(--hero-text) 95%, transparent);
-  --hero-em: color-mix(in oklab, var(--color-teal) 50%, var(--color-light));
 
   display: grid;
   grid-template-columns: 1fr;
   place-content: center;
-  /* Peek / separator band = section theme; media layer uses --custom-hero-bg */
+  /* Peek / separator = section theme; media layer uses --custom-hero-bg */
   background: var(--section-bg, var(--custom-hero-bg));
-  /* Theme must not own hero copy — ink comes from media recipes */
-  color: var(--hero-text);
+  color: var(--section-text);
 }
 
 /* Only intentional layers stack — not every accidental descendant */
@@ -35,38 +30,37 @@
 .custom-hero__content {
   display: grid;
   place-content: center;
-  /* Hero paints via --custom-hero-bg / media; keep content layer clear */
   background-color: transparent;
-  color: var(--hero-text);
+  color: var(--section-text);
 }
 
 .custom-hero__content h1 {
   font-weight: var(--font-regular);
   text-wrap: pretty;
   line-height: var(--leading-flat);
-  color: var(--hero-text);
+  color: var(--section-text);
 }
 
 .custom-hero__content em {
-  color: var(--hero-em);
+  color: var(--section-accent);
   font-style: normal;
 }
 
 .custom-hero .wrapper :is(p, h1) {
-  color: var(--hero-text);
+  color: var(--section-text);
 }
 
 .custom-hero .wrapper :is(.flow, .flow p) {
-  color: var(--hero-text-muted);
+  color: var(--section-text-muted);
 }
 
 .custom-hero .wrapper > h1,
 .custom-hero .wrapper > h1 :is(em, strong) {
-  color: var(--hero-text);
+  color: var(--section-text);
 }
 
 .custom-hero .wrapper > h1 em {
-  color: var(--hero-em);
+  color: var(--section-accent);
 }
 
 /* -------------------- media --------------------  */
@@ -79,7 +73,13 @@
 }
 
 :root[data-theme='dark'] .custom-hero :is(picture, .custom-hero__video-container) {
-  mix-blend-mode: lighten;
+  mix-blend-mode: darken;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .custom-hero :is(picture, .custom-hero__video-container) {
+    mix-blend-mode: darken;
+  }
 }
 
 .custom-hero :is(img, .custom-hero__video) {
@@ -109,6 +109,12 @@
   filter: grayscale(100%) brightness(0.7) opacity(0.5) contrast(200%);
 }
 
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .custom-hero :is(img, .custom-hero__video) {
+    filter: grayscale(100%) brightness(0.7) opacity(0.5) contrast(200%);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .custom-hero[data-hero-media='video'] .custom-hero__video {
     display: none;
@@ -122,7 +128,6 @@
 
 /* -------------------- variants --------------------  */
 
-/* content alignment */
 .custom-hero[data-hero-content-inline='left'] .wrapper > * {
   justify-self: start;
   text-align: start;
@@ -150,7 +155,6 @@
   align-content: end;
 }
 
-/* height */
 .custom-hero[data-hero-height='default'] :is(picture, .custom-hero__video) {
   block-size: max(35rem, 50vh);
 }
@@ -175,9 +179,4 @@
   .custom-hero[data-hero-height='cover'] :is(picture, .custom-hero__video) {
     max-block-size: 95vh;
   }
-}
-
-/* no media — still use media-recipe ink */
-.custom-hero[data-hero-media='none'] .wrapper :is(p, h1) {
-  color: var(--hero-text);
 }

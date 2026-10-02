@@ -11,38 +11,10 @@
   <h2 id="consent-title" class="visually-hidden">Cookie Consent</h2>
   <p id="consent-description">{{ consent.message | safe }}</p>
 
-  <div class="consent-services | flow">
-    <div class="service-item | repel gutter-2xs">
-      <div class="flow flow-space-xs">
-        <h3 class="text-step-min-1">{{ consent.marketing_title }}</h3>
-        <p class="text-step-min-1 text-gray">{{ consent.marketing_description | safe }}</p>
-      </div>
-      <div class="cluster gutter-3xs">
-        <button
-          type="button"
-          class="button"
-          data-service-decline="marketing"
-          data-small-button
-          data-ghost-button
-          aria-pressed="false"
-        >
-          <span>{{ consent.decline }}</span>
-        </button>
-        <button
-          type="button"
-          class="button"
-          data-service-accept="marketing"
-          data-ghost-button
-          data-small-button
-          aria-pressed="false"
-        >
-          <span>{{ consent.accept }}</span>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <div class="cluster gutter-2xs mt-m" data-consent-all-actions hidden>
+  <div class="cluster gutter-2xs mt-m" data-consent-all-actions>
+    <button type="button" class="button" data-consent-accept data-small-button data-button-variant="neutral">
+      <span>{{ consent.accept_all }}</span>
+    </button>
     <button
       type="button"
       class="button"
@@ -53,8 +25,96 @@
     >
       <span>{{ consent.decline_all }}</span>
     </button>
-    <button type="button" class="button" data-consent-accept data-small-button data-button-variant="neutral">
-      <span>{{ consent.accept_all }}</span>
+    <button
+      type="button"
+      class="button"
+      data-consent-manage
+      data-small-button
+      data-ghost-button
+      data-button-variant="neutral"
+      aria-expanded="false"
+      aria-controls="consent-preferences"
+    >
+      <span>{{ consent.manage }}</span>
     </button>
+  </div>
+
+  <div id="consent-preferences" class="consent-services | flow" hidden>
+    <div class="service-item | repel gutter-2xs">
+      <div class="flow flow-space-xs">
+        <h3 class="text-step-min-1">{{ consent.necessary_title }}</h3>
+        <p class="text-step-min-1 text-theme-text-accent">{{ consent.necessary_description | safe }}</p>
+      </div>
+      <p class="text-step-min-1 consent-always-active">{{ consent.necessary_status }}</p>
+    </div>
+
+    <div class="service-item | repel gutter-2xs">
+      <div class="flow flow-space-xs">
+        <h3 class="text-step-min-1">{{ consent.functional_title }}</h3>
+        <p class="text-step-min-1 text-theme-text-accent">{{ consent.functional_description | safe }}</p>
+      </div>
+      <div class="cluster gutter-3xs">
+        <button
+          type="button"
+          class="button"
+          data-service-decline="functional"
+          data-small-button
+          data-ghost-button
+          aria-pressed="false"
+        >
+          <span>{{ consent.decline }}</span>
+        </button>
+        <button
+          type="button"
+          class="button"
+          data-service-accept="functional"
+          data-ghost-button
+          data-small-button
+          aria-pressed="false"
+        >
+          <span>{{ consent.accept }}</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="service-item | flow flow-space-xs">
+      <div class="repel gutter-2xs">
+        <div class="flow flow-space-xs">
+          <h3 class="text-step-min-1">{{ consent.marketing_title }}</h3>
+          <p class="text-step-min-1 text-theme-text-accent">{{ consent.marketing_description | safe }}</p>
+        </div>
+        <div class="cluster gutter-3xs">
+          <button
+            type="button"
+            class="button"
+            data-service-decline="marketing"
+            data-small-button
+            data-ghost-button
+            aria-pressed="false"
+          >
+            <span>{{ consent.decline }}</span>
+          </button>
+          <button
+            type="button"
+            class="button"
+            data-service-accept="marketing"
+            data-ghost-button
+            data-small-button
+            aria-pressed="false"
+          >
+            <span>{{ consent.accept }}</span>
+          </button>
+        </div>
+      </div>
+      <div class="consent-cookie-list text-step-min-2 prose flow-space-xs text-theme-text-accent-2">
+        {{ consent.marketing_cookies | safe }}
+      </div>
+    </div>
+
+    <div class="cluster gutter-2xs mt-s">
+      <button type="button" class="button" data-consent-save data-small-button data-button-variant="neutral">
+        <span>{{ consent.save }}</span>
+      </button>
+    </div>
   </div>
 </div>

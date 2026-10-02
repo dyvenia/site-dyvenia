@@ -80,13 +80,14 @@
 
 [data-section-theme] {
   --spot-color: var(--section-bg);
-  /* Remap common surface tokens so cards, borders, forms, details follow the section */
+  /* Section owns surface + ink for every section type */
   --color-bg: var(--section-bg);
   --color-bg-accent: color-mix(in srgb, var(--section-text) 12%, var(--section-bg));
   --color-bg-accent-2: color-mix(in srgb, var(--section-text) 20%, var(--section-bg));
   --color-bg-accent-3: color-mix(in srgb, var(--section-text) 30%, var(--section-bg));
   --color-text: var(--section-text);
   --color-text-accent: var(--section-text-muted);
+  --color-text-accent-2: color-mix(in srgb, var(--section-text) 55%, var(--section-bg));
   --section-accent: var(--color-teal);
   color: var(--section-text);
 }
@@ -177,6 +178,33 @@
 [data-section-theme='teal-dark'][data-section-accent='neutral'],
 [data-section-theme='navy'][data-section-accent='neutral'] {
   --section-accent: var(--color-gray-100);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) [data-section-accent='neutral'] {
+    --section-accent: var(--color-gray-100);
+  }
+}
+
+:root[data-theme='dark'] [data-section-accent='neutral'] {
+  --section-accent: var(--color-gray-100);
+}
+
+/* Navy brand is too dark on dark surfaces — use a lighter step */
+[data-section-theme='gray-dark'][data-section-accent='navy'],
+[data-section-theme='teal-dark'][data-section-accent='navy'],
+[data-section-theme='navy'][data-section-accent='navy'] {
+  --section-accent: var(--color-navy-300);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) [data-section-accent='navy'] {
+    --section-accent: var(--color-navy-300);
+  }
+}
+
+:root[data-theme='dark'] [data-section-accent='navy'] {
+  --section-accent: var(--color-navy-300);
 }
 
 /* Tab step scales — default accent = teal; override via data-section-accent on .section-tabs */

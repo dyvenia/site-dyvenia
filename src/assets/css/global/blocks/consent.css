@@ -6,7 +6,9 @@
   color: var(--color-text);
   padding: var(--space-s);
   margin: var(--gap);
-  max-inline-size: min(95vw, 30rem);
+  max-inline-size: min(95vw, 36rem);
+  max-block-size: min(90vh, 40rem);
+  overflow: auto;
   font-size: var(--size-step-min-1);
   border: 1px solid var(--color-bg-accent);
   z-index: 10;
@@ -25,9 +27,19 @@
   border-radius: var(--button-radius-small);
 }
 
-/* .cluster sets display:flex and beats the UA [hidden] rule */
-.consent [data-consent-all-actions][hidden] {
-  display: none;
+.consent .consent-always-active {
+  margin: 0;
+  white-space: nowrap;
+  font-weight: var(--font-bold, 600);
+}
+
+.consent .consent-cookie-list ul {
+  margin: 0;
+  padding-inline-start: 1.25em;
+}
+
+.consent .consent-cookie-list li + li {
+  margin-block-start: var(--space-3xs);
 }
 
 .consent .button[data-consent-state='accepted'] {
