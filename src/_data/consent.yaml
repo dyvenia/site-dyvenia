@@ -1,8 +1,26 @@
-message: We use cookies for analytics and performance measurements. Learn more in our <a href="/privacy">privacy policy</a>.
+message: >-
+  We use necessary technologies to operate our websites. With your consent, we also use optional
+  technologies for meeting scheduling and for marketing measurement. Meta Pixel, deployed via Google
+  Tag Manager, helps us measure conversions, optimize ads, and remarket to website visitors. Plausible
+  Analytics provides aggregate website statistics without cookies or persistent identifiers. You can
+  accept all optional technologies, reject them, or manage your preferences. You can change your choice
+  at any time. Learn more in our <a href="/privacy/">privacy policy</a>.
 accept: Accept
 decline: Decline
-accept_all: Accept All
-decline_all: Decline All
-change: Change preferences
+accept_all: Accept all
+decline_all: Reject optional
+manage: Manage preferences
+save: Save preferences
+change: Cookie preferences
+necessary_title: Necessary
+necessary_description: Technologies required for website operation, security, and storage of your privacy choices.
+necessary_status: Always active
+functional_title: Functional / meeting scheduling
+functional_description: Technologies used to provide optional functionality, including embedded meeting-booking tools.
 marketing_title: Marketing
-marketing_description: Google Tag Manager and tags (may include advertising and conversion pixels).
+marketing_description: Meta Pixel is used for conversion measurement, advertising optimization, and remarketing.
+marketing_cookies: >-
+  <ul>
+  <li><code>_fbp</code>: Meta Pixel, used for advertising measurement, optimization, and remarketing – 90 days</li>
+  <li><code>_fbc</code>: Meta Pixel, used for attribution and advertising measurement – 90 days</li>
+  </ul>

@@ -4,19 +4,27 @@
 {% set heroDivider = customHero.divider if customHero.divider is defined else "divider/soft" %}
 {% set heroDividerClass = customHero.divider_class or "seperator" %}
 {% set heroHeight = customHero.height or heroData.height or "default" %}
-{% set heroBackground = customHero.background or heroData.background or "teal-800" %}
+{% set heroBackground = customHero.background if customHero.background is defined else heroData.background %}
 {% set heroInline = customHero.content_inline or "center" %}
 {% set heroBlock = customHero.content_block or "center" %}
 {% set heroRegionSpace = customHero.region_space or "xl" %}
 {% set heroButtonVariant = customHero.button_variant %}
 {% set heroVideo = heroData.video %}
+{% set heroHasMedia = heroVideo or heroData.image %}
+{% if heroBackground %}
+  {% set heroWash = heroBackground %}
+{% elif heroHasMedia %}
+  {% set heroWash = "teal-800" %}
+{% else %}
+  {% set heroWash = "" %}
+{% endif %}
 
 <header
   class="section custom-hero"
   data-section-theme="{{ heroTheme }}"
   data-hero-media="{% if heroVideo %}video{% elif heroData.image %}image{% else %}none{% endif %}"
   data-hero-height="{{ heroHeight }}"
-  data-hero-background="{{ heroBackground }}"
+  {% if heroWash %}data-hero-background="{{ heroWash }}"{% endif %}
   data-hero-content-inline="{{ heroInline }}"
   data-hero-content-block="{{ heroBlock }}"
 >

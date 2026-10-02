@@ -48,11 +48,21 @@
   --section-decoration: var(--color-gray-100);
 }
 
-/* Light accent markers (e.g. gray-dark + neutral) need dark digits */
+/* Light accent markers need dark digits on the timeline chips */
 .section-process[data-section-theme='gray-dark'][data-section-accent='neutral'],
 .section-process[data-section-theme='teal-dark'][data-section-accent='neutral'],
 .section-process[data-section-theme='navy'][data-section-accent='neutral'],
 .section-process[data-section-theme='teal-dark']:not([data-section-accent]) {
+  --section-accent-ink: var(--color-gray-900);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .section-process[data-section-accent='neutral'] {
+    --section-accent-ink: var(--color-gray-900);
+  }
+}
+
+:root[data-theme='dark'] .section-process[data-section-accent='neutral'] {
   --section-accent-ink: var(--color-gray-900);
 }
 
