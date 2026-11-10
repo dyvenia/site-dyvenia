@@ -2,13 +2,13 @@
 
 Deployed websites:
 
-- Dev is deployed from `dev` branch and is available here: https://site-dyvenia.netlify.app/
+- Dev is deployed from `dev` branch and is available here: https://dev--site-dyvenia.netlify.app/
 - Content is deployed from `content` branch and is available here: https://content--site-dyvenia.netlify.app/
 - Main is deployed from `main` branch and is available here: https://site-dyvenia.netlify.app/
 
 ---
 
-### Blog Contribution Guidelines
+## Blog Contribution Guidelines
 
 Blog articles are markdown files inside the [`src/posts`](https://github.com/dyvenia/site-dyvenia/tree/main/src/posts) folder. The top of the markdown has a YAML section to define article metadata such as title, description and publish date.
 
@@ -16,17 +16,17 @@ Blog articles are markdown files inside the [`src/posts`](https://github.com/dyv
 
 **Images** should be stored in `src/images`.
 
-### Adding New Pages / Templates
+## Adding New Pages / Templates
 
 Create an issue on github with the `webdeveloper` tag so that the webdeveloper can resolve it.
 
-### Theme Support
+## Theme Support
 
 For support check: [eleventy-excellent](https://github.com/madrilene/eleventy-excellent).
 
 ---
 
-### Local Development
+## Local Development
 
 This site uses a static page generator called `eleventy`, you can read its documentation [here](https://www.11ty.dev/).
 
@@ -40,7 +40,7 @@ Usually the local website will run on `http://127.0.0.1:8080/`.
 
 ---
 
-### Development Workflow
+## Development Workflow
 
 - Implement changes by:
 
