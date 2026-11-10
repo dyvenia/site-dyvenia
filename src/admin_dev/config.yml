@@ -15031,6 +15031,10 @@ collections:
             name: book_call_link
             widget: string
             hint: The link  of the book a call button
+          - label: Google Tag Manager ID
+            name: gtm_id
+            widget: string
+            hint: GTM container ID (e.g. GTM-XXXXXXX). Loads after marketing consent.
           - label: Newsletter Title
             name: newsletter_title
             widget: string
